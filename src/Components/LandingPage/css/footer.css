@@ -1,0 +1,76 @@
+.wooficsfooter{
+    margin-top: 15%;
+}
+.marginclass{
+    margin-top: 15%;
+    /* padding: 0!important; */
+}
+
+.backimg{
+    background-image: url(../images/Footer4k.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footerLogo{
+    width:150px;
+}
+@media(min-width:992px){
+    .marginclass{
+        padding: 0 !important;
+    }
+}
+@media (max-width:770px){
+   
+    .woofic_middle_side{
+        margin: 0px;
+        margin-top: 15%;
+        margin-bottom: 30px;
+        line-height: 50px;
+        width: auto;
+        /* height: 0px; */
+    }
+    .woofic_left_side{
+        width: auto;
+    }
+    .wooficsfooter{
+        margin-top: 15%;
+    }
+    .wooficslogo{
+        display: flex;
+    flex-direction: column;
+    /* margin-left: 50px; */
+    /* align-items: center; */
+    }
+    .ipad{
+        margin-left:25px;
+    }
+    
+}
+@media(max-width:600px){
+    .wooficsfooter{
+        margin-top: 80%;
+    }
+    .backimg{
+        background-position: 60% 50%;
+    }
+    .ipad{
+        /* margin-left:0px; */
+        margin:auto;
+    }
+}
+@media(max-width:3840px) and (min-width:2000px){
+    .leftside-text{
+        width: 75%;
+        margin: auto
+    }
+    .footer-margin{
+        margin-top: 10%;
+    }
+    .footerLogo{
+        width:260px;
+    }
+    .footer-label{
+        margin-top: -15px;
+    }
+}
+

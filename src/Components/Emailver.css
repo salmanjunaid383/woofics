@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+
+.payment {
+  border: 1px solid #f2f2f2;
+  height: 280px;
+  border-radius: 20px;
+  background: #fff;
+}
+.payment_header {
+  background: rgb(27, 160, 0);
+  padding: 20px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.check {
+  margin: 0px auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: #fff;
+  text-align: center;
+  background-image: url("./ClientPortal/success.gif");
+  background-position: center;
+  background-size: cover;
+}
+
+.check i {
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 30px;
+}
+
+.content-success {
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 25px;
+  padding-top: 25px;
+}
+
+.content a {
+  width: 200px;
+  height: 35px;
+  color: #fff;
+  border-radius: 30px;
+  padding: 5px 10px;
+  background: rgb(194, 194, 194);
+  transition: all ease-in-out 0.3s;
+}
+
+.content a:hover {
+  text-decoration: none;
+  background: #000;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.ledScreenList {
+  cursor: pointer;
+}
+
+.ledScreenList:hover {
+  box-shadow: inset 0 0 10px #202020;
+}
+
+/* OVERRIDE GOOGLE TRANSLATE WIDGET CSS BEGIN */
+div#google_translate_element div.goog-te-gadget-simple {
+  border: none;
+  /* background-color: transparent; */
+  background-color: #934cff; /*#e3e3ff*/
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value:hover {
+  text-decoration: none;
+}
+
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span {
+  color: rgb(255, 255, 255);
+}
+
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span:hover {
+  color: white;
+}
+
+.goog-te-gadget-icon {
+  display: none !important;
+  /*background: url("url for the icon") 0 0 no-repeat !important;*/
+}
+
+/* Remove the down arrow */
+/* when dropdown open */
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span[style="color: rgb(213, 213, 213);"] {
+  display: none;
+}
+/* after clicked/touched */
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span[style="color: rgb(118, 118, 118);"] {
+  display: none;
+}
+/* on page load (not yet touched or clicked) */
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span[style="color: rgb(155, 155, 155);"] {
+  display: none;
+}
+
+/* Remove span with left border line | (next to the arrow) in Chrome & Firefox */
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span[style="border-left: 1px solid rgb(187, 187, 187);"] {
+  display: none;
+}
+/* Remove span with left border line | (next to the arrow) in Edge & IE11 */
+div#google_translate_element
+  div.goog-te-gadget-simple
+  a.goog-te-menu-value
+  span[style="border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;"] {
+  display: none;
+}
+/* HIDE the google translate toolbar */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+/* OVERRIDE GOOGLE TRANSLATE WIDGET CSS END */
+
+.my-facebook-button-class {
+    background-color: #2867B2;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 7px;
+    /* border-radius: 260 !important; */
+    width: 280px;
+    height: 43px;
+    cursor: pointer; 
+    box-shadow:8px 3px 20px rgb(87, 87, 87) ;
+    /* padding-left: 13px; */
+}
+
+.btnFacebook { 
+  background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    /* padding-top: 7px; */
+    border-radius: 40px !important;
+    width: 280px;
+    font-family: sans-serif;
+    height: 50px;
+    cursor: pointer; 
+    box-shadow:8px 3px 20px rgb(87, 87, 87) ;
+    /* margin: 0px 10px; */
+}
+.btnGoogle { 
+  background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    /* padding-top: 10px; */
+    border-radius: 40px !important;
+    width: 280px;
+    height: 50px;
+    cursor: pointer; 
+    box-shadow:8px 3px 20px rgb(87, 87, 87) ;
+    /* margin: 0px 10px; */
+}
+
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.6s;
+  -webkit-transition-property: transform;
+  transition-property: transform 0.9;
+}
+
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  /* -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  */
+  opacity: 0.5 !important;
+
+}
+
+.cont {
+  position: relative;
+  width: 50%;
+}
+
+.ima {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.mid {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.cont:hover .ima {
+  opacity: 0.3;
+}
+
+.cont:hover .mid {
+  opacity: 1;
+}
+
+.tex {
+  background-color: rgb(27, 160, 0);
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px; 
+  border-radius: 10px;
+}

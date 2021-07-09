@@ -1,0 +1,158 @@
+.woofic_visiual_container{
+    width:100%;
+    /* height:250vh; */
+    /* margin-top: 100px; */
+}
+.woofic_visiual_content{
+    width:55%;
+    margin: auto;
+    /* height:180vh; */
+    /* border:#000 2px solid; */
+}
+.woofic_visiual_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /* width:800px; */
+   
+}
+.woofic_visiual_left{
+    /* width:550px; */
+    /* height:100%; */
+    /* background-color: green; */
+    position: relative;
+    /* padding-left: 20px; */
+}
+.woofic_visiual_right{
+    
+    /* width:150px; */
+    /* margin-left: 120px; */
+    /* margin-top: 30px; */
+   
+    /* height:60%; */
+    /* margin-left: 120px; */
+}
+.woofic_visiual_right img{
+    /* height:35%; */
+    /* width:100%; */
+}
+.woofic_visiual_heading{
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Poppins',Arial,Helvetica,sans-serif;
+    text-align: left;
+    font-size: 25px;
+}
+.woofic_visiual_sub-heading{
+    font-size: 15px;
+    color: rgb(153, 152, 152);
+    font-weight: 500;
+}
+.woofic_visiual_hline{
+    width: 120px;
+    height:3px;
+    background-color: rgb(224, 7, 116);
+    position: relative;
+    left: 0%;
+    margin: 10px 0 20px 0px;
+}
+.woofic_visiual_para{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.woofic_visiual_box{
+    text-align: left;
+    border: 3px rgb(177, 177, 177) solid;
+    /* margin-top: 20px; */
+
+}
+.woofic_visiual_box1{
+    border-bottom: 3px rgb(160, 160, 160) solid;
+    /* padding: 10px; */
+    color: rgb(160, 160, 160) ;
+}
+.woofic_visiual_box1:last-child{
+    border: none;
+}
+.woofic_visiual_box1 h1{
+font-size: 20px;
+color: #000;
+font-weight: 100;
+font-family: 'Poppins',Arial,Helvetica,sans-serif;
+margin-bottom: 5px;
+}
+.woofic_visual_middle{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height:350px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+.woofic_visual_middle img{
+        /* margin-right:35%; */
+        /* width: 75%;    */
+        /* height:35%;     */
+}
+
+.woofic_visiual_last{
+    /* margin-top: 70px; */
+    height:350px;
+}
+.woofic_visiual_last img{
+    margin-bottom: -80px;
+}
+.woofic_parabox{
+    background-color: #f7f7f7;
+    padding:20px
+}
+.receive_offer{
+    margin-top: 50px;
+    
+}
+.receive_offer a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: #2ECC71;
+    /* border: 2px rgb(252, 251, 251) solid; */
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+    border-radius: 50px;
+   
+}
+.receive_offer:hover a{
+    color:white;
+    font-weight: bolder;
+}
+.woofic_visiual_representation{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+@media(max-width:770px){
+    .woofic_visiual_representation{
+        margin-top: 300px;
+    }
+}
+@media(max-width:600px){
+    .woofic_visiual_representation{
+        margin-top:40px;
+    }
+}
+
+@media(max-width:3840px ) and (min-width:2000px){
+    .main-parent{
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+        margin-top: 80px;
+        margin-bottom: 60px;
+    }
+    
+
+}

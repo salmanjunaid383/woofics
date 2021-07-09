@@ -1,0 +1,757 @@
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from 'react-router-dom'
+import loginside from '../../Images/loginside.jpg'
+import axios from 'axios';
+import Sidebar from './Sidebar'
+import Nav from './Nav'
+import jwt_decode from 'jwt-decode'
+import Pusher from 'pusher-js';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Radio from '@material-ui/core/Radio';
+import clsx from 'clsx';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+
+//Sidebar
+import PropTypes from 'prop-types';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+// import IconButton from '@material-ui/core/IconButton';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import MailIcon from '@material-ui/icons/Mail';
+import MenuIcon from '@material-ui/icons/Menu';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { useTheme } from '@material-ui/core/styles';
+import Popover from '@material-ui/core/Popover';
+import message from './—Pngtree—chat icon_4756851.png'
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import Dashboard from './Dashboard';
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+import AssistantIcon from '@material-ui/icons/Assistant';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import SwapVertIcon from '@material-ui/icons/SwapVert';
+import LiveHelpIcon from '@material-ui/icons/LiveHelp';
+import CallEndIcon from '@material-ui/icons/CallEnd';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
+
+
+
+const drawerWidth = 240;
+
+
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+    },
+    drawer: {
+        [theme.breakpoints.up('sm')]: {
+            width: drawerWidth,
+            flexShrink: 0,
+        },
+    },
+    appBar: {
+        [theme.breakpoints.up('sm')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+        },
+        backgroundColor:"white",
+        boxShadow:'none',
+        border:"none"
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+            display: 'none',
+        },
+    },
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
+    drawerPaper: {
+        width: drawerWidth,
+        boxShadow:'none',
+        border:"none"
+    },
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(0),
+    },
+    typography: {
+        padding: theme.spacing(1),
+    },
+  link: {
+        textDecoration: 'none',
+        color: 'black'
+    },
+       item:{
+        backgroundColor:"rgb(11 104 197)",
+        boxShadow:'3px 0px 5px gray',
+        borderRadius:"10px",
+        color:'white',
+        margin:'0px'
+    ,    "&:hover": {
+           backgroundColor:"rgb(11 104 197)",
+           boxShadow:'3px 0px 5px gray',
+           borderRadius:"10px",
+           color:'white',
+           margin:'0px'
+       }
+    }, ,
+    root: {
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            width: '500ch',
+        },
+    }, icon: {
+        borderRadius: '50%',
+        width: 16,
+        height: 16,
+        boxShadow: 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
+        backgroundColor: '#f5f8fa',
+        backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
+        '$root.Mui-focusVisible &': {
+            outline: '2px auto rgba(19,124,189,.6)',
+            outlineOffset: 2,
+        },
+        'input:hover ~ &': {
+            backgroundColor: '#ebf1f5',
+        },
+        'input:disabled ~ &': {
+            boxShadow: 'none',
+            background: 'rgba(206,217,224,.5)',
+        },
+    },
+    checkedIcon: {
+        backgroundColor: '#137cbd',
+        backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
+        '&:before': {
+            display: 'block',
+            width: 16,
+            height: 16,
+            backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
+            content: '""',
+        },
+        'input:hover ~ &': {
+            backgroundColor: '#106ba3',
+        },
+    },
+}));
+
+
+
+
+export default function Login() {
+    let history = useHistory();
+
+    var token = localStorage.getItem("user_token");
+    var decoded = jwt_decode(token)
+
+    const [product, setProduct] = useState("");
+    const [purchase, setPurchase] = useState("");
+    const [modal, setModal] = useState("");
+    const [door, setDoor] = useState("");
+    const [distance, setDistance] = useState("");
+    const [use, setUse] = useState("");
+    const [dimension, setDimension] = useState("");
+    const [orientation, setOrientation] = useState("");
+    const [wheather, setWheather] = useState("");
+    const [date, setDate] = useState('');
+    const [extraData, setExtraData] = useState("");
+    const [name, setName] = useState("");
+    const [city, setCity] = useState("");
+    const [sector, setSector] = useState("");
+
+
+
+    function SendService(e) {
+        e.preventDefault();
+
+        const token = localStorage.getItem('user_token');
+        var decoded = jwt_decode(token);
+
+
+        const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+            product_type: product,
+            purchase: purchase,
+            installation: door,
+            model: modal,
+            led_distance: distance,
+            screen_use: use,
+            screen_dimension: dimension,
+            name: name,
+            city: city,
+            sector: sector, comments: extraData,
+            screen_orientation: orientation,
+            weather: wheather,
+            delivery_days: date,
+            client_id: decoded.sub
+        })
+            .then((response) => {
+                if (response) {
+                    console.log(response)
+                    history.push('/myservice')
+                }
+            }, (error) => {
+                console.log(error);
+                alert('Please fill all feild!')
+            });
+    }
+
+
+
+    // Message pusher
+    // const [mxg, setMxg] = useState('');
+    // var toke = localStorage.getItem('token').toString()
+    // var pusher = new Pusher('f7c71cbabef9234b8101', {
+    //     cluster: 'ap1'
+    // });
+
+    // var channel = pusher.subscribe(toke);
+
+
+    // const [open, setOpen] = React.useState(false);
+
+    // useEffect(() => {
+    //     channel.bind('my-event', function (data) {
+    //         setMxg('New Message : ' + " " + JSON.stringify(data.message).replace(/"([^"]+(?="))"/g, '$1'))
+    //         if (JSON.stringify(data.message)) {
+    //             setOpen(true);
+    //         }
+    //     })
+    // }, [])
+
+    // const handleClose = (event, reason) => {
+    //     if (reason === 'clickaway') {
+    //         return;
+    //     }
+    //     setOpen(false);
+    // };
+
+    const classes = useStyles();
+
+    function StyledRadio(props) {
+        const classes = useStyles();
+
+        return (
+            <Radio
+                className={classes.root}
+                disableRipple
+                color="default"
+                checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
+                icon={<span className={classes.icon} />}
+                {...props}
+            />
+        );
+    }
+
+
+    //Sidebaaaaar/..........................
+    // const { window } = props;
+    // const classes = useStyles();
+    const theme = useTheme();
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
+
+    const url = window.location.href
+
+
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+
+
+
+
+    // popver Profile
+
+    const [anchorEl2, setAnchorEl2] = React.useState(null);
+
+    const handleClick2 = (event) => {
+        setAnchorEl2(event.currentTarget);
+    };
+
+    const handleClose2 = () => {
+        setAnchorEl2(null);
+    };
+
+    const open2 = Boolean(anchorEl2);
+    const id2 = open2 ? 'simple-popover' : undefined;
+
+
+
+    const Data = [
+        {
+            name: ' Dashboard',
+            icon: <DashboardIcon />,
+            to: 'dashboard'
+        },
+        {
+            name: 'Services',
+            icon: <InsertEmoticonIcon />,
+            to: 'addservice'
+        },
+        {
+            name: 'Offers',
+            icon: <LocalOfferIcon />,
+            to: 'customeroffer'
+        },
+        {
+            name: 'Projects',
+            icon: <PlaylistAddCheckIcon />,
+            to: 'project'
+        },
+        {
+            name: 'Service Provider',
+            icon: <AssistantIcon />,
+            to: 'suppliers'
+        },
+        {
+            name: 'Discussion Forum',
+            icon: <ContactMailIcon />,
+            to: 'clientdiscussionforum'
+        },
+        {
+            name: 'Help',
+            icon: <LiveHelpIcon />,
+            to: 'help'
+        },
+        {
+            name: 'Complain',
+            icon: <CallEndIcon />,
+            to: 'complain'
+        },
+
+
+    ]
+
+    const drawer = (
+        <div>
+            <Link className="navbar-brand " to="/dashboard">
+                <span className="logo-text text-dark p-0 m-0 text-center">
+                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                </span>
+            </Link>
+            <div className={classes.toolbar} />
+           
+            <List>
+                {Data.map((text, index) => (
+                    <Link to={text.to} className={classes.link}>
+                          <ListItem button key={text} className={text.name == "Admin"? classes.item : ''}>
+                            <ListItemIcon>{text.icon}</ListItemIcon>
+                            <ListItemText primary={text.name} />
+                        </ListItem>
+                    </Link>
+                ))}
+            </List>
+        </div>
+    );
+
+    // const container = window !== undefined ? () => window().document.body : undefined;
+
+
+    return (
+        <>
+
+
+            <div className="d-sm-flex">
+                {/* <CssBaseline /> */}
+                <AppBar position="fixed" className={classes.appBar}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            className={classes.menuButton}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <ul className="ml-auto d-flex my-auto">
+                            <li >
+                                <Link to="/chat" className="profile-pic " data-toggle="tooltip" data-placement="top" title="Chat" aria-describedby={id} variant="contained" color="primary" >
+                                    <span className="text-white font-medium "><i className="fas fa-inbox mr-2 p-3"></i></span>
+                                </Link>
+                            </li>
+                            <li>
+                                <a className="profile-pic" aria-describedby={id} variant="contained" data-toggle="tooltip" data-placement="top" title="Notifications" color="primary" onClick={handleClick}>
+                                    <span className="text-white font-medium Ring"><i className="fas fa-bell mr-2 pt-3"></i></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="profile-pic" aria-describedby={id} variant="contained" color="primary" data-toggle="tooltip" data-placement="top" title="Settings" onClick={handleClick2}>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src="https://image.flaticon.com/icons/png/512/147/147144.png" style={{ width: "40px" }} /></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </Toolbar>
+                </AppBar>
+                <nav className={classes.drawer} aria-label="mailbox folders">
+                    {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                    <Hidden smUp implementation="css">
+                        <Drawer
+                            // container={container}
+                            variant="temporary"
+                            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+                            open={mobileOpen}
+                            onClose={handleDrawerToggle}
+                            classes={{
+                                paper: classes.drawerPaper,
+                            }}
+                            ModalProps={{
+                                keepMounted: true, // Better open performance on mobile.
+                            }}
+                        >
+                            {drawer}
+                        </Drawer>
+                    </Hidden>
+                    <Hidden xsDown implementation="css">
+                        <Drawer
+                            classes={{
+                                paper: classes.drawerPaper,
+                            }}
+                            variant="permanent"
+                            open
+                        >
+                            {drawer}
+                        </Drawer>
+                    </Hidden>
+                </nav>
+
+                 <main className={classes.content}>
+                    <div className={classes.toolbar} />
+                    <Pusherr />
+
+
+
+                   <div className="page-wrapper bg-light">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div className="col-md-12 pr-5">
+                                    <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
+                                </div>
+                                <div class="col-lg-11 col-xlg-11 col-md-11 mx-auto">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                                <div className="row">
+                                                    <div class="col-md-6 text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setProduct(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label=" Product"
+                                                            placeholder="What Product are you looking for?"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                    <div class="col-md-6 py-sm-2   px-2 w-100 p-0 ">
+                                                        <FormControl component="fieldset">
+                                                            <FormLabel component="legend">Purchase/Rent</FormLabel>
+                                                            <RadioGroup defaultValue="female" className="d-inline" aria-label="gender" name="customized-radios">
+                                                                <FormControlLabel value="purchase" onChange={(e) => setPurchase(e.target.value)} control={<StyledRadio />} label="Purchase" />
+                                                                <FormControlLabel value="rent" onChange={(e) => setPurchase(e.target.value)} control={<StyledRadio />} label="Rent" />
+                                                            </RadioGroup>
+                                                        </FormControl>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setModal(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Modal"
+                                                            placeholder="Do you know the modal you are looking for?"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                    <div className="col-md-6 py-sm-2   px-2 w-100 p-0 ">
+                                                        <FormControl component="fieldset">
+                                                            <FormLabel component="legend">Indoor/Outdoor</FormLabel>
+                                                            <RadioGroup defaultValue="female" className="d-inline" aria-label="gender" name="customized-radios">
+                                                                <FormControlLabel value="indoor" onChange={(e) => setDoor(e.target.value)} control={<StyledRadio />} label="Indoor" />
+                                                                <FormControlLabel value="outdoor" onChange={(e) => setDoor(e.target.value)} control={<StyledRadio />} label="Outdoor" />
+                                                            </RadioGroup>
+                                                        </FormControl>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setDistance(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Vision Distance"
+                                                            placeholder="Minimum and Maximum vision distance?"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setUse(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Use"
+                                                            placeholder="Use of Screen?"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                </div>
+                                                <div className="row mt-3">
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setDimension(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Screen Dimension"
+                                                            placeholder="Screen Dimension for LED?"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                    <div className="col-md-6 py-sm-2  px-2 w-100 p-0">
+                                                        <FormControl component="fieldset">
+                                                            <FormLabel component="legend" >Screen Orientation</FormLabel>
+                                                            <RadioGroup defaultValue="female" className="d-inline" aria-label="gender" name="customized-radios">
+                                                                <FormControlLabel value="north" onChange={(e) => setOrientation(e.target.value)} control={<StyledRadio />} label="North" />
+                                                                <FormControlLabel value="south" onChange={(e) => setOrientation(e.target.value)} control={<StyledRadio />} label="South" />
+                                                                <FormControlLabel value="east" onChange={(e) => setOrientation(e.target.value)} control={<StyledRadio />} label="East" />
+                                                                <FormControlLabel value="west" onChange={(e) => setOrientation(e.target.value)} control={<StyledRadio />} label="West" />
+                                                            </RadioGroup>
+                                                        </FormControl>
+                                                    </div>
+                                                </div>
+                                                <div className="row mt-3">
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setWheather(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Extreme Wheather"
+                                                            placeholder="The screen is exposed to adverse wheather inclemencies?"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setDate(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Delivery Days"
+                                                            placeholder="The Delivery Days"
+                                                            multiline
+                                                            fullWidth
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }} />
+                                                    </div>
+                                                </div>
+                                                <div className="row mt-3">
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextareaAutosize aria-label="minimum height"
+                                                            placeholder="Do you want Installation or just Shipping & How many years of guarante ?"
+                                                            fullWidth
+                                                            onChange={(e) => setExtraData(e.target.value)}
+                                                            rowsMin={3}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div className="col-md-6 py-sm-2  text-center px-2 w-100 p-0">
+                                                        <TextField
+                                                            onChange={(e) => setName(e.target.value)}
+                                                            id="standard-textarea"
+                                                            label="Name"
+                                                            className="mx-1"
+                                                            />
+                                                        <TextField
+                                                            onChange={(e) => setCity(e.target.value)}
+                                                            className="mx-1"
+                                                            id="standard-textarea"
+                                                            label="City of Insatllation"
+                                                            />
+                                                        <TextField
+                                                            onChange={(e) => setSector(e.target.value)}
+                                                            className="float-left mx-lg-2"
+                                                            id="standard-textarea"
+                                                            label="Sector"
+                                                        />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-4 mt-3">
+                                                    <div class="col-sm-12 text-center">
+                                                        <button class="btn px-3 text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={SendService}>Add Service</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+
+            <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+            >
+                <Typography className={classes.typography}>
+                    <a className="profile-pic" >
+                        <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
+                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                    </a>
+                </Typography>
+                <Typography className={classes.typography}>
+                    <a className="profile-pic" >
+                        <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
+                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                    </a>
+                </Typography>
+                <Typography className={classes.typography}>
+                    <a className="profile-pic" >
+                        <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
+                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                    </a>
+                </Typography>
+                <Typography className={classes.typography}>
+                    <a className="profile-pic" >
+                        <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
+                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                    </a>
+                </Typography>
+            </Popover>
+
+
+
+            {/* //profile popover */}
+
+            <Popover
+                id={id2}
+                open={open2}
+                anchorEl={anchorEl2}
+                onClose={handleClose2}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+            >
+                <Typography className={classes.typography}>
+                    <Link className="profile-pic" to="/updateprofile" style={{ textDecoration: 'none' }}>
+                        <i className="fa fa-user mx-3"></i>
+                        <span className="text-black font-medium mr-3">Profile</span>
+                    </Link>
+                </Typography>
+                 <Typography className={classes.typography}>
+                    <a className="profile-pic" onClick={() => { history.push('/') }}>
+                        <i className="fa fa-home mx-3"></i>
+                        <span className="text-black font-medium mr-3">Go home</span>
+                    </a>
+                </Typography>
+                <Typography className={classes.typography}>
+                    <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
+                        <i className="fa fa-sign-out mx-3"></i>
+                        <span className="text-black font-medium mr-3">Logout</span>
+                    </a>
+                </Typography>
+
+            </Popover>
+
+
+            {url === 'http://woofic.nastechltd.co/chat' ?
+                ' '
+                :
+                <div className="row">
+                    <div className="col-md-12 ">
+                        <Link to="/chat">
+                            <img src={message} style={{ width: '50px', position: 'fixed', float: 'right', bottom: '28px', right: '30px', zIndex: '100', backgroundColor: 'rgba(7, 72, 138, 0.71)', borderRadius: '50px' }} />
+                        </Link>
+                    </div>
+                </div>
+            }
+
+
+
+            {/* <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message={mxg}
+                action={
+                    <React.Fragment>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                            <CloseIcon fontSize="small" />
+                        </IconButton>
+                    </React.Fragment>
+                }
+            /> */}
+        </>
+    );
+}
+

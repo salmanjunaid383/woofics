@@ -1,0 +1,132 @@
+/* .woofic_lastnews_conatainer{
+    width:80%;
+    padding: 0;
+} */
+
+.woofic_lastnews_header{
+    /* height:380px; */
+    width:90%;
+    margin:auto;
+    /* margin-top: 250px; */
+    /* box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%); */
+}
+.woofic_lastnews_content{
+    /* width:250px;
+    height:240px; */
+    /* margin-top: 20px !important; */
+    /* box-shadow: 4px 5px 5px 5px rgb(0 0 0 / 10%); */
+    /* padding: 20px; */
+    /* background-color: hotpink; */
+}
+.woofic_lastnews_heading{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+.woofic_lastnews_header_box{
+    margin: auto;
+    display:flex;
+    justify-content: space-between;
+}
+.woofic_lastnews_content_heading{
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(252, 7, 252);
+}
+.woofic_lastnews_content_sub-heading{
+    color: grey;
+    margin-bottom:10px;
+    font-size: 20px;
+}
+.woofic_second_heading{
+    color: rgb(30, 253, 86);
+}
+.woofic_third_heading{
+    color:rgb(62, 62, 250)
+}
+.woofic_lastnews_below_header{
+    margin:auto;
+    margin-top: 60px;
+}
+.woofic_lastnews_heading{
+    margin-top: 80px;
+    font-weight: bold;
+    font-family: 'Poppins',Arial,Helvetica,sans-serif;
+    font-size: 25px;
+}
+.woofic_lastnews_sub-heading{
+    font-size: 15px;
+    color: rgb(153, 152, 152);
+    font-weight: 500;
+}
+.woofic_lastnews_hline{
+    width: 120px;
+    height:3px;
+    background-color: rgb(224, 7, 116);
+    margin: 10px 0 20px 43%;
+}
+
+.woofic_last-news_cards{
+    height:365px;
+    width:auto;
+    margin-left: 10px;
+    
+}
+.woofic_lastnews_card{
+    display: flex;
+    justify-content: space-between;
+    height:100%;
+    
+}
+.woofic_last-news_cards img{
+    width:100%;
+    height:70%;
+}
+.woofic_last-news_cards img:hover{
+    filter: brightness(80%);
+    cursor: pointer;
+}
+.woofic_lastnews_card-heading{
+    font-size: 30px;
+    text-align: left;
+    padding:10px;
+    padding-bottom:0px;
+    color: rgb(25, 25, 253);
+    
+}
+.woofic_lastnews_para{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.woofic_lastnews_card-subheading{
+
+margin: 10px;
+margin-top: 0;
+text-align: left;
+font-size: 15px;
+}
+.woofic-last-card{ 
+    padding: 0px!important;
+}
+
+.cmnt_icon{
+    font-size: 10px;    
+}
+@media(max-width:770px){
+    .woofic_last-news_cards{
+        height:auto;
+        width: auto;
+        margin-top: 100px;
+        /* box-sizing: content-box !important; */
+    }
+}
+@media(max-width:568px){
+    .woofic_lastnews_content {
+        padding: 0px;
+      
+}
+    .woofic-last-card{
+        width:90%;
+    }
+}
