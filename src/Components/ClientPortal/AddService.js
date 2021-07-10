@@ -178,6 +178,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Test() {
+    CustomClientAuth();
     let history = useHistory();
 
     var token = localStorage.getItem("user_token");
@@ -222,7 +223,7 @@ export default function Test() {
     const [malik, setmalik] = useState('disabled')
 
     function SendService() {
-        CustomClientAuth();
+        
         // console.log(description,
         //     buy,
         //     indoor,
