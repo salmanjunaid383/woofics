@@ -4,6 +4,8 @@ import './LandingPage/css/LandingPage.css';
 // import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import logo1 from './LandingPage/images/wetransfer-01f136/Woofic-1.png';
 import logo2 from './LandingPage/images/wetransfer-01f136/Woofic-2.png';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
 // import side_image from './LandingPage/images/img-01.png';
 import { Link, useHistory } from 'react-router-dom'
 // import Youtube from './LandingPage/components/youtube.png'
@@ -48,6 +50,13 @@ const useStyles = makeStyles((theme) => ({
         height: '90vh',
         overflowY: 'scroll'
     },
+    typography: {
+        padding: theme.spacing(2),
+        color: 'black'
+    },
+    typographyLink: {
+        color:'black',
+    },
 }));
 
 function Navbar() {
@@ -59,13 +68,26 @@ function Navbar() {
     const [urll, seturll] = useState('')
     const [namee, setnamee] = useState('')
     const [profile_image, setprofile_image] = useState('')
-    const [navbar,setNavBar]=useState(false)
+    const [navbar, setNavBar] = useState(false)
 
-    const[logoImg,setLogo]=useState(false);
-    
+    const [logoImg, setLogo] = useState(false);
+
+    const [anchorElStaz, setAnchorElStaz] = React.useState(null);
+
+    const handleClickStaz = (event) => {
+        setAnchorElStaz(event.currentTarget);
+    };
+
+    const handleCloseStaz = () => {
+        setAnchorElStaz(null);
+    };
+
+    const openStaz = Boolean(anchorElStaz);
+    const idStaz = openStaz ? 'simple-popover' : undefined;
+
     useEffect(() => {
-       
-          
+
+
 
         if (localStorage.getItem('url')) {
             if (localStorage.getItem('url')) {
@@ -280,6 +302,25 @@ function Navbar() {
         setbuttonclr2('')
         setbuttonclr3('btn btn-primary text-white')
     }
+    let profileLink = "";
+    try{
+        const role = jwt_decode(localStorage.getItem('user_token'))
+        if (role.role === 'Client') {
+            profileLink="/dashboard"
+        } else if (role.role === 'ServiceProvider') {
+            profileLink="/admindashboard"
+        }
+        else if (role.role === 'Supplier') {
+            profileLink="/supplierdashboard"
+        } else {
+            profileLink="/superdashboard"
+        }
+    }
+    catch{
+        
+    }
+    
+                    
 
     // const [ad, setad] = useState('')
     // const [ser, setser] = useState('')
@@ -320,110 +361,153 @@ function Navbar() {
         console.warn(response)
     }
     const image = (isFirstImage) ? logo2 : logo1
-    
-    var logoPath=logo2;
-    function changeBackground(){
-        if(window.scrollY >= 50){
-            
+
+    var logoPath = logo2;
+    function changeBackground() {
+        if (window.scrollY >= 50) {
+
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-2.png";
             // // document.getElementById("woofic-logo").style.width="150px";
             // // document.getElementById("woofic-logo").style.height="50px";
-            try{
-                document.getElementById("myTopnav").style.backgroundColor="white";
-            document.getElementById("myTopnav").style.transition="0.3s all";
-            document.getElementById("taglink1").style.color="#767676";
-            document.getElementById("taglink2").style.color="#767676";
-            document.getElementById("taglink3").style.color="#767676";
-            document.getElementById("taglink4").style.color="#767676";
-            document.getElementById("taglink5").style.color="#767676";
-            document.getElementById("taglink6").style.color="#767676";
-            document.getElementById("taglink7").style.color="#767676";
-            setLogo(true);
-            isFirstImage=false;
-            const image = (isFirstImage) ? logo2 : logo1
-             this.logoPath=logo1;
+            try {
+                document.getElementById("myTopnav").style.backgroundColor = "white";
+                document.getElementById("myTopnav").style.transition = "0.3s all";
+                document.getElementById("taglink1").style.color = "#767676";
+                document.getElementById("taglink2").style.color = "#767676";
+                document.getElementById("taglink3").style.color = "#767676";
+                document.getElementById("taglink4").style.color = "#767676";
+                document.getElementById("taglink5").style.color = "#767676";
+                document.getElementById("taglink6").style.color = "#767676";
+                document.getElementById("taglink7").style.color = "#767676";
+                setLogo(true);
+                isFirstImage = false;
+                const image = (isFirstImage) ? logo2 : logo1
+                this.logoPath = logo1;
             }
-            catch{
+            catch {
 
             }
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
         }
-        else{
+        else {
             // // document.getElementById("woofic-logo").style.width="150px";
             // // document.getElementById("woofic-logo").style.height="400px";
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
-            try{
-                document.getElementById("myTopnav").style.backgroundColor="#934CFF";
-            document.getElementById("myTopnav").style.transition="0.3s all";
-            document.getElementById("taglink1").style.color="white";
-            document.getElementById("taglink2").style.color="white";
-            document.getElementById("taglink3").style.color="white";
-            document.getElementById("taglink4").style.color="white";
-            document.getElementById("taglink5").style.color="white";
-            document.getElementById("taglink6").style.color="white";
-            document.getElementById("taglink7").style.color="white";
-            setLogo(false)
-             this.logoPath=logo2;
+            try {
+                document.getElementById("myTopnav").style.backgroundColor = "#934CFF";
+                document.getElementById("myTopnav").style.transition = "0.3s all";
+                document.getElementById("taglink1").style.color = "white";
+                document.getElementById("taglink2").style.color = "white";
+                document.getElementById("taglink3").style.color = "white";
+                document.getElementById("taglink4").style.color = "white";
+                document.getElementById("taglink5").style.color = "white";
+                document.getElementById("taglink6").style.color = "white";
+                document.getElementById("taglink7").style.color = "white";
+                setLogo(false)
+                this.logoPath = logo2;
             }
-            catch{
+            catch {
 
             }
-            
-            
+
+
         }
-        
-        
-        
-     }
-      window.addEventListener('scroll', changeBackground, true);
-     
-     
+
+
+
+    }
+    window.addEventListener('scroll', changeBackground, true);
+
+
 
     return (
         <>
-           
-        
             {/* ${colorChange?"bg-dark" : "bg-light"} */}
-            
 
             <div className="container.fluid ">
                 <div class="woofic_background  my-auto ">
-                    <div 
-                    class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav">
-                        <Link to="/" >
-                        <img src={logoImg ? logo1 : logo2} className="pl-lg-4 mr-5 pt-1 " id="woofic-logo" />
+                    <div class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav">
+                        <Link to="/">
+                            <img
+                                src={logoImg ? logo1 : logo2}
+                                className="pl-lg-4 mr-5 pt-1 "
+                                id="woofic-logo"
+                            />
                         </Link>
-                        <Link className="pt-3" to="/" id="taglink1" >Home</Link>
-                        <Link to="/allblog" className="pt-3 " id="taglink2">Blog</Link>
+                        <Link className="pt-3" to="/" id="taglink1">
+                            Home
+                        </Link>
+                        <Link to="/allblog" className="pt-3 " id="taglink2">
+                            Blog
+                        </Link>
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
-                        <Link to="/quotemain" className="pt-3 " id="taglink3">Offer</Link>
+                        <Link to="/quotemain" className="pt-3 " id="taglink3">
+                            Offer
+                        </Link>
                         {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
-                        <Link to='/pricecalculator' className="pt-3 " id="taglink4">Price Calculator</Link>
-                        <Link to="/getinspire" className="pt-3 " id="taglink5">Get Inspire</Link>
-                        <Link to="/advertise" className="pt-3 " id="taglink6">Advertise</Link>
-                        {localStorage.getItem('user_token') ? <> <Link className="float-right p-0 mr-5 my-1" to={urll}>
-                            <span className="h5 text-white pr-2 pt-1 font-weight-bolder text-uppercase">{namee}</span>
-                            <img src={profile_image ? profile_image : "http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png"} style={{ width: '50px', height: "50px" }} />
-                        </Link></> :
-                            <> <Link className="float-right p-0 m-0" style={{ textAlign: 'justify', marginRight: 20 }}>
-                                <button type="submit" class="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join" onClick={handleOpenpop2} ><b>JOIN NOW</b> </button>
-                            </Link>
+                        <Link to="/pricecalculator" className="pt-3 " id="taglink4">
+                            Price Calculator
+                        </Link>
+                        <Link to="/getinspire" className="pt-3 " id="taglink5">
+                            Get Inspire
+                        </Link>
+                        <Link to="/advertise" className="pt-3 " id="taglink6">
+                            Advertise
+                        </Link>
+                        {localStorage.getItem("user_token") ? (
+                            <>
+                                <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
+                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src="https://image.flaticon.com/icons/png/512/147/147144.png" style={{ width: "40px" }} /></span>
+                                </a>
+                            </>
+                        ) : (
+                            <>
+                                {" "}
+                                <Link
+                                    className="float-right p-0 m-0"
+                                    style={{ textAlign: "justify", marginRight: 20 }}
+                                >
+                                    <button
+                                        type="submit"
+                                        class="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join"
+                                        onClick={handleOpenpop2}
+                                    >
+                                        <b>JOIN NOW</b>{" "}
+                                    </button>
+                                </Link>
                                 <Link className="float-right p-0 m-0">
-                                    <button type="submit" class="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign" onClick={handleOpenpop}><i className="fa fa-sign-out"> </i> <b>SIGN IN</b></button>
-                                </Link></>}
+                                    <button
+                                        type="submit"
+                                        class="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign"
+                                        onClick={handleOpenpop}
+                                    >
+                                        <i className="fa fa-sign-out"> </i> <b>SIGN IN</b>
+                                    </button>
+                                </Link>
+                            </>
+                        )}
                         <a href="javascript:void(0);" class="icon" onClick={myFunction}>
                             <i class="fa fa-bars" id="taglink7"></i>
                         </a>
                     </div>
                     <div className="container-fluid w-100">
-                        <div id="google_translate_element" className="float-right" style={{ position: 'fixed', float: 'right', top: '10%', right: '30px', zIndex: '10', }} ></div>
+                        <div
+                            id="google_translate_element"
+                            className="float-right"
+                            style={{
+                                position: "fixed",
+                                float: "right",
+                                top: "10%",
+                                right: "30px",
+                                zIndex: "10",
+                            }}
+                        ></div>
                     </div>
-
                 </div>
             </div>
 
@@ -441,34 +525,108 @@ function Navbar() {
             >
                 <Fade in={openpop}>
                     <div className={classes.paper}>
-                        <div className="container rounded" style={{ display: "flex", justifyContent: 'center', alignItems: 'center', }}>
+                        <div
+                            className="container rounded"
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                            }}
+                        >
                             <div className="container w-75 bg-white rounded ">
-                                <div className="row text-center" >
+                                <div className="row text-center">
                                     <div className="col-md-12 shadow text-center">
-                                        <span className="float-right " onClick={handleClosepop} style={{ cursor: 'pointer' }}><i className="fa fa-times fa-2x pt-2" ></i></span>
+                                        <span
+                                            className="float-right "
+                                            onClick={handleClosepop}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <i className="fa fa-times fa-2x pt-2"></i>
+                                        </span>
                                         <h5 className="h5 pt-3">Log In</h5>
-                                        <img src="assets/plugins/images/woofic.jpeg " className=" mx-auto text-center my-2" style={{ width: "200px" }} />
-                                        <p className="p" onClick={handleOpenpop2} style={{ cursor: 'pointer' }}>Create an account?</p>
+                                        <img
+                                            src="assets/plugins/images/woofic.jpeg "
+                                            className=" mx-auto text-center my-2"
+                                            style={{ width: "200px" }}
+                                        />
+                                        <p
+                                            className="p"
+                                            onClick={handleOpenpop2}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            Create an account?
+                                        </p>
                                     </div>
                                     <div className="col-md-7 col-lg-7 col-sm-12  pr-lg-5 my-auto ">
                                         <div className=" py-3 px-4">
                                             <div className="row w-100 mx-auto">
                                                 <label className="mb-1">
-                                                    <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Email Address</h6>
-                                                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter a valid email address" /> </div>
-                                            <div className="row w-100 mx-auto"> <label className="mb-1">
-                                                <h6 className="mb-0 text-sm" style={{ fontWeight: 'bolder' }}>Password</h6>
-                                            </label> <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" placeholder="Enter password" /> </div>
-                                            <div className="row mb-4 w-100 ">
-                                                <div className="custom-control custom-checkbox custom-control-inline"><a className=" mb-0 text-sm" onClick={() => history.push('/forgetpwd')}>Forgot Password?</a> </div>
+                                                    <h6
+                                                        className="mb-0 text-sm "
+                                                        style={{ fontWeight: "bolder" }}
+                                                    >
+                                                        Email Address
+                                                    </h6>
+                                                </label>{" "}
+                                                <input
+                                                    className="mb-4"
+                                                    onChange={(e) => setEmail(e.target.value)}
+                                                    type="email"
+                                                    required
+                                                    name="email"
+                                                    placeholder="Enter a valid email address"
+                                                />{" "}
                                             </div>
-                                            <ReCAPTCHA className="w-100 mx-auto text-center pt-1"
+                                            <div className="row w-100 mx-auto">
+                                                {" "}
+                                                <label className="mb-1">
+                                                    <h6
+                                                        className="mb-0 text-sm"
+                                                        style={{ fontWeight: "bolder" }}
+                                                    >
+                                                        Password
+                                                    </h6>
+                                                </label>{" "}
+                                                <input
+                                                    type="password"
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                    name="password"
+                                                    placeholder="Enter password"
+                                                />{" "}
+                                            </div>
+                                            <div className="row mb-4 w-100 ">
+                                                <div className="custom-control custom-checkbox custom-control-inline">
+                                                    <a
+                                                        className=" mb-0 text-sm"
+                                                        onClick={() => history.push("/forgetpwd")}
+                                                    >
+                                                        Forgot Password?
+                                                    </a>{" "}
+                                                </div>
+                                            </div>
+                                            <ReCAPTCHA
+                                                className="w-100 mx-auto text-center pt-1"
                                                 sitekey="6LdoMp4aAAAAABcnCJ8oy37evhsb3fxEyNvJcdhd"
                                                 onChange={onChange}
                                             />
-                                            {captcha == false ? <small className="text-danger">Required*</small> : ''}
+                                            {captcha == false ? (
+                                                <small className="text-danger">Required*</small>
+                                            ) : (
+                                                ""
+                                            )}
                                             <div className="mb-4 mt-2 text-center">
-                                                <button type="submit" className={`btn btn-blue w-100 shadow py-2 ${email == "" || password == "" ? disable : ''}`} style={{ backgroundColor: '#2ECC71', borderRadius: 50 }} onClick={LoginBtn}>{wait}</button>
+                                                <button
+                                                    type="submit"
+                                                    className={`btn btn-blue w-100 shadow py-2 ${email == "" || password == "" ? disable : ""
+                                                        }`}
+                                                    style={{
+                                                        backgroundColor: "#2ECC71",
+                                                        borderRadius: 50,
+                                                    }}
+                                                    onClick={LoginBtn}
+                                                >
+                                                    {wait}
+                                                </button>
                                             </div>
 
                                             {/* <div className="row mb-4 pl-3 pr-auto pt-3"> <small classNam    e="font-weight-bold">Don't have an account? <Link className="text-danger" onClick={handleOpenpop2}>Register</Link></small> </div> */}
@@ -476,7 +634,6 @@ function Navbar() {
                                     </div>
                                     <div className="col-md-5 col-lg-5 col-sm-12 p-0 m-0 d-none d-lg-block">
                                         <div className="row pr-4 pt-4">
-
                                             <div className="text-center my-auto mx-auto text-center">
                                                 <div className="col-md-12 mt-5 mx-auto ">
                                                     <FacebookLogin
@@ -492,31 +649,45 @@ function Navbar() {
                                                         onClick={componentClicked}
                                                         callback={responseFacebook}
                                                         cssClass="btnFacebook"
-                                                        icon={<i className="fa fa-facebook text-primary"></i>}
+                                                        icon={
+                                                            <i className="fa fa-facebook text-primary"></i>
+                                                        }
                                                         textButton="&nbsp;&nbsp;Sign In with Facebook"
                                                     />
                                                 </div>
                                                 <div className="col-md-12 mt-3 text-center">
                                                     <GoogleLogin
                                                         clientId="101523716211-l7m06jsccfe7fa6u3tdinal5fofer8qt.apps.googleusercontent.com"
-                                                        render={renderProps => (
-                                                            <div className="btnFacebook text-center py-2" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                                                                <div className="pt-1"><i className="fa fa-google text-danger"></i><span className="pl-2 ">Sign in with Google</span></div>
+                                                        render={(renderProps) => (
+                                                            <div
+                                                                className="btnFacebook text-center py-2"
+                                                                onClick={renderProps.onClick}
+                                                                disabled={renderProps.disabled}
+                                                            >
+                                                                <div className="pt-1">
+                                                                    <i className="fa fa-google text-danger"></i>
+                                                                    <span className="pl-2 ">
+                                                                        Sign in with Google
+                                                                    </span>
+                                                                </div>
                                                             </div>
                                                         )}
                                                         cssClass="btnFacebook"
                                                         // buttonText="Login"
                                                         onSuccess={responseGoogle}
                                                         onFailure={responseGoogle}
-                                                        cookiePolicy={'single_host_origin'}
+                                                        cookiePolicy={"single_host_origin"}
                                                     />
                                                 </div>
                                             </div>
                                             <div className="col-md-12 mt-5 text-center">
-                                                <p className="px-2 p text-mute">Haciendo click en “Entra con Facebook”, “Entra con Google” aceptas la Politica de privacidad y Condiciones que se presenta </p>
+                                                <p className="px-2 p text-mute">
+                                                    Haciendo click en “Entra con Facebook”, “Entra con
+                                                    Google” aceptas la Politica de privacidad y
+                                                    Condiciones que se presenta{" "}
+                                                </p>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -524,9 +695,6 @@ function Navbar() {
                     </div>
                 </Fade>
             </Modal>
-
-
-
 
             {/* Register Modal............................... */}
 
@@ -544,28 +712,65 @@ function Navbar() {
             >
                 <Fade in={openpop2}>
                     <div className={classes.paper}>
-                        <div className="container rounded" >
+                        <div className="container rounded">
                             <div className="container bg-white rounded ">
                                 <div className="row">
                                     <div className="col-md-12 col-lg-6 col-sm-12 p-0 m-0 d-none d-lg-block mx-auto p-5">
                                         <div className="row d-block text-center ml-3">
-                                            <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
+                                            <img
+                                                src="assets/plugins/images/woofic.jpeg "
+                                                className="img-fluid w-50 mx-auto text-center mb-3"
+                                            />
                                         </div>
-                                        <h3 className=" py-3
-                                         h3 bolder"><b>Get new clients</b></h3>
-                                        <h5 className=" py-3 h5 text-muted">Get to the next level, get to where you've never been before and discover new opportunities!</h5>
+                                        <h3
+                                            className=" py-3
+                                         h3 bolder"
+                                        >
+                                            <b>Get new clients</b>
+                                        </h3>
+                                        <h5 className=" py-3 h5 text-muted">
+                                            Get to the next level, get to where you've never been
+                                            before and discover new opportunities!
+                                        </h5>
                                         <b>We advise you without obligation </b>
-                                        <h5 className=" py-34 h5"><i className="fa fa-phone"> </i> <u><a href="callto:680494729" className="text-dark"> 680 49 47 29</a></u> or <u><a href="/contact" className="text-dark"> we will call you for free</a></u> </h5>
-                                        <img className="img-fluid w-75 mx-auto" src={reg} style={{ display: "flex", justifyContent: 'center', alignSelf: 'center' }} />
+                                        <h5 className=" py-34 h5">
+                                            <i className="fa fa-phone"> </i>{" "}
+                                            <u>
+                                                <a href="callto:680494729" className="text-dark">
+                                                    {" "}
+                                                    680 49 47 29
+                                                </a>
+                                            </u>{" "}
+                                            or{" "}
+                                            <u>
+                                                <a href="/contact" className="text-dark">
+                                                    {" "}
+                                                    we will call you for free
+                                                </a>
+                                            </u>{" "}
+                                        </h5>
+                                        <img
+                                            className="img-fluid w-75 mx-auto"
+                                            src={reg}
+                                            style={{
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                alignSelf: "center",
+                                            }}
+                                        />
                                     </div>
                                     <div className="col-md-12 col-lg-6 col-sm-12 mx-auto">
-                                        <span className="float-right pr-2" onClick={handleClosepop2} style={{ cursor: 'pointer' }}><i className="fa fa-times fa-2x pt-2" ></i></span>
+                                        <span
+                                            className="float-right pr-2"
+                                            onClick={handleClosepop2}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <i className="fa fa-times fa-2x pt-2"></i>
+                                        </span>
                                         <div className=" py-3 px-4">
-
-                                            <div style={{ display: display1 }} >
+                                            <div style={{ display: display1 }}>
                                                 <Client />
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -574,12 +779,32 @@ function Navbar() {
                     </div>
                 </Fade>
             </Modal>
-           
 
-            <div style={{ position: 'fixed', float: 'right', bottom: '0px', right: '0px', zIndex: '100', backgroundColor: 'rgba(7, 72, 138, 0.71)', borderRadius: '50px' }} >
-                <WhatsAppWidget phoneNumber='34680494729' />
+            <div
+                style={{
+                    position: "fixed",
+                    float: "right",
+                    bottom: "0px",
+                    right: "0px",
+                    zIndex: "100",
+                    backgroundColor: "rgba(7, 72, 138, 0.71)",
+                    borderRadius: "50px",
+                }}
+            >
+                <WhatsAppWidget phoneNumber="34680494729" />
             </div>
-            <div style={{ position: 'fixed', bottom: '0px', right: '0px', left: '0px', zIndex: '100', backgroundColor: 'rgba(7, 72, 138, 0.71)', borderRadius: '50px' }} className="text-center">
+            <div
+                style={{
+                    position: "fixed",
+                    bottom: "0px",
+                    right: "0px",
+                    left: "0px",
+                    zIndex: "100",
+                    backgroundColor: "rgba(7, 72, 138, 0.71)",
+                    borderRadius: "50px",
+                }}
+                className="text-center"
+            >
                 <CookieBanner
                     message="This website uses cookies in order to offer you the most relevant information. Please accept cookies for optimal performance."
                     onAccept={() => { }}
@@ -587,10 +812,40 @@ function Navbar() {
                 />
             </div>
 
+            <Popover
+                id={idStaz}
+                open={openStaz}
+                anchorEl={anchorElStaz}
+                onClose={handleCloseStaz}
+                disableScrollLock={true}
+                // container={anchorElStaz.current}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+            >
+                <Typography className={classes.typography}>
+                        <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
+                            <i className="fa fa-user mx-3 text-blackStaz"></i>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Profile</span>
+                        </Link>
+                    </Typography>
+                    <Typography className={classes.typography}>
+                        <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
+                            <i className="fa fa-sign-out mx-3"></i>
+                            <span className="text-black font-medium mr-3">Logout</span>
+                        </a>
+                    </Typography>
+            </Popover>
+
             <Snackbar
                 anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                 }}
                 open={open}
                 autoHideDuration={6000}
@@ -598,7 +853,12 @@ function Navbar() {
                 message={"Password must be 8 digits long !"}
                 action={
                     <React.Fragment>
-                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                        <IconButton
+                            size="small"
+                            aria-label="close"
+                            color="inherit"
+                            onClick={handleClose}
+                        >
                             <CloseIcon fontSize="small" />
                         </IconButton>
                     </React.Fragment>
@@ -606,8 +866,8 @@ function Navbar() {
             />
             <Snackbar
                 anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                 }}
                 open={open2}
                 autoHideDuration={6000}
@@ -615,7 +875,12 @@ function Navbar() {
                 message={"Please fill all feilds!"}
                 action={
                     <React.Fragment>
-                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose2}>
+                        <IconButton
+                            size="small"
+                            aria-label="close"
+                            color="inherit"
+                            onClick={handleClose2}
+                        >
                             <CloseIcon fontSize="small" />
                         </IconButton>
                     </React.Fragment>
@@ -623,8 +888,8 @@ function Navbar() {
             />
             <Snackbar
                 anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                 }}
                 open={open3}
                 autoHideDuration={6000}
@@ -632,7 +897,12 @@ function Navbar() {
                 message={"Wrong email password!"}
                 action={
                     <React.Fragment>
-                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose3}>
+                        <IconButton
+                            size="small"
+                            aria-label="close"
+                            color="inherit"
+                            onClick={handleClose3}
+                        >
                             <CloseIcon fontSize="small" />
                         </IconButton>
                     </React.Fragment>

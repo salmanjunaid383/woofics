@@ -9,6 +9,17 @@ body{
     background-size: cover;
     /* color: #fff; */
 }
+.text-blackStaz{
+  color:black;
+}
+.text-blackstaz:hover {
+  color:black !important;
+  text-decoration: none;
+}
+.text-blackStaz:link {
+  color:black !important;
+
+}
 .woofic_navbar{
     width:80%;
     height:70px;
