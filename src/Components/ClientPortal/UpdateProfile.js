@@ -227,6 +227,8 @@ export default function UpdateProfile() {
 
 
     const responseGoogle = (respons) => {
+        console.log(respons.profileObj.email);
+        console.log(decoded.sub);
         const res = axios.post(`https://api.woofics.com/api/social_media`, {
             email: respons.profileObj.email,
             app: 'Google',
@@ -239,6 +241,7 @@ export default function UpdateProfile() {
                 getData()
             }
             ).catch((Error) => {
+                      
                 console.log(Error)
             })
     }
@@ -370,7 +373,7 @@ export default function UpdateProfile() {
         <div>
             <Link className="navbar-brand " to="/dashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
             </Link>
             <div className={classes.toolbar} />

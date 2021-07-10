@@ -292,7 +292,7 @@ export default function LedgerView() {
         <div>
             <Link className="navbar-brand " to="/superdashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
             </Link>
             <div className={classes.toolbar} />

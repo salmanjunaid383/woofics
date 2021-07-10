@@ -87,23 +87,25 @@ function Navbar() {
 
     useEffect(() => {
 
+            if (localStorage.getItem('user_token'))
+                {
+                    
+                    var decoded = jwt_decode(localStorage.getItem("user_token"))
+                    const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+                        .then((response) => {
+                            setnamee(response.data.first_name)
+                            setprofile_image(response.data.profile_image)
+                            console.log("profile image is "+ response.data.profile_image);
+                        })
+    
+                }
 
+        // if (localStorage.getItem('url')) {
+        //     if (localStorage.getItem('url')) {
 
-        if (localStorage.getItem('url')) {
-            if (localStorage.getItem('url')) {
-
-            } else {
-                seturll(localStorage.getItem('url'))
-                var decoded = jwt_decode(localStorage.getItem("user_token"))
-                const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-                    .then((responsee) => {
-                        setnamee(responsee.data.first_name)
-                        setprofile_image(responsee.data.profile_image)
-                    })
-
-            }
-        } else {
-        }
+        //     } 
+        // } else {
+        // }
     }, [])
 
 
@@ -401,7 +403,7 @@ function Navbar() {
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
             try {
                 document.getElementById("myTopnav").style.backgroundColor = "#934CFF";
-                document.getElementById("myTopnav").style.backgroundColor = "none";
+                document.getElementById("myTopnav").style.boxShadow = "none";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
                 document.getElementById("taglink1").style.color = "white";
                 document.getElementById("taglink2").style.color = "white";
@@ -464,7 +466,8 @@ function Navbar() {
                         {localStorage.getItem("user_token") ? (
                             <>
                                 <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
-                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src="https://image.flaticon.com/icons/png/512/147/147144.png" style={{ width: "40px", marginTop:"-8px"}} /></span>
+                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src={setprofile_image ? profile_image : "https://image.flaticon.com/icons/png/512/147/147144.png"} style={{ width: "40px", marginTop:"-8px"}} /></span>
+                                        {/* https://image.flaticon.com/icons/png/512/147/147144.png */}
                                 </a>
                             </>
                         ) : (

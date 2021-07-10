@@ -33,6 +33,7 @@ export default function Forgetpwd() {
             })
                 .then((response) => {
                     setOpen(true)
+                    console.log("email success full "+ response)
                     // localStorage.setItem('user_token', response.data);
                 }, (error) => {
                     setOpen3(true)

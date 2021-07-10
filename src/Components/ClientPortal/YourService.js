@@ -115,6 +115,12 @@ export default function YourService() {
 
   var token = localStorage.getItem("user_token");
   var decoded = jwt_decode(token);
+  var indexNo = 0;
+
+  function returnIndex(){
+    indexNo = indexNo +1;
+    return indexNo;
+  }
 
   function Feedback() {
     const res = axios
@@ -481,7 +487,7 @@ export default function YourService() {
                                 return (
                                   <>
                                     <tr>
-                                      <td>{val.id}</td>
+                                      <td>{returnIndex()}</td>
                                       <td className="txt-oflo">{val.name}</td>
                                       <td className="txt-oflo">{val.description}</td>
                                       <td className="txt-oflo">{val.company}</td>

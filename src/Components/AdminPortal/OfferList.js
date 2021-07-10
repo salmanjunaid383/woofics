@@ -126,6 +126,12 @@ export default function OfferList() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
+    var returnIndexValue = 0;
+    function returnIndex(){
+        returnIndexValue = returnIndexValue + 1;
+        return returnIndexValue;
+    }
+
     useEffect(() => {
 
         function Feedback() {
@@ -230,7 +236,7 @@ export default function OfferList() {
         <div>
             <Link className="navbar-brand " to="/admindashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
             </Link>
             <div className={classes.toolbar} />
@@ -414,7 +420,7 @@ export default function OfferList() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{val.id}</td>
+                                                                        <td>{returnIndex()}</td>
                                                                         <td className="txt-oflo">{(val.description).slice(0,10)+'...'}</td>
                                                                         <td className="text-oflo">{val.price}</td>
                                                                         <td className="txt-oflo">{val.time}</td>

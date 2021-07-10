@@ -188,6 +188,11 @@ export default function ProviderLedger() {
 
     const open2 = Boolean(anchorEl2);
     const id2 = open2 ? 'simple-popover' : undefined;
+    var returnIndexValue = 0;
+    function returnIndex(){
+        returnIndexValue = returnIndexValue + 1;
+        return returnIndexValue;
+    }
 
 
 
@@ -229,7 +234,7 @@ export default function ProviderLedger() {
         <div>
             <Link className="navbar-brand " to="/admindashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
             </Link>
             <div className={classes.toolbar} />
@@ -406,13 +411,13 @@ export default function ProviderLedger() {
                                                     </thead>
                                                     <tbody>
                                                         {
-
+                                                            
                                                             article == '' ? <h3 className="mt-5"> Nothing to show!</h3> :
                                                                 article.map((val, id) => {
                                                                     return (
                                                                         <>
                                                                             <tr>
-                                                                                <td className="txt-oflo text-center">{val.id}</td>
+                                                                                <td className="txt-oflo text-center">{returnIndex()}</td>
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0,10)}</td>
                                                                                 {/* <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e) => history.push(`/ledgerview/${val.id}`)}>View more</button></td> */}

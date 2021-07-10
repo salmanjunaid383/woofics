@@ -148,6 +148,11 @@ export default function Help() {
                 });
         }
     }
+    var returnIndexValue = 0;
+    function returnIndex(){
+        returnIndexValue = returnIndexValue + 1;
+        return returnIndexValue;
+    }
 
     //Sidebaaaaar/..........................
     // const { window } = props;
@@ -287,7 +292,7 @@ export default function Help() {
         <div>
             <Link className="navbar-brand " to="/superdashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
             </Link>
             <div className={classes.toolbar} />
@@ -434,7 +439,7 @@ export default function Help() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{val.id}</td>
+                                                                        <td>{returnIndex()}</td>
                                                                         <td className="txt-oflo">{(val.question).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.description).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>

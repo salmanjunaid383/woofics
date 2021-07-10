@@ -45,7 +45,7 @@ export default function Nav() {
                         <div className="navbar-header" data-logobg="skin6">
                             <Link className="navbar-brand " to="/admindashboard">
                                 <span className="logo-text text-dark p-0 m-0 text-center">
-                                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px' }} />
+                                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                                 </span>
                             </Link>
                             <a className="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
