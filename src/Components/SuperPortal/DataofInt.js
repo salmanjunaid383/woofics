@@ -456,6 +456,9 @@ export default function DataofInt() {
                     <Pusherr />
 
                     <div className="page-wrapper bg-light">
+                    <div class="d-md-flex mb-3">
+                            <h3 class="box-title mb-0 h1 text-center mx-auto" style={{fontSize:"16px", lineHeight:"30px", fontWeight:"500"}}>DATA OF INTEREST</h3>
+                        </div>
                         <div class="container-fluid">
                             <div class="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">

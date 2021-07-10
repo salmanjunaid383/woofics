@@ -474,7 +474,9 @@ export default function DiscussionForum() {
                     </div>
                     <div className="page-wrapper bg-light">
                         <div class="container mt-100">
-
+                                   <div class="d-md-flex mb-3">
+                    <h3 class="box-title h1 mb-0 text-center mx-auto">DISCUSSION FORUM</h3>
+                </div>
                             <div class="row">
                                 <div class="col-md-10 mx-auto">
                                     {

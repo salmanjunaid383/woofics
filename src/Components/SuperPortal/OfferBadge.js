@@ -414,7 +414,7 @@ export default function OfferBadge() {
 
                     <div className="page-wrapper bg-light">
                         <div class="d-md-flex mb-3">
-                            <h3 class="box-title mb-0 h1 text-center mx-auto">OFFS</h3>
+                            <h3 class="box-title mb-0 h1 text-center mx-auto" style={{fontSize:"16px", lineHeight:"30px", fontWeight:"500"}}>OFFERS</h3>
                         </div>
                         <div class="container pb-lg-4">
                             <div className="row m-lg-5">
