@@ -66,7 +66,7 @@ function Footer() {
                     </div>
 
                     <div class="col-md-4 col-sm-12 pr-md-5 marginclass footer-margin" >
-                        <div className="row  text-center wooficslogo" >
+                        <div className="row  text-center wooficslogo footer-right-side" >
                             <div className="col-md-6 col-sm-12 col-xs-6">
                                 <a href="https://stripe.com/" target="_blank" >  <img src={footer_logo4} className="footerLogo" /></a>
 

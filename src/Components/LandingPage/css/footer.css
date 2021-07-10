@@ -73,4 +73,10 @@
         margin-top: -15px;
     }
 }
+@media(width:1024px){
+    .footer-right-side{
+        width:95%;
+        margin-right:5px;
+    }
+}
 

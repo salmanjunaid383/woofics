@@ -413,6 +413,9 @@ export default function OfferBadge() {
                     <Pusherr />
 
                     <div className="page-wrapper bg-light">
+                        <div class="d-md-flex mb-3">
+                            <h3 class="box-title mb-0 h1 text-center mx-auto">OFFERS</h3>
+                        </div>
                         <div class="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
