@@ -370,7 +370,8 @@ function Navbar() {
             // // document.getElementById("woofic-logo").style.width="150px";
             // // document.getElementById("woofic-logo").style.height="50px";
             try {
-                document.getElementById("myTopnav").style.backgroundColor = "white";
+                document.getElementById("myTopnav").style.backgroundColor = "white"
+                document.getElementById("myTopnav").style.boxShadow="0 0 20px 0 rgba(0, 0, 0, 0.352)"
                 document.getElementById("myTopnav").style.transition = "0.3s all";
                 document.getElementById("taglink1").style.color = "#767676";
                 document.getElementById("taglink2").style.color = "#767676";
@@ -400,6 +401,7 @@ function Navbar() {
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
             try {
                 document.getElementById("myTopnav").style.backgroundColor = "#934CFF";
+                document.getElementById("myTopnav").style.backgroundColor = "none";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
                 document.getElementById("taglink1").style.color = "white";
                 document.getElementById("taglink2").style.color = "white";
@@ -431,7 +433,7 @@ function Navbar() {
 
             <div className="container.fluid ">
                 <div class="woofic_background  my-auto ">
-                    <div class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav">
+                    <div class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav" style={{height:"60px"}}>
                         <Link to="/">
                             <img
                                 src={logoImg ? logo1 : logo2}
@@ -462,7 +464,7 @@ function Navbar() {
                         {localStorage.getItem("user_token") ? (
                             <>
                                 <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
-                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src="https://image.flaticon.com/icons/png/512/147/147144.png" style={{ width: "40px" }} /></span>
+                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src="https://image.flaticon.com/icons/png/512/147/147144.png" style={{ width: "40px", marginTop:"-8px"}} /></span>
                                 </a>
                             </>
                         ) : (
