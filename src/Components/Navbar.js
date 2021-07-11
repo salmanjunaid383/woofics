@@ -84,7 +84,7 @@ function Navbar() {
 
     const openStaz = Boolean(anchorElStaz);
     const idStaz = openStaz ? 'simple-popover' : undefined;
-
+    let profileImageStaz = "https://image.flaticon.com/icons/png/512/147/147144.png"
     useEffect(() => {
 
             if (localStorage.getItem('user_token'))
@@ -95,7 +95,8 @@ function Navbar() {
                         .then((response) => {
                             setnamee(response.data.first_name)
                             setprofile_image(response.data.profile_image)
-                            console.log("profile image is "+ response.data.profile_image);
+                            console.log("profile image is "+ profile_image);
+                            console.log("setprofileimage profile image is "+ setprofile_image);
                         })
     
                 }
@@ -466,7 +467,7 @@ function Navbar() {
                         {localStorage.getItem("user_token") ? (
                             <>
                                 <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
-                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src={setprofile_image ? profile_image : "https://image.flaticon.com/icons/png/512/147/147144.png"} style={{ width: "40px", marginTop:"-8px"}} /></span>
+                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src={profile_image !== null ? profile_image : profileImageStaz} style={{ width: "40px", marginTop:"-8px"}} /></span>
                                         {/* https://image.flaticon.com/icons/png/512/147/147144.png */}
                                 </a>
                             </>
