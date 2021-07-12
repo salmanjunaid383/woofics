@@ -568,7 +568,7 @@ export default function Chat() {
                             </li>
                             <li>
                                 <a className="profile-pic" aria-describedby={id} data-toggle="tooltip" data-placement="top" title="Settings" variant="contained" color="primary" onClick={handleClick2}>
-                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata.profile_image} style={{ borderRadius: 50, width: 50, height: 50 }} /></span>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" } style={{ borderRadius: 50, width: 50, height: 50 }} /></span>
                                 </a>
                             </li>
                         </ul>
@@ -616,7 +616,7 @@ export default function Chat() {
                             <div id="sidepanel">
                                 <div id="profile">
                                     <div class="wrap">
-                                        <img id="profile-img" src={Imagedata.profile_image} class="online" alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
+                                        <img id="profile-img" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" } class="online" alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
                                         <p>WOofic</p>
                                         <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
                                     </div>
@@ -710,7 +710,7 @@ export default function Chat() {
                                     <div id="sidepanel">
                                         <div id="profile">
                                             <div class="wrap">
-                                                <img id="profile-img" src={Imagedata.profile_image} class="online" alt="" />
+                                                <img id="profile-img" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" } class="online" alt="" />
                                                 <p>Woofic</p>
                                             </div>
                                         </div>
