@@ -129,14 +129,15 @@ import ComplainResponses from './Components/ClientPortal/ComplainResponses';
 import Responses from './Components/ClientPortal/Responses';
 import CheckResponse from './Components/ClientPortal/CheckResponse';
 import ProviderLedger from './Components/AdminPortal/ProviderLedger';
+import cookie from "react-cookies";
 
 
 function App() {
 
 
-  // const listenScrollEvent = e => {
-  // //  console.log(window.scrollY);
-  // }
+  
+
+  // cookie.setRawCookie("googtrans", "es", {path: "/"});
 
 
   useEffect(() => {
