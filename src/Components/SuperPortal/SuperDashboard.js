@@ -425,7 +425,7 @@ export default function SuperDashboard() {
                                 </div>
                             </div>
                             <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://lh3.googleusercontent.com/proxy/lMewUJMs7UniYozKggKg1lGA3a987boSBdQq2QNZOMehpsSfrjESYW7xRxMPa8ssxttiA0JN2plXuRBoO0jw_XlXxNKMgMxvBA')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                     <div class="card-content">
                                         <div class="card-body">
                                             <div class="media d-flex">
