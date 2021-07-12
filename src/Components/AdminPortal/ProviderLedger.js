@@ -346,7 +346,7 @@ export default function ProviderLedger() {
                             </li>
                             <li>
                                 <a className="profile-pic" aria-describedby={id} variant="contained" color="primary" data-toggle="tooltip" data-placement="top" title="Settings" onClick={handleClick2}>
-                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata} style={{ width: "40px", borderRadius: "50px" }} /></span>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata !== null ? Imagedata :  "https://image.flaticon.com/icons/png/512/147/147144.png" } style={{ width: "40px", borderRadius: "50px" }} /></span>
                                 </a>
                             </li>
                         </ul>

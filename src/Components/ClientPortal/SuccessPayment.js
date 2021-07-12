@@ -7,7 +7,7 @@ import CustomClientAuth from "../CustomClientAuth";
 
 
 export default function SuccessPayment(props) {
-   CustomClientAuth();
+   
 const {pid} = useParams()  
 console.log(pid)
 

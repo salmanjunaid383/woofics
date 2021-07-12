@@ -127,9 +127,10 @@ export default function ViewServiceMore() {
         const { data: response } = axios.get(`https://api.woofics.com/api/form/${serid}`)
             .then((response) => {
                 if (response) {
-                    setBlog(response.data)
+                    setBlog(response.data.form)
                     // setservicet(response.data.package)
                     console.log(response.data)
+                    console.log(response.data.form);
                 }
             }, (Error) => {
                 console.log(Error);

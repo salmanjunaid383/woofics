@@ -33,6 +33,7 @@ export default function SuperDashboard() {
     const [TotalComplain, setTotalComplain] = useState();
     const [TotalUser, setTotalUser] = useState();
     const [TotalPerProjects, setTotalPerProjects] = useState();
+    const [staz,setStaz]=useState(false);
 
 
     function TotalClient() {
@@ -45,6 +46,7 @@ export default function SuperDashboard() {
                 console.log(Error);
             });
     }
+   
 
     //...total Provider
 
@@ -169,11 +171,22 @@ export default function SuperDashboard() {
             .then((response) => {
                 console.log(response.data)
                 setTotalPerProjects(response.data)
+                for(var i=0; i< 12 ; i++)
+                {
+                    if(response.data[i].value !== 0)
+                    {
+                        setStaz(true);
+                    }
+                    
+                }
             }, (Error) => {
 
                 console.log(Error);
             });
+
+            
     }
+    
 
     const [user, setuser] = useState([])
     function TotoalUser() {
@@ -188,7 +201,7 @@ export default function SuperDashboard() {
     }
 
 
-
+    
 
 
     useEffect(() => {
@@ -267,27 +280,27 @@ export default function SuperDashboard() {
     const data02 = [
         {
             name: "Jan",
-            value: 0
+            value: 12
           },
           {
             name: "Feb",
-            value: 0
+            value: 23
           },
           {
             name: "Mar",
-            value: 0
+            value: 60
           },
           {
             name: "Apr",
-            value: 0
+            value: 40
           },
           {
             name: "May",
-            value: 0
+            value: 11
           },
           {
             name: "Jun",
-            value: 0
+            value: 3
           },
           {
             name: "Jul",
@@ -295,26 +308,28 @@ export default function SuperDashboard() {
           },
           {
             name: "Aug",
-            value: 0
+            value: 46
           },
           {
             name: "Sep",
-            value: 0
+            value: 22
           },
           {
             name: "Oct",
-            value: 0
+            value: 20
           },
           {
             name: "Nov",
-            value: 0
+            value: 3
           },
           {
             name: "Dec",
-            value: 0
+            value: 30
           }
     ];
-    // console.log("Data variable value "+TotalPerProjects)
+   
+         
+     
 
     return (
         <>
@@ -518,8 +533,8 @@ export default function SuperDashboard() {
                             </div>
                             <div className="col-md-6" style={{ overflowX: "scroll" }}>
                                 <PieChart width={500} height={300}>
-                                    <Pie data={TotalPerProjects ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
-                                    <Pie data={TotalPerProjects ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
+                                    <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
+                                    <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
                                 </PieChart>
                             </div>
 
