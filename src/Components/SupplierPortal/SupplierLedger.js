@@ -44,7 +44,8 @@ import SwapVertIcon from '@material-ui/icons/SwapVert';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
-
+import TextField from '@material-ui/core/TextField';
+import { loadStripe } from "@stripe/stripe-js";
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
@@ -115,6 +116,18 @@ export default function SupplierLedger() {
     let history = useHistory();
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState([]);
+    const [check, setcheck] = useState('false')
+
+    // "name": "supplier",
+	// "description": "description",
+	// "currency": "usd",
+	// "amount": 50,
+	// "user_id": 4
+    const[name,setName]= useState('')
+    const[description,setDescription]=useState('')
+    const[currency,setCurrency]=useState('')
+    const[amount,setAmount]=useState(0)
+    const[userId,setUserId]=useState(0)
 
     useEffect(() => {
         if (!localStorage.getItem('user_token')) {
@@ -130,6 +143,7 @@ export default function SupplierLedger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${decoded.sub}`)
             .then((response) => {
+                setUserId(decoded.sub);
                 setArticle(response.data)
                 console.log(response.data)
             }, (Error) => {
@@ -148,6 +162,26 @@ export default function SupplierLedger() {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    const stripePromise = loadStripe("pk_test_51IIWuIApAAjWKIoNrjwEcTyuCykDQVAqXWIBpwsNt1trDbRXD9n6uKPRvZlDKdQLNyIRiKaSAwpPgbUAjhEkqOJ400HEEcjDh1");
+    async function stripePayment(e){
+        console.log(name,currency,description,amount,userId);
+        e.preventDefault();
+        const stripe = await stripePromise;
+        const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
+            name: name,
+            description: description,
+            currency: currency,
+            amount: amount,
+            user_id: userId
+        })
+            .then((response) => {
+                stripe.redirectToCheckout({
+                    sessionId: response.data.session_id,
+                });
+            }, (Error) => {
+                console.log(Error);
+            });
+    }
 
 
     const url = window.location.href
@@ -394,6 +428,7 @@ export default function SupplierLedger() {
                     <Pusherr />
 
                     <div className="page-wrapper bg-light">
+                    
                         <div class="container">
                             <div id="blog" class="row ">
                                 <div class="container-fluid pb-lg-4">
@@ -402,6 +437,68 @@ export default function SupplierLedger() {
                                             <div className="d-md-flex mb-3">
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Ledger</h1>
                                             </div>
+                                            <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                                        <div className="row mt-4 mx-auto">
+                                                            <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check === 'true' ? 'block' : 'none' }}>
+                                                            <div class="card">
+                                                            <div class="card-body">
+                                                            <div className="row mt-4">
+                                                                
+                                                                <TextField
+                                                                    id="standard-textarea"
+                                                                    onChange={(e) => setName(e.target.value)}
+                                                                    label="Charges"
+                                                                    placeholder="Name"
+                                                                    multiline
+                                                                    fullWidth
+                                                                    InputLabelProps={{
+                                                                        shrink: true,
+                                                                    }} />
+                                                                
+                                                                    <TextField
+                                                                    id="standard-textarea"
+                                                                    onChange={(e) => setDescription(e.target.value)}
+                                                                    label="Description"
+                                                                    placeholder="Description"
+                                                                    multiline
+                                                                    fullWidth
+                                                                    InputLabelProps={{
+                                                                        shrink: true,
+                                                                    }} />
+                                                            </div>
+                                                                    <TextField
+                                                                    id="standard-textarea"
+                                                                    onChange={(e) => setCurrency(e.target.value)}
+                                                                    label="Currency"
+                                                                    placeholder="Charges"
+                                                                    multiline
+                                                                    fullWidth
+                                                                    InputLabelProps={{
+                                                                        shrink: true,
+                                                                    }} />
+                                                                    <TextField
+                                                                    id="standard-textarea"
+                                                                    onChange={(e) => setAmount(e.target.value)}
+                                                                    label="Amount"
+                                                                    placeholder="Amount"
+                                                                    multiline
+                                                                    fullWidth
+                                                                    InputLabelProps={{
+                                                                        shrink: true,
+                                                                    }} />
+                                                                    <div class="col-sm-12 text-center">
+                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Pay Invoice</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 mb-4 mt-4 w-100 text-center mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
+                                                                <div class="col-sm-12 text-center">
+                                                                    {/* <button class={`btn text-white greenbtn text-white `}  onClick={() => supplierRental()}>Add</button> */}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            </div>
                                             <div className="table-responsive">
                                                 <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
@@ -409,6 +506,7 @@ export default function SupplierLedger() {
                                                             <th className="border-top-0 text-white text-center">#</th>
                                                             <th className="border-top-0 text-white text-center">BALANCE</th>
                                                             <th className="border-top-0 text-white text-center">CREATED AT</th>
+                                                            <th className="border-top-0 text-white text-center"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -422,7 +520,7 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.id}</td>
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
-                                                                                {/* <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e) => history.push(`/ledgerview/${val.id}`)}>View more</button></td> */}
+                                                                                <td className="text-success text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"} value={val.id} onClick={() => setcheck('true')}>View more</button></td>
                                                                             </tr>
                                                                         </>
                                                                     )

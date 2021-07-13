@@ -15,7 +15,7 @@ import CustomClientAuth from "../CustomClientAuth";
 
 
 export default function Help() {
-    CustomClientAuth();
+   
     let history = useHistory();
 
     //Adding Feilds
@@ -64,13 +64,12 @@ export default function Help() {
     async function Stripe(e) {
         e.preventDefault();
         const stripe = await stripePromise;
-        const { data: response } = axios.post(`https://api.woofics.com/api/stripe`, {
-            amount: total,
-            currency: 'usd',
-            quantity: 1,
-            name: 'items',
-            description: 'all items',
-            project_id: '3'
+        const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
+            name: "supplier",
+            description: "description",
+            currency: "usd",
+            amount: 50,
+            user_id: 4
         })
             .then((response) => {
                 stripe.redirectToCheckout({
@@ -80,6 +79,7 @@ export default function Help() {
                 console.log(Error);
             });
     }
+    
 
     // const [mxg, setMxg] = useState('');
     // var toke = localStorage.getItem('token').toString()
