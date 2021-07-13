@@ -113,10 +113,10 @@ function Navbar() {
 
     function myFunction() {
         var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
+        if (x.className === "topnav pb-1 pt-1 fixed-top text-white") {
+            x.className = "topnav pb-1 pt-1 fixed-top text-white responsive";
         } else {
-            x.className = "topnav";
+            x.className = "topnav pb-1 pt-1 fixed-top text-white";
         }
     }
 
@@ -383,6 +383,19 @@ function Navbar() {
                 document.getElementById("taglink5").style.color = "#767676";
                 document.getElementById("taglink6").style.color = "#767676";
                 document.getElementById("taglink7").style.color = "#767676";
+
+                document.getElementById("taglink1").style.backgroundColor = "white";
+                document.getElementById("taglink2").style.backgroundColor = "white";
+                document.getElementById("taglink3").style.backgroundColor = "white";
+                document.getElementById("taglink4").style.backgroundColor = "white";
+                document.getElementById("taglink5").style.backgroundColor = "white";
+                document.getElementById("taglink6").style.backgroundColor = "white";
+                document.getElementById("taglink7").style.backgroundColor = "white";
+
+
+
+                // document.getElementById("taglink8").style.backgroundColor = "#ffffff"
+                // document.getElementById("taglink8").style.color = "#ffffff"
                 setLogo(true);
                 isFirstImage = false;
                 const image = (isFirstImage) ? logo2 : logo1
@@ -413,6 +426,14 @@ function Navbar() {
                 document.getElementById("taglink5").style.color = "white";
                 document.getElementById("taglink6").style.color = "white";
                 document.getElementById("taglink7").style.color = "white";
+                
+                document.getElementById("taglink1").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink2").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink3").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink4").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink5").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink6").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink7").style.backgroundColor = "#934CFF";
                 setLogo(false)
                 this.logoPath = logo2;
             }
@@ -436,7 +457,7 @@ function Navbar() {
 
             <div className="container.fluid ">
                 <div class="woofic_background  my-auto ">
-                    <div class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav" style={{height:"60px"}}>
+                    <div class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
                             <img
                                 src={logoImg ? logo1 : logo2}
@@ -497,7 +518,7 @@ function Navbar() {
                                 </Link>
                             </>
                         )}
-                        <a href="javascript:void(0);" class="icon" onClick={myFunction}>
+                        <a href="javascript:void(0);" class="icon" onClick={myFunction} >
                             <i class="fa fa-bars" id="taglink7"></i>
                         </a>
                     </div>

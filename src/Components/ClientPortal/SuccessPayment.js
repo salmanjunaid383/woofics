@@ -12,8 +12,9 @@ const {pid} = useParams()
 console.log(pid)
 
 useEffect(() => {
-    const { data: response } = axios.post(`https://api.woofics.com/api/success/${pid}`)
+    const { data: response } = axios.post(`https://api.woofics.com/api/payment_success/${pid}`)
     .then((response) => {
+       console.log(response)
     }, (Error) => {
         console.log(Error);
     });

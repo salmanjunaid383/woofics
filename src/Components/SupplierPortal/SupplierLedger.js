@@ -144,7 +144,7 @@ export default function SupplierLedger() {
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${decoded.sub}`)
             .then((response) => {
                 setUserId(decoded.sub);
-                setArticle(response.data)
+                setArticle(response.data[0])
                 console.log(response.data)
             }, (Error) => {
                 console.log(Error);
@@ -439,12 +439,12 @@ export default function SupplierLedger() {
                                             </div>
                                             <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
-                                                            <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check === 'true' ? 'block' : 'none' }}>
+                                                            <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
                                                             <div class="card">
                                                             <div class="card-body">
                                                             <div className="row mt-4">
-                                                                
-                                                                <TextField
+                                                            <div className="col-md-6 text-center px-2 w-100 p-0">
+                                                            <TextField
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setName(e.target.value)}
                                                                     label="Charges"
@@ -454,8 +454,9 @@ export default function SupplierLedger() {
                                                                     InputLabelProps={{
                                                                         shrink: true,
                                                                     }} />
-                                                                
-                                                                    <TextField
+                                                            </div>
+                                                            <div className="col-md-6 text-center px-2 w-100 p-0">
+                                                            <TextField
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setDescription(e.target.value)}
                                                                     label="Description"
@@ -465,18 +466,26 @@ export default function SupplierLedger() {
                                                                     InputLabelProps={{
                                                                         shrink: true,
                                                                     }} />
+                                                            </div>  
+                                                                
+                                                                
+                                                                    
                                                             </div>
-                                                                    <TextField
+                                                            <div className="row mt-5">
+                                                            <div className="col-md-6 text-center px-2 w-100 p-0">
+                                                            <TextField
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setCurrency(e.target.value)}
                                                                     label="Currency"
-                                                                    placeholder="Charges"
+                                                                    placeholder="Currency"
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{
                                                                         shrink: true,
                                                                     }} />
-                                                                    <TextField
+                                                            </div>
+                                                            <div className="col-md-6 text-center px-2 w-100 p-0">
+                                                            <TextField
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setAmount(e.target.value)}
                                                                     label="Amount"
@@ -486,9 +495,15 @@ export default function SupplierLedger() {
                                                                     InputLabelProps={{
                                                                         shrink: true,
                                                                     }} />
+                                                            </div>
+                                                                    
+                                                                    
+                                                            </div>
+                                                            <div class="mb-4 mt-4 text-center mx-auto">
                                                                     <div class="col-sm-12 text-center">
                                                                     <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Pay Invoice</button>
                                                                     </div>
+                                                            </div>
                                                                 </div>
                                                                 </div>
                                                             </div>
@@ -521,10 +536,14 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
                                                                                 <td className="text-success text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"} value={val.id} onClick={() => setcheck('true')}>View more</button></td>
+
                                                                             </tr>
                                                                         </>
                                                                     )
-                                                                })}
+                                                                })
+                                                                
+                                                                    
+                                                        }
                                                     </tbody>
                                                 </table>
                                             </div>

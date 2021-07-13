@@ -193,34 +193,42 @@ body{
 
 #taglink1 {
   color:white;
+  background-color:#934CFF;
 }
 #taglink2 {
   color:white;
+  background-color:#934CFF;
+
 }
 #taglink3 {
   color:white;
+  background-color:#934CFF;
 }
 #taglink4 {
   color:white;
+  background-color:#934CFF;
 }
 #taglink5 {
   color:white;
+  background-color:#934CFF;
 }
 #taglink6 {
   color:white;
+  background-color:#934CFF;
 }
 #taglink7{
   color:white;
+  background-color:#934CFF;
 }
 
 
 .topnav {
-    overflow: hidden;
+    
     background-color:#934CFF;
   }
 
   .topnav-aactive {
-    overflow: hidden;
+    color:#934CFF;
     background-color:#ffffff;
   }
   
@@ -274,7 +282,7 @@ body{
   }
   
   @media screen and (max-width: 1170px) {
-    .topnav.responsive {position: relative;}
+    .topnav.responsive {}
     .topnav.responsive .icon {
       position: absolute;
       right: 0;

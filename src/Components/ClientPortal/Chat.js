@@ -166,6 +166,7 @@ export default function Chat() {
             const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
                 .then((response) => {
                     if (response) {
+                        
                         setUser(response.data)
                     }
                 }, (Error) => {
@@ -227,7 +228,7 @@ export default function Chat() {
                                         setMsg(response.data)
                                         setRight(response.data.from_user)
                                         SendData()
-                                        divRef.current.scrollIntoView({ behavior: 'smooth' });
+                                        // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
                                     }
                                 }, (Error) => {
@@ -259,7 +260,7 @@ export default function Chat() {
                     SendData()
                     setUid(valu)
                     setName(name)
-                    divRef.current.scrollIntoView({ behavior: 'smooth' });
+                    // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
                     // setOpen(true);
                 }
@@ -290,7 +291,7 @@ export default function Chat() {
                                 setMsg(response.data)
                                 setRight(response.data.from_user)
                                 SendData()
-                                divRef.current.scrollIntoView({ behavior: 'smooth' });
+                                // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
                             }
                         }, (Error) => {
@@ -630,19 +631,20 @@ export default function Chat() {
                                     <ul>
                                         {user.map((val, id) => {
                                             return (
-                                                <>
-                                                    {val.id === decoded.sub ?
-                                                        null
-                                                        :
+                                                <> 
+                                                
+                                                    {val.main_user === decoded.sub ?
                                                         <li class="contact active" onClick={() => { Users(val.associate_user, val.main_name); setUsername(val.associate_name); setImageProfile(val.avatar) }}>
-                                                            <div class="wrap text-left">
-                                                                <img src={val.avatar} style={{ borderRadius: 50, width: 50, height: 50 }} alt="" />
-                                                                <div class="meta">
-                                                                    <p className="name chatCapitalize mb-0 pb-0">{val.associate_name}</p>
-                                                                    {val.total_seen != 0 ? <p class="preview pl-md-5 text-danger text-left" style={{ width: '950px' }}>{val.total_seen} Unread messages...</p> : <p class="preview pl-md-5 text-left " style={{ width: '950px' }}> {val.last_message ? (val.last_message).slice(0, 20) + '...' : ''}</p>}
-                                                                </div>
+                                                        <div class="wrap text-left">
+                                                            <img src={val.avatar} style={{ borderRadius: 50, width: 50, height: 50 }} alt="" />
+                                                            <div class="meta">
+                                                                <p className="name chatCapitalize mb-0 pb-0">{val.associate_name}</p>
+                                                                {val.total_seen != 0 ? <p class="preview pl-md-5 text-danger text-left" style={{ width: '950px' }}>{val.total_seen} Unread messages...</p> : <p class="preview pl-md-5 text-left " style={{ width: '950px' }}> {val.last_message ? (val.last_message).slice(0, 20) + '...' : ''}</p>}
                                                             </div>
+                                                        </div>
                                                         </li>
+                                                        :
+                                                        null
                                                     }
                                                 </>
                                             )
