@@ -56,7 +56,7 @@ function VisualScheme() {
             <br />
             <div class="container">
                 {/* <div class="woofic_visiual_top woofic_visual_middle"> */}
-                <div class="row">
+                <div class="row second-section">
                     <div className="col-md-4 col-sm-12">
                         <div class="woofic_visiual_right">
                             <img className="img-fluid" src={v3} />
@@ -121,7 +121,7 @@ individually, you carry out the procedures online safely.
             <br />
             <div class="container">
                 {/* <div class="woofic_visiual_top woofic_visual_middle"> */}
-                <div class="row">
+                <div class="row second-section">
                     <div className="col-md-4 col-sm-12">
                         <div class="woofic_visiual_right">
                             <img className="img-fluid" src={v4} />

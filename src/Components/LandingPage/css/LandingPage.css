@@ -273,6 +273,12 @@ body{
   }
 
 
+
+
+  @media(min-width:770px){
+
+  }
+
   @media screen and (max-width: 1170px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
@@ -293,7 +299,26 @@ body{
       display: block;
       text-align: left;
   }
+  #taglink1,#taglink2,#taglink3,#taglink4,#taglink5,#taglink6{
+    padding-left:40px;
+    overflow: hidden;
+  }
+  .pro-pic{
+    position:absolute;
+    top:20px;
+    right:7px;
+  }
+  .fa-bars{
+    margin-top: 2px;
+  }
 }
+@media(max-width:768px){
+  #taglink1,#taglink2,#taglink3,#taglink4,#taglink5,#taglink6{
+    padding-left:15px;
+}
+
+}
+
 
 @media(max-width:3840px) and (min-width:2000px){
   .topnav a{
