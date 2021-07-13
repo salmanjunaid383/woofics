@@ -133,6 +133,7 @@ margin-bottom: 5px;
 
 }
 
+
 @media(max-width:770px){
     .woofic_visiual_representation{
         margin-top: 300px;
@@ -142,7 +143,11 @@ margin-bottom: 5px;
     .woofic_visiual_representation{
         margin-top:40px;
     }
-}
+    .second-section{
+        display:flex;
+        flex-direction: column-reverse;
+    }
+    }
 
 @media(max-width:3840px ) and (min-width:2000px){
     .main-parent{

@@ -115,8 +115,12 @@ function Navbar() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav pb-1 pt-1 fixed-top text-white") {
             x.className = "topnav pb-1 pt-1 fixed-top text-white responsive";
+            document.getElementById("taglink7").style.marginRight="50px"
+            document.getElementById("taglink7").style.marginTop="8px"
         } else {
             x.className = "topnav pb-1 pt-1 fixed-top text-white";
+            document.getElementById("taglink7").style.marginRight="0px"
+            document.getElementById("taglink7").style.marginTop="0px"
         }
     }
 
@@ -376,6 +380,13 @@ function Navbar() {
                 document.getElementById("myTopnav").style.backgroundColor = "white"
                 document.getElementById("myTopnav").style.boxShadow="0 0 20px 0 rgba(0, 0, 0, 0.352)"
                 document.getElementById("myTopnav").style.transition = "0.3s all";
+                document.getElementById("taglink1").style.transition = "0.3s all";
+                document.getElementById("taglink2").style.transition = "0.3s all";
+                document.getElementById("taglink3").style.transition = "0.3s all";
+                document.getElementById("taglink4").style.transition = "0.3s all";
+                document.getElementById("taglink5").style.transition = "0.3s all";
+                document.getElementById("taglink6").style.transition = "0.3s all";
+
                 document.getElementById("taglink1").style.color = "#767676";
                 document.getElementById("taglink2").style.color = "#767676";
                 document.getElementById("taglink3").style.color = "#767676";
@@ -419,6 +430,14 @@ function Navbar() {
                 document.getElementById("myTopnav").style.backgroundColor = "#934CFF";
                 document.getElementById("myTopnav").style.boxShadow = "none";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
+                document.getElementById("myTopnav").style.transition = "0.3s all";
+                document.getElementById("taglink1").style.transition = "0.3s all";
+                document.getElementById("taglink2").style.transition = "0.3s all";
+                document.getElementById("taglink3").style.transition = "0.3s all";
+                document.getElementById("taglink4").style.transition = "0.3s all";
+                document.getElementById("taglink5").style.transition = "0.3s all";
+                document.getElementById("taglink6").style.transition = "0.3s all";
+
                 document.getElementById("taglink1").style.color = "white";
                 document.getElementById("taglink2").style.color = "white";
                 document.getElementById("taglink3").style.color = "white";
@@ -465,10 +484,10 @@ function Navbar() {
                                 id="woofic-logo"
                             />
                         </Link>
-                        <Link className="pt-3" to="/" id="taglink1">
+                        <Link className="pt-3" to="/" id="taglink1" className="for-padding">
                             Home
                         </Link>
-                        <Link to="/allblog" className="pt-3 " id="taglink2">
+                        <Link to="/allblog" className="pt-3 " id="taglink2" className="for-padding">
                             Blog
                         </Link>
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
@@ -488,7 +507,7 @@ function Navbar() {
                         {localStorage.getItem("user_token") ? (
                             <>
                                 <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
-                                        <span className="text-white font-medium "><img className="img-fluid mb-2" src={profile_image !== null ? profile_image : profileImageStaz} style={{ width: "40px", marginTop:"-8px", borderRadius:"50px"}} /></span>
+                                        <span className="text-white font-medium "><img className="img-fluid mb-2 pro-pic" src={profile_image !== null ? profile_image : profileImageStaz} style={{ width: "40px", marginTop:"-8px", borderRadius:"50px"}} /></span>
                                         {/* https://image.flaticon.com/icons/png/512/147/147144.png */}
                                 </a>
                             </>
