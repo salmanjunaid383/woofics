@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom';
+import '../ClientPortal/Help.css';
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
@@ -427,6 +428,9 @@ export default function Help() {
                                                 <div class="col-md-10">
                                                     <hr />
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Admin</strong></p>
+                                                    <Link to="/Responses" className="pt-3  responseLinkStaz"  >
+                                                        Responses
+                                                    </Link>
 
                                                 </div>
 

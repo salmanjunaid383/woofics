@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
+import '../ClientPortal/Help.css'
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
@@ -425,6 +426,11 @@ export default function SupHelp() {
                                                 <div class="col-md-10">
                                                     <hr />
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Zaskia Amanda</strong></p>
+                                                    <Link to="/supresponses" className="pt-3 responseLinkStaz text-black "  >
+                                                    
+                                                        Responses
+                                                        
+                                                    </Link>
 
                                                 </div>
 

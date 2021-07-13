@@ -518,7 +518,7 @@ export default function ProviderChat() {
                             </li>
                             <li>
                                 <a className="profile-pic" aria-describedby={id} variant="contained" color="primary" onClick={handleClick2}>
-                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" } style={{ width: "40px", borderRadius: "50px" }} /></span>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata !== null ? Imagedata :  "https://image.flaticon.com/icons/png/512/147/147144.png" } style={{ width: "40px", borderRadius: "50px" }} /></span>
                                 </a>
                             </li>
                         </ul>

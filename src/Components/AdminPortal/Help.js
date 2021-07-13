@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
+import "../ClientPortal/Help.css";
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
@@ -356,7 +357,7 @@ export default function ProviderHelp() {
                             </li>
                             <li>
                                 <a className="profile-pic" aria-describedby={id} data-toggle="tooltip" data-placement="top" title="Settings" variant="contained" color="primary" onClick={handleClick2}>
-                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" }  style={{ width: "40px",borderRadius:"50px" }}/></span>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata !== null ? Imagedata :  "https://image.flaticon.com/icons/png/512/147/147144.png" }  style={{ width: "40px",borderRadius:"50px" }}/></span>
                                 </a>
                             </li>
                         </ul>
@@ -417,6 +418,11 @@ export default function ProviderHelp() {
                                                 <div class="col-md-10">
                                                     <hr />
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Zaskia Amanda</strong></p>
+                                                    <Link to="/providerresponses" className="pt-3 responseLinkStaz text-black "  >
+                                                    
+                                                        Responses
+                                                        
+                                                    </Link>
 
                                                 </div>
 
