@@ -467,7 +467,7 @@ export default function YourService() {
                         </h1>
                       </div>
                       <div className="table-responsive">
-                        <table className="table no-wrap">
+                        <table className="table no-wrap" >
                           <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                             <tr>
                               <th className="border-top-0 text-white text-center">#</th>

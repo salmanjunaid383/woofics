@@ -131,7 +131,7 @@ export default function ProviderLedger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${decoded.sub}`)
             .then((response) => {
-                setArticle(response.data)
+                setArticle(response.data[0])
                 console.log(response.data)
             }, (Error) => {
                 console.log(Error);

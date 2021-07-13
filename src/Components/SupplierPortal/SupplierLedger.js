@@ -128,6 +128,7 @@ export default function SupplierLedger() {
     const[currency,setCurrency]=useState('')
     const[amount,setAmount]=useState(0)
     const[userId,setUserId]=useState(0)
+    const[totalAmount,setTotalAmount]=useState(0)
 
     useEffect(() => {
         if (!localStorage.getItem('user_token')) {
@@ -145,6 +146,7 @@ export default function SupplierLedger() {
             .then((response) => {
                 setUserId(decoded.sub);
                 setArticle(response.data[0])
+                setTotalAmount(response.data.balance)
                 console.log(response.data)
             }, (Error) => {
                 console.log(Error);
@@ -170,7 +172,7 @@ export default function SupplierLedger() {
         const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
             name: name,
             description: description,
-            currency: currency,
+            currency: 'usd',
             amount: amount,
             user_id: userId
         })
@@ -447,8 +449,9 @@ export default function SupplierLedger() {
                                                             <TextField
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setName(e.target.value)}
-                                                                    label="Charges"
+                                                                    label="Name"
                                                                     placeholder="Name"
+
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{
@@ -478,6 +481,8 @@ export default function SupplierLedger() {
                                                                     onChange={(e) => setCurrency(e.target.value)}
                                                                     label="Currency"
                                                                     placeholder="Currency"
+                                                                    disabled="true"
+                                                                    value = "usd"
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{
@@ -535,14 +540,20 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.id}</td>
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
-                                                                                <td className="text-success text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"} value={val.id} onClick={() => setcheck('true')}>View more</button></td>
-
+                                                                                <td className="text-success text-center"></td>
                                                                             </tr>
                                                                         </>
                                                                     )
-                                                                })
+                                                                })             
+                                                        }
+                                                        {
+                                                            article !== '' ?
+                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
+                                                                <td className="txt-oflo text-center"></td>
+                                                                <td className="txt-oflo text-center"></td>
+                                                                <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generate Payment</button></td>
                                                                 
-                                                                    
+                                                            </tr> : <h3></h3> 
                                                         }
                                                     </tbody>
                                                 </table>
