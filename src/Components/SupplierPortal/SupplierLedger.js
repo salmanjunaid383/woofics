@@ -403,7 +403,7 @@ export default function SupplierLedger() {
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Ledger</h1>
                                             </div>
                                             <div className="table-responsive">
-                                                <table className="table no-wrap">
+                                                <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">#</th>

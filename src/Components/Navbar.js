@@ -558,7 +558,7 @@ function Navbar() {
                                         <p
                                             className="p"
                                             onClick={handleOpenpop2}
-                                            style={{ cursor: "pointer" }}
+                                            style={{ cursor: "pointer", backgroundColor:"blue", borderRadius:"5px", width:"175px", padding:"5px", margin:"auto",marginBottom:"10px", color:"#fff", fontWeight:"900" }}
                                         >
                                             Create an account?
                                         </p>

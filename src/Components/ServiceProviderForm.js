@@ -217,8 +217,8 @@ export default function ServiceProvider() {
                   <div className="col-md-6 col-lg-6 col-sm-12 mx-auto">
                     <div className=" py-3 px-lg-4 px-2 ">
                       <div className="border rounded">
-                        <div className="w-100 bg-success rounded no-gutters">
-                          <h5 className="h5 text-white text-center m-0 py-3">Join for free!</h5>
+                        <div className="w-100 rounded no-gutters">
+                          <h5 className="h2 text-green text-center m-0 py-3">Join for free!</h5>
                         </div>
                         <div className="px-md-4 px-2 py-3">
 

@@ -113,60 +113,60 @@ export default function Client() {
       <div className=" py-auto pt-4 ">
         <div className="align-item-center">
           <div className="row border rounded">
-            <div className="w-100 bg-success no-gutters">
-              <h5 className="h5 text-white text-center m-0 py-3">Join for free!</h5>
+            <div className="w-100 no-gutters">
+              <h5 className="h2 text-green text-center m-0 py-3">Join for free!</h5>
             </div>
             <div className="px-4 py-3">
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
-                  <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>First Name</h6>
-                </label> <input className="mb-4" onChange={(e) => setFirstname(e.target.value)} type="email" required name="email" placeholder="Enter a valid address" />
+                  <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>First Name</h6> 
+                </label> <input className="mb-4" onChange={(e) => setFirstname(e.target.value)} type="email" required name="email" placeholder="First Name" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Last Name</h6>
-                </label> <input className="mb-4" onChange={(e) => setLastname(e.target.value)} type="email" required name="email" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setLastname(e.target.value)} type="email" required name="email" placeholder="Last Name" />
               </div>
 
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Email Address</h6>
-                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Email Address" />
               </div>
 
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Sector</h6>
-                </label> <input className="mb-4" onChange={(e) => setSector(e.target.value)} type="email" required name="email" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setSector(e.target.value)} type="email" required name="email" placeholder="Sector" />
               </div>
 
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Location</h6>
-                </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Location" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Contact Number</h6>
-                </label> <input className="mb-4" onChange={(e) => setContact(e.target.value)} type="email" required name="email" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setContact(e.target.value)} type="email" required name="email" placeholder="Contact Number" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Password</h6>
-                </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Password" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Confirm Password</h6>
-                </label> <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Enter a valid address" />
+                </label> <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Confirm Password" />
               </div>
             </div>
             <div className="row  mb-3 pl-4 w-100">

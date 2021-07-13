@@ -359,7 +359,7 @@ export default function ProviderAllNotification() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0">All Notifications</h3>
+                                            <h3 className="box-title h1 mb-0 text-center mx-auto">All Notifications</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">

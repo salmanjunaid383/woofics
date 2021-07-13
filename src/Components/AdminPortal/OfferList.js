@@ -403,13 +403,13 @@ export default function OfferList() {
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Sent Offers</h1>
                                             </div>
                                             <div className="table-responsive">
-                                                <table className="table no-wrap">
+                                                <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white">#</th>
-                                                            <th className="border-top-0 text-white">Description</th>
-                                                            <th className="border-top-0 text-white">Price</th>
-                                                            <th className="border-top-0 text-white">Days</th>
+                                                            <th className="border-top-0 text-center text-white">#</th>
+                                                            <th className="border-top-0 text-center text-white">Description</th>
+                                                            <th className="border-top-0 text-center text-white">Price</th>
+                                                            <th className="border-top-0 text-center text-white">Days</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -420,10 +420,10 @@ export default function OfferList() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{returnIndex()}</td>
-                                                                        <td className="txt-oflo">{(val.description).slice(0,10)+'...'}</td>
-                                                                        <td className="text-oflo">{val.price}</td>
-                                                                        <td className="txt-oflo">{val.time}</td>
+                                                                        <td className="text-center" >{returnIndex()}</td>
+                                                                        <td className="txt-oflo text-center">{(val.description).slice(0,10)+'...'}</td>
+                                                                        <td className="text-oflo text-center">{val.price}</td>
+                                                                        <td className="txt-oflo text-center">{val.time}</td>
                                                                     </tr>
                                                                 </>
                                                             )

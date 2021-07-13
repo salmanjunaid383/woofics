@@ -417,7 +417,7 @@ export default function Todo() {
                     <div class="container mt-1 p-2 rounded mx-auto">
                         <div class="row p-lg-4">
                             <div class="col-lg-12 col-md-12 col-sm-12 " >
-                                <div class="p-1 h4 text-primary text-center mx-auto display-inline-block" >
+                                <div class="p-1 h4 text-primary text-center mx-auto display-inline-block for-size" >
                                     <i class="fa fa-check bg-primary text-white rounded"> </i>
                                     <bold> My Todo-s</bold>
                                 </div>
