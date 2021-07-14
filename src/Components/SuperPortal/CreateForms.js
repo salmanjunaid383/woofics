@@ -623,7 +623,7 @@ export default function CreateForms() {
                                                 <div className="row mt-5">
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
-                                                            placeholder="Start"
+                                                            placeholder="Starting Date"
                                                             id="standard-number"
                                                             fullWidth
                                                             label="Start"
@@ -636,7 +636,7 @@ export default function CreateForms() {
                                                     </div>
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
-                                                            placeholder="End"
+                                                            placeholder="Ending Date"
                                                             onChange={(e) => setend(e.target.value)}
                                                             id="standard-number"
                                                             fullWidth

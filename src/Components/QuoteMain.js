@@ -1016,7 +1016,7 @@ export default function QuoteMain() {
                             <h4 className="text-left w-100 text-dark">Email?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setemail(e.target.value)} className="w-50" id="outlined-basic" label="Email?" variant="outlined" /> </div>
                             <h4 className="text-left w-100 text-dark">Attach documents and images?</h4>
-                            <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" label="Attach documents and images?" type="file" variant="outlined" /> </div>
+                            <div className="w-100 my-lg-2"><input onChange={(e) => setdoc(e.target.value)} className="w-50" type="file" style={{outline:"none",border:"none",margin:"auto"}} /> </div>
                             <h4 className="text-left w-100 text-dark">Comments?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcomments(e.target.value)} className="w-50" id="outlined-basic" label="Comments?" variant="outlined" /> </div>
                         </div>

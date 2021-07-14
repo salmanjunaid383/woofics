@@ -435,8 +435,8 @@ export default function Todo() {
                         <div class="container rounded mx-auto">
                             <div class="row m-1 p-4">
                                 <div class="col" >
-                                    <div class="p-1 h1 text-primary text-center mx-auto display-inline-block" >
-                                        <i class="fa fa-check bg-primary text-white rounded "> </i>
+                                    <div class="p-1 h1 text-primary text-center mx-auto display-inline-block" style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                                        <i class="fa fa-check bg-primary text-white rounded " > </i>
                                         <bold> My Todo-s</bold>
                                     </div>
                                 </div>
@@ -482,7 +482,7 @@ export default function Todo() {
                                                         <div class="col-auto m-1 p-0 ">
                                                             <div class="row d-flex align-items-center justify-content-end">
                                                                 <h5 class="m-0 p-0 px-2">
-                                                                    <i class="fa fa-trash-o text-danger btn m-0 px-3" data-toggle="tooltip" data-placement="bottom" title="Delete todo" onClick={() => deleteTodo(val.id)} style={{ cursor: 'pointer', fontSize: 30 }}></i>
+                                                                    <i class="fa fa-trash-o text-danger btn m-0 px-3" data-toggle="tooltip" data-placement="bottom" title="Delete todo" onClick={() => deleteTodo(val.id)} style={{ cursor: 'pointer', fontSize: 25 }}></i>
                                                                 </h5>
                                                             </div>
                                                         </div>

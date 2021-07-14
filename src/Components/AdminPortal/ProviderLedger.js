@@ -527,7 +527,7 @@ export default function ProviderLedger() {
                                                             <th className="border-top-0 text-white text-center">#</th>
                                                             <th className="border-top-0 text-white text-center">BALANCE</th>
                                                             <th className="border-top-0 text-white text-center">CREATED AT</th>
-                                                            <th></th>
+                                                            {/* <th></th> */}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -541,7 +541,7 @@ export default function ProviderLedger() {
                                                                                 <td className="txt-oflo text-center">{returnIndex()}</td>
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0,10)}</td>
-                                                                                <td></td>
+                                                                                {/* <td></td> */}
                                                                                 {/* <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e) => history.push(`/ledgerview/${val.id}`)}>View more</button></td> */}
                                                                             </tr>
                                                                         </>
@@ -551,8 +551,8 @@ export default function ProviderLedger() {
                                                             article !== '' ?
                                                             <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td className="txt-oflo text-center"></td>
                                                                 <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generate Invoice</button></td>
+                                                                {/* <td className="txt-oflo text-center"></td> */}
                                                                 
                                                             </tr> : <h3></h3> 
                                                         }

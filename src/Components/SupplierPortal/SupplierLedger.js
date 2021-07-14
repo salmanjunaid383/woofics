@@ -526,7 +526,7 @@ export default function SupplierLedger() {
                                                             <th className="border-top-0 text-white text-center">#</th>
                                                             <th className="border-top-0 text-white text-center">BALANCE</th>
                                                             <th className="border-top-0 text-white text-center">CREATED AT</th>
-                                                            <th className="border-top-0 text-white text-center"></th>
+                                                            {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -540,7 +540,7 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.id}</td>
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
-                                                                                <td className="text-success text-center"></td>
+                                                                                {/* <td className="text-success text-center"></td> */}
                                                                             </tr>
                                                                         </>
                                                                     )
@@ -550,8 +550,8 @@ export default function SupplierLedger() {
                                                             article !== '' ?
                                                             <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td className="txt-oflo text-center"></td>
                                                                 <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generate Invoice</button></td>
+                                                                {/* <td className="txt-oflo text-center"></td> */}
                                                                 
                                                             </tr> : <h3></h3> 
                                                         }
