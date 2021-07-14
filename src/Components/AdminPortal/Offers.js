@@ -135,6 +135,7 @@ export default function Offers() {
     function sendQuote(e) {
         e.preventDefault();
         setoffer('Please wait...')
+        console.log("userid is "+description);
         const response = axios.post(`https://api.woofics.com/api/offer`, {
             description: description,
             time: comments,
@@ -300,7 +301,7 @@ export default function Offers() {
                     <Link to={text.to} className={classes.link}>
                           <ListItem button key={text} className={text.name == "Offers List"? classes.item : ''}>
                             <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} />
+                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
                     </Link>
                 ))}

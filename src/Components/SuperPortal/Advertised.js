@@ -205,7 +205,7 @@ export default function GetInspired() {
     const Data = [
         {
             name: 'Admin Dashboard',
-            icon: <DashboardIcon style={{ color: "#cdcdcd" }} />,
+            icon: <DashboardIcon style={{ color: "#cdcdcd"}} />,
             to: '/superdashboard'
         },
         {
@@ -301,7 +301,7 @@ export default function GetInspired() {
                     <Link to={text.to} className={classes.link}>
                         <ListItem button key={text} className={text.name == "Advertise" ? classes.item : ''}>
                             <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} />
+                            <ListItemText primary={text.name} style={{ marginLeft:"-17px"}} />
                         </ListItem>
                     </Link>
                 ))}

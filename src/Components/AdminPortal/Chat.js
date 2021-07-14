@@ -201,7 +201,7 @@ export default function ProviderChat() {
                     SendData()
                     setUid(valu)
                     setName(name)
-                    divRef.current.scrollIntoView({ behavior: 'smooth' });
+                    // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
                     // setOpen(true);
                 }
@@ -231,7 +231,7 @@ export default function ProviderChat() {
                                 SendData()
                                 setMsg(response.data)
                                 setRight(response.data.from_user)
-                                divRef.current.scrollIntoView({ behavior: 'smooth' });
+                                // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
                             }
                         }, (Error) => {
@@ -396,7 +396,7 @@ export default function ProviderChat() {
                     <Link to={text.to} className={classes.link}>
                         <ListItem button key={text} className={text.name == "Dashboard" ? classes.item : ''}>
                             <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} />
+                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
                     </Link>
                 ))}

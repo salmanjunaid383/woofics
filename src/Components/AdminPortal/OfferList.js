@@ -116,6 +116,7 @@ export default function OfferList() {
 
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState("");
+    const [userId,setUserId]=useState("");
 
     useEffect(()=>{
         if(!localStorage.getItem('user_token')){
@@ -125,7 +126,7 @@ export default function OfferList() {
     })
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-
+    
     var returnIndexValue = 0;
     function returnIndex(){
         returnIndexValue = returnIndexValue + 1;
@@ -139,6 +140,7 @@ export default function OfferList() {
                 .then((res) => {
                     if (res) {
                         setForm(res.data)
+                        setUserId(decoded.sub)
                     }
                 }, (error) => {
                     console.log(Error);
@@ -246,7 +248,7 @@ export default function OfferList() {
                     <Link to={text.to} className={classes.link}>
                           <ListItem button key={text} className={text.name == "Offers List"? classes.item : ''}>
                             <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} />
+                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
                     </Link>
                 ))}
@@ -428,6 +430,7 @@ export default function OfferList() {
                                                                 </>
                                                             )
                                                         })}
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>

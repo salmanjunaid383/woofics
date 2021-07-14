@@ -10,10 +10,10 @@ export default function Advertise() {
 
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
-  const [number, setnumber] = useState("");
+  const [number, setnumber] = useState(0);
   const [campaignlocation, setcampaignlocation] = useState("");
-  const [campaignduration, setcampaignduration] = useState("");
-  const [videoduration, setvideoduration] = useState("");
+  const [campaignduration, setcampaignduration] = useState(0);
+  const [videoduration, setvideoduration] = useState(0);
   const [screentype, setscreentype] = useState("");
   const [contenttype, setcontenttype] = useState("");
 
@@ -32,6 +32,7 @@ export default function Advertise() {
         console.log(response)
         alert("Message Sent!")
       }, (Error) => {
+        console.log(name,email,number,campaignlocation,campaignduration,videoduration,screentype,contenttype);
         alert(Error)
         console.log(Error);
       });
