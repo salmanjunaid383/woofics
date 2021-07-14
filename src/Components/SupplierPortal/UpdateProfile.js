@@ -297,7 +297,7 @@ export default function UpdateProfile() {
                     <Link to={text.to} className={classes.link}>
                           <ListItem button key={text} className={text.name == "Supplier Dashboard"? classes.item : ''}>
                             <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} />
+                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
                     </Link>
                 ))}
