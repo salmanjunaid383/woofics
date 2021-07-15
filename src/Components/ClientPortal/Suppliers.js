@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
+import "../ClientPortal/Suppliers.css"
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
@@ -439,7 +440,7 @@ export default function Supppliers() {
                                                     {/* <img class="card-img-top img-fluid mx-auto" src={val.bg_image} alt="Backgound image" /> */}
                                                     <div class="card-body">
                                                         <h4 className="mt-0">{val.first_name + " " + val.last_name}
-                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2" src={val.profile_image}  style={{borderRadius:"50px"}}/>
+                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2 for-pic" src={val.profile_image}  style={{borderRadius:"50px"}}/>
                                                             <StarRatings
                                                                 starRatedColor='rgb(230, 67, 47)'
                                                                 rating={val.rating}

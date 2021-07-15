@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from 'react-router-dom'
+import "../ClientPortal/allquotation.css"
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
@@ -490,16 +491,16 @@ export default function AllQuotation() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Manage Requests</h1>
+                                                <h1 className="box-title h1 mb-0 text-center mx-auto manage-heading">Manage Requests</h1>
                                             </div>
-                                            <select onChange={(e) => sortArray(e.target.value)} className="float-right">
+                                            <select onChange={(e) => sortArray(e.target.value)} className="float-right lowest">
                                                 <option value="price">Lowest Price</option>
                                                 <option value="delivery_days">Highest Price</option>
                                             </select>
                                             <hr className="w-50" />
-                                            <div className="col-md-10 mx-auto w-100">
+                                            <div className="col-md-12 mx-auto w-100">
                                                 <div className="w-100">
-                                                    <h3 className="w-100 text-center">Service Details</h3>
+                                                    <h3 className="w-100 text-center service-detail" style={{fontWeight:"bold"}}>Service Details</h3>
                                                     <table class="table table-hover">
                                                         <tbody>
                                                             {servicet  ? <>

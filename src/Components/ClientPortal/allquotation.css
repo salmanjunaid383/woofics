@@ -1,0 +1,11 @@
+.service-detail{
+    margin-top: 40px;
+}
+.lowest{
+    margin-top: 10px !important;
+}
+@media(max-width:600px){
+    .service-detail{
+        margin-top: 50px;
+    }
+}
