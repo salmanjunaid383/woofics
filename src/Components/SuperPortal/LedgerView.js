@@ -119,6 +119,7 @@ export default function LedgerView() {
     let history = useHistory();
     let { cheid } = useParams();
     let { cheche } = useParams();
+    const[totalAmount,setTotalAmount]=useState(0)
 
     const [article, setArticle] = useState([]);
 
@@ -127,7 +128,8 @@ export default function LedgerView() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${cheid}`)
             .then((response) => {
-                setArticle(response.data)
+                setArticle(response.data[0])
+                setTotalAmount(response.data.balance)
                 console.log(response.data)
             }, (Error) => {
                 console.log(Error);
@@ -138,7 +140,8 @@ export default function LedgerView() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${cheid}`)
             .then((response) => {
-                setArticle(response.data)
+                setArticle(response.data[0])
+                setTotalAmount(response.data.balance)
                 console.log(response.data)
             }, (Error) => {
                 console.log(Error);
@@ -447,6 +450,12 @@ export default function LedgerView() {
                                                                 </>
                                                             )
                                                         })}
+                                                {
+                                                    article !== '' ?
+                                                    <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
+                                                    <td></td><td></td>
+                                                    </tr> : <h3></h3>
+                                                }
                                             </tbody>
                                         </table>
                                     </div>
