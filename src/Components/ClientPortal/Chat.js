@@ -125,7 +125,9 @@ export default function Chat() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     const divRef = useRef(null);
-
+    const[stazId,setStazId]=useState(0);
+    
+    
     //.......................................Pusher
     var mes;
 
@@ -133,12 +135,15 @@ export default function Chat() {
     const [value, setValue] = useState('');
 
     const [mxg, setMxg] = useState('');
-    // var toke = localStorage.getItem('token').toString()
-    // var pusher = new Pusher('f7c71cbabef9234b8101', {
-    //     cluster: 'ap1'
-    // });
+    
+    var pusher = new Pusher('f7c71cbabef9234b8101', {
+        cluster: 'ap1'
+    })
 
-    // var channel = pusher.subscribe(toke);
+   
+
+    
+    // console.log("channel "+channel);
 
     // useEffect(() => {
     //     channel.bind('my-event', function (data) {
@@ -162,12 +167,36 @@ export default function Chat() {
     //Making Contact
     const [user, setUser] = useState([]);
     useEffect(() => {
+        const channel = pusher.subscribe(""+decoded.sub+"");
+        channel.bind("my-event",function(returnData){
+            function Users() {
+                console.log(returnData);
+                const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
+                    from_user: id,
+                    to_user: returnData.from_user
+                })
+                    .then((response) => {
+                        if (response) {
+                            console.log(response.data)
+                            setMsg(response.data)
+                            setRight(response.data.from_user)
+                            SendData()
+                            // divRef.current.scrollIntoView({ behavior: 'smooth' });
+
+                        }
+                    }, (Error) => {
+                        console.log("userID "+id+" to user "+stazId);
+                        console.log(Error);
+                    })
+            }
+            Users();
+        });
         function SendData() {
             const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
                 .then((response) => {
-                    if (response) {
-                        
+                    if (response) {       
                         setUser(response.data)
+                        
                     }
                 }, (Error) => {
                     //  
@@ -244,7 +273,7 @@ export default function Chat() {
         })
     }
 
-
+    var valuStaz=0;
 
     //Conatct List
     function Users(valu, name) {
@@ -254,11 +283,13 @@ export default function Chat() {
         })
             .then((response) => {
                 if (response) {
+                    valuStaz=valu;
                     // console.log(response.data)
                     setMsg(response.data)
                     setRight(response.data.from_user)
                     SendData()
                     setUid(valu)
+                    setStazId(valu);
                     setName(name)
                     // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
