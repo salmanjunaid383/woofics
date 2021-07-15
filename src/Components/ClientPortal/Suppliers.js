@@ -385,7 +385,7 @@ export default function Supppliers() {
                             </li>
                             <li>
                                 <a className="profile-pic" aria-describedby={id} data-toggle="tooltip" data-placement="top" title="Settings" variant="contained" color="primary" onClick={handleClick2}>
-                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" }  style={{ width: "40px",borderRadius:"50px" }} /></span>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2 for-image" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" }  style={{ width: "40px",borderRadius:"50px" }} /></span>
                                 </a>
                             </li>
                         </ul>
@@ -439,8 +439,9 @@ export default function Supppliers() {
                                                 <div class="card mx-auto mt-4" style={{ width: '18rem' }}>
                                                     {/* <img class="card-img-top img-fluid mx-auto" src={val.bg_image} alt="Backgound image" /> */}
                                                     <div class="card-body">
+                                                       
                                                         <h4 className="mt-0">{val.first_name + " " + val.last_name}
-                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2 for-pic" src={val.profile_image}  style={{borderRadius:"50px"}}/>
+                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2" src={val.profile_image}  style={{borderRadius:"50px"}}/>
                                                             <StarRatings
                                                                 starRatedColor='rgb(230, 67, 47)'
                                                                 rating={val.rating}
@@ -448,6 +449,7 @@ export default function Supppliers() {
                                                                 starSpacing="3px"
                                                             />
                                                         </h4>
+                                                      
                                                         <br />
                                                         <i className="fa fa-map-marker px-2 text-muted"> {val.location}</i><br />
                                                         <hr />

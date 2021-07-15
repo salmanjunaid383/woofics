@@ -1,4 +1,11 @@
 .for-pic{
-    width:60px !important;
-    height:60px !important;
+    /* width:60px !important; */
+    /* height:60px !important; */
+    /* border-radius: none; */
+}
+@media(max-width:770px) and (min-width:600px){
+    img.for-pic{
+        width:50px !important;
+        height:50px !important;
+    }
 }
