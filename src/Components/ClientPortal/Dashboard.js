@@ -1,3 +1,4 @@
+import "../ClientPortal/dashboard.css"
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
@@ -182,7 +183,7 @@ export default function Dashboard() {
             <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
                 data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" style={{ backgroundColor: '#76323f' }}>
                <div className="page-wrapper bg-light">
-                    <div class="grey-bg container-fluid">
+                    <div class="grey-bg container-fluid ipad-dashboard">
                         <section id="stats-subtitle">
                             <div class="row">
                                 <div class="col-xl-6 col-md-12">

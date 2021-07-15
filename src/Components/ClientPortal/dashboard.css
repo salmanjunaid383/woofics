@@ -1,0 +1,8 @@
+@media(max-width:770px) and (min-width:600px){
+    .ipad-dashboard{
+        padding-left:0 !important;
+        padding-right:0 !important;
+        width:90%;
+        margin:auto;
+    }
+}

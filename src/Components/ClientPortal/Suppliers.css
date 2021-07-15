@@ -8,4 +8,14 @@
         width:50px !important;
         height:50px !important;
     }
+    .ipad-change{
+        display: flex !important;
+        flex-direction: column !important;
+        margin: auto !important;
+        width:65%;
+    }
+    .ipad-res{
+        width:60px !important;
+        height:60px !important
+    }
 }

@@ -431,7 +431,7 @@ export default function Supppliers() {
 
                    <div className="page-wrapper bg-light">
                         <div class="container">
-                            <div className="row" id="blog" >
+                            <div className="row ipad-change" id="blog " >
                                 {suppliers.map((val, id) => {
                                     return (
                                         <>
@@ -441,7 +441,7 @@ export default function Supppliers() {
                                                     <div class="card-body">
                                                        
                                                         <h4 className="mt-0">{val.first_name + " " + val.last_name}
-                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2" src={val.profile_image}  style={{borderRadius:"50px"}}/>
+                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2 ipad-res" src={val.profile_image}  style={{borderRadius:"50px"}}/>
                                                             <StarRatings
                                                                 starRatedColor='rgb(230, 67, 47)'
                                                                 rating={val.rating}
