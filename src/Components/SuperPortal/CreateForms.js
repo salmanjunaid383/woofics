@@ -586,9 +586,12 @@ export default function CreateForms() {
 
                     <div className="page-wrapper bg-light">
                         <div class="container-fluid">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0 mx-auto text-center">CHARGES</h3>
+                            </div> 
                             <div class="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
-                                    <i className="fas fa-chevron-left fa-2x" onClick={() => history.goBack()} style={{ cursor: 'pointer' }}></i>
+                                    <i className="fas fa-chevron-left fa-2x" onClick={() => history.goBack()} style={{ cursor: 'pointer', marginBottom:'10px' }}></i>
                                 </div>
                                 <div class="col-lg-8 col-xlg-9 col-md-12 mx-auto">
                                     <div class="card">
@@ -639,7 +642,7 @@ export default function CreateForms() {
                                                             placeholder="Ending Date"
                                                             onChange={(e) => setend(e.target.value)}
                                                             id="standard-number"
-                                                            fullWidth
+                                                            fullWidth 
                                                             label="End"
                                                             type="number"
                                                             InputLabelProps={{
@@ -698,9 +701,9 @@ export default function CreateForms() {
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
-                                                        <table class="table table-hover">
+                                                        <table class="table table-hover" style={{tableLayout:"fixed"}}>
                                                             <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
-                                                                <tr>
+                                                                <tr style={{tableLayout:"fixed"}}>
                                                                     <th scope="col" className="text-white">#</th>
                                                                     <th scope="col" className="text-white">Charge</th>
                                                                     <th scope="col" className="text-white">Actions</th>
@@ -742,7 +745,7 @@ export default function CreateForms() {
                                                             </div>
                                                         </div>
                                                         <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
-                                                            <table class="table table-hover">
+                                                            <table class="table table-hover" style={{tableLayout:"fixed"}}>
                                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                         <th scope="col" className="text-white">#</th>
@@ -784,7 +787,7 @@ export default function CreateForms() {
                                                             </div>
                                                         </div>
                                                         <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
-                                                            <table class="table table-hover">
+                                                            <table class="table table-hover" style={{tableLayout:"fixed"}}>
                                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                         <th scope="col" className="text-white">#</th>
