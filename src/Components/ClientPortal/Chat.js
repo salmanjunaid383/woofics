@@ -138,7 +138,7 @@ export default function Chat() {
     const [mxg, setMxg] = useState('');
     
     
-    const pusher = new Pusher('e22c56269c9258608b2c', {
+    const pusher = new Pusher('633eff09da55fc330ac0', {
         cluster: 'ap1'
       });;
 
