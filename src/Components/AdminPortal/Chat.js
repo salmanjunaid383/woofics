@@ -123,9 +123,7 @@ export default function ProviderChat() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     const divRef = useRef(null);
-    var pusher = new Pusher('f7c71cbabef9234b8101', {
-        cluster: 'ap1'
-    })
+
 
     //.......................................Pusher
     // var mes;
@@ -141,32 +139,7 @@ export default function ProviderChat() {
     const [user, setUser] = useState([]);
     useEffect(() => {
         
-        const channel =  pusher.subscribe(""+decoded.sub+"");
-        console.log("susbrice channel "+ channel);
-        channel.bind("my-event",function(returnData){
-            console.log("my event");
-            function Users() {
-                console.log(returnData);
-                const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
-                    from_user: id,
-                    to_user: returnData.from_user
-                })
-                    .then((response) => {
-                        if (response) {
-                            console.log(response.data)
-                            setMsg(response.data)
-                            setRight(response.data.from_user)
-                            SendData()
-                            // divRef.current.scrollIntoView({ behavior: 'smooth' });
 
-                        }
-                    }, (Error) => {
-                        
-                        console.log(Error);
-                    })
-            }
-            Users();
-        }); 
             
         function SendData() {
             const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)

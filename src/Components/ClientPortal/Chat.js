@@ -128,6 +128,7 @@ export default function Chat() {
     const[stazId,setStazId]=useState(0);
     
     
+    
     //.......................................Pusher
     var mes;
 
@@ -136,41 +137,23 @@ export default function Chat() {
 
     const [mxg, setMxg] = useState('');
     
-    var pusher = new Pusher('f7c71cbabef9234b8101', {
+    
+    const pusher = new Pusher('e22c56269c9258608b2c', {
         cluster: 'ap1'
-    })
+      });;
 
-   
+
 
     
     // console.log("channel "+channel);
 
-    // useEffect(() => {
-    //     channel.bind('my-event', function (data) {
-    //         setMxg('New Message : ' + " " + JSON.stringify(data.message))
-    //         if (JSON.stringify(data.message)) {
-    //             setOpen(true);
-    //             handleClick()
-    //         }
-    //     })
-    // }, [])
-    const [anchorElmenu, setAnchorElmenu] = React.useState(null);
-    const handleClickmenu = (event) => {
-        setAnchorElmenu(event.currentTarget);
-    };
-
-    const handleClosemenu = () => {
-        setAnchorElmenu(null);
-    };
-
-
-    //Making Contact
-    const [user, setUser] = useState([]);
     useEffect(() => {
-        const channel = pusher.subscribe(""+decoded.sub+"");
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
         channel.bind("my-event",function(returnData){
+            console.log("my-event");
             function Users() {
-                console.log(returnData);
+             console.log(returnData);
                 const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                     from_user: id,
                     to_user: returnData.from_user
@@ -191,6 +174,23 @@ export default function Chat() {
             }
             Users();
         });
+    }, [])
+    const [anchorElmenu, setAnchorElmenu] = React.useState(null);
+    const handleClickmenu = (event) => {
+        setAnchorElmenu(event.currentTarget);
+    };
+
+    const handleClosemenu = () => {
+        setAnchorElmenu(null);
+    };
+
+
+    
+
+    //Making Contact
+    const [user, setUser] = useState([]);
+    useEffect(() => {
+
         function SendData() {
             const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
                 .then((response) => {
@@ -203,7 +203,8 @@ export default function Chat() {
                     // console.log(Error);
                 });
         }
-        SendData()
+        SendData();
+       
     }, [])
 
     function SendData() {
@@ -640,7 +641,7 @@ export default function Chat() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                   
 
 
                     <div className="page-wrapper" >
