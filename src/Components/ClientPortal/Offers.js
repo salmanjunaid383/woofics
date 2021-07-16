@@ -469,7 +469,7 @@ export default function Offers() {
 
                                                                     <div class="col-xl-12 col-md-12 mx-auto shadow p-3 mb-3 " style={{ backgroundColor: "white", border: '3px #f95c87 solid', borderRadius: 10 }}>
                                                                         <div className="row">
-                                                                            <div className="col-md-2 text-center"><img src={val.profile_image == "xyz.jpg" ? "https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png" : val.profile_image} className="img-fluid " style={{ width: 100,height:100,borderRadius: 150 }} /></div>
+                                                                            <div className="col-md-2 text-center"><img src={val.profile_image == "xyz.jpg" ? "https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png" : val.profile_image} className="img-fluid for-pic" style={{ width: 100,height:100,borderRadius: 150 }} /></div>
                                                                             <div className="col-md-5">
                                                                                 <h5>{val.description}</h5>
                                                                                 <h4>{val.first_name + "" + val.last_name}</h4>
