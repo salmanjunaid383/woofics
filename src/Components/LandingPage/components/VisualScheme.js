@@ -14,7 +14,7 @@ function VisualScheme() {
                     <div class="col-md-12 col-sm-12">
                         <div class="woofic_visiual_content">
                             <div class="woofic_visiual_representation">
-                                 HOW THE PLATFORM WORKS
+                                CÓMO FUNCIONA LA PLATAFORMA
                     </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ function VisualScheme() {
                     <div className="col-md-8 col-sm-12">
                         <div class="woofic_visiual_left">
                             <div class="woofic_visiual_heading ">
-                                Answer Our Questionnaire
+                                Responda Nuestro Cuestionario
                                 {/* <div class="woofic_visiual_sub-heading">
                                 </div> */}
                             </div>
@@ -37,7 +37,7 @@ function VisualScheme() {
 
                             </div>
                             <div class="woofic_visiual_para">
-                                In less than 2 minutes you can fill out our form, which will provide enough information for suppliers to make you a formal offer.
+                                En menos de 2 minutos puede completar nuestro formulario, que proporcionará suficiente información para que los proveedores le hagan una oferta formal.
                         </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ function VisualScheme() {
                     <div className="col-md-8 col-sm-12">
                         <div class="woofic_visiual_left">
                             <div class="woofic_visiual_heading">
-                                Receive and Compare Offers
+                                Reciba y compare ofertas
                                 {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                 </div> */}
@@ -73,7 +73,7 @@ function VisualScheme() {
                             <div class="woofic_visiual_hline">
                             </div>
                             <div class="woofic_visiual_para">
-                                Suppliers have 48 hours to resolve doubts and send you a formal proposal. Once the proposals are received, compare them and negotiate with the suppliers.                            </div>
+                                Los proveedores tienen 48 horas para resolver dudas y enviarle una propuesta formal. Una vez recibidas las propuestas, compáralas y negocia con los proveedores.                            </div>
                         </div>
                     </div>
 
@@ -93,7 +93,7 @@ function VisualScheme() {
 
                         <div class="woofic_visiual_left">
                             <div class="woofic_visiual_heading ">
-                            Hire a Provider
+                            Contratar a una proveedora
                                     {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                     </div> */}
@@ -102,8 +102,8 @@ function VisualScheme() {
 
                             </div>
                             <div class="woofic_visiual_para">
-                            With Woofic you can save up to 30%, instead of contacting the suppliers
-individually, you carry out the procedures online safely.
+                            Con Woofic puedes ahorrar hasta un 30%, en lugar de contactar con los proveedores
+De forma individual, realiza los trámites online de forma segura.
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@ individually, you carry out the procedures online safely.
                     <div className="col-md-8 col-sm-12">
                         <div class="woofic_visiual_left">
                             <div class="woofic_visiual_heading">
-                                Rate the Provider
+                                Califica al proveedor
                                 {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                 </div> */}
@@ -138,8 +138,8 @@ individually, you carry out the procedures online safely.
                             <div class="woofic_visiual_hline">
                             </div>
                             <div class="woofic_visiual_para">
-                            Once the project with a supplier is closed, evaluate according to your
-experience, so that the rest of the user can make better decisions.
+                            Una vez cerrado el proyecto con un proveedor, evalúe según su
+experiencia, para que el resto del usuario pueda tomar mejores decisiones.
                            </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@ experience, so that the rest of the user can make better decisions.
             {/* <br />
                 <br /> */}
             <div class="receive_offer text-center">
-                <Link to="/quotemain">RECEIVE OFFER</Link>
+                <Link to="/quotemain">RECIBIR OFERTA</Link>
             </div>
         </>
     );

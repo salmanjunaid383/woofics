@@ -242,14 +242,14 @@ function LandingPage() {
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div class="woofic_slogan text-left mt-lg-5 pt-lg-5 pt-sm-2" >
-                                                    Find, Compare and hire the main suppliers of led screens
+                                                    Encuentra, compara y contrata a los principales proveedores de pantallas led
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div class="woofic_receive_button text-left mt-lg-4" style={{marginBottom:"20px"}}>
-                                                    <Link to="/quotemain">RECEIVE OFFERS</Link>
+                                                    <Link to="/quotemain">RECIBIR OFERTAS</Link>
                                                 </div>
                                             </div>
                                         </div>
