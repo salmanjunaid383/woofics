@@ -18,10 +18,10 @@ function Banner(){
             <>
            <div class="woofic_banner text-center ">
                 <div class="woofic_banner_heading">
-                   <span style={{color:"#333333"}}> SERVICES </span>/ <span style={{color:"#F72A85"}}>PROFESSTIONAL</span>
+                   <span style={{color:"#333333"}}> SERVICIOS </span>/ <span style={{color:"#F72A85"}}>PROFESIONAL</span>
                 </div>
                 <div class="woofic_banner_sub-heading mb-5   ">
-                Find personalized and tailored solutions for your projects
+                Encuentre soluciones personalizadas y a medida para sus proyectos
                 </div>
                 <div class="woofic_first_row">
                     <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/REPAIRS')}>
@@ -29,10 +29,10 @@ function Banner(){
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={one}/>
                         </div>
                         <div class="woofic_element_heading">
-                        REPAIRS
+                        REFACCIÓN
                         </div>
                         <div class="woofic_element_paragraph">
-                        Component repair and configuration for led screens (leds, modules, chips, cards ...).
+                        Reparación y configuración de componentes para pantallas de leds (leds, módulos, chips, tarjetas ...).
 
                                 
                         </div>
@@ -43,10 +43,10 @@ function Banner(){
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={two}/>
                         </div>
                         <div class="woofic_element_heading">
-                        ELECTRICIAN
+                        ELECTRICISTA
                         </div>
                         <div class="woofic_element_paragraph">                               
-                        Realization of installations and electrical panels for your project.                               
+                        Realización de instalaciones y cuadros eléctricos para su proyecto.                               
                         </div>
                     </div>
 
@@ -55,10 +55,10 @@ function Banner(){
                                 <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={three}/>
                                 </div>
                             <div class="woofic_element_heading">
-                            ARCHITECTS / ENGINEERS
+                            ARQUITECTOS / INGENIERAS
                                 </div>
                                 <div class="woofic_element_paragraph">
-                                Projects approved and complying with the regulations of each municipality.
+                                Proyectos aprobados y cumpliendo con la normativa de cada municipio.
                             </div>
 
                         </div>
@@ -67,10 +67,10 @@ function Banner(){
                                 <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={four}/>
                             </div>
                             <div class="woofic_element_heading">
-                            GRAPHIC DESIGNER
+                            DISEÑADOR GRAFICO
                             </div>
                             <div class="woofic_element_paragraph">
-                            Creation of specific content (Image, video ...) for your led screen.
+                            Creación de contenido específico (Imagen, video ...) para tu pantalla led.
                             </div>
                         </div>
                     </div>
@@ -82,10 +82,10 @@ function Banner(){
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={five}/>
                             </div>
                             <div class="woofic_element_heading">
-                            SCREEN MANAGEMENT
+                            GESTIÓN DE PANTALLAS
                             </div>
                             <div class="woofic_element_paragraph">  
-                            Professional and intelligent content management for led display (software and hardware).
+                            Gestión de contenido profesional e inteligente para pantalla LED (software y hardware).
                             </div>
                         </div>
                         <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/STRUCTURES')}>
@@ -93,10 +93,10 @@ function Banner(){
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="img-fluid" src={six}/>
                             </div>
                             <div class="woofic_element_heading">
-                            STRUCTURES
+                            ESTRUCTURAS
                             </div>
                             <div class="woofic_element_paragraph">
-                            Manufacture of custom metal structures (monopost, facade, showcase ...).
+                            Fabricación de estructuras metálicas a medida (monoposte, fachada, escaparate ...).
                                 
                             </div>
                         </div>
@@ -105,11 +105,11 @@ function Banner(){
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={seven}/>
                             </div>
                             <div class="woofic_element_heading">
-                            ADVERTISE ON SCREENS
+                            PUBLICIDAD EN PANTALLAS
                             </div>
                             <div class="woofic_element_paragraph">
                                 
-                            Advertise on Led screens throughout Spain or in your city.
+                            Publicita en pantallas Led en toda España o en tu ciudad.
                                 
                             </div>
                         </div>
@@ -119,10 +119,10 @@ function Banner(){
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={eight}/>
                             </div>
                             <div class="woofic_element_heading">
-                            INSTALLER
+                            INSTALADORA
                             </div>
                             <div class="woofic_element_paragraph">
-                            Installations and commissioning of led solutions.
+                            Instalaciones y puesta en marcha de soluciones led.
                                 
                             </div>
                         </div>

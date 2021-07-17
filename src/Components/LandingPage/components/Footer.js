@@ -50,16 +50,16 @@ function Footer() {
                         <div class="woofic_middle_side text-center mb-3 mx-auto">
                             <ol>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/aboutus">  ABOUT US </Link>
+                                    <Link className="text-white h5" to="/aboutus">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/contact"> CONTACT </Link>
+                                    <Link className="text-white h5" to="/contact"> CONTACTO </Link>
                                 </li>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/allblog"> BLOG </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/discussionforum"> FAQ </Link>
+                                    <Link className="text-white h5" to="/discussionforum"> Preguntas más frecuentes </Link>
                                 </li>
                             </ol>
                         </div>
@@ -95,19 +95,19 @@ function Footer() {
                 <div className="row p-lg-2">
                     <div className="col-sm-12 col-md-12 text-center">
                         <div className="text-white text-center">
-                            Copyright © 2021 Woofic.com, all rights reserved
+                            Copyright © 2021 Woofic.com, todos los derechos reservados
 
                             <div class=" mt-3 text-center">
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className=" border-right px-2  ">
-                                            <a href="https://carnovo.com/en/terms-and-conditions" target="_blank" className="text-white">TERMS AND CONDITIONS</a>
+                                            <a href="https://carnovo.com/en/terms-and-conditions" target="_blank" className="text-white">TÉRMINOS Y CONDICIONES</a>
                                         </div>
                                         <div className=" border-right px-2">
-                                            <a href="https://carnovo.com/en/legal-notice" target="_blank" className="text-white">LEGAL WARNING</a>
+                                            <a href="https://carnovo.com/en/legal-notice" target="_blank" className="text-white">ADVERTENCIA LEGAL</a>
                                         </div>
                                         <div className="mx-2 ">
-                                            <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">PRIVACY POLICY</a>
+                                            <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">POLÍTICA DE PRIVACIDAD</a>
                                         </div>
                                     </div>
                                 </div>
