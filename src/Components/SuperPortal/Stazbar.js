@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function AdminComplain() {
+export default function StazBar() {
     CustomAdminAuth();
     let history = useHistory();
 
@@ -253,7 +253,7 @@ export default function AdminComplain() {
         },
         {
             name: 'Complain',
-            icon: <AssistantIcon style={{ color: "white" }} />,
+            icon: <AssistantIcon style={{ color: "#cdcdcd" }} />,
             to: '/admincomplain'
         },
         {
@@ -275,7 +275,8 @@ export default function AdminComplain() {
             <List>
                 {Data.map((text, index) => (
                     <Link to={text.to} className={classes.link}>
-                        <ListItem button key={text} className={text.name == "Complain" ? classes.item : ''}>
+                        {/* className={text.name == "Complain" ? classes.item : ''} */}
+                        <ListItem button key={text} >
                             <ListItemIcon>{text.icon}</ListItemIcon>
                             <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
