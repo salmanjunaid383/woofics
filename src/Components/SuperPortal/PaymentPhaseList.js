@@ -7,7 +7,7 @@ import { Delete } from "@material-ui/icons";
 // import './BLog.css';
 
 import jwt_decode from 'jwt-decode'
-import Pusherr from './../Pusherr';
+
 
 
 
@@ -417,7 +417,7 @@ export default function PaymentPhaseList() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                    <div className="page-wrapper bg-light">
                         <div class="container pb-lg-4">

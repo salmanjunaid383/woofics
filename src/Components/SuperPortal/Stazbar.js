@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
+import Sidebar from './Sidebar'
+import Nav from './Nav'
+import { Delete } from "@material-ui/icons";
+// import './BLog.css';
+import Badge from '@material-ui/core/Badge';
+import FindInPageIcon from '@material-ui/icons/FindInPage';
+import RateReviewIcon from '@material-ui/icons/RateReview';
+
+
+
+
+//Sidebar
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,19 +31,28 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
-import message from './—Pngtree—chat icon_4756851.png'
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import PollIcon from '@material-ui/icons/Poll';
+import SuperDashboard from './SuperDashboard';
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
-import AdminDashboard from './AdminDashboard';
-import ListIcon from '@material-ui/icons/List';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
-import Badge from '@material-ui/core/Badge';
+import AssistantIcon from '@material-ui/icons/Assistant';
+import DesktopWindowsIcon from '@material-ui/icons/DesktopWindows';
+import DvrIcon from '@material-ui/icons/Dvr';
+import HelpIcon from '@material-ui/icons/Help';
+import BookIcon from '@material-ui/icons/Book';
+import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
-import LiveHelpIcon from '@material-ui/icons/LiveHelp';  
+import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
+import FeaturedVideoIcon from '@material-ui/icons/FeaturedVideo';
+import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import SwapVertIcon from '@material-ui/icons/SwapVert';
+import CustomAdminAuth from "../CustomAdminAuth";
 
-import CallEndIcon from '@material-ui/icons/CallEnd';
-import CustomProviderAuth from "../CustomProviderAuth";
 
 
 const drawerWidth = 240;
@@ -94,26 +115,30 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function ServiceSidebar(props) {
+export default function StazBar() {
+    CustomAdminAuth();
+    let history = useHistory();
 
-    CustomProviderAuth();
-    const history = useHistory();
 
+    useEffect(() => {
+        
+    }, [])
+
+    //Sidebaaaaar/..........................
     // const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    var returnIndexValue = 0;
+    function returnIndex(){
+        returnIndexValue = returnIndexValue + 1;
+        return returnIndexValue;
+    }
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
 
     const url = window.location.href
 
@@ -152,57 +177,106 @@ export default function ServiceSidebar(props) {
     const id2 = open2 ? 'simple-popover' : undefined;
 
 
+
     const Data = [
-          {
-            name: 'Dashboard',
-            icon: <DashboardIcon  style={{color:"white"}}/>,
-            to: '/admindashboard'
+        {
+            name: 'Admin Dashboard',
+            icon: <DashboardIcon style={{ color: "#cdcdcd" }} />,
+            to: '/superdashboard'
         },
         {
-            name: 'Todo',
-            icon: <PlaylistAddCheckIcon style={{ color: "#cdcdcd" }}/>,
-            to: '/todo'
+            name: 'Registrations',
+            icon: <PollIcon style={{ color: "#cdcdcd" }} />,
+            to: '/registration'
         },
         {
-            name: 'Offers List',
-            icon: <ListIcon style={{ color: "#cdcdcd" }}/>,
-            to: '/offerlist'
+            name: 'Services',
+            icon: <FindInPageIcon style={{ color: "#cdcdcd" }} />,
+            to: '/viewservices'
+        },
+        {
+            name: 'Offers',
+            icon: <LoyaltyIcon style={{ color: "#cdcdcd" }} />,
+            to: '/offerbadge'
+        },
+        {
+            name: 'Reviews',
+            icon: <RateReviewIcon style={{ color: "#cdcdcd" }} />,
+            to: '/viewreviews'
+        },
+        {
+            name: 'Coupons',
+            icon: <LocalOfferIcon style={{ color: "#cdcdcd" }} />,
+            to: '/couponslist'
+        },
+        {
+            name: 'Led ',
+            icon: <DvrIcon style={{ color: "#cdcdcd" }} />,
+            to: '/ledlist'
+        },
+        {
+            name: 'Get Inspire',
+            icon: <FeaturedVideoIcon style={{ color: "#cdcdcd" }} />,
+            to: '/getinspired'
+        },
+        {
+            name: 'Advertise',
+            icon: <PhotoAlbumIcon style={{ color: "#cdcdcd" }} />,
+            to: '/advertised'
         },
         {
             name: 'Ledger',
-            icon: <BorderColorIcon  style={{color:"white"}}/>,
-            to: '/providerledger'
+            icon: <HourglassEmptyIcon style={{ color: "#cdcdcd" }} />,
+            to: '/ledger'
+        },
+         {
+            name: 'Data of Interest',
+            icon: <SwapVertIcon style={{ color: "#cdcdcd" }} />,
+            to: '/dataofint'
         },
         {
-            name: 'Help',
-            icon: <LiveHelpIcon style={{ color: "#cdcdcd" }}/>,
-            to: '/providerhelp'
+            name: 'Charges',
+            icon: <EqualizerIcon style={{ color: "#cdcdcd" }} />,
+            to: '/charges'
+        },
+        {
+            name: 'View Contacts',
+            icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
+            to: '/viewcontact'
+        },
+        
+       
+        {
+            name: 'Help List',
+            icon: <HelpIcon style={{ color: "#cdcdcd" }} />,
+            to: '/helplist'
         },
         {
             name: 'Complain',
-            icon: <CallEndIcon style={{ color: "#cdcdcd" }}/>,
-            to: '/providercomplain'
+            icon: <AssistantIcon style={{ color: "#cdcdcd" }} />,
+            to: '/admincomplain'
         },
-
+        {
+            name: 'Blog',
+            icon: <BookIcon style={{ color: "#cdcdcd" }} />,
+            to: '/blog'
+        },
     ]
 
     const drawer = (
         <div>
-            <div className="navbar-header" data-logobg="skin6">
-                <Link className="navbar-brand " to="/admindashboard">
-                    <span className="logo-text text-dark p-0 m-0 text-center">
-                       <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px',marginTop:"20px",marginBottom:"10px" }} />
-                    </span>
-                </Link>
-                <a className="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                    href="javascript:void(0)"><i className="ti-menu ti-close"></i></a>
-            </div>
+            <Link className="navbar-brand " to="/superdashboard">
+                <span className="logo-text text-dark p-0 m-0 text-center">
+                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
+                </span>
+            </Link>
             <div className={classes.toolbar} />
-           
+
             <List>
                 {Data.map((text, index) => (
                     <Link to={text.to} className={classes.link}>
-                          <ListItem button key={text} className={text.name == "Dashboard"? classes.item : ''}>
+                        {/* className={text.name == "Complain" ? classes.item : ''} */}
+                        <ListItem button key={text} >
                             <ListItemIcon>{text.icon}</ListItemIcon>
                             <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
@@ -213,69 +287,34 @@ export default function ServiceSidebar(props) {
     );
 
     // const container = window !== undefined ? () => window().document.body : undefined;
+    const [newnoti, setnewnoti] = useState([]);
 
-
-    const [name, setName] = useState([]);
-    
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
-        .then((response) => {
-            setName(response.data)
-            seen()
+            .then((response) => {
+                setnewnoti(response.data)
+                seen()
             }, (Error) => {
                  
+                console.log(Error);
             });
-        }
-        
-        const [unseen, setunseen] = useState([]);
-        function seen() {
-            const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
+    }
+
+    const [unseen, setunseen] = useState([]);
+    function seen() {
+        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
                 console.log(Error);
             });
-        }
-        function notificationDelete(e) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
-                .then((response) => {
-                }, (Error) => {
-                    console.log(Error);
-                });
-        }
-     
-        
-        //................Chat Seen
-        const [UnseenMxg, setUnseenMxg] = useState([]);
-    function chatnotification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`)
-            .then((response) => {
-                setUnseenMxg(response.data)
-                seen()
-            }, (Error) => {
-                console.log(Error);
-            });
     }
-    const [Imagedata, setImageData] = useState('');
-
-    function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-            .then((res) => {
-                setImageData(res.data.profile_image)
-            }
-            )
-
-    }
-
     useEffect(() => {
-        chatnotification()
         seen()
-        getData()
     }, [])
-
 
     return (
         <>
@@ -283,8 +322,7 @@ export default function ServiceSidebar(props) {
                 {/* <CssBaseline /> */}
                 <AppBar position="fixed" className={classes.appBar}>
                     <Toolbar>
-                        <IconButton 
-                            
+                        <IconButton
                             color="inherit"
                             aria-label="open drawer"
                             edge="start"
@@ -295,14 +333,7 @@ export default function ServiceSidebar(props) {
                         </IconButton>
                         <ul className="ml-auto d-flex my-auto">
                             <li className="my-auto">
-                                <Link to="/providerchat" className="profile-pic" aria-describedby={id} variant="contained" color="primary" >
-                                    <span className="text-white font-medium  "><Badge color="secondary" variant={UnseenMxg == 0 ? '' : 'dot'} >
-                                        <MailIcon color="primary"/>
-                                    </Badge></span>
-                                </Link>
-                            </li>
-                            <li className="my-auto">
-                                <a className="profile-pic" aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
+                                <a className="profile-pic" aria-describedby={id} variant="contained" data-toggle="tooltip" data-placement="top" title="Notifications" color="primary" onClick={handleClick}>
                                     <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen == 0 ? '' : 'dot'} >
                                         <NotificationsIcon color="primary" />
                                     </Badge></span>
@@ -310,7 +341,7 @@ export default function ServiceSidebar(props) {
                             </li>
                             <li>
                                 <a className="profile-pic" aria-describedby={id} variant="contained" color="primary" onClick={handleClick2}>
-                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src={Imagedata !== null ? Imagedata :  "https://image.flaticon.com/icons/png/512/147/147144.png" }  style={{ width: "40px",borderRadius:"50px" }} /></span>
+                                    <span className="text-white font-medium "><img className="img-fluid mb-2" src="https://image.flaticon.com/icons/png/512/147/147144.png" style={{ width: "40px" }} /></span>
                                 </a>
                             </li>
                         </ul>
@@ -348,11 +379,12 @@ export default function ServiceSidebar(props) {
                     </Hidden>
                 </nav>
 
-                 <main className={classes.content}>
+                <main className={classes.content}>
                     <div className={classes.toolbar} />
                     
+                    
 
-                    <AdminDashboard />
+                    
                 </main>
             </div>
 
@@ -369,44 +401,32 @@ export default function ServiceSidebar(props) {
                     vertical: 'top',
                     horizontal: 'center',
                 }}
-                
             >
-
-             
-{name == '' ? <Typography className={classes.typography}>
+                {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
                         <span className="text-black font-medium ml-1">No Notification !</span>
                     </a>
                 </Typography> :
-                    name.slice(0, 5).map((val) => {
+                    newnoti.map((val) => {
                         return (
                             <>
                                 <Link to={`/${val.link}`}>
-                                    <Typography className={`${classes.typography} bg-light text-dark`} >
+                                    <Typography className={classes.typography} >
                                         <a className="profile-pic" >
-                                            <span className="text-black font-medium ml-1">{val.notification} <span className="float-right text-danger pl-md-2" onClick={() => notificationDelete(val.id)}><i className="fa fa-close"></i></span></span>
+                                            <span className="text-black font-medium ml-1">{val.notification}</span>
                                         </a>
                                     </Typography>
                                 </Link>
                             </>
                         )
-                    }).reverse()
-
-                }
-                <Link to='/providerallnotification'>
-                    <Typography className={`${classes.typography} bg-dark text-light`} >
-                        <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
-                        </a>
-                    </Typography>
-                </Link>
+                    })}
             </Popover>
 
 
 
             {/* //profile popover */}
 
-            <Popover
+             <Popover
                 id={id2}
                 open={open2}
                 anchorEl={anchorEl2}
@@ -420,27 +440,14 @@ export default function ServiceSidebar(props) {
                     horizontal: 'center',
                 }}
             >
-                <Typography className={classes.typography}>
-                    <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
-                        <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
-                    </Link>
-                </Typography>
-                <Typography className={classes.typography}>
-                    <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
-                        <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
-                    </a>
-                </Typography>
-                <hr />
-                <Typography className={classes.typography}>
+                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
                         <span className="text-black font-medium mr-3">Go home</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
-                    <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
+                    <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
                         <span className="text-black font-medium mr-3">Logout</span>
                     </a>
@@ -448,15 +455,6 @@ export default function ServiceSidebar(props) {
 
             </Popover>
 
-
-            {url === 'http://woofic.nastechltd.co/providerchat' ?
-                ' '
-                :
-
-                <Link to="/providerchat">
-                    <img src={message} style={{ width: '50px', position: 'fixed', float: 'right', bottom: '28px', right: '30px', zIndex: '100', backgroundColor: 'rgba(7, 72, 138, 0.71)', borderRadius: '50px' }} />
-                </Link>
-            }
         </>
     );
 }

@@ -47,7 +47,7 @@ import PollIcon from '@material-ui/icons/Poll';
 
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Pusherr from './../Pusherr';
+
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
 
@@ -432,7 +432,7 @@ export default function SupComplain() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
 

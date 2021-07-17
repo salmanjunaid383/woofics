@@ -47,7 +47,7 @@ import CallEndIcon from '@material-ui/icons/CallEnd';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Pusherr from './../Pusherr';
+
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
 
@@ -429,7 +429,7 @@ export default function Todo() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper ">
                         <div class="container rounded mx-auto">

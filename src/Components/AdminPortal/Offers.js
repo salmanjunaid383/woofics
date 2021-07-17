@@ -18,7 +18,7 @@ import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
-import Pusherr from './../Pusherr';
+
 
 
 //Sidebar
@@ -446,7 +446,7 @@ export default function Offers() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                    <div className="page-wrapper bg-light">

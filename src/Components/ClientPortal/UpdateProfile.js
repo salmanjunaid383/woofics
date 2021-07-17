@@ -49,7 +49,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { storage } from "../Firebase"
 import firebase from '../Firebase'
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import Pusherr from './../Pusherr';
+
 import './Todo.css'
 import CustomClientAuth from "../CustomClientAuth";
 
@@ -550,7 +550,7 @@ export default function UpdateProfile() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper px-lg-5">
                         <div class="container-fluid">

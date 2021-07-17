@@ -46,7 +46,7 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { storage } from "../Firebase"
-import Pusherr from './../Pusherr';
+
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
 
@@ -462,7 +462,7 @@ export default function UpdateProfile() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                     <div className="page-wrapper px-lg-5">

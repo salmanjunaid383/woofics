@@ -47,7 +47,7 @@ import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import Pusherr from './../Pusherr';
+
 
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -494,7 +494,7 @@ export default function Detail() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                    <div className="page-wrapper bg-light">

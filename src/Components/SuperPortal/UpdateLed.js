@@ -14,7 +14,7 @@ import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-import Pusherr from './../Pusherr';
+
 
 
 //Sidebar
@@ -480,7 +480,7 @@ export default function UpdateLed() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                    <div className="page-wrapper bg-light">
 

@@ -49,7 +49,11 @@ export default function Blog() {
                     <i class="fa fa-bars"></i>
                 </a>
             </div> */}
+<<<<<<< HEAD
             <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
+=======
+            
+>>>>>>> 058470e701babc7bf3fe89a30fdada12ddc116de
             <Navbar />
             </section>
 
