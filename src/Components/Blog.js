@@ -49,9 +49,12 @@ export default function Blog() {
                     <i class="fa fa-bars"></i>
                 </a>
             </div> */}
-            
+            <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
             <Navbar />
-            <div className="page-wrapper ">
+            </section>
+
+
+        <div className="page-wrapper">
                 <div class="container">
                     <div id="blog" class="row">
 

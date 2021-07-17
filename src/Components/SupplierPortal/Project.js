@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../../src/text-change.css"
 import { Link, useHistory, useParams } from 'react-router-dom'
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
@@ -414,7 +415,7 @@ export default function Project() {
                                                 <table className="table no-wrap">
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white text-center">DATE</th>
+                                                            <th className="border-top-0 text-white text-center" id="text">DATE</th>
                                                             <th className="border-top-0 text-white text-center">REQUESTS</th>
                                                             <th className="border-top-0 text-white text-center">OFFERS</th>
                                                             <th className="border-top-0 text-white text-center">DELIVERY DAYS</th>

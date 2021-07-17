@@ -38,7 +38,10 @@ export default function GetInspire() {
   }, [])
   return (
     <>
-      <Navbar />
+            <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
+            <Navbar />
+            </section>
+            
       <div className="page-wrapper mt-5 ">
         <div class="container-fluid no-gutters ">
           <div className="row no-gutters">

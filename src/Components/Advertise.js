@@ -39,8 +39,11 @@ export default function Advertise() {
   }
   return (
     <>
-      <Navbar />
-      <div className="page-wrapper mt-5 ">
+            <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
+            <Navbar />
+            </section>
+            
+      <div className="page-wrapper">
         <div class="container-fluid " style={{ backgroundImage: 'url(https://www.gimage.es/wp-content/uploads/2018/02/contacto.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
           <div className="row">
             <div className="col-md-10">

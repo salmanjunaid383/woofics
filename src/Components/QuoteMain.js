@@ -898,7 +898,9 @@ export default function QuoteMain() {
     return (
         <>
 
+<           section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
             <Navbar />
+            </section>
 
 
             <div className="page-wrapper bg-light" style={{ display: display1 }}>

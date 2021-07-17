@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom';
+import "../AdminPortal/offerlist.css";
 import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
@@ -406,7 +407,7 @@ export default function OfferList() {
                                             </div>
                                             <div className="table-responsive">
                                                 <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
-                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a" }}>
                                                         <tr>
                                                             <th className="border-top-0 text-center text-white">#</th>
                                                             <th className="border-top-0 text-center text-white">Description</th>
