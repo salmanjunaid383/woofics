@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
+import { makeStyles} from '@material-ui/core/styles';
+import StazBar from './Stazbar';
 import {
     PieChart,
     Pie,
@@ -13,7 +15,20 @@ import {
     Bar, Line, AreaChart, Area, Sector,
     LineChart, ResponsiveContainer
 } from "recharts";
+
 import CustomAdminAuth from "../CustomAdminAuth";
+
+const useStyles = makeStyles((theme) => ({
+
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
+
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(0),
+    }
+
+}));
 
 export default function SuperDashboard() {
     CustomAdminAuth();
@@ -73,7 +88,7 @@ export default function SuperDashboard() {
                 console.log(Error);
             });
     }
-
+    const classes = useStyles();
 
     //....Completed Projectt
     function CompletedPro() {
@@ -284,7 +299,11 @@ export default function SuperDashboard() {
 
     return (
         <>
-
+            <div className="d-sm-flex">
+            <StazBar></StazBar>
+            
+            <main className={classes.content}>
+                <div className={classes.toolbar} />
 
             <div className="page-wrapper bg-light">
                 <div class="grey-bg container-fluid">
@@ -526,6 +545,8 @@ export default function SuperDashboard() {
                     </div>
                 </div>
             </div>
+            </main>
+        </div>
         </>
     );
 }

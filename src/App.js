@@ -131,6 +131,7 @@ import Responses from './Components/ClientPortal/Responses';
 import CheckResponse from './Components/ClientPortal/CheckResponse';
 import ProviderLedger from './Components/AdminPortal/ProviderLedger';
 import cookie from "react-cookies";
+import SuperDashboard from './Components/SuperPortal/SuperDashboard';
 
 
 function App() {
@@ -155,13 +156,13 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-
+          
           <Route path="/login" component={Login} />
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
           <Route exact path="/dashboard" component={Sidebar} />
           <Route exact path="/admindashboard" component={ServiceSidebar} />
-          <Route exact path="/superdashboard" component={SuperSidebar} />
+          <Route exact path="/superdashboard" component={SuperDashboard} />
           <Route exact path="/client" component={Client} />
           <Route exact path="/serviceprovider" component={ServiceProvider} />
           <Route exact path="/supplier" component={Supplier} />

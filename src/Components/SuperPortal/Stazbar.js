@@ -52,7 +52,7 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import SwapVertIcon from '@material-ui/icons/SwapVert';
 import CustomAdminAuth from "../CustomAdminAuth";
-
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 
 const drawerWidth = 240;
@@ -244,8 +244,11 @@ export default function StazBar() {
             icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
             to: '/viewcontact'
         },
-        
-       
+        {
+            name: 'Discussion Forum',
+            icon: <AssignmentIcon style={{ color: "#cdcdcd" }}/>,
+            to :'/clientdiscussionforum'
+        },
         {
             name: 'Help List',
             icon: <HelpIcon style={{ color: "#cdcdcd" }} />,
