@@ -457,7 +457,7 @@ export default function DataofInt() {
 
                     <div className="page-wrapper bg-light">
                     <div class="d-md-flex mb-3">
-                            <h3 class="box-title mb-0 h1 text-center mx-auto" style={{fontSize:"16px", lineHeight:"30px", fontWeight:"500"}}>DATA OF INTEREST</h3>
+                            <h3 class="box-title mb-0 h1 text-center mx-auto" style={{fontSize:"16px", lineHeight:"30px", fontWeight:"500"}}>DATOS DE INTERÉS</h3>
                         </div>
                         <div class="container-fluid">
                             <div class="row">
@@ -539,7 +539,7 @@ export default function DataofInt() {
 
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     newnoti.slice(0, 5).map((val) => {
@@ -587,13 +587,13 @@ export default function DataofInt() {
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

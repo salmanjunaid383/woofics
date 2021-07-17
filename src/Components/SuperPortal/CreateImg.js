@@ -436,10 +436,10 @@ export default function CreateImg() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">Article</h4>
+                                    <h4 className="text-center p-4">Artículo</h4>
                                     <div class="card-body">
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0">Image</label>
+                                            <label class="col-md-12 p-0">Imagen</label>
                                             <div class="col-md-12 border p-2 text-center">
                                                 {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
                                                  */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file" accept='image/*' />
@@ -454,20 +454,20 @@ export default function CreateImg() {
                                                         <MenuItem value="">
                                                             <em>None</em>
                                                         </MenuItem>
-                                                        <MenuItem value='HOTELS'>HOTELS</MenuItem>
-                                                        <MenuItem value='RESTAURANTS'>RESTAURANTS</MenuItem>
-                                                        <MenuItem value='RETAIL'>RETAIL SHOP</MenuItem>
-                                                        <MenuItem value='FAIRS'>FAIRS</MenuItem>
-                                                        <MenuItem value='EVENTS'>EVENTS</MenuItem>
-                                                        <MenuItem value='SPORTS'>SPORTS</MenuItem>
-                                                        <MenuItem value='HEALTH'>HEALTH</MenuItem>
-                                                        <MenuItem value='ADVERTISING'>ADVERTISING</MenuItem>
-                                                        <MenuItem value='PUBLIC'>PUBLIC SECTOR</MenuItem>
-                                                        <MenuItem value='INFORMATION'>INFORMATION</MenuItem>
-                                                        <MenuItem value='LARGE'>SURFACES / SHOPPING CENTERS</MenuItem>
-                                                        <MenuItem value='SHOPPING'>SHOPPING</MenuItem>
-                                                        <MenuItem value='CONCERTS'>CONCERTS</MenuItem>
-                                                        <MenuItem value='AUTOMOTIVE'>AUTOMOTIVE</MenuItem>
+                                                        <MenuItem value='HOTELS'>HOTELES</MenuItem>
+                                                        <MenuItem value='RESTAURANTS'>RESTAURANTES</MenuItem>
+                                                        <MenuItem value='RETAIL'>TIENDA AL POR MENOR</MenuItem>
+                                                        <MenuItem value='FAIRS'>Ferias</MenuItem>
+                                                        <MenuItem value='EVENTS'>EVENTOS</MenuItem>
+                                                        <MenuItem value='SPORTS'>DEPORTES</MenuItem>
+                                                        <MenuItem value='HEALTH'>SALUD</MenuItem>
+                                                        <MenuItem value='ADVERTISING'>PUBLICIDAD</MenuItem>
+                                                        <MenuItem value='PUBLIC'>SECTOR PÚBLICO</MenuItem>
+                                                        <MenuItem value='INFORMATION'>INFORMACIÓN</MenuItem>
+                                                        <MenuItem value='LARGE'>SUPERFICIES / CENTROS COMERCIALES</MenuItem>
+                                                        <MenuItem value='SHOPPING'>COMPRAS</MenuItem>
+                                                        <MenuItem value='CONCERTS'>CONCIERTOS</MenuItem>
+                                                        <MenuItem value='AUTOMOTIVE'>AUTOMOTORA</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>
@@ -502,7 +502,7 @@ export default function CreateImg() {
 
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     newnoti.slice(0, 5).map((val) => {
@@ -523,7 +523,7 @@ export default function CreateImg() {
                 <Link to='/adminallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -550,13 +550,13 @@ export default function CreateImg() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

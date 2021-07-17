@@ -420,18 +420,18 @@ export default function Help() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">Help List</h3>
+                                            <h3 className="box-title mb-0 text-center mx-auto">Lista de ayuda</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nothing to show...</div>
+                                            {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nada que mostrar...</div>
                                                 : <table className="table no-wrap">
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white">#</th>
-                                                            <th className="border-top-0 text-white">QUERY</th>
-                                                            <th className="border-top-0 text-white">DESCRIPTION</th>
-                                                            <th className="border-top-0 text-white">DATE</th>
-                                                            <th className="border-top-0 text-white">ACTIONS</th>
+                                                            <th className="border-top-0 text-white">CONSULTA</th>
+                                                            <th className="border-top-0 text-white">DESCRIPCIÓN</th>
+                                                            <th className="border-top-0 text-white">FECHA</th>
+                                                            <th className="border-top-0 text-white">COMPORTAMIENTO</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -445,7 +445,7 @@ export default function Help() {
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
                                                                         <td className="text-danger">
                                                                             <button class="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/helpresponse/${val.id}`)}>Response</button>
-                                                                            <button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button>
+                                                                            <button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Borrar</button>
                                                                         </td>
                                                                     </tr>
                                                                 </>
@@ -480,7 +480,7 @@ export default function Help() {
 
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     newnoti.slice(0, 5).map((val) => {
@@ -501,7 +501,7 @@ export default function Help() {
                 <Link to='/adminallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -528,13 +528,13 @@ export default function Help() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar sesión</span>
                     </a>
                 </Typography>
 

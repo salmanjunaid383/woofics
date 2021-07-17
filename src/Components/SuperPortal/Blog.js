@@ -421,12 +421,12 @@ export default function Blog() {
                                 <div class="col-md-12">
                                     
                                     <div className="mr-auto mb-3 mt-2">
-                                        <a class="btn pull-right greenbtn text-white mb-3" onClick={() => history.push('/createblog')}>Create New Blog</a>
+                                        <a class="btn pull-right greenbtn text-white mb-3" onClick={() => history.push('/createblog')}>Crear Nuevo Blog</a>
                                     </div>
                                    
                                 </div>
                                 <div className="col-md-10 text-left mx-auto">
-                                    {blog == '' ? <div className="my-lg-3 mx-auto text-center w-100">Nothing to show! Start creating Blogs...</div>
+                                    {blog == '' ? <div className="my-lg-3 mx-auto text-center w-100">¡Nada que mostrar! Empiece a crear blogs ...</div>
                                         : blog.map((val, id) => {
                                             return (
                                                 <>
@@ -442,8 +442,8 @@ export default function Blog() {
                                                                 
                                                                     <h3 class="card-title">{val.author}</h3>
                                                                     <h5 class="card-text">{val.article}</h5>
-                                                                    <p class="card-text"><small class="text-muted ">Date: {(val.created_at).slice(0, 10)}</small></p>
-                                                                    <button value={val.id} class="btn btn-danger" onClick={e => deleteBlog(e.target.value)} >Delete</button>
+                                                                    <p class="card-text"><small class="text-muted ">Fecha: {(val.created_at).slice(0, 10)}</small></p>
+                                                                    <button value={val.id} class="btn btn-danger" onClick={e => deleteBlog(e.target.value)} >Borrar</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -477,7 +477,7 @@ export default function Blog() {
                
                                 {newnoti == '' ? <Typography className={classes.typography}>
                                         <a className="profile-pic" >
-                                                <span className="text-black font-medium ml-1">No Notification !</span>
+                                                <span className="text-black font-medium ml-1">Sin notificación !</span>
                                         </a>
                                 </Typography> :
                                         newnoti.slice(0, 5).map((val) => {
@@ -498,7 +498,7 @@ export default function Blog() {
                                         <Link to='/adminallnotification'>
                                         <Typography className={`${classes.typography} bg-dark text-light`} >
                                         <a className="profile-pic" >
-                                                <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                                                <span className="text-black font-medium ml-1">Ver todas las notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                                         </a>
                                 </Typography>
                                     </Link>
@@ -525,7 +525,7 @@ export default function Blog() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
