@@ -49,7 +49,7 @@ import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 
-import Pusherr from './../Pusherr';
+
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 
@@ -453,7 +453,7 @@ export default function DataofInt() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper bg-light">
                     <div class="d-md-flex mb-3">

@@ -42,7 +42,7 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Pusherr from './../Pusherr';
+
 import CustomClientAuth from "../CustomClientAuth";
 
 
@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Moredetailsdiscussionforum() {
-    CustomClientAuth();
+    
     let history = useHistory();
 
     const { quid } = useParams()
@@ -435,7 +435,7 @@ export default function Moredetailsdiscussionforum() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                    <div className="page-wrapper bg-light">

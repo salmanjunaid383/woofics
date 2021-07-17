@@ -8,7 +8,7 @@ import RateReviewIcon from '@material-ui/icons/RateReview';
 
 
 
-import Pusherr from './../Pusherr';
+
 
 //Sidebar
 import PropTypes from 'prop-types';
@@ -439,7 +439,7 @@ export default function CreateBlog() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                     <div className="page-wrapper bg-light">

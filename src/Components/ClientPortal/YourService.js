@@ -43,7 +43,7 @@ import CallEndIcon from "@material-ui/icons/CallEnd";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import Pusherr from './../Pusherr';
+
 import CustomClientAuth from "../CustomClientAuth";
 
 const drawerWidth = 240;

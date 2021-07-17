@@ -46,7 +46,7 @@ import SwapVertIcon from '@material-ui/icons/SwapVert';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
-import Pusherr from './../Pusherr';
+
 import firebase from '../Firebase'
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -138,7 +138,7 @@ export default function Chat() {
     const [mxg, setMxg] = useState('');
     
     
-    const pusher = new Pusher('633eff09da55fc330ac0', {
+    const pusher = new Pusher('e22c56269c9258608b2c', {
         cluster: 'ap1'
       });;
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar'
 import Nav from './Nav'
 import './BLog.css';
-import Pusherr from './../Pusherr';
+
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 
@@ -408,7 +408,7 @@ export default function Blog() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper bg-light">
                         <div class="container">

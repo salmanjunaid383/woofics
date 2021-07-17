@@ -42,7 +42,7 @@ import CallEndIcon from '@material-ui/icons/CallEnd';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
-import Pusherr from './../Pusherr';
+
 import CustomClientAuth from "../CustomClientAuth";
 
 
@@ -370,7 +370,7 @@ useEffect(()=>{
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                    <div className="page-wrapper bg-light">
                         <div class="container pb-lg-4">
@@ -388,7 +388,7 @@ useEffect(()=>{
                                                             <>
                                                                 <tr>
                                                                     <td className="txt-oflo">{val.notification}</td>
-                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Remove</button></td>
+                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Remove </button></td>
                                                                 </tr>
                                                             </>
                                                         )

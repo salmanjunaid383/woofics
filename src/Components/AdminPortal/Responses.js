@@ -11,7 +11,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import PollIcon from '@material-ui/icons/Poll';
-import Pusherr from './../Pusherr';
+
 
 
 //Sidebar
@@ -402,7 +402,7 @@ export default function ProviderResponses() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                    <div className="page-wrapper bg-light">

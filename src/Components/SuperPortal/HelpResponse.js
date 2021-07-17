@@ -42,7 +42,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
-import Pusherr from './../Pusherr';
+
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
@@ -450,7 +450,7 @@ export default function HelpResponse() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                    <div className="page-wrapper bg-light">

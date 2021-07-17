@@ -49,7 +49,7 @@ export default function Blog() {
                     <i class="fa fa-bars"></i>
                 </a>
             </div> */}
-
+            
             <Navbar />
             <div className="page-wrapper ">
                 <div class="container">

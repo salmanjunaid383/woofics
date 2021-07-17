@@ -3,7 +3,7 @@ import { Link, useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from './Sidebar'
 import Nav from './Nav'
-import Pusherr from './../Pusherr';
+
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 
@@ -452,7 +452,7 @@ export default function ComplainResponse() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                     <div className="page-wrapper bg-light">

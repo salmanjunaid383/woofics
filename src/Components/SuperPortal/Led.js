@@ -13,7 +13,7 @@ import Select from '@material-ui/core/Select';
 import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
-import Pusherr from './../Pusherr';
+
 
 
 
@@ -467,7 +467,7 @@ export default function Led() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper bg-light">
 

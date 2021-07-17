@@ -21,7 +21,7 @@
       }, 'google_translate_element');
     }
     googleTranslateElementInit();
-    var cookitTest = document.cookie.match(/^(.*;)?\s*googtrans\s*=\s*[^;]+(.*)?$/);
+   
     
     
       
@@ -359,10 +359,10 @@ $(".tab a").on("click", function (e) {
   <script>
 
     $('document').ready(function () {
-      if(document.cookie.indexOf('googtrans=') == -1)
-      {
-        document.cookie = "googtrans=/es/es";
-      }
+      // if(document.cookie.indexOf('googtrans=') == -1)
+      // {
+      //   document.cookie = "googtrans=/es/es";
+      // }
       
       $('#google_translate_element').on("click", function () {
 

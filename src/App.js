@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Components/Login";
+import StazBar from "./Components/SuperPortal/Stazbar";
 import Forgetpwd from "./Components/Forgetpwd";
 import Confirmpassword from "./Components/Confirmpassword";
 import Sidebar from "./Components/ClientPortal/Sidebar";
@@ -228,6 +229,7 @@ function App() {
 
           {/* admin */}
           <Route exact path="/adminallnotification" component={AllNotification} />
+          <Route exact path="/stazbar" component={StazBar} />
 
           {/* provider    */}
           <Route exact path="/providerhelp" component={ProviderHelp} />

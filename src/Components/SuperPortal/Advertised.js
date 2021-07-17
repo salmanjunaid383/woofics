@@ -41,7 +41,7 @@ import BookIcon from '@material-ui/icons/Book';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
-import Pusherr from './../Pusherr';
+
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
@@ -412,7 +412,7 @@ export default function GetInspired() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper bg-light">
                         <div class="container pb-lg-4">

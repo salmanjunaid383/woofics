@@ -29,7 +29,7 @@ import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';  
-import Pusherr from './../Pusherr';
+
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import CustomProviderAuth from "../CustomProviderAuth";
 
@@ -350,7 +350,7 @@ export default function ServiceSidebar(props) {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <AdminDashboard />
                 </main>

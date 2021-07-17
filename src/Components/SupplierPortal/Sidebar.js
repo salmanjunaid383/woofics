@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
-import Pusherr from './../Pusherr';
+
 
 
 //Sidebar
@@ -361,7 +361,7 @@ export default function SupplierSidebar() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <SupplierDashboard />
                 </main>

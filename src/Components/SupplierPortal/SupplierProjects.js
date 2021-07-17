@@ -51,7 +51,7 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import firebase from '../Firebase'
-import Pusherr from './../Pusherr';
+
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
 
@@ -558,7 +558,7 @@ export default function SupplierProjects() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper bg-light">
                         <div className="container">

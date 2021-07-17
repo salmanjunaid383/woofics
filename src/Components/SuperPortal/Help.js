@@ -6,7 +6,7 @@ import Nav from './Nav'
 import { Delete } from "@material-ui/icons";
 // import './BLog.css';
 import Badge from '@material-ui/core/Badge';
-import Pusherr from './../Pusherr';
+
 
 
 
@@ -412,7 +412,7 @@ export default function Help() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <div className="page-wrapper bg-light">
                         <div class="container pb-lg-4">
