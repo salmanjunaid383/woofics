@@ -427,7 +427,7 @@ function Navbar() {
             // // document.getElementById("woofic-logo").style.height="400px";
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
             try {
-                document.getElementById("myTopnav").style.backgroundColor = "#934CFF";
+                document.getElementById("myTopnav").style.background = "none";
                 document.getElementById("myTopnav").style.boxShadow = "none";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
@@ -446,13 +446,13 @@ function Navbar() {
                 document.getElementById("taglink6").style.color = "white";
                 document.getElementById("taglink7").style.color = "white";
                 
-                document.getElementById("taglink1").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink2").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink3").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink4").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink5").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink6").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink7").style.backgroundColor = "#934CFF";
+                document.getElementById("taglink1").style.background = "none";
+                document.getElementById("taglink2").style.background = "none";
+                document.getElementById("taglink3").style.background = "none";
+                document.getElementById("taglink4").style.background = "none";
+                document.getElementById("taglink5").style.background = "none";
+                document.getElementById("taglink6").style.background = "none";
+                document.getElementById("taglink7").style.background = "none";
                 setLogo(false)
                 this.logoPath = logo2;
             }
