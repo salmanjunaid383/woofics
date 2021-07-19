@@ -42,7 +42,7 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
-import Pusherr from './../Pusherr';
+
 
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -426,7 +426,7 @@ export default function CheckResponse() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                     <div className={classes.toolbar} />

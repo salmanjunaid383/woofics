@@ -319,7 +319,10 @@ export default function PriceCalculator() {
     return (
         <>
 
+            <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
             <Navbar />
+            </section>
+            
             <br />
             <h2 className="text-center text-primary pt-5">Led Screen Configurator</h2>
             <div className="container w-75 p-0 shadow" >

@@ -7,7 +7,7 @@ import Nav from './Nav'
 import './DiscussionForum.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import Pusherr from './../Pusherr';
+
 
 //Sidebar
 import PropTypes from 'prop-types';
@@ -136,7 +136,7 @@ function getModalStyle() {
 }
 
 export default function DiscussionForum() {
-    CustomClientAuth();
+    
     let history = useHistory();
 
 
@@ -466,7 +466,7 @@ export default function DiscussionForum() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                     <div className="float-right mt-4  mr-4">

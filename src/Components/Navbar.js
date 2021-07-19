@@ -386,6 +386,7 @@ function Navbar() {
                 document.getElementById("taglink4").style.transition = "0.3s all";
                 document.getElementById("taglink5").style.transition = "0.3s all";
                 document.getElementById("taglink6").style.transition = "0.3s all";
+                document.getElementById("dropDownLink").style.transition = "0.3s all";
 
                 document.getElementById("taglink1").style.color = "#767676";
                 document.getElementById("taglink2").style.color = "#767676";
@@ -394,6 +395,7 @@ function Navbar() {
                 document.getElementById("taglink5").style.color = "#767676";
                 document.getElementById("taglink6").style.color = "#767676";
                 document.getElementById("taglink7").style.color = "#767676";
+                document.getElementById("dropDownLink").style.color="#767676";
 
                 document.getElementById("taglink1").style.backgroundColor = "white";
                 document.getElementById("taglink2").style.backgroundColor = "white";
@@ -402,7 +404,9 @@ function Navbar() {
                 document.getElementById("taglink5").style.backgroundColor = "white";
                 document.getElementById("taglink6").style.backgroundColor = "white";
                 document.getElementById("taglink7").style.backgroundColor = "white";
-
+                document.getElementById("dropDownLink").style.backgroundColor = "white";
+                
+                
 
 
                 // document.getElementById("taglink8").style.backgroundColor = "#ffffff"
@@ -427,7 +431,7 @@ function Navbar() {
             // // document.getElementById("woofic-logo").style.height="400px";
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
             try {
-                document.getElementById("myTopnav").style.backgroundColor = "#934CFF";
+                document.getElementById("myTopnav").style.background = "none";
                 document.getElementById("myTopnav").style.boxShadow = "none";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
                 document.getElementById("myTopnav").style.transition = "0.3s all";
@@ -438,6 +442,7 @@ function Navbar() {
                 document.getElementById("taglink5").style.transition = "0.3s all";
                 document.getElementById("taglink6").style.transition = "0.3s all";
 
+                document.getElementById("dropDownLink").style.color="white";
                 document.getElementById("taglink1").style.color = "white";
                 document.getElementById("taglink2").style.color = "white";
                 document.getElementById("taglink3").style.color = "white";
@@ -446,13 +451,15 @@ function Navbar() {
                 document.getElementById("taglink6").style.color = "white";
                 document.getElementById("taglink7").style.color = "white";
                 
-                document.getElementById("taglink1").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink2").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink3").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink4").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink5").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink6").style.backgroundColor = "#934CFF";
-                document.getElementById("taglink7").style.backgroundColor = "#934CFF";
+                
+                document.getElementById("taglink1").style.background = "none";
+                document.getElementById("taglink2").style.background = "none";
+                document.getElementById("taglink3").style.background = "none";
+                document.getElementById("taglink4").style.background = "none";
+                document.getElementById("taglink5").style.background = "none";
+                document.getElementById("taglink6").style.background = "none";
+                document.getElementById("taglink7").style.background = "none";
+                document.getElementById("dropDownLink").style.background = "none";
                 setLogo(false)
                 this.logoPath = logo2;
             }
@@ -495,14 +502,34 @@ function Navbar() {
                             Offer
                         </Link>
                         {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
-                        <Link to="/pricecalculator" className="pt-3 " id="taglink4">
+
+                        {/* <Link to="/pricecalculator" className="pt-3 " id="taglink4">
                             Price Calculator
-                        </Link>
-                        <Link to="/getinspire" className="pt-3 " id="taglink5">
+                        </Link> */}
+
+                        {/* <Link to="/getinspire" className="pt-3 " id="taglink5">
                             Get Inspire
-                        </Link>
-                        <Link to="/advertise" className="pt-3 " id="taglink6">
-                            Advertise
+                        </Link> */}
+
+                        <Link id="scroll-effect"  style={{marginTop:"-11px", marginLeft:"-15px"}}>
+                            {/* Advertise */}
+                            
+                            <div class="dropdown">
+                                <button class="dropbtn" id="dropDownLink">Tools</button>
+                                <div class="dropdown-content">
+                                <Link to="/pricecalculator" className="pt-3 " id="taglink4" style={{color:"#000"}}>
+                                    Price Calculator
+                                </Link>
+
+                                <Link to="/getinspire" className="pt-3 " id="taglink5" style={{color:"#000"}}>
+                                    Get Inspire
+                                </Link>
+
+                                <Link to="/advertise"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
+                                    Advertise
+                                </Link>
+                                </div>
+                                </div>
                         </Link>
                         {localStorage.getItem("user_token") ? (
                             <>

@@ -12,7 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
-import Pusherr from './../Pusherr';
+
 
 
 
@@ -485,7 +485,7 @@ export default function PaymentPhase() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                    <div className="page-wrapper bg-light">
 

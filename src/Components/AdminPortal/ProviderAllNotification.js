@@ -39,7 +39,7 @@ import ListIcon from '@material-ui/icons/List';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
-import Pusherr from './../Pusherr';
+
 import CustomProviderAuth from "../CustomProviderAuth";
 
 
@@ -351,7 +351,7 @@ export default function ProviderAllNotification() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                    <div className="page-wrapper bg-light">
                         <div class="container pb-lg-4">

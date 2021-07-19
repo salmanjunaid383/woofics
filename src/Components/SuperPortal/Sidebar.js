@@ -40,7 +40,7 @@ import BookIcon from '@material-ui/icons/Book';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
-import Pusherr from './../Pusherr';
+
 import SuperDashboard from './SuperDashboard'
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
@@ -262,6 +262,11 @@ export default function Registration() {
             to: 'charges'
         },
         {
+            name: 'Discussion Forum',
+            icon: <ContactMailIcon  style={{ color: "#cdcdcd" }}/>,
+            to: 'clientdiscussionforum'
+        },
+        {
             name: 'View Contacts',
             icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
             to: 'viewcontact'
@@ -408,7 +413,7 @@ export default function Registration() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
                     <SuperDashboard />
                 </main>

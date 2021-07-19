@@ -13,7 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Pusher from 'pusher-js';
 import chatimg from '../../Images/chat.png'
 import franimg from './fran.jpg'
-import Pusherr from './../Pusherr';
+
 
 
 //Sidebar
@@ -141,17 +141,38 @@ export default function Chat() {
     //     cluster: 'ap1'
     // });
 
-    // var channel = pusher.subscribe(toke);
+    const pusher = new Pusher('e22c56269c9258608b2c', {
+        cluster: 'ap1'
+      });;
 
-    // useEffect(() => {
-    //     channel.bind('my-event', function (data) {
-    //         setMxg('New Message : ' + " " + JSON.stringify(data.message))
-    //         if (JSON.stringify(data.message)) {
-    //             setOpenn(true);
-    //             handleClickk()
-    //         }
-    //     })
-    // }, [])
+      useEffect(() => {
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
+        channel.bind("my-event",function(returnData){
+            console.log("my-event");
+            function Users() {
+             console.log(returnData);
+                const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
+                    from_user: id,
+                    to_user: returnData.from_user
+                })
+                    .then((response) => {
+                        if (response) {
+                            console.log(response.data)
+                            setMsg(response.data)
+                            setRight(response.data.from_user)
+                            SendData()
+                            // divRef.current.scrollIntoView({ behavior: 'smooth' });
+
+                        }
+                    }, (Error) => {
+                        console.log("userID "+id+" to user ");
+                        console.log(Error);
+                    })
+            }
+            Users();
+        });
+    }, [])
 
 
     //Making Contact
@@ -579,7 +600,7 @@ export default function Chat() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
                     <div className="page-wrapper" >
                         <div id="frame">
                             <div id="sidepanel">

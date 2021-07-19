@@ -15,7 +15,7 @@ import chatimg from '../../Images/chat.png'
 import franimg from './fran.jpg'
 import Tooltip from '@material-ui/core/Tooltip';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Pusherr from './../Pusherr';
+
 
 
 
@@ -134,6 +134,39 @@ export default function ProviderChat() {
     //     }
 
     // })
+    const pusher = new Pusher('e22c56269c9258608b2c', {
+        cluster: 'ap1'
+      });;
+
+
+      useEffect(() => {
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
+        channel.bind("my-event",function(returnData){
+            console.log("my-event");
+            function Users() {
+             console.log(returnData);
+                const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
+                    from_user: id,
+                    to_user: returnData.from_user
+                })
+                    .then((response) => {
+                        if (response) {
+                            console.log(response.data)
+                            setMsg(response.data)
+                            setRight(response.data.from_user)
+                            SendData()
+                            // divRef.current.scrollIntoView({ behavior: 'smooth' });
+
+                        }
+                    }, (Error) => {
+                        console.log("userID "+id+" to user ");
+                        console.log(Error);
+                    })
+            }
+            Users();
+        });
+    }, [])
 
     //Making Contact
     const [user, setUser] = useState([]);
@@ -561,7 +594,7 @@ export default function ProviderChat() {
                 </nav>
 
                 <main className={classes.content}>
-                    <Pusherr />
+                    
                     <div className={classes.toolbar} />
                     <div className="page-wrapper" >
                         <div id="frame">

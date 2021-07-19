@@ -10,7 +10,7 @@ import Pusher from 'pusher-js';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import Pusherr from './../Pusherr';
+
 
 
 //Sidebar
@@ -428,7 +428,7 @@ export default function SupCheckResponse() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                    <div className="page-wrapper bg-light">

@@ -21,7 +21,7 @@
       }, 'google_translate_element');
     }
     googleTranslateElementInit();
-    var cookitTest = document.cookie.match(/^(.*;)?\s*googtrans\s*=\s*[^;]+(.*)?$/);
+   
     
     
       
@@ -118,7 +118,7 @@
 
   </head>
 
-<body >
+<body id="wholebodytext" >
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
@@ -359,10 +359,14 @@ $(".tab a").on("click", function (e) {
   <script>
 
     $('document').ready(function () {
+
+      document.querySelector("wholebodytext").innerText = document.querySelector("wholebodytext").innerText.toLowerCase().replace(/\b(\w)/g, x => x.toUpperCase());
+
       if(document.cookie.indexOf('googtrans=') == -1)
       {
         document.cookie = "googtrans=/es/es";
       }
+
       
       $('#google_translate_element').on("click", function () {
 

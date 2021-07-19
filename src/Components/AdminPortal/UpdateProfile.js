@@ -36,7 +36,7 @@ import firebase from '../Firebase'
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd'; 
 
-import Pusherr from './../Pusherr';
+
 import CustomProviderAuth from "../CustomProviderAuth";
 
 
@@ -451,7 +451,7 @@ export default function UpdateProfile() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
 

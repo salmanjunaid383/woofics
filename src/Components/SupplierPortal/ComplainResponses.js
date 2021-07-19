@@ -43,7 +43,7 @@ import SwapVertIcon from '@material-ui/icons/SwapVert';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
-import Pusherr from './../Pusherr';
+
 import PollIcon from '@material-ui/icons/Poll';
 import ListIcon from '@material-ui/icons/List';
 
@@ -429,7 +429,7 @@ export default function SupplierComplainResponses() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
 
 
                     <div className={classes.toolbar} />

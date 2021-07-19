@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
+import { makeStyles} from '@material-ui/core/styles';
+import StazBar from './Stazbar';
 import {
     PieChart,
     Pie,
@@ -13,7 +15,20 @@ import {
     Bar, Line, AreaChart, Area, Sector,
     LineChart, ResponsiveContainer
 } from "recharts";
+
 import CustomAdminAuth from "../CustomAdminAuth";
+
+const useStyles = makeStyles((theme) => ({
+
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
+
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(0),
+    }
+
+}));
 
 export default function SuperDashboard() {
     CustomAdminAuth();
@@ -73,7 +88,7 @@ export default function SuperDashboard() {
                 console.log(Error);
             });
     }
-
+    const classes = useStyles();
 
     //....Completed Projectt
     function CompletedPro() {
@@ -224,50 +239,50 @@ export default function SuperDashboard() {
 
 
 
-    const data = [
-        {
-            name: 'Page A',
-            uv: 4000,
-            pv: 2400,
-            amt: 2400,
-        },
-        {
-            name: 'Page B',
-            uv: 3000,
-            pv: 1398,
-            amt: 2210,
-        },
-        {
-            name: 'Page C',
-            uv: 2000,
-            pv: 9800,
-            amt: 2290,
-        },
-        {
-            name: 'Page D',
-            uv: 2780,
-            pv: 3908,
-            amt: 2000,
-        },
-        {
-            name: 'Page E',
-            uv: 1890,
-            pv: 4800,
-            amt: 2181,
-        },
-        {
-            name: 'Page F',
-            uv: 2390,
-            pv: 3800,
-            amt: 2500,
-        },
-        {
-            name: 'Page G',
-            uv: 3490,
-            pv: 4300,
-            amt: 2100,
-        },
-    ];
+    // const data = [
+    //     {
+    //         name: 'Page A',
+    //         uv: 4000,
+    //         pv: 2400,
+    //         amt: 2400,
+    //     },
+    //     {
+    //         name: 'Page B',
+    //         uv: 3000,
+    //         pv: 1398,
+    //         amt: 2210,
+    //     },
+    //     {
+    //         name: 'Page C',
+    //         uv: 2000,
+    //         pv: 9800,
+    //         amt: 2290,
+    //     },
+    //     {
+    //         name: 'Page D',
+    //         uv: 2780,
+    //         pv: 3908,
+    //         amt: 2000,
+    //     },
+    //     {
+    //         name: 'Page E',
+    //         uv: 1890,
+    //         pv: 4800,
+    //         amt: 2181,
+    //     },
+    //     {
+    //         name: 'Page F',
+    //         uv: 2390,
+    //         pv: 3800,
+    //         amt: 2500,
+    //     },
+    //     {
+    //         name: 'Page G',
+    //         uv: 3490,
+    //         pv: 4300,
+    //         amt: 2100,
+    //     },
+    // ];
 
 
     const data01 = [
@@ -277,63 +292,18 @@ export default function SuperDashboard() {
         { name: 'Group D', value: 200 },
     ];
     // TotalPerProjects
-    const data02 = [
-        {
-            name: "Jan",
-            value: 12
-          },
-          {
-            name: "Feb",
-            value: 23
-          },
-          {
-            name: "Mar",
-            value: 60
-          },
-          {
-            name: "Apr",
-            value: 40
-          },
-          {
-            name: "May",
-            value: 11
-          },
-          {
-            name: "Jun",
-            value: 3
-          },
-          {
-            name: "Jul",
-            value: 1
-          },
-          {
-            name: "Aug",
-            value: 46
-          },
-          {
-            name: "Sep",
-            value: 22
-          },
-          {
-            name: "Oct",
-            value: 20
-          },
-          {
-            name: "Nov",
-            value: 3
-          },
-          {
-            name: "Dec",
-            value: 30
-          }
-    ];
+
    
          
      
 
     return (
         <>
-
+            <div className="d-sm-flex">
+            <StazBar></StazBar>
+            
+            <main className={classes.content}>
+                <div className={classes.toolbar} />
 
             <div className="page-wrapper bg-light">
                 <div class="grey-bg container-fluid">
@@ -575,6 +545,8 @@ export default function SuperDashboard() {
                     </div>
                 </div>
             </div>
+            </main>
+        </div>
         </>
     );
 }

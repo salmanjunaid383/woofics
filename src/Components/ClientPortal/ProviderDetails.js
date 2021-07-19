@@ -43,7 +43,7 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Pusherr from './../Pusherr';
+
 import CustomClientAuth from "../CustomClientAuth";
 
 
@@ -419,7 +419,7 @@ export default function ProviderDetails() {
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Pusherr />
+                    
                                <div className="page-wrapper bg-light">
                                     <div class="container w-100 ">
                                     <div class="d-md-flex mb-3">
