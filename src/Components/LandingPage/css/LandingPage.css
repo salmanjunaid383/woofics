@@ -312,9 +312,9 @@ body{
 
 
 /* Change color of dropdown links on hover */
-#taglink4:hover {color: #934CFF !important;}
-#taglink5:hover {color: #934CFF !important;}
-#taglink6:hover {color: #934CFF !important;}
+#taglink4:hover {color: #0767c4 !important;}
+#taglink5:hover {color: #0767c4 !important;}
+#taglink6:hover {color: #0767c4 !important;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
