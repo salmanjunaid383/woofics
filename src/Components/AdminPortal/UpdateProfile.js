@@ -464,18 +464,18 @@ export default function UpdateProfile() {
                                         <form class="form-horizontal form-material" >
                                             <div className="row">
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">First Name</label>
+                                                    <label class="col-md-6 p-0 bold">Primer Nombre</label>
                                                     <input type="text" defaultValue={data.first_name}
                                                         class="form-control p-0 border-0" onChange={(e) => setFirstname(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Last Name</label>
+                                                    <label class="col-md-6 p-0 bold">Apellido</label>
                                                     <input type="text" defaultValue={data.last_name}
                                                         class="form-control p-0 border-0" onChange={(e) => setLastname(e.target.value)} /> </div>
                                             </div>
                                             <div className="row">
 
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                    <label for="example-email" class="col-md-12 p-0">Correo Electrónico</label>
                                                     <input type="email" defaultValue={data.email}
                                                         class="form-control p-0 border-0" name="example-email"
                                                         id="example-email1" onChange={(e) => setEmail(e.target.value)} />
@@ -500,12 +500,12 @@ export default function UpdateProfile() {
                                             </div>
                                             <div className="row">
                                                 <div class="form-group mb-4 row col-md-6">
-                                                    <label class="col-md-12 p-0">Company Size </label>
+                                                    <label class="col-md-12 p-0">Tamaño de la empresa </label>
                                                     <input type="text" defaultValue={data.company_size}
                                                         class="form-control p-0 border-0" onChange={(e) => setsize(e.target.value)} />
                                                 </div>
                                                 <div class="form-group mb-4 row col-md-6">
-                                                    <label class="col-md-12 p-0">Business Name</label>
+                                                    <label class="col-md-12 p-0">Nombre del Negocio</label>
                                                     <input type="text" defaultValue={data.name_of_your_business ? data.name_of_your_business : ""}
                                                         class="form-control p-0 border-0" onChange={(e) => setbname(e.target.value)} />
                                                 </div>
@@ -551,7 +551,7 @@ export default function UpdateProfile() {
 
                 {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -572,7 +572,7 @@ export default function UpdateProfile() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">See all NotificationVer Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -599,26 +599,26 @@ export default function UpdateProfile() {
                 <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses')}>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio de asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar sesión</span>
                     </a>
                 </Typography>
 

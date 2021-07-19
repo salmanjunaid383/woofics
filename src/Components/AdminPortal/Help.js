@@ -420,7 +420,7 @@ export default function ProviderHelp() {
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Zaskia Amanda</strong></p>
                                                     <Link to="/providerresponses" className="pt-3 responseLinkStaz text-black "  >
                                                     
-                                                        Responses
+                                                    Respuestas
                                                         
                                                     </Link>
 
@@ -496,7 +496,7 @@ export default function ProviderHelp() {
        
        {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -517,7 +517,7 @@ export default function ProviderHelp() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -544,26 +544,26 @@ export default function ProviderHelp() {
              <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
             </Popover>

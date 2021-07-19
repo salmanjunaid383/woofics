@@ -430,7 +430,7 @@ export default function ProviderLedger() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Ledger</h1>
+                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Libro Mayor</h1>
                                             </div>
 
 
@@ -501,7 +501,7 @@ export default function ProviderLedger() {
                                                             </div>
                                                             <div class="mb-4 mt-4 text-center mx-auto">
                                                                     <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Pay Invoice</button>
+                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Factura De Pago</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
@@ -525,15 +525,15 @@ export default function ProviderLedger() {
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">#</th>
-                                                            <th className="border-top-0 text-white text-center">BALANCE</th>
-                                                            <th className="border-top-0 text-white text-center">CREATED AT</th>
+                                                            <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
+                                                            <th className="border-top-0 text-white text-center">CREADO EN</th>
                                                             {/* <th></th> */}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         {
                                                             
-                                                            article == '' ? <h3 className="mt-5 text-center"> Nothing to show!</h3> :
+                                                            article == '' ? <h3 className="mt-5 text-center"> Nada Que Mostrar!</h3> :
                                                                 article.map((val, id) => {
                                                                     return (
                                                                         <>
@@ -549,9 +549,9 @@ export default function ProviderLedger() {
                                                                 })}
                                                                 {
                                                             article !== '' ?
-                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
+                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generate Invoice</button></td>
+                                                                <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generar Factura</button></td>
                                                                 {/* <td className="txt-oflo text-center"></td> */}
                                                                 
                                                             </tr> : <h3></h3> 
@@ -587,7 +587,7 @@ export default function ProviderLedger() {
 
                 {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -608,7 +608,7 @@ export default function ProviderLedger() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -635,26 +635,26 @@ export default function ProviderLedger() {
                 <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses')}>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

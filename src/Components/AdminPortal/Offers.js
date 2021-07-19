@@ -459,7 +459,7 @@ export default function Offers() {
                                             <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row">
                                                     <div className="col-md-12">
-                                                        <label class="col-md-12 p-0">Description</label>
+                                                        <label class="col-md-12 p-0">Descripción</label>
                                                         <div class="col-md-12 border-bottom p-0">
                                                             <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>
@@ -559,7 +559,7 @@ export default function Offers() {
                 
                 {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -580,7 +580,7 @@ export default function Offers() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -607,26 +607,26 @@ export default function Offers() {
                 <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

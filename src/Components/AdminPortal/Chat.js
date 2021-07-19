@@ -624,7 +624,7 @@ export default function ProviderChat() {
                                                                 <img src={val.avatar} style={{ borderRadius: 50, width: 50, height: 50 }} alt="" />
                                                                 <div class="meta">
                                                                     <p className="name chatCapitalize mb-0 pb-0">{val.associate_name}</p>
-                                                                    {val.total_seen != 0 ? <p class="preview pl-md-5 text-danger text-left" style={{ width: '950px' }}>{val.total_seen} Unread messages...</p> : <p class="preview pl-md-5 text-left " style={{ width: '950px' }}> {val.last_message ? (val.last_message).slice(0, 20) + '...' : null}</p>}
+                                                                    {val.total_seen != 0 ? <p class="preview pl-md-5 text-danger text-left" style={{ width: '950px' }}>{val.total_seen} Mensajes no leídos...</p> : <p class="preview pl-md-5 text-left " style={{ width: '950px' }}> {val.last_message ? (val.last_message).slice(0, 20) + '...' : null}</p>}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -640,7 +640,7 @@ export default function ProviderChat() {
                                 {username ? <div class="contact-profile">
                                     <img src={ImageProfile} alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
                                     <p className="ChatCapitalize">{username}</p>
-                                    <div className="bg-dark text-white float-right px-md-2" onClick={() => history.push(`/provideroffer/${uid}`)} style={{ cursor: 'pointer' }}>Create offer</div>
+                                    <div className="bg-dark text-white float-right px-md-2" onClick={() => history.push(`/provideroffer/${uid}`)} style={{ cursor: 'pointer' }}>Crear Oferta</div>
                                 </div> :
                                     <div className="container-fluid mt-lg-5 mt-md-4 mt-sm-5 ">
                                         <div className="row">
@@ -648,7 +648,7 @@ export default function ProviderChat() {
                                                 <img src={chatimg} style={{ width: '50%' }} className="mx-auto text-center" />
                                             </div>
                                             <div className="col-md-12 text-center">
-                                                <h1>   Select Any User To Chat </h1>
+                                                <h1>   Seleccione Cualquier Usuario Para Chatear </h1>
                                             </div>
                                         </div>
                                     </div>
@@ -667,7 +667,7 @@ export default function ProviderChat() {
                                                     <>
                                                         <li class={decoded.sub == val.from_user ? 'replies' : 'sent'} ref={divRef} value={val.to_user == id ? 'me hu' : 'dost'}>
                                                             <img src={decoded.sub === val.from_user ? Imagedata.profile_image : ImageProfile} alt="" style={{ borderRadius: 50, width: 30, height: 30 }} />
-                                                            {(val.message).slice(0, 8) == 'https://' ? <p >File Download: <a href={val.message} download><i className="fa fa-download px-2 text-white"></i></a></p> : <p>{val.message}</p>}
+                                                            {(val.message).slice(0, 8) == 'https://' ? <p >Descarga De Archivos: <a href={val.message} download><i className="fa fa-download px-2 text-white"></i></a></p> : <p>{val.message}</p>}
                                                         </li>
                                                     </>
                                                 )
@@ -684,8 +684,8 @@ export default function ProviderChat() {
                                             open={Boolean(anchorElmenu)}
                                             onClose={handleClosemenu}
                                         >
-                                            <label ><MenuItem onClick={handleClosemenu} >Images<input type="file" onChange={docOnchange} accept="image/*" className="d-none" /></MenuItem></label>
-                                            <label ><MenuItem onClick={handleClosemenu} >Documents <input type="file" onChange={docOnchange} className="d-none" /></MenuItem></label>
+                                            <label ><MenuItem onClick={handleClosemenu} >Imagenes<input type="file" onChange={docOnchange} accept="image/*" className="d-none" /></MenuItem></label>
+                                            <label ><MenuItem onClick={handleClosemenu} >Documentos <input type="file" onChange={docOnchange} className="d-none" /></MenuItem></label>
                                         </Menu>
                                         <button class="submit btn btn-primary my-1 mx-1" onClick={() => Message()}><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                     </div>
@@ -714,7 +714,7 @@ export default function ProviderChat() {
 
                 {notification == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     notification.slice(0, 5).map((val) => {
@@ -735,7 +735,7 @@ export default function ProviderChat() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -762,26 +762,26 @@ export default function ProviderChat() {
                 <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses')}>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

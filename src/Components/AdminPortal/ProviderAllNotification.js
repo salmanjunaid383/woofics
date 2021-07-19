@@ -359,7 +359,7 @@ export default function ProviderAllNotification() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title h1 mb-0 text-center mx-auto">All Notifications</h3>
+                                            <h3 className="box-title h1 mb-0 text-center mx-auto">Todas Las Notificaciones</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
@@ -369,7 +369,7 @@ export default function ProviderAllNotification() {
                                                             <>
                                                                 <tr>
                                                                     <td className="txt-oflo">{val.notification}</td>
-                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Remove</button></td>
+                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Eliminar</button></td>
                                                                 </tr>
                                                             </>
                                                         )
@@ -402,7 +402,7 @@ export default function ProviderAllNotification() {
 
                 {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -423,7 +423,7 @@ export default function ProviderAllNotification() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -450,13 +450,13 @@ export default function ProviderAllNotification() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 
