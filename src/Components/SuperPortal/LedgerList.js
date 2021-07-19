@@ -57,17 +57,14 @@ export default function Help() {
             getServiceledger()
         }
     }, [])
-
-
   
-
     //Sidebaaaaar/..........................
     // const { window } = props;
     const classes = useStyles();
   
     return (
         <>
-            <div className="d-sm-flex">
+            <div className="d-sm-flex" id="text">
                 <StazBar></StazBar>
 
                 <main className={classes.content}>
@@ -75,7 +72,7 @@ export default function Help() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div class="container pb-lg-4" id="text">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
