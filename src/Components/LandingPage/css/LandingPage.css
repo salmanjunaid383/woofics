@@ -333,6 +333,9 @@ body{
     text-align: left;
     margin-left: -1px;
     }
+    .topnav{
+      height:auto !important;
+    }
 
   }
 
@@ -372,7 +375,18 @@ body{
 @media(max-width:768px){
   #taglink1,#taglink2,#taglink3,#taglink4,#taglink5,#taglink6,#dropDownLink{
     padding-left:15px;
+    
   }
+  .topnav{
+    height:auto !important;
+  }
+  .dropbtn{
+    width: 100vw !important;
+    margin-top: -3px;
+    border-radius: 0px;
+    text-align: left;
+    margin-left: -1px;
+    }
 
 }
 

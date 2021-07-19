@@ -511,7 +511,7 @@ function Navbar() {
                             Get Inspire
                         </Link> */}
 
-                        <Link id="scroll-effect"  style={{marginTop:"-11px", marginLeft:"-15px"}}>
+                        <Link id="scroll-effect"  style={{marginTop:"-11px", marginLeft:"-15px"}} >
                             {/* Advertise */}
                             
                             <div class="dropdown">
