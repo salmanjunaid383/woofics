@@ -459,13 +459,13 @@ export default function ComplainResponse() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">RESPUESTAS PARA QUEJAS</h4>
+                                    <h4 className="text-center p-4">COMPLAIN RESPONSES</h4>
                                     <div class="card-body">
                                         <div className="d-flex h5 bold">
-                                            Ayudar:  <p className="" style={{ fontSize: 20 }}> {blog.description}</p>
+                                            Help:  <p className="" style={{ fontSize: 20 }}> {blog.description}</p>
                                         </div>
                                         <div className="border p-md-3 ">
-                                            <h3 className="text-center">Respuestas:</h3>
+                                            <h3 className="text-center">Replies:</h3>
                                             {
                                                 reponses.map((val, id) => {
                                                     return (
@@ -477,7 +477,7 @@ export default function ComplainResponse() {
                                             }
                                         </div>
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0 mt-3">Respuesta</label>
+                                            <label class="col-md-12 p-0 mt-3">Reply</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <textarea rows="4" class="form-control p-0 border-0" value={article} placeholder="Type your reply here..." onChange={(e) => setArticle(e.target.value)}></textarea>
                                             </div>
@@ -512,7 +512,7 @@ export default function ComplainResponse() {
 
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
+                        <span className="text-black font-medium ml-1">No Notification !</span>
                     </a>
                 </Typography> :
                     newnoti.slice(0, 5).map((val) => {
@@ -533,7 +533,7 @@ export default function ComplainResponse() {
                 <Link to='/adminallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -560,13 +560,13 @@ export default function ComplainResponse() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Vete a Casa</span>
+                        <span className="text-black font-medium mr-3">Go home</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
+                        <span className="text-black font-medium mr-3">Logout</span>
                     </a>
                 </Typography>
 

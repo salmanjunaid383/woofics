@@ -389,7 +389,7 @@ useEffect(()=>{
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 mx-auto text-center">Todas las notificaciones</h3>
+                                            <h3 className="box-title mb-0 mx-auto text-center">All Notifications</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
@@ -399,7 +399,7 @@ useEffect(()=>{
                                                             <>
                                                                 <tr>
                                                                     <td className="txt-oflo">{val.notification}</td>
-                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e)=>notificationDelete(val.id)}>Eliminar</button></td>
+                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e)=>notificationDelete(val.id)}>Remove</button></td>
                                                                 </tr>
                                                             </>
                                                         )
@@ -432,7 +432,7 @@ useEffect(()=>{
              
                                 {newnoti == '' ? <Typography className={classes.typography}>
                                         <a className="profile-pic" >
-                                                <span className="text-black font-medium ml-1">Sin notificación !</span>
+                                                <span className="text-black font-medium ml-1">No Notification !</span>
                                         </a>
                                 </Typography> :
                                         newnoti.slice(0, 5).map((val) => {
@@ -453,7 +453,7 @@ useEffect(()=>{
                                         <Link to='/adminallnotification'>
                                         <Typography className={`${classes.typography} bg-dark text-light`} >
                                         <a className="profile-pic" >
-                                                <span className="text-black font-medium ml-1">Ver todas las notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                                                <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                                         </a>
                                 </Typography>
                                     </Link>
@@ -480,13 +480,13 @@ useEffect(()=>{
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Vete a casa</span>
+                        <span className="text-black font-medium mr-3">Go home</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Cerrar sesión</span>
+                        <span className="text-black font-medium mr-3">Logout</span>
                     </a>
                 </Typography>
 

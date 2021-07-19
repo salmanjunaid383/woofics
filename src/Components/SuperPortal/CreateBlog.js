@@ -446,10 +446,10 @@ export default function CreateBlog() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">Artículo</h4>
+                                    <h4 className="text-center p-4">Article</h4>
                                     <div class="card-body">
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0">Imagen De Portada</label>
+                                            <label class="col-md-12 p-0">Cover Image</label>
                                             <div class="col-md-12 border p-2 text-center">
                                                 {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
                                                  */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file" accept='image/*'/>
@@ -496,7 +496,7 @@ export default function CreateBlog() {
 
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
+                        <span className="text-black font-medium ml-1">No Notification !</span>
                     </a>
                 </Typography> :
                     newnoti.slice(0, 5).map((val) => {
@@ -517,7 +517,7 @@ export default function CreateBlog() {
                 <Link to='/adminallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -544,7 +544,7 @@ export default function CreateBlog() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Vete a Casa</span>
+                        <span className="text-black font-medium mr-3">Go home</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>

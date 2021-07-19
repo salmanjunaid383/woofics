@@ -439,19 +439,19 @@ export default function Charges() {
                             <div className="row m-lg-5 text-center mx-auto my-auto">
                                 <div className="col-md-5 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/createforms/value')}>
                                     <i className="fa fa-5x py-3 fa-money " style={{ color: "#f25c8a" }}></i>
-                                    <h5 className="h5">Cargo por valor</h5>
+                                    <h5 className="h5">Value Charge</h5>
                                 </div>
                                 <div className="col-md-5 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/createforms/supplier')}>
                                     <i className="fa fa-5x py-3 fa-cubes " style={{ color: "#9b88f6" }}></i>
-                                    <h5 className="h5">Paquetes de Proveedores</h5>
+                                    <h5 className="h5">Supplier Packages</h5>
                                 </div>
                                 <div className="col-md-5 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/createforms/rental')}>
                                     <i className="fas fa-5x py-3 fa-truck-loading " style={{ color: "#9b88f6" }}></i>
-                                    <h5 className="h5">Cargos por alquiler de proveedores</h5>
+                                    <h5 className="h5">Supplier Rental  Charges</h5>
                                 </div>
                                 <div className="col-md-5 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/createforms/service')}>
                                     <i className="fa fa-5x py-3 fa-users " style={{ color: "#f25c8a" }}></i>
-                                    <h5 className="h5">Cargos del proveedor de servicios</h5>
+                                    <h5 className="h5">Service Provider charges</h5>
                                 </div>
                             </div>
                         </div>
@@ -476,7 +476,7 @@ export default function Charges() {
 
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
+                        <span className="text-black font-medium ml-1">No Notification !</span>
                     </a>
                 </Typography> :
                     newnoti.slice(0, 5).map((val) => {
@@ -497,7 +497,7 @@ export default function Charges() {
                 <Link to='/adminallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">Ver todas las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -524,13 +524,13 @@ export default function Charges() {
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Vete a Casa</span>
+                        <span className="text-black font-medium mr-3">Go home</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
+                        <span className="text-black font-medium mr-3">Logout</span>
                     </a>
                 </Typography>
 
