@@ -4,8 +4,19 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import CustomClientAuth from "../CustomClientAuth";
+import { makeStyles} from '@material-ui/core/styles';
+import StazBar from './Sidebar';
+const useStyles = makeStyles((theme) => ({
 
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
 
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(0),
+    }
+
+}));
 
 export default function Dashboard() {
     CustomClientAuth();
@@ -17,7 +28,7 @@ export default function Dashboard() {
     const [todo, setTodo] = useState('');
     const [deadline, setDeadLine] = useState('');
     const [disable, setDisable] = useState('disabled');
-
+    const classes = useStyles();
 
 
     function Feedback(e) {
@@ -180,6 +191,12 @@ export default function Dashboard() {
 
     return (
         <>
+
+    <div className="d-sm-flex">
+        <StazBar></StazBar>
+        <main className={classes.content}>
+                <div className={classes.toolbar} />
+
             <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
                 data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" style={{ backgroundColor: '#76323f' }}>
                <div className="page-wrapper bg-light">
@@ -382,6 +399,9 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
+
+        </main>
+        </div>
         </>
     );
 }

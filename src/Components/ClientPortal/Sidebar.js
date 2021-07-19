@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode'
 
 
 //Sidebar
-import PropTypes from 'prop-types';
+
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -175,7 +175,7 @@ export default function Sidebar() {
     const Data = [
         {
             name: 'Dashboard',
-            icon: <DashboardIcon style={{ color: "white" }} />,
+            icon: <DashboardIcon style={{ color: "#cdcdcd" }} />,
             to: 'dashboard'
         },
         {
@@ -229,7 +229,8 @@ export default function Sidebar() {
             <List>
                 {Data.map((text, index) => (
                     <Link to={text.to} className={classes.link}>
-                        <ListItem button key={text} className={text.name == "Dashboard" ? classes.item : ''}>
+                        {/* className={text.name == "Dashboard" ? classes.item : ''} */}
+                        <ListItem button key={text} >
                             <ListItemIcon>{text.icon}</ListItemIcon>
                             <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
@@ -386,7 +387,7 @@ export default function Sidebar() {
                     <div className={classes.toolbar} />
                     
 
-                    <Dashboard />
+                   
                     
                 </main>
             </div>
