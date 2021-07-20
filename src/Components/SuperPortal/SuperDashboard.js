@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
-import { makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import StazBar from './Stazbar';
 import {
     PieChart,
@@ -48,7 +48,7 @@ export default function SuperDashboard() {
     const [TotalComplain, setTotalComplain] = useState();
     const [TotalUser, setTotalUser] = useState();
     const [TotalPerProjects, setTotalPerProjects] = useState();
-    const [staz,setStaz]=useState(false);
+    const [staz, setStaz] = useState(false);
 
 
     function TotalClient() {
@@ -61,7 +61,7 @@ export default function SuperDashboard() {
                 console.log(Error);
             });
     }
-   
+
 
     //...total Provider
 
@@ -186,22 +186,20 @@ export default function SuperDashboard() {
             .then((response) => {
                 console.log(response.data)
                 setTotalPerProjects(response.data)
-                for(var i=0; i< 12 ; i++)
-                {
-                    if(response.data[i].value !== 0)
-                    {
+                for (var i = 0; i < 12; i++) {
+                    if (response.data[i].value !== 0) {
                         setStaz(true);
                     }
-                    
+
                 }
             }, (Error) => {
 
                 console.log(Error);
             });
 
-            
+
     }
-    
+
 
     const [user, setuser] = useState([])
     function TotoalUser() {
@@ -216,7 +214,7 @@ export default function SuperDashboard() {
     }
 
 
-    
+
 
 
     useEffect(() => {
@@ -293,163 +291,179 @@ export default function SuperDashboard() {
     ];
     // TotalPerProjects
 
-   
-         
-     
+
+
+
 
     return (
         <>
             <div className="d-sm-flex">
-            <StazBar></StazBar>
-            
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
+                <StazBar></StazBar>
 
-            <div className="page-wrapper bg-light">
-                <div class="grey-bg container-fluid">
-                    <section id="minimal-statistics">
-                        <div class="row">
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fas fa-users fa-4x icon-pencil primary font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                <main className={classes.content}>
+                    <div className={classes.toolbar} />
+
+                    <div className="container-fluid page-wrapper">
+                        <div className="row">
+                            <div className="col-md-8">
+
+
+                                {/* <div className="page-wrapper bg-light"> */}
+                                {/* <div class="grey-bg container-fluid"> */}
+                                <div class="container-fluid">
+                                    <section id="minimal-statistics">
+                                        <div class="row" style={{ border: "2px solid #f3f3f3", padding: "10px" }}>
+                                            <div className="col-md-12">
+                                                <h4 style={{ fontSize: "25px", marginTop: "20px", marginBottom: "20px" }}>All The Data</h4>
+                                            </div>
+                                            <div class="col-xl-4 col-md-3 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fas fa-users fa-4x icon-pencil primary font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{totalClient}</h1>
+                                                                    <span>Total Clients</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{totalClient}</h1>
-                                                    <span>Total Clients</span>
+                                            </div>
+
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJ1c2luZXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fa fa-cog fa-4x  icon-speech warning font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{totalSupplier}</h1>
+                                                                    <span>Total Suppliers</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fa fa-user fa-4x   icon-graph success font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{totalProvider}</h1>
+                                                                    <span>Total Provider</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://media.istockphoto.com/photos/business-development-to-success-and-growing-growth-concept-pointing-picture-id1145631842?k=6&m=1145631842&s=612x612&w=0&h=D9ToEIi64qlA4_w-VmN9CBvfW-D4DKvdJrG1jJU-GPk=')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fa fa-rss fa-4x   icon-pointer danger font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{totalBlogs}</h1>
+                                                                    <span>Total Blogs</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.all-free-download.com/images/graphicthumb/business_exchange_picture_170372.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fa fa-tasks fa-4x  icon-pencil primary font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{CompletedProject}</h1>
+                                                                    <span>Completed Projects</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fa fa-spinner fa-4x  icon-speech warning font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{OnGoingProject}</h1>
+                                                                    <span>Ongoing Projects</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://eltamayoz.com/images/files/pages/about.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fas fa-handshake fa-4x   icon-graph success font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{PendingReg}</h1>
+                                                                    <span>Pending Registration</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://picjumbo.com/wp-content/uploads/woman-checking-her-to-do-list-free-photo-1080x720.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="media d-flex">
+                                                                <div class="align-self-center">
+                                                                    <i class="fa fa-file fa-4x   icon-pointer danger font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                </div>
+                                                                <div class="media-body text-right">
+                                                                    <h1 className="bold">{totalServ}</h1>
+                                                                    <span>   Total       Services </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </section>
                                 </div>
+
                             </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJ1c2luZXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fa fa-cog fa-4x  icon-speech warning font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{totalSupplier}</h1>
-                                                    <span>Total Suppliers</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fa fa-user fa-4x   icon-graph success font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{totalProvider}</h1>
-                                                    <span>Total Provider</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://media.istockphoto.com/photos/business-development-to-success-and-growing-growth-concept-pointing-picture-id1145631842?k=6&m=1145631842&s=612x612&w=0&h=D9ToEIi64qlA4_w-VmN9CBvfW-D4DKvdJrG1jJU-GPk=')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fa fa-rss fa-4x   icon-pointer danger font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{totalBlogs}</h1>
-                                                    <span>Total Blogs</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.all-free-download.com/images/graphicthumb/business_exchange_picture_170372.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fa fa-tasks fa-4x  icon-pencil primary font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{CompletedProject}</h1>
-                                                    <span>Completed Projects</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fa fa-spinner fa-4x  icon-speech warning font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{OnGoingProject}</h1>
-                                                    <span>Ongoing Projects</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://eltamayoz.com/images/files/pages/about.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fas fa-handshake fa-4x   icon-graph success font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{PendingReg}</h1>
-                                                    <span>Pending Registration</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://picjumbo.com/wp-content/uploads/woman-checking-her-to-do-list-free-photo-1080x720.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="media d-flex">
-                                                <div class="align-self-center">
-                                                    <i class="fa fa-file fa-4x   icon-pointer danger font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
-                                                </div>
-                                                <div class="media-body text-right">
-                                                    <h1 className="bold">{totalServ}</h1>
-                                                    <span>   Total       Services </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <div className="container my-lg-5">
-                        <div classNam="row">
-                            {/* <div className="col-md-6 ">
+                            <div className="col-md-4">
+
+                                <div className="container my-lg-5">
+                                    <div classNam="row">
+                                        {/* <div className="col-md-6 ">
                                 <BarChart
                                     width={500}
                                     height={300}
@@ -490,51 +504,54 @@ export default function SuperDashboard() {
                                 </PieChart>
                             </div> */}
 
-                            <div className="col-md-6" style={{ overflowX: "scroll" }}>
-                                <BarChart width={730} height={300} data={user}>
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Bar dataKey="pv" fill="#f25c8a" />
-                                    <Bar dataKey="uv" fill="#9b88f6" />
-                                </BarChart>
-                            </div>
-                            <div className="col-md-6" style={{ overflowX: "scroll" }}>
-                                <PieChart width={500} height={300}>
-                                    <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
-                                    <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
-                                </PieChart>
-                            </div>
+                                        <div className="col-md-6" style={{ overflowX: "scroll", margin: "auto" }}>
+                                            <BarChart width={730} height={300} data={user}>
+                                                <CartesianGrid strokeDasharray="3 3" />
+                                                <XAxis dataKey="name" />
+                                                <YAxis />
+                                                <Tooltip />
+                                                <Legend />
+                                                <Bar dataKey="pv" fill="#f25c8a" />
+                                                <Bar dataKey="uv" fill="#9b88f6" />
+                                            </BarChart>
+                                        </div>
+                                        <div className="col-md-6" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
+                                            <PieChart width={500} height={300}>
+                                                <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
+                                                <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
+                                            </PieChart>
+                                        </div>
 
 
-                        </div>
-                        <div class="row ">
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto mt-lg-4">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content text-center">
-                                        <div class="card-body">
-                                            <div class="media d-flex " >
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-xl-4 col-sm-6 col-12 mx-auto mt-lg-4">
+                                            <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                <div class="card-content text-center">
+                                                    <div class="card-body">
+                                                        <div class="media d-flex " >
 
-                                                <div class="media-body text-center">
-                                                    <span>Service Provider SignUp Link:</span><br />
-                                                    <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
+                                                            <div class="media-body text-center">
+                                                                <span>Service Provider SignUp Link:</span><br />
+                                                                <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 col-12 mx-auto mt-lg-4">
-                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                    <div class="card-content text-center">
-                                        <div class="card-body">
-                                            <div class="media d-flex " >
+                                        <div class="col-xl-4 col-sm-6 col-12 mx-auto mt-lg-4">
+                                            <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                                <div class="card-content text-center">
+                                                    <div class="card-body">
+                                                        <div class="media d-flex " >
 
-                                                <div class="media-body text-center">
-                                                    <span>Suppliers SignUp Link:</span><br />
-                                                    <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
+                                                            <div class="media-body text-center">
+                                                                <span>Suppliers SignUp Link:</span><br />
+                                                                <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -543,10 +560,8 @@ export default function SuperDashboard() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </main>
             </div>
-            </main>
-        </div>
         </>
     );
 }
