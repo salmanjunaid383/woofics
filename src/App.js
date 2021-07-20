@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 // import { useLocation } from 'react-dom'
 import './App.css';
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import StazBar from "./Components/SuperPortal/Stazbar";
@@ -140,7 +141,6 @@ function App() {
 
   
 
-  // cookie.setRawCookie("googtrans", "es", {path: "/"});
 
 
   useEffect(() => {

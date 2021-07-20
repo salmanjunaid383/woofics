@@ -8,6 +8,7 @@ import Footer from './LandingPage/components/Footer'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './Contact.css'
+import ScrollToTop from './ScrollToTop'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ContactUs() {
+    ScrollToTop();
     let history = useHistory();
 
     const classes = useStyles();
