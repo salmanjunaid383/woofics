@@ -124,3 +124,48 @@ export default function Help() {
         </>
     );
 }
+
+
+
+// const Data = [
+//     {
+//         name: 'Supplier Dashboard',
+//         icon: <DashboardIcon style={{color:"white"}}/>,
+//         to: 'supplierdashboard'
+//     },
+//     {
+//         name: 'Projects',
+//         icon: <PollIcon  style={{ color: "#cdcdcd" }}/>,
+//         to: 'supproject'
+//     },
+//     {
+//         name: 'Todo',
+//         icon: <LocalOfferIcon  style={{ color: "#cdcdcd" }}/>,
+//         to: 'suppliertodo'
+//     },
+//     {
+//         name: 'Services',
+//         icon: <PlaylistAddCheckIcon  style={{ color: "#cdcdcd" }}/>,
+//         to: 'quotation'
+//     },
+//     {
+//         name: 'Sent Quotation',
+//         icon: <AssistantIcon  style={{ color: "#cdcdcd" }}/>,
+//         to: 'sentquotation'
+//     },
+//     {
+//         name: 'Ledger',
+//         icon: <BorderColorIcon style={{ color: "white" }} />,
+//         to: 'supplierledger'
+//     },
+//     {
+//         name: 'Help',
+//         icon: <LiveHelpIcon  style={{ color: "#cdcdcd" }}/>,
+//         to: 'suphelp'
+//     },
+//     {
+//         name: 'Complain',
+//         icon: <CallEndIcon  style={{ color: "#cdcdcd" }}/>,
+//         to: 'supcomplain'
+//     },
+// ]

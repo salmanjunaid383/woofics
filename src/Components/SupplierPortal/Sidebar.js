@@ -365,7 +365,7 @@ export default function SupplierSidebar() {
                     <div className={classes.toolbar} />
                     
 
-                    <SupplierDashboard />
+                    
                 </main>
             </div>
 

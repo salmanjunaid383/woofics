@@ -21,6 +21,7 @@ import YourService from './Components/ClientPortal/YourService';
 import AllQuotation from './Components/ClientPortal/AllQuotation';
 import Feedback from './Components/ClientPortal/Feedback';
 import AdminComplain from './Components/SuperPortal/AdminComplain';
+import SupplierDashboard from './Components/SupplierPortal/SupplierDashboard'
 import SupplierSidebar from './Components/SupplierPortal/Sidebar';
 import SuperSidebar from './Components/SuperPortal/Sidebar';
 import SupCoupons from './Components/SuperPortal/SupCoupons';
@@ -174,7 +175,7 @@ function App() {
           <Route exact path="/addservice" component={AddService} />
           <Route exact path="/myservice" component={YourService} />
           <Route exact path="/feedback/:fid" component={Feedback} />
-          <Route exact path="/supplierdashboard" component={SupplierSidebar} />
+          <Route exact path="/supplierdashboard" component={SupplierDashboard} />
           <Route exact path="/quotation" component={Quotation} />
           <Route exact path="/allquotation/:sid" component={AllQuotation} />
           <Route exact path="/quote/:serrid" component={Quote} />
