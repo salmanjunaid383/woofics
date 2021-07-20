@@ -2,12 +2,25 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
+import { makeStyles} from '@material-ui/core/styles';
 import CustomProviderAuth from "../CustomProviderAuth";
+import Sidebar from './Sidebar';
+const useStyles = makeStyles((theme) => ({
+
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
+
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(0),
+    }
+
+}));
 
 export default function AdminDashboard() {
     CustomProviderAuth();
     let history = useHistory();
-
+    const classes = useStyles();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
@@ -109,6 +122,11 @@ export default function AdminDashboard() {
 
     return (
         <>
+        <div className="d-sm-flex">
+            <Sidebar></Sidebar>
+        <main className={classes.content}>
+                    <div className={classes.toolbar} />
+
             <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
                 data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" style={{ backgroundColor: '#76323f' }}>
                <div className="page-wrapper bg-light">
@@ -203,6 +221,8 @@ export default function AdminDashboard() {
                         </section>
                     </div>
                 </div>
+            </div>
+            </main>
             </div>
         </>
     );

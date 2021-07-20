@@ -255,9 +255,9 @@ export default function SupplierSidebar() {
                 console.log(Error);
             });
     }
-    useEffect(() => {
-        seen()
-    }, [])
+    // useEffect(() => {
+    //     seen()
+    // }, [])
 
     const [Imagedata, setImageData] = useState('');
 
@@ -285,6 +285,7 @@ export default function SupplierSidebar() {
         getData()
         seen()
         chatnotification()
+        
     }, [])
 
 

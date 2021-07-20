@@ -108,12 +108,12 @@ export default function ServiceSidebar(props) {
         setMobileOpen(!mobileOpen);
     };
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
+    // useEffect(()=>{
+    //     if(!localStorage.getItem('user_token')){
+    //         history.push('/')
+    //     }
         
-    })
+    // })
 
     const url = window.location.href
 
@@ -352,7 +352,7 @@ export default function ServiceSidebar(props) {
                     <div className={classes.toolbar} />
                     
 
-                    <AdminDashboard />
+                    {/* <AdminDashboard /> */}
                 </main>
             </div>
 

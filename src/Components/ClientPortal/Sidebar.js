@@ -163,14 +163,14 @@ export default function Sidebar() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
-    useEffect(() => {
-        // const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
-        //     .then((response) => {
-        //         setName(response.data)
-        //     }, (Error) => {
-        //         console.log(Error);
-        //     });
-    }, [])
+    // useEffect(() => {
+    //     // const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+    //     //     .then((response) => {
+    //     //         setName(response.data)
+    //     //     }, (Error) => {
+    //     //         console.log(Error);
+    //     //     });
+    // }, [])
 
     const Data = [
         {
@@ -285,7 +285,7 @@ export default function Sidebar() {
     useEffect(() => {
         chatnotification()
         seen();
-        // notification()
+        getData();
     }, [])
 
     function notificationDelete(e) {
@@ -307,9 +307,9 @@ export default function Sidebar() {
             )
 
     }
-    useEffect(() => {
-        getData()
-    }, [])
+    // useEffect(() => {
+    //     getData()
+    // }, [])
 
 
     return (
