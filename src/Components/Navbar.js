@@ -1,35 +1,35 @@
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import IconButton from '@material-ui/core/IconButton';
+import Modal from '@material-ui/core/Modal';
+import Popover from '@material-ui/core/Popover';
+// import { Alert, Button } from 'react-bootstrap'
+import Snackbar from '@material-ui/core/Snackbar';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import CloseIcon from '@material-ui/icons/Close';
+import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 import React, { useEffect, useState } from 'react';
+import CookieBanner from 'react-cookie-banner';
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
+// import ServiceProviderForm from './ServiceProviderForm'
+// import Supplier from './Supplier'
+import ReCAPTCHA from "react-google-recaptcha";
+// import side_image from './LandingPage/images/img-01.png';
+import { Link, useHistory } from 'react-router-dom';
+// import Youtube from './LandingPage/components/youtube.png'
+import WhatsAppWidget from 'react-whatsapp-widget';
+import 'react-whatsapp-widget/dist/index.css';
+// import log from "../Images/log.png"
+import reg from "../Images/rmbg.png";
+import Client from './Client';
 // import ReactDom from 'react-dom';
 import './LandingPage/css/LandingPage.css';
 // import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import logo1 from './LandingPage/images/wetransfer-01f136/Woofic-1.png';
 import logo2 from './LandingPage/images/wetransfer-01f136/Woofic-2.png';
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
-// import side_image from './LandingPage/images/img-01.png';
-import { Link, useHistory } from 'react-router-dom'
-// import Youtube from './LandingPage/components/youtube.png'
-import WhatsAppWidget from 'react-whatsapp-widget'
-import 'react-whatsapp-widget/dist/index.css'
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import axios from 'axios';
-import jwt_decode from 'jwt-decode'
-// import { Alert, Button } from 'react-bootstrap'
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
-import Client from './Client'
-// import ServiceProviderForm from './ServiceProviderForm'
-// import Supplier from './Supplier'
-import ReCAPTCHA from "react-google-recaptcha";
-// import log from "../Images/log.png"
-import reg from "../Images/rmbg.png"
-import CookieBanner from 'react-cookie-banner';
 // import { useWindowScroll } from 'react-use';
 // import transitions from '@material-ui/core/styles/transitions';
 
@@ -64,6 +64,7 @@ function Navbar() {
     const [offset, setOffset] = useState(0);
     const [nnav, setnnav] = useState(false)
     var isFirstImage = true;
+    const [navState,setNavState]=useState(false)
 
     const [urll, seturll] = useState('')
     const [namee, setnamee] = useState('')
@@ -367,9 +368,7 @@ function Navbar() {
     const componentClicked = (response) => {
         console.warn(response)
     }
-    const image = (isFirstImage) ? logo2 : logo1
-
-    var logoPath = logo2;
+    
     function changeBackground() {
         if (window.scrollY >= 50) {
 
@@ -377,44 +376,12 @@ function Navbar() {
             // // document.getElementById("woofic-logo").style.width="150px";
             // // document.getElementById("woofic-logo").style.height="50px";
             try {
-                document.getElementById("myTopnav").style.backgroundColor = "white"
-                document.getElementById("myTopnav").style.boxShadow="0 0 20px 0 rgba(0, 0, 0, 0.352)"
-                document.getElementById("myTopnav").style.transition = "0.3s all";
-                document.getElementById("taglink1").style.transition = "0.3s all";
-                document.getElementById("taglink2").style.transition = "0.3s all";
-                document.getElementById("taglink3").style.transition = "0.3s all";
-                document.getElementById("taglink4").style.transition = "0.3s all";
-                document.getElementById("taglink5").style.transition = "0.3s all";
-                document.getElementById("taglink6").style.transition = "0.3s all";
-                document.getElementById("dropDownLink").style.transition = "0.3s all";
-
-                document.getElementById("taglink1").style.color = "#767676";
-                document.getElementById("taglink2").style.color = "#767676";
-                document.getElementById("taglink3").style.color = "#767676";
-                document.getElementById("taglink4").style.color = "#767676";
-                document.getElementById("taglink5").style.color = "#767676";
-                document.getElementById("taglink6").style.color = "#767676";
-                document.getElementById("taglink7").style.color = "#767676";
-                document.getElementById("dropDownLink").style.color="#767676";
-
-                document.getElementById("taglink1").style.backgroundColor = "white";
-                document.getElementById("taglink2").style.backgroundColor = "white";
-                document.getElementById("taglink3").style.backgroundColor = "white";
-                document.getElementById("taglink4").style.backgroundColor = "white";
-                document.getElementById("taglink5").style.backgroundColor = "white";
-                document.getElementById("taglink6").style.backgroundColor = "white";
-                document.getElementById("taglink7").style.backgroundColor = "white";
-                document.getElementById("dropDownLink").style.backgroundColor = "white";
-                
-                
-
-
-                // document.getElementById("taglink8").style.backgroundColor = "#ffffff"
-                // document.getElementById("taglink8").style.color = "#ffffff"
+                setNavState(true);
+               
                 setLogo(true);
-                isFirstImage = false;
-                const image = (isFirstImage) ? logo2 : logo1
-                this.logoPath = logo1;
+                // isFirstImage = false;
+                // const image = (isFirstImage) ? logo2 : logo1
+                // this.logoPath = logo1;
             }
             catch {
 
@@ -431,37 +398,10 @@ function Navbar() {
             // // document.getElementById("woofic-logo").style.height="400px";
             // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
             try {
-                document.getElementById("myTopnav").style.background = "none";
-                document.getElementById("myTopnav").style.boxShadow = "none";
-                document.getElementById("myTopnav").style.transition = "0.3s all";
-                document.getElementById("myTopnav").style.transition = "0.3s all";
-                document.getElementById("taglink1").style.transition = "0.3s all";
-                document.getElementById("taglink2").style.transition = "0.3s all";
-                document.getElementById("taglink3").style.transition = "0.3s all";
-                document.getElementById("taglink4").style.transition = "0.3s all";
-                document.getElementById("taglink5").style.transition = "0.3s all";
-                document.getElementById("taglink6").style.transition = "0.3s all";
-
-                document.getElementById("dropDownLink").style.color="white";
-                document.getElementById("taglink1").style.color = "white";
-                document.getElementById("taglink2").style.color = "white";
-                document.getElementById("taglink3").style.color = "white";
-                document.getElementById("taglink4").style.color = "white";
-                document.getElementById("taglink5").style.color = "white";
-                document.getElementById("taglink6").style.color = "white";
-                document.getElementById("taglink7").style.color = "white";
+                setNavState(false);
                 
-                
-                document.getElementById("taglink1").style.background = "none";
-                document.getElementById("taglink2").style.background = "none";
-                document.getElementById("taglink3").style.background = "none";
-                document.getElementById("taglink4").style.background = "none";
-                document.getElementById("taglink5").style.background = "none";
-                document.getElementById("taglink6").style.background = "none";
-                document.getElementById("taglink7").style.background = "none";
-                document.getElementById("dropDownLink").style.background = "none";
                 setLogo(false)
-                this.logoPath = logo2;
+                
             }
             catch {
 
@@ -483,7 +423,7 @@ function Navbar() {
 
             <div className="container.fluid ">
                 <div class="woofic_background  my-auto ">
-                    <div class="topnav pb-1 pt-1 fixed-top text-white" id="myTopnav" style={{height:"65px"}}>
+                    <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : "topnav pb-1 pt-1 fixed-top "} id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
                             <img
                                 src={logoImg ? logo1 : logo2}
@@ -491,31 +431,31 @@ function Navbar() {
                                 id="woofic-logo"
                             />
                         </Link>
-                        <Link className="pt-3" to="/" id="taglink1" className="for-padding">
+                        <Link className="pt-3 taglink" to="/" id="" >
                             Home
                         </Link>
-                        <Link to="/allblog" className="pt-3 " id="taglink2" className="for-padding">
+                        <Link to="/allblog" className="pt-3 taglink" id="" >
                             Blog
                         </Link>
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
-                        <Link to="/quotemain" className="pt-3 " id="taglink3">
+                        <Link to="/quotemain" className="pt-3 taglink" id="">
                             Offer
                         </Link>
                         {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
 
-                        {/* <Link to="/pricecalculator" className="pt-3 " id="taglink4">
+                        {/* <Link to="/pricecalculator" className="pt-3 " id="">
                             Price Calculator
                         </Link> */}
 
-                        {/* <Link to="/getinspire" className="pt-3 " id="taglink5">
+                        {/* <Link to="/getinspire" className="pt-3 " id="">
                             Get Inspire
                         </Link> */}
 
-                        <Link id="scroll-effect"  style={{marginTop:"-11px", marginLeft:"-15px"}}>
+                        <Link id="scroll-effect"  style={{marginTop:"-11px", marginLeft:"-15px"}} >
                             {/* Advertise */}
                             
                             <div class="dropdown">
-                                <button class="dropbtn" id="dropDownLink">Tools</button>
+                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Tools</button>
                                 <div class="dropdown-content">
                                 <Link to="/pricecalculator" className="pt-3 " id="taglink4" style={{color:"#000"}}>
                                     Price Calculator

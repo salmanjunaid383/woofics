@@ -51,7 +51,8 @@
 .woofic_visiual_hline{
     width: 120px;
     height:3px;
-    background-color: rgb(224, 7, 116);
+    background-color: #0767c4
+    ;
     position: relative;
     left: 0%;
     margin: 10px 0 20px 0px;

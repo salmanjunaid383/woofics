@@ -18,7 +18,7 @@ function Banner(){
             <>
            <div class="woofic_banner text-center ">
                 <div class="woofic_banner_heading">
-                   <span style={{color:"#333333"}}> SERVICIOS </span>/ <span style={{color:"#F72A85"}}>PROFESIONAL</span>
+                   <span style={{color:"#333333"}}> SERVICIOS </span><span style={{color:"#0767c4"}}>/</span> <span style={{color:"#0767c4"}}>PROFESIONAL</span>
                 </div>
                 <div class="woofic_banner_sub-heading mb-5   ">
                 Encuentre soluciones personalizadas y a medida para sus proyectos
