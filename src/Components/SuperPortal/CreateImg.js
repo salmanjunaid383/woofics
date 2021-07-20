@@ -97,10 +97,10 @@ export default function CreateImg() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">Article</h4>
+                                    <h4 className="text-center p-4">Artículo</h4>
                                     <div class="card-body">
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0">Image</label>
+                                            <label class="col-md-12 p-0">Imagen</label>
                                             <div class="col-md-12 border p-2 text-center">
                                                 {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
                                                  */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file" accept='image/*' />
@@ -110,25 +110,25 @@ export default function CreateImg() {
                                                 <TextField id="standard-basic" className="w-25 mx-3" label="Name" onChange={(e) => setname(e.target.value)} />
                                                 {/* <TextField id="standard-basic" className="w-25 mx-3" label="Category" onChange={(e) => setcategory(e.target.value)} /> */}
                                                 <FormControl className="w-25 mx-3">
-                                                    <InputLabel htmlFor="grouped-select">Application</InputLabel>
+                                                    <InputLabel htmlFor="grouped-select">Solicitud</InputLabel>
                                                     <Select defaultValue="" id="grouped-select" onChange={(e) => setcategory(e.target.value)}>
                                                         <MenuItem value="">
-                                                            <em>None</em>
+                                                            <em>Ninguna</em>
                                                         </MenuItem>
-                                                        <MenuItem value='HOTELS'>HOTELS</MenuItem>
-                                                        <MenuItem value='RESTAURANTS'>RESTAURANTS</MenuItem>
-                                                        <MenuItem value='RETAIL'>RETAIL SHOP</MenuItem>
-                                                        <MenuItem value='FAIRS'>FAIRS</MenuItem>
-                                                        <MenuItem value='EVENTS'>EVENTS</MenuItem>
-                                                        <MenuItem value='SPORTS'>SPORTS</MenuItem>
-                                                        <MenuItem value='HEALTH'>HEALTH</MenuItem>
-                                                        <MenuItem value='ADVERTISING'>ADVERTISING</MenuItem>
-                                                        <MenuItem value='PUBLIC'>PUBLIC SECTOR</MenuItem>
-                                                        <MenuItem value='INFORMATION'>INFORMATION</MenuItem>
-                                                        <MenuItem value='LARGE'>SURFACES / SHOPPING CENTERS</MenuItem>
-                                                        <MenuItem value='SHOPPING'>SHOPPING</MenuItem>
-                                                        <MenuItem value='CONCERTS'>CONCERTS</MenuItem>
-                                                        <MenuItem value='AUTOMOTIVE'>AUTOMOTIVE</MenuItem>
+                                                        <MenuItem value='HOTELS'>HOTELES</MenuItem>
+                                                        <MenuItem value='RESTAURANTS'>RESTAURANTES</MenuItem>
+                                                        <MenuItem value='RETAIL'>TIENDA AL POR MENOR</MenuItem>
+                                                        <MenuItem value='FAIRS'>FERIAS</MenuItem>
+                                                        <MenuItem value='EVENTS'>EVENTOS</MenuItem>
+                                                        <MenuItem value='SPORTS'>DEPORTES</MenuItem>
+                                                        <MenuItem value='HEALTH'>SALUD</MenuItem>
+                                                        <MenuItem value='ADVERTISING'>PUBLICIDAD</MenuItem>
+                                                        <MenuItem value='PUBLIC'>SECTOR PÚBLICO</MenuItem>
+                                                        <MenuItem value='INFORMATION'>INFORMACIÓN</MenuItem>
+                                                        <MenuItem value='LARGE'>SUPERFICIES / CENTROS COMERCIALES</MenuItem>
+                                                        <MenuItem value='SHOPPING'>COMPRAS</MenuItem>
+                                                        <MenuItem value='CONCERTS'>CONCIERTOS</MenuItem>
+                                                        <MenuItem value='AUTOMOTIVE'>AUTOMOTORA</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>

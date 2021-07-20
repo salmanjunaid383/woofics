@@ -76,26 +76,26 @@ export default function LedList() {
                             <div className="row m-lg-5">
                                 <div class="col-md-12">
                                     <div className="mr-auto mb-5">
-                                        <button className="btn greenbtn text-white float-right" onClick={() => history.push('/led')}>Add Led</button>
+                                        <button className="btn greenbtn text-white float-right" onClick={() => history.push('/led')}>Agregar LED</button>
                                     </div>
                                 </div>
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">Led's List</h3>
+                                            <h3 className="box-title mb-0 text-center mx-auto">Lista de Led</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap text-center">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0  text-white">#</th>
-                                                        <th className="border-top-0  text-white">NAME</th>
-                                                        <th className="border-top-0  text-white">DATE</th>
-                                                        <th className="border-top-0  text-white">ACTIONS</th>
+                                                        <th className="border-top-0  text-white">NOMBRE</th>
+                                                        <th className="border-top-0  text-white">FECHA</th>
+                                                        <th className="border-top-0  text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nothing to show! Start creating projects...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -103,7 +103,7 @@ export default function LedList() {
                                                                         <td>{returnIndex()}</td>
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
-                                                                        <td className="text-danger"><Link to={`/updateled/${val.id}`}><button class="btn greenbtn text-white " >Update/Details</button></Link><button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button></td>
+                                                                        <td className="text-danger"><Link to={`/updateled/${val.id}`}><button class="btn greenbtn text-white " >Actualización / Detalles</button></Link><button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Borrar</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

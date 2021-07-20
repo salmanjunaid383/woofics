@@ -78,18 +78,18 @@ export default function Help() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">Help List</h3>
+                                            <h3 className="box-title mb-0 text-center mx-auto">Lista De Ayuda</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nothing to show...</div>
+                                            {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nada Que Mostrar...</div>
                                                 : <table className="table no-wrap">
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white">#</th>
-                                                            <th className="border-top-0 text-white">QUERY</th>
-                                                            <th className="border-top-0 text-white">DESCRIPTION</th>
-                                                            <th className="border-top-0 text-white">DATE</th>
-                                                            <th className="border-top-0 text-white">ACTIONS</th>
+                                                            <th className="border-top-0 text-white">CONSULTA</th>
+                                                            <th className="border-top-0 text-white">DESCRIPCIÓN</th>
+                                                            <th className="border-top-0 text-white">FECHA</th>
+                                                            <th className="border-top-0 text-white">COMPORTAMIENTO</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -102,7 +102,7 @@ export default function Help() {
                                                                         <td className="txt-oflo">{(val.description).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
                                                                         <td className="text-danger">
-                                                                            <button class="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/helpresponse/${val.id}`)}>Response</button>
+                                                                            <button class="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/helpresponse/${val.id}`)}>Respuesta</button>
                                                                             <button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button>
                                                                         </td>
                                                                     </tr>

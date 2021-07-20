@@ -319,7 +319,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{totalClient}</h1>
-                                                    <span>Total Clients</span>
+                                                    <span>Total De Clientas</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -336,7 +336,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{totalSupplier}</h1>
-                                                    <span>Total Suppliers</span>
+                                                    <span>Proveedores Totales</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,7 +353,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{totalProvider}</h1>
-                                                    <span>Total Provider</span>
+                                                    <span>Proveedor Total</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -370,7 +370,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{totalBlogs}</h1>
-                                                    <span>Total Blogs</span>
+                                                    <span>Total De Blogs</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -387,7 +387,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{CompletedProject}</h1>
-                                                    <span>Completed Projects</span>
+                                                    <span>Proyectos Completados</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -404,7 +404,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{OnGoingProject}</h1>
-                                                    <span>Ongoing Projects</span>
+                                                    <span>Proyectos en Marcha</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -421,7 +421,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{PendingReg}</h1>
-                                                    <span>Pending Registration</span>
+                                                    <span>Pendiente De Registro</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -438,7 +438,7 @@ export default function SuperDashboard() {
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h1 className="bold">{totalServ}</h1>
-                                                    <span>   Total       Services </span>
+                                                    <span>   Servicios Totales </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -518,7 +518,7 @@ export default function SuperDashboard() {
                                             <div class="media d-flex " >
 
                                                 <div class="media-body text-center">
-                                                    <span>Service Provider SignUp Link:</span><br />
+                                                    <span>Enlace De Registro Del Proveedor De Servicios:</span><br />
                                                     <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
                                                 </div>
                                             </div>
@@ -533,7 +533,7 @@ export default function SuperDashboard() {
                                             <div class="media d-flex " >
 
                                                 <div class="media-body text-center">
-                                                    <span>Suppliers SignUp Link:</span><br />
+                                                    <span>Enlace De Registro De Proveedores:</span><br />
                                                     <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
                                                 </div>
                                             </div>

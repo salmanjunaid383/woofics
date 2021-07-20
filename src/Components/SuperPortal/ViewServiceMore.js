@@ -68,7 +68,7 @@ export default function ViewServiceMore() {
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="d-md-flex mb-3">
-                                        <h3 className="box-title mb-0 h1 mx-auto text-center">Service Detail's</h3>
+                                        <h3 className="box-title mb-0 h1 mx-auto text-center">Detalles Del Servicio</h3>
                                     </div>
 
                                     <table class="table table-hover">
@@ -83,7 +83,7 @@ export default function ViewServiceMore() {
                                                     <td>{servicet.name}</td>
                                                 </tr></> : null} */}
                                             <tr>
-                                                <td>Name</td>
+                                                <td>Nombre</td>
                                                 <td>{blog.name}</td>
                                             </tr>
                                             <tr>
@@ -91,40 +91,40 @@ export default function ViewServiceMore() {
                                                 <td>{blog.email}</td>
                                             </tr>
                                             <tr>
-                                                <td>Adverse Weather</td>
+                                                <td>Clima adverso</td>
                                                 <td>{blog.adverse_weather}</td>
                                             </tr>
                                             <tr>
-                                                <td>Buy</td>
+                                                <td>Comprar</td>
                                                 <td>{blog.buy}</td>
                                             </tr>
                                             <tr>
-                                                <td>Carcass Material</td>
+                                                <td>Material De La Carcasa</td>
                                                 <td>{blog.carcass_material}</td>
                                             </tr>
 
                                             <tr>
-                                                <td>Comments</td>
+                                                <td>Comentarios</td>
                                                 <td>{blog.comments}</td>
                                             </tr>
                                             <tr>
-                                                <td>Company</td>
+                                                <td>Empresa</td>
                                                 <td>{blog.company}</td>
                                             </tr>
                                             <tr>
-                                                <td>Contact</td>
+                                                <td>Contacto</td>
                                                 <td>{blog.contact}</td>
                                             </tr>
                                             <tr>
-                                                <td>Control System</td>
+                                                <td>Sistema De Control</td>
                                                 <td>{blog.control_system}</td>
                                             </tr>
                                             <tr>
-                                                <td>Sustomer Type</td>
+                                                <td>tipo De Cliente</td>
                                                 <td>{blog.customer_type}</td>
                                             </tr>
                                             <tr>
-                                                <td>Delivery Time</td>
+                                                <td>El Tiempo De Entrega</td>
                                                 <td>{blog.delivery_time}</td>
                                             </tr>
                                             <tr>
@@ -132,52 +132,52 @@ export default function ViewServiceMore() {
                                                 <td>{blog.description}</td>
                                             </tr>
                                             <tr>
-                                                <td>Documents</td>
+                                                <td>Documentos</td>
                                                 <td>{blog.documents}</td>
                                             </tr>
                                             <tr>
-                                                <td>Entity</td>
+                                                <td>Entidad</td>
                                                 <td>{blog.entity}</td>
                                             </tr>
                                             <tr>
-                                                <td>Fly Cases</td>
+                                                <td>Cajas De Moscas</td>
                                                 <td>{blog.fly_cases}</td>
                                             </tr>
                                             <tr>
-                                                <td>Indoor</td>
+                                                <td>Interior</td>
                                                 <td>{blog.indoor}</td>
                                             </tr>
                                             <tr>
-                                                <td>Installation</td>
+                                                <td>Instalación</td>
                                                 <td>{blog.installation}</td>
                                             </tr>
                                             <tr>
-                                                <td>Model</td>
+                                                <td>Modelo</td>
                                                 <td>{blog.model}</td>
                                             </tr>
                                             <tr>
-                                                <td>Postal Code</td>
+                                                <td>Código Postal</td>
                                                 <td>{blog.postal_code}</td>
                                             </tr>
                                             <tr>
-                                                <td>Screen Access</td>
+                                                <td>Acceso a La Pantalla</td>
                                                 <td>{blog.screen_access}</td>
                                             </tr>
 
                                             <tr>
-                                                <td>Screen Height</td>
+                                                <td>Altura De La Pantalla</td>
                                                 <td>{blog.screen_height}</td>
                                             </tr>
                                             <tr>
-                                                <td>Screen Orientation</td>
+                                                <td>Orientación De La Pantalla</td>
                                                 <td>{blog.screen_orientation}</td>
                                             </tr>
                                             <tr>
-                                                <td>Screen Use</td>
+                                                <td>Uso De Pantalla</td>
                                                 <td>{blog.screen_use}</td>
                                             </tr>
                                             <tr>
-                                                <td>Screen Width</td>
+                                                <td>Ancho De Pantalla</td>
                                                 <td>{blog.screen_width}</td>
                                             </tr>
 
@@ -191,21 +191,21 @@ export default function ViewServiceMore() {
                                             </tr>
 
                                             <tr>
-                                                <td>Shipping</td>
+                                                <td>Transporte</td>
                                                 <td>{blog.shipping}</td>
                                             </tr>
                                             <tr>
-                                                <td>Structure</td>
+                                                <td>Estructura</td>
                                                 <td>{blog.structure}</td>
                                             </tr>
 
 
                                             <tr>
-                                                <td>Visual Distance</td>
+                                                <td>Distancia Visual</td>
                                                 <td>{blog.visual_distance}</td>
                                             </tr>
                                             <tr>
-                                                <td>Warranty</td>
+                                                <td>Garantía</td>
                                                 <td>{blog.warranty}</td>
                                             </tr>
                                         </tbody>

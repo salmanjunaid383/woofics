@@ -84,27 +84,27 @@ export default function GetInspired() {
                             <div className="row m-lg-5">
                                 <div class="col-md-12 ">
                                     <div className="mr-auto">
-                                        <a class="btn pull-right mb-3 greenbtn text-white "  onClick={() => history.push('/createimg')}>Create</a>
+                                        <a class="btn pull-right mb-3 greenbtn text-white "  onClick={() => history.push('/createimg')}>Crear</a>
                                     </div>
                                 </div>
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 h1 mx-auto text-center ">Image List</h3>
+                                            <h3 className="box-title mb-0 h1 mx-auto text-center ">Lista De Imágenes</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap text-center">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0 text-white">#</th>
-                                                        <th className="border-top-0 text-white">IMAGE NAME</th>
-                                                        <th className="border-top-0 text-white">IMAGE LINK</th>
-                                                        <th className="border-top-0 text-white">IMAGE CATEGORY</th>
-                                                        <th className="border-top-0 text-white">ACTIONS</th>
+                                                        <th className="border-top-0 text-white">NOMBRE DE LA IMÁGEN</th>
+                                                        <th className="border-top-0 text-white">ENLACE DE IMÁGEN</th>
+                                                        <th className="border-top-0 text-white">CATEGORIA DE IMAGEN</th>
+                                                        <th className="border-top-0 text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nothing to show! Start creating...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -113,7 +113,7 @@ export default function GetInspired() {
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{(val.url).slice(0, 20)}</td>
                                                                         <td className="txt-oflo">{val.category}</td>
-                                                                        <td className="text-danger"><button class="btn text-white greenbtn text-white "><a href={val.url} className="text-white" target="_blank">View Image</a></button><button class="btn text-white btn-danger mx-2" onClick={() => DeleteImg(val.id)}>Delete</button></td>
+                                                                        <td className="text-danger"><button class="btn text-white greenbtn text-white "><a href={val.url} className="text-white" target="_blank">Ver imagen</a></button><button class="btn text-white btn-danger mx-2" onClick={() => DeleteImg(val.id)}>Borrar</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

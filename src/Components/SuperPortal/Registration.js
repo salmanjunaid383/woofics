@@ -87,16 +87,16 @@ export default function Registration() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 mx-auto text-center">Registration's List</h3>
+                                            <h3 className="box-title mb-0 mx-auto text-center">Lista De Registro</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white text-white">NAME</th>
+                                                        <th className="border-top-0 text-white text-white">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-white">EMAIL</th>
-                                                        <th className="border-top-0 text-white text-white">DATE</th>
-                                                        <th className="border-top-0 text-white text-white">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-white">FECHA</th>
+                                                        <th className="border-top-0 text-white text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

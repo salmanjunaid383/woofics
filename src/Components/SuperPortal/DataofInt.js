@@ -104,7 +104,7 @@ export default function DataofInt() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Ledger</h1>
+                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Libro mayor</h1>
                                             </div>
                                             <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
@@ -142,7 +142,7 @@ export default function DataofInt() {
                                                             </div>
                                                             <div class="mb-4 mt-4 text-center mx-auto">
                                                                     <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => sendQuote(e)}>Generate</button>
+                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => sendQuote(e)}>Generar</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
@@ -161,15 +161,15 @@ export default function DataofInt() {
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">#</th>
-                                                            <th className="border-top-0 text-white text-center">Label</th>
-                                                            <th className="border-top-0 text-white text-center">Value</th>
+                                                            <th className="border-top-0 text-white text-center">Etiqueta</th>
+                                                            <th className="border-top-0 text-white text-center">Valor</th>
                                                             <th className="border-top-0 text-white text-center"></th> 
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                     {
 
-                                                        dot == '' ? <h3 className="mt-5"> Nothing to show!</h3> :
+                                                        dot == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                             dot.map((val, id) => {
                                                                 return (
                                                                     <>
@@ -177,7 +177,7 @@ export default function DataofInt() {
                                                                             <td className="txt-oflo text-center">{returnIndex()}</td>
                                                                             <td className="txt-oflo text-center">{val.label}</td>
                                                                             <td className="txt-oflo text-center">{(val.value)}</td>
-                                                                            <td className="txt-oflo text-center "><button  class="btn text-white btn-danger " onClick={(e) => deleteQuote(val.id)}>Delete</button></td>
+                                                                            <td className="txt-oflo text-center "><button  class="btn text-white btn-danger " onClick={(e) => deleteQuote(val.id)}>Borrar</button></td>
                                                                             {/* <td className="text-success text-center"></td> */}
                                                                         </tr>
                                                                     </>

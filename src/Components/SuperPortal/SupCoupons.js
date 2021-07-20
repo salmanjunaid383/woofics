@@ -143,7 +143,7 @@ export default function SupCoupons() {
                                                     </div>
                                                     <div className="col-md-6  px-2 w-100 p-0 ">
                                                         <FormControl component="fieldset">
-                                                            <FormLabel component="legend">Discount Type</FormLabel>
+                                                            <FormLabel component="legend">Tipo De Descuento</FormLabel>
                                                             <RadioGroup defaultValue="two-phase" className="d-inline" aria-label="phase" name="customized-radios">
                                                                 <FormControlLabel id="label3" value="percentage" onChange={(e) => setCoupontype(e.target.value)} onClick={label3} control={<StyledRadio />} label="Percentage" />
                                                                 <FormControlLabel id="label4" value="flat" onChange={(e) => setCoupontype(e.target.value)} onClick={label4} control={<StyledRadio />} label="Flat" />
@@ -163,10 +163,10 @@ export default function SupCoupons() {
                                                             }}
                                                         />
                                                         {coupontype == "percentage" && rate > 99 ?
-                                                            <p className="text-danger">The can Percentage discount not be grater then 100% !</p>
+                                                            <p className="text-danger">El descuento porcentual de lata no debe ser superior al 100% !</p>
                                                             : ''}
                                                         {coupontype == "flat" && rate < 0 ?
-                                                            <p className="text-danger">The Flat discount can not be less then 0!</p>
+                                                            <p className="text-danger">¡El descuento Flat no puede ser inferior a 0!</p>
                                                             : ''}
                                                     </div>
                                                     <div className="col-md-6 text-center px-2 w-100 p-0 my-4">
@@ -184,7 +184,7 @@ export default function SupCoupons() {
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-md-12">
-                                                        <label class="col-md-12 p-0">Discount Description</label>
+                                                        <label class="col-md-12 p-0">Descripción Del Descuento</label>
                                                         <div class="col-md-12 border-bottom p-0">
                                                             <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>

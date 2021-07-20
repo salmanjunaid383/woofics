@@ -529,7 +529,7 @@ export default function UpdatePayment() {
                                             <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-5">
                                                     <div className="col-md-6 text-center p-2 w-100 p-0">
-                                                        <label className="float-left">Phase Type</label>
+                                                        <label className="float-left">Tipo De Fase</label>
                                                         <input
                                                             placeholder="Led Name"
                                                             id="standard-number"
@@ -548,8 +548,8 @@ export default function UpdatePayment() {
                                                             <table className="table table-striped ">
                                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
-                                                                        <th className="right">Phase Level</th>
-                                                                        <th className="right">Percentage</th>
+                                                                        <th className="right">Nivel De Fase</th>
+                                                                        <th className="right">Porcentaje</th>
                                                                         <th className="right"></th>
                                                                     </tr>
                                                                 </thead>
@@ -607,7 +607,7 @@ export default function UpdatePayment() {
               
                                 {newnoti == '' ? <Typography className={classes.typography}>
                                         <a className="profile-pic" >
-                                                <span className="text-black font-medium ml-1">No Notification !</span>
+                                                <span className="text-black font-medium ml-1">Sin Notificación !</span>
                                         </a>
                                 </Typography> :
                                         newnoti.slice(0, 5).map((val) => {
@@ -655,13 +655,13 @@ export default function UpdatePayment() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 
