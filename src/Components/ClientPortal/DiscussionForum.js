@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import StazBar from './Sidebar'
-
+import AdminBar from '../SuperPortal/Stazbar';
 import './DiscussionForum.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
@@ -182,16 +182,38 @@ export default function DiscussionForum() {
         setMobileOpen(!mobileOpen);
     };
 
-
-   
+    var adminSideBar;
+    var clientSideBar;  
+    var providerSideBar;
+    var supplierSideBar;
+    const role = jwt_decode(localStorage.getItem('user_token'))
+                        if (role.role === 'Client') {
+                            clientSideBar=true;
+                        } else if (role.role === 'ServiceProvider')
+                            providerSideBar=true;
+                        else if (role.role === 'Supplier') {
+                            supplierSideBar=true;
+                        } else {
+                            adminSideBar=true;
+                        }
+    
 
 
     return (
         <>
 
             <div className="d-sm-flex">
-
-                <StazBar></StazBar>
+                {
+                    adminSideBar ? (
+                        <AdminBar></AdminBar>
+                    ) : (null)
+                }
+                {
+                    clientSideBar ? (
+                        <StazBar></StazBar>
+                    ) : (null)
+                }
+                
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
                     

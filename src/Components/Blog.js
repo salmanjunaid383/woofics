@@ -5,8 +5,10 @@ import './BLog.css';
 import logo from './LandingPage/images/wooficc.png';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
+import ScrollToTop from "./ScrollToTop";
 
 export default function Blog() {
+    ScrollToTop();
     let history = useHistory();
 
 

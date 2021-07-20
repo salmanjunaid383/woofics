@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
+import ScrollToTop from "./ScrollToTop";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +45,7 @@ function getModalStyle() {
 }
 
 export default function DiscussionForum() {
+    ScrollToTop();
     let history = useHistory();
 
 

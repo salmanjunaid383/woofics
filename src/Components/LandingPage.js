@@ -4,10 +4,10 @@ import Footer from './LandingPage/components/Footer';
 import Banner from './LandingPage/components/Banner'
 import VisualScheme from './LandingPage/components/VisualScheme'
 import LastNews from './LandingPage/components/LastNews'
-
+import ScrollToTop from './ScrollToTop'
 
 export default function Landing(){
-    // localStorage.clear()
+    ScrollToTop();
     return (
         <>
         <LandingPage />

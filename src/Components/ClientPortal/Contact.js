@@ -16,10 +16,11 @@ import logo from "../LandingPage/images/wooficc.png";
 import Navbar from "../Navbar";
 import Footer from "../LandingPage/components/Footer";
 import { TextField } from "@material-ui/core";
+import ScrollToTop from '../ScrollToTop'
 import CustomClientAuth from "../CustomClientAuth";
 
 export default function Contact() {
-  CustomClientAuth();
+  ScrollToTop();
   const activebtn = {
     borderRadius: 10,
     backgroundColor: "#f95c87",
