@@ -1,0 +1,8 @@
+@media(max-width:770px) and (min-width:600px){
+    #responsive-sidenav{
+        display: none;
+    }
+    #nav-responsive{
+        width:100% !important
+    }
+  }

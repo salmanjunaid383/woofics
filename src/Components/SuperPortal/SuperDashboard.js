@@ -314,7 +314,7 @@ export default function SuperDashboard() {
                         </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-8">
+                            <div className="col-md-12 col-lg-8">
 
 
                                 {/* <div className="page-wrapper bg-light"> */}
@@ -502,12 +502,12 @@ export default function SuperDashboard() {
                                     </div>
 
                             </div>
-                            <div className="col-md-4" style={{border:"2px solid #f3f3f3"}}>
+                            <div className="col-md-12 col-lg-4" style={{border:"2px solid #f3f3f3"}}>
 
                                 <div className="container my-lg-5">
                                     
                                     <div classNam="row">
-                                        <div className="col-md-12" style={{ overflowX: "scroll", margin: "auto" }}>
+                                        <div className="col-lg-12 col-md-6" style={{ overflowX: "scroll", margin: "auto" }}>
                                             <BarChart width={730} height={300} data={user} style={{marginLeft:"-55px"}}>
                                                 <CartesianGrid strokeDasharray="3 3" />
                                                 <XAxis dataKey="name" />
@@ -519,7 +519,7 @@ export default function SuperDashboard() {
                                             </BarChart>
                                         </div>
 
-                                        <div className="col-md-12" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
+                                        <div className="col-lg-12 col-md-6" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
                                             <PieChart width={500} height={300}>
                                                 <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
                                                 <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />

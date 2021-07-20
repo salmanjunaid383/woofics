@@ -9,6 +9,7 @@ import Badge from '@material-ui/core/Badge';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import './SupCoupons.css'
+import '../SuperPortal/Stazbar.css'
 
 
 
@@ -74,11 +75,12 @@ const useStyles = makeStyles((theme) => ({
         },
         backgroundColor: "white",
         boxShadow: 'none',
+        color:'#000',
         border: "none",
     },
     menuButton: {
         marginRight: theme.spacing(2),
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             display: 'none',
         },
     },
@@ -333,7 +335,7 @@ export default function StazBar() {
         <>
             <div className="d-sm-flex">
                 {/* <CssBaseline /> */}
-                <AppBar position="fixed" className={classes.appBar}>
+                <AppBar position="fixed" className={classes.appBar} id="nav-responsive">
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -363,7 +365,7 @@ export default function StazBar() {
                         </ul>
                     </Toolbar>
                 </AppBar>
-                <nav className={classes.drawer} aria-label="mailbox folders">
+                <nav className={classes.drawer} aria-label="mailbox folders" id="responsive-sidenav"> 
                     {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                     <Hidden smUp implementation="css">
                         <Drawer
