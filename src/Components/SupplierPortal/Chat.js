@@ -145,34 +145,40 @@ export default function Chat() {
         cluster: 'ap1'
       });;
 
+      const [isLoaded,setIsLoaded] = useState(false);
       useEffect(() => {
-        const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
-        channel.bind("my-event",function(returnData){
-            console.log("my-event");
-            function Users() {
-             console.log(returnData);
-                const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
-                    from_user: id,
-                    to_user: returnData.from_user
-                })
-                    .then((response) => {
-                        if (response) {
-                            console.log(response.data)
-                            setMsg(response.data)
-                            setRight(response.data.from_user)
-                            SendData()
-                            // divRef.current.scrollIntoView({ behavior: 'smooth' });
-
-                        }
-                    }, (Error) => {
-                        console.log("userID "+id+" to user ");
-                        console.log(Error);
-                    })
-            }
-            Users();
-        });
-    }, [])
+          if(!isLoaded){
+          const channel = pusher.subscribe(""+decoded.sub+"");   
+          console.log("channel success "+ channel);
+          channel.bind("my-event",function(returnData){
+              console.log("my-event");
+              function Users() {
+               console.log(returnData);
+                  const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
+                      from_user: id,
+                      to_user: returnData.from_user
+                  })
+                      .then((response) => {
+                          if (response) {
+                              console.log(response.data)
+                              setMsg(response.data)
+                              setRight(response.data.from_user)
+                              SendData()
+                              // divRef.current.scrollIntoView({ behavior: 'smooth' });
+  
+                          }
+                      }, (Error) => {
+                          console.log("userID "+id+" to user ");
+                          console.log(Error);
+                      })
+              }
+              Users();
+          });
+          
+          }
+          setIsLoaded(false);
+          return () => {}
+      },[]);
 
 
     //Making Contact
