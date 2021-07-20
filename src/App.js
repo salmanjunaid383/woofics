@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Components/Login";
+import SalmanNav from "./Components/SuperPortal/salman-nav"
 import StazBar from "./Components/SuperPortal/Stazbar";
 import Forgetpwd from "./Components/Forgetpwd";
 import Confirmpassword from "./Components/Confirmpassword";

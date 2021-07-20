@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from './Sidebar'
 import Nav from './Nav'
-import { Delete } from "@material-ui/icons";
+import { Brightness1, Delete } from "@material-ui/icons";
 // import './BLog.css';
 import Badge from '@material-ui/core/Badge';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-        backgroundImage: "linear-gradient(180deg, #F62B84 0%, #934CFF 100%)",
+        backgroundImage: "linear-gradient(180deg, #fff 0%, #0767c4 100%)",
         width: drawerWidth,
         boxShadow: 'none',
         border: "none"
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0px'
         , "&:hover": {
             color: 'white',
-            margin: '0px'
+            margin: '0px',
         }
     },
 }));
@@ -181,87 +181,87 @@ export default function StazBar() {
     const Data = [
         {
             name: 'Admin Dashboard',
-            icon: <DashboardIcon style={{ color: "#cdcdcd" }} />,
+            icon: <DashboardIcon style={{ color: "#8da2b1" }} />,
             to: '/superdashboard'
         },
         {
             name: 'Registrations',
-            icon: <PollIcon style={{ color: "#cdcdcd" }} />,
+            icon: <PollIcon style={{ color: "#8da2b1" }} />,
             to: '/registration'
         },
         {
             name: 'Services',
-            icon: <FindInPageIcon style={{ color: "#cdcdcd" }} />,
+            icon: <FindInPageIcon style={{ color: "#8da2b1" }} />,
             to: '/viewservices'
         },
         {
             name: 'Offers',
-            icon: <LoyaltyIcon style={{ color: "#cdcdcd" }} />,
+            icon: <LoyaltyIcon style={{ color: "#8da2b1" }} />,
             to: '/offerbadge'
         },
         {
             name: 'Reviews',
-            icon: <RateReviewIcon style={{ color: "#cdcdcd" }} />,
+            icon: <RateReviewIcon style={{ color: "#8da2b1" }} />,
             to: '/viewreviews'
         },
         {
             name: 'Coupons',
-            icon: <LocalOfferIcon style={{ color: "#cdcdcd" }} />,
+            icon: <LocalOfferIcon style={{ color: "#8da2b1" }} />,
             to: '/couponslist'
         },
         {
             name: 'Led ',
-            icon: <DvrIcon style={{ color: "#cdcdcd" }} />,
+            icon: <DvrIcon style={{ color: "#8da2b1" }} />,
             to: '/ledlist'
         },
         {
             name: 'Get Inspire',
-            icon: <FeaturedVideoIcon style={{ color: "#cdcdcd" }} />,
+            icon: <FeaturedVideoIcon style={{ color: "#8da2b1" }} />,
             to: '/getinspired'
         },
         {
             name: 'Advertise',
-            icon: <PhotoAlbumIcon style={{ color: "#cdcdcd" }} />,
+            icon: <PhotoAlbumIcon style={{ color: "#8da2b1" }} />,
             to: '/advertised'
         },
         {
             name: 'Ledger',
-            icon: <HourglassEmptyIcon style={{ color: "#cdcdcd" }} />,
+            icon: <HourglassEmptyIcon style={{ color: "#8da2b1" }} />,
             to: '/ledger'
         },
          {
             name: 'Data of Interest',
-            icon: <SwapVertIcon style={{ color: "#cdcdcd" }} />,
+            icon: <SwapVertIcon style={{ color: "#8da2b1" }} />,
             to: '/dataofint'
         },
         {
             name: 'Charges',
-            icon: <EqualizerIcon style={{ color: "#cdcdcd" }} />,
+            icon: <EqualizerIcon style={{ color: "#8da2b1" }} />,
             to: '/charges'
         },
         {
             name: 'View Contacts',
-            icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
+            icon: <ContactMailIcon style={{ color: "#8da2b1" }} />,
             to: '/viewcontact'
         },
         {
             name: 'Discussion Forum',
-            icon: <AssignmentIcon style={{ color: "#cdcdcd" }}/>,
+            icon: <AssignmentIcon style={{ color: "#8da2b1" }}/>,
             to :'/clientdiscussionforum'
         },
         {
             name: 'Help List',
-            icon: <HelpIcon style={{ color: "#cdcdcd" }} />,
+            icon: <HelpIcon style={{ color: "#8da2b1" }} />,
             to: '/helplist'
         },
         {
             name: 'Complain',
-            icon: <AssistantIcon style={{ color: "#cdcdcd" }} />,
+            icon: <AssistantIcon style={{ color: "#8da2b1" }} />,
             to: '/admincomplain'
         },
         {
             name: 'Blog',
-            icon: <BookIcon style={{ color: "#cdcdcd" }} />,
+            icon: <BookIcon style={{ color: "#8da2b1" }} />,
             to: '/blog'
         },
     ]

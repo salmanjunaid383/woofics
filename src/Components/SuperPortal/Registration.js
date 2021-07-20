@@ -90,15 +90,13 @@ export default function Registration() {
                                             <h3 className="box-title mb-0 mx-auto text-center">Registration's List</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            <table className="table no-wrap">
-                                                <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
-                                                    <tr>
-                                                        <th className="border-top-0 text-white text-white">NAME</th>
-                                                        <th className="border-top-0 text-white text-white">EMAIL</th>
-                                                        <th className="border-top-0 text-white text-white">DATE</th>
-                                                        <th className="border-top-0 text-white text-white">ACTIONS</th>
+                                            <table className="table no-wrap" >
+                                                    <tr style={{backgroundColor:"blue"}}>
+                                                        <th className="rounded">NAME</th>
+                                                        <th className="">EMAIL</th>
+                                                        <th className="">DATE</th>
+                                                        <th className="">ACTIONS</th>
                                                     </tr>
-                                                </thead>
                                                 <tbody>
                                                     {blog.map((val, key) => {
                                                         return (
