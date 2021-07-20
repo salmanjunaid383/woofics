@@ -77,16 +77,16 @@ export default function Help() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div style={{textAlign:"center"}}>
-                                            <h3 className="box-title mb-0">Ledger List</h3>
+                                            <h3 className="box-title mb-0">Lista de libro mayor</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0 text-white text-center">#</th>
-                                                        <th className="border-top-0 text-white text-center">BALANCE</th>
-                                                        <th className="border-top-0 text-white text-center">SUPPLIER ID</th>
-                                                        <th className="border-top-0 text-white text-center">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
+                                                        <th className="border-top-0 text-white text-center">IDENTIFICACIÓN DEL PROVEEDOR</th>
+                                                        <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -97,7 +97,7 @@ export default function Help() {
                                                                     <td className="txt-oflo text-center">{val.id}</td>
                                                                     <td className="txt-oflo text-center">{val.balance}</td>
                                                                     <td className="txt-oflo text-center">{val.supplier_id ? val.supplier_id : val.service_provider_id}</td>
-                                                                    <td className="txt-oflo text-center"><button className="btn greenbtn text-white" onClick={(e) => history.push(`/ledgerview/${che}/${val.supplier_id ? val.supplier_id : val.service_provider_id}`)}>View more</button></td>
+                                                                    <td className="txt-oflo text-center"><button className="btn greenbtn text-white" onClick={(e) => history.push(`/ledgerview/${che}/${val.supplier_id ? val.supplier_id : val.service_provider_id}`)}>Ver más</button></td>
                                                                 </tr>
                                                             </>
                                                         )

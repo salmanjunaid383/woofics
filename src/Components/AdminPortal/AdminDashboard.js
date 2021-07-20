@@ -124,8 +124,8 @@ export default function AdminDashboard() {
                                                         <i class="fa fa-anchor fa-4x text-success  icon-pencil primary font-large-2 mr-2"></i>
                                                     </div>
                                                     <div class="media-body ml-md-3">
-                                                        <h4>Offers</h4>
-                                                        <span>Total Offer</span>
+                                                        <h4>Ofertas</h4>
+                                                        <span>Oferta Total</span>
                                                     </div>
                                                     <div class="align-self-center">
                                                         <h1>{ongoinProject}</h1>
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
                                         <div class="col-lg-12 col-md-12 col-sm-12 " >
                                             <div class="p-1 h4 text-primary text-center mx-auto display-inline-block" >
                                                 <i class="fa fa-check bg-primary text-white rounded"> </i>
-                                                <bold> My Todo-s</bold>
+                                                <bold> Mis Todo-s</bold>
                                             </div>
                                         </div>
                                         {/* </div>
@@ -156,7 +156,7 @@ export default function AdminDashboard() {
                                                     <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                                                 </div>
                                                 <div class="col-auto px-0 mx-0 mr-2">
-                                                    <button type="button" onClick={Feedback} class={`btn btn-primary ${todo == '' || deadline == '' ? disable : ''}`}>Add</button>
+                                                    <button type="button" onClick={Feedback} class={`btn btn-primary ${todo == '' || deadline == '' ? disable : ''}`}>Agregar</button>
                                                 </div>
                                             </div>
                                         </div>

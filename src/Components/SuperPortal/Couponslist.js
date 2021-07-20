@@ -98,30 +98,30 @@ export default function Coupons() {
                             <div className="row m-lg-5">
                                 <div class="col-md-12">
                                     <div className="mr-auto">
-                                        <a class="btn pull-right text-white  mb-3 greenbtn" onClick={() => history.push('/supcoupons')}>Create Coupon</a>
+                                        <a class="btn pull-right text-white  mb-3 greenbtn" onClick={() => history.push('/supcoupons')}>Crear Cupón</a>
                                     </div>
                                 </div>
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 h1 mx-auto text-center">Coupon's List</h3>
+                                            <h3 className="box-title mb-0 h1 mx-auto text-center">Lista De Cupones</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0 text-white text-white">#</th>
-                                                        <th className="border-top-0 text-white text-white">COUPON TYPE</th>
-                                                        <th className="border-top-0 text-white text-white">DISCOUNT TYPE</th>
-                                                        <th className="border-top-0 text-white text-white">DESCRIPTION</th>
-                                                        <th className="border-top-0 text-white text-white">CODE</th>
-                                                        <th className="border-top-0 text-white text-white">EXPIRE DATE</th>
-                                                        <th className="border-top-0 text-white text-white">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-white">TIPO DE CUPÓN</th>
+                                                        <th className="border-top-0 text-white text-white">TIPO DE DESCUENTO</th>
+                                                        <th className="border-top-0 text-white text-white">DESCRIPCIÓN</th>
+                                                        <th className="border-top-0 text-white text-white">CÓDIGO</th>
+                                                        <th className="border-top-0 text-white text-white">FECHA DE CADUCIDAD</th>
+                                                        <th className="border-top-0 text-white text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
 
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nothing to show...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -132,7 +132,7 @@ export default function Coupons() {
                                                                         <td className="txt-oflo">{(val.discount_discription).slice(0, 30) + "..."}</td>
                                                                         <td className="txt-oflo">{val.code}</td>
                                                                         <td className="txt-oflo">{(val.expiry_date).slice(0, 10)}</td>
-                                                                        <td className="text-danger"><button class="btn text-white greenbtn"  onClick={() => ActivateLed(val.id)}>{val.active !== 0 ? 'Activated' : 'Activate'}</button><button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button></td>
+                                                                        <td className="text-danger"><button class="btn text-white greenbtn"  onClick={() => ActivateLed(val.id)}>{val.active !== 0 ? 'Activated' : 'Activate'}</button><button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Borrar</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

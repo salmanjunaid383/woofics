@@ -143,13 +143,13 @@ export default function ComplainResponse() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">COMPLAIN RESPONSES</h4>
+                                    <h4 className="text-center p-4">RESPUESTAS PARA QUEJAS</h4>
                                     <div class="card-body">
                                         <div className="d-flex h5 bold">
-                                            Help:  <p className="" style={{ fontSize: 20 }}> {blog.description}</p>
+                                        Ayudar:  <p className="" style={{ fontSize: 20 }}> {blog.description}</p>
                                         </div>
                                         <div className="border p-md-3 ">
-                                            <h3 className="text-center">Replies:</h3>
+                                            <h3 className="text-center">Respuestas:</h3>
                                             {
                                                 reponses.map((val, id) => {
                                                     return (
@@ -161,7 +161,7 @@ export default function ComplainResponse() {
                                             }
                                         </div>
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0 mt-3">Reply</label>
+                                            <label class="col-md-12 p-0 mt-3">Respuesta</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <textarea rows="4" class="form-control p-0 border-0" value={article} placeholder="Type your reply here..." onChange={(e) => setArticle(e.target.value)}></textarea>
                                             </div>

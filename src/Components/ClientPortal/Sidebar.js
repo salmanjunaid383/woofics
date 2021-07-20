@@ -164,12 +164,12 @@ export default function Sidebar() {
     var decoded = jwt_decode(token)
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
-            .then((response) => {
-                setName(response.data)
-            }, (Error) => {
-                console.log(Error);
-            });
+        // const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+        //     .then((response) => {
+        //         setName(response.data)
+        //     }, (Error) => {
+        //         console.log(Error);
+        //     });
     }, [])
 
     const Data = [
@@ -264,6 +264,7 @@ export default function Sidebar() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
             .then((response) => {
                 setunseen(response.data)
+                console.log("unseen notifications "+response.data)
             }, (Error) => {
                 console.log(Error);
             });
@@ -283,8 +284,8 @@ export default function Sidebar() {
 
     useEffect(() => {
         chatnotification()
-
-        notification()
+        seen();
+        // notification()
     }, [])
 
     function notificationDelete(e) {
@@ -338,7 +339,10 @@ export default function Sidebar() {
                             </li>
                             <li className="my-auto">
                                 <a className="profile-pic" aria-describedby={id} variant="contained" data-toggle="tooltip" data-placement="top" title="Notifications" color="primary" onClick={handleClick}>
-                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen == 0 ? '' : 'dot'} >
+                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen === 0 ? '' : ''} >
+                                        {
+                                            unseen === 0 ? null : <p className={"notification"}>{unseen}</p> 
+                                        }
                                         <NotificationsIcon color="primary" />
                                     </Badge></span>
                                 </a>
@@ -417,7 +421,7 @@ export default function Sidebar() {
                                 <Link to={`/${val.link}`}>
                                     <Typography className={`${classes.typography} bg-light text-dark`} >
                                         <a className="profile-pic" >
-                                            <span className="text-black font-medium ml-1">{val.notification} <span className="float-right text-danger pl-md-2" onClick={() => notificationDelete(val.id)}><i className="fa fa-close"></i></span></span>
+                                            <span className="text-black font-medium ml-1">{val.notification} </span>
                                         </a>
                                     </Typography>
                                 </Link>

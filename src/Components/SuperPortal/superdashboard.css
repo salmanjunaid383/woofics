@@ -1,0 +1,23 @@
+
+.page-wrapper{
+    position:relative;
+}
+.back-button{
+    /* position:absolute; */
+    /* z-index: 200 ; */
+    /* left:-3px; */
+    /* top:25px; */
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    background-color: #223e92    ;
+    /* filter: brightness(150%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.fa-angle-left{
+    margin-left:-3px;
+    color:#fff
+}

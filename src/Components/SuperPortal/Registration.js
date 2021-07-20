@@ -87,7 +87,7 @@ export default function Registration() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 mx-auto text-center">Registration's List</h3>
+                                            <h3 className="box-title mb-0 mx-auto text-center">Lista De Registro</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap" >

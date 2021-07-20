@@ -440,14 +440,14 @@ export default function ProviderComplain() {
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
-                                                <div class="col-md-4 bold h5">Help & Support</div>
+                                                <div class="col-md-4 bold h5">Servicio de Asistencia</div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-4">
                                                    
                                                 </div>
-                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Find your Solution...</div>
-                                                {complain == '' ? <h3 className="text-center my-auto mx-auto w-100">Nothing to show!</h3>
+                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra Tu Solución...</div>
+                                                {complain == '' ? <h3 className="text-center my-auto mx-auto w-100">Nada Que Mostrar!</h3>
                                                     :
                                                     complain.map((val, id) => {
                                                         return (
@@ -466,9 +466,9 @@ export default function ProviderComplain() {
                                             <div class="col-md-12 row" style={{ padding: '0px', marginBottom: '10px' }}>
 
                                                 <div class="col-md-10 ">
-                                                    Didn't find your solution ?
+                                                No encontré tu solución ?
                                                             </div>
-                                                <div class="col-md-8 ml-2 m-2" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Ask your query</div>
+                                                <div class="col-md-8 ml-2 m-2" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Pregunta tu consulta</div>
                                             </div>
 
                                             <form>
@@ -520,7 +520,7 @@ export default function ProviderComplain() {
             
             {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -541,7 +541,7 @@ export default function ProviderComplain() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -568,20 +568,20 @@ export default function ProviderComplain() {
                 <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>

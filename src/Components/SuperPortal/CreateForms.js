@@ -221,7 +221,7 @@ export default function CreateForms() {
                     <div className="page-wrapper bg-light">
                         <div class="container-fluid">
                             <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0 mx-auto text-center">CHARGES</h3>
+                                <h3 class="box-title mb-0 mx-auto text-center">CARGOS</h3>
                             </div> 
                             <div class="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
@@ -286,18 +286,18 @@ export default function CreateForms() {
                                                     </div>
                                                     <div class="mb-4 mt-4 text-center mx-auto">
                                                         <div class="col-sm-12 text-center">
-                                                            <button class={`btn text-white mt-3 greenbtn text-white `}  onClick={() => paymentPack()}>Add</button>
+                                                            <button class={`btn text-white mt-3 greenbtn text-white `}  onClick={() => paymentPack()}>Agregar</button>
                                                         </div>
                                                     </div>
                                                     <table class="table table-hover mt-2 text-center">
                                                         <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
                                                                 <th scope="col " className="text-white" >#</th>
-                                                                <th scope="col " className="text-white" >Name</th>
-                                                                <th scope="col " className="text-white" >Charge</th>
-                                                                <th scope="col " className="text-white" >Start</th>
-                                                                <th scope="col " className="text-white" >End</th>
-                                                                <th scope="col " className="text-white" >Actions</th>
+                                                                <th scope="col " className="text-white" >Nombre</th>
+                                                                <th scope="col " className="text-white" >Cargo</th>
+                                                                <th scope="col " className="text-white" >Comienzo</th>
+                                                                <th scope="col " className="text-white" >Final</th>
+                                                                <th scope="col " className="text-white" >Comportamiento</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -309,7 +309,7 @@ export default function CreateForms() {
                                                                         <td>{val.charge}</td>
                                                                         <td>{val.start}</td>
                                                                         <td>{val.end}</td>
-                                                                        <td><button class={`btn btn-danger text-white`} onClick={() => paymentPackDel(val.id)}>Delete </button></td>
+                                                                        <td><button class={`btn btn-danger text-white`} onClick={() => paymentPackDel(val.id)}>Borrar </button></td>
                                                                     </tr>
                                                                 </>)
                                                             })
@@ -331,7 +331,7 @@ export default function CreateForms() {
                                                                 shrink: true,
                                                             }} />
                                                         <div class="col-sm-12 text-center">
-                                                            <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={() => valCharge()}>Add</button>
+                                                            <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={() => valCharge()}>Agregar</button>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
@@ -339,15 +339,15 @@ export default function CreateForms() {
                                                             <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                 <tr style={{tableLayout:"fixed"}}>
                                                                     <th scope="col" className="text-white">#</th>
-                                                                    <th scope="col" className="text-white">Charge</th>
-                                                                    <th scope="col" className="text-white">Actions</th>
+                                                                    <th scope="col" className="text-white">Cargo</th>
+                                                                    <th scope="col" className="text-white">Comportamiento</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
                                                                     <th scope="row">1</th>
                                                                     <td>{valueCharge.charge}</td>
-                                                                    <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck('true')}>Edit</button></td>
+                                                                    <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck('true')}>Editar</button></td>
                                                                     {/* <button class={`btn btn-danger text-white`} onClick={valueCharges}>Delete </button> */}
                                                                 </tr>
                                                             </tbody>
@@ -374,7 +374,7 @@ export default function CreateForms() {
                                                             </div>
                                                             <div class="col-md-12 mb-4 mt-4 w-100 text-center mx-auto" style={{ display: check2 === 'true' ? 'block' : 'none' }}>
                                                                 <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white greenbtn text-white `}  onClick={() => supplierRental()}>Add</button>
+                                                                    <button class={`btn text-white greenbtn text-white `}  onClick={() => supplierRental()}>Agregar</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -383,15 +383,15 @@ export default function CreateForms() {
                                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                         <th scope="col" className="text-white">#</th>
-                                                                        <th scope="col" className="text-white">Charge</th>
-                                                                        <th scope="col" className="text-white">Actions</th>
+                                                                        <th scope="col" className="text-white">Cargo</th>
+                                                                        <th scope="col" className="text-white">Comportamiento</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
                                                                         <th scope="row">1</th>
                                                                         <td>{supplierRenta.charge}</td>
-                                                                        <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck2('true')}>Edit</button></td> 
+                                                                        <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck2('true')}>Editar</button></td> 
                                                                         {/* <button class={`btn btn-danger text-white`} onClick={() => supplierRentalDel(supplierRenta.id)}>Delete </button> */}
                                                                     </tr>
                                                                 </tbody>
@@ -417,7 +417,7 @@ export default function CreateForms() {
                                                         </div>
                                                         <div class=" col-md-12 mb-4 mt-4 w-100 text-center mx-auto " style={{ display: check3 === 'true' ? 'block' : 'none' }}>
                                                             <div class="col-sm-12 text-center">
-                                                                <button class={`btn text-white greenbtn text-white `}  onClick={serviceCharges}>Add</button>
+                                                                <button class={`btn text-white greenbtn text-white `}  onClick={serviceCharges}>Agregar</button>
                                                             </div>
                                                         </div>
                                                         <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
@@ -425,15 +425,15 @@ export default function CreateForms() {
                                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                         <th scope="col" className="text-white">#</th>
-                                                                        <th scope="col" className="text-white">Charge</th>
-                                                                        <th scope="col" className="text-white">Actions</th>
+                                                                        <th scope="col" className="text-white">Cargo</th>
+                                                                        <th scope="col" className="text-white">Comportamiento</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
                                                                         <th scope="row">1</th>
                                                                         <td>{serviceCharge.charge}</td>
-                                                                        <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck3('true')}>Edit</button></td>
+                                                                        <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck3('true')}>Editar</button></td>
                                                                         {/* <button class={`btn btn-danger text-white`} onClick={() => serviceChargesDel(serviceCharge.id)}>Delete </button> */}
                                                                     </tr>
                                                                 </tbody>

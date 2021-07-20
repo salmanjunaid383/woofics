@@ -8,7 +8,7 @@ import { Brightness1, Delete } from "@material-ui/icons";
 import Badge from '@material-ui/core/Badge';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
-
+import './SupCoupons.css'
 
 
 
@@ -53,7 +53,7 @@ import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import SwapVertIcon from '@material-ui/icons/SwapVert';
 import CustomAdminAuth from "../CustomAdminAuth";
 import AssignmentIcon from '@material-ui/icons/Assignment';
-
+import Pusher from 'pusher-js';
 
 const drawerWidth = 240;
 
@@ -118,7 +118,9 @@ const useStyles = makeStyles((theme) => ({
 export default function StazBar() {
     CustomAdminAuth();
     let history = useHistory();
-
+    const pusher = new Pusher('e22c56269c9258608b2c', {
+        cluster: 'ap1'
+      });;
 
     useEffect(() => {
         
@@ -294,7 +296,15 @@ export default function StazBar() {
 
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-
+    
+    // useEffect(() => {
+    //     const channel = pusher.subscribe(""+decoded.sub+"");   
+    //     console.log("channel success "+ channel);  
+    //     channel.bind("my-event",function(returnData){
+    //         console.log("event");
+    //         seen();
+    //     });
+    // })
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
             .then((response) => {
@@ -337,7 +347,10 @@ export default function StazBar() {
                         <ul className="ml-auto d-flex my-auto">
                             <li className="my-auto">
                                 <a className="profile-pic" aria-describedby={id} variant="contained" data-toggle="tooltip" data-placement="top" title="Notifications" color="primary" onClick={handleClick}>
-                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen == 0 ? '' : 'dot'} >
+                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen === 0 ? '' : ''} >
+                                        {
+                                            unseen ===  0 ? '' :<p className={"notification"}>{unseen}</p> 
+                                        }
                                         <NotificationsIcon color="primary" />
                                     </Badge></span>
                                 </a>
@@ -407,7 +420,7 @@ export default function StazBar() {
             >
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     newnoti.map((val) => {
@@ -446,13 +459,13 @@ export default function StazBar() {
                  <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.clear(); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

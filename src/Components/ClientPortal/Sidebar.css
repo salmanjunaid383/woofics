@@ -25,3 +25,16 @@ body{
     text-align: center;
     transform: rotateY(180deg);
   }
+  .notification{
+    color: black;
+    position: absolute;
+    font-size: 14px;
+    background-color: red;
+    border-radius: 50%;
+    border-color: red;
+    margin-left: 20px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    vertical-align: middle;
+  }

@@ -85,16 +85,16 @@ export default function ViewReviews() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">Review's List</h3>
+                                            <h3 className="box-title mb-0 text-center mx-auto">Lista De Reseñas</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap text-center">
                                                 <thead  className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white text-white">NAME</th>
+                                                        <th className="border-top-0 text-white text-white">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-white">EMAIL</th>
-                                                        <th className="border-top-0 text-white text-white">DATE</th>
-                                                        <th className="border-top-0 text-white text-white">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-white">FECHA</th>
+                                                        <th className="border-top-0 text-white text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -105,7 +105,7 @@ export default function ViewReviews() {
                                                                     <td className="txt-oflo">{val.first_name} {val.last_name}</td>
                                                                     <td className="txt-oflo">{val.email}<a href={"mailto:"+val.email} className="float-right pr-lg-4"><i className="fa fa-envelope ml-3 text-primary"></i></a></td>
                                                                     <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
-                                                                    <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e)=>approveReg(e.target.value)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button class="btn text-white btn-danger ml-2" value={val.id} onClick={(e)=>blockReg(e.target.value)}>Delete</button></td>
+                                                                    <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e)=>approveReg(e.target.value)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button class="btn text-white btn-danger ml-2" value={val.id} onClick={(e)=>blockReg(e.target.value)}>Borrar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

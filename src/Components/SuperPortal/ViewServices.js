@@ -80,25 +80,25 @@ export default function ViewServices() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 h1 text-center mx-auto">Service's List</h3>
+                                            <h3 className="box-title mb-0 h1 text-center mx-auto">Lista De Servicios</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
                                                 <thead  className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0 text-white text-center text-white">#</th>
-                                                        <th className="border-top-0 text-white text-center text-white">NAME</th>
-                                                        <th className="border-top-0 text-white text-center text-white">DESCRIPTION</th>
-                                                        <th className="border-top-0 text-white text-center text-white">COMPANY</th>
-                                                        <th className="border-top-0 text-white text-center text-white">COMMENTS</th>
-                                                        <th className="border-top-0 text-white text-center text-white">DELIVERY TIME</th>
+                                                        <th className="border-top-0 text-white text-center text-white">NOMBRE</th>
+                                                        <th className="border-top-0 text-white text-center text-white">DESCRIPCIÓN</th>
+                                                        <th className="border-top-0 text-white text-center text-white">EMPRESA</th>
+                                                        <th className="border-top-0 text-white text-center text-white">COMENTARIOS</th>
+                                                        <th className="border-top-0 text-white text-center text-white">EL TIEMPO DE ENTREGA</th>
                                                         <th className="border-top-0 text-white text-center text-white">EMAIL</th>
-                                                        <th className="border-top-0 text-white text-center text-white">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-center text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
 
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nothing to show! Start creating projects...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -110,7 +110,7 @@ export default function ViewServices() {
                                                                         <td className="txt-oflo">{val.comments}</td>
                                                                         <td className="txt-oflo">{val.delivery_time}</td>
                                                                         <td className="txt-oflo">{val.email}</td>
-                                                                        <td className="text-danger"><button class="btn text-white greenbtn" onClick={() => history.push(`/viewservicemore/${val.id}`)}>View more</button></td>
+                                                                        <td className="text-danger"><button class="btn text-white greenbtn" onClick={() => history.push(`/viewservicemore/${val.id}`)}>Ver más</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

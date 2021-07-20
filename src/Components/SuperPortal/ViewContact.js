@@ -80,16 +80,16 @@ export default function ViewContact() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                     <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">View Contacts</h3>
+                                            <h3 className="box-title mb-0 text-center mx-auto">Ver Contactos</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap text-center">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white text-center">NAME</th>
+                                                        <th className="border-top-0 text-white text-center">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-center">EMAIL</th>
-                                                        <th className="border-top-0 text-white text-center">MESSAGE</th>
-                                                        <th className="border-top-0 text-white text-center">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-center">MENSAJE</th>
+                                                        <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -100,7 +100,7 @@ export default function ViewContact() {
                                                                     <td className="txt-oflo text-center">{val.name}</td>
                                                                     <td className="txt-oflo text-center">{val.email}<a href={"mailto:" /+ val.email} className="float-right pr-lg-4"><i className="fa fa-envelope ml-3 text-primary"></i></a></td>
                                                                     <td className="txt-oflo text-center"><p className="text-justify">{val.message}</p></td>
-                                                                    <td className="text-danger text-center"><button class="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Delete</button></td>
+                                                                    <td className="text-danger text-center"><button class="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Borrar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

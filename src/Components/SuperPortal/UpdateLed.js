@@ -495,7 +495,7 @@ export default function UpdateLed() {
                                             <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-5">
                                                     <div className="col-md-5 m-1 text-center p-2 w-100 p-0">
-                                                        <label className="float-left">Led Name</label>
+                                                        <label className="float-left">Nombre Del LED</label>
                                                         <input
                                                             placeholder="Led Name"
                                                             id="standard-number"
@@ -517,21 +517,21 @@ export default function UpdateLed() {
                                                     </div>
                                                     <div className="col-md-5 m-1 text-center w-100 p-0">
                                                         <FormControl className={classes.formControl}>
-                                                            <InputLabel htmlFor="grouped-select">Location </InputLabel>
+                                                            <InputLabel htmlFor="grouped-select">Localización </InputLabel>
                                                             <Select value={location} id="grouped-select" onChange={(e) => setlocation(e.target.value)}>
-                                                                <MenuItem value={location}>Default Value</MenuItem>
-                                                                <MenuItem value='indoor'>Indoor</MenuItem>
-                                                                <MenuItem value='outdoor'>Outdoor</MenuItem>
-                                                                <MenuItem value='both'>Both</MenuItem>
+                                                                <MenuItem value={location}>Valor Por Defecto</MenuItem>
+                                                                <MenuItem value='indoor'>Interior</MenuItem>
+                                                                <MenuItem value='outdoor'>Exterior</MenuItem>
+                                                                <MenuItem value='both'>Ambas</MenuItem>
                                                             </Select>
                                                         </FormControl>
                                                         <FormControl className={classes.formControl}>
-                                                            <InputLabel htmlFor="grouped-select">Application </InputLabel>
+                                                            <InputLabel htmlFor="grouped-select">Solicitud </InputLabel>
                                                             <Select value={application} id="grouped-select" onChange={(e) => setApplication(e.target.value)}>
-                                                                <MenuItem value={application}>Default Value</MenuItem>
-                                                                <MenuItem value='rent'>Rental/Event</MenuItem>
-                                                                <MenuItem value='install'>Fixed Installation</MenuItem>
-                                                                <MenuItem value='both'>Both</MenuItem>
+                                                                <MenuItem value={application}>Valor Por Defecto</MenuItem>
+                                                                <MenuItem value='rent'>Alquiler / Evento</MenuItem>
+                                                                <MenuItem value='install'>Instalación Fija</MenuItem>
+                                                                <MenuItem value='both'>Ambas</MenuItem>
                                                             </Select>
                                                         </FormControl>
                                                     </div>

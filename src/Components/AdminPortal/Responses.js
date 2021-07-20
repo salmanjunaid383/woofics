@@ -412,17 +412,17 @@ export default function ProviderResponses() {
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
-                                                <div class="col-md-12 bold h5">Help & Support Responses</div>
+                                                <div class="col-md-12 bold h5">Respuestas de ayuda y soporte</div>
                                                 <div class="col-md-12">
                                                     {/* <input class="form-control" type="text" placeholder="Search Query..." /> */}
-                                                    <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Find your Solution...</div>
+                                                    <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra Tu Solución...</div>
                                                 </div>
-                                                {form == '' ? <h3 className="text-center my-auto mx-auto">Nothing to show!</h3>
+                                                {form == '' ? <h3 className="text-center my-auto mx-auto">Nada Que Mostrar!</h3>
                                                     :
                                                     form.map((val, id) => {
                                                         return (
                                                             <>
-                                                                <div class="col-md-11 py-4  border-bottom mx-auto"> <Link to={`/providercheckresponse/${val.id}`}> Query: {val.description}<i className="fas fa-chevron-right float-right"></i></Link></div>
+                                                                <div class="col-md-11 py-4  border-bottom mx-auto"> <Link to={`/providercheckresponse/${val.id}`}> Consulta: {val.description}<i className="fas fa-chevron-right float-right"></i></Link></div>
                                                             </>
                                                         )
                                                     })}
@@ -453,7 +453,7 @@ export default function ProviderResponses() {
                
                {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -474,7 +474,7 @@ export default function ProviderResponses() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -501,26 +501,26 @@ export default function ProviderResponses() {
                 <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses')}>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

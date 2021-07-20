@@ -81,12 +81,12 @@ export default function Blog() {
                                 <div class="col-md-12">
                                     
                                     <div className="mr-auto mb-3 mt-2">
-                                        <a class="btn pull-right greenbtn text-white mb-3" onClick={() => history.push('/createblog')}>Create New Blog</a>
+                                        <a class="btn pull-right greenbtn text-white mb-3" onClick={() => history.push('/createblog')}>Crear Nuevo Blog</a>
                                     </div>
                                    
                                 </div>
                                 <div className="col-md-10 text-left mx-auto">
-                                    {blog == '' ? <div className="my-lg-3 mx-auto text-center w-100">Nothing to show! Start creating Blogs...</div>
+                                    {blog == '' ? <div className="my-lg-3 mx-auto text-center w-100">¡Nada que mostrar! Empiece a crear blogs...</div>
                                         : blog.map((val, id) => {
                                             return (
                                                 <>
@@ -102,8 +102,8 @@ export default function Blog() {
                                                                 
                                                                     <h3 class="card-title">{val.author}</h3>
                                                                     <h5 class="card-text">{val.article}</h5>
-                                                                    <p class="card-text"><small class="text-muted ">Date: {(val.created_at).slice(0, 10)}</small></p>
-                                                                    <button value={val.id} class="btn btn-danger" onClick={e => deleteBlog(e.target.value)} >Delete</button>
+                                                                    <p class="card-text"><small class="text-muted ">Fecha: {(val.created_at).slice(0, 10)}</small></p>
+                                                                    <button value={val.id} class="btn btn-danger" onClick={e => deleteBlog(e.target.value)} >Borrar</button>
                                                                 </div>
                                                             </div>
                                                         </div>

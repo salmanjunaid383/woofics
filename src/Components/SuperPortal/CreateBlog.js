@@ -111,10 +111,10 @@ export default function CreateBlog() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">Article</h4>
+                                    <h4 className="text-center p-4">Artículo</h4>
                                     <div class="card-body">
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0">Cover Image</label>
+                                            <label class="col-md-12 p-0">Imagen De Portada</label>
                                             <div class="col-md-12 border p-2 text-center">
                                                 {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
                                                  */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file" accept='image/*'/>

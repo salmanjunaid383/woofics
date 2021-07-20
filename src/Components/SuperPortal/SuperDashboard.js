@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import StazBar from './Stazbar';
+import "../SuperPortal/superdashboard.css"
 import {
     PieChart,
     Pie,
@@ -304,6 +305,14 @@ export default function SuperDashboard() {
                     <div className={classes.toolbar} />
 
                     <div className="container-fluid page-wrapper">
+                        <div className="back-button">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </div>
+                        <div className="row">
+                        <div className="col-md-12">
+                            <h1 style={{fontSize:"30px", marginBottom:"20px", color:"#223e92" ,fontWeight:"bolder"}}>Admin Dashboard</h1>
+                        </div>
+                        </div>
                         <div className="row">
                             <div className="col-md-8">
 
@@ -314,7 +323,7 @@ export default function SuperDashboard() {
                                     <section id="minimal-statistics">
                                         <div class="row" style={{ border: "2px solid #f3f3f3", padding: "10px" }}>
                                             <div className="col-md-12">
-                                                <h4 style={{ fontSize: "25px", marginTop: "20px", marginBottom: "20px" }}>All The Data</h4>
+                                                <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color:"#223e92" }}>All Infiormation</h4>
                                             </div>
                                             <div class="col-xl-4 col-md-3 col-sm-6 col-md-4 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
@@ -322,11 +331,12 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fas fa-users fa-4x icon-pencil primary font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                    <i class="fas fa-users fa-3x icon-pencil primary float-left" style={{ color: "#9b88f6" }}></i>
                                                                 </div>
-                                                                <div class="media-body text-right">
+                                                                <div class="media-body text-right" style={{position:"relative"}}>
                                                                     <h1 className="bold">{totalClient}</h1>
-                                                                    <span>Total Clients</span>
+
+                                                                    <div >Total Clients</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -340,7 +350,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fa fa-cog fa-4x  icon-speech warning font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                    <i class="fa fa-cog fa-3x  icon-speech warnin float-left" style={{ color: "#f25c8a" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalSupplier}</h1>
@@ -358,7 +368,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fa fa-user fa-4x   icon-graph success font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                    <i class="fa fa-user fa-3x   icon-graph success   float-left" style={{ color: "#9b88f6" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalProvider}</h1>
@@ -375,7 +385,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fa fa-rss fa-4x   icon-pointer danger font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                    <i class="fa fa-rss fa-3x   icon-pointer danger   float-left" style={{ color: "#f25c8a" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalBlogs}</h1>
@@ -392,7 +402,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fa fa-tasks fa-4x  icon-pencil primary font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                    <i class="fa fa-tasks fa-3x  icon-pencil primary  float-left" style={{ color: "#9b88f6" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{CompletedProject}</h1>
@@ -409,7 +419,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fa fa-spinner fa-4x  icon-speech warning font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                    <i class="fa fa-spinner fa-3x  icon-speech warnin float-left" style={{ color: "#f25c8a" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{OnGoingProject}</h1>
@@ -426,7 +436,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fas fa-handshake fa-4x   icon-graph success font-large-2 float-left" style={{ color: "#9b88f6" }}></i>
+                                                                    <i class="fas fa-handshake fa-3x   icon-graph success float-left" style={{ color: "#9b88f6" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{PendingReg}</h1>
@@ -443,7 +453,7 @@ export default function SuperDashboard() {
                                                         <div class="card-body">
                                                             <div class="media d-flex">
                                                                 <div class="align-self-center">
-                                                                    <i class="fa fa-file fa-4x   icon-pointer danger font-large-2 float-left" style={{ color: "#f25c8a" }}></i>
+                                                                    <i class="fa fa-file fa-3x   icon-pointer danger  float-left" style={{ color: "#f25c8a" }}></i>
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalServ}</h1>
@@ -458,77 +468,11 @@ export default function SuperDashboard() {
                                     </section>
                                 </div>
 
-                            </div>
-                            <div className="col-md-4">
-
-                                <div className="container my-lg-5">
-                                    <div classNam="row">
-                                        {/* <div className="col-md-6 ">
-                                <BarChart
-                                    width={500}
-                                    height={300}
-                                    data={TotalPerProjects}
-                                    margin={{
-                                        top: 5,
-                                        right: 30,
-                                        left: 80,
-                                        bottom: 5,
-                                    }}
-                                    barSize={20}
-                                >
-                                    <XAxis
-                                        dataKey="name"
-                                        scale="point"
-                                        padding={{ left: 10, right: 10 }}
-                                    />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <CartesianGrid strokeDasharray="1 1" />
-                                    <Bar dataKey="users" fill="#52ba57" background={{ fill: "#eee" }} barSize={20} />
-                                </BarChart>
-                            </div>
-                            <div className="col-md-6 ">
-                                <PieChart width={400} height={400}>
-                                    <Pie
-                                        dataKey="users"
-                                        isAnimationActive={false}
-                                        data={data}
-                                        cx={200}
-                                        cy={200}
-                                        outerRadius={80}
-                                        fill="#52ba57"
-                                        label
-                                    />
-                                    <Tooltip />
-                                </PieChart>
-                            </div> */}
-
-                                        <div className="col-md-6" style={{ overflowX: "scroll", margin: "auto" }}>
-                                            <BarChart width={730} height={300} data={user}>
-                                                <CartesianGrid strokeDasharray="3 3" />
-                                                <XAxis dataKey="name" />
-                                                <YAxis />
-                                                <Tooltip />
-                                                <Legend />
-                                                <Bar dataKey="pv" fill="#f25c8a" />
-                                                <Bar dataKey="uv" fill="#9b88f6" />
-                                            </BarChart>
-                                        </div>
-                                        <div className="col-md-6" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
-                                            <PieChart width={500} height={300}>
-                                                <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
-                                                <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
-                                            </PieChart>
-                                        </div>
-
-
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-xl-4 col-sm-6 col-12 mx-auto mt-lg-4">
+                                <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-12 mt-lg-4">
                                             <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                                <div class="card-content text-center">
-                                                    <div class="card-body">
+                                                <div class="card-content text-center"> 
+                                                    <div class="card-body" >
                                                         <div class="media d-flex " >
 
                                                             <div class="media-body text-center">
@@ -540,7 +484,7 @@ export default function SuperDashboard() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-sm-6 col-12 mx-auto mt-lg-4">
+                                        <div class="col-md-6 col-sm-6 col-12 mt-lg-4">
                                             <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                 <div class="card-content text-center">
                                                     <div class="card-body">
@@ -556,12 +500,41 @@ export default function SuperDashboard() {
                                             </div>
                                         </div>
                                     </div>
+
+                            </div>
+                            <div className="col-md-4" style={{border:"2px solid #f3f3f3"}}>
+
+                                <div className="container my-lg-5">
+                                    
+                                    <div classNam="row">
+                                        <div className="col-md-12" style={{ overflowX: "scroll", margin: "auto" }}>
+                                            <BarChart width={730} height={300} data={user} style={{marginLeft:"-55px"}}>
+                                                <CartesianGrid strokeDasharray="3 3" />
+                                                <XAxis dataKey="name" />
+                                                <YAxis />
+                                                <Tooltip />
+                                                <Legend />
+                                                <Bar dataKey="pv" fill="#f25c8a" />
+                                                <Bar dataKey="uv" fill="#9b88f6" />
+                                            </BarChart>
+                                        </div>
+
+                                        <div className="col-md-12" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
+                                            <PieChart width={500} height={300}>
+                                                <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
+                                                <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
+                                            </PieChart>
+                                        </div>
+
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </main>
             </div>
+            
         </>
     );
 }

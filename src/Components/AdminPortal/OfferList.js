@@ -403,22 +403,22 @@ export default function OfferList() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Sent Offers</h1>
+                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Ofertas Enviadas</h1>
                                             </div>
                                             <div className="table-responsive">
                                                 <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead className="py-3" style={{ backgroundColor: "#f25c8a" }}>
                                                         <tr>
                                                             <th className="border-top-0 text-center text-white">#</th>
-                                                            <th className="border-top-0 text-center text-white">Description</th>
-                                                            <th className="border-top-0 text-center text-white">Price</th>
-                                                            <th className="border-top-0 text-center text-white">Days</th>
+                                                            <th className="border-top-0 text-center text-white">Descripción</th>
+                                                            <th className="border-top-0 text-center text-white">Precio</th>
+                                                            <th className="border-top-0 text-center text-white">Dias</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         {
                                                         
-                                                        form == ''? <h3  className="mt-5"> Nothing to show!</h3> :
+                                                        form == ''? <h3  className="mt-5"> Nada Que Mostrar!</h3> :
                                                         form.map((val, id) => {
                                                             return (
                                                                 <>
@@ -463,7 +463,7 @@ export default function OfferList() {
             
             {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -484,7 +484,7 @@ export default function OfferList() {
                 <Link to='/providerallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -511,26 +511,26 @@ export default function OfferList() {
                <Typography className={classes.typography}>
                     <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
-                        <span className="text-black font-medium mr-3">Profile</span>
+                        <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
                         <i className="fa fa-support mx-3"></i>
-                        <span className="text-black font-medium mr-3">Help & Support</span>
+                        <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
                 </Typography>
                 <hr />
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/') }}>
                         <i className="fa fa-sign-out mx-3"></i>
-                        <span className="text-black font-medium mr-3">Logout</span>
+                        <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                     </a>
                 </Typography>
 

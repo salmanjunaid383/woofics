@@ -78,19 +78,19 @@ export default function GetInspired() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div class="d-md-flex mb-3">
-                                            <h3 class="box-title mb-0 h1 text-center mx-auto"> advertise</h3>
+                                            <h3 class="box-title mb-0 h1 text-center mx-auto"> Anunciar</h3>
                                         </div>
                                         <div className="table-responsive">
                                             <table className="table no-wrap">
                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white text-center">NAME</th>
+                                                        <th className="border-top-0 text-white text-center">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-center">EMAIL</th>
-                                                        <th className="border-top-0 text-white text-center">CAMPAIGN<br />LOCATION</th>
-                                                        <th className="border-top-0 text-white text-center">CAMPAIGN<br />DURATION</th>
-                                                        <th className="border-top-0 text-white text-center">CONTACT<br />NUMBER</th>
-                                                        <th className="border-top-0 text-white text-center">SCREEN<br />TYPE</th>
-                                                        <th className="border-top-0 text-white text-center">ACTIONS</th>
+                                                        <th className="border-top-0 text-white text-center">CAMPAÑA<br />LOCALIZACIÓN</th>
+                                                        <th className="border-top-0 text-white text-center">CAMPAÑA<br />DURACIÓN</th>
+                                                        <th className="border-top-0 text-white text-center">CONTACTO<br />NÚMERO</th>
+                                                        <th className="border-top-0 text-white text-center">PANTALLA<br />TIPO</th>
+                                                        <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -104,7 +104,7 @@ export default function GetInspired() {
                                                                     <td className="txt-oflo text-center">{val.campaign_duration}</td>
                                                                     <td className="txt-oflo text-center">{val.contact_number}</td>
                                                                     <td className="txt-oflo text-center">{val.screen_type}</td>
-                                                                    <td className="text-danger text-center"><button class="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Delete</button></td>
+                                                                    <td className="text-danger text-center"><button class="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Borrar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

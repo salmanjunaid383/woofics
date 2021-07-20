@@ -94,25 +94,25 @@ export default function Nav() {
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                         <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                        <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                     </a>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                         <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                        <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                     </a>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                         <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                        <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                     </a>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                         <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                        <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                        <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                     </a>
                     </Typography>
                 </Popover>

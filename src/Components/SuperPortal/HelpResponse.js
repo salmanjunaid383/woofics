@@ -119,7 +119,7 @@ export default function HelpResponse() {
                                             Help:  <p className="" style={{ fontSize: 20 }}> {blog.description}</p>
                                         </div>
                                         <div className="border p-md-3 ">
-                                            <h3 className="text-center">Replies:</h3>
+                                            <h3 className="text-center">Respuestas:</h3>
                                             {
                                                 reponses.map((val, id) => {
                                                     return (
@@ -131,7 +131,7 @@ export default function HelpResponse() {
                                             }
                                         </div>
                                         <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0 mt-3">Reply</label>
+                                            <label class="col-md-12 p-0 mt-3">Respuesta</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <textarea rows="4" class="form-control p-0 border-0" value={article} placeholder="Type your reply here..." onChange={(e) => setArticle(e.target.value)}></textarea>
                                             </div>

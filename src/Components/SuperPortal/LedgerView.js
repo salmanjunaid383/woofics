@@ -84,21 +84,21 @@ export default function LedgerView() {
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="d-md-flex mb-3">
-                                        <h1 className="box-title h1 mb-0 text-center mx-auto">Ledger</h1>
+                                        <h1 className="box-title h1 mb-0 text-center mx-auto">Libro mayor</h1>
                                     </div>
                                     <div className="table-responsive">
                                         <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                             <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                 <tr>
                                                     <th className="border-top-0 text-white text-center">#</th>
-                                                    <th className="border-top-0 text-white text-center">BALANCE</th>
-                                                    <th className="border-top-0 text-white text-center">CREATED AT</th>
+                                                    <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
+                                                    <th className="border-top-0 text-white text-center">CREADO EN</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {
 
-                                                    article == '' ? <h3 className="mt-5"> Nothing to show!</h3> :
+                                                    article == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                         article.map((val, id) => {
                                                             return (
                                                                 <>
@@ -113,7 +113,7 @@ export default function LedgerView() {
                                                         })}
                                                 {
                                                     article !== '' ?
-                                                    <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
+                                                    <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad total : {totalAmount} $ </td>
                                                     <td></td><td></td>
                                                     </tr> : <h3></h3>
                                                 }

@@ -147,27 +147,27 @@ export default function Led() {
                                                     </div>
                                                     <div className="col-md-3 text-center w-100 p-2">
                                                         <FormControl className="w-100">
-                                                            <InputLabel htmlFor="grouped-select">Location</InputLabel>
+                                                            <InputLabel htmlFor="grouped-select">Localización</InputLabel>
                                                             <Select defaultValue="" id="grouped-select" onChange={(e) => setlocation(e.target.value)}>
                                                                 <MenuItem value="">
-                                                                    <em>None</em>
+                                                                    <em>Ninguna</em>
                                                                 </MenuItem>
-                                                                <MenuItem value='indoor'>Indoor</MenuItem>
-                                                                <MenuItem value='outdoor'>Outdoor</MenuItem>
-                                                                <MenuItem value='both'>Both</MenuItem>
+                                                                <MenuItem value='indoor'>Interior</MenuItem>
+                                                                <MenuItem value='outdoor'>Exterior</MenuItem>
+                                                                <MenuItem value='both'>Ambas</MenuItem>
                                                             </Select>
                                                         </FormControl>
                                                     </div>
                                                     <div className="col-md-3 text-center w-100 p-2">
                                                         <FormControl className="w-100">
-                                                            <InputLabel htmlFor="grouped-select">Application</InputLabel>
+                                                            <InputLabel htmlFor="grouped-select">Solicitud</InputLabel>
                                                             <Select defaultValue="" id="grouped-select" onChange={(e) => setApplication(e.target.value)}>
                                                                 <MenuItem value="">
-                                                                    <em>None</em>
+                                                                    <em>Ninguna</em>
                                                                 </MenuItem>
-                                                                <MenuItem value='rent'>Rental/Event</MenuItem>
-                                                                <MenuItem value='install'>Fixed Installation</MenuItem>
-                                                                <MenuItem value='both'>Both</MenuItem>
+                                                                <MenuItem value='rent'>Alquiler / Evento</MenuItem>
+                                                                <MenuItem value='install'>Instalación fija</MenuItem>
+                                                                <MenuItem value='both'>Ambas</MenuItem>
                                                             </Select>
                                                         </FormControl>
                                                     </div>
