@@ -444,7 +444,7 @@ export default function ProviderComplain() {
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-4">
-                                                    <input class="form-control" type="text" placeholder="Search Query..." />
+                                                   
                                                 </div>
                                                 <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra Tu Solución...</div>
                                                 {complain == '' ? <h3 className="text-center my-auto mx-auto w-100">Nada Que Mostrar!</h3>

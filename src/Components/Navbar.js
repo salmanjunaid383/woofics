@@ -849,8 +849,8 @@ function Navbar() {
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
-                            <i className="fa fa-sign-out mx-3"></i>
-                            <span className="text-black font-medium mr-3">Logout</span>
+                            <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Logout</span>
                         </a>
                     </Typography>
             </Popover>
