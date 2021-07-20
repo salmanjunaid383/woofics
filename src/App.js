@@ -135,7 +135,7 @@ import ProviderLedger from './Components/AdminPortal/ProviderLedger';
 import cookie from "react-cookies";
 import SuperDashboard from './Components/SuperPortal/SuperDashboard';
 import Dashboard from './Components/ClientPortal/Dashboard';
-
+import ProviderDashboard from './Components/AdminPortal/AdminDashboard'
 
 function App() {
 
@@ -163,7 +163,7 @@ function App() {
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/admindashboard" component={ServiceSidebar} />
+          <Route exact path="/admindashboard" component={ProviderDashboard} />
           <Route exact path="/superdashboard" component={SuperDashboard} />
           <Route exact path="/client" component={Client} />
           <Route exact path="/serviceprovider" component={ServiceProvider} />
