@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
-import Sidebar from './Sidebar'
-import Nav from './Nav'
-import { Delete } from "@material-ui/icons";
 // import './BLog.css';
 import Badge from '@material-ui/core/Badge';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
-
+import './SupCoupons.css'
 
 
 
@@ -53,7 +50,7 @@ import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import SwapVertIcon from '@material-ui/icons/SwapVert';
 import CustomAdminAuth from "../CustomAdminAuth";
 import AssignmentIcon from '@material-ui/icons/Assignment';
-
+import Pusher from 'pusher-js';
 
 const drawerWidth = 240;
 
@@ -118,7 +115,9 @@ const useStyles = makeStyles((theme) => ({
 export default function StazBar() {
     CustomAdminAuth();
     let history = useHistory();
-
+    const pusher = new Pusher('e22c56269c9258608b2c', {
+        cluster: 'ap1'
+      });;
 
     useEffect(() => {
         
@@ -294,7 +293,15 @@ export default function StazBar() {
 
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-
+    
+    // useEffect(() => {
+    //     const channel = pusher.subscribe(""+decoded.sub+"");   
+    //     console.log("channel success "+ channel);  
+    //     channel.bind("my-event",function(returnData){
+    //         console.log("event");
+    //         seen();
+    //     });
+    // })
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
             .then((response) => {
@@ -337,7 +344,10 @@ export default function StazBar() {
                         <ul className="ml-auto d-flex my-auto">
                             <li className="my-auto">
                                 <a className="profile-pic" aria-describedby={id} variant="contained" data-toggle="tooltip" data-placement="top" title="Notifications" color="primary" onClick={handleClick}>
-                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen == 0 ? '' : 'dot'} >
+                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen === 0 ? '' : ''} >
+                                        {
+                                            unseen ===  0 ? '' :<p className={"notification"}>{unseen}</p> 
+                                        }
                                         <NotificationsIcon color="primary" />
                                     </Badge></span>
                                 </a>
