@@ -337,7 +337,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalClient}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Total Clients</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Total Clients</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -355,7 +355,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalSupplier}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Total Suppliers</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Total Suppliers</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -373,7 +373,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalProvider}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Total Provider</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Total Provider</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,7 +390,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalBlogs}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}} >Total Blogs</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }} >Total Blogs</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -407,7 +407,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{CompletedProject}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Completed Projects</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Completed Projects</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -424,7 +424,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{OnGoingProject}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Ongoing Projects</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Ongoing Projects</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -441,7 +441,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{PendingReg}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Pending Registration</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Pending Registration</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -458,7 +458,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalServ}</h1>
                                                                 </div>
                                                             </div>
-                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>   Total Services </div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>   Total Services </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -467,7 +467,20 @@ export default function SuperDashboard() {
                                     </section>
                                 </div>
 
-
+                                <table className="for-table-setting">
+                                    <tr className="heading-row">
+                                        <th>salman</th>
+                                        <th>salman</th>
+                                        <th>salman</th>
+                                        <th>salman</th>
+                                    </tr>
+                                    <tr className="data-row">
+                                        <td>junaid</td>
+                                        <td>junaid</td>
+                                        <td>junaid</td>
+                                        <td>junaid</td>
+                                    </tr>
+                                </table>
 
                             </div>
                             <div className="col-md-12 col-xl-4" style={{ border: "2px solid #f3f3f3" }}>
@@ -501,7 +514,7 @@ export default function SuperDashboard() {
                         </div>
                         {/* links  */}
                         <div class="row links-parent">
-                            <div class="col-md-6 col-sm-6 col-12 col-lg-4">
+                            <div class="col-md-6 col-sm-6 col-12 col-xl-4 col-lg-6">
                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                     <div class="card-content text-center">
                                         <div class="card-body" >
@@ -516,7 +529,7 @@ export default function SuperDashboard() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12 col-lg-4">
+                            <div class="col-md-6 col-sm-6 col-12 col-xl-4 col-lg-6">
                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                     <div class="card-content text-center">
                                         <div class="card-body">
