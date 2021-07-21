@@ -1,0 +1,495 @@
+[33mcommit bc944f950fc4d098846dbe0f478e6c389b324e8d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2ffc869 03b180c
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Wed Jul 21 00:36:39 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+
+[33mcommit 2ffc869c979b0ea045a05a51b8d13118bf04af8b[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Wed Jul 21 00:36:28 2021 +0500
+
+    12 36 am 7/21
+
+[33mcommit 03b180cc3d8d71de3c705096befdcb6405a362b1[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 23:53:25 2021 +0500
+
+    fixed pusher issue maybe started code optemiztion of provider dashboard
+
+[33mcommit 588f1508838a5acd475fa916acdb68c852068d52[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 23:01:08 2021 +0500
+
+    Revert "fixed chat pusher issue"
+    
+    This reverts commit 1839e5106f7740dcfcfda163c4fdf7662af5643d.
+    
+    pusher issue
+
+[33mcommit 1839e5106f7740dcfcfda163c4fdf7662af5643d[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 22:28:41 2021 +0500
+
+    fixed chat pusher issue
+
+[33mcommit 156bc12a8d3d2b0b465700ea38c925708e11b03d[m
+Merge: 3fdbbd2 d2e0457
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 20 22:08:12 2021 +0500
+
+    10 00 7/20
+
+[33mcommit 3fdbbd29a1de84385c48b0cd1c6941d711235e34[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 20 17:40:03 2021 +0500
+
+    5 30 , 7/20
+
+[33mcommit d2e0457032b48b53cd8766e7ffbfa925d35ac1ae[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 17:33:34 2021 +0500
+
+    fixed client admin notifications pusher integeration remaining
+
+[33mcommit 9e3327ce35717bc14e9ce5f75199bba9abe13fbc[m
+Merge: 1888e19 6118ddb
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 20 15:25:33 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+
+[33mcommit 1888e19619b7e1ef697ab210deb7208f56c1d43f[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 20 15:25:23 2021 +0500
+
+    before pulling on 7/20
+
+[33mcommit 3ec5603b56b210a041608aea0f8720ca569935d3[m
+Merge: ec0f8a4 6118ddb
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 15:23:00 2021 +0500
+
+    Merge branch 'master' into spanishtranslate
+    super portal spanish translate merge with master
+
+[33mcommit ec0f8a45b24932d9ea284b695c17307d6079b9ed[m[33m ([m[1;31morigin/spanishtranslate[m[33m)[m
+Author: shakir <shakir@localhost.localdomain>
+Date:   Tue Jul 20 15:22:24 2021 +0500
+
+    super portal translation done
+
+[33mcommit 6118ddb8e84c265eaf631731031c0ae1675627f8[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 15:17:24 2021 +0500
+
+    supplier portal in progress
+
+[33mcommit b2c5eb710f862c540cc85f88764d8f9512184c28[m
+Merge: 564f0ef 9aac07a
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 12:41:48 2021 +0500
+
+    Merge branch 'master' into spanishtranslate
+    superdashboard spanish translate start
+
+[33mcommit 9aac07a95f544782c15038383b1fc7d84280a696[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 20 12:41:12 2021 +0500
+
+    fixed navbar workin on scrollTOtop
+
+[33mcommit c27c1f5f0835687ba7cd278a3f1dd3cba10dbf91[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 21:00:16 2021 +0500
+
+    fixed navbar
+
+[33mcommit 2738f452bc5129fc51ec7ae4937b96e8732badbb[m
+Merge: 43c25ed 81f4b05
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 18:58:33 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    monday merge
+
+[33mcommit 43c25ed5470f9035b989d90fe1e1e3957dea7258[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 18:58:24 2021 +0500
+
+    remove unecessary links
+
+[33mcommit 81f4b057ede603486ea9e249ab95a7a14df1f7ed[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Mon Jul 19 17:01:23 2021 +0500
+
+    before superdashboard
+
+[33mcommit 9e5705d12daff34a0f4dea4ebe24e7a3e9a1350c[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Mon Jul 19 16:11:21 2021 +0500
+
+    before blue white gradient change
+
+[33mcommit 564f0ef893c0667a7c498dc480841da674ffeb63[m
+Merge: 08a4558 04bf2fe
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 13:31:19 2021 +0500
+
+    Merge branch 'master' into spanishtranslate
+    provider dashboard spanish done merge with master
+
+[33mcommit 04bf2fe9ba79a1df1442f82a509e8884becaa06b[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 13:30:54 2021 +0500
+
+    client portal sidbar done
+
+[33mcommit 08a45581d9c55a05d3a6fc8b3f428673e8aba291[m
+Author: shakir <shakir@localhost.localdomain>
+Date:   Mon Jul 19 13:28:12 2021 +0500
+
+    provider dashboard done
+
+[33mcommit 8f10326f5d653a71aeccc586dc418a07d0236935[m
+Merge: d1d99ba f1cb5e8
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 12:04:37 2021 +0500
+
+    Merge branch 'master' into spanishtranslate
+    monday merge
+
+[33mcommit d1d99ba3f23cb4fe419cc4b8f139bb3e70711eb6[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 19 11:58:44 2021 +0500
+
+    Revert "Super Portal Half Done"
+    
+    This reverts commit c7bf826ebada5c77e52cba429cf2ab83bf59c0b0.
+    
+    merge conflict super portal
+
+[33mcommit f1cb5e8e89e0d1bf5a51b841273adc81f2fdf270[m[33m ([m[1;31morigin/productionBranch[m[33m)[m
+Merge: c1d6389 8ab5494
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 17 18:53:55 2021 +0500
+
+    merge conflict fix try
+
+[33mcommit c1d6389a2978bfd20ae3864069966354c32f8a82[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 17 18:52:48 2021 +0500
+
+     merge conflict check
+
+[33mcommit 8ab549413bb578e2fc732081c26837eed78384a2[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 17 18:51:47 2021 +0500
+
+     fixed merge conflict
+
+[33mcommit 4bd4e052603c3b376fb5e6d998bd929ac247cdbe[m
+Merge: 523d7c7 058470e
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 17 18:48:49 2021 +0500
+
+    merge conflict test
+
+[33mcommit 523d7c73699044aedc16ae492691a6ddd632fc7b[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 17 18:46:32 2021 +0500
+
+    7/17
+
+[33mcommit 058470e701babc7bf3fe89a30fdada12ddc116de[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 17 17:59:41 2021 +0500
+
+    fixed side of superadmin superdashboard remaining
+
+[33mcommit c7bf826ebada5c77e52cba429cf2ab83bf59c0b0[m
+Author: shakir <shakir@localhost.localdomain>
+Date:   Sat Jul 17 13:06:50 2021 +0500
+
+    Super Portal Half Done
+
+[33mcommit 0b081c5f3f11c3cbc68c474f8a15919b30dd0dc0[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 17 12:59:45 2021 +0500
+
+    start refactor
+
+[33mcommit 0a0e7266e068cde1496ded947348351d21accbfd[m
+Merge: 3394e6e c5dede5
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 17 10:40:55 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+
+[33mcommit 3394e6e14e198cff48d378ab49b5991cccdf511a[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 17 10:40:39 2021 +0500
+
+    7/17/21
+
+[33mcommit c5dede52b64beed5b3681126933e5043a1d37826[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Fri Jul 16 17:25:21 2021 +0500
+
+    merge test
+
+[33mcommit 7ac5175b2e909bae3da6f49277aa27f52a3490db[m
+Author: shakir <shakir@localhost.localdomain>
+Date:   Fri Jul 16 17:19:31 2021 +0500
+
+    landing page to spanish done
+
+[33mcommit edde14e52e2819e30624f28d6a69937bbbf85e66[m
+Merge: 66091e3 1cc1d9b
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Fri Jul 16 16:09:11 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    need
+
+[33mcommit 66091e3d2cb1e281bba2a0d14cb328f94134701c[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Fri Jul 16 16:09:05 2021 +0500
+
+    friday
+
+[33mcommit 1cc1d9bae53c1a7f6cac424a409a17e5ffa378d0[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Thu Jul 15 22:59:18 2021 +0500
+
+    latenight changes
+
+[33mcommit 400bdbffb7eda1d3576cbeebeb630f4074528cfc[m
+Merge: 35179dd e325b7e
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Thu Jul 15 18:18:17 2021 +0500
+
+    saasaMerge branch 'master' of https://github.com/staz6/woof
+
+[33mcommit 35179dd085ce39c2673afe8f7dea9f9449fd3c18[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Thu Jul 15 18:16:29 2021 +0500
+
+    sham ke changes
+
+[33mcommit e325b7e5dc5c80ad7546305ebe48b1ac86343eb6[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Thu Jul 15 16:40:07 2021 +0500
+
+    superadmin error handling revert to this if something is go wrong
+
+[33mcommit cdeb17e32878fe2b15330f44b3face6c20584b4d[m
+Merge: 7087690 426c638
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Thu Jul 15 16:06:58 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    Need to refactor the whole code
+
+[33mcommit 7087690e5716a271c646a7ca6a2e3b4e69d388fb[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Thu Jul 15 16:03:31 2021 +0500
+
+    message system working websocket functional
+
+[33mcommit 426c6389577f1a2ad1e18e52c8ca916b984db280[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Thu Jul 15 16:02:31 2021 +0500
+
+    recent changes
+
+[33mcommit 717bfb2f1163bccd14bc14305b09ae48fc90b2a9[m
+Merge: 344c5bf ad27cf9
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Wed Jul 14 18:18:59 2021 +0500
+
+    asasas Merge branch 'master' of https://github.com/staz6/woof
+
+[33mcommit 344c5bf707cca4d35445b966d25a72785d9274ea[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Wed Jul 14 18:18:18 2021 +0500
+
+    sal
+
+[33mcommit ad27cf975e1ba88fcac9fdf3f9d943fc3fc4bdc9[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Wed Jul 14 18:17:32 2021 +0500
+
+    wednesday changes
+
+[33mcommit bd577c31be39013ac98ae3cf9234abd1f8968fab[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Wed Jul 14 12:07:10 2021 +0500
+
+    added provider stripe payment
+
+[33mcommit 2c4dca8d6a048a42354bbd751899d41555c63971[m
+Merge: 5d10a88 80b6843
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 13 19:34:14 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    need it
+
+[33mcommit 80b684354e9eac6505ec7bf960235fffe7abfbbe[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 13 19:33:39 2021 +0500
+
+    salman changes
+
+[33mcommit 5d10a8834257f126459bdb5bde562bac8a314673[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 13 19:32:09 2021 +0500
+
+    service provider payment system done
+
+[33mcommit b673f057fe708606ea8efce82918d4cdb7c664f3[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 13 17:19:37 2021 +0500
+
+    payment in work
+
+[33mcommit 066bcc6155e8dc0b602abf428e00a36a98a10bb0[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Tue Jul 13 13:30:32 2021 +0500
+
+    ledger
+
+[33mcommit ab526efc145cad28ecf5ed59f76ad721a110503a[m
+Merge: e4dd4c5 6acf17f
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 13 11:18:20 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+
+[33mcommit e4dd4c5562efe26a8e40944e0829a60dfd10255c[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Tue Jul 13 11:18:06 2021 +0500
+
+    portal changes
+
+[33mcommit 6acf17f705a72d2f9f301c43d72e8fc03881029b[m
+Merge: 8c87faf 8d3e8ca
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 12 20:06:45 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    this is it
+
+[33mcommit 8c87faf16979ca39dbcfd6f131f3280f9032e5d2[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 12 20:06:18 2021 +0500
+
+    fixed monday
+
+[33mcommit 8d3e8cae5e36dceaf8b6efa7663cfa4b464cbbcf[m
+Merge: 41b2349 3764225
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Mon Jul 12 15:33:09 2021 +0500
+
+    changes
+
+[33mcommit 41b234935e6743efeb48a44339a9a5388ff1a968[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Mon Jul 12 15:32:39 2021 +0500
+
+    changes in client portal(sidebar)_ and superadmin portal(superdashboard)
+
+[33mcommit 3764225972ad46135b5253726253e19826b1c7b9[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 12 14:35:39 2021 +0500
+
+    fixed profile image on every page
+
+[33mcommit c2d7ea0ebaf4f82d3456768da1d5f2a2102052b7[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Mon Jul 12 14:22:08 2021 +0500
+
+    change deafult language to espaneul
+
+[33mcommit 032a56203eb210a9018f4b89737eea3571a5a71a[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sun Jul 11 14:09:23 2021 +0500
+
+    fixed the bug where profile image wont show on landing page if null
+
+[33mcommit 82333fa2c057a1cf624c2f1c160099b661dda09d[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 21:02:43 2021 +0500
+
+    fixed navbar logo, table indexing
+
+[33mcommit 812194dfde73256dbd312008292d103e762a99f0[m
+Merge: ea16cb5 ec60620
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 16:45:57 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    navbar chanes
+
+[33mcommit ea16cb5e91981618de0995339eb68b4b1a503251[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 16:45:52 2021 +0500
+
+    payment work in progess
+
+[33mcommit ec60620f3ba7d5ce3488d1369f29c3a37820921a[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 10 16:44:12 2021 +0500
+
+    navbar logo and dropshadow
+
+[33mcommit c2dcaa9a28e267a7dac467e69b5d1d6f0650eaa6[m
+Merge: 9b0b0bf afa4e15
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 15:41:46 2021 +0500
+
+    Merge branch 'master' of https://github.com/staz6/woof
+    necessary style changes
+
+[33mcommit afa4e15e78009b78c266b9019a64a599772432d3[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 10 15:40:52 2021 +0500
+
+    fixed style
+
+[33mcommit 9b0b0bf46e30b86bdec673d618ad969f6e6a9bf0[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 15:39:40 2021 +0500
+
+    fixed landing page login need to change icon
+
+[33mcommit 571bed29438ff876f3a170d42cfb5e2d78614421[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 10 12:54:25 2021 +0500
+
+    change offer heading
+
+[33mcommit a8f2080b28cc5da98b8ca30f59cb1f6210cb2697[m
+Author: Jahanzaib <jahanzaibm29@gmail.com>
+Date:   Sat Jul 10 12:47:23 2021 +0500
+
+    change package-lock.json
+
+[33mcommit d2e68ecd1cb2c59c96608be8d4c363d2b6f03317[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 12:43:09 2021 +0500
+
+    test
+
+[33mcommit 12fd55d038397b5ea2b9105cc08f023d0488b9d9[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Sat Jul 10 12:22:52 2021 +0500
+
+    Landing page logout in progess
+
+[33mcommit c67779bd734f592bd13050dca7e57b2a6c589d5a[m
+Author: staz6 <muhammad.aahad81@gmail.com>
+Date:   Fri Jul 9 18:35:25 2021 +0500
+
+    first commit

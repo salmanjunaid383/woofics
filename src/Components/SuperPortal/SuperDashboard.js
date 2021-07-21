@@ -306,12 +306,12 @@ export default function SuperDashboard() {
 
                     <div className="container-fluid page-wrapper">
                         <div className="back-button">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
                         </div>
                         <div className="row">
-                        <div className="col-md-12">
-                            <h1 style={{fontSize:"30px", marginBottom:"20px", color:"#223e92" ,fontWeight:"bolder"}}>Admin Dashboard</h1>
-                        </div>
+                            <div className="col-md-12">
+                                <h1 style={{ fontSize: "30px", marginBottom: "20px", color: "#223e92", fontWeight: "bolder" }}>Admin Dashboard</h1>
+                            </div>
                         </div>
                         <div className="row">
                             <div className="col-md-12 col-lg-8">
@@ -323,7 +323,7 @@ export default function SuperDashboard() {
                                     <section id="minimal-statistics">
                                         <div class="row" style={{ border: "2px solid #f3f3f3", padding: "10px" }}>
                                             <div className="col-md-12">
-                                                <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color:"#223e92" }}>All Infiormation</h4>
+                                                <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color: "#223e92" }}>All Information</h4>
                                             </div>
                                             <div class="col-xl-4 col-md-3 col-sm-6 col-md-4 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
@@ -333,7 +333,7 @@ export default function SuperDashboard() {
                                                                 <div class="align-self-center">
                                                                     <i class="fas fa-users fa-3x icon-pencil primary float-left" style={{ color: "#9b88f6" }}></i>
                                                                 </div>
-                                                                <div class="media-body text-right" style={{position:"relative"}}>
+                                                                <div class="media-body text-right" style={{ position: "relative" }}>
                                                                     <h1 className="bold">{totalClient}</h1>
 
                                                                     <div >Total Clients</div>
@@ -354,8 +354,8 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalSupplier}</h1>
-                                                                    <span>Total Suppliers</span>
                                                                 </div>
+                                                                    <span>Total Suppliers</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -468,47 +468,16 @@ export default function SuperDashboard() {
                                     </section>
                                 </div>
 
-                                <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-12 mt-lg-4">
-                                            <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                                <div class="card-content text-center"> 
-                                                    <div class="card-body" >
-                                                        <div class="media d-flex " >
 
-                                                            <div class="media-body text-center">
-                                                                <span>Service Provider SignUp Link:</span><br />
-                                                                <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-12 mt-lg-4">
-                                            <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
-                                                <div class="card-content text-center">
-                                                    <div class="card-body">
-                                                        <div class="media d-flex " >
-
-                                                            <div class="media-body text-center">
-                                                                <span>Suppliers SignUp Link:</span><br />
-                                                                <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                             </div>
-                            <div className="col-md-12 col-lg-4" style={{border:"2px solid #f3f3f3"}}>
+                            <div className="col-md-12 col-lg-4" style={{ border: "2px solid #f3f3f3" }}>
 
                                 <div className="container my-lg-5">
-                                    
+
                                     <div classNam="row">
                                         <div className="col-lg-12 col-md-6" style={{ overflowX: "scroll", margin: "auto" }}>
-                                            <BarChart width={730} height={300} data={user} style={{marginLeft:"-55px"}}>
+                                            <BarChart width={730} height={300} data={user} style={{ marginLeft: "-55px" }}>
                                                 <CartesianGrid strokeDasharray="3 3" />
                                                 <XAxis dataKey="name" />
                                                 <YAxis />
@@ -531,10 +500,43 @@ export default function SuperDashboard() {
                                 </div>
                             </div>
                         </div>
+                        {/* links  */}
+                        <div class="row links-parent">
+                            <div class="col-md-6 col-sm-6 col-12 col-lg-4">
+                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                    <div class="card-content text-center">
+                                        <div class="card-body" >
+                                            <div class="media d-flex " >
+
+                                                <div class="media-body text-center">
+                                                    <span>Service Provider SignUp Link:</span><br />
+                                                    <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-12 col-lg-4">
+                                <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
+                                    <div class="card-content text-center">
+                                        <div class="card-body">
+                                            <div class="media d-flex " >
+
+                                                <div class="media-body text-center">
+                                                    <span>Suppliers SignUp Link:</span><br />
+                                                    <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </main>
             </div>
-            
+
         </>
     );
 }
