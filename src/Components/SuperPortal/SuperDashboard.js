@@ -314,7 +314,7 @@ export default function SuperDashboard() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-12 col-lg-8">
+                            <div className="col-md-12 col-xl-8">
 
 
                                 {/* <div className="page-wrapper bg-light"> */}
@@ -325,7 +325,7 @@ export default function SuperDashboard() {
                                             <div className="col-md-12">
                                                 <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color: "#223e92" }}>All Information</h4>
                                             </div>
-                                            <div class="col-xl-4 col-md-3 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -335,16 +335,15 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right" style={{ position: "relative" }}>
                                                                     <h1 className="bold">{totalClient}</h1>
-
-                                                                    <div >Total Clients</div>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Total Clients</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJ1c2luZXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -355,14 +354,14 @@ export default function SuperDashboard() {
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalSupplier}</h1>
                                                                 </div>
-                                                                    <span>Total Suppliers</span>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Total Suppliers</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -372,14 +371,14 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalProvider}</h1>
-                                                                    <span>Total Provider</span>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Total Provider</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://media.istockphoto.com/photos/business-development-to-success-and-growing-growth-concept-pointing-picture-id1145631842?k=6&m=1145631842&s=612x612&w=0&h=D9ToEIi64qlA4_w-VmN9CBvfW-D4DKvdJrG1jJU-GPk=')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -389,14 +388,14 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalBlogs}</h1>
-                                                                    <span>Total Blogs</span>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}} >Total Blogs</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.all-free-download.com/images/graphicthumb/business_exchange_picture_170372.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -406,14 +405,14 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{CompletedProject}</h1>
-                                                                    <span>Completed Projects</span>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Completed Projects</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzaW5lc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -423,14 +422,14 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{OnGoingProject}</h1>
-                                                                    <span>Ongoing Projects</span>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Ongoing Projects</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://eltamayoz.com/images/files/pages/about.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -440,14 +439,14 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{PendingReg}</h1>
-                                                                    <span>Pending Registration</span>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>Pending Registration</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-4 col-sm-6 col-md-4 col-12 mx-auto">
+                                            <div class="col-xl-4 col-sm-6 col-md-4 col-lg-6 col-12 mx-auto">
                                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://picjumbo.com/wp-content/uploads/woman-checking-her-to-do-list-free-photo-1080x720.jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                                     <div class="card-content">
                                                         <div class="card-body">
@@ -457,9 +456,9 @@ export default function SuperDashboard() {
                                                                 </div>
                                                                 <div class="media-body text-right">
                                                                     <h1 className="bold">{totalServ}</h1>
-                                                                    <span>   Total       Services </span>
                                                                 </div>
                                                             </div>
+                                                                    <div style={{textAlign:"center", marginTop:"10px", fontSize:"15px"}}>   Total Services </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -471,12 +470,12 @@ export default function SuperDashboard() {
 
 
                             </div>
-                            <div className="col-md-12 col-lg-4" style={{ border: "2px solid #f3f3f3" }}>
+                            <div className="col-md-12 col-xl-4" style={{ border: "2px solid #f3f3f3" }}>
 
                                 <div className="container my-lg-5">
 
                                     <div classNam="row">
-                                        <div className="col-lg-12 col-md-6" style={{ overflowX: "scroll", margin: "auto" }}>
+                                        <div className="col-lg-12 col-md-12" style={{ overflowX: "scroll", margin: "auto" }}>
                                             <BarChart width={730} height={300} data={user} style={{ marginLeft: "-55px" }}>
                                                 <CartesianGrid strokeDasharray="3 3" />
                                                 <XAxis dataKey="name" />
@@ -488,7 +487,7 @@ export default function SuperDashboard() {
                                             </BarChart>
                                         </div>
 
-                                        <div className="col-lg-12 col-md-6" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
+                                        <div className="col-lg-12 col-md-12" style={{ overflowX: "scroll", margin: "auto", display: "flex", justifyContent: "center" }}>
                                             <PieChart width={500} height={300}>
                                                 <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#f25c8a" />
                                                 <Pie data={staz ? TotalPerProjects : data01} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#9b88f6" label />
