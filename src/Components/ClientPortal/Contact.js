@@ -19,6 +19,7 @@ import { TextField } from "@material-ui/core";
 import ScrollToTop from '../ScrollToTop'
 import CustomClientAuth from "../CustomClientAuth";
 
+///About us page
 export default function Contact() {
   ScrollToTop();
   const activebtn = {
