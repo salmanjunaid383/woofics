@@ -32,7 +32,7 @@ import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import CustomProviderAuth from "../CustomProviderAuth";
-
+import Pusher from 'pusher-js';
 
 const drawerWidth = 240;
 
@@ -107,13 +107,21 @@ export default function ServiceSidebar(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    const pusher = new Pusher('e22c56269c9258608b2c', {
+        cluster: 'ap1'
+      });;
 
-    // useEffect(()=>{
-    //     if(!localStorage.getItem('user_token')){
-    //         history.push('/')
-    //     }
-        
-    // })
+    useEffect(() => {
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
+        channel.bind("my-event",function(returnData){
+            console.log("run event");
+            seen();
+        });
+        chatnotification()
+        seen()
+        getData()
+    }, [])
 
     const url = window.location.href
 
@@ -270,11 +278,7 @@ export default function ServiceSidebar(props) {
 
     }
 
-    useEffect(() => {
-        chatnotification()
-        seen()
-        getData()
-    }, [])
+    
 
 
     return (
@@ -384,7 +388,8 @@ export default function ServiceSidebar(props) {
                                 <Link to={`/${val.link}`}>
                                     <Typography className={`${classes.typography} bg-light text-dark`} >
                                         <a className="profile-pic" >
-                                            <span className="text-black font-medium ml-1">{val.notification} <span className="float-right text-danger pl-md-2" onClick={() => notificationDelete(val.id)}><i className="fa fa-close"></i></span></span>
+                                        {/* <span className="float-right text-danger pl-md-2" onClick={() => notificationDelete(val.id)}><i className="fa fa-close"></i></span> */}
+                                            <span className="text-black font-medium ml-1">{val.notification} </span>
                                         </a>
                                     </Typography>
                                 </Link>

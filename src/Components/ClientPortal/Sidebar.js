@@ -41,7 +41,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import CustomClientAuth from "../CustomClientAuth";
-
+import Pusher from 'pusher-js';
 
 const drawerWidth = 240;
 
@@ -109,6 +109,9 @@ export default function Sidebar() {
     CustomClientAuth();
     const history = useHistory();
 
+    const pusher = new Pusher('e22c56269c9258608b2c', {
+        cluster: 'ap1'
+      });;
 
     //Sidebaaaaar/..........................
     // const { window } = props;
@@ -119,6 +122,17 @@ export default function Sidebar() {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    useEffect(() => {
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
+        channel.bind("my-event",function(returnData){
+            console.log("run event");
+            seen();
+        });
+        chatnotification()
+        seen();
+        getData();
+    }, [])
 
 
     const url = window.location.href
@@ -282,11 +296,7 @@ export default function Sidebar() {
             });
     }
 
-    useEffect(() => {
-        chatnotification()
-        seen();
-        getData();
-    }, [])
+    
 
     function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
@@ -419,7 +429,7 @@ export default function Sidebar() {
                         return (
                             <>
                                 <Link to={`/${val.link}`}>
-                                    <Typography className={`${classes.typography} bg-light text-dark`} >
+                                    <Typography className={`${classes.typography} bg-light text-dark`}  >
                                         <a className="profile-pic" >
                                             <span className="text-black font-medium ml-1">{val.notification} </span>
                                         </a>

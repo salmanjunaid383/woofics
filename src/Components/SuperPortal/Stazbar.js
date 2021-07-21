@@ -120,12 +120,21 @@ const useStyles = makeStyles((theme) => ({
 export default function StazBar() {
     CustomAdminAuth();
     let history = useHistory();
+    var token = localStorage.getItem("user_token");
+    var decoded = jwt_decode(token)
     const pusher = new Pusher('e22c56269c9258608b2c', {
         cluster: 'ap1'
       });;
+    
 
-    useEffect(() => {
-        
+      useEffect(() => {
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
+        channel.bind("my-event",function(returnData){
+            console.log("run event");
+            seen();
+        });
+        seen()
     }, [])
 
     //Sidebaaaaar/..........................
@@ -296,8 +305,7 @@ export default function StazBar() {
     // const container = window !== undefined ? () => window().document.body : undefined;
     const [newnoti, setnewnoti] = useState([]);
 
-    var token = localStorage.getItem("user_token");
-    var decoded = jwt_decode(token)
+    
     
     // useEffect(() => {
     //     const channel = pusher.subscribe(""+decoded.sub+"");   
@@ -327,9 +335,7 @@ export default function StazBar() {
                 console.log(Error);
             });
     }
-    useEffect(() => {
-        seen()
-    }, [])
+    
 
     return (
         <>
@@ -422,22 +428,31 @@ export default function StazBar() {
             >
                 {newnoti == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">Sin Notificación !</span>
+                        <span className="text-black font-medium ml-1">No Notification !</span>
                     </a>
                 </Typography> :
-                    newnoti.map((val) => {
+                    newnoti.slice(0, 5).map((val) => {
                         return (
                             <>
                                 <Link to={`/${val.link}`}>
-                                    <Typography className={classes.typography} >
+                                    <Typography className={`${classes.typography} bg-light text-dark`}  >
                                         <a className="profile-pic" >
-                                            <span className="text-black font-medium ml-1">{val.notification}</span>
+                                            <span className="text-black font-medium ml-1">{val.notification} </span>
                                         </a>
                                     </Typography>
                                 </Link>
                             </>
                         )
-                    })}
+                    }).reverse()
+
+                }
+                <Link to='/adminallnotification'>
+                    <Typography className={`${classes.typography} bg-dark text-light`} >
+                        <a className="profile-pic" >
+                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                        </a>
+                    </Typography>
+                </Link>
             </Popover>
 
 
