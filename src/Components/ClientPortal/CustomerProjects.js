@@ -54,47 +54,92 @@ export default function Project() {
     const [quoteid, setQuoteid] = useState('');
     const [completed, setCompleted] = useState('');
     // const[projectComplete,setprojectComplete] = useState('');
+    const[mounted,isMounted]=useState(false);
+
+
+    const [days, setddays] = useState('')
+    const [hours, setdhours] = useState('')
+    const [minutes, setdminutes] = useState('')
+    const [seconds, setdseconds] = useState('')
+
+    const myGreeting =() => {
+       
+        const countdownleft = new Date(ddays).getTime();
+        const nowTime = new Date().getTime();
+        const left = countdownleft - nowTime;
+
+        setddays(Math.floor(left / (1000 * 60 * 60 * 24)));
+        setdhours(Math.floor((left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        setdminutes(Math.floor((left % (1000 * 60 * 60)) / (1000 * 60)));
+        setdseconds(Math.floor((left % (1000 * 60)) / (1000)));
+
+        if (left < 0) {
+            
+            setddays('L');
+            setdhours('A');
+            setdminutes('T');
+            setdseconds('E')
+        } else if (completed == 'Completed') {
+            
+            setddays(0);
+            setdhours(0);
+            setdminutes(0);
+            setdseconds(0)
+        }
+     
+    }
 
 
     useEffect(() => {
-
-        function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`)
-                .then((res) => {
-                    if (res) {
-                        setForm(res.data)
-                        console.log(res.data);
-                        setdays(res.data.due_date)
-                        setQuoteid(res.data.supplier_quotation_id)
-                        setCompleted(res.data.status)
-                    }
-                }, (error) => {
-                    console.log(Error);
-                });
-
+        if(!mounted)
+        {
+            function Feedback() {
+                const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`)
+                    .then((res) => {
+                        if (res) {
+                            setForm(res.data)
+                            console.log(res.data);
+                            setdays(res.data.due_date)
+                            setQuoteid(res.data.supplier_quotation_id)
+                            setCompleted(res.data.status)
+                        }
+                    }, (error) => {
+                        console.log(Error);
+                    });
+    
+            }
+            Feedback();
+            function Supplierid() {
+                const res = axios.get(`https://api.woofics.com/api/users/${sid}`)
+                    .then((res) => {
+                        if (res) {
+                            setSupplier(res.data)
+                        }
+                    }, (error) => {
+                        console.log(Error);
+                        // history.push('/allquotation');
+                    });
+    
+            }
+            Supplierid();
+            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            .then((response) => {
+                setName(response.data.first_name + " " + response.data.last_name)
+            }, (Error) => {
+                console.log(Error);
+            });
+            getTodo()
         }
-        Feedback();
-        function Supplierid() {
-            const res = axios.get(`https://api.woofics.com/api/users/${sid}`)
-                .then((res) => {
-                    if (res) {
-                        setSupplier(res.data)
-                    }
-                }, (error) => {
-                    console.log(Error);
-                    // history.push('/allquotation');
-                });
-
+        return () => {
+            isMounted(true);
         }
-        Supplierid();
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-        .then((response) => {
-            setName(response.data.first_name + " " + response.data.last_name)
-        }, (Error) => {
-            console.log(Error);
-        });
-        getTodo()
+
     }, [])
+
+    useEffect(() => {
+        const timer = setInterval(() => {myGreeting()},1000)
+        return () => clearInterval(timer);
+    },[])
 
 
 
@@ -164,37 +209,7 @@ export default function Project() {
     //Timer
 
 
-    const [days, setddays] = useState('')
-    const [hours, setdhours] = useState('')
-    const [minutes, setdminutes] = useState('')
-    const [seconds, setdseconds] = useState('')
 
-    // let myGreeting = setInterval(() => {
-    //     clearInterval()
-    //     const countdownleft = new Date(ddays).getTime();
-    //     const nowTime = new Date().getTime();
-    //     const left = countdownleft - nowTime;
-
-    //     setddays(Math.floor(left / (1000 * 60 * 60 * 24)));
-    //     setdhours(Math.floor((left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-    //     setdminutes(Math.floor((left % (1000 * 60 * 60)) / (1000 * 60)));
-    //     setdseconds(Math.floor((left % (1000 * 60)) / (1000)));
-
-    //     if (left < 0) {
-    //         clearInterval(myGreeting);
-    //         setddays('L');
-    //         setdhours('A');
-    //         setdminutes('T');
-    //         setdseconds('E')
-    //     } else if (completed == 'Completed') {
-    //         clearInterval(myGreeting);
-    //         setddays(0);
-    //         setdhours(0);
-    //         setdminutes(0);
-    //         setdseconds(0)
-    //     }
-    //     clearTimeout(myGreeting)
-    // }, 1000);
 
 
 
@@ -324,18 +339,7 @@ export default function Project() {
                                                             <th scope="row">Status</th>
                                                             <td className={form.status === 'Completed' ? 'text-success' : 'text-primary'}>{form.status}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th scope="row">Next Phase</th>
-                                                            <td>{form.current_phase == null ? 'Final Phase' : form.current_phase}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">Payment Paid</th>
-                                                            <td>{form.paid}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">Payment Left (Remaining)</th>
-                                                            <td>{form.amount_left}</td>
-                                                        </tr>
+
                                                     </tbody>
                                                 </table>
                                                 {form.status == "Completed" ? <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={(e) => history.push(`/feedback/${supplier.id}`)} >Feedback</button> : <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={(e) => Stripe(form.id)} >Mark as Complete</button>}
