@@ -74,10 +74,6 @@ export default function Project() {
 
         }
         Feedback();
-    }, [])
-
-    useEffect(() => {
-
         function Supplierid() {
             const res = axios.get(`https://api.woofics.com/api/users/${sid}`)
                 .then((res) => {
@@ -91,7 +87,16 @@ export default function Project() {
 
         }
         Supplierid();
+        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        .then((response) => {
+            setName(response.data.first_name + " " + response.data.last_name)
+        }, (Error) => {
+            console.log(Error);
+        });
+        getTodo()
     }, [])
+
+
 
 
     //Stripe
@@ -134,14 +139,7 @@ export default function Project() {
 
     const [name, setName] = useState('');
 
-    useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-            .then((response) => {
-                setName(response.data.first_name + " " + response.data.last_name)
-            }, (Error) => {
-                console.log(Error);
-            });
-    }, [])
+
 
 
     // const[suser,setaUser] = useState('');
@@ -171,32 +169,32 @@ export default function Project() {
     const [minutes, setdminutes] = useState('')
     const [seconds, setdseconds] = useState('')
 
-    let myGreeting = setInterval(() => {
-        clearInterval()
-        const countdownleft = new Date(ddays).getTime();
-        const nowTime = new Date().getTime();
-        const left = countdownleft - nowTime;
+    // let myGreeting = setInterval(() => {
+    //     clearInterval()
+    //     const countdownleft = new Date(ddays).getTime();
+    //     const nowTime = new Date().getTime();
+    //     const left = countdownleft - nowTime;
 
-        setddays(Math.floor(left / (1000 * 60 * 60 * 24)));
-        setdhours(Math.floor((left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-        setdminutes(Math.floor((left % (1000 * 60 * 60)) / (1000 * 60)));
-        setdseconds(Math.floor((left % (1000 * 60)) / (1000)));
+    //     setddays(Math.floor(left / (1000 * 60 * 60 * 24)));
+    //     setdhours(Math.floor((left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    //     setdminutes(Math.floor((left % (1000 * 60 * 60)) / (1000 * 60)));
+    //     setdseconds(Math.floor((left % (1000 * 60)) / (1000)));
 
-        if (left < 0) {
-            clearInterval(myGreeting);
-            setddays('L');
-            setdhours('A');
-            setdminutes('T');
-            setdseconds('E')
-        } else if (completed == 'Completed') {
-            clearInterval(myGreeting);
-            setddays(0);
-            setdhours(0);
-            setdminutes(0);
-            setdseconds(0)
-        }
-        clearTimeout(myGreeting)
-    }, 1000);
+    //     if (left < 0) {
+    //         clearInterval(myGreeting);
+    //         setddays('L');
+    //         setdhours('A');
+    //         setdminutes('T');
+    //         setdseconds('E')
+    //     } else if (completed == 'Completed') {
+    //         clearInterval(myGreeting);
+    //         setddays(0);
+    //         setdhours(0);
+    //         setdminutes(0);
+    //         setdseconds(0)
+    //     }
+    //     clearTimeout(myGreeting)
+    // }, 1000);
 
 
 
@@ -237,9 +235,7 @@ export default function Project() {
             });
     }
 
-    useEffect(() => {
-        getTodo()
-    }, [])
+
 
 
     // DeleteTodo

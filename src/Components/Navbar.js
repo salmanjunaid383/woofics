@@ -394,9 +394,7 @@ function Navbar() {
 
         }
         else {
-            // // document.getElementById("woofic-logo").style.width="150px";
-            // // document.getElementById("woofic-logo").style.height="400px";
-            // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-1.png";
+   
             try {
                 setNavState(false);
                 

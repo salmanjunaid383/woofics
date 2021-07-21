@@ -43,20 +43,19 @@ export default function ProviderDetails() {
                  
                 console.log(Error);
             });
+            const { data: responseA } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            .then((response) => {
+                setName(response.data.first_name + " " + response.data.last_name)
+            }, (Error) => {
+                console.log(Error);
+            });  
     }, [])
 
 
     
     const [name, setName] = useState('');
 
-    useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-            .then((response) => {
-                setName(response.data.first_name + " " + response.data.last_name)
-            }, (Error) => {
-                console.log(Error);
-            });
-    })
+ 
 
 
     // const[suser,setaUser] = useState('');
