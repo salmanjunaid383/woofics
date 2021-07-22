@@ -123,6 +123,9 @@ export default function ServiceSidebar(props) {
         chatnotification()
         seen()
         getData()
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
 
     const url = window.location.href

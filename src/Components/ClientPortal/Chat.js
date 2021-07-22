@@ -93,6 +93,9 @@ export default function Chat() {
         });
         SendData();
         getData();
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
     const [anchorElmenu, setAnchorElmenu] = React.useState(null);
     const handleClickmenu = (event) => {

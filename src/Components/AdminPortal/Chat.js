@@ -90,6 +90,9 @@ export default function ProviderChat() {
         });
         SendData()
         getData()
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
 
     //Making Contact

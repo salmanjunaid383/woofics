@@ -133,6 +133,9 @@ export default function Sidebar() {
         chatnotification()
         seen();
         getData();
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
 
 
