@@ -60,6 +60,7 @@ import two from '../Images/two.webp';
 import three from '../Images/three.png';
 
 import Footer from './LandingPage/components/Footer';
+import ScrollToTop from "./ScrollToTop";
 
 
 const drawerWidth = 240;
@@ -169,7 +170,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function QuoteMain() {
     let history = useHistory();
+    ScrollToTop();
 
+    // let history = useHistory();
+
+    var token = localStorage.getItem("user_token");
+    var decoded = jwt_decode(token)
 
 
     const [description, setdescription] = useState("");
@@ -209,85 +215,158 @@ export default function QuoteMain() {
 
     const [malik, setmalik] = useState('disabled')
 
-    function SendService() {
+    function SendService(i) {
+        const token = localStorage.getItem('user_token');
+        if(token === null){
+            alert("Please logged in or register to post the offer")
+        }
+        else{
+            var decoded = jwt_decode(token);
+            
 
-        alert("Seems you are not logged in.. Please login or Create your account first!")
-        history.push("/")
+            if(i === 2){
+                if(description === "" ||
+                name === "" ||
+                contact === "" ||
+                company === "" ||
+                customertype === "" ||
+                sector === "" ||
+                postalcode === null ||
+                comments === "" ||
+                email === "" || buy ==="" || indoor === "" || install ==="" || visuald === "" || screenheight === "" || screenuse === "" || screenbase === "" || screenaccess ==="" ||
+                screenorientation === "" || controlsys === "" || adverseweather === "" || structure === "" || deliverytime === "" || shipping === "" || sensor === "" ||
+                warranty ==="" || carcass ==="" || flycases === "")
+                {
+                    alert("please fill in the form");
+                }
+                else{
+                    setprogress('Please wait...')
+           
+    
+                const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                    description: description,
+                    buy: buy,
+                    indoor: indoor,
+                    installation: install,
+                    model: model,
+                    visual_distance: visuald,
+                    screen_use: screenuse,
+                    screen_base: screenbase,
+                    screen_height: screenheight,
+                    screen_access: screenaccess,
+                    screen_orientation: screenorientation,
+                    control_system: controlsys,
+                    adverse_weather: adverseweather,
+                    structure: structure,
+                    delivery_time: deliverytime,
+                    shipping: shipping,
+                    sensor: sensor,
+                    warranty: warranty,
+                    carcase_material: carcass,
+                    fly_cases: flycases,
+                    name: name,
+                    contact: contact,
+                    company: company,
+                    customer_type: customertype,
+                    sector: sector,
+                    postal_code: postalcode,
+                    comments: comments,
+                    entity: entity,
+                    email: email,
+                    documents: doc,
+                    client_id: decoded.sub
+                })
+                    .then((response) => {
+                        setprogress('Published')
+                        alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
+                        history.push('/myservice')
+                    }, (error) => {
+                        setprogress('Publish your Service?')
+                        alert('You left some feilds empty !')
+                    });
+                }
+            }
+            else 
+            {
 
-        // console.log(description,
-        //     buy,
-        //     indoor,
-        //     install,
-        //     model,
-        //     visuald,
-        //     screenuse,
-        //     screenbase,
-        //     screenheight,
-        //     screenaccess,
-        //     screenorientation,
-        //     controlsys,
-        //     adverseweather,
-        //     structure,
-        //     deliverytime,
-        //     shipping,
-        //     sensor,
-        //     warranty,
-        //     carcass,
-        //     flycases,
-        //     entity,
-        //     name,
-        //     contact,
-        //     company,
-        //     customertype,
-        //     sector,
-        //     postalcode,
-        //     comments,
-        //     email)
-        // setprogress('Please wait...')
-        // const token = localStorage.getItem('user_token');
-        // var decoded = jwt_decode(token);
+                setprogress('Please wait...')
+           
+    
+                const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                    description: description,
+                    buy: buy,
+                    indoor: indoor,
+                    installation: install,
+                    model: model,
+                    visual_distance: visuald,
+                    screen_use: screenuse,
+                    screen_base: screenbase,
+                    screen_height: screenheight,
+                    screen_access: screenaccess,
+                    screen_orientation: screenorientation,
+                    control_system: controlsys,
+                    adverse_weather: adverseweather,
+                    structure: structure,
+                    delivery_time: deliverytime,
+                    shipping: shipping,
+                    sensor: sensor,
+                    warranty: warranty,
+                    carcase_material: carcass,
+                    fly_cases: flycases,
+                    name: name,
+                    contact: contact,
+                    company: company,
+                    customer_type: customertype,
+                    sector: sector,
+                    postal_code: postalcode,
+                    comments: comments,
+                    entity: entity,
+                    email: email,
+                    documents: doc,
+                    client_id: decoded.sub
+                })
+                    .then((response) => {
+                        setprogress('Published')
+                        alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
+                        history.push('/myservice')
+                    }, (error) => {
+                        setprogress('Publish your Service?')
+                        alert('You left some feilds empty !')
+                    });
+            }
 
-        // const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
-        //     description: description,
-        //     buy: buy,
-        //     indoor: indoor,
-        //     installation: install,
-        //     model: model,
-        //     visual_distance: visuald,
-        //     screen_use: screenuse,
-        //     screen_base: screenbase,
-        //     screen_height: screenheight,
-        //     screen_access: screenaccess,
-        //     screen_orientation: screenorientation,
-        //     control_system: controlsys,
-        //     adverse_weather: adverseweather,
-        //     structure: structure,
-        //     delivery_time: deliverytime,
-        //     shipping: shipping,
-        //     sensor: sensor,
-        //     warranty: warranty,
-        //     carcase_material: carcass,
-        //     fly_cases: flycases,
-        //     name: name,
-        //     contact: contact,
-        //     company: company,
-        //     customer_type: customertype,
-        //     sector: sector,
-        //     postal_code: postalcode,
-        //     comments: comments,
-        //     entity: entity,
-        //     email: email,
-        //     documents: doc,
-        //     client_id: decoded.sub
-        // })
-        //     .then((response) => {
-        //         setprogress('Published')
-        //         alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
-        //         history.push('/myservice')
-        //     }, (error) => {
-        //         setprogress('Publish your Service?')
-        //         alert('You left some feilds empty !')
-        //     });
+            }
+            // console.log(description,
+            //     buy,
+            //     indoor,
+            //     install,
+            //     model,
+            //     visuald,
+            //     screenuse,
+            //     screenbase,
+            //     screenheight,
+            //     screenaccess,
+            //     screenorientation,
+            //     controlsys,
+            //     adverseweather,
+            //     structure,
+            //     deliverytime,
+            //     shipping,
+            //     sensor,
+            //     warranty,
+            //     carcass,
+            //     flycases,
+            //     entity,
+            //     name,
+            //     contact,
+            //     company,
+            //     customertype,
+            //     sector,
+            //     postalcode,
+            //     comments,
+            //     email)
+
+       
     }
 
 
@@ -301,7 +380,7 @@ export default function QuoteMain() {
     function getStepContent(stepIndex) {
         switch (stepIndex) {
             case 0:
-                return <div className="w-50 pt-lg-5 my-lg-5 " >
+                return <div className="w-100  my-lg-5">
                     <h4 className="text-left w-100 text-dark">Do you want to purchase or rent ?</h4>
                     <input value="purchase" onChange={(e) => setbuy(e.target.value)}
                         type="radio" name="emotion"
@@ -812,7 +891,7 @@ export default function QuoteMain() {
                         </div> */}
                     </p></div>
                     <h4 className="text-left w-100 text-dark">Attach documents and images?</h4>
-                    <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50"   type="file"  /> </div>
+                    <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
 
         }
@@ -838,25 +917,12 @@ export default function QuoteMain() {
     }
 
 
-    //Sidebaaaaar/..........................
-    // const { window } = props;
-    // const classes = useStyles();
-    const theme = useTheme();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
+    
 
 
-    const [open3, setOpen3] = React.useState(false);
+    // const container = window !== undefined ? () => window().document.body : undefined;
 
-    const handleClose3 = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-        setOpen3(false);
-    };
 
     const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
@@ -868,6 +934,10 @@ export default function QuoteMain() {
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
+
+
+
+
 
 
     const [display1, setDisplay1] = useState('none')
@@ -892,7 +962,6 @@ export default function QuoteMain() {
         setDisplay3('block')
 
     }
-
 
 
     return (
@@ -931,7 +1000,7 @@ export default function QuoteMain() {
                                             >
                                                 Back
                                             </Button>
-                                            <Button variant="contained" color="primary" onClick={() => SendService()}>{progress}</Button>
+                                            <Button variant="contained" color="primary" onClick={() => SendService(2)}>{progress}</Button>
                                         </div>
                                     ) : (
                                         <div>
@@ -1032,7 +1101,7 @@ export default function QuoteMain() {
                                     sector === "" ||
                                     postalcode === null ||
                                     comments === "" ||
-                                    email === "" ? alert("please fill these") : SendService()}>{progress}</button>
+                                    email === "" ? alert("please fill these") : SendService(1)}>{progress}</button>
                         </div>
                     </div>
                 </div>
@@ -1042,9 +1111,9 @@ export default function QuoteMain() {
             <div className="page-wrapper bg-light" style={{ display: display3 }}>
                 <div class="container-fluid">
                     <div class="row">
-                        <div className="col-md-12 pr-5">
+                        {/* <div className="col-md-12 pr-5">
                             <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
-                        </div>
+                        </div> */}
                         <h3 className="text-dark w-100 pl-lg-5" >Do you know what you are looking for? </h3>
                         <div className="w-100 pl-lg-5" >
                             <FormControl component="fieldset">
@@ -1070,7 +1139,7 @@ export default function QuoteMain() {
             </div>
             <Footer />
 
-            <Snackbar
+            {/* <Snackbar
                 anchorOrigin={{
                     vertical: 'top',
                     horizontal: 'right',
@@ -1086,7 +1155,7 @@ export default function QuoteMain() {
                         </IconButton>
                     </React.Fragment>
                 }
-            />
+            /> */}
 
         </>
     );
