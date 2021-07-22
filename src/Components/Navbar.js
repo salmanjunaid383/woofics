@@ -432,6 +432,9 @@ function Navbar() {
                         <Link className="pt-3 taglink" to="/" id="" >
                             Home
                         </Link>
+                        <Link to="/clientdiscussionforum" className="pt-3 taglink" id="" >
+                            Forum
+                        </Link>
                         <Link to="/allblog" className="pt-3 taglink" id="" >
                             Blog
                         </Link>

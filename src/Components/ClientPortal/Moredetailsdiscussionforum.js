@@ -6,9 +6,10 @@ import './DiscussionForum.css'
 import Sidebar from './Sidebar'
 import AdminBar from '../SuperPortal/Stazbar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import SupBar from '../SupplierPortal/Sidebar';
 
 import CustomClientAuth from "../CustomClientAuth";
-
+import CustomAuth from "../CustomAuth";
 const useStyles = makeStyles((theme) => ({
 
     // necessary for content to be below app bar
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Moredetailsdiscussionforum() {
-    
+    CustomAuth();
     let history = useHistory();
 
     const { quid } = useParams()
@@ -129,6 +130,11 @@ export default function Moredetailsdiscussionforum() {
                 {
                     clientSideBar ? (
                         <Sidebar></Sidebar>
+                    ) : (null)
+                }
+                {
+                    supplierSideBar ? (
+                        <SupBar></SupBar>
                     ) : (null)
                 }
 
