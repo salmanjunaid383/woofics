@@ -5,6 +5,7 @@ import jwt_decode from 'jwt-decode'
 import StazBar from './Sidebar'
 import AdminBar from '../SuperPortal/Stazbar';
 import SupBar from '../SupplierPortal/Sidebar';
+import ProBar from '../AdminPortal/Sidebar';
 import './DiscussionForum.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
@@ -219,6 +220,11 @@ export default function DiscussionForum() {
                     supplierSideBar ? (
                         <SupBar></SupBar>
                     ) : null
+                }
+                {
+                    providerSideBar ? (
+                        <ProBar></ProBar>
+                    ) : (null)
                 }
                 
                 <main className={classes.content}>

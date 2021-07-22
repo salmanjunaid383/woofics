@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
+import '../SuperPortal/SupCoupons.css'
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -29,7 +30,7 @@ import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';  
-
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import CustomProviderAuth from "../CustomProviderAuth";
 import Pusher from 'pusher-js';
@@ -107,11 +108,12 @@ export default function ServiceSidebar(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-    const pusher = new Pusher('e22c56269c9258608b2c', {
-        cluster: 'ap1'
-      });;
+    
 
     useEffect(() => {
+        const pusher = new Pusher('e22c56269c9258608b2c', {
+            cluster: 'ap1'
+          });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
         console.log("channel success "+ channel);    
         channel.bind("my-event",function(returnData){
@@ -180,6 +182,11 @@ export default function ServiceSidebar(props) {
             name: 'Ledger',
             icon: <BorderColorIcon  style={{color:"white"}}/>,
             to: '/providerledger'
+        },
+        {
+            name: 'Discussion Forum',
+            icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
+            to: 'clientdiscussionforum'
         },
         {
             name: 'Help',
@@ -307,7 +314,10 @@ export default function ServiceSidebar(props) {
                             </li>
                             <li className="my-auto">
                                 <a className="profile-pic" aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
-                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen == 0 ? '' : 'dot'} >
+                                    <span className="text-white font-medium  Ring"><Badge color="secondary" variant={unseen == 0 ? '' : ''} >
+                                         {
+                                            unseen ===  0 ? '' :<p className={"notification"}>{unseen}</p> 
+                                        }
                                         <NotificationsIcon color="primary" />
                                     </Badge></span>
                                 </a>
