@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-        backgroundImage: "linear-gradient(180deg, #fff 0%, #0767c4 100%)",
+        backgroundImage: "url(../SuperPortal/Dashboard.png)",
         width: drawerWidth,
         boxShadow: 'none',
         border: "none"

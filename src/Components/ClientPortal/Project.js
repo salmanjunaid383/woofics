@@ -9,6 +9,7 @@ import jwt_decode from 'jwt-decode';
 
 
 
+
 import CustomClientAuth from "../CustomClientAuth";
 
 
@@ -78,7 +79,7 @@ export default function Project() {
                             <div id="blog" class="row ">
                                 <div class="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
-                                        <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
+                                        <div className="col-md-12 col-lg-12 col-sm-12 border bg-light ipad-res">
                                             <div className="d-md-flex mb-3">
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Manage Projects</h1>
                                             </div>

@@ -104,7 +104,7 @@ export default function Supppliers() {
                                 {suppliers.map((val, id) => {
                                     return (
                                         <>
-                                            <div class="col-md-4 justify-content-space-around">
+                                            <div class="col-md-4 col-lg-6 justify-content-space-around">
                                                 <div class="card mx-auto mt-4" style={{ width: '18rem' }}>
                                                     {/* <img class="card-img-top img-fluid mx-auto" src={val.bg_image} alt="Backgound image" /> */}
                                                     <div class="card-body">
