@@ -55,7 +55,9 @@ export default function Chat() {
     const [user, setUser] = useState([]);
     
     
-
+    const scrollToBottom = () => {
+        divRef.current?.scrollIntoView({ behavior: "smooth" })
+      }
 
 
     
@@ -82,6 +84,7 @@ export default function Chat() {
                             setRight(response.data.from_user)
                             SendData()
                             // divRef.current.scrollIntoView({ behavior: 'smooth' });
+                            scrollToBottom();
 
                         }
                     }, (Error) => {
@@ -181,6 +184,7 @@ export default function Chat() {
                                         setRight(response.data.from_user)
                                         SendData()
                                         // divRef.current.scrollIntoView({ behavior: 'smooth' });
+                                        scrollToBottom();
 
                                     }
                                 }, (Error) => {
@@ -214,7 +218,8 @@ export default function Chat() {
                     setUid(valu)
                     setStazId(valu);
                     setName(name)
-                    // divRef.current.scrollIntoView({ behavior: 'smooth' });
+                    // // divRef.current.scrollIntoView({ behavior: 'smooth' });
+                    scrollToBottom();
 
                     // setOpen(true);
                 }
@@ -246,6 +251,7 @@ export default function Chat() {
                                 setRight(response.data.from_user)
                                 SendData()
                                 // divRef.current.scrollIntoView({ behavior: 'smooth' });
+                                scrollToBottom();
 
                             }
                         }, (Error) => {

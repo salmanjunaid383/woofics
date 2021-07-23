@@ -1,14 +1,11 @@
-import React, { useState } from "react";
-import { Link, useHistory } from 'react-router-dom'
-import loginside from '../Images/service.png'
-import axios from 'axios';
-import jwt_decode from 'jwt-decode'
-import { Alert, Button } from 'react-bootstrap'
-import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
+import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
+import axios from 'axios';
+import jwt_decode from 'jwt-decode';
+import React, { useState } from "react";
 import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
+import { Link, useHistory } from 'react-router-dom';
 
 
 export default function Login() {
