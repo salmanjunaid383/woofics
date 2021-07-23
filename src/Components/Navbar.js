@@ -429,14 +429,14 @@ function Navbar() {
                                 id="woofic-logo"
                             />
                         </Link>
-                        <Link className="pt-3 taglink" to="/" id="" >
+                        <Link className="pt-3 taglink hover-effect" to="/" id="" >
                             Home
                         </Link>
-                        <Link to="/allblog" className="pt-3 taglink" id="" >
+                        <Link to="/allblog" className="pt-3 taglink hover-effect" id="" >
                             Blog
                         </Link>
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
-                        <Link to="/quotemain" className="pt-3 taglink" id="">
+                        <Link to="/quotemain" className="pt-3 taglink hover-effect" id="">
                             Offer
                         </Link>
                         {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
@@ -449,10 +449,10 @@ function Navbar() {
                             Get Inspire
                         </Link> */}
 
-                        <Link id="scroll-effect"  style={{marginTop:"-11px", marginLeft:"-15px"}} >
+                        <Link id="scroll-effect"  style={{marginLeft:"-12px",marginTop:"1px"}} >
                             {/* Advertise */}
                             
-                            <div class="dropdown">
+                            <div class="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Tools</button>
                                 <div class="dropdown-content">
                                 <Link to="/pricecalculator" className="pt-3 " id="taglink4" style={{color:"#000"}}>

@@ -466,21 +466,22 @@ export default function SuperDashboard() {
                                         </div>
                                     </section>
                                 </div>
-
-                                <table className="for-table-setting">
-                                    <tr className="heading-row">
-                                        <th>salman</th>
-                                        <th>salman</th>
-                                        <th>salman</th>
-                                        <th>salman</th>
-                                    </tr>
-                                    <tr className="data-row">
-                                        <td>junaid</td>
-                                        <td>junaid</td>
-                                        <td>junaid</td>
-                                        <td>junaid</td>
-                                    </tr>
-                                </table>
+                                <div className="table-div">
+                                    <table className="for-table-setting">
+                                        <tr className="heading-row">
+                                            <th>salman</th>
+                                            <th>salman</th>
+                                            <th>salman</th>
+                                            <th>salman</th>
+                                        </tr>
+                                        <tr className="data-row">
+                                            <td>junaid</td>
+                                            <td>junaid</td>
+                                            <td>junaid</td>
+                                            <td>junaid</td>
+                                        </tr>
+                                    </table>
+                                </div>
 
                             </div>
                             <div className="col-md-12 col-xl-4" style={{ border: "2px solid #f3f3f3" }}>

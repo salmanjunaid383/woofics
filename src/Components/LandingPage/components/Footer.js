@@ -91,7 +91,7 @@ function Footer() {
 
                 {/* </div> */}
             </div>
-            <div className="container-fluid woofic_search_sec text-center " style={{ backgroundColor: '#0767c4' }}>
+            <div className="container-fluid woofic_search_sec text-center " style={{ backgroundColor: '#934CFF' }}>
                 <div className="row p-lg-2">
                     <div className="col-sm-12 col-md-12 text-center">
                         <div className="text-white text-center">
