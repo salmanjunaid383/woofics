@@ -57,6 +57,7 @@ export default function AllNotification() {
 }
 useEffect(()=>{
     notification()
+    seen()
 },[])
 
     const [unseen, setunseen] = useState([]);
@@ -68,9 +69,7 @@ useEffect(()=>{
                 console.log(Error);
             });
     }
-    useEffect(() => {
-        seen()
-    }, [])
+
 
     return (
         <>

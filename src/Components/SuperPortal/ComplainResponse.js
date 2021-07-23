@@ -88,9 +88,6 @@ export default function ComplainResponse() {
     }
 
 
-    useEffect(() => {
-        GetLed();
-    }, [])
     //Sidebaaaaar/..........................
     // const { window } = props;
     const classes = useStyles();

@@ -311,14 +311,7 @@ export default function StazBar() {
 
     
     
-    // useEffect(() => {
-    //     const channel = pusher.subscribe(""+decoded.sub+"");   
-    //     console.log("channel success "+ channel);  
-    //     channel.bind("my-event",function(returnData){
-    //         console.log("event");
-    //         seen();
-    //     });
-    // })
+
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
             .then((response) => {
