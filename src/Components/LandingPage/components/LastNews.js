@@ -27,7 +27,7 @@ function LastNews() {
       .then((respons) => {
         if (respons) {
           console.log(respons.data)
-          setsupp(respons.data[0])
+          setsupp(respons.data)
         }
       }, (Error) => {
         console.log(Error);
@@ -49,48 +49,29 @@ function LastNews() {
               </div>
             </div>
             <div class="row mx-auto ">
-              <div class="col-sm-12 col-md-4 mx-auto text-center">
-                <div className="border px-5 shadow rounded py-5">
-                  {/* <div class="woofic_lastnews_content_heading">{supp.leds_sold ? supp.leds_sold : 0}</div> */}
-                  <div class="woofic_lastnews_content_description">
+              {
+                supp.map((val,id) => {
+                  return (
+                    <>
+                        <div class="col-sm-12 col-md-4 mx-auto text-center">
+                        <div className="border px-5 shadow rounded py-5">
+                          <h2>{val.value}</h2>
+                          <div class="woofic_lastnews_content_description">
 
-                    METROS 2 VENDIDOS   <br />
-                    <br />
-                  </div>
-                </div>
-              </div>
+                            <h3>{val.label}</h3>   <br />
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
+    
 
-              {/* SECOND BOX */}
+              
 
-              <div class="col-sm-12 col-md-4 mx-auto text-center">
-                <div className="border px-5 shadow rounded py-5">
-                  {/* <div class="woofic_lastnews_content"> */}
-                  {/* <div class="woofic_lastnews_content_heading woofic_second_heading">
-                    {supp.number_of_budgets ? supp.number_of_budgets : 0}
-                  </div> */}
-                  <div class="woofic_lastnews_content_description">
-                    NÚMERO DE PRESUPUESTOS
-                    <br />
-                    <br />
-                  </div>
-                  {/* </div> */}
-                </div>
-              </div>
-
-              {/* THIRD BOX  */}
-
-              <div class="col-sm-12 col-md-4 mx-auto text-center">
-                <div className="border px-5 shadow rounded py-5">
-                  {/* <div class="woofic_lastnews_content"> */}
-                  {/* <div class="woofic_lastnews_content_heading woofic_third_heading">
-                    {supp.active_suppliers?supp.active_suppliers:0}
-                  </div> */}
-                  <div class="woofic_lastnews_content_description">
-                    NÚMERO DE PROVEEDORES ACTIVOS
-                  </div>
-                  {/* </div> */}
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
