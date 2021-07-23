@@ -59,7 +59,7 @@ function Footer() {
                                     <Link className="text-white h5" to="/allblog"> BLOG </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/discussionforum"> Preguntas más frecuentes </Link>
+                                    <Link className="text-white h5" to="/aboutus"> Preguntas más frecuentes </Link>
                                 </li>
                             </ol>
                         </div>

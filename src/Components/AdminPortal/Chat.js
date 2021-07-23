@@ -56,12 +56,13 @@ export default function ProviderChat() {
     //     }
 
     // })
-    const pusher = new Pusher('e22c56269c9258608b2c', {
-        cluster: 'ap1'
-      });;
+    
 
 
       useEffect(() => {
+        const pusher = new Pusher('e22c56269c9258608b2c', {
+            cluster: 'ap1'
+          });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
         console.log("channel success "+ channel);    
         channel.bind("my-event",function(returnData){
