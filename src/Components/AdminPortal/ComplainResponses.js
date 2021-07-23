@@ -29,12 +29,7 @@ export default function AdminComplainResponses() {
     CustomProviderAuth();
     let history = useHistory();
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
+
     const { comid } = useParams()
 
     const [blog, setBlog] = useState('');

@@ -40,12 +40,6 @@ export default function ProviderComplain() {
     const token = localStorage.getItem('user_token');
     var decoded = jwt_decode(token);
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
 
     const [disable,setDisable] = useState('disabled');
 

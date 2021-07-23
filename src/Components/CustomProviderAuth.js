@@ -4,14 +4,20 @@ export default function CustomProviderAuth() {
   let history = useHistory();
   try {
     const role = jwt_decode(localStorage.getItem("user_token"));
-    if (role != null) {
-      if (role.role === "ServiceProvider") {
+    if (!localStorage.getItem('user_token')) {
+              history.push('/')
+          }
+    else{
+      if (role != null) {
+        if (role.role === "ServiceProvider") {
+        } else {
+          history.push("");
+        }
       } else {
-        history.push("");
+        history.push("/login");
       }
-    } else {
-      history.push("/login");
     }
+    
   } catch {
     history.push("/login");
   }

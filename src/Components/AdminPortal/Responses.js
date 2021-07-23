@@ -34,12 +34,7 @@ export default function ProviderResponses() {
     const [approved, setApproved] = useState("Confirm Offer");
     const classes = useStyles();
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
+
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     function Feedback() {

@@ -82,6 +82,20 @@ export default function SupplierDashboard() {
         ClientCompletedProject()
         ClientService()
         TotalEarn()
+        getTodo()
+        function Feedback() {
+            const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`)
+                .then((res) => {
+                    if (res) {
+                        setForm(res.data)
+                        setdays(parseInt(res.data.due_date))
+                    }
+                }, (error) => {
+                    console.log(Error);
+                });
+
+        }
+        Feedback();
         //     PendingRegistration()
         //     CountBlogs()
 
@@ -129,9 +143,7 @@ export default function SupplierDashboard() {
             });
     }
 
-    useEffect(() => {
-        getTodo()
-    }, [])
+ 
 
 
     // DeleteTodo
@@ -154,22 +166,6 @@ export default function SupplierDashboard() {
     const [ddays, setdays] = useState('');
 
 
-    useEffect(() => {
-
-        function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`)
-                .then((res) => {
-                    if (res) {
-                        setForm(res.data)
-                        setdays(parseInt(res.data.due_date))
-                    }
-                }, (error) => {
-                    console.log(Error);
-                });
-
-        }
-        Feedback();
-    }, [])
 
 
 

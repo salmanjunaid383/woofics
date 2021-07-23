@@ -53,8 +53,22 @@ export default function SupplierProjects() {
     const [completed, setCompleted] = useState('');
 
 
-    useEffect(() => {
+   
 
+    useEffect(() => {
+        getTodo()
+        function Supplierid() {
+            const res = axios.get(`https://api.woofics.com/api/users/${sid}`)
+                .then((res) => {
+                    if (res) {
+                        setSupplier(res.data)
+                    }
+                }, (error) => {
+                    console.log(Error);
+                });
+
+        }
+        Supplierid();
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`)
                 .then((res) => {
@@ -69,22 +83,12 @@ export default function SupplierProjects() {
 
         }
         Feedback();
-    }, [])
-
-    useEffect(() => {
-
-        function Supplierid() {
-            const res = axios.get(`https://api.woofics.com/api/users/${sid}`)
-                .then((res) => {
-                    if (res) {
-                        setSupplier(res.data)
-                    }
-                }, (error) => {
-                    console.log(Error);
-                });
-
-        }
-        Supplierid();
+        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        .then((response) => {
+            setName(response.data.first_name + " " + response.data.last_name)
+        }, (Error) => {
+            console.log(Error);
+        });
     }, [])
 
 
@@ -96,14 +100,7 @@ export default function SupplierProjects() {
 
     const [name, setName] = useState('');
 
-    useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-            .then((response) => {
-                setName(response.data.first_name + " " + response.data.last_name)
-            }, (Error) => {
-                console.log(Error);
-            });
-    }, [])
+ 
 
 
     // const[suser,setaUser] = useState('');
@@ -204,9 +201,7 @@ export default function SupplierProjects() {
             });
     }
 
-    useEffect(() => {
-        getTodo()
-    }, [])
+
 
 
     // DeleteTodo

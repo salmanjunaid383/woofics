@@ -24,12 +24,7 @@ export default function AdminDashboard() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
+
     //....................DAshbaord API
 
     //..Total Client
@@ -53,6 +48,7 @@ export default function AdminDashboard() {
 
     useEffect(() => {
         ClientOngoinProject()
+        getTodo()
     }, [])
 
 
@@ -98,9 +94,7 @@ export default function AdminDashboard() {
             });
     }
 
-    useEffect(() => {
-        getTodo()
-    }, [])
+ 
 
 
     // DeleteTodo

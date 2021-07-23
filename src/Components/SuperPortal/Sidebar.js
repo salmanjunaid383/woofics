@@ -132,6 +132,7 @@ export default function Registration() {
 
     useEffect(() => {
         getReg();
+        seen()
     }, [])
 
 
@@ -344,9 +345,7 @@ export default function Registration() {
                 console.log(Error);
             });
     }
-    useEffect(() => {
-        seen()
-    }, [])
+ 
 
     return (
         <>

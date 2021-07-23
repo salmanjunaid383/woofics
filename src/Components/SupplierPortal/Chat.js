@@ -56,10 +56,7 @@ export default function Chat() {
     const [value, setValue] = useState('');
 
     const [mxg, setMxg] = useState('');
-    // var toke = localStorage.getItem('token').toString()
-    // var pusher = new Pusher('f7c71cbabef9234b8101', {
-    //     cluster: 'ap1'
-    // });
+
 
     
 
@@ -104,21 +101,7 @@ export default function Chat() {
 
     //Making Contact
     const [user, setUser] = useState([]);
-    // useEffect(() => {
-    //     function SendData() {
-    //         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
-    //             .then((response) => {
-    //                 if (response) {
-    //                     // console.log(response.data)
-    //                     setUser(response.data)
-    //                 }
-    //             }, (Error) => {
-    //                 //  
-    //                 // console.log(Error);
-    //             });
-    //     }
-    //     SendData()
-    // }, [])
+
 
     function SendData() {
         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
@@ -297,14 +280,7 @@ export default function Chat() {
         }
         
         
-        
-        //................Chat Seen
-  
-    // useEffect(() => {
-    //     getData()
-    //     seen()
-    //     chatnotification()
-    // }, [])
+
 
     const [anchorElmenu, setAnchorElmenu] = React.useState(null);
     const handleClickmenu = (event) => {

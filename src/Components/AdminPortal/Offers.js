@@ -46,12 +46,7 @@ export default function Offers() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
+
 
     const { oid } = useParams()
 

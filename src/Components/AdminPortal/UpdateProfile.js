@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UpdateProfile() {
     CustomProviderAuth();
-    useEffect(() => {
-        if (!localStorage.getItem('user_token')) {
-            history.push('/')
-        }
+    // useEffect(() => {
+    //     if (!localStorage.getItem('user_token')) {
+    //         history.push('/')
+    //     }
 
-    })
+    // })
 
     const history = useHistory();
 

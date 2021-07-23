@@ -31,12 +31,7 @@ export default function ProviderCheckResponse() {
 
     const { resid } = useParams()
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
+
     const [blog, setBlog] = useState('');
     const [reponses, setreponses] = useState([]);
 
