@@ -4,6 +4,10 @@ export default function CustomClientAuth() {
   let history = useHistory();
   try {
     const role = jwt_decode(localStorage.getItem("user_token"));
+    if (!localStorage.getItem('user_token')) {
+      history.push('/')
+  }
+  else{
     if (role != null) {
       if (role.role === "Client") {
       } else {
@@ -12,6 +16,8 @@ export default function CustomClientAuth() {
     } else {
       history.push("/login");
     }
+  }
+    
   } catch {
     history.push("/login");
   }

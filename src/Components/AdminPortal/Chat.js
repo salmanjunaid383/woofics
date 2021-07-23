@@ -47,15 +47,6 @@ export default function ProviderChat() {
     const divRef = useRef(null);
 
 
-    //.......................................Pusher
-    // var mes;
-
-    // useEffect(() => {
-    //     if (!localStorage.getItem('user_token')) {
-    //         history.push('/')
-    //     }
-
-    // })
     
 
 
@@ -98,23 +89,7 @@ export default function ProviderChat() {
 
     //Making Contact
     const [user, setUser] = useState([]);
-    // useEffect(() => {
-        
 
-            
-    //     function SendData() {
-    //         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
-    //             .then((response) => {
-    //                 if (response) {
-    //                     setUser(response.data)
-    //                 }
-    //             }, (Error) => {
-    //                 //  
-    //                 // console.log(Error);
-    //             });
-    //     }
-        
-    // }, [])
 
     function SendData() {
         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)

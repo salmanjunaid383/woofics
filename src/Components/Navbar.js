@@ -805,7 +805,7 @@ function Navbar() {
                     borderRadius: "50px",
                 }}
             >
-                <WhatsAppWidget phoneNumber="34680494729" />
+                <WhatsAppWidget phoneNumber="03351220509" />
             </div>
             <div
                 style={{

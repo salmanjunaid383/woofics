@@ -1,25 +1,28 @@
 import jwt_decode from 'jwt-decode'
-import { Link, useHistory } from 'react-router-dom'
+import {
+    Link,
+    useHistory
+} from 'react-router-dom'
 export default function CustomSupplierAuth() {
     let history = useHistory();
-    try{
+    try {
         const role = jwt_decode(localStorage.getItem('user_token'))
-    if(role != null)
-    {
-        if (role.role === 'Supplier') {
-            
+        if (!localStorage.getItem('user_token')) {
+            history.push('/')
+        } else {
+            if (role != null) {
+                if (role.role === 'Supplier') {
+
+                } else {
+                    history.push("");
+                }
+            } else {
+                history.push('/login');
+            }
         }
-        else{
-            history.push("");
-        }
-    }
-    else
-    {
-        history.push('/login');
-    }
-    }
-    catch{
+
+    } catch {
         history.push('/login')
     }
-    
+
 }

@@ -34,12 +34,7 @@ export default function OfferList() {
     const [article, setArticle] = useState("");
     const [userId,setUserId]=useState("");
 
-    useEffect(()=>{
-        if(!localStorage.getItem('user_token')){
-            history.push('/')
-        }
-        
-    })
+
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     

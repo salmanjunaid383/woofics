@@ -40,12 +40,7 @@ export default function ProviderLedger() {
     const[userId,setUserId]=useState(0)
     const[totalAmount,setTotalAmount]=useState(0)
 
-    useEffect(() => {
-        if (!localStorage.getItem('user_token')) {
-            history.push('/')
-        }
 
-    })
 
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)

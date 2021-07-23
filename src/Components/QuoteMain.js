@@ -928,11 +928,15 @@ export default function QuoteMain() {
     const steps = getSteps();
 
     const handleNext = () => {
+        window.scrollTo(0, 0);
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        
     }
 
     const handleBack = () => {
+        window.scrollTo(0, 0);
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
+        
     };
 
 
