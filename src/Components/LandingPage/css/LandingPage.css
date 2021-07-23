@@ -315,9 +315,9 @@ body{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
 
-.hover-effect:hover{
+/* .hover-effect:hover{
   border-bottom: 2px solid #000;
-}
+} */
 
 
   @media(min-width:770px)and (max-width:1024px){

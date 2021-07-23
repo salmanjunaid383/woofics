@@ -6,9 +6,11 @@ import './DiscussionForum.css'
 import Sidebar from './Sidebar'
 import AdminBar from '../SuperPortal/Stazbar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import SupBar from '../SupplierPortal/Sidebar';
+import ProBar from '../AdminPortal/Sidebar';
 
 import CustomClientAuth from "../CustomClientAuth";
-
+import CustomAuth from "../CustomAuth";
 const useStyles = makeStyles((theme) => ({
 
     // necessary for content to be below app bar
@@ -24,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Moredetailsdiscussionforum() {
-    
+    CustomAuth();
     let history = useHistory();
 
     const { quid } = useParams()
@@ -87,6 +89,13 @@ export default function Moredetailsdiscussionforum() {
                 console.log(error);
             });
     }
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            Forum()
+
+        }
+    }
+
 
 
 
@@ -131,6 +140,16 @@ export default function Moredetailsdiscussionforum() {
                         <Sidebar></Sidebar>
                     ) : (null)
                 }
+                {
+                    supplierSideBar ? (
+                        <SupBar></SupBar>
+                    ) : (null)
+                }
+                  {
+                    providerSideBar ? (
+                        <ProBar></ProBar>
+                    ) : (null)
+                }
 
                  <main className={classes.content}>
                     <div className={classes.toolbar} />
@@ -146,7 +165,7 @@ export default function Moredetailsdiscussionforum() {
                                             <div class="media flex-wrap w-100 align-items-center"> 
                                             {/* <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg" class="d-block ui-w-40 rounded-circle" alt="" /> */}
                                                 <div class="media-body ml-3 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{question.asked_by}</a>
-                                                    <div class="text-muted small">13 days ago</div>
+                                                    <div class="text-muted small"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +195,7 @@ export default function Moredetailsdiscussionforum() {
                                                 })
                                             }
                                             <div className="col-md-12 text-center pl-5">
-                                                <input type="text" placeholder="Type reply..." className="w-75 py-2.5" value={reply} onChange={(e) => setReply(e.target.value)} /><button className="p-2 mx-3 greenbtn text-white" onClick={Forum}>Send</button>
+                                                <input type="text" placeholder="Type reply..." className="w-75 py-2.5" value={reply} onChange={(e) => setReply(e.target.value)} onKeyPress={handleKeyDown} /><button className="p-2 mx-3 greenbtn text-white" onClick={Forum}>Send</button>
                                             </div>
                                         </div>
                                     </div>

@@ -54,9 +54,7 @@ export default function Chat() {
     const [mxg, setMxg] = useState('');
     const [user, setUser] = useState([]);
     
-    const pusher = new Pusher('e22c56269c9258608b2c', {
-        cluster: 'ap1'
-      });;
+    
 
 
 
@@ -64,6 +62,9 @@ export default function Chat() {
     // console.log("channel "+channel);
 
     useEffect(() => {
+        const pusher = new Pusher('e22c56269c9258608b2c', {
+            cluster: 'ap1'
+          });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
         console.log("channel success "+ channel);    
         channel.bind("my-event",function(returnData){
@@ -92,6 +93,9 @@ export default function Chat() {
         });
         SendData();
         getData();
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
     const [anchorElmenu, setAnchorElmenu] = React.useState(null);
     const handleClickmenu = (event) => {

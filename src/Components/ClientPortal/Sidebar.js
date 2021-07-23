@@ -109,9 +109,7 @@ export default function Sidebar() {
     CustomClientAuth();
     const history = useHistory();
 
-    const pusher = new Pusher('e22c56269c9258608b2c', {
-        cluster: 'ap1'
-      });;
+    
 
     //Sidebaaaaar/..........................
     // const { window } = props;
@@ -123,6 +121,9 @@ export default function Sidebar() {
         setMobileOpen(!mobileOpen);
     };
     useEffect(() => {
+        const pusher = new Pusher('e22c56269c9258608b2c', {
+            cluster: 'ap1'
+          });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
         console.log("channel success "+ channel);    
         channel.bind("my-event",function(returnData){
@@ -132,6 +133,9 @@ export default function Sidebar() {
         chatnotification()
         seen();
         getData();
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
 
 

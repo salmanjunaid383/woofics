@@ -122,12 +122,13 @@ export default function StazBar() {
     let history = useHistory();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-    const pusher = new Pusher('e22c56269c9258608b2c', {
-        cluster: 'ap1'
-      });;
+    
     
 
       useEffect(() => {
+        const pusher = new Pusher('e22c56269c9258608b2c', {
+            cluster: 'ap1'
+          });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
         console.log("channel success "+ channel);    
         channel.bind("my-event",function(returnData){
@@ -135,6 +136,9 @@ export default function StazBar() {
             seen();
         });
         seen()
+        return () => {
+            pusher.disconnect() // This worked for me
+          };
     }, [])
 
     //Sidebaaaaar/..........................

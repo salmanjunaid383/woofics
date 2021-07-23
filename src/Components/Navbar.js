@@ -432,7 +432,10 @@ function Navbar() {
                         <Link className="pt-3 taglink hover-effect" to="/" id="" >
                             Home
                         </Link>
-                        <Link to="/allblog" className="pt-3 taglink hover-effect" id="" >
+                        <Link to="/clientdiscussionforum" className="pt-3 taglink" id="" >
+                            Forum
+                        </Link>
+                        <Link to="/allblog" className="pt-3 taglink" id="" >
                             Blog
                         </Link>
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}

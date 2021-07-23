@@ -4,12 +4,15 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import StazBar from './Sidebar'
 import AdminBar from '../SuperPortal/Stazbar';
+import SupBar from '../SupplierPortal/Sidebar';
+import ProBar from '../AdminPortal/Sidebar';
 import './DiscussionForum.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
 
 import { useTheme } from '@material-ui/core/styles';
+import CustomAuth from "../CustomAuth";
 
 
 
@@ -101,7 +104,7 @@ function getModalStyle() {
 }
 
 export default function DiscussionForum() {
-    
+    CustomAuth();
     let history = useHistory();
 
 
@@ -211,6 +214,16 @@ export default function DiscussionForum() {
                 {
                     clientSideBar ? (
                         <StazBar></StazBar>
+                    ) : (null)
+                }
+                {
+                    supplierSideBar ? (
+                        <SupBar></SupBar>
+                    ) : null
+                }
+                {
+                    providerSideBar ? (
+                        <ProBar></ProBar>
                     ) : (null)
                 }
                 

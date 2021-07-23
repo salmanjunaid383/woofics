@@ -40,7 +40,7 @@ import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
 import CustomSupplierAuth from "../CustomSupplierAuth";
-
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 const drawerWidth = 240;
 
@@ -184,8 +184,13 @@ export default function SupplierSidebar() {
         },
         {
             name: 'Ledger',
-            icon: <BorderColorIcon style={{ color: "white" }} />,
+            icon: <BorderColorIcon style={{ color: "cdcdcd" }} />,
             to: 'supplierledger'
+        },
+        {
+            name: 'Discussion Forum',
+            icon: <AssignmentIcon style={{ color: "#cdcdcd" }}/>,
+            to :'/clientdiscussionforum'
         },
         {
             name: 'Help',
