@@ -174,8 +174,8 @@ export default function QuoteMain() {
 
     // let history = useHistory();
 
-    var token = localStorage.getItem("user_token");
-    var decoded = jwt_decode(token)
+    // var token = localStorage.getItem("user_token");
+    // var decoded = jwt_decode(token)
 
 
     const [description, setdescription] = useState("");

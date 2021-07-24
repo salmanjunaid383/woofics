@@ -11,7 +11,7 @@ export default function CustomSupplierAuth() {
             history.push('/')
         } else {
             if (role != null) {
-                if (role.role === 'Adminstrator') {
+                if (role.role === 'Administrator') {
 
                 } else {
                     history.push("");

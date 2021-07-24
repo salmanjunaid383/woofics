@@ -114,16 +114,34 @@ export default function DiscussionForum() {
 
 
     var token = localStorage.getItem("user_token");
-    var decoded = jwt_decode(token);
-    function getUserData() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+    function tokenRedirect(){
+        if(token===null){
+            history.push("/login");
+        }
+    }
+    useEffect(() => {
+        tokenRedirect();
+    },[]);
+
+    if(token !== null)
+    {
+        var decoded = jwt_decode(token);
+    }
+    
+    function getUserData() {
+        if(token !== null)
+        {
+            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
             .then((response) => {
                 setUser(response.data);
 
             }, (error) => {
                 console.log(error);
             });
+        }
+
+        
     }
 
 
@@ -185,11 +203,14 @@ export default function DiscussionForum() {
         setMobileOpen(!mobileOpen);
     };
 
+
     var adminSideBar;
     var clientSideBar;  
     var providerSideBar;
     var supplierSideBar;
-    const role = jwt_decode(localStorage.getItem('user_token'))
+    if(token !== null)
+    {
+        const role = jwt_decode(localStorage.getItem('user_token'))
                         if (role.role === 'Client') {
                             clientSideBar=true;
                         } else if (role.role === 'ServiceProvider')
@@ -199,6 +220,8 @@ export default function DiscussionForum() {
                         } else {
                             adminSideBar=true;
                         }
+    }
+    
     
 
 
