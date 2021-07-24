@@ -10,7 +10,7 @@ import FindInPageIcon from '@material-ui/icons/FindInPage';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import './SupCoupons.css'
 import '../SuperPortal/Stazbar.css'
-
+import backgroundImage from './Dashboard.png';
 
 
 //Sidebar
@@ -87,10 +87,15 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-        backgroundImage: "url(../SuperPortal/Dashboard.png)",
+        backgroundImage: `url(${backgroundImage})`,
         width: drawerWidth,
         boxShadow: 'none',
-        border: "none"
+        border: "none",
+        backgroundPosition: 'center', 
+        backgroundSize: 'cover', 
+        backgroundRepeat: 'no-repeat',
+  
+   
     },
     content: {
         flexGrow: 1,
@@ -368,7 +373,7 @@ export default function StazBar() {
                         </ul>
                     </Toolbar>
                 </AppBar>
-                <nav className={classes.drawer} aria-label="mailbox folders" id="responsive-sidenav"> 
+                <nav className={classes.drawer} aria-label="mailbox folders" id="responsive-sidenav" > 
                     {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                     <Hidden smUp implementation="css">
                         <Drawer
