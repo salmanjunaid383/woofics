@@ -26,7 +26,7 @@ export default function GetInspired() {
 
     function getReg() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/advertise_questionnaire`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/questionnaire`)
             .then((response) => {
                 setBlog(response.data)
                 console.log(response)
@@ -44,7 +44,7 @@ export default function GetInspired() {
     function deleteAdv(e) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/advertise_questionnaire/${e}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/questionnaire/${e}`)
                 .then((response) => {
                     if (response) {
                         setRes(response.data)
