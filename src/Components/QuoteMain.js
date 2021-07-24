@@ -225,17 +225,10 @@ export default function QuoteMain() {
             
 
             if(i === 2){
-                if(description === "" ||
+                if(
                 name === "" ||
-                contact === "" ||
-                company === "" ||
-                customertype === "" ||
-                sector === "" ||
-                postalcode === null ||
-                comments === "" ||
-                email === "" || buy ==="" || indoor === "" || install ==="" || visuald === "" || screenheight === "" || screenuse === "" || screenbase === "" || screenaccess ==="" ||
-                screenorientation === "" || controlsys === "" || adverseweather === "" || structure === "" || deliverytime === "" || shipping === "" || sensor === "" ||
-                warranty ==="" || carcass ==="" || flycases === "")
+                contact === "" 
+                )
                 {
                     alert("please fill in the form");
                 }
@@ -893,6 +886,8 @@ export default function QuoteMain() {
                     <h4 className="text-left w-100 text-dark">Attach documents and images?</h4>
                     <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
+            default:
+                
 
         }
     }
@@ -929,7 +924,46 @@ export default function QuoteMain() {
 
     const handleNext = () => {
         window.scrollTo(0, 0);
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        // if(description === "" ||
+        //         name === "" ||
+        //         contact === "" ||
+        //         company === "" ||
+        //         customertype === "" ||
+        //         sector === "" ||
+        //         postalcode === null ||
+        //         comments === "" ||
+        //         email === "" || buy ==="" || indoor === "" || install ==="" || visuald === "" || screenheight === "" || screenuse === "" || screenbase === "" || screenaccess ==="" ||
+        //         screenorientation === "" || controlsys === "" || adverseweather === "" || structure === "" || deliverytime === "" || shipping === "" || sensor === "" ||
+        //         warranty ==="" || carcass ==="" || flycases === "")
+        if(activeStep === 0)
+        {
+            if(buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '' ){
+                alert("please fill in the form");
+            }
+            else{
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            }
+        }
+        if(activeStep === 1)
+        {
+            if(screenheight === "" || screenbase === "" || screenaccess ==="" || controlsys === '')
+            {
+                alert("please fill in the form");
+            }
+            else{
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            }
+        }
+        if(activeStep === 2)
+        {
+            if(screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === ""){
+                alert("please fill in the form");
+            }
+            else{
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            }
+        }
+        
         
     }
 
