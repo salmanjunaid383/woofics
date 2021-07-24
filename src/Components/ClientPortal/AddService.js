@@ -791,6 +791,8 @@ export default function Test() {
                     <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
 
+            default:
+
         }
     }
 
@@ -825,10 +827,45 @@ export default function Test() {
     const steps = getSteps();
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        window.scrollTo(0, 0);
+        if(activeStep < 3)
+        {
+            if(activeStep === 0)
+        {
+            if(buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '' ){
+                alert("please fill in the form");
+            }
+            else{
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            }
+        }
+        if(activeStep === 1)
+        {
+            if(screenheight === "" || screenbase === "" || screenaccess ==="" || controlsys === '')
+            {
+                alert("please fill in the form");
+            }
+            else{
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            }
+        }
+        if(activeStep === 2)
+        {
+            if(screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === ""){
+                alert("please fill in the form");
+            }
+            else{
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            }
+        }
+        }
+        else{
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }
     }
 
     const handleBack = () => {
+        window.scrollTo(0, 0);
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 

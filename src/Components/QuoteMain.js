@@ -924,18 +924,9 @@ export default function QuoteMain() {
 
     const handleNext = () => {
         window.scrollTo(0, 0);
-        // if(description === "" ||
-        //         name === "" ||
-        //         contact === "" ||
-        //         company === "" ||
-        //         customertype === "" ||
-        //         sector === "" ||
-        //         postalcode === null ||
-        //         comments === "" ||
-        //         email === "" || buy ==="" || indoor === "" || install ==="" || visuald === "" || screenheight === "" || screenuse === "" || screenbase === "" || screenaccess ==="" ||
-        //         screenorientation === "" || controlsys === "" || adverseweather === "" || structure === "" || deliverytime === "" || shipping === "" || sensor === "" ||
-        //         warranty ==="" || carcass ==="" || flycases === "")
-        if(activeStep === 0)
+        if(activeStep < 3)
+        {
+            if(activeStep === 0)
         {
             if(buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '' ){
                 alert("please fill in the form");
@@ -963,6 +954,11 @@ export default function QuoteMain() {
                 setActiveStep((prevActiveStep) => prevActiveStep + 1);
             }
         }
+        }
+        else{
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }
+        
         
         
     }
