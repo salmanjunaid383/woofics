@@ -8,7 +8,7 @@ import AdminBar from '../SuperPortal/Stazbar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SupBar from '../SupplierPortal/Sidebar';
 import ProBar from '../AdminPortal/Sidebar';
-
+import Pusher from 'pusher-js';
 import CustomClientAuth from "../CustomClientAuth";
 import CustomAuth from "../CustomAuth";
 const useStyles = makeStyles((theme) => ({
@@ -100,6 +100,14 @@ export default function Moredetailsdiscussionforum() {
 
 
     useEffect(() => {
+        const pusher = new Pusher('e22c56269c9258608b2c', {
+            cluster: 'ap1'
+          });;
+        const channel = pusher.subscribe(""+decoded.sub+"");   
+        console.log("channel success "+ channel);    
+        channel.bind("my-event",function(returnData){
+            getReply();
+        });
         getQuestion();
         getReply();
         getUserData();
