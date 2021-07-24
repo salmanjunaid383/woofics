@@ -67,6 +67,7 @@ import Offers from './Components/AdminPortal/Offers';
 import ClientOffers from './Components/ClientPortal/Offers';
 import OfferList from './Components/AdminPortal/OfferList';
 import ContactUs from './Components/ContactUs';
+import StazCal from './Components/StazCal'
 
 // Landing Pager 
 import Landing from './Components/LandingPage';
@@ -159,7 +160,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          
+          <Route exact path="/StazCal" component={StazCal} />
           <Route path="/login" component={Login} />
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />

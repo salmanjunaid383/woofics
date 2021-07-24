@@ -53,11 +53,11 @@ export default function ContactUs() {
         <>
 
             <Navbar />
-            <div className="container.fluid">
+            <div className="container.fluid for-mobile">
                 <div className="" style={{ height: '100%' }}>
-                    <div class="container">
-                        <div class="row mx-auto">
-                            <div className="col-md-6 border-right mt-md-5 pt-md-5 w-75">
+                    <div class="container ">
+                        <div class="row mx-auto mobile-res">
+                            <div className="col-12  col-md-6 border-right mt-md-5 pt-md-5 w-75">
                                 <h3>We Want to know your opinion</h3>
                                 <TextField className="w-75 my-1" id="standard-basic" label="Name *"
                                     onChange={(e) => setname(e.target.value)}
@@ -73,10 +73,10 @@ export default function ContactUs() {
                                 <br />
                                 <br />
 
-                                <button className="btn btn-primary" onClick={()=>Message()}>Send Message</button>
+                                <button className="btn btn-primary" onClick={()=>Message()} style={{marginTop:"10px"}}>Send Message</button>
 
                             </div>
-                            <div className="col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5">
+                            <div className="col-12 col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5 for-margin">
                                 <h4>Write to us at:</h4>
                                 <h5 className="text-primary"><a>hola@woofics.com</a></h5>
                                 <br />
@@ -85,13 +85,13 @@ export default function ContactUs() {
                                 <br />
                                 <br />
 
-                                <h5>Follow us:</h5>
+                                <h4 className="mob-mar" style={{marginTop:"-21px",marginBottom:"3px"}}>Follow us:</h4>
 
                                 <div>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 10, margin: 7, color: 'white' }}><a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"><i className="px-2 fa fa-facebook"></i></a></span>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 10, margin: 7, color: 'white' }}><a target="_blank" href="woofic.com@gmail.com"><i className="px-1 fa fa-twitter"></i></a></span>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 10, margin: 7, color: 'white' }}><a target="_blank" href="woofic.com@gmail.com"><i className="px-1 fa fa-instagram"></i></a></span>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 10, margin: 7, color: 'white' }}><a target="_blank" href="https://www.linkedin.com/company/woofic"><i className="px-1 fa fa-linkedin"></i></a></span>
+                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"><i className="px-2 fa fa-facebook"></i></a></span>
+                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="woofic.com@gmail.com"><i className="px-1 fa fa-twitter"></i></a></span>
+                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="woofic.com@gmail.com"><i className="px-1 fa fa-instagram"></i></a></span>
+                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="https://www.linkedin.com/company/woofic"><i className="px-1 fa fa-linkedin"></i></a></span>
                                 </div>
                             </div>
                         </div>

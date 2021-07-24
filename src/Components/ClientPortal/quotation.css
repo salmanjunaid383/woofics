@@ -1,0 +1,10 @@
+@media(max-width:770px){
+    .quotation-ipad{
+        width:500px !important
+    }
+}
+@media(min-width:1024px){
+    .quotation-ipad{
+        width: 780px !important;
+    }
+}

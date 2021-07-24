@@ -1,0 +1,43 @@
+.back-image{   
+    background-image:url("../Components/background.jpg");
+    height:100vh;
+    width:100%;
+    background-size: cover;
+    background-position: 60%; 
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.main-row{
+    height:95%;
+    width:90%;
+    background-color: rgba(255,255,255,.2);
+    backdrop-filter: blur(8px);
+    box-shadow:0px 5px 15px rgba(0,0,0,.5);
+    border-radius: 30px;
+}
+.heading h4{
+    margin: 0px;
+    margin-top:30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-left: 20px;
+
+}
+.heading h1{
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 30px;
+
+}
+.for-vid{
+    height: 25%;
+    width: 95%;
+    margin:auto;
+    background-color: blueviolet;
+}
+.price-heading{
+    display: flex;
+    justify-content: space-between;
+}

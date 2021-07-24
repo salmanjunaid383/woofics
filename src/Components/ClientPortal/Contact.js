@@ -5,7 +5,7 @@ import axios from "axios";
 import Sidebar from "./Sidebar";
 import Nav from "./Nav";
 import jwt_decode from "jwt-decode";
-import "./Contact.css";
+import "../ClientPortal/Contact.css";
 import fran from "./fran.jpg";
 import Pusher from "pusher-js";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -109,7 +109,7 @@ export default function Contact() {
     <>
       <Navbar />
       <div className="mt-5 pt-5">
-        <div className="container">
+        <div className="container" style={{marginTop:"20px"}}>
           <div className="row mx-auto">
             <div className="col-md-12 text-center">
               <span className="text-center w-100 mx-auto">
@@ -392,9 +392,9 @@ export default function Contact() {
                           <br />
                           <br />
 
-                          <h5 className="h5">Follow us:</h5>
+                          <h5 className="h5 follow">Follow us:</h5>
 
-                          <div>
+                          <div className="social_icons">
                             <span
                               style={{
                                 backgroundColor: "lightgray",
@@ -402,6 +402,7 @@ export default function Contact() {
                                 padding: 10,
                                 margin: 7,
                                 color: "white",
+                                
                               }}
                             >
                               <a

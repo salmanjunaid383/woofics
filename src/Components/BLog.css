@@ -4,7 +4,13 @@
     box-shadow: 5px 2px 10px rgb(155, 155, 155);
 } */
 
-
+.for-margin{
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+margin-bottom: 0px !important;
+margin-top: -5px;
+}
 .nav-sidebar { 
     width: 100%;
     /* padding: 8px 0;  */
@@ -51,6 +57,28 @@
 }
  /* h2{color:#34ca78;}
  .margin10{margin-bottom:10px; margin-right:10px;} */
+.for-margin{
+    height:286px;   
+}
 
+ @media(max-width:600px){
+     /* .for-mobile{
+         display: flex;
+         justify-content: center;
+     } */
 
- 
+     .mobile-res{
+         text-align: center;
+         margin-top: 150px;
+     }
+     .for-margin{
+         margin-top: 30px !important;
+         height: 205px !important;
+     }
+     .for-margin h4{
+            margin-bottom: 5px;
+     }
+     .mob-mar{
+         margin-bottom: 10px !important;
+     }
+ }

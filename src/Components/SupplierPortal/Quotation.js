@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import SideBar from './Sidebar';
 import axios from 'axios';
+import "../ClientPortal/quotation.css"
 
 
 
@@ -57,9 +58,9 @@ export default function Quotation() {
                    <div className="page-wrapper bg-light">
                         <div class="container">
                             <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4">
+                                <div class="container-fluid pb-lg-4 quotation-ipad">
                                     <div className="row m-lg-5">
-                                        <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
+                                        <div className="col-md-12 col-lg-12 col-sm-12 border bg-light ">
                                             <div className="d-md-flex mb-3">
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Manage Requests</h1>
                                             </div>
