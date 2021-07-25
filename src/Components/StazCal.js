@@ -22,124 +22,258 @@ export default function StazCal() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const numb = document.querySelector(".numb");
+    let counter = 0;
+    setInterval(() => {
+        if (counter == 100) {
+            clearInterval();
+        }
+        //   else{
+        //     counter+=1;
+        //     numb.textContent = counter + "%";
+        //   }
+    }, 80);
+
     return (
         <>
-            <div className="container-fluid back-image">
+            <div className="container-fluid main-cal-parent" style={{ padding: "0px", display: "flex" }}>
+                <div className="container-fluid back-image">
 
-                    
-                <div className="row main-row" >
-                    <div className="col-1 heading">
-                        <h4>Price</h4>
-                        <h1>Calculator</h1>
+
+                    <div className="row main-row" >
+                        <div className="col-1 heading">
+                            <h4>Price</h4>
+                            <h1>Calculator</h1>
+                        </div>
+                        <div className="col-sm-12 for-vid">
+
+                        </div>
+                        <div className="col-sm-12">
+                            <div className="price-heading">
+                                <div className="heading">
+                                    Price
+                        </div>
+                                <div className="value">
+                                    $1,000,000
+                        </div>
+                            </div>
+                            <div className={classes.root} style={{ margin: "auto" }}>
+                                <Typography id="continuous-slider" gutterBottom>
+                                </Typography>
+                                <Grid container spacing={2}>
+                                    <Grid item xs>
+                                        <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+
+                        
+
+                        <div className="col-sm-12">
+                            <div className="price-heading">
+                                <div className="heading">
+                                    Price
+                        </div>
+                                <div className="value">
+                                    $1,000,000
+                        </div>
+                            </div>
+                            <div className={classes.root} style={{ margin: "auto" }}>
+                                <Typography id="continuous-slider" gutterBottom>
+                                </Typography>
+                                <Grid container spacing={2}>
+                                    <Grid item xs>
+                                        <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+
+                        <div className="col-sm-12">
+                            <div className="price-heading">
+                                <div className="heading">
+                                    Price
+                        </div>
+                                <div className="value">
+                                    $1,000,000
+                        </div>
+                            </div>
+                            <div className={classes.root} style={{ margin: "auto" }}>
+                                <Typography id="continuous-slider" gutterBottom>
+                                </Typography>
+                                <Grid container spacing={2}>
+                                    <Grid item xs>
+                                        <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
-                    <div className="col-sm-12 for-vid">
+                </div>
 
+                {/* for result */}
+
+                <div className="container-fluid result-back-image">
+
+
+                    <div className="row main-row" >
+                        <div className="col-1 heading">
+                            <h4></h4>
+                            <h1>Result</h1>
+                        </div>
+
+                        <div className="main-parent" style={{display:"flex",justifyContent:"space-between", flexWrap:"wrap",alignItems:"center"}}>
+                            <div className="col-xl-6 col-6" >
+                                <h1 className="result-heading">Resolution</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" style={{}}>
+                            <h1 className="result-heading">Surface</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" >
+                            <h1 className="result-heading">Max.Power</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" style={{}}>
+                            <h1 className="result-heading">Type Power</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" >
+                            <h1 className="result-heading">Length</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" style={{}}>
+                            <h1 className="result-heading">Weight</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-12 calculate-button">
+                                <button type="submit">
+                                    Calculate Total Price
+                                </button>
+                            </div>
+                            <div className="col-xl-12 final-price">
+                                <span className="price">Price: </span>
+                                <span className="value">$1200</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-sm-12">
-                        <div className="price-heading">
-                            <div className="heading">
-                                Price
-                        </div>
-                            <div className="value">
-                                $1,000,000
-                        </div>
-                        </div>
-                        <div className={classes.root} style={{margin:"auto"}}> 
-                            <Typography id="continuous-slider" gutterBottom>  
-                            </Typography>
-                            <Grid container spacing={2}>
-                                <Grid item xs>
-                                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
-                                </Grid>       
-                            </Grid>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12">
-                        <div className="price-heading">
-                            <div className="heading">
-                                Price
-                        </div>
-                            <div className="value">
-                                $1,000,000
-                        </div>
-                        </div>
-                        <div className={classes.root} style={{margin:"auto"}}> 
-                            <Typography id="continuous-slider" gutterBottom>  
-                            </Typography>
-                            <Grid container spacing={2}>
-                                <Grid item xs>
-                                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
-                                </Grid>       
-                            </Grid>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12">
-                        <div className="price-heading">
-                            <div className="heading">
-                                Price
-                        </div>
-                            <div className="value">
-                                $1,000,000
-                        </div>
-                        </div>
-                        <div className={classes.root} style={{margin:"auto"}}> 
-                            <Typography id="continuous-slider" gutterBottom>  
-                            </Typography>
-                            <Grid container spacing={2}>
-                                <Grid item xs>
-                                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
-                                </Grid>       
-                            </Grid>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12">
-                        <div className="price-heading">
-                            <div className="heading">
-                                Price
-                        </div>
-                            <div className="value">
-                                $1,000,000
-                        </div>
-                        </div>
-                        <div className={classes.root} style={{margin:"auto"}}> 
-                            <Typography id="continuous-slider" gutterBottom>  
-                            </Typography>
-                            <Grid container spacing={2}>
-                                <Grid item xs>
-                                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
-                                </Grid>       
-                            </Grid>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12">
-                        <div className="price-heading">
-                            <div className="heading">
-                                Price
-                        </div>
-                            <div className="value">
-                                $1,000,000
-                        </div>
-                        </div>
-                        <div className={classes.root} style={{margin:"auto"}}> 
-                            <Typography id="continuous-slider" gutterBottom>  
-                            </Typography>
-                            <Grid container spacing={2}>
-                                <Grid item xs>
-                                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
-                                </Grid>       
-                            </Grid>
-                        </div>
-                    </div>
-
-                   
-
-
                 </div>
             </div>
+
 
         </>
     )
