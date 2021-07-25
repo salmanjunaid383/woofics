@@ -18,7 +18,7 @@ export default function Advertise() {
   const [contenttype, setcontenttype] = useState("");
 
   function Message() {
-    const res = axios.post(`https://api.woofics.com/api/advertise_questionnaire`, {
+    const res = axios.post(`https://api.woofics.com/api/questionnaire`, {
       name: name,
       email: email,
       contact_number: number,
