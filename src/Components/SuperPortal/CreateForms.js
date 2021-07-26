@@ -289,8 +289,8 @@ export default function CreateForms() {
                                                             <button class={`btn text-white mt-3 greenbtn text-white `}  onClick={() => paymentPack()}>Agregar</button>
                                                         </div>
                                                     </div>
-                                                    <table class="table table-hover mt-2 text-center">
-                                                        <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                    <table  id="for-table-setting" class="table table-hover mt-2 text-center">
+                                                        <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
                                                                 <th scope="col " className="text-white" >#</th>
                                                                 <th scope="col " className="text-white" >Nombre</th>
@@ -300,7 +300,7 @@ export default function CreateForms() {
                                                                 <th scope="col " className="text-white" >Comportamiento</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="data-row">
                                                             {paymentPackag.map((val, i) => {
                                                                 return (<>
                                                                     <tr>
@@ -335,15 +335,15 @@ export default function CreateForms() {
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
-                                                        <table class="table table-hover" style={{tableLayout:"fixed"}}>
-                                                            <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                        <table  id="for-table-setting" class="table table-hover" style={{tableLayout:"fixed"}}>
+                                                            <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                 <tr style={{tableLayout:"fixed"}}>
                                                                     <th scope="col" className="text-white">#</th>
                                                                     <th scope="col" className="text-white">Cargo</th>
                                                                     <th scope="col" className="text-white">Comportamiento</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="data-row">
                                                                 <tr>
                                                                     <th scope="row">1</th>
                                                                     <td>{valueCharge.charge}</td>
@@ -379,15 +379,15 @@ export default function CreateForms() {
                                                             </div>
                                                         </div>
                                                         <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
-                                                            <table class="table table-hover" style={{tableLayout:"fixed"}}>
-                                                                <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                            <table  id="for-table-setting" class="table table-hover" style={{tableLayout:"fixed"}}>
+                                                                <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                         <th scope="col" className="text-white">#</th>
                                                                         <th scope="col" className="text-white">Cargo</th>
                                                                         <th scope="col" className="text-white">Comportamiento</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="data-row">
                                                                     <tr>
                                                                         <th scope="row">1</th>
                                                                         <td>{supplierRenta.charge}</td>
@@ -421,15 +421,15 @@ export default function CreateForms() {
                                                             </div>
                                                         </div>
                                                         <div className="col-md-12 text-center mx-auto px-2 w-100 p-0">
-                                                            <table class="table table-hover" style={{tableLayout:"fixed"}}>
-                                                                <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                            <table  id="for-table-setting" class="table table-hover" style={{tableLayout:"fixed"}}>
+                                                                <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                         <th scope="col" className="text-white">#</th>
                                                                         <th scope="col" className="text-white">Cargo</th>
                                                                         <th scope="col" className="text-white">Comportamiento</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="data-row">
                                                                     <tr>
                                                                         <th scope="row">1</th>
                                                                         <td>{serviceCharge.charge}</td>

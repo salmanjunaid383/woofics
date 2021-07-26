@@ -325,8 +325,8 @@ export default function Project() {
                                                 </h4>
                                                 <h2 className="float-right">$ {form.price}</h2>
                                                 {/* <i className="fa fa-map-marker px-2 mb-4 text-muted"> {supplier.location}</i> */}
-                                                <table class="table table-hover table table-bordered">
-                                                    <tbody>
+                                                <table  id="for-table-setting" class="table table-hover table table-bordered">
+                                                    <tbody id="data-row">
                                                         <tr>
                                                             <th scope="row">Description</th>
                                                             <td> {form.description}</td>

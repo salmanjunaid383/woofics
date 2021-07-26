@@ -423,8 +423,8 @@ export default function MyCoupon() {
                                             <hr className="w-50" />
                                             <div className="table-responsive">
                                                 {form == "" ? <h3 className="text-center my-auto p-md-3">No Coupons!</h3>
-                                                    : <table className="table no-wrap">
-                                                        <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                    : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                        <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
                                                                 <th className="border-top-0 text-white text-center">CODE</th>
                                                                 <th className="border-top-0 text-white text-center">TYPE</th>
@@ -433,7 +433,7 @@ export default function MyCoupon() {
                                                                 <th className="border-top-0 text-white text-center">TOTAL</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody >
+                                                        <tbody id="data-row" >
                                                             <tr style={{ height: '5rem' }} className="border-bottom text-center ">
                                                                 <td className="text-oflo text-center bold">{form.Coupon.code}</td>
                                                                 <td className="text-oflo text-center bold">{form.Coupon.discount_discription}</td>

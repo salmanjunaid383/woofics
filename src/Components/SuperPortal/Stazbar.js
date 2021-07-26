@@ -94,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundPosition: 'center', 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
+        backgroundPosition: '100% 30%',
   
    
     },

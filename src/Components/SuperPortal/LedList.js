@@ -85,8 +85,8 @@ export default function LedList() {
                                             <h3 className="box-title mb-0 text-center mx-auto">Lista de Led</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            <table className="table no-wrap text-center">
-                                                <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                            <table  id="for-table-setting" className="table no-wrap text-center">
+                                                <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0  text-white">#</th>
                                                         <th className="border-top-0  text-white">NOMBRE</th>
@@ -94,7 +94,7 @@ export default function LedList() {
                                                         <th className="border-top-0  text-white">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="data-row">
                                                     {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (

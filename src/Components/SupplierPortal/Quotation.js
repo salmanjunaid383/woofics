@@ -66,8 +66,8 @@ export default function Quotation() {
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive">
-                                                <table className="table no-wrap">
-                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">DATE</th>
                                                             <th className="border-top-0 text-white text-center">COMPANY</th>
@@ -79,7 +79,7 @@ export default function Quotation() {
                                                             <th className="border-top-0 text-white text-center">ACTIONS</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody >
+                                                    <tbody id="data-row" >
                                                     {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nothing to show!</h3></td> </tr> :
                                                blog.map((val, id) => {
                                                             return (

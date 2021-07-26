@@ -39,6 +39,30 @@ body {
   border-radius: 0px 5px 5px 0px;
 }
 
+/* for replacement */
+
+#heading-row{
+  background-image: linear-gradient(to right, #9b88f6 , #f25c8a);
+  color:#fff;
+}
+#heading-row th{
+  padding: 10px !important;
+  text-align: center;
+  font-weight: 900 !important;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+#data-row td{
+  padding: 10px !important;
+  text-align: center;
+}
+#heading-row th:first-child{
+  border-radius: 5px 0px 0px 5px;
+}
+#heading-row th:last-child{
+  border-radius: 0px 5px 5px 0px;
+}
+
 .card0 {
   border-radius: 0px
   

@@ -71,8 +71,8 @@ export default function ViewServiceMore() {
                                         <h3 className="box-title mb-0 h1 mx-auto text-center">Detalles Del Servicio</h3>
                                     </div>
 
-                                    <table class="table table-hover">
-                                        <tbody>
+                                    <table  id="for-table-setting" class="table table-hover">
+                                        <tbody id="data-row">
                                             {/* {servicet ? <>
                                                 <tr>
                                                     <td>Package Charge</td>

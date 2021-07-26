@@ -87,8 +87,8 @@ export default function ProviderAllNotification() {
                                             <h3 className="box-title h1 mb-0 text-center mx-auto">Todas Las Notificaciones</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            <table className="table no-wrap">
-                                                <tbody>
+                                            <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                <tbody id="data-row">
                                                     {name.map((val, id) => {
                                                         return (
                                                             <>

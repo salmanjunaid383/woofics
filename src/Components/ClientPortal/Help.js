@@ -116,7 +116,7 @@ export default function Help() {
                                             </div>
 
                                             <form>
-                                                <table class="table">
+                                                <table  id="for-table-setting" class="table">
                                                     <tr>
                                                         <td>
                                                             <input class="form-control" type="text" placeholder="query" value={query} onChange={(e) => setQuestion(e.target.value)} />

@@ -173,12 +173,12 @@ export default function Led() {
                                                     </div>
                                                     <div className="w-100">
                                                         <div className="table-responsive-sm w-100">
-                                                            <table className="table mt-3 ">
-                                                                <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                            <table  id="for-table-setting" className="table mt-3 ">
+                                                                <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="data-row">
                                                                     {
                                                                         feild.map((val, i) => {
                                                                             return (

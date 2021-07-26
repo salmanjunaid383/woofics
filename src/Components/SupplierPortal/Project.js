@@ -85,8 +85,8 @@ export default function Project() {
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive">
-                                                <table className="table no-wrap">
-                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center" id="text">DATE</th>
                                                             <th className="border-top-0 text-white text-center">REQUESTS</th>
@@ -96,7 +96,7 @@ export default function Project() {
                                                             <th className="border-top-0 text-white text-center">ACTIONS</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody >
+                                                    <tbody id="data-row" >
                                                         {form == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nothing to show!</h3></td> </tr> :
                                                             form.map((val, id) => {
                                                                 return (

@@ -170,8 +170,8 @@ export default function AllQuotation() {
                                             <div className="col-md-12 mx-auto w-100">
                                                 <div className="w-100">
                                                     <h3 className="w-100 text-center service-detail" style={{fontWeight:"bold"}}>Service Details</h3>
-                                                    <table class="table table-hover">
-                                                        <tbody>
+                                                    <table  id="for-table-setting" class="table table-hover">
+                                                        <tbody id="data-row">
                                                             {servicet  ? <>
                                                                 <tr>
                                                                     <td>Package Charge</td>
@@ -314,8 +314,8 @@ export default function AllQuotation() {
                                             </div>
                                             <div className="table-responsive">
                                                 {form == "" ? <h3 className="text-center my-auto">No Quotation!</h3>
-                                                    : <table className="table no-wrap">
-                                                        <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                    : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                        <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
                                                                 <th className="border-top-0 text-white text-center">DATE</th>
                                                                 <th className="border-top-0 text-white text-center">REQUESTS</th>
@@ -324,7 +324,7 @@ export default function AllQuotation() {
                                                                 <th className="border-top-0 text-white text-center">ACTIONS</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody >
+                                                        <tbody id="data-row" >
 
                                                             {form.map((val, id) => {
                                                                 return (

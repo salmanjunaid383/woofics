@@ -322,24 +322,27 @@ export default function PriceCalculator() {
             <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
             <Navbar />
             </section>
-            
-            <br />
-            <h2 className="text-center text-primary pt-5">Led Screen Configurator</h2>
-            <div className="container w-75 p-0 shadow" >
-                <div className="row mx-auto   no-gutters" style={{ backgroundColor: "#f7527f", border: '5px #f95c87 solid' }}>
-                    <div className="col-md-12 px-5 bg-white mobile" style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
-                        <h3 className="pt-2"><b>Dimension</b></h3>
-                        <div className={classes.root} noValidate autoComplete="off" style={{width:"70%"}}>
-                            {/* <Tooltip title="Height should be in centimeter's" arrow placement="top">
-                                <TextField id="standard-basic" className="w-50 px-2" type="number" label="Height (cm)" onChange={(e) => setheight(e.target.value)} />
-                            </Tooltip>
-                            <Tooltip title="Width should be in centimeter's" arrow placement="top">
-                                <TextField id="standard-basic" className="w-50 " type="number" label="Width (cm)" onChange={(e) => setwidth(e.target.value)} />
-                            </Tooltip> */}
-                            <Typography gutterBottom>Height should be in centimeter's</Typography>
+
+            <div className="container-fluid main-cal-parent" style={{ padding: "0px", display: "flex", }}>
+                <div className="container-fluid back-image">
+
+
+                    <div className="row main-row" >
+                        <div className="col-1 heading">
+                            <h4>Price</h4>
+                            <h1>Calculator</h1>
+                        </div>
+                        <div className="col-sm-12 for-vid">
+
+                        </div>
+                        <div className="col-sm-12">
+                   
+                            <div className={classes.root} style={{ margin: "auto",textAlign:"center" }}>
+
+                            <Typography gutterBottom>Height should be in centimeter</Typography>
                             
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-75" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} /> <Input
-                                className="mb-2 ml-3"
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} /> <Input
+                                className="mb-2 ml-3" 
                                 value={value}
                                 margin="dense"
                                 onChange={handleInputChange}
@@ -350,10 +353,18 @@ export default function PriceCalculator() {
                                     max: 100,
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
+                                
+
                                 }}
                             />
-                            <Typography gutterBottom>Width should be in centimeter's</Typography>
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-75" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2} /> <Input
+                            </div>
+                        </div>
+
+                        <div className="col-sm-12">
+                       
+                            <div className={classes.root} style={{ margin: "auto",textAlign:"center" }}>
+                                <Typography gutterBottom>Width should be in centimeter</Typography>
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2}  /> <Input
                                 className="mb-2 ml-3"
                                 value={value2}
                                 margin="dense"
@@ -367,153 +378,174 @@ export default function PriceCalculator() {
                                     'aria-labelledby': 'input-slider',
                                 }}
                             />
-
-                        </div>
-                        <h3 className="my-3"><b>Choose a Product</b></h3>
-                        <div className="w-75 mr-2 margin-setting">
-                            <span className="float-right w-50">
-                                <span className="w-50">Location : </span>
-                                <select className="w-100" onChange={(e) => setSearch(e.target.value)}>
-                                    <option value=''>All</option>
-                                    <option value="indoor">Indoor</option>
-                                    <option value="outdoor">Outdoor</option>
-                                    <option value="both">Both</option>
-                                </select>
-                            </span>
-                        </div>
-                        <div className="w-75 mb-4" onChange={(e) => setApplication(e.target.value)}>
-                            <span className="w-50">Application : </span>
-                            <span className="float-right w-50">
-                                <select className="w-100">
-                                    <option value=''>All</option>
-                                    <option value="rent">Rental/Events</option>
-                                    <option value="install">Fixed Installation</option>
-                                    <option value="both">Both</option>
-                                </select>
-                            </span>
-                        </div>
-                        <div className="w-75 p-2 mt-4">
-                            <div className="container" style={{ border: '2px #f95c87 solid' }}>
-                                <div className="row" style={{ height: '300px', overflowY: 'scroll' }}>
-                                    {led.filter((val) => {
-                                        if (search == '') {
-                                            return (val)
-                                        } else if ((val.location).toLowerCase().includes(search)) {
-                                            return (val)
-                                        }
-                                    }).filter((val) => {
-                                        if (application == '') {
-                                            return (val)
-                                        } else if ((val.application).toLowerCase().includes(application)) {
-                                            return (val)
-                                        }
-                                    }).map((val) => {
-                                        return (
-                                            <>
-                                                <div className={`p-2 ledScreenList w-100 ${age == val.id ? style : ''}`} onClick={() => AutoFunction(val.id)}>
-                                                    <div className="col-md-4 py-2">
-                                                        <img src={val.image_url} className="img-fluid" />
-                                                    </div>
-                                                    <div className="col-md-8">
-                                                        <h3>*{val.name}</h3>
-                                                        <small><span>Location: {val.location}</span></small><br />
-                                                        <small><span>Application: {val.application}</span></small><br />
-                                                    </div>
-                                                </div>
-                                            </>
-                                        )
-                                    })
-                                    }
-                                </div>
                             </div>
                         </div>
+
+
+
+
                     </div>
-                    <div className="col-md-12 px-4" style={{ height: '100%' }}>
-                        <div className="p-auto w-100">
-                            <h3 className="pt-2 mt-3 text-white text-center" style={{fontSize:"30px"}}><b>Results</b></h3>
-                            <div className="row text-center" style={{ alignSelf: 'center' }}>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Resolution</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.resolution : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Dimensions</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.dimension : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Diagonal</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.diagnol : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Aspect Ratio</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.aspect_ratio : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Surface</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.surface : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Max. power</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.max_power_consumption : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Type Power</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.type_power_consumption : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Length</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.length : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Weight</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.weight : '00'}</span></div>
-                                
-                                
+                </div>
 
-                                <div className="row" style={{width:"90%", margin:"auto"}}>
-                                <div className="col-md-4 p-4 text-white text-center mx-auto" ><p className="text-center pb-2 heading-margin">View distance</p><span style={{ justifySelf:"center", borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.optimal_distance : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center mx-auto" ><p className="text-center pb-2 heading-margin">Led Tiles</p><span style={{ justifySelf:"center", borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.led_tiles : '00'}</span></div>
-                                </div>
-                                <div className="col-md-12 my-3 d-inline text-center mx-auto">
-                                    
-                                </div>
+                {/* for result */}
 
-                                    <div className="col-md-6 ">
-                                        <h3 class="text-white py-2 px-2" style={{ backgroundColor: "#934CFF" }}>Price : <span>{area ? area.led_option.price : '00'}</span></h3>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <button className="btn " style={{ backgroundColor: "#40cc71", color: "white" }} onClick={getCal}> Calculate Total Price  </button>
+                <div className="container-fluid result-back-image">
+
+
+                    <div className="row main-row" >
+                        <div className="col-1 heading">
+                            <h4></h4>
+                            <h1>Result</h1>
+                        </div>
+
+                        <div className="main-parent" style={{display:"flex",justifyContent:"space-between", flexWrap:"wrap",alignItems:"center"}}>
+                            <div className="col-xl-6 col-6" >
+                                <h1 className="result-heading">Resolution</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            
-                            {/* <table class="">
-                                <tbody>
-                                    <tr>
-                                        <td><b> Resolution: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.resolution : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Dimensions: </b></td>
-                                        <td className="float-right w-50">{area ? area.dimension : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Diagonal: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.diagnol : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Aspect ratio: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.aspect_ratio : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Surface: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.surface : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Max. power consumption:</b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.max_power_consumption : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Type Power Consumption: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.type_power_consumption : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Length: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.length : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Weight: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.weight : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Opt. view distance: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.optimal_distance : '00'}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b> Led Tiles: </b></td>
-                                        <td className="float-right w-50">{area ? area.led_option.led_tiles : '00'}</td>
-                                    </tr>
-                                </tbody>
-                            </table> */}
+                            </div>
+
+                            <div className="col-xl-6 col-6" style={{}}>
+                            <h1 className="result-heading">Surface</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" >
+                            <h1 className="result-heading">Max.Power</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" style={{}}>
+                            <h1 className="result-heading">Type Power</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" >
+                            <h1 className="result-heading">Length</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-6 col-6" style={{}}>
+                            <h1 className="result-heading">Weight</h1>
+                                <div class="circular" style={{margin:"auto"}}>
+                                    <div class="inner"></div>
+                                    <div class="outer"></div>
+                                    <div class="numb">
+                                        0%
+                                </div>
+                                    <div class="circle">
+                                        <div class="dot">
+                                            <span></span>
+                                        </div>
+                                        <div class="bar left">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="bar right">
+                                            <div class="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-12 calculate-button">
+                                <button type="submit">
+                                    Calculate Total Price
+                                </button>
+                            </div>
+                            <div className="col-xl-12 final-price">
+                                <span className="price">Price: </span>
+                                <span className="value">$1200</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <Footer />
+
+            {/* <Footer /> */}
         </>
     )
 }

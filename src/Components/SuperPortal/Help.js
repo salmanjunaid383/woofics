@@ -82,8 +82,8 @@ export default function Help() {
                                         </div>
                                         <div className="table-responsive">
                                             {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nada Que Mostrar...</div>
-                                                : <table className="table no-wrap">
-                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white">#</th>
                                                             <th className="border-top-0 text-white">CONSULTA</th>
@@ -92,7 +92,7 @@ export default function Help() {
                                                             <th className="border-top-0 text-white">COMPORTAMIENTO</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="data-row">
                                                         {blog.map((val, id) => {
                                                             return (
                                                                 <>

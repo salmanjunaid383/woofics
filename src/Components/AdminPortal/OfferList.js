@@ -89,8 +89,8 @@ export default function OfferList() {
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Ofertas Enviadas</h1>
                                             </div>
                                             <div className="table-responsive">
-                                                <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
-                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a" }}>
+                                                <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
+                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a" }}>
                                                         <tr>
                                                             <th className="border-top-0 text-center text-white">#</th>
                                                             <th className="border-top-0 text-center text-white">Descripción</th>
@@ -98,7 +98,7 @@ export default function OfferList() {
                                                             <th className="border-top-0 text-center text-white">Dias</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="data-row">
                                                         {
                                                         
                                                         form == ''? <h3  className="mt-5"> Nada Que Mostrar!</h3> :

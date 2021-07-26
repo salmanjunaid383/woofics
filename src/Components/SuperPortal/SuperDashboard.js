@@ -305,12 +305,12 @@ export default function SuperDashboard() {
                     <div className={classes.toolbar} />
 
                     <div className="container-fluid page-wrapper">
-                        <div className="back-button">
+                        {/* <div className="back-button">
                             <i class="fa fa-angle-left" aria-hidden="true"></i>
-                        </div>
+                        </div> */}
                         <div className="row">
                             <div className="col-md-12">
-                                <h1 style={{ fontSize: "30px", marginBottom: "20px", color: "#223e92", fontWeight: "bolder" }}>Admin Dashboard</h1>
+                                <h1 style={{ fontSize: "27px", marginBottom: "20px", color: "#9b88f6", fontWeight: "bold" }}>Admin Dashboard</h1>
                             </div>
                         </div>
                         <div className="row">
@@ -467,7 +467,7 @@ export default function SuperDashboard() {
                                     </section>
                                 </div>
                                 <div className="table-div">
-                                    <table className="for-table-setting">
+                                    <table  id="for-table-setting" className="for-table-setting">
                                         <tr className="heading-row">
                                             <th>salman</th>
                                             <th>salman</th>

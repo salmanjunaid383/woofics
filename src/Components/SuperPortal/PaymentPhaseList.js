@@ -433,8 +433,8 @@
 //                                             <h3 className="box-title mb-0">Lista de la fase de pago</h3>
 //                                         </div>
 //                                         <div className="table-responsive">
-//                                             <table className="table no-wrap">
-//                                                 <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+//                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+//                                                 <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
 //                                                     <tr>
 //                                                         <th className="border-top-0 text-white">#</th>
 //                                                         <th className="border-top-0 text-white">TIPO DE FASE</th>
@@ -442,7 +442,7 @@
 //                                                         <th className="border-top-0 text-white">COMPORTAMIENTO</th>
 //                                                     </tr>
 //                                                 </thead>
-//                                                 <tbody>
+//                                                 <tbody id="data-row">
 //                                                 {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
 //                                                             :
 //                                                    blog.map((val, id) => {

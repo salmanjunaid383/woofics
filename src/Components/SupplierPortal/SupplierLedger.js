@@ -193,8 +193,8 @@ export default function SupplierLedger() {
                                                         </div>
                                             </div>
                                             <div className="table-responsive">
-                                                <table className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
-                                                    <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
+                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">#</th>
                                                             <th className="border-top-0 text-white text-center">BALANCE</th>
@@ -202,7 +202,7 @@ export default function SupplierLedger() {
                                                             {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="data-row">
                                                         {
 
                                                             article == '' ? <h3 className="mt-5"> Nothing to show!</h3> :

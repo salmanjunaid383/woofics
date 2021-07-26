@@ -63,10 +63,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "white",
         boxShadow: 'none',
         border: "none",
+        color:"#000"
     },
     menuButton: {
         marginRight: theme.spacing(2),
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             display: 'none',
         },
     },
@@ -332,7 +333,7 @@ export default function Sidebar() {
 
             <div className="d-sm-flex">
                 {/* <CssBaseline /> */}
-                <AppBar position="fixed" className={classes.appBar}>
+                <AppBar position="fixed" className={classes.appBar} id="nav-responsive" >
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -369,7 +370,7 @@ export default function Sidebar() {
                         </ul>
                     </Toolbar>
                 </AppBar>
-                <nav className={classes.drawer} aria-label="mailbox folders">
+                <nav className={classes.drawer} aria-label="mailbox folders" id="responsive-sidenav">
                     {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                     <Hidden smUp implementation="css">
                         <Drawer

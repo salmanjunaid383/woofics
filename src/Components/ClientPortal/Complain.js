@@ -148,7 +148,7 @@ export default function Complain() {
                                             </div>
 
                                             <form>
-                                                <table class="table">
+                                                <table  id="for-table-setting" class="table">
                                                     <tr>
                                                         <td>
                                                             <input type="text" class="form-control" value={title} id="mailtip2" placeholder="Title" onChange={(e) => settitle(e.target.value)} />

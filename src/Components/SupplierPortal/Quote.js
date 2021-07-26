@@ -174,8 +174,8 @@ export default function Quote() {
                                                 <div className="row">
                                                     <div className="w-100">
                                                         <h3 className="w-100 text-center">Service Details</h3>
-                                                        <table class="table table-hover">
-                                                            <tbody>
+                                                        <table  id="for-table-setting" class="table table-hover">
+                                                            <tbody id="data-row">
                                                                 <tr>
                                                                     <td>Package Charge</td>
                                                                     <td>{servicet.charge}</td>

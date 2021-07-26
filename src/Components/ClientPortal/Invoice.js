@@ -143,8 +143,8 @@
 //                                     </div>
 //                                 </div>
 //                                 <div className="table-responsive-sm">
-//                                     <table className="table table-striped ">
-//                                         <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+//                                     <table  id="for-table-setting" className="table table-striped ">
+//                                         <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
 //                                             <tr>
 //                                                 <th>Item</th>
 //                                                 <th className="w-25">Description</th>
@@ -153,7 +153,7 @@
 //                                                 <th className="right"></th>
 //                                             </tr>
 //                                         </thead>
-//                                         <tbody>
+//                                         <tbody id="data-row">
 //                                             {
 //                                                 feild.map((val, i) => {
 //                                                     return (
@@ -178,8 +178,8 @@
 //                                     <div className="col-lg-4 col-sm-5">
 //                                     </div>
 //                                     <div className="col-lg-4 col-sm-5 ml-auto">
-//                                         <table className="table table-dark text-white">
-//                                             <tbody>
+//                                         <table  id="for-table-setting" className="table table-dark text-white">
+//                                             <tbody id="data-row">
 //                                                 <tr>
 //                                                     <td className="left">
 //                                                         <strong className="text-white">Total</strong>

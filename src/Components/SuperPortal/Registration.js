@@ -90,18 +90,18 @@ export default function Registration() {
                                             <h3 className="box-title mb-0 mx-auto text-center">Lista De Registro</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            <table className="table no-wrap" >
-                                                    <tr style={{backgroundColor:"blue"}}>
-                                                        <th className="rounded">NAME</th>
+                                            <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                    <tr className="heading-row" >
+                                                        <th className="">NAME</th>
                                                         <th className="">EMAIL</th>
                                                         <th className="">DATE</th>
                                                         <th className="">ACTIONS</th>
                                                     </tr>
-                                                <tbody>
+                                                <tbody id="data-row">
                                                     {blog.map((val, key) => {
                                                         return (
                                                             <>
-                                                                <tr>
+                                                                <tr className="data-row">
                                                                     <td className="txt-oflo">{val.first_name} {val.last_name}</td>
                                                                     <td className="txt-oflo">{val.email}<a href={"mailto:" + val.email} className="float-right pr-lg-4"><i className="fa fa-envelope ml-3 text-primary"></i></a></td>
                                                                     <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>

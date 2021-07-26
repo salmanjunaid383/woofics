@@ -81,8 +81,8 @@ export default function GetInspired() {
                                             <h3 class="box-title mb-0 h1 text-center mx-auto"> Anunciar</h3>
                                         </div>
                                         <div className="table-responsive">
-                                            <table className="table no-wrap">
-                                                <thead className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                            <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
                                                         <th className="border-top-0 text-white text-center">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-center">EMAIL</th>
@@ -93,7 +93,7 @@ export default function GetInspired() {
                                                         <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="data-row">
                                                     {blog.map((val, key) => {
                                                         return (
                                                             <>
