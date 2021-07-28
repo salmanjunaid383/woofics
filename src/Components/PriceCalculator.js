@@ -250,7 +250,8 @@ export default function PriceCalculator() {
         // getCal()
     }
     function getCal() {
-        const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
+        if(age !== null){
+            const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
             height: value,
             width: value2,
             led_id: age
@@ -266,6 +267,8 @@ export default function PriceCalculator() {
                     alert(error.response.data.message);
                 }
             });
+        }
+        
     }
 
     function myFunction() {
@@ -288,9 +291,11 @@ export default function PriceCalculator() {
 
     const handleSliderChange = (event, newValue) => {
         setValue(newValue);
+        
     };
     const handleSliderChange2 = (event, newValue) => {
         setValue2(newValue);
+        
     };
     const handleInputChange = (event) => {
         setValue(event.target.value === '' ? '' : Number(event.target.value));
@@ -332,8 +337,26 @@ export default function PriceCalculator() {
                             <h4>Price</h4>
                             <h1>Calculator</h1>
                         </div>
-                        <div className="col-sm-12 for-vid">
-
+                        <div className="col-sm-12 ">
+                        <div className="row" style={{ height: '300px', overflowY: 'scroll' }}>
+                                    {led.map((val) => {
+                                        return (
+                                            <>
+                                                <div className={`p-2 ledScreenList w-100 ${age == val.id ? style : ''}`} onClick={() => AutoFunction(val.id)}>
+                                                    <div className="col-md-4 py-2">
+                                                        <img src={val.image_url} className="img-fluid" />
+                                                    </div>
+                                                    <div className="col-md-8">
+                                                        <h3>*{val.name}</h3>
+                                                        <small><span>Location: {val.location}</span></small><br />
+                                                        <small><span>Application: {val.application}</span></small><br />
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )
+                                    })
+                                    }
+                                </div>
                         </div>
                         <div className="col-sm-12">
                    
@@ -341,11 +364,13 @@ export default function PriceCalculator() {
 
                             <Typography gutterBottom>Height should be in centimeter</Typography>
                             
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} /> <Input
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} 
+                            onChangeCommitted={getCal} /> <Input
                                 className="mb-2 ml-3" 
                                 value={value}
                                 margin="dense"
                                 onChange={handleInputChange}
+                            
                                 onBlur={handleBlur}
                                 inputProps={{
                                     step: 10,
@@ -364,7 +389,8 @@ export default function PriceCalculator() {
                        
                             <div className={classes.root} style={{ margin: "auto",textAlign:"center" }}>
                                 <Typography gutterBottom>Width should be in centimeter</Typography>
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2}  /> <Input
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2} 
+                            onChangeCommitted={getCal}  /> <Input
                                 className="mb-2 ml-3"
                                 value={value2}
                                 margin="dense"
@@ -381,7 +407,7 @@ export default function PriceCalculator() {
                             </div>
                         </div>
 
-
+                        
 
 
                     </div>
@@ -405,7 +431,7 @@ export default function PriceCalculator() {
                                     <div class="inner"></div>
                                     <div class="outer"></div>
                                     <div class="numb">
-                                        0%
+                                    {area ? area.led_option.resolution : '00'}
                                 </div>
                                     <div class="circle">
                                         <div class="dot">
@@ -427,7 +453,7 @@ export default function PriceCalculator() {
                                     <div class="inner"></div>
                                     <div class="outer"></div>
                                     <div class="numb">
-                                        0%
+                                    {area ? area.led_option.surface : '00'}
                                 </div>
                                     <div class="circle">
                                         <div class="dot">
@@ -449,7 +475,7 @@ export default function PriceCalculator() {
                                     <div class="inner"></div>
                                     <div class="outer"></div>
                                     <div class="numb">
-                                        0%
+                                    {area ? area.led_option.max_power_consumption : '00'}
                                 </div>
                                     <div class="circle">
                                         <div class="dot">
@@ -471,7 +497,7 @@ export default function PriceCalculator() {
                                     <div class="inner"></div>
                                     <div class="outer"></div>
                                     <div class="numb">
-                                        0%
+                                    {area ? area.led_option.type_power_consumption : '00'}
                                 </div>
                                     <div class="circle">
                                         <div class="dot">
@@ -493,7 +519,7 @@ export default function PriceCalculator() {
                                     <div class="inner"></div>
                                     <div class="outer"></div>
                                     <div class="numb">
-                                        0%
+                                    {area ? area.led_option.length : '00'}
                                 </div>
                                     <div class="circle">
                                         <div class="dot">
@@ -515,7 +541,7 @@ export default function PriceCalculator() {
                                     <div class="inner"></div>
                                     <div class="outer"></div>
                                     <div class="numb">
-                                        0%
+                                    {area ? area.led_option.weight : '00'}
                                 </div>
                                     <div class="circle">
                                         <div class="dot">
@@ -530,14 +556,14 @@ export default function PriceCalculator() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-12 calculate-button">
+                            {/* <div className="col-xl-12 calculate-button">
                                 <button type="submit">
                                     Calculate Total Price
                                 </button>
-                            </div>
+                            </div> */}
                             <div className="col-xl-12 final-price">
                                 <span className="price">Price: </span>
-                                <span className="value">$1200</span>
+                                <span className="value">{area ? area.led_option.price : '00'}</span>
                             </div>
                         </div>
                     </div>

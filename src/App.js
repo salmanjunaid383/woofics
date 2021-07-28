@@ -138,7 +138,7 @@ import cookie from "react-cookies";
 import SuperDashboard from './Components/SuperPortal/SuperDashboard';
 import Dashboard from './Components/ClientPortal/Dashboard';
 import ProviderDashboard from './Components/AdminPortal/AdminDashboard'
-
+import TestCalulator from './Components/TestCalculator'
 function App() {
 
 
@@ -160,8 +160,10 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          
           <Route exact path="/StazCal" component={StazCal} />
           <Route path="/login" component={Login} />
+          <Route path="/testcal" component={TestCalulator}></Route>
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
           <Route exact path="/dashboard" component={Dashboard} />

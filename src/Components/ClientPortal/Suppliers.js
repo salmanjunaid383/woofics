@@ -113,7 +113,7 @@ export default function Supppliers() {
                                                             <img class="card-img-top img-fluid w-25 mx-auto float-left p-2 ipad-res" src={val.profile_image}  style={{borderRadius:"50px"}}/>
                                                             <StarRatings
                                                                 starRatedColor='rgb(230, 67, 47)'
-                                                                rating={val.rating}
+                                                                rating={3}
                                                                 starDimension="15px"
                                                                 starSpacing="3px"
                                                             />

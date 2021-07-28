@@ -75,7 +75,7 @@ export default function CreateImg() {
     const onchange = async (e) => {
         setProgress('Loading...')
         const file = e.target.files[0];
-        const ImagesRef = firebase.storage().ref('images').child(file.name);
+        const ImagesRef = firebase.storage().ref('videos').child(file.name);
         await ImagesRef.put(file)
         ImagesRef.getDownloadURL().then((url) => {
             setImageUrl(url)
@@ -103,7 +103,7 @@ export default function CreateImg() {
                                             <label class="col-md-12 p-0">Imagen</label>
                                             <div class="col-md-12 border p-2 text-center">
                                                 {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
-                                                 */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file" accept='image/*' />
+                                                 */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file"  />
                                                 <img className="text-center mx-auto img-fluid" src={imageUrl} style={{}} />
                                             </div>
                                             <div class="col-md-12 p-0">
