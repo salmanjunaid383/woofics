@@ -1,0 +1,9 @@
+input[type=radio] + label >img {
+    border:none !important;
+    height:60px !important;
+    width:60px !important;
+    margin: 10px !important;
+    /* background-color:blue;
+    padding:10px;
+    border-radius: 50%; */
+}

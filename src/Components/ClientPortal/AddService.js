@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
-
+import "../ClientPortal/addservice.css"
 import axios from 'axios';
 
 import jwt_decode from 'jwt-decode'
@@ -277,12 +277,12 @@ export default function Test() {
     function getStepContent(stepIndex) {
         switch (stepIndex) {
             case 0:
-                return <div className="w-100  my-lg-5">
-                    <h4 className="text-left w-100 text-dark">Do you want to purchase or rent ?</h4>
+                return <div className="w-100  my-lg-5 text-center">
+                    <h4 className="text-center w-100 text-dark">Do you want to purchase or rent ?</h4>
                     <input value="purchase" onChange={(e) => setbuy(e.target.value)}
                         type="radio" name="emotion"
                         id="sad" class="input-hidden " />
-                    <label for="sad">
+                    <label className="for-icons" for="sad">
                         <img
                             src="https://www.nicepng.com/png/detail/46-463074_overseas-purchase-svg-png-icon-free-download-purchase.png"
                             alt="I'm sad"
@@ -302,7 +302,7 @@ export default function Test() {
                     <br />
                     <br />
 
-                    <h4 className="text-left w-100 text-dark">Do you want for indoor or outdoor ?</h4>
+                    <h4 className="text-center w-100 text-dark">Do you want for indoor or outdoor ?</h4>
                     <input value="indoor" onChange={(e) => setindoor(e.target.value)}
                         type="radio" name="ff"
                         id="sadd" class="input-hidden " />
@@ -326,13 +326,13 @@ export default function Test() {
                     <br />
                     <br />
 
-                    <h4 className="text-left w-100 text-dark">Fixed installation or installation for event ?</h4>
+                    <h4 className="text-center w-100 text-dark">Fixed installation or installation for event ?</h4>
                     <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation or installation for event ?" variant="outlined" /> </div>
                     <br />
                     <br />
 
                     <div>
-                        <h4 className="text-left w-100 text-dark">Do you know the model you are looking for?</h4>
+                        <h4 className="text-center w-100 text-dark">Do you know the model you are looking for?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
                                 <FormControlLabel value="yes" control={<Radio color="primary" />} label="Yes" />
@@ -343,7 +343,7 @@ export default function Test() {
                     <br />
                     <br />
                     <div>
-                        <h4 className="text-left w-100 text-dark d-inline">Maximum and minimum vision distance?</h4>
+                        <h4 className="text-center w-100 text-dark d-inline">Maximum and minimum vision distance?</h4>
                         <div>
                             <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Maximum and minimum " variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
@@ -351,7 +351,7 @@ export default function Test() {
                     </div>
                     <br />
                     <br />
-                    <h4 className="text-left w-100 text-dark">Use of Screen?</h4>
+                    <h4 className="text-center w-100 text-dark">Use of Screen?</h4>
                     <FormControl component="fieldset">
                         <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
                             <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
@@ -364,7 +364,7 @@ export default function Test() {
                         </RadioGroup>
                     </FormControl>
                     {/* <p className="d-inline w-100">
-                        <div className="w-50 text-left float-left">
+                        <div className="w-50 text-center float-left">
                             <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="FAIR/EVENT/CONCERTS/PLATO TV" />FAIR/EVENT/CONCERTS/PLATO-TV
                         </div>
                         <div className="w-50 text-left float-left">
@@ -394,9 +394,9 @@ export default function Test() {
 
                 </div>
             case 1:
-                return <div className="w-100 my-lg-5">
+                return <div className="w-100 my-lg-5 text-center">
                     <div>
-                        <h4 className="text-left w-100 text-dark d-inline">Screen dimension?</h4>
+                        <h4 className="text-center w-100 text-dark d-inline">Screen dimension?</h4>
                         <div>
                             <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
                             <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
@@ -405,7 +405,7 @@ export default function Test() {
                     <br />
                     <br />
 
-                    <h4 className="text-left w-100 text-dark">Screen?</h4>
+                    <h4 className="text-center w-100 text-dark">Screen?</h4>
                     <input value="front" onChange={(e) => setscreenaccess(e.target.value)}
                         type="radio" name="fqf"
                         id="sadd" class="input-hidden " />
@@ -430,7 +430,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">Control System?</h4>
+                        <h4 className="text-center w-100 text-dark">Control System?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
                                 <FormControlLabel value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
@@ -455,7 +455,7 @@ export default function Test() {
                 </div>
             case 2:
                 return <div className="w-100 my-lg-5">
-                    <h4 className="text-left w-100 text-dark">Screen Orientation?</h4>
+                    <h4 className="text-center w-100 text-dark">Screen Orientation?</h4>
                     <input
                         type="radio" name="fqwgqwfq"
                         id="ssaad" class="input-hidden " value='north' onChange={(e) => setscreenorientation(e.target.value)} />
@@ -499,7 +499,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">Is the display exposed to adverse weather?</h4>
+                        <h4 className="text-center w-100 text-dark">Is the display exposed to adverse weather?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
                                 <FormControlLabel value="NEAR THE SEA" control={<Radio color="primary" />} label="NEAR THE SEA" />
@@ -508,17 +508,17 @@ export default function Test() {
                                 <FormControlLabel value="HEAT VENTILATION" control={<Radio color="primary" />} label="HEAT VENTILATION" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="adsd" className="w-25 text-left" onchange={(e) => setadverseweather(e.target.value)} value="NEAR THE SEA" />NEAR THE SEA
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="NEAR THE SEA" />NEAR THE SEA
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="adsd" className="w-25 text-left" onchange={(e) => setadverseweather(e.target.value)} value="HIGH MOUNTAIN" />HIGH MOUNTAIN
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="HIGH MOUNTAIN" />HIGH MOUNTAIN
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="adsd" className="w-25 text-left" onchange={(e) => setadverseweather(e.target.value)} value="LITTLE EXTREME" />LITTLE EXTREME
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="LITTLE EXTREME" />LITTLE EXTREME
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="adsd" className="w-25 text-left" onchange={(e) => setadverseweather(e.target.value)} value="HEAT VENTILATION" />HEAT VENTILATION
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="HEAT VENTILATION" />HEAT VENTILATION
                         </div> */}
                     </p>
 
@@ -526,7 +526,7 @@ export default function Test() {
                     <br />
                     <br />
                     <br />
-                    <h4 className="text-left w-100 text-dark">Need Structure?</h4>
+                    <h4 className="text-center w-100 text-dark">Need Structure?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
                         id="dsdq" class="input-hidden " value='Monoposte' onChange={(e) => setstructure(e.target.value)} />
@@ -563,7 +563,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">Delivery Time?</h4>
+                        <h4 className="text-center w-100 text-dark">Delivery Time?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel control={<Radio color="primary" />} label="Select date from Calander" value="date" />
@@ -583,17 +583,17 @@ export default function Test() {
                                 <FormControlLabel value="8 WEEKS BARCO (Standard Manufacturing)" control={<Radio color="primary" />} label="8 WEEKS BARCO (Standard Manufacturing)" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-left" onchange={(e) => setdeliverytime(e.target.value)} value="Select date from Calander" />Select date from Calander
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="Select date from Calander" />Select date from Calander
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-left" onchange={(e) => setdeliverytime(e.target.value)} value="2 WEEKS STOCK (In stock)" />2 WEEKS STOCK (In stock)
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="2 WEEKS STOCK (In stock)" />2 WEEKS STOCK (In stock)
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-left" onchange={(e) => setdeliverytime(e.target.value)} value="4 PLANE WEEKS , (Express Manufacturing)" />4 PLANE WEEKS , (Express Manufacturing)
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="4 PLANE WEEKS , (Express Manufacturing)" />4 PLANE WEEKS , (Express Manufacturing)
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-left" onchange={(e) => setdeliverytime(e.target.value)} value="8 WEEKS BARCO (Standard Manufacturing)" />8 WEEKS BARCO (Standard Manufacturing)
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="8 WEEKS BARCO (Standard Manufacturing)" />8 WEEKS BARCO (Standard Manufacturing)
                         </div> */}
                     </p>
 
@@ -607,43 +607,43 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">INSTALLATION OR SHIPPING?</h4>
+                        <h4 className="text-center w-100 text-dark">INSTALLATION OR SHIPPING?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel value="WEEKS" control={<Radio color="primary" />} label="WEEKS" />
                                 <FormControlLabel value="SHIPPING" control={<Radio color="primary" />} label="SHIPPING" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-left" onchange={(e) => setshipping(e.target.value)} value="INSTALLATION" />INSTALLATION
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="INSTALLATION" />INSTALLATION
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-left" onchange={(e) => setshipping(e.target.value)} value="SHIPPING" />SHIPPING
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="SHIPPING" />SHIPPING
                         </div> */}
                     </p>
                     <br />
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">BRIGHTNESS SENSOR / TEMPERATURE SENSOR?</h4>
+                        <h4 className="text-center w-100 text-dark">BRIGHTNESS SENSOR / TEMPERATURE SENSOR?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsensor(e.target.value)}>
                                 <FormControlLabel value="BRIGHTNESS SENSOR" control={<Radio color="primary" />} label="BRIGHTNESS SENSOR" />
                                 <FormControlLabel value="TEMPERATURE SENSOR" control={<Radio color="primary" />} label="TEMPERATURE SENSOR" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="bgweg" className="w-25 text-left" onchange={(e) => setsensor(e.target.value)} value="BRIGHTNESS SENSOR" />BRIGHTNESS SENSOR
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="bgweg" className="w-25 text-center" onchange={(e) => setsensor(e.target.value)} value="BRIGHTNESS SENSOR" />BRIGHTNESS SENSOR
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="bgweg" className="w-25 text-left" onchange={(e) => setsensor(e.target.value)} value="TEMPERATURE SENSOR" /> TEMPERATURE SENSOR
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="bgweg" className="w-25 text-center" onchange={(e) => setsensor(e.target.value)} value="TEMPERATURE SENSOR" /> TEMPERATURE SENSOR
                         </div> */}
                     </p>
                     <br />
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">POSSIBILITY TO INCREASE WARRANTY?</h4>
+                        <h4 className="text-center w-100 text-dark">POSSIBILITY TO INCREASE WARRANTY?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setwarranty(e.target.value)}>
                                 <FormControlLabel value="2 years (default should be selected)" control={<Radio color="primary" />} label="2 years (default should be selected)" />
