@@ -3,7 +3,7 @@
         width:500px !important
     }
 }
-@media(min-width:1024px){
+@media(max-width:1024px){
     .quotation-ipad{
         width: 780px !important;
     }

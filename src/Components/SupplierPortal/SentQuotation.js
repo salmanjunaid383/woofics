@@ -60,13 +60,13 @@ export default function SentQuotation() {
                             <div id="blog" class="row ">
                                 <div class="container-fluid pb-lg-4 quotation-ipad">
                                     <div className="row m-lg-5">
-                                        <div className="col-md-12 col-lg-12 col-sm-12 border bg-light ">
+                                        <div className="col-md-12 col-xl-12 col-lg-12 col-sm-12 border bg-light " style={{width:"1px"}}>
                                             <div className="d-md-flex mb-3">
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Manage Requests</h1>
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive">
-                                                <table  id="for-table-setting" className="table no-wrap for-table-setting" >
+                                                <table  id="for-table-setting" className="table no-wrap for-table-setting" style={{tableLayout:"auto"}} >
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">DATE</th>

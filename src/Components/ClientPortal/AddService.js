@@ -351,25 +351,25 @@ export default function Test() {
                     </FormControl>
                     {/* <p className="d-inline w-100">
                         <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="FAIR/EVENT/CONCERTS/PLATO TV" />FAIR/EVENT/CONCERTS/PLATO-TV
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="FAIR/EVENT/CONCERTS/PLATO TV" />FAIR/EVENT/CONCERTS/PLATO-TV
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="CORPORATE IMAGE" />CORPORATE IMAGE
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="CORPORATE IMAGE" />CORPORATE IMAGE
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="ADVERTISING" />ADVERTISING
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="ADVERTISING" />ADVERTISING
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="INFORMATION" />INFORMATION
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="INFORMATION" />INFORMATION
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="TRAFFIC" />TRAFFIC
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="TRAFFIC" />TRAFFIC
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="SPORTS EVENT" />SPORTS EVENT
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="SPORTS EVENT" />SPORTS EVENT
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" className="w-25 text-left" onchange={(e) => setscreenuse(e.target.value)} value="CONTROL ROOM" />CONTROL ROOM
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="CONTROL ROOM" />CONTROL ROOM
                         </div>
                     </p> */}
                     <br />
@@ -417,21 +417,21 @@ export default function Test() {
                     <br />
                     <p className="d-inline w-100">
                         <h4 className="text-center w-100 text-dark">Control System?</h4>
-                        <FormControl component="fieldset">
-                            <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
-                                <FormControlLabel value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
-                                <FormControlLabel value="ASYNCHRONOUS (From Memory)" control={<Radio color="primary" />} label="ASYNCHRONOUS (From Memory)" />
-                                <FormControlLabel value="VIDEO PROCESSOR (Managing Different Signals)" control={<Radio color="primary" />} label="VIDEO PROCESSOR (Managing Different Signals)" />
+                        <FormControl className="text-center"  component="fieldset">
+                            <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
+                                <FormControlLabel className="text-center" value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
+                                <FormControlLabel className="text-center" value="ASYNCHRONOUS (From Memory)" control={<Radio color="primary" />} label="ASYNCHRONOUS (From Memory)" />
+                                <FormControlLabel className="text-center"  value="VIDEO PROCESSOR (Managing Different Signals)" control={<Radio color="primary" />} label="VIDEO PROCESSOR (Managing Different Signals)" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-left" onchange={(e) => setcontrolsys(e.target.value)} value="SYNCHRONE (Live Broadcast)" />SYNCHRONE (Live Broadcast)
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="SYNCHRONE (Live Broadcast)" />SYNCHRONE (Live Broadcast)
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-left" onchange={(e) => setcontrolsys(e.target.value)} value="ASYNCHRONOUS (From Memory)" />ASYNCHRONOUS (From Memory)
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="ASYNCHRONOUS (From Memory)" />ASYNCHRONOUS (From Memory)
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-left" onchange={(e) => setcontrolsys(e.target.value)} value="VIDEO PROCESSOR (Managing Different Signals)" />VIDEO PROCESSOR (Managing Different Signals)
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="VIDEO PROCESSOR (Managing Different Signals)" />VIDEO PROCESSOR (Managing Different Signals)
                         </div> */}
                     </p>
                     <br />
@@ -440,7 +440,7 @@ export default function Test() {
                     <br />
                 </div>
             case 2:
-                return <div className="w-100 my-lg-5">
+                return <div className="w-100 my-lg-5 text-center">
                     <h4 className="text-center w-100 text-dark">Screen Orientation?</h4>
                     <input
                         type="radio" name="fqwgqwfq"
@@ -551,7 +551,7 @@ export default function Test() {
                     <p className="d-inline w-100">
                         <h4 className="text-center w-100 text-dark">Delivery Time?</h4>
                         <FormControl component="fieldset">
-                            <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
+                            <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel control={<Radio color="primary" />} label="Select date from Calander" value="date" />
                                 {deliverytime === "date" ? <> <TextField
                                     id="date"
@@ -589,7 +589,7 @@ export default function Test() {
                 </div>;
             // <div className="w-100 my-lg-5"><TextField value={modal} onChange={(e) => setModal(e.target.value)} className="w-75" id="outlined-basic" label="Do you know the modal you are looking for?" variant="outlined" /> </div>;
             case 3:
-                return <div className="w-100 my-lg-5">
+                return <div className="w-100 my-lg-5 text-center">
                     <br />
                     <br />
                     <p className="d-inline w-100">
@@ -637,33 +637,33 @@ export default function Test() {
                                 <FormControlLabel value="5s year" control={<Radio color="primary" />} label="5s year" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="wgwea" className="w-25 text-left" onchange={(e) => setwarranty(e.target.value)} value="2 years (default should be selected)" />2 years (default should be selected)
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="wgwea" className="w-25 text-center" onchange={(e) => setwarranty(e.target.value)} value="2 years (default should be selected)" />2 years (default should be selected)
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="wgwea" className="w-25 text-left" onchange={(e) => setwarranty(e.target.value)} value="3 years" />3 years
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="wgwea" className="w-25 text-center" onchange={(e) => setwarranty(e.target.value)} value="3 years" />3 years
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="wgwea" className="w-25 text-left" onchange={(e) => setwarranty(e.target.value)} value="5s year" />5s year
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="wgwea" className="w-25 text-center" onchange={(e) => setwarranty(e.target.value)} value="5s year" />5s year
                         </div> */}
                     </p>
                     <br />
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">CARCASA MATERIAL?</h4>
+                        <h4 className="text-center w-100 text-dark">CARCASA MATERIAL?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcarcass(e.target.value)}>
                                 <FormControlLabel value="CHAPA SLIM MODEL 8mm thick" control={<Radio color="primary" />} label="CHAPA SLIM MODEL 8mm thick" />
                                 <FormControlLabel value="ALUMINIUM SLIM MODEL 8mm thick" control={<Radio color="primary" />} label="ALUMINIUM SLIM MODEL 8mm thick" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="webe" className="w-25 text-left" onchange={(e) => setcarcass(e.target.value)} value="CHAPA SLIM MODEL 8mm thick" />CHAPA SLIM MODEL 8mm thick
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="webe" className="w-25 text-center" onchange={(e) => setcarcass(e.target.value)} value="CHAPA SLIM MODEL 8mm thick" />CHAPA SLIM MODEL 8mm thick
 
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="webe" className="w-25 text-left" onchange={(e) => setcarcass(e.target.value)} value="ALUMINIUM SLIM MODEL 8mm thick" />ALUMINIUM SLIM MODEL 8mm thick
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="webe" className="w-25 text-center" onchange={(e) => setcarcass(e.target.value)} value="ALUMINIUM SLIM MODEL 8mm thick" />ALUMINIUM SLIM MODEL 8mm thick
                         </div> */}
                     </p>
                     <br />
@@ -671,19 +671,19 @@ export default function Test() {
                     <br />
 
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">FLY CASES?</h4>
+                        <h4 className="text-center w-100 text-dark">FLY CASES?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setflycases(e.target.value)}>
                                 <FormControlLabel value="YES" control={<Radio color="primary" />} label="YES" />
                                 <FormControlLabel value="NO" control={<Radio color="primary" />} label="NO" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="wqeqv" className="w-25 text-left" onchange={(e) => setflycases(e.target.value)} value="YES" />YES
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="wqeqv" className="w-25 text-center" onchange={(e) => setflycases(e.target.value)} value="YES" />YES
 
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="wqeqv" className="w-25 text-left" onchange={(e) => setflycases(e.target.value)} value="NO" />NO
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="wqeqv" className="w-25 text-center" onchange={(e) => setflycases(e.target.value)} value="NO" />NO
                         </div> */}
                     </p>
                     <br />
@@ -691,19 +691,19 @@ export default function Test() {
                     <br />
 
                     <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">WHAT ARE YOU?</h4>
+                        <h4 className="text-center w-100 text-dark">WHAT ARE YOU?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setentity(e.target.value)}>
                                 <FormControlLabel value="PUBLIC ENTITY" control={<Radio color="primary" />} label="PUBLIC ENTITY" />
                                 <FormControlLabel value="PRIVATE ENTITY" control={<Radio color="primary" />} label="PRIVATE ENTITY" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="bqea" className="w-25 text-left" onchange={(e) => setentity(e.target.value)} value="PUBLIC ENTITY" />PUBLIC ENTITY
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="bqea" className="w-25 text-center" onchange={(e) => setentity(e.target.value)} value="PUBLIC ENTITY" />PUBLIC ENTITY
 
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="bqea" className="w-25 text-left" onchange={(e) => setentity(e.target.value)} value="PRIVATE ENTITY" />PRIVATE ENTITY
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="bqea" className="w-25 text-center" onchange={(e) => setentity(e.target.value)} value="PRIVATE ENTITY" />PRIVATE ENTITY
 
                         </div> */}
                     </p>
@@ -715,28 +715,28 @@ export default function Test() {
                 </div>;
             case 4:
                 return <div>
-                    <div className="row">
-                        <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
-                        <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
-                        <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" />
+                    <div className="row" style={{display:"flex", justifyContent:"center"}}>
+                        <div className="col-md-12 my-lg-2" style={{display:"flex", justifyContent:"center"}}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
+                        <div className="col-md-12 my-lg-2" style={{display:"flex", justifyContent:"center"}}><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
+                        <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" style={{margin:"auto"}} id="outlined-basic" label="Price?" variant="outlined" />
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">Intermediary / end customer?</h4>
+                        <h4 className="text-center w-100 text-dark">Intermediary / end customer?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcustomertype(e.target.value)}>
                                 <FormControlLabel value="Intermediary" control={<Radio color="primary" />} label="Intermediary" />
                                 <FormControlLabel value="End customer" control={<Radio color="primary" />} label="End customer" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="fegqbq" className="w-25 text-left" onchange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="fegqbq" className="w-25 text-center" onchange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="fegqbq" className="w-25 text-left" onchange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="fegqbq" className="w-25 text-center" onchange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
                         </div> */}
                     </p></div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-left w-100 text-dark">Sector?</h4>
+                        <h4 className="text-center w-100 text-dark">Sector?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsector(e.target.value)}>
                                 <FormControlLabel value="SPORT" control={<Radio color="primary" />} label="SPORT" />
@@ -749,32 +749,32 @@ export default function Test() {
                                 <FormControlLabel value="CONGRESSES" control={<Radio color="primary" />} label="CONGRESSES" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
+                        {/* <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
                         </div>
-                        <div className="w-50 text-left float-left">
-                            <input type="radio" name="aa" className="w-25 text-left" onchange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
+                        <div className="w-50 text-center float-left">
+                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
                         </div> */}
                     </p></div>
-                    <h4 className="text-left w-100 text-dark">Attach documents and images?</h4>
+                    <h4 className="text-center w-100 text-dark">Attach documents and images?</h4>
                     <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
 
@@ -985,39 +985,39 @@ export default function Test() {
                                         <div className="w-100 my-lg-2">
                                         </div> */}
                                         <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                                            <h4 className="text-left w-100 text-dark">Intermediary / end customer?</h4>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q3" className="w-25 text-left" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
+                                            <h4 className="text-center w-100 text-dark">Intermediary / end customer?</h4>
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q3" className="w-25 text-left" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
                                             </div>
                                         </p></div>
                                         <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                                            <h4 className="text-left w-100 text-dark">Sector?</h4>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
+                                            <h4 className="text-center w-100 text-dark">Sector?</h4>
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
                                             </div>
-                                            <div className="w-50 text-left float-left">
-                                                <input type="radio" name="q1" className="w-25 text-left" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
+                                            <div className="w-50 text-center float-left">
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
                                             </div>
                                         </p></div>
 
@@ -1063,10 +1063,10 @@ export default function Test() {
                                 {/* <div className="text-center w-100"> */}
                                 {/* <p className="d-inline w-100 ">
                                         <div className="w-25 float-left ">
-                                            <input type="radio" name="q1" className="w-25 text-left" value="yes" />Yes
+                                            <input type="radio" name="q1" className="w-25 text-center" value="yes" />Yes
                                           </div>
-                                        <div className="w-75 text-left float-left">
-                                            <input type="radio" name="q1" className="w-25 text-left" value="no" />No
+                                        <div className="w-75 text-center float-left">
+                                            <input type="radio" name="q1" className="w-25 text-center" value="no" />No
                                          </div>
                                     </p> */}
                                 {/* </div> */}
