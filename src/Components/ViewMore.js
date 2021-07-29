@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useParams } from "react-router-dom";
 import ModalImage from "react-modal-image";
 // import "node_modules/video-react/dist/video-react.css";
-import { Player } from 'video-react';
+// import { Player } from 'video-react';
 
 export default function ViewMore() {
     const [blog, setBlog] = useState([]);

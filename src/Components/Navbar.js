@@ -336,28 +336,31 @@ function Navbar() {
     const responseFacebook = (response) => {
         console.log("Facebook response");
         console.log(response)
-        const res = axios.post(`https://api.woofics.com/api/social_login`, {
-            email: response.email,
+        const res = axios.post(`https://api.woofics.com/api/facebook`, {
+            userId: response.userID,
+            name: response.name,
+            email:response.email,
+            picture:response.picture.data
         })
             .then((response) => {
-                localStorage.setItem('user_token', response.data);
-                if (response) {
-                    const role = jwt_decode(localStorage.getItem('user_token'))
-                    if (role.role === 'Client') {
-                        localStorage.setItem('url', '/dashboard')
-                        history.push('/dashboard');
-                    } else if (role.role === 'ServiceProvider') {
-                        localStorage.setItem('url', '/admindashboard')
-                        history.push('/admindashboard');
-                    }
-                    else if (role.role === 'Supplier') {
-                        localStorage.setItem('url', '/supplierdashboard')
-                        history.push('/supplierdashboard');
-                    } else {
-                        localStorage.setItem('url', '/superdashboard')
-                        history.push('/superdashboard');
-                    }
-                }
+                // localStorage.setItem('user_token', response.data);
+                // if (response) {
+                //     const role = jwt_decode(localStorage.getItem('user_token'))
+                //     if (role.role === 'Client') {
+                //         localStorage.setItem('url', '/dashboard')
+                //         history.push('/dashboard');
+                //     } else if (role.role === 'ServiceProvider') {
+                //         localStorage.setItem('url', '/admindashboard')
+                //         history.push('/admindashboard');
+                //     }
+                //     else if (role.role === 'Supplier') {
+                //         localStorage.setItem('url', '/supplierdashboard')
+                //         history.push('/supplierdashboard');
+                //     } else {
+                //         localStorage.setItem('url', '/superdashboard')
+                //         history.push('/superdashboard');
+                //     }
+                // }
                 // console.log(response)
             }, (error) => {
                 setOpen3(true)
