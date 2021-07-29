@@ -229,11 +229,11 @@ export default function StazBar() {
             icon: <RateReviewIcon style={{ color: "#8da2b1" }} />,
             to: '/viewreviews'
         },
-        {
-            name: 'Coupons',
-            icon: <LocalOfferIcon style={{ color: "#8da2b1" }} />,
-            to: '/couponslist'
-        },
+        // {
+        //     name: 'Coupons',
+        //     icon: <LocalOfferIcon style={{ color: "#8da2b1" }} />,
+        //     to: '/couponslist'
+        // },
         {
             name: 'Led ',
             icon: <DvrIcon style={{ color: "#8da2b1" }} />,
