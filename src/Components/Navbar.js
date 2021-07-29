@@ -247,8 +247,8 @@ function Navbar() {
     // Google Auth
 
     const responseGoogle = (respons) => {
-        const res = axios.post(`https://api.woofics.com/api/social_login`, {
-            email: respons.profileObj.email,
+        const res = axios.post(`https://api.woofics.com/api/google`, {
+            google: respons.profileObj,
         })
             .then((response) => {
                 localStorage.setItem('user_token', response.data);
@@ -269,7 +269,7 @@ function Navbar() {
                         history.push('/superdashboard');
                     }
                 }
-                // console.log(response)
+                console.log(response)
             }, (error) => {
                 setOpen3(true)
                 console.log(error);
@@ -334,28 +334,33 @@ function Navbar() {
     // const [ser, setser] = useState('')
 
     const responseFacebook = (response) => {
-        const res = axios.post(`https://api.woofics.com/api/social_login`, {
-            email: response.email,
+        console.log("Facebook response");
+        console.log(response)
+        const res = axios.post(`https://api.woofics.com/api/facebook`, {
+            userId: response.userID,
+            name: response.name,
+            email:response.email,
+            picture:response.picture.data
         })
             .then((response) => {
-                localStorage.setItem('user_token', response.data);
-                if (response) {
-                    const role = jwt_decode(localStorage.getItem('user_token'))
-                    if (role.role === 'Client') {
-                        localStorage.setItem('url', '/dashboard')
-                        history.push('/dashboard');
-                    } else if (role.role === 'ServiceProvider') {
-                        localStorage.setItem('url', '/admindashboard')
-                        history.push('/admindashboard');
-                    }
-                    else if (role.role === 'Supplier') {
-                        localStorage.setItem('url', '/supplierdashboard')
-                        history.push('/supplierdashboard');
-                    } else {
-                        localStorage.setItem('url', '/superdashboard')
-                        history.push('/superdashboard');
-                    }
-                }
+                // localStorage.setItem('user_token', response.data);
+                // if (response) {
+                //     const role = jwt_decode(localStorage.getItem('user_token'))
+                //     if (role.role === 'Client') {
+                //         localStorage.setItem('url', '/dashboard')
+                //         history.push('/dashboard');
+                //     } else if (role.role === 'ServiceProvider') {
+                //         localStorage.setItem('url', '/admindashboard')
+                //         history.push('/admindashboard');
+                //     }
+                //     else if (role.role === 'Supplier') {
+                //         localStorage.setItem('url', '/supplierdashboard')
+                //         history.push('/supplierdashboard');
+                //     } else {
+                //         localStorage.setItem('url', '/superdashboard')
+                //         history.push('/superdashboard');
+                //     }
+                // }
                 // console.log(response)
             }, (error) => {
                 setOpen3(true)
@@ -651,7 +656,7 @@ function Navbar() {
                                             <div className="text-center my-auto mx-auto text-center">
                                                 <div className="col-md-12 mt-5 mx-auto ">
                                                     <FacebookLogin
-                                                        appId="2736881086597729"
+                                                        appId="546365809890817"
                                                         // autoLoad={true}
                                                         // render={renderProps => (
                                                         // <div className="facebook text-center mr-3">

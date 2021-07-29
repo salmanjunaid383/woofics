@@ -68,7 +68,7 @@ import ClientOffers from './Components/ClientPortal/Offers';
 import OfferList from './Components/AdminPortal/OfferList';
 import ContactUs from './Components/ContactUs';
 import StazCal from './Components/StazCal'
-
+import Logo from './Components/SuperPortal/Logo';
 // Landing Pager 
 import Landing from './Components/LandingPage';
 import PriceCalculator from './Components/PriceCalculator';
@@ -101,7 +101,7 @@ import OfferBadge from './Components/SuperPortal/OfferBadge';
 import CreateForms from './Components/SuperPortal/CreateForms';
 import ComplainResponse from './Components/SuperPortal/ComplainResponse';
 import DataofInt from './Components/SuperPortal/DataofInt';
-
+import description from './Components/SuperPortal/description';
 
 //provider
 import ProviderHelp from './Components/AdminPortal/Help';
@@ -139,6 +139,8 @@ import SuperDashboard from './Components/SuperPortal/SuperDashboard';
 import Dashboard from './Components/ClientPortal/Dashboard';
 import ProviderDashboard from './Components/AdminPortal/AdminDashboard'
 import TestCalulator from './Components/TestCalculator'
+import forum from './Components/forum'
+import detailforum from './Components/detailforum'
 function App() {
 
 
@@ -165,6 +167,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/testcal" component={TestCalulator}></Route>
           <Route path="/forgetpwd" component={Forgetpwd} />
+          <Route path="/forum" component={forum}></Route>
+          <Route path="/detailforum/:quid" component={detailforum}></Route>
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/admindashboard" component={ProviderDashboard} />
@@ -172,6 +176,7 @@ function App() {
           <Route exact path="/client" component={Client} />
           <Route exact path="/serviceprovider" component={ServiceProvider} />
           <Route exact path="/supplier" component={Supplier} />
+          <Route exact path="/description" component={description}></Route>
           <Route exact path="/suppliers" component={Suppliers} />
           <Route exact path="/updateprofile" component={UpdateProfile} />
           <Route exact path="/adminupdateprofile" component={AdminUpdateProfile} />
@@ -179,6 +184,7 @@ function App() {
           <Route exact path="/addservice" component={AddService} />
           <Route exact path="/myservice" component={YourService} />
           <Route exact path="/feedback/:fid" component={Feedback} />
+          <Route exact path ="/logo" component ={Logo}/>
           <Route exact path="/supplierdashboard" component={SupplierDashboard} />
           <Route exact path="/quotation" component={Quotation} />
           <Route exact path="/allquotation/:sid" component={AllQuotation} />

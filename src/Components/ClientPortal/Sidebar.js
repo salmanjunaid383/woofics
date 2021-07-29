@@ -488,13 +488,7 @@ export default function Sidebar() {
                         <span className="text-black font-medium mr-3">Help & Support</span>
                     </a>
                 </Typography>
-                <hr />
-                <Typography className={classes.typography}>
-                    <a className="profile-pic" onClick={() => history.push("/mycoupon")}>
-                        <i className="fa fa-heart mx-3"></i>
-                        <span className="text-black font-medium mr-3">My Coupons</span>
-                    </a>
-                </Typography>
+
                 <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>

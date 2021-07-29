@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
+import axios from 'axios';
 import '../css/footer.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -16,6 +17,34 @@ import { Link } from 'react-router-dom'
 
 
 function Footer() {
+    const [label,setLabel]=useState('');
+    const [value,setValue]=useState('');
+
+    const [dot,getDot]=useState([]);
+
+    const [text,getText]=useState([]);
+    var index=1;
+
+    function GetDot(){
+        const { data: response } = axios.get(`https://api.woofics.com/api/footer`)
+            .then((response) => {
+                getDot(response.data);
+                console.log(response.data)
+            }, (Error) => {
+                console.log(Error);
+            });
+        
+            const { data: responses } = axios.get(`https://api.woofics.com/api/slogun`)
+            .then((response) => {
+                getText(response.data);
+                console.log(response.data)
+            }, (Error) => {
+                console.log(Error);
+            });
+    }
+    useEffect(() => {
+        GetDot();
+    }, [])
     return (
         <>
             {/* <div style={{marginTop:'-50px' }}> */}
@@ -32,7 +61,15 @@ function Footer() {
                                         <img src={footer_logo} style={{ width: 250 }} />
                                     </div>
                                     <div class="text-white mb-4 p leftside-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                        {
+                                            text.map((val,id) => {
+                                                return (
+                                                    <>
+                                                    {val.slogun}
+                                                    </>
+                                                )
+                                            })
+                                        }
                                     </div>
                                     <div class="woofic_social_logo ">
                                         <a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"> <FacebookIcon className="text-white mx-2" /></a>
@@ -67,22 +104,19 @@ function Footer() {
 
                     <div class="col-md-4 col-sm-12 pr-md-5 marginclass footer-margin" >
                         <div className="row  text-center wooficslogo footer-right-side" >
-                            <div className="col-md-6 col-sm-12 col-xs-6">
-                                <a href="https://stripe.com/" target="_blank" >  <img src={footer_logo4} className="footerLogo" /></a>
+                        {
+                            dot.map((val,id) => {
+                                return (
+                                    <>
+                                        <div className="col-md-6 col-sm-12 col-xs-6">
+                                            <a href="#" target="_blank" >  <img src={val.value} className="footerLogo" /></a>
 
-                            </div>
-                            <div className="col-md-6 col-sm-12 col-xs-6">
-                                <a href="https://www.google.com/partners/" target="_blank">  <img src={footer_logo2} className="footerLogo" /></a>
-
-                            </div>
-                            <div className="col-md-6 col-sm-12 col-xs-6">
-
-                                <a href="https://www.thawte.com/" target="_blank">  <img src={footer_logo3} className="footerLogo" /></a>
-                            </div>
-                            <div className="col-md-6 col-sm-12 col-xs-6">
-                                <a href="https://www.trustpilot.com/" target="_blank">  <img src={footer_logo5} className="footerLogo" /></a>
-
-                            </div>
+                                        </div>
+                                    </>
+                                )
+                            })
+                        }
+                            
 
 
                         </div>

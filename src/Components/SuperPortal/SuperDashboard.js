@@ -50,6 +50,16 @@ export default function SuperDashboard() {
     const [TotalUser, setTotalUser] = useState();
     const [TotalPerProjects, setTotalPerProjects] = useState();
     const [staz, setStaz] = useState(false);
+    const [data,getData]=useState([]);
+
+    function getRegister(){
+        const {data: response}=axios.get(`https://api.woofics.com/api/latest_user`)
+            .then((response) => {
+                getData(response.data)
+            }, (Error)=> {
+                console.log(Error);
+            });
+    }
 
 
     function TotalClient() {
@@ -231,6 +241,7 @@ export default function SuperDashboard() {
         TotalSer()
         TotoalProject()
         TotoalUser()
+        getRegister();
     }, [])
 
 
@@ -467,23 +478,34 @@ export default function SuperDashboard() {
                                     </section>
                                 </div>
                                 <div className="table-div">
-                                    <table  id="for-table-setting" className="for-table-setting">
+                                    <table  id="for-table-setting" className="for-table-setting table no-wrap for-table-setting">
                                         <tr className="heading-row">
-                                            <th>salman</th>
-                                            <th>salman</th>
-                                            <th>salman</th>
-                                            <th>salman</th>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Date</th>
                                         </tr>
-                                        <tr className="data-row">
-                                            <td>junaid</td>
-                                            <td>junaid</td>
-                                            <td>junaid</td>
-                                            <td>junaid</td>
-                                        </tr>
+
+                                        {
+                                            data.map((val,id) => {
+                                                return(
+                                                    <>
+                                                        <tr className="data-row">
+                                                        <td className="txt-oflo">{val.id}</td>
+                                                        <td className="txt-oflo">{val.first_name} {val.last_name}</td>
+                                                        <td className="txt-oflo">{val.email}</td>
+                                                        <td className="txt-oflo">{val.date}</td>
+                                                    </tr>
+                                                    </>
+                                                )
+                                            })
+                                        }
+                                        
                                     </table>
                                 </div>
 
                             </div>
+                            
                             <div className="col-md-12 col-xl-4" style={{ border: "2px solid #f3f3f3" }}>
 
                                 <div className="container my-lg-5">
@@ -513,7 +535,7 @@ export default function SuperDashboard() {
                                 </div>
                             </div>
                         </div>
-                        {/* links  */}
+                        <br></br>
                         <div class="row links-parent">
                             <div class="col-md-6 col-sm-6 col-12 col-xl-4 col-lg-6">
                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>

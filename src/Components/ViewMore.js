@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import ModalImage from "react-modal-image";
+// import "node_modules/video-react/dist/video-react.css";
+// import { Player } from 'video-react';
 
 export default function ViewMore() {
     const [blog, setBlog] = useState([]);
@@ -37,18 +39,15 @@ export default function ViewMore() {
                             : blog.map((val, id) => {
                                 return (
                                     <>
-                                        {val.category === category ? <div className="col-md-3 no-gutters">
+                                        {val.category === category ? 
+                                            val.content === "image" ? <div className="col-md-4 no-gutters">
                                             <ModalImage className="img-fluid ima hvr-grow"
                                                 small={val.url}
                                                 large={val.url}
-                                                alt="Hello World!"
+                                                alt={val.name}
                                             />
-                                            {/* <img
-                                                style={{ height: "250px", width: "100%" }}
-                                                className="img-fluid "
-                                                src={val.url}
-                                            /> */}
-                                        </div> : null}
+                                        </div> :<div className="col-md-4 no-gutters"> <video width="100%" height="350" controls > <source src={val.url}></source></video></div>
+                                         : null}
                                     </>
                                 )
                             })}

@@ -211,7 +211,7 @@ export default function QuoteMain() {
     const [doc, setdoc] = useState("");
     const [email, setemail] = useState("");
     const [progress, setprogress] = useState("Publish your Service?");
-
+    const [price,setPrice]=useState("");
 
     const [malik, setmalik] = useState('disabled')
 
@@ -227,7 +227,7 @@ export default function QuoteMain() {
             if(i === 2){
                 if(
                 name === "" ||
-                contact === "" 
+                contact === "" || price === ""
                 )
                 {
                     alert("please fill in the form");
@@ -267,6 +267,7 @@ export default function QuoteMain() {
                     entity: entity,
                     email: email,
                     documents: doc,
+                    price: price,
                     client_id: decoded.sub
                 })
                     .then((response) => {
@@ -828,6 +829,7 @@ export default function QuoteMain() {
                     <div className="row">
                         <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
                         <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
+                        <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" />
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
                         <h4 className="text-left w-100 text-dark">Intermediary / end customer?</h4>
@@ -1080,6 +1082,8 @@ export default function QuoteMain() {
                             <div className="w-100 my-lg-2"><TextField type="number" onChange={(e) => setcontact(e.target.value)} className="w-50" id="outlined-basic" label="Contact?" variant="outlined" /> </div>
                             <h4 className="text-left w-100 text-dark">Company Name?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcompany(e.target.value)} className="w-50" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
+                            <h4 className="text-left w-100 text-dark">Price?</h4>
+                            <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div>
                             <div className="w-100 my-lg-2"> <p className="d-inline w-100">
                                 <h4 className="text-left w-100 text-dark">Intermediary / end customer?</h4>
                                 <div className="w-50 text-left float-left">

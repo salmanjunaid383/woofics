@@ -37,6 +37,7 @@ export default function CreateImg() {
     const [wait, setwait] = useState('Create');
     const [disable, setdisable] = useState('');
     const [imageUrl, setImageUrl] = useState('')
+    const [content,setContent] = useState('')
 
 
     function Feedback(e) {
@@ -46,7 +47,8 @@ export default function CreateImg() {
         const res = axios.post(`https://api.woofics.com/api/get_inspired`, {
             category: category,
             name: name,
-            url: imageUrl
+            url: imageUrl,
+            content : content
         })
             .then((res) => {
                 if (res) {
@@ -75,10 +77,14 @@ export default function CreateImg() {
     const onchange = async (e) => {
         setProgress('Loading...')
         const file = e.target.files[0];
-        const ImagesRef = firebase.storage().ref('videos').child(file.name);
+        const type = file.type
+        const image = type.split("/")
+        console.log(image[0]);
+        const ImagesRef = firebase.storage().ref('images').child(file.name);
         await ImagesRef.put(file)
         ImagesRef.getDownloadURL().then((url) => {
             setImageUrl(url)
+            setContent(image[0])
             setProgress('')
             console.log(url)
         })

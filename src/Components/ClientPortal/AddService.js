@@ -184,86 +184,72 @@ export default function Test() {
     const [doc, setdoc] = useState("");
     const [email, setemail] = useState("");
     const [progress, setprogress] = useState("Publish your Service?");
-
+    const [price,setPrice]=useState("");
 
     const [malik, setmalik] = useState('disabled')
 
     function SendService() {
         
-        // console.log(description,
-        //     buy,
-        //     indoor,
-        //     install,
-        //     model,
-        //     visuald,
-        //     screenuse,
-        //     screenbase,
-        //     screenheight,
-        //     screenaccess,
-        //     screenorientation,
-        //     controlsys,
-        //     adverseweather,
-        //     structure,
-        //     deliverytime,
-        //     shipping,
-        //     sensor,
-        //     warranty,
-        //     carcass,
-        //     flycases,
-        //     entity,
-        //     name,
-        //     contact,
-        //     company,
-        //     customertype,
-        //     sector,
-        //     postalcode,
-        //     comments,
-        //     email)
-        setprogress('Please wait...')
+        
+        
         const token = localStorage.getItem('user_token');
         var decoded = jwt_decode(token);
 
-        const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
-            description: description,
-            buy: buy,
-            indoor: indoor,
-            installation: install,
-            model: model,
-            visual_distance: visuald,
-            screen_use: screenuse,
-            screen_base: screenbase,
-            screen_height: screenheight,
-            screen_access: screenaccess,
-            screen_orientation: screenorientation,
-            control_system: controlsys,
-            adverse_weather: adverseweather,
-            structure: structure,
-            delivery_time: deliverytime,
-            shipping: shipping,
-            sensor: sensor,
-            warranty: warranty,
-            carcase_material: carcass,
-            fly_cases: flycases,
-            name: name,
-            contact: contact,
-            company: company,
-            customer_type: customertype,
-            sector: sector,
-            postal_code: postalcode,
-            comments: comments,
-            entity: entity,
-            email: email,
-            documents: doc,
-            client_id: decoded.sub
-        })
-            .then((response) => {
-                setprogress('Published')
-                alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
-                history.push('/myservice')
-            }, (error) => {
-                setprogress('Publish your Service?')
-                alert('You left some feilds empty !')
-            });
+        if(
+            name === "" ||
+            contact === "" || price === ""
+            )
+            {
+                alert("please fill in the form");
+            }
+            else{
+                setprogress('Please wait...')
+                const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                    description: description,
+                    buy: buy,
+                    indoor: indoor,
+                    installation: install,
+                    model: model,
+                    visual_distance: visuald,
+                    screen_use: screenuse,
+                    screen_base: screenbase,
+                    screen_height: screenheight,
+                    screen_access: screenaccess,
+                    screen_orientation: screenorientation,
+                    control_system: controlsys,
+                    adverse_weather: adverseweather,
+                    structure: structure,
+                    delivery_time: deliverytime,
+                    shipping: shipping,
+                    sensor: sensor,
+                    warranty: warranty,
+                    carcase_material: carcass,
+                    fly_cases: flycases,
+                    name: name,
+                    contact: contact,
+                    company: company,
+                    customer_type: customertype,
+                    sector: sector,
+                    postal_code: postalcode,
+                    comments: comments,
+                    entity: entity,
+                    email: email,
+                    documents: doc,
+                    price: price,
+                    client_id: decoded.sub
+                })
+                    .then((response) => {
+                        setprogress('Published')
+                        alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
+                        history.push('/myservice')
+                    }, (error) => {
+                        setprogress('Publish your Service?')
+                        alert('You left some feilds empty !')
+                    });
+
+            }
+
+     
     }
 
 
@@ -732,6 +718,7 @@ export default function Test() {
                     <div className="row">
                         <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
                         <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
+                        <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" />
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
                         <h4 className="text-left w-100 text-dark">Intermediary / end customer?</h4>
@@ -990,6 +977,8 @@ export default function Test() {
                                             <TextField onChange={(e) => setname(e.target.value)} className="w-25" id="outlined-basic" label="Name?" variant="outlined" />
                                             <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="w-25 mx-4 " id="outlined-basic" label="Contact?" variant="outlined" />
                                             <TextField onChange={(e) => setcompany(e.target.value)} className="w-25 " id="outlined-basic" label="Company Name?" variant="outlined" />
+                                            
+                                            <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" />
                                         </div>
                                         {/* <div className="w-100 my-lg-2">
                                         </div>
