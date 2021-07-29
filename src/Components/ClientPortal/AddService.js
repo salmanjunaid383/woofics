@@ -197,7 +197,7 @@ export default function Test() {
 
         if(
             name === "" ||
-            contact === "" || price === ""
+            contact === "" 
             )
             {
                 alert("please fill in the form");
@@ -235,7 +235,7 @@ export default function Test() {
                     entity: entity,
                     email: email,
                     documents: doc,
-                    price: price,
+   
                     client_id: decoded.sub
                 })
                     .then((response) => {
@@ -715,10 +715,10 @@ export default function Test() {
                 </div>;
             case 4:
                 return <div>
-                    <div className="row" style={{display:"flex", justifyContent:"center"}}>
-                        <div className="col-md-12 my-lg-2" style={{display:"flex", justifyContent:"center"}}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
-                        <div className="col-md-12 my-lg-2" style={{display:"flex", justifyContent:"center"}}><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
-                        <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" style={{margin:"auto"}} id="outlined-basic" label="Price?" variant="outlined" />
+                    <div className="row">
+                        <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
+                        <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
+                        {/* <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" /> */}
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
                         <h4 className="text-center w-100 text-dark">Intermediary / end customer?</h4>
@@ -978,7 +978,7 @@ export default function Test() {
                                             <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="w-25 mx-4 " id="outlined-basic" label="Contact?" variant="outlined" />
                                             <TextField onChange={(e) => setcompany(e.target.value)} className="w-25 " id="outlined-basic" label="Company Name?" variant="outlined" />
                                             
-                                            <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" />
+                                            {/* <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" /> */}
                                         </div>
                                         {/* <div className="w-100 my-lg-2">
                                         </div>
