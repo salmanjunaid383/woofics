@@ -55,6 +55,8 @@ import SwapVertIcon from '@material-ui/icons/SwapVert';
 import CustomAdminAuth from "../CustomAdminAuth";
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import Pusher from 'pusher-js';
+import ImageIcon from '@material-ui/icons/Image';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 const drawerWidth = 240;
 
@@ -266,6 +268,16 @@ export default function StazBar() {
             name: 'View Contacts',
             icon: <ContactMailIcon style={{ color: "#8da2b1" }} />,
             to: '/viewcontact'
+        },
+        {
+            name: "Logo",
+            icon: <ImageIcon style={{color: "#8da2b1" }} />,
+            to: "logo"
+        },
+        {
+            name: "Description",
+            icon: <DescriptionIcon style={{color: "#8da2b1"}}/>,
+            to: "description"
         },
         {
             name: 'Discussion Forum',
