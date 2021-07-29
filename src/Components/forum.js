@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
-import StazBar from './Sidebar'
-import AdminBar from '../SuperPortal/Stazbar';
-import SupBar from '../SupplierPortal/Sidebar';
-import ProBar from '../AdminPortal/Sidebar';
+// import StazBar from './Sidebar'
+// import AdminBar from '../SuperPortal/Stazbar';
+// import SupBar from '../SupplierPortal/Sidebar';
+// import ProBar from '../AdminPortal/Sidebar';
 import './DiscussionForum.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-
-
+import Navbar from './Navbar'
+import Footer from './LandingPage/components/Footer'
 import { useTheme } from '@material-ui/core/styles';
-import CustomAuth from "../CustomAuth";
+// import CustomAuth from "../CustomAuth";
 
 
 
@@ -104,7 +104,7 @@ function getModalStyle() {
 }
 
 export default function DiscussionForum() {
-    CustomAuth();
+    // CustomAuth();
     let history = useHistory();
 
 
@@ -115,14 +115,14 @@ export default function DiscussionForum() {
 
     var token = localStorage.getItem("user_token");
 
-    function tokenRedirect(){
-        if(token===null){
-            history.push("/forum");
-        }
-    }
-    useEffect(() => {
-        tokenRedirect();
-    },[]);
+    // function tokenRedirect(){
+    //     if(token===null){
+    //         history.push("/login");
+    //     }
+    // }
+    // useEffect(() => {
+    //     tokenRedirect();
+    // },[]);
 
     if(token !== null)
     {
@@ -204,32 +204,34 @@ export default function DiscussionForum() {
     };
 
 
-    var adminSideBar;
-    var clientSideBar;  
-    var providerSideBar;
-    var supplierSideBar;
-    if(token !== null)
-    {
-        const role = jwt_decode(localStorage.getItem('user_token'))
-                        if (role.role === 'Client') {
-                            clientSideBar=true;
-                        } else if (role.role === 'ServiceProvider')
-                            providerSideBar=true;
-                        else if (role.role === 'Supplier') {
-                            supplierSideBar=true;
-                        } else {
-                            adminSideBar=true;
-                        }
-    }
+    // var adminSideBar;
+    // var clientSideBar;  
+    // var providerSideBar;
+    // var supplierSideBar;
+    // if(token !== null)
+    // {
+    //     const role = jwt_decode(localStorage.getItem('user_token'))
+    //                     if (role.role === 'Client') {
+    //                         clientSideBar=true;
+    //                     } else if (role.role === 'ServiceProvider')
+    //                         providerSideBar=true;
+    //                     else if (role.role === 'Supplier') {
+    //                         supplierSideBar=true;
+    //                     } else {
+    //                         adminSideBar=true;
+    //                     }
+    // }
     
     
 
 
     return (
         <>
-
+            <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
+            <Navbar />
+            </section>
             <div className="d-sm-flex">
-                {
+                {/* {
                     adminSideBar ? (
                         <AdminBar></AdminBar>
                     ) : (null)
@@ -248,16 +250,16 @@ export default function DiscussionForum() {
                     providerSideBar ? (
                         <ProBar></ProBar>
                     ) : (null)
-                }
+                } */}
+
+              
                 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
                     
 
 
-                    <div className="float-right mt-4  mr-4">
-                        <button type="submit" class="s-butto greenbtn text-white" onClick={handleOpenn}>Ask a Question?</button>
-                    </div>
+                    
                     <div className="page-wrapper bg-light">
                         <div class="container mt-100">
                                    <div class="d-md-flex mb-3">
@@ -271,7 +273,7 @@ export default function DiscussionForum() {
                                                 return (
                                                     <>
 
-                                                        <Link to={`/clientmoredetailsdiscussionforum/${val.id}`}>
+                                                        <Link to={`/detailforum/${val.id}`}>
                                                             <div class="card mb-4 mx-auto">
                                                                 <div class="card-header ">
                                                                     <div class="media flex-wrap w-100 align-items-center">
@@ -327,10 +329,11 @@ export default function DiscussionForum() {
                     </div>
 
                 </main>
+                
             </div>
 
 
-
+            <Footer/>
 
         </>
     );

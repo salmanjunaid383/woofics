@@ -139,6 +139,8 @@ import SuperDashboard from './Components/SuperPortal/SuperDashboard';
 import Dashboard from './Components/ClientPortal/Dashboard';
 import ProviderDashboard from './Components/AdminPortal/AdminDashboard'
 import TestCalulator from './Components/TestCalculator'
+import forum from './Components/forum'
+import detailforum from './Components/detailforum'
 function App() {
 
 
@@ -165,6 +167,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/testcal" component={TestCalulator}></Route>
           <Route path="/forgetpwd" component={Forgetpwd} />
+          <Route path="/forum" component={forum}></Route>
+          <Route path="/detailforum/:quid" component={detailforum}></Route>
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/admindashboard" component={ProviderDashboard} />
