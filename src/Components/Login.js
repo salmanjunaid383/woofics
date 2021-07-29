@@ -101,6 +101,7 @@ export default function Login() {
     // Google Auth
 
     const responseGoogle = (respons) => {
+        console.log(respons)
         const res = axios.post(`https://api.woofics.com/api/social_login`, {
             email: respons.profileObj.email,
         })
