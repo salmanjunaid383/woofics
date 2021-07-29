@@ -653,7 +653,7 @@ function Navbar() {
                                             <div className="text-center my-auto mx-auto text-center">
                                                 <div className="col-md-12 mt-5 mx-auto ">
                                                     <FacebookLogin
-                                                        appId="266284951495829"
+                                                        appId="546365809890817"
                                                         // autoLoad={true}
                                                         // render={renderProps => (
                                                         // <div className="facebook text-center mr-3">
