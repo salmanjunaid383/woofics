@@ -317,7 +317,7 @@ export default function Test() {
                     <br />
                     <br />
 
-                    <div>
+                    <div style={{marginTop:"-18px"}}>
                         <h4 className="text-center w-100 text-dark">Do you know the model you are looking for?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
@@ -328,8 +328,8 @@ export default function Test() {
                     </div>
                     <br />
                     <br />
-                    <div>
-                        <h4 className="text-center w-100 text-dark d-inline">Maximum and minimum vision distance?</h4>
+                    <div style={{marginTop:"-18px"}}>
+                        <h4 className="text-center w-100 text-dark d-inline" >Maximum and minimum vision distance?</h4>
                         <div>
                             <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Maximum and minimum " variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
@@ -339,7 +339,7 @@ export default function Test() {
                     <br />
                     <h4 className="text-center w-100 text-dark">Use of Screen?</h4>
                     <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
+                        <RadioGroup row aria-label="position" style={{ justifyContent:"center"}} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
                             <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
                             <FormControlLabel value="ORPORATE IMAGE" control={<Radio color="primary" />} label="ORPORATE IMAGE" />
                             <FormControlLabel value="ADVERTISING" control={<Radio color="primary" />} label="ADVERTISING" />
@@ -383,7 +383,7 @@ export default function Test() {
                 return <div className="w-100 my-lg-5 text-center">
                     <div>
                         <h4 className="text-center w-100 text-dark d-inline">Screen dimension?</h4>
-                        <div>
+                        <div style={{marginTop:"10px"}}>
                             <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
                             <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
                         </div>
@@ -391,7 +391,7 @@ export default function Test() {
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">Screen?</h4>
+                    <h4 className="text-center w-100 text-dark" style={{marginTop:"-10px"}}>Screen?</h4>
                     <input value="front" onChange={(e) => setscreenaccess(e.target.value)}
                         type="radio" name="fqf"
                         id="sadd" class="input-hidden " />
@@ -416,7 +416,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">Control System?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{marginTop:"15px"}}>Control System?</h4>
                         <FormControl className="text-center"  component="fieldset">
                             <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
                                 <FormControlLabel className="text-center" value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
@@ -485,9 +485,9 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">Is the display exposed to adverse weather?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{marginBottom:"10px", marginTop:"15px"}}>Is the display exposed to adverse weather?</h4>
                         <FormControl component="fieldset">
-                            <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
+                            <RadioGroup style={{justifyContent:"center"}}row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
                                 <FormControlLabel value="NEAR THE SEA" control={<Radio color="primary" />} label="NEAR THE SEA" />
                                 <FormControlLabel value="HIGH MOUNTAIN" control={<Radio color="primary" />} label="HIGH MOUNTAIN" />
                                 <FormControlLabel value="LITTLE EXTREME" control={<Radio color="primary" />} label="LITTLE EXTREME" />
@@ -512,7 +512,7 @@ export default function Test() {
                     <br />
                     <br />
                     <br />
-                    <h4 className="text-center w-100 text-dark">Need Structure?</h4>
+                    <h4 className="text-center w-100 text-dark" style={{marginTop:"-10px"}}>Need Structure?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
                         id="dsdq" class="input-hidden " value='Monoposte' onChange={(e) => setstructure(e.target.value)} />
@@ -549,7 +549,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">Delivery Time?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{marginTop:"15px"}}>Delivery Time?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel control={<Radio color="primary" />} label="Select date from Calander" value="date" />
@@ -716,12 +716,12 @@ export default function Test() {
             case 4:
                 return <div>
                     <div className="row">
-                        <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
-                        <div className="col-md-12 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
-                        {/* <TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" /> */}
+                        <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
+                        <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
+                        {/* <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}></div><TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" style={{margin:"auto"}} /> */}
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">Intermediary / end customer?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{marginTop:"25px"}}>Intermediary / end customer?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcustomertype(e.target.value)}>
                                 <FormControlLabel value="Intermediary" control={<Radio color="primary" />} label="Intermediary" />
@@ -736,7 +736,7 @@ export default function Test() {
                         </div> */}
                     </p></div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">Sector?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{marginTop:"10px"}}>Sector?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsector(e.target.value)}>
                                 <FormControlLabel value="SPORT" control={<Radio color="primary" />} label="SPORT" />
@@ -895,9 +895,6 @@ export default function Test() {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    
-
-
 
                     <div className="page-wrapper bg-light" style={{ display: display1 }}>
                         <div class="container-fluid" >
@@ -906,7 +903,7 @@ export default function Test() {
                                     <i className="fa fa-chevron-left fa-2x" onClick={() => Displaythree()}></i>
                                     <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
                                 </div>
-                                <div class="col-lg-11 col-xlg-11 col-md-11 mx-auto">
+                                <div class="col-lg-11 col-xlg-11 col-md-11 mx-auto" style={{textAlign:"center"}}>
                                     <div className={classes.root}>
                                         <div className="d-none d-md-block">
                                             <Stepper activeStep={activeStep} alternativeLabel>
