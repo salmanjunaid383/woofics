@@ -55,8 +55,11 @@ export default function UpdateProfile() {
 
     const [card,setCard]=useState("");
     const [cardName,setCardName]=useState("")
-    const [valid,setValid]=useState("")
     const[cvc,setCvc]=useState("")
+    const[expMonth,setExpMonth]=useState("")
+    const[expYear,setExpYear]=useState("")
+    const[stripeEmail,setStripeEmail]=useState("")
+
     const [cardProgress,setCardProgress]=useState("Update Credit Card")
 
     const [openpop, setOpenpop] = useState()
@@ -66,6 +69,31 @@ export default function UpdateProfile() {
         }
         setOpenpop(false);
     };
+
+    function updateCard(e){
+        e.preventDefault();
+        setCardProgress("Loading... ")
+        const { data: response } = axios.post(
+            `https://api.woofics.com/api/save_card`,
+            {
+                name: cardName,
+                card_number: card,
+                exp_month: expMonth,
+                exp_year: expYear,
+                cvc: cvc,
+                email: stripeEmail,
+                user_id:decoded.sub
+                
+            }).then((response) => {
+                console.log(response)
+                setCardProgress('Update Profile')
+                // setOpenpop(true);
+            }, (Error) => {
+                console.log(Error);
+                setCardProgress('Update Profile')
+            });
+
+    }
 
     function LoginBtn(e) {
         e.preventDefault();
@@ -261,29 +289,38 @@ export default function UpdateProfile() {
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Card no</label>
-                                                    <input type="text" defaultValue={data.first_name}
+                                                    <input type="text" 
                                                         class="form-control p-0 border-0" onChange={(e) => setCard(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Name</label>
-                                                    <input type="text" defaultValue={data.last_name}
-                                                        class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
+                                                    <input type="text"  class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
                                             
                                             </div>
 
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Valid Thru</label>
-                                                    <input type="text" defaultValue={data.first_name}
-                                                        class="form-control p-0 border-0" onChange={(e) => setValid(e.target.value)} /> </div>
+                                                    <label class="col-md-6 p-0 bold">Expiry Month</label>
+                                                    <input type="text" 
+                                                        class="form-control p-0 border-0" onChange={(e) => setExpMonth(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">CVC</label>
-                                                    <input type="text" defaultValue={data.last_name}
-                                                        class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
+                                                    <label class="col-md-6 p-0 bold">Expiry Year</label>
+                                                    <input type="text"  class="form-control p-0 border-0" onChange={(e) => setExpYear(e.target.value)} /> </div>
                                             
-                                            </div>                                           
+                                            </div>  
+
+                                            <div className="row">
+                                            <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">CVC</label>
+                                                    <input type="text" 
+                                                        class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
+                                                <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Stripe Email</label>
+                                                    <input type="text" class="form-control p-0 border-0" onChange={(e) => setStripeEmail(e.target.value)} /> </div>
+                                            
+                                            </div>                                              
                                             <div class="form-group mb-4">
                                                     <div class="col-sm-12 text-center">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={LoginBtn}>{cardProgress}</button>
+                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={updateCard}>{cardProgress}</button>
                                                     </div>
                                                 </div>
 
