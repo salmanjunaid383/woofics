@@ -101,6 +101,15 @@ function Navbar() {
                         })
     
                 }
+            const match = window.matchMedia("(max-width: 1024px)");
+            match.addEventListener("change", resize);
+            function resize(e) {
+                if (e.matches) { // If media query matches
+                    setLogo(true);
+                } else {
+                   setLogo(false);
+                }
+            }
 
         // if (localStorage.getItem('url')) {
         //     if (localStorage.getItem('url')) {
@@ -110,7 +119,7 @@ function Navbar() {
         // }
     }, [])
 
-
+    
 
     function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -377,39 +386,35 @@ function Navbar() {
     function changeBackground() {
         if (window.scrollY >= 50) {
 
-            // document.getElementById("woofic-logo").style.backgroundImage="./LandingPage/images/wetransfer-01f136/Woofic-2.png";
-            // // document.getElementById("woofic-logo").style.width="150px";
-            // // document.getElementById("woofic-logo").style.height="50px";
             try {
                 setNavState(true);
                
                 setLogo(true);
-                // isFirstImage = false;
-                // const image = (isFirstImage) ? logo2 : logo1
-                // this.logoPath = logo1;
+                const match = window.matchMedia("(max-width: 1024px)");
+                match.addEventListener("change", resize);
+                function resize(e) {
+                    if (e.matches) { // If media query matches
+                        setLogo(true);
+                    } else {
+                    setLogo(false);
+                    }
+                }
+                
             }
             catch {
 
             }
-
-
-
-
-
 
         }
         else {
    
             try {
                 setNavState(false);
-                
                 setLogo(false)
-                
             }
             catch {
 
             }
-
 
         }
 
@@ -837,6 +842,9 @@ function Navbar() {
                 anchorEl={anchorElStaz}
                 onClose={handleCloseStaz}
                 disableScrollLock={true}
+                className="profilePopover"
+                
+                body={<div className="profilePopover">Popover Content</div>}
                 // container={anchorElStaz.current}
                 anchorOrigin={{
                     vertical: 'bottom',

@@ -41,7 +41,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
 import CustomSupplierAuth from "../CustomSupplierAuth";
 import AssignmentIcon from '@material-ui/icons/Assignment';
-
+import PaymentIcon from '@material-ui/icons/Payment';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -174,7 +174,7 @@ export default function SupplierSidebar() {
             to: 'suppliertodo'
         },
         {
-            name: 'Services',
+            name: 'Leads',
             icon: <PlaylistAddCheckIcon  style={{ color: "#cdcdcd" }}/>,
             to: 'quotation'
         },
@@ -187,6 +187,11 @@ export default function SupplierSidebar() {
             name: 'Ledger',
             icon: <BorderColorIcon style={{ color: "cdcdcd" }} />,
             to: 'supplierledger'
+        },
+        {
+            name: 'Invoice',
+            icon : <PaymentIcon style={{color: "cdcdcd"}}/>,
+            to: 'supplierinvoice'
         },
         {
             name: 'Discussion Forum',

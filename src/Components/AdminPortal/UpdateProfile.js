@@ -53,6 +53,12 @@ export default function UpdateProfile() {
     const [rat, setrat] = useState("");
     const [progress, setprogress] = useState("Update Profile");
 
+    const [card,setCard]=useState("");
+    const [cardName,setCardName]=useState("")
+    const [valid,setValid]=useState("")
+    const[cvc,setCvc]=useState("")
+    const [cardProgress,setCardProgress]=useState("Update Credit Card")
+
     function LoginBtn(e) {
         e.preventDefault();
         setprogress('Loading...')
@@ -233,6 +239,51 @@ export default function UpdateProfile() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="page-wrapper px-lg-5">
+                        <div class="container-fluid">
+                            <div class="row border bg-light">
+                                <div class="col-lg-8 col-xlg-8 col-md-8 mx-auto ">
+                                    <div class="">
+                                        <div class="card-body">
+                                            <form class="form-horizontal form-material" >
+                                            <div className="row">
+                                            <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Card no</label>
+                                                    <input type="text" defaultValue={data.first_name}
+                                                        class="form-control p-0 border-0" onChange={(e) => setCard(e.target.value)} /> </div>
+                                                <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Name</label>
+                                                    <input type="text" defaultValue={data.last_name}
+                                                        class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
+                                            
+                                            </div>
+
+                                            <div className="row">
+                                            <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Valid Thru</label>
+                                                    <input type="text" defaultValue={data.first_name}
+                                                        class="form-control p-0 border-0" onChange={(e) => setValid(e.target.value)} /> </div>
+                                                <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">CVC</label>
+                                                    <input type="text" defaultValue={data.last_name}
+                                                        class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
+                                            
+                                            </div>                                           
+                                            <div class="form-group mb-4">
+                                                    <div class="col-sm-12 text-center">
+                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={LoginBtn}>{cardProgress}</button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-4 col-xlg-3 col-md-12"></div>
+                                            </div>
+                                            </div>
+                                            </div>
 
                 </main>
             </div>
