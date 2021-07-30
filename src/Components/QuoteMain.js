@@ -212,80 +212,78 @@ export default function QuoteMain() {
     const [doc, setdoc] = useState("");
     const [email, setemail] = useState("");
     const [progress, setprogress] = useState("Publish your Service?");
-    const [price,setPrice]=useState("");
+    const [price, setPrice] = useState("");
 
     const [malik, setmalik] = useState('disabled')
 
     function SendService(i) {
         const token = localStorage.getItem('user_token');
-        if(token === null){
+        if (token === null) {
             alert("Please logged in or register to post the offer")
         }
-        else{
+        else {
             var decoded = jwt_decode(token);
-            
 
-            if(i === 2){
-                if(
-                name === "" ||
-                contact === "" 
-                )
-                {
+
+            if (i === 2) {
+                if (
+                    name === "" ||
+                    contact === ""
+                ) {
                     alert("please fill in the form");
                 }
-                else{
+                else {
                     setprogress('Please wait...')
-           
-    
-                const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
-                    description: description,
-                    buy: buy,
-                    indoor: indoor,
-                    installation: install,
-                    model: model,
-                    visual_distance: visuald,
-                    screen_use: screenuse,
-                    screen_base: screenbase,
-                    screen_height: screenheight,
-                    screen_access: screenaccess,
-                    screen_orientation: screenorientation,
-                    control_system: controlsys,
-                    adverse_weather: adverseweather,
-                    structure: structure,
-                    delivery_time: deliverytime,
-                    shipping: shipping,
-                    sensor: sensor,
-                    warranty: warranty,
-                    carcase_material: carcass,
-                    fly_cases: flycases,
-                    name: name,
-                    contact: contact,
-                    company: company,
-                    customer_type: customertype,
-                    sector: sector,
-                    postal_code: postalcode,
-                    comments: comments,
-                    entity: entity,
-                    email: email,
-                    documents: doc,
-                    client_id: decoded.sub
-                })
-                    .then((response) => {
-                        setprogress('Published')
-                        alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
-                        history.push('/myservice')
-                    }, (error) => {
-                        setprogress('Publish your Service?')
-                        alert('You left some feilds empty !')
-                    });
+
+
+                    const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                        description: description,
+                        buy: buy,
+                        indoor: indoor,
+                        installation: install,
+                        model: model,
+                        visual_distance: visuald,
+                        screen_use: screenuse,
+                        screen_base: screenbase,
+                        screen_height: screenheight,
+                        screen_access: screenaccess,
+                        screen_orientation: screenorientation,
+                        control_system: controlsys,
+                        adverse_weather: adverseweather,
+                        structure: structure,
+                        delivery_time: deliverytime,
+                        shipping: shipping,
+                        sensor: sensor,
+                        warranty: warranty,
+                        carcase_material: carcass,
+                        fly_cases: flycases,
+                        name: name,
+                        contact: contact,
+                        company: company,
+                        customer_type: customertype,
+                        sector: sector,
+                        postal_code: postalcode,
+                        comments: comments,
+                        entity: entity,
+                        email: email,
+                        documents: doc,
+                        client_id: decoded.sub
+                    })
+                        .then((response) => {
+                            setprogress('Published')
+                            alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
+                            history.push('/myservice')
+                        }, (error) => {
+                            setprogress('Publish your Service?')
+                            alert('You left some feilds empty !')
+                        });
                 }
             }
-            else 
-            {
+            else {
 
                 setprogress('Please wait...')
-           
-    
+
+
                 const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
                     description: description,
                     buy: buy,
@@ -329,38 +327,38 @@ export default function QuoteMain() {
                     });
             }
 
-            }
-            // console.log(description,
-            //     buy,
-            //     indoor,
-            //     install,
-            //     model,
-            //     visuald,
-            //     screenuse,
-            //     screenbase,
-            //     screenheight,
-            //     screenaccess,
-            //     screenorientation,
-            //     controlsys,
-            //     adverseweather,
-            //     structure,
-            //     deliverytime,
-            //     shipping,
-            //     sensor,
-            //     warranty,
-            //     carcass,
-            //     flycases,
-            //     entity,
-            //     name,
-            //     contact,
-            //     company,
-            //     customertype,
-            //     sector,
-            //     postalcode,
-            //     comments,
-            //     email)
+        }
+        // console.log(description,
+        //     buy,
+        //     indoor,
+        //     install,
+        //     model,
+        //     visuald,
+        //     screenuse,
+        //     screenbase,
+        //     screenheight,
+        //     screenaccess,
+        //     screenorientation,
+        //     controlsys,
+        //     adverseweather,
+        //     structure,
+        //     deliverytime,
+        //     shipping,
+        //     sensor,
+        //     warranty,
+        //     carcass,
+        //     flycases,
+        //     entity,
+        //     name,
+        //     contact,
+        //     company,
+        //     customertype,
+        //     sector,
+        //     postalcode,
+        //     comments,
+        //     email)
 
-       
+
     }
 
 
@@ -428,7 +426,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
 
-                    <div style={{marginTop:"-18px"}}>
+                    <div style={{ marginTop: "-18px" }}>
                         <h4 className="text-center w-100 text-dark">Do you know the model you are looking for?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
@@ -439,7 +437,7 @@ export default function QuoteMain() {
                     </div>
                     <br />
                     <br />
-                    <div style={{marginTop:"-18px"}}>
+                    <div style={{ marginTop: "-18px" }}>
                         <h4 className="text-center w-100 text-dark d-inline">Maximum and minimum vision distance?</h4>
                         <div>
                             <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Maximum and minimum " variant="outlined" />
@@ -450,7 +448,7 @@ export default function QuoteMain() {
                     <br />
                     <h4 className="text-center w-100 text-dark">Use of Screen?</h4>
                     <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" style={{ justifyContent:"center"}}constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
+                        <RadioGroup row aria-label="position" style={{ justifyContent: "center" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
                             <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
                             <FormControlLabel value="ORPORATE IMAGE" control={<Radio color="primary" />} label="ORPORATE IMAGE" />
                             <FormControlLabel value="ADVERTISING" control={<Radio color="primary" />} label="ADVERTISING" />
@@ -494,7 +492,7 @@ export default function QuoteMain() {
                 return <div className="w-100 my-lg-5">
                     <div>
                         <h4 className="text-center w-100 text-dark d-inline">Screen dimension?</h4>
-                        <div style={{marginTop:"10px"}}>
+                        <div style={{ marginTop: "10px" }}>
                             <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
                             <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
                         </div>
@@ -527,9 +525,9 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{marginTop:"15px"}}>Control System?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>Control System?</h4>
                         <FormControl component="fieldset">
-                            <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
+                            <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
                                 <FormControlLabel value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
                                 <FormControlLabel value="ASYNCHRONOUS (From Memory)" control={<Radio color="primary" />} label="ASYNCHRONOUS (From Memory)" />
                                 <FormControlLabel value="VIDEO PROCESSOR (Managing Different Signals)" control={<Radio color="primary" />} label="VIDEO PROCESSOR (Managing Different Signals)" />
@@ -596,9 +594,9 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{marginBottom:"10px", marginTop:"15px"}}>Is the display exposed to adverse weather?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginBottom: "10px", marginTop: "15px" }}>Is the display exposed to adverse weather?</h4>
                         <FormControl component="fieldset">
-                            <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
+                            <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
                                 <FormControlLabel value="NEAR THE SEA" control={<Radio color="primary" />} label="NEAR THE SEA" />
                                 <FormControlLabel value="HIGH MOUNTAIN" control={<Radio color="primary" />} label="HIGH MOUNTAIN" />
                                 <FormControlLabel value="LITTLE EXTREME" control={<Radio color="primary" />} label="LITTLE EXTREME" />
@@ -623,7 +621,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <br />
-                    <h4 className="text-center w-100 text-dark" style={{marginTop:"-10px"}}>Need Structure?</h4>
+                    <h4 className="text-center w-100 text-dark" style={{ marginTop: "-10px" }}>Need Structure?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
                         id="dsdq" class="input-hidden " value='Monoposte' onChange={(e) => setstructure(e.target.value)} />
@@ -660,9 +658,9 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{marginTop:"15px"}}>Delivery Time?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>Delivery Time?</h4>
                         <FormControl component="fieldset">
-                            <RadioGroup style={{justifyContent:"center"}} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
+                            <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel control={<Radio color="primary" />} label="Select date from Calander" value="date" />
                                 {deliverytime === "date" ? <> <TextField
                                     id="date"
@@ -827,12 +825,12 @@ export default function QuoteMain() {
             case 4:
                 return <div>
                     <div className="row">
-                        <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
-                        <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}} ><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
+                        <div className="col-md-12 my-lg-2" style={{ display: "flex", justifyContent: "center" }}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
+                        <div className="col-md-12 my-lg-2" style={{ display: "flex", justifyContent: "center" }} ><TextField onChange={(e) => setpostalcode(e.target.value)} className="mx-1" id="outlined-basic" label="Postal Code?" variant="outlined" /><TextField onChange={(e) => setemail(e.target.value)} className="mx-1" id="outlined-basic" label="Email?" variant="outlined" />  <TextField onChange={(e) => setcomments(e.target.value)} className="mx-1" id="outlined-basic" label="Comments?" variant="outlined" /></div>
                         {/* <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}></div><TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" /> */}
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{marginTop:"25px"}}>Intermediary / end customer?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "25px" }}>Intermediary / end customer?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcustomertype(e.target.value)}>
                                 <FormControlLabel value="Intermediary" control={<Radio color="primary" />} label="Intermediary" />
@@ -847,17 +845,17 @@ export default function QuoteMain() {
                         </div> */}
                     </p></div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{marginTop:"10px"}}>Sector?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "10px" }}>Sector?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsector(e.target.value)}>
-                                <FormControlLabel value="SPORT" control={<Radio color="primary" />} label="SPORT" />
-                                <FormControlLabel value="RETAIL" control={<Radio color="primary" />} label="RETAIL" />
-                                <FormControlLabel value="PUBLIC" control={<Radio color="primary" />} label="PUBLIC" />
-                                <FormControlLabel value="HEALTH" control={<Radio color="primary" />} label="HEALTH" />
-                                <FormControlLabel value="MOTOR" control={<Radio color="primary" />} label="MOTOR" />
-                                <FormControlLabel value="OCIO" control={<Radio color="primary" />} label="OCIO" />
-                                <FormControlLabel value="HOTELS" control={<Radio color="primary" />} label="HOTELS" />
-                                <FormControlLabel value="CONGRESSES" control={<Radio color="primary" />} label="CONGRESSES" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="SPORT" control={<Radio color="primary" />} label="SPORT" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="RETAIL" control={<Radio color="primary" />} label="RETAIL" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="PUBLIC" control={<Radio color="primary" />} label="PUBLIC" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="HEALTH" control={<Radio color="primary" />} label="HEALTH" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="MOTOR" control={<Radio color="primary" />} label="MOTOR" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="OCIO" control={<Radio color="primary" />} label="OCIO" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="HOTELS" control={<Radio color="primary" />} label="HOTELS" />
+                                <FormControlLabel style={{ textAlign: "left" }} value="CONGRESSES" control={<Radio color="primary" />} label="CONGRESSES" />
                             </RadioGroup>
                         </FormControl>
                         {/* <div className="w-50 text-center float-left">
@@ -889,7 +887,7 @@ export default function QuoteMain() {
                     <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
             default:
-                
+
 
         }
     }
@@ -915,7 +913,7 @@ export default function QuoteMain() {
 
 
 
-    
+
 
 
     // const container = window !== undefined ? () => window().document.body : undefined;
@@ -926,49 +924,44 @@ export default function QuoteMain() {
 
     const handleNext = () => {
         window.scrollTo(0, 0);
-        if(activeStep < 3)
-        {
-            if(activeStep === 0)
-        {
-            if(buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '' ){
-                alert("please fill in the form");
+        if (activeStep < 3) {
+            if (activeStep === 0) {
+                if (buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '') {
+                    alert("please fill in the form");
+                }
+                else {
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                }
             }
-            else{
-                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            if (activeStep === 1) {
+                if (screenheight === "" || screenbase === "" || screenaccess === "" || controlsys === '') {
+                    alert("please fill in the form");
+                }
+                else {
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                }
             }
-        }
-        if(activeStep === 1)
-        {
-            if(screenheight === "" || screenbase === "" || screenaccess ==="" || controlsys === '')
-            {
-                alert("please fill in the form");
-            }
-            else{
-                setActiveStep((prevActiveStep) => prevActiveStep + 1);
-            }
-        }
-        if(activeStep === 2)
-        {
-            if(screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === ""){
-                alert("please fill in the form");
-            }
-            else{
-                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            if (activeStep === 2) {
+                if (screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === "") {
+                    alert("please fill in the form");
+                }
+                else {
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                }
             }
         }
-        }
-        else{
+        else {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
         }
-        
-        
-        
+
+
+
     }
 
     const handleBack = () => {
         window.scrollTo(0, 0);
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        
+
     };
 
 
@@ -1003,8 +996,8 @@ export default function QuoteMain() {
     return (
         <>
 
-<           section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
-            <Navbar />
+            <           section className="nav-section" style={{ backgroundImage: "linear-gradient(to right, #934CFF 10%, #F62B84)", height: "60px" }} >
+                <Navbar />
             </section>
 
 
@@ -1064,7 +1057,7 @@ export default function QuoteMain() {
             </div>
 
             <div className="page-wrapper bg-light" style={{ display: display2 }}>
-                <div class="container w-50 pt-lg-5 mt-lg-5">
+                <div class="container  pt-lg-5 mt-lg-5">
                     <div className="col-md-12 pr-5">
                         <i className="fa fa-chevron-left fa-2x" style={{ cursor: 'pointer' }} onClick={() => Displaythree()}></i>
                     </div>
@@ -1085,47 +1078,55 @@ export default function QuoteMain() {
                             {/* <h4 className="text-center w-100 text-dark">Price?</h4> */}
                             {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div> */}
                             <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                                <h4 className="text-center w-100 text-dark">Intermediary / end customer?</h4>
+                                <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Intermediary / end customer?</h4>
                                 <div className="w-50 text-center float-left">
                                     <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
                                 </div>
                                 <div className="w-50 text-center float-left">
                                     <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
                                 </div>
-                            </p></div>
-                            <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                                <h4 className="text-center w-100 text-dark">Sector?</h4>
-                                <div className="w-50 text-center float-left">
+                            </p>
+                            </div>
+
+                            {/* <div className="w-100 my-lg-2 " style={{margin:"auto"}}>  */}
+                            {/* <p className="d-inline w-100"> */}
+                            <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
+                            <div style={{ display: "flex" }}>
+                                <div className="w-100 ">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
                                 </div>
-                                <div className="w-50 text-center float-left">
+
+                                <div className="w-100 ">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
                                 </div>
-                                <div className="w-50 text-center float-left">
+
+                                <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
                                 </div>
-                                <div className="w-50 text-center float-left">
+                                <div className="w-100 ">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
                                 </div>
-                                <div className="w-50 text-center float-left">
+                                <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
                                 </div>
-                                <div className="w-50 text-center float-left">
+                                <div className="w-100 ">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
                                 </div>
-                                <div className="w-50 text-center float-left">
+                                <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
                                 </div>
-                                <div className="w-50 text-center float-left">
+                                <div className="w-100 ">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
                                 </div>
-                            </p></div>
-                            <h4 className="text-center w-100 text-dark">Postal Code?</h4>
+                            </div>
+                            {/* </p> */}
+                            {/* </div> */}
+                            <h4 className="text-center w-100 text-dark" style={{marginTop:"50px"}}>Postal Code?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="w-50" id="outlined-basic" label="Postal Code?" variant="outlined" /> </div>
                             <h4 className="text-center w-100 text-dark">Email?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setemail(e.target.value)} className="w-50" id="outlined-basic" label="Email?" variant="outlined" /> </div>
                             <h4 className="text-center w-100 text-dark">Attach documents and images?</h4>
-                            <div className="w-100 my-lg-2"><input onChange={(e) => setdoc(e.target.value)} className="w-50" type="file" style={{outline:"none",border:"none",margin:"auto"}} /> </div>
+                            <div className="w-100 my-lg-2"><input onChange={(e) => setdoc(e.target.value)} className="w-50" type="file" style={{ outline: "none", border: "none", margin: "auto" }} /> </div>
                             <h4 className="text-center w-100 text-dark">Comments?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcomments(e.target.value)} className="w-50" id="outlined-basic" label="Comments?" variant="outlined" /> </div>
                         </div>
