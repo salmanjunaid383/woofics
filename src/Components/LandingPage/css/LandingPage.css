@@ -10,6 +10,8 @@ body{
     background-size: cover;
     /* color: #fff; */
 }
+
+
 .text-blackStaz{
   color:black;
 }
@@ -148,6 +150,15 @@ body{
   /* color: #fff; */
 }
 @media(max-width:770px){
+
+  .taglink,#scroll-effect{
+    background: #fff;
+  }
+  #scroll-effect{
+    margin-top: -1px !important;
+    margin-left: -15px !important;
+  }
+
     .woofic_slogan{
         font-size: 40px;
         padding: 40px 0px;

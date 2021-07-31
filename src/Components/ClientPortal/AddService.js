@@ -312,7 +312,7 @@ export default function Test() {
                     <br />
 
                     <h4 className="text-center w-100 text-dark">Fixed installation or installation for event ?</h4>
-                    <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation or installation for event ?" variant="outlined" /> </div>
+                    <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation" variant="outlined" /> </div>
                     <br />
                     <br />
 
@@ -330,7 +330,7 @@ export default function Test() {
                     <div style={{ marginTop: "-18px" }}>
                         <h4 className="text-center w-100 text-dark d-inline" >Maximum and minimum vision distance?</h4>
                         <div>
-                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Maximum and minimum " variant="outlined" />
+                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Max and Min" variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
                         </div>
                     </div>
@@ -383,8 +383,8 @@ export default function Test() {
                     <div>
                         <h4 className="text-center w-100 text-dark d-inline">Screen dimension?</h4>
                         <div style={{ marginTop: "10px" }}>
-                            <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
-                            <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
+                            <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
+                            <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
                         </div>
                     </div>
                     <br />

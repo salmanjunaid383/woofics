@@ -16,6 +16,8 @@ import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import "../Components/ClientPortal/quotemain.css"
+import salman from "../Components/survey.png"
+import "../Components/quotemain.css"
 
 //Sidebar
 import PropTypes from 'prop-types';
@@ -422,7 +424,7 @@ export default function QuoteMain() {
                     <br />
 
                     <h4 className="text-center w-100 text-dark">Fixed installation or installation for event ?</h4>
-                    <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation or installation for event ?" variant="outlined" /> </div>
+                    <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation" variant="outlined" /> </div>
                     <br />
                     <br />
 
@@ -440,7 +442,7 @@ export default function QuoteMain() {
                     <div style={{ marginTop: "-18px" }}>
                         <h4 className="text-center w-100 text-dark d-inline">Maximum and minimum vision distance?</h4>
                         <div>
-                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Maximum and minimum " variant="outlined" />
+                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Max and Min" variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
                         </div>
                     </div>
@@ -493,8 +495,8 @@ export default function QuoteMain() {
                     <div>
                         <h4 className="text-center w-100 text-dark d-inline">Screen dimension?</h4>
                         <div style={{ marginTop: "10px" }}>
-                            <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
-                            <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
+                            <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
+                            <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
                         </div>
                     </div>
                     <br />
@@ -834,7 +836,7 @@ export default function QuoteMain() {
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcustomertype(e.target.value)}>
                                 <FormControlLabel value="Intermediary" control={<Radio color="primary" />} label="Intermediary" />
-                                <FormControlLabel value="End customer" control={<Radio color="primary" />} label="End customer" />
+                                <FormControlLabel value="End customer" style={{marginLeft:"-20px"}} control={<Radio color="primary" />} label="End customer" />
                             </RadioGroup>
                         </FormControl>
                         {/* <div className="w-50 text-center float-left">
@@ -1004,10 +1006,14 @@ export default function QuoteMain() {
             <div className="page-wrapper bg-light" style={{ display: display1 }}>
                 <div class="container-fluid" >
                     <div class="row">
-                        <div className="col-md-12 pr-5 pt-5">
+                        <div className="col-md-12 pr-5">
                             <i className="fa fa-chevron-left fa-2x" style={{ cursor: 'pointer' }} onClick={() => Displaythree()}></i>
                         </div>
-                        <div class="col-lg-9 col-xlg-9 col-md-9 mx-auto text-center">
+                        <div class="col-xl-6" style={{marginTop:"10px"}}>
+                            <img src={salman} style={{width:"100%", height:"70%"}}/>
+                        </div>
+                        <div class="col-lg-6  mx-auto text-center">
+                            {/* col-xlg-9 col-md-9 */}
                             <div className={classes.root}>
                                 <div className="d-none d-md-block mt-md-4">
                                     <Stepper activeStep={activeStep} alternativeLabel>
@@ -1064,16 +1070,16 @@ export default function QuoteMain() {
                     <div class="row text-center">
                         <div className="w-100 mx-auto mt-md-4">
                             <br />
-                            <label>Please let us know what do you want! Mention every thing below:</label>
+                            <label className="for-question-mobile">Please let us know what do you want! Mention every thing below:</label>
                             <textarea onChange={(e) => setdescription(e.target.value)}>
                             </textarea>
                         </div>
                         <div className="w-100 mx-auto ">
-                            <h4 className="text-center w-100 text-dark">Name?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec">Name?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="w-50" id="outlined-basic" label="Name?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark">Contact?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec">Contact?</h4>
                             <div className="w-100 my-lg-2"><TextField type="number" onChange={(e) => setcontact(e.target.value)} className="w-50" id="outlined-basic" label="Contact?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark">Company Name?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec">Company Name?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcompany(e.target.value)} className="w-50" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
                             {/* <h4 className="text-center w-100 text-dark">Price?</h4> */}
                             {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div> */}
@@ -1091,7 +1097,7 @@ export default function QuoteMain() {
                             {/* <div className="w-100 my-lg-2 " style={{margin:"auto"}}>  */}
                             {/* <p className="d-inline w-100"> */}
                             <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
-                            <div style={{ display: "flex" }}>
+                            <div className="for-question-res" style={{ display: "flex"}}>
                                 <div className="w-100 ">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
                                 </div>
@@ -1109,25 +1115,25 @@ export default function QuoteMain() {
                                 <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
                                 </div>
-                                <div className="w-100 ">
+                                <div className="w-100 for-ques-mob">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
                                 </div>
-                                <div className="w-100">
-                                    <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
+                                <div className="w-100 for-ques-mob ">
+                                    <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTEL
                                 </div>
                                 <div className="w-100 ">
-                                    <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
+                                    <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESS
                                 </div>
                             </div>
                             {/* </p> */}
                             {/* </div> */}
-                            <h4 className="text-center w-100 text-dark" style={{marginTop:"50px"}}>Postal Code?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec" style={{marginTop:"50px"}}>Postal Code?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="w-50" id="outlined-basic" label="Postal Code?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark">Email?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec">Email?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setemail(e.target.value)} className="w-50" id="outlined-basic" label="Email?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark">Attach documents and images?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec">Attach documents and images?</h4>
                             <div className="w-100 my-lg-2"><input onChange={(e) => setdoc(e.target.value)} className="w-50" type="file" style={{ outline: "none", border: "none", margin: "auto" }} /> </div>
-                            <h4 className="text-center w-100 text-dark">Comments?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec">Comments?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcomments(e.target.value)} className="w-50" id="outlined-basic" label="Comments?" variant="outlined" /> </div>
                         </div>
                         <div className="w-100 text-center mx-auto my-3 ">

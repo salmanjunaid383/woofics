@@ -1,0 +1,16 @@
+@media(max-width:600px){
+    .for-question-mobile{
+        margin-bottom: 10px;
+    }
+    .for-name-sec{
+        margin-bottom: 10px;
+        margin-top:10px
+    }
+    .for-question-res{
+        flex-direction: column;
+    }
+    /* .for-ques-mob{
+        width:100px !important;
+        text-align: center !important;
+    } */
+}
