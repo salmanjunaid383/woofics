@@ -483,11 +483,11 @@ function Navbar() {
                                 </div>
                         </Link>
 
-                        <Link id="scroll-effect"  style={{marginLeft:"-12px",marginTop:"1px"}} >
+                        <Link id="scroll-effect" className="salman"  style={{marginLeft:"-12px",marginTop:"1px"}} >
                             {/* Advertise */}
                             
                             <div class="dropdown hover-effect">
-                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Profile Option</button>
+                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Profile Options</button>
                                 <div class="dropdown-content">
                                 <Typography className={classes.typography}>
                         <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
@@ -496,7 +496,7 @@ function Navbar() {
                         </Link>
                     </Typography>
                     <Typography className={classes.typography}>
-                        <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
+                        <a className="profile-pic" style={{display:"flex",justifyContent:"center",alignItems:"center"}} onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
                             <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
                             <span className="text-black font-medium mr-3 text-blackStaz">Logout</span>
                         </a>

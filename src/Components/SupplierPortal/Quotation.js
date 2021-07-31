@@ -31,6 +31,7 @@ export default function Quotation() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     const [blog, setBlog] = useState([]);
+    const [btnStatus,setBtnStatus]=useState(true);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/form`)
             .then((response) => {
@@ -41,21 +42,44 @@ export default function Quotation() {
             }, (Error) => {
                 console.log(Error);
             });
+        cardStatus();
     }, [])
+
+    function cardStatus(){
+        const {data: response} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).then((response) => {
+            if(response.data === 0){
+                alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
+            }
+        }, (Error) => {
+            console.log(Error);
+        })
+    }
 
 
     function purchaseLead(i){
         console.log(decoded.sub)
         console.log(i)
-        const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
-            user_id : decoded.sub,
-            form_id: i
-        })
-        .then((response) => {
-            console.log(response)
-          }, (Error) => {     
+        
+          const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).then((response) => {
+            if(response.data === 0){
+                alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
+            }
+            else{
+                const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
+                    user_id : decoded.sub,
+                    form_id: i
+                })
+                .then((response) => {
+                    if(response.data===0){
+                        
+                    }
+                  }, (Error) => {     
+                    console.log(Error);
+                  });
+            }
+        }, (Error) => {
             console.log(Error);
-          });
+        })
             
     }
     //Sidebaaaaar/..........................

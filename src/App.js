@@ -142,6 +142,7 @@ import TestCalulator from './Components/TestCalculator'
 import forum from './Components/forum'
 import detailforum from './Components/detailforum'
 import invoice from './Components/SupplierPortal/SupplierInvoice'
+import invoicedetail from './Components/SupplierPortal/InvoiceDetail'
 function App() {
 
 
@@ -169,6 +170,7 @@ function App() {
           <Route path="/testcal" component={TestCalulator}></Route>
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/forum" component={forum}></Route>
+          <Route path="/invoicedetail/:quid" component={invoicedetail}></Route>
           <Route path="/supplierinvoice" component={invoice}></Route>
           <Route path="/detailforum/:quid" component={detailforum}></Route>
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />

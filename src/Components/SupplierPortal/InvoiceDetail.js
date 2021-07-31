@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory ,useParams} from 'react-router-dom'
 import SideBar from './Sidebar';
 import axios from 'axios';
 import ProBar from '../AdminPortal/Sidebar'
@@ -51,18 +51,20 @@ export default function SupplierLedger() {
 
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-
+    const { quid } = useParams()
     function getInvoice() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_invoices/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/invoice/${quid}`)
             .then((response) => {
-                setData(response.data)
+                setData(response.data.items)
                 console.log(response.data)
             }, (Error) => {
                 console.log(Error);
             });
     }
     useEffect(() => {
+        console.log("route param")
+        console.log(quid)
         getInvoice();
     }, [])
     //Sidebaaaaar/..........................
@@ -141,10 +143,10 @@ export default function SupplierLedger() {
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white text-center">Inoivce Id</th>
-                                                            <th className="border-top-0 text-white text-center">Total</th>
+                                                            <th className="border-top-0 text-white text-center">Description</th>
+                                                            <th className="border-top-0 text-white text-center">Amount</th>
                                                             <th className="border-top-0 text-white text-center">Date</th>
-                                                            <th></th>
+                                                            
                                                             {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
                                                     </thead>
@@ -156,10 +158,10 @@ export default function SupplierLedger() {
                                                                     return (
                                                                         <>
                                                                             <tr>
-                                                                                <td className="txt-oflo text-center">{val.invoice_id}</td>
-                                                                                <td className="txt-oflo text-center">{val.total}</td>
-                                                                                <td className="txt-oflo text-center">{(val.date).slice(0, 10)}</td>
-                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/invoicedetail/${val.id}`)}}>Detail</button>
+                                                                                <td className="txt-oflo text-center">{val.description}</td>
+                                                                                <td className="txt-oflo text-center">{val.amount}</td>
+                                                                                <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
+                                                                                
                                                                             </tr>
                                                                         </>
                                                                     )
