@@ -506,7 +506,7 @@ function Navbar() {
                         </Link>
                         {localStorage.getItem("user_token") ? (
                             <>
-                                <a className="profile-pic float-right text-blackStaz salman" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
+                                <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
                                         <span className="text-white font-medium "><img className="img-fluid mb-2 pro-pic" src={profile_image !== null ? profile_image : profileImageStaz} style={{ width: "40px", marginTop:"-8px", borderRadius:"50px"}} /></span>
                                         {/* https://image.flaticon.com/icons/png/512/147/147144.png */}
                                 </a>

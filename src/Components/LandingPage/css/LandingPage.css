@@ -10,8 +10,6 @@ body{
     background-size: cover;
     /* color: #fff; */
 }
-
-
 .text-blackStaz{
   color:black;
 }
@@ -150,15 +148,6 @@ body{
   /* color: #fff; */
 }
 @media(max-width:770px){
-
-  .taglink,#scroll-effect{
-    background: #fff;
-  }
-  #scroll-effect{
-    margin-top: -1px !important;
-    margin-left: -15px !important;
-  }
-
     .woofic_slogan{
         font-size: 40px;
         padding: 40px 0px;
@@ -346,7 +335,6 @@ body{
 }
 
 
-
   @media(min-width:770px)and (max-width:1024px){
     .dropbtn{
     width: 100vw !important;
@@ -410,8 +398,8 @@ body{
 @media(max-width:768px){
   .taglink,#dropDownLink{
     padding-left:15px;
+    
   }
-  
   .topnav{
     height:auto !important;
     background-color:#fff;
@@ -431,6 +419,8 @@ body{
     .topnav a {
       color:#767676 !important;
     }
+
+
 }
 
 
@@ -460,18 +450,6 @@ body{
   
 }
 
-.profile-pic{
-  display: none;
-}
-
-.profilePopover{
-  top:60px;
-}
-@media(max-width:1024px){
-  .salman{
-    display: none !important;
-  }
-}
 
 
 
@@ -589,4 +567,3 @@ body{
       transform: translateY(-2000px);
     }
   }
-  
