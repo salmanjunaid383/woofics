@@ -314,6 +314,11 @@ body{
 #taglink5 {color: #000 !important;}
 #taglink6 {color: #000 !important;}
 
+.profilePopover{
+  position:absolute;
+  top:100px;
+  right:100px;
+}
 
 /* Change color of dropdown links on hover */
 #taglink4:hover {color: #0767c4 !important ; border:none;}
@@ -341,8 +346,9 @@ body{
     }
     .topnav{
       height:auto !important;
-      
+      background-color:#fff;
     }
+
     .topnav a {
       color:#767676 !important;
     }
@@ -384,6 +390,7 @@ body{
     top:20px;
     right:7px;
   }
+  
   .fa-bars{
     margin-top: 2px;
   }
@@ -395,6 +402,7 @@ body{
   }
   .topnav{
     height:auto !important;
+    background-color:#fff;
   }
   .dropbtn{
     width: 100vw !important;

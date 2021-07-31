@@ -53,6 +53,40 @@ export default function UpdateProfile() {
     const [rat, setrat] = useState("");
     const [progress, setprogress] = useState("Update Profile");
 
+    const [card,setCard]=useState("");
+    const [cardName,setCardName]=useState("")
+    const[cvc,setCvc]=useState("")
+    const[expMonth,setExpMonth]=useState("")
+    const[expYear,setExpYear]=useState("")
+    const[stripeEmail,setStripeEmail]=useState("")
+
+    const [cardProgress,setCardProgress]=useState("Update Credit Card")
+
+    function updateCard(e){
+        e.preventDefault();
+        setCardProgress("Loading... ")
+        const { data: response } = axios.post(
+            `https://api.woofics.com/api/save_card`,
+            {
+                name: cardName,
+                card_number: card,
+                exp_month: expMonth,
+                exp_year: expYear,
+                cvc: cvc,
+                email: stripeEmail,
+                user_id:decoded.sub
+                
+            }).then((response) => {
+                console.log(response)
+                setCardProgress('Update Profile')
+                // setOpenpop(true);
+            }, (Error) => {
+                console.log(Error);
+                setCardProgress('Update Profile')
+            });
+
+    }
+
     function LoginBtn(e) {
         e.preventDefault();
         setprogress('Loading...')
@@ -233,6 +267,60 @@ export default function UpdateProfile() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="page-wrapper px-lg-5">
+                        <div class="container-fluid">
+                            <div class="row border bg-light">
+                                <div class="col-lg-8 col-xlg-8 col-md-8 mx-auto ">
+                                    <div class="">
+                                        <div class="card-body">
+                                            <form class="form-horizontal form-material" >
+                                            <div className="row">
+                                            <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Card no</label>
+                                                    <input type="text" 
+                                                        class="form-control p-0 border-0" onChange={(e) => setCard(e.target.value)} /> </div>
+                                                <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Name</label>
+                                                    <input type="text"  class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
+                                            
+                                            </div>
+
+                                            <div className="row">
+                                            <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Expiry Month</label>
+                                                    <input type="text" 
+                                                        class="form-control p-0 border-0" onChange={(e) => setExpMonth(e.target.value)} /> </div>
+                                                <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Expiry Year</label>
+                                                    <input type="text"  class="form-control p-0 border-0" onChange={(e) => setExpYear(e.target.value)} /> </div>
+                                            
+                                            </div>  
+
+                                            <div className="row">
+                                            <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">CVC</label>
+                                                    <input type="text" 
+                                                        class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
+                                                <div class="form-group mb-4 col-md-6">
+                                                    <label class="col-md-6 p-0 bold">Stripe Email</label>
+                                                    <input type="text" class="form-control p-0 border-0" onChange={(e) => setStripeEmail(e.target.value)} /> </div>
+                                            
+                                            </div>                                              
+                                            <div class="form-group mb-4">
+                                                    <div class="col-sm-12 text-center">
+                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={updateCard}>{cardProgress}</button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-4 col-xlg-3 col-md-12"></div>
+                                            </div>
+                                            </div>
+                                            </div>
 
                 </main>
             </div>

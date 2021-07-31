@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import SideBar from './Sidebar';
 import axios from 'axios';
 import "../ClientPortal/quotation.css"
-
+import jwt_decode from 'jwt-decode'
 
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -28,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Quotation() {
     CustomSupplierAuth();
     let history = useHistory();
-
+    var token = localStorage.getItem("user_token");
+    var decoded = jwt_decode(token)
     const [blog, setBlog] = useState([]);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/form`)
@@ -42,6 +43,21 @@ export default function Quotation() {
             });
     }, [])
 
+
+    function purchaseLead(i){
+        console.log(decoded.sub)
+        console.log(i)
+        const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
+            user_id : decoded.sub,
+            form_id: i
+        })
+        .then((response) => {
+            console.log(response)
+          }, (Error) => {     
+            console.log(Error);
+          });
+            
+    }
     //Sidebaaaaar/..........................
     // const { window } = props;
     const classes = useStyles();
@@ -93,7 +109,8 @@ export default function Quotation() {
                                                                         <td className="txt-oflo text-center bold">{val.installation}</td>
                                                                         <td className="txt-oflo text-center bold">{val.model}</td>
                                                                         <td className="txt-oflo text-center bold">
-                                                                            <button class="btn pull-right marginBottom10 greenbtn text-white"  value={val.id} onClick={() => { history.push(`/quote/${val.id}`); localStorage.setItem('qid', val.id) }} >Quote</button>                                                                    </td>
+                                                                        {/* { history.push(`/quote/${val.id}`); localStorage.setItem('qid', val.id) }} */}
+                                                                            <button class="btn pull-right marginBottom10 greenbtn text-white"  value={val.id} onClick={() => purchaseLead(val.id) } >Quote</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )

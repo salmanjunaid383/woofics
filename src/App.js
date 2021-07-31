@@ -141,6 +141,7 @@ import ProviderDashboard from './Components/AdminPortal/AdminDashboard'
 import TestCalulator from './Components/TestCalculator'
 import forum from './Components/forum'
 import detailforum from './Components/detailforum'
+import invoice from './Components/SupplierPortal/SupplierInvoice'
 function App() {
 
 
@@ -168,6 +169,7 @@ function App() {
           <Route path="/testcal" component={TestCalulator}></Route>
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/forum" component={forum}></Route>
+          <Route path="/supplierinvoice" component={invoice}></Route>
           <Route path="/detailforum/:quid" component={detailforum}></Route>
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
           <Route exact path="/dashboard" component={Dashboard} />
