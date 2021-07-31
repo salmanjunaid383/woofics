@@ -63,6 +63,20 @@ export default function Quote() {
             });
     }, [])
 
+    function cardStatus(){
+        const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
+                    user_id : decoded.sub,
+                    form_id: serrid
+                })
+                .then((response) => {
+                    if(response.data===0){
+                        history.push("quotation");
+                    }
+                  }, (Error) => {     
+                    console.log(Error);
+                  });
+    }
+
 
     function sendQuote(e) {
         e.preventDefault();

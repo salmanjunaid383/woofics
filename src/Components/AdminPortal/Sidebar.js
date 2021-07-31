@@ -26,6 +26,7 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import AdminDashboard from './AdminDashboard';
 import ListIcon from '@material-ui/icons/List';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
+// import PaymentIcon from '@material-ui/icons/PaymentIcon';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
@@ -186,6 +187,11 @@ export default function ServiceSidebar(props) {
             icon: <BorderColorIcon  style={{color:"white"}}/>,
             to: '/providerledger'
         },
+        // {
+        //     name: 'Invoice',
+        //     icon : <PaymentIcon style={{color: "cdcdcd"}}/>,
+        //     to: 'supplierinvoice'
+        // },
         {
             name: 'Discussion Forum',
             icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,

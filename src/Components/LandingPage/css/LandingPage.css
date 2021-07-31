@@ -324,6 +324,16 @@ body{
   border-bottom: 2px solid #000;
 } */
 
+.salman{
+  visibility: hidden !important;
+}
+
+@media(max-width:1024px){
+  .salman{
+    visibility:visible !important
+  }
+}
+
 
   @media(min-width:770px)and (max-width:1024px){
     .dropbtn{
@@ -378,6 +388,7 @@ body{
     position:absolute;
     top:20px;
     right:7px;
+    display:none;
   }
   
   .fa-bars{
@@ -433,7 +444,10 @@ body{
 .woofic_slogan_container{
   padding-top:35px !important;
 }
+}
+@media(max-width:1024px){
 
+  
 }
 
 
