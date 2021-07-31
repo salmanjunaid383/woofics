@@ -336,6 +336,7 @@ body{
 } */
 
 
+
   @media(min-width:770px)and (max-width:1024px){
     .dropbtn{
     width: 100vw !important;
@@ -388,7 +389,7 @@ body{
   .pro-pic{
     position:absolute;
     top:20px;
-    right:7px;
+    right:0%;
   }
   
   .fa-bars{
@@ -398,8 +399,8 @@ body{
 @media(max-width:768px){
   .taglink,#dropDownLink{
     padding-left:15px;
-    
   }
+  
   .topnav{
     height:auto !important;
     background-color:#fff;
@@ -419,8 +420,6 @@ body{
     .topnav a {
       color:#767676 !important;
     }
-
-
 }
 
 
@@ -447,6 +446,18 @@ body{
 
 }
 
+.profile-pic{
+  display: none;
+}
+
+.profilePopover{
+  top:60px;
+}
+@media(max-width:1024px){
+  .salman{
+    display: none !important;
+  }
+}
 
 
 

@@ -482,9 +482,31 @@ function Navbar() {
                                 </div>
                                 </div>
                         </Link>
+
+                        <Link id="scroll-effect"  style={{marginLeft:"-12px",marginTop:"1px"}} >
+                            {/* Advertise */}
+                            
+                            <div class="dropdown hover-effect">
+                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Profile Option</button>
+                                <div class="dropdown-content">
+                                <Typography className={classes.typography}>
+                        <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
+                            <i className="fa fa-user mx-3 text-blackStaz"></i>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Profile</span>
+                        </Link>
+                    </Typography>
+                    <Typography className={classes.typography}>
+                        <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
+                            <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Logout</span>
+                        </a>
+                    </Typography>
+                                </div>
+                                </div>
+                        </Link>
                         {localStorage.getItem("user_token") ? (
                             <>
-                                <a className="profile-pic float-right text-blackStaz" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
+                                <a className="profile-pic float-right text-blackStaz salman" style={{marginRight:"20px"}} aria-describedby={idStaz} variant="contained" color="primary" onClick={handleClickStaz}>
                                         <span className="text-white font-medium "><img className="img-fluid mb-2 pro-pic" src={profile_image !== null ? profile_image : profileImageStaz} style={{ width: "40px", marginTop:"-8px", borderRadius:"50px"}} /></span>
                                         {/* https://image.flaticon.com/icons/png/512/147/147144.png */}
                                 </a>
