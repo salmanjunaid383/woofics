@@ -52,6 +52,7 @@ export default function Quote() {
     const [service, setservice] = useState([]);
     const [servicet, setservicet] = useState([]);
     useEffect(() => {
+        cardStatus();
         const { data: response } = axios.get(`https://api.woofics.com/api/form/${serrid}`)
             .then((response) => {
                 setservice(response.data.form)
@@ -61,6 +62,7 @@ export default function Quote() {
             }, (Error) => {
                 console.log(Error);
             });
+            
     }, [])
 
     function cardStatus(){
@@ -70,7 +72,8 @@ export default function Quote() {
                 })
                 .then((response) => {
                     if(response.data===0){
-                        history.push("quotation");
+                        
+                        history.push("/quotation");
                     }
                   }, (Error) => {     
                     console.log(Error);
@@ -80,7 +83,7 @@ export default function Quote() {
 
     function sendQuote(e) {
         e.preventDefault();
-        alert("You will be charged this amount, are you sure to send quotation?")
+        alert("Are you sure you want to send this quotation?")
         setProgress('Loading...')
         if (description === "" || comments === "" || price === "" || date === "" || phase === "") {
             setOpenn2(true);

@@ -32,6 +32,7 @@ export default function Quotation() {
     var decoded = jwt_decode(token)
     const [blog, setBlog] = useState([]);
     const [btnStatus,setBtnStatus]=useState(true);
+    const [packageInfo,setPackage]=useState([]);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/form`)
             .then((response) => {
@@ -71,7 +72,37 @@ export default function Quotation() {
                 })
                 .then((response) => {
                     if(response.data===0){
+                        const { data: response } = axios.get(`https://api.woofics.com/api/form/`+i)
+                            .then((response) => {
+                                if (response) {
+                                    setPackage(response.data.package)
+                                    console.log(response.data.package)
+                                    if(window.confirm("This package is currently locked you will have to pay "+response.data.package.charge+" euro to access it, are you sure ?")){
+                                        if(window.confirm("Can u please confirm again?")){
+                                            const {data : responseStore} = axios.post("https://api.woofics.com/api/lead" , {
+                                                user_id:decoded.sub,
+                                                payment_package_id: response.data.package.id,
+                                                form_id:i
+                                            }).then((response) => {
+                                                   console.log(response); 
+                                                   alert("Payment Successfull");
+                                            }, (Error) => {
+                                                console.log("Store error "+Error);  
+                                            })
+                                        }
+                                    }
+                                    else{
+                                        
+                                    }
+                                }
+                            }, (Error) => {
+                                console.log(Error);
+                            });
                         
+                        
+                    }
+                    else{
+                        history.push(`/quote/${i}`)
                     }
                   }, (Error) => {     
                     console.log(Error);
@@ -110,7 +141,7 @@ export default function Quotation() {
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">DATE</th>
-                                                            <th className="border-top-0 text-white text-center">COMPANY</th>
+                                                            <th className="border-top-0 text-white text-center">Description</th>
                                                             <th className="border-top-0 text-white text-center">EMAIL</th>
                                                             <th className="border-top-0 text-white text-center">DELIVERY TIME</th>
                                                             <th className="border-top-0 text-white text-center">BUYER NAME</th>
@@ -126,7 +157,7 @@ export default function Quotation() {
                                                                 <>
                                                                     <tr style={{ height: '5rem' }} className="border-bottom">
                                                                         <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
-                                                                        <td className="text-oflo text-center bold">{val.company}...</td>
+                                                                        <td className="text-oflo text-center bold" style={{wordBreak:"break-all"}}>{val.description}</td>
                                                                         <td className="txt-oflo text-center bold">{val.email}</td>
                                                                         <td className="txt-oflo text-center bold">{val.delivery_time}</td>
                                                                         <td className="txt-oflo text-center bold">{val.name}</td>
