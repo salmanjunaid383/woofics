@@ -96,6 +96,7 @@ export default function OfferList() {
                                                             <th className="border-top-0 text-center text-white">Descripción</th>
                                                             <th className="border-top-0 text-center text-white">Precio</th>
                                                             <th className="border-top-0 text-center text-white">Dias</th>
+                                                            <th className="border-top-0 text-center text-white">Status</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row">
@@ -110,6 +111,7 @@ export default function OfferList() {
                                                                         <td className="txt-oflo text-center">{(val.description).slice(0,10)+'...'}</td>
                                                                         <td className="text-oflo text-center">{val.price}</td>
                                                                         <td className="txt-oflo text-center">{val.time}</td>
+                                                                        <td className="txt-oflo text-center">{val.locked === 1 ? "Accepted" : "Pending"}</td>
                                                                     </tr>
                                                                 </>
                                                             )

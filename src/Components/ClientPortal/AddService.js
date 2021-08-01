@@ -32,7 +32,7 @@ import one from './one.jpg';
 import two from './two.webp';
 import three from './three.png';
 import CustomClientAuth from "../CustomClientAuth";
-
+import firebase from '../Firebase'
 
 const drawerWidth = 240;
 
@@ -776,7 +776,7 @@ export default function Test() {
                         </div> */}
                     </p></div>
                     <h4 className="text-center w-100 text-dark">Attach documents and images?</h4>
-                    <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
+                    <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
 
             default:
@@ -801,6 +801,22 @@ export default function Test() {
                 {...props}
             />
         );
+    }
+
+    const uploadfile = async (e) => {
+        
+        const file = e.target.files[0];
+        const type = file.type
+        const image = type.split("/")
+        
+        const ImagesRef = firebase.storage().ref('images').child(file.name);
+        await ImagesRef.put(file)
+        ImagesRef.getDownloadURL().then((url) => {
+            setdoc(url)
+            
+            
+        })
+        
     }
 
 
@@ -1021,7 +1037,7 @@ export default function Test() {
 
                                         <TextField onChange={(e) => setpostalcode(e.target.value)} className="w-50 p-25" id="outlined-basic" label="Postal Code?" variant="outlined" />
                                         <TextField onChange={(e) => setemail(e.target.value)} className="w-50 p-25 " id="outlined-basic" label="Email?" variant="outlined" />
-                                        <TextField onChange={(e) => setdoc(e.target.value)} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" />
+                                        <TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" />
                                         <TextField onChange={(e) => setcomments(e.target.value)} className="w-50 p-25 my-2" id="outlined-basic" label="Comments?" variant="outlined" />
                                     </div>
                                     <div className="w-100 text-center mx-auto ">
