@@ -14,3 +14,19 @@
         text-align: center !important;
     } */
 }
+
+@media(min-width:1024px){
+
+
+.acc-to-frac{
+    padding-left:0px !important;
+    padding-right:0px !important;
+    padding-bottom:40px !important
+}
+.left-side-pic{
+    padding: 0px;
+}
+.back-next{
+    margin-bottom: 30px;
+}
+}

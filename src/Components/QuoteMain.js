@@ -450,7 +450,7 @@ export default function QuoteMain() {
                     <br />
                     <h4 className="text-center w-100 text-dark">Use of Screen?</h4>
                     <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" style={{ justifyContent: "center" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
+                        <RadioGroup row aria-label="position" style={{ justifyContent: "flex-start",width:"85%",margin:"auto" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
                             <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
                             <FormControlLabel value="ORPORATE IMAGE" control={<Radio color="primary" />} label="ORPORATE IMAGE" />
                             <FormControlLabel value="ADVERTISING" control={<Radio color="primary" />} label="ADVERTISING" />
@@ -1010,7 +1010,8 @@ export default function QuoteMain() {
                             <i className="fa fa-chevron-left fa-2x" style={{ cursor: 'pointer' }} onClick={() => Displaythree()}></i>
                         </div>
                         <div class="col-xl-6" style={{marginTop:"10px"}}>
-                            <img src={salman} style={{width:"100%", height:"70%"}}/>
+                            <img src={salman} style={{width:"100%", height:"100%"}}/>
+                            {/* <img src="" style={{width:"100%", height:"70%"}}/> */}
                         </div>
                         <div class="col-lg-6  mx-auto text-center">
                             {/* col-xlg-9 col-md-9 */}
