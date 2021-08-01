@@ -316,9 +316,9 @@ export default function SuperDashboard() {
                     <div className={classes.toolbar} />
 
                     <div className="container-fluid page-wrapper">
-                        {/* <div className="back-button">
-                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                        </div> */}
+                        <div className="back-button">
+                         <a href="/"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                         </div>
                         <div className="row">
                             <div className="col-md-12">
                                 <h1 style={{ fontSize: "27px", marginBottom: "20px", color: "#9b88f6", fontWeight: "bold" }}>Admin Dashboard</h1>

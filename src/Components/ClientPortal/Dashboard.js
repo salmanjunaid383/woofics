@@ -201,6 +201,9 @@ export default function Dashboard() {
                         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" style={{ backgroundColor: '#76323f' }}>
                         <div className="page-wrapper">
                             <div class="container-fluid ipad-dashboard">
+                            <div className="back-button">
+                         <a href="/"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                         </div>
                                 <section id="stats-subtitle">
                                     <div class="row">
                                         <div className="col-md-12">

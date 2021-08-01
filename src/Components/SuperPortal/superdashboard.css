@@ -10,12 +10,13 @@
     height:40px;
     width:40px;
     border-radius: 50%;
-    background-color: #223e92    ;
+    background-color: #8334f8;
     /* filter: brightness(150%); */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    margin-bottom: 20px;
 }
 .fa-angle-left{
     margin-left:-3px;
