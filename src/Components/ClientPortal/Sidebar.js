@@ -126,9 +126,9 @@ export default function Sidebar() {
             cluster: 'ap1'
           });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
+        
         channel.bind("my-event",function(returnData){
-            console.log("run event");
+            
             seen();
         });
         chatnotification()
@@ -187,7 +187,7 @@ export default function Sidebar() {
     //     //     .then((response) => {
     //     //         setName(response.data)
     //     //     }, (Error) => {
-    //     //         console.log(Error);
+    //     //         
     //     //     });
     // }, [])
 
@@ -274,7 +274,7 @@ export default function Sidebar() {
                 setnewnoti(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -283,9 +283,9 @@ export default function Sidebar() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
             .then((response) => {
                 setunseen(response.data)
-                console.log("unseen notifications "+response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -297,7 +297,7 @@ export default function Sidebar() {
                 setUnseenMxg(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -308,7 +308,7 @@ export default function Sidebar() {
             .then((response) => {
                 notification()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

@@ -37,13 +37,13 @@ export default function ContactUs() {
             message: message,
         })
             .then((response) => {
-                console.log(response)
+                
                 alert("Message Sent!")
                 setname("")
                 setemail("")
                 setmessage("")
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

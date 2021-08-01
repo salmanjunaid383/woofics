@@ -85,7 +85,7 @@ export default function ProviderComplain() {
             .then((response) => {
                 setComplain(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
     useEffect(() => {

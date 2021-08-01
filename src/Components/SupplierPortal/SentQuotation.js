@@ -33,11 +33,11 @@ export default function SentQuotation() {
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
-                    console.log(response.data)
+                    
                 }
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
     }, [])
 

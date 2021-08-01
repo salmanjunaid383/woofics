@@ -260,7 +260,7 @@ export default function PriceCalculator() {
                 if (response) {
                     setarea(response.data)
                     setareaprice(response.data.led_option.price)
-                    console.log(response.data.led_option.price)
+                    
                 }
             }).catch((error) => {
                 if (error.response) {

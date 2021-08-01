@@ -15,12 +15,12 @@ export default function ViewService() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service/${servicei}`)
             .then((response) => {
                 if (response) {
-                    console.log(response.data)
+                    
                     setBlog(response.data)
                 }
             }, (Error) => {
 
-                console.log(Error);
+                
             });
 
     }

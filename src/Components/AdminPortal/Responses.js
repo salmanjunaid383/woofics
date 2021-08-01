@@ -44,7 +44,7 @@ export default function ProviderResponses() {
                     setForm(res.data)
                 }
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -60,7 +60,7 @@ export default function ProviderResponses() {
                     Feedback()
                 }
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

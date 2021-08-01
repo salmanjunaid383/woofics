@@ -45,7 +45,7 @@ export default function HelpResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -55,7 +55,7 @@ export default function HelpResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -88,7 +88,7 @@ export default function HelpResponse() {
             }, (error) => {
                 setwait('Send Reply')
                 setdisable('')
-                console.log(Error);
+                
                  
             });
 

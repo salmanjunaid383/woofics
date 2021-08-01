@@ -124,20 +124,20 @@ export default function Coupon() {
             .then((res) => {
                 if(res){
 
-                    console.log(res.data)
+                    
                     const response = axios.post(`https://api.woofics.com/api/discount_given`, {
                         user_id: decoded.sub,
                         discount_id: res.data[0].id
                     })
                     .then((response) => {
                     }, (error) => {
-                        console.log(Error);
+                        
                     });
                 }else{
                     alert('No Coupon!')
                 }
             }, (error) => {
-                console.log(Error);
+                
             });
 
 
@@ -270,7 +270,7 @@ export default function Coupon() {
                 setName(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -280,7 +280,7 @@ export default function Coupon() {
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -288,7 +288,7 @@ export default function Coupon() {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
                 .then((response) => {notification()
                 }, (Error) => {
-                        console.log(Error);
+                        
                 });
 }
      //................Chat Seen
@@ -299,7 +299,7 @@ export default function Coupon() {
                  setUnseenMxg(response.data)
                  seen()
              }, (Error) => {
-                 console.log(Error);
+                 
              });
      }
 

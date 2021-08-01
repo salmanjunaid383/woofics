@@ -55,10 +55,10 @@ export default function CreateForms() {
                     setvalueCharge(response.data[0])
                 }
                 
-                console.log("charges data")
-                console.log(response.data)
+                
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -67,9 +67,9 @@ export default function CreateForms() {
         const { data: response } = axios.get(`https://api.woofics.com/api/payment_package`)
             .then((response) => {
                 setpaymentPackag(response.data)
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -85,9 +85,9 @@ export default function CreateForms() {
                     setsupplierRenta(response.data[0])
                 }
                 
-                console.log(response.data[0])
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -104,9 +104,9 @@ export default function CreateForms() {
                     setserviceCharge(response.data[0])
                 }
                 
-                console.log("service provider charges "+ response.data[0])
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -131,9 +131,9 @@ export default function CreateForms() {
         })
             .then((response) => {
                 valueCharges()
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -149,13 +149,13 @@ export default function CreateForms() {
         })
             .then((response) => {
                 paymentPackage()
-                console.log(response.data)
+                
                 setName("");
                 setchargefour("");
                 setstart("");
                 setend("")
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -166,7 +166,7 @@ export default function CreateForms() {
             .then((response) => {
                 paymentPackage()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -179,9 +179,9 @@ export default function CreateForms() {
         })
             .then((response) => {
                 supplierRen()
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -194,9 +194,9 @@ export default function CreateForms() {
         })
             .then((response) => {
                 serviceCharg()
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

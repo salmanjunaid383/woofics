@@ -43,7 +43,7 @@ export default function SupplierComplainResponses() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -53,7 +53,7 @@ export default function SupplierComplainResponses() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -80,7 +80,7 @@ export default function SupplierComplainResponses() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
                  
             });
 

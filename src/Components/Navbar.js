@@ -96,8 +96,8 @@ function Navbar() {
                         .then((response) => {
                             setnamee(response.data.first_name)
                             setprofile_image(response.data.profile_image)
-                            console.log("profile image is "+ profile_image);
-                            console.log("setprofileimage profile image is "+ setprofile_image);
+                            
+                            
                         })
     
                 }
@@ -206,11 +206,11 @@ function Navbar() {
                             history.push('/superdashboard');
                         }
                     }
-                    // console.log(response)
+                    // 
                 }, (error) => {
                     setWait('Log In')
                     setOpen3(true)
-                    console.log(error);
+                    
                     history.push('/');
                 });
         }
@@ -278,10 +278,10 @@ function Navbar() {
                         history.push('/superdashboard');
                     }
                 }
-                console.log(response)
+                
             }, (error) => {
                 setOpen3(true)
-                console.log(error);
+                
                 history.push('/');
             });
     }
@@ -343,8 +343,12 @@ function Navbar() {
     // const [ser, setser] = useState('')
 
     const responseFacebook = (response) => {
-        console.log("Facebook response");
         console.log(response)
+        console.log(response.userID)
+        console.log(response.name)
+        console.log(response.email)
+        console.log(response.picture.data)
+        
         const res = axios.post(`https://api.woofics.com/api/facebook`, {
             userId: response.userID,
             name: response.name,
@@ -352,6 +356,7 @@ function Navbar() {
             picture:response.picture.data
         })
             .then((response) => {
+                
                 // localStorage.setItem('user_token', response.data);
                 // if (response) {
                 //     const role = jwt_decode(localStorage.getItem('user_token'))
@@ -370,10 +375,10 @@ function Navbar() {
                 //         history.push('/superdashboard');
                 //     }
                 // }
-                // console.log(response)
+                // 
             }, (error) => {
                 setOpen3(true)
-                console.log(error);
+                
                 history.push('/');
             });
     }

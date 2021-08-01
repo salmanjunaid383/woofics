@@ -15,9 +15,9 @@ export default function Blog() {
         const { data: response } = axios.get(`https://api.woofics.com/api/blog/${blid}`)
             .then((response) => {
                 setBlog(response.data)
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }, [])
 

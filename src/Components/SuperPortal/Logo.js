@@ -39,9 +39,9 @@ export default function DataofInt() {
         const { data: response } = axios.get(`https://api.woofics.com/api/footer`)
             .then((response) => {
                 getDot(response.data);
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     useEffect(() => {
@@ -61,7 +61,7 @@ export default function DataofInt() {
 
             }
         }, (error) => {
-            console.log(error);
+            
         });   
     }
 
@@ -70,7 +70,7 @@ export default function DataofInt() {
                 .then((res) => {
                     GetDot();
                 }, (error) => {
-                    console.log(error);
+                    
                 });
     }
     var index =0;
@@ -89,14 +89,14 @@ export default function DataofInt() {
         const file = e.target.files[0];
         const type = file.type
         const image = type.split("/")
-        console.log(image[0]);
+        
         const ImagesRef = firebase.storage().ref('images').child(file.name);
         await ImagesRef.put(file)
         ImagesRef.getDownloadURL().then((url) => {
             setImageUrl(url)
             setValue(url)
             setProgress('')
-            console.log(url)
+            
         })
     }
    

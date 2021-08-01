@@ -42,7 +42,7 @@ export default function Responses() {
                     setForm(res.data)
                 }
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

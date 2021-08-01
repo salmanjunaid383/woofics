@@ -40,7 +40,7 @@ export default function SupplierDashboard() {
             .then((response) => {
                 setOngoinProject(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -51,7 +51,7 @@ export default function SupplierDashboard() {
             .then((response) => {
                 setCompletedProject(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -62,7 +62,7 @@ export default function SupplierDashboard() {
             .then((response) => {
                 setClientTotalService(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -71,7 +71,7 @@ export default function SupplierDashboard() {
             .then((response) => {
                 settotalEarnings(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -91,7 +91,7 @@ export default function SupplierDashboard() {
                         setdays(parseInt(res.data.due_date))
                     }
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
 
         }
@@ -126,7 +126,7 @@ export default function SupplierDashboard() {
                     setDeadLine('')
                 }
             }, (error) => {
-                console.log(Error);
+                
                 history.push('/suppliertodo');
                 alert('Please Add Todo and Select Date')
             });
@@ -139,7 +139,7 @@ export default function SupplierDashboard() {
             .then((response) => {
                 setData(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -154,7 +154,7 @@ export default function SupplierDashboard() {
                 .then((response) => {
                     getTodo();
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
         }
     }

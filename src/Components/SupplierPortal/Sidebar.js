@@ -246,14 +246,14 @@ export default function SupplierSidebar() {
                 setnewnoti(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
    function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
                 .then((response) => {notification()
                 }, (Error) => {
-                        console.log(Error);
+                        
                 });
 }
 
@@ -263,7 +263,7 @@ export default function SupplierSidebar() {
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     // useEffect(() => {
@@ -289,7 +289,7 @@ export default function SupplierSidebar() {
                     setUnseenMxg(response.data)
                     seen()
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
     useEffect(() => {

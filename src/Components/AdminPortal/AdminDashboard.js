@@ -41,7 +41,7 @@ export default function AdminDashboard() {
             .then((response) => {
                 setOngoinProject(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -78,7 +78,7 @@ export default function AdminDashboard() {
                     setDeadLine('')
                 }
             }, (error) => {
-                console.log(Error);
+                
                 alert('Please Add Todo and Select Date')
             });
     }
@@ -90,7 +90,7 @@ export default function AdminDashboard() {
             .then((response) => {
                 setData(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -105,7 +105,7 @@ export default function AdminDashboard() {
                 .then((response) => {
                     getTodo();
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
         }
     }

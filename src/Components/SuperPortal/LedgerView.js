@@ -36,9 +36,9 @@ export default function LedgerView() {
             .then((response) => {
                 setArticle(response.data[0])
                 setTotalAmount(response.data.balance)
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -48,9 +48,9 @@ export default function LedgerView() {
             .then((response) => {
                 setArticle(response.data[0])
                 setTotalAmount(response.data.balance)
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

@@ -59,7 +59,7 @@ export default function SupHelp() {
                     setAnswer('')
                 }
             }, (Error) => {
-                console.log(Error);
+                
                 history.push('/help');
             });
     }

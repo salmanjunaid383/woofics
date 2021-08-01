@@ -67,11 +67,11 @@ export default function DiscussionForum() {
     //         user_id:"2"
     //     })
     //         .then((response) => {
-    //             console.log(response);
+    //             
     //             handleClose()
     //             getQuestion();
     //         }, (error) => {
-    //             console.log(error);
+    //             
     //         });
     // }
 
@@ -82,7 +82,7 @@ export default function DiscussionForum() {
                 setQuestions(response.data);
 
             }, (error) => {
-                console.log(error);
+                
             });
     }
 

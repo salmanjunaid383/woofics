@@ -60,19 +60,19 @@ export default function Quote() {
                 setcomments(response.data[0].extra_comments)
                 setprice(response.data[0].price)
                 setDate(response.data[0].delivery_days)
-                console.log(response.data)
+                
                 const { data: response2 } = axios.get(`https://api.woofics.com/api/form_details/`+response.data[0].form_id)
                 .then((response) => {
                     setservice(response.data.form)
                     setservicet(response.data.package)
-                    console.log(response.data)
+                    
 
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
 
             }, (Error) => {
-                console.log(Error);
+                
             });
 
         cardStatus();
@@ -91,13 +91,13 @@ export default function Quote() {
                         history.push("/quotation");
                     }
                   }, (Error) => {     
-                    console.log(Error);
+                    
                   });
     }
 
-    // console.log("quotation id is "+quotationData.id)
-    // console.log("sub id "+decoded.sub )
-    // console.log("form id is "+ quotationData.form_id)
+    // 
+    // 
+    // 
 
     function sendQuote(e) {
         e.preventDefault();
@@ -120,7 +120,7 @@ export default function Quote() {
                 }, (Error) => {
                     //  
                     setOpenn(true);
-                    console.log(Error);
+                    
                 });
         
     }
@@ -135,7 +135,7 @@ export default function Quote() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

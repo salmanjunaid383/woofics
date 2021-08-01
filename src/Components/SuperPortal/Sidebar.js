@@ -127,7 +127,7 @@
 //                     setBlog(response.data)
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -148,7 +148,7 @@
 //                 }
 //             }, (Error) => {
 
-//                 console.log(Error);
+//                 
 //             });
 
 //     }
@@ -330,7 +330,7 @@
 //                 setnewnoti(response.data)
 //                 seen()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //     function notificationDelete(e) {
@@ -338,7 +338,7 @@
 //             .then((response) => {
 //                 notification()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -348,7 +348,7 @@
 //             .then((response) => {
 //                 setunseen(response.data)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
  

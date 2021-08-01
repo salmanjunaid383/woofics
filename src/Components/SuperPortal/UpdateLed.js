@@ -61,7 +61,7 @@ export default function UpdateLed() {
                     setData(response.data.image_url)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -73,7 +73,7 @@ export default function UpdateLed() {
                     setOptions(res.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
         GetLed();
     }, [])
@@ -95,7 +95,7 @@ export default function UpdateLed() {
                 history.push('/ledlist')
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
     }
 

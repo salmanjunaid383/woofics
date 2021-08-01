@@ -55,7 +55,7 @@ export default function AllQuotation() {
                     // history.push('/myservice');
                 }
             }, (error) => {
-                console.log(Error);
+                
                 history.push('/allquotation');
 
             });
@@ -68,10 +68,10 @@ export default function AllQuotation() {
             .then((response) => {
                 setserviceb(response.data.form)
                 setservicet(response.data.package)
-                console.log(response.data)
+                
 
             }, (Error) => {
-                console.log(Error);
+                
             });
         Feedback();
         Services();
@@ -90,7 +90,7 @@ export default function AllQuotation() {
         const sorted = form.sort((a, b) =>
             b[sortProperty] - a[sortProperty]
         );
-        console.log(sorted);
+        
         setData(sorted);
     };
 
@@ -107,7 +107,7 @@ export default function AllQuotation() {
                     setService(response.data);
                 },
                 (error) => {
-                    console.log(Error);
+                    
                 }
             );
     }
@@ -125,7 +125,7 @@ export default function AllQuotation() {
                     alert("Project started!");
                 },
                 (error) => {
-                    console.log(Error);
+                    
                 }
             );
         }
@@ -137,10 +137,10 @@ export default function AllQuotation() {
             .put(`https://api.woofics.com/api/allow/`+val)
             .then(
                 (response) => {
-                    console.log(response);
+                    
                 },
                 (error) => {
-                    console.log(Error);
+                    
                 }
             );
         }

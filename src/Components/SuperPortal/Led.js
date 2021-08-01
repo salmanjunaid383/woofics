@@ -57,7 +57,7 @@ export default function Led() {
             }, (Error) => {
 
                 setProgress('Add Led')
-                console.log(Error);
+                
             });
     }
 
@@ -74,7 +74,7 @@ export default function Led() {
         const list = [...feild];
         list[index][name] = value;
         setfeild(list);
-        console.log(list);
+        
     }
 
     function AddMore() {

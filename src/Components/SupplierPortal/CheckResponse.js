@@ -41,7 +41,7 @@ export default function SupCheckResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -51,7 +51,7 @@ export default function SupCheckResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -79,7 +79,7 @@ export default function SupCheckResponse() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -96,7 +96,7 @@ export default function SupCheckResponse() {
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
             .then((res) => {
-                console.log(res.data)
+                
                 setImageData(res.data)
             }
             )

@@ -78,11 +78,11 @@ export default function UpdateProfile() {
                 user_id:decoded.sub
                 
             }).then((response) => {
-                console.log(response)
+                
                 setCardProgress('Update Profile')
                 // setOpenpop(true);
             }, (Error) => {
-                console.log(Error);
+                
                 setCardProgress('Update Profile')
             });
 
@@ -91,9 +91,9 @@ export default function UpdateProfile() {
         const {data: response} = axios.get(`https://api.woofics.com/api/get_card_details/`+decoded.sub)
             .then((response)=> {
                 setCardData(response.data);
-                console.log(response.data);
+                
             }, (Error) => {
-                console.log(Error);
+                
             })
     }
     useEffect(() => {
@@ -130,7 +130,7 @@ export default function UpdateProfile() {
         function getData() {
             const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
                 .then((res) => {
-                    console.log(res.data)
+                    
                     setData(res.data)
                     setFirstname(res.data.first_name)
                     setLastname(res.data.last_name)

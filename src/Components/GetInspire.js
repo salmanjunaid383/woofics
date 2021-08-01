@@ -8,10 +8,10 @@ export default function GetInspire() {
   const [blog, setBlog] = useState([]);
   const history = useHistory();
   // const cb = () => {
-  //  console.log(window.scrollY)
+  //  
   // };
   // window.addEventListener('scroll', () => {
-  //   console.log("event fired")
+  //   
   // })
 
 
@@ -19,12 +19,12 @@ export default function GetInspire() {
     const { data: response } = axios.get(`https://api.woofics.com/api/get_inspired`)
       .then((response) => {
         if (response) {
-          console.log(response.data)
+          
           setBlog(response.data)
         }
       }, (Error) => {
 
-        console.log(Error);
+        
       });
 
   }

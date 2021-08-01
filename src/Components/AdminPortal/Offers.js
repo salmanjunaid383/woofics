@@ -54,7 +54,7 @@ export default function Offers() {
     function sendQuote(e) {
         e.preventDefault();
         // setoffer('Please wait...')
-        console.log("userid is "+description);
+        
         const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).
         then((response1) => {
             if(response1.data === 0){
@@ -79,7 +79,7 @@ export default function Offers() {
                             }, (Error) => {
                                 // sucess open popover
                                 setOpenpop2(true);
-                                console.log(Error);
+                                
                             });
                     }
                     else{
@@ -91,7 +91,7 @@ export default function Offers() {
                 }
             }
         },(Error) => {
-            console.log(Error);
+            
         })
         
 

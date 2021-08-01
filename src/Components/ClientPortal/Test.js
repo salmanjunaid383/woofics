@@ -337,11 +337,11 @@
 //         })
 //             .then((response) => {
 //                 if (response) {
-//                     console.log(response)
+//                     
 //                     history.push('/myservice')
 //                 }
 //             }, (error) => {
-//                 console.log(error);
+//                 
 //                 alert('Please fill all feild!')
 //             });
 //     }
@@ -531,7 +531,7 @@
 //         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
 //                 .then((response) => {notification()
 //                 }, (Error) => {
-//                         console.log(Error);
+//                         
 //                 });
 // }
 

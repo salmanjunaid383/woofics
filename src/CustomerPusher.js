@@ -9,7 +9,7 @@
 //       });;
    
 //         const channel = pusher.subscribe(""+decoded.sub+"");   
-//         console.log("channel success "+ channel); 
+//         
 //         channel.bind("my-event",function(returnData){
 //         });
     

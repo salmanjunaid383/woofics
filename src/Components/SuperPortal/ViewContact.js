@@ -31,9 +31,9 @@ export default function ViewContact() {
         const { data: response } = axios.get(`https://api.woofics.com/api/contact`)
             .then((response) => {
                 setBlog(response.data)
-                console.log(response)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -54,7 +54,7 @@ export default function ViewContact() {
 
                     }
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
 
         }

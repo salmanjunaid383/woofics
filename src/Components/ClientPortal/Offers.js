@@ -43,7 +43,7 @@ export default function Offers() {
             .then((res) => {
                 setForm(res.data)
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -60,7 +60,7 @@ export default function Offers() {
                 Feedback()
             }, (error) => {
                 setLoad(false)
-                console.log(Error);
+                
             });
 
         Feedback()

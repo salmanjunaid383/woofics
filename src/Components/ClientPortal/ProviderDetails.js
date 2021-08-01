@@ -41,13 +41,13 @@ export default function ProviderDetails() {
                     setSuppliers(response.data)
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
             const { data: responseA } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
             }, (Error) => {
-                console.log(Error);
+                
             });  
     }, [])
 
@@ -74,7 +74,7 @@ export default function ProviderDetails() {
                     history.push('/chat')
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

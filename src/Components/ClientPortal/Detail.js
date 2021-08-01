@@ -139,7 +139,7 @@
 //                         setForm(res.data)
 //                     }
 //                 }, (error) => {
-//                     console.log(Error);
+//                     
 //                     history.push('/allquotation');
 //                 });
 
@@ -156,7 +156,7 @@
 //                         setSupplier(res.data)
 //                     }
 //                 }, (error) => {
-//                     console.log(Error);
+//                     
 //                     history.push('/allquotation');
 //                 });
 
@@ -174,7 +174,7 @@
 //             .then((response) => {
 //                 setName(response.data.first_name + " " + response.data.last_name)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     })
 
@@ -195,7 +195,7 @@
 //                     history.push('/chat')
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -208,7 +208,7 @@
 //                     setModify('Allowed')
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -234,7 +234,7 @@
 //                     sessionId: response.data.session_id,
 //                 });
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -367,7 +367,7 @@
 //                 setnewnoti(response.data)
 //                 seen()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -377,7 +377,7 @@
 //             .then((response) => {
 //                 setunseen(response.data)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -389,7 +389,7 @@
 //                  setUnseenMxg(response.data)
 //                  seen()
 //              }, (Error) => {
-//                  console.log(Error);
+//                  
 //              });
 //      }
 
@@ -413,7 +413,7 @@
 //         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
 //                 .then((response) => {notification()
 //                 }, (Error) => {
-//                         console.log(Error);
+//                         
 //                 });
 // }
 

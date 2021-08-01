@@ -28,9 +28,9 @@ export default function ViewReviews() {
         const { data: response } = axios.get(`https://api.woofics.com/api/review`)
             .then((response) => {
                     setBlog(response.data)
-                    console.log(response.data)
+                    
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -49,7 +49,7 @@ export default function ViewReviews() {
 
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -60,7 +60,7 @@ export default function ViewReviews() {
                     getReg();
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }

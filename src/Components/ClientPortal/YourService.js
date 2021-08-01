@@ -45,11 +45,11 @@ export default function YourService() {
         (res) => {
           if (res) {
             setForm(res.data);
-            console.log(res.data);
+            
           }
         },
         (error) => {
-          console.log(Error);
+          
           history.push("/myservice");
         }
       );
@@ -69,7 +69,7 @@ export default function YourService() {
             Feedback()
           },
           (error) => {
-            console.log(Error);
+            
             history.push("/myservice");
           }
         );

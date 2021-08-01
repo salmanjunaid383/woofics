@@ -128,7 +128,7 @@
 //                     setBlog(response.data)
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 
 //     }
@@ -146,7 +146,7 @@
 //                 .then((response) => {
 //                     GetLed()
 //                 }, (Error) => {
-//                     console.log(Error);
+//                     
 //                 });
 //         }
 //     }
@@ -328,14 +328,14 @@
 //                 setnewnoti(response.data)
 //                 seen()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //    function notificationDelete(e) {
 //         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
 //                 .then((response) => {notification()
 //                 }, (Error) => {
-//                         console.log(Error);
+//                         
 //                 });
 // }
 
@@ -345,7 +345,7 @@
 //             .then((response) => {
 //                 setunseen(response.data)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //     useEffect(() => {

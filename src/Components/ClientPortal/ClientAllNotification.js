@@ -46,7 +46,7 @@ export default function ClientAllNotification() {
             .then((response) => {
                 setName(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     function notificationDelete(e) {
@@ -54,7 +54,7 @@ export default function ClientAllNotification() {
                 .then((response) => {
                     notification()
                 }, (Error) => {
-                        console.log(Error);
+                        
                 });
 }
 useEffect(()=>{

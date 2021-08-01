@@ -97,7 +97,7 @@ export default function UpdateProfile() {
     function getSocialData() {
         const res = axios.get(`https://api.woofics.com/api/social_media/${decoded.sub}`)
             .then((res) => {
-                console.log(res.data)
+                
                 setsocialauth(res.data)
                 res.data.map((val) => {
                     if (val.app == 'Google') {
@@ -119,7 +119,7 @@ export default function UpdateProfile() {
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
             .then((res) => {
-                console.log(res.data)
+                
                 setData(res.data)
                 setFirstname(res.data.first_name)
                 setLastname(res.data.last_name)
@@ -149,22 +149,22 @@ export default function UpdateProfile() {
 
 
     const responseGoogle = (respons) => {
-        console.log(respons.profileObj.email);
-        console.log(decoded.sub);
+        
+        
         const res = axios.post(`https://api.woofics.com/api/social_media`, {
             email: respons.profileObj.email,
             app: 'Google',
             user_id: decoded.sub
         })
             .then((res) => {
-                console.log(res)
+                
                 // setDisable_google_btn(true)
                 setOpenpop(true);
                 getData()
             }
             ).catch((Error) => {
                       
-                console.log(Error)
+                
             })
     }
 
@@ -180,7 +180,7 @@ export default function UpdateProfile() {
                 getData()
             }, (error) => {
              
-                console.log(error);
+                
             });
     }
 

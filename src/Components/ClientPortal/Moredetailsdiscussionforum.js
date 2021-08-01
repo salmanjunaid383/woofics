@@ -43,7 +43,7 @@ export default function Moredetailsdiscussionforum() {
                 setUser(response.data);
 
             }, (error) => {
-                console.log(error);
+                
             });
     }
 
@@ -54,7 +54,7 @@ export default function Moredetailsdiscussionforum() {
             .then((response) => {
                 setQuestion(response.data);
             }, (error) => {
-                console.log(error);
+                
             });
     }
 
@@ -66,7 +66,7 @@ export default function Moredetailsdiscussionforum() {
             .then((response) => {
                 setAllreplies(response.data);
             }, (error) => {
-                console.log(error);
+                
             });
     }
 
@@ -86,7 +86,7 @@ export default function Moredetailsdiscussionforum() {
                 getReply();
                 setReply('');
             }, (error) => {
-                console.log(error);
+                
             });
     }
     const handleKeyDown = (event) => {
@@ -104,7 +104,7 @@ export default function Moredetailsdiscussionforum() {
             cluster: 'ap1'
           });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
+        
         channel.bind("my-event",function(returnData){
             getReply();
         });

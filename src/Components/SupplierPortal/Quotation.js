@@ -38,10 +38,10 @@ export default function Quotation() {
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
-                    console.log(response.data)
+                    
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
         cardStatus();
     }, [])
@@ -52,14 +52,14 @@ export default function Quotation() {
                 alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
             }
         }, (Error) => {
-            console.log(Error);
+            
         })
     }
 
 
     function purchaseLead(i){
-        console.log(decoded.sub)
-        console.log(i)
+        
+        
         
           const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).then((response) => {
             if(response.data === 0){
@@ -76,7 +76,7 @@ export default function Quotation() {
                             .then((response) => {
                                 if (response) {
                                     setPackage(response.data.package)
-                                    console.log(response.data.package)
+                                    
                                     if(window.confirm("This package is currently locked you will have to pay "+response.data.package.charge+" € to access it, are you sure ?")){
                                         if(window.confirm("Can u please confirm again?")){
                                             const {data : responseStore} = axios.post("https://api.woofics.com/api/lead" , {
@@ -84,10 +84,10 @@ export default function Quotation() {
                                                 payment_package_id: response.data.package.id,
                                                 form_id:i
                                             }).then((response) => {
-                                                   console.log(response); 
+                                                   
                                                    alert("Payment Successfull");
                                             }, (Error) => {
-                                                console.log("Store error "+Error);  
+                                                
                                             })
                                         }
                                     }
@@ -96,7 +96,7 @@ export default function Quotation() {
                                     }
                                 }
                             }, (Error) => {
-                                console.log(Error);
+                                
                             });
                         
                         
@@ -115,15 +115,15 @@ export default function Quotation() {
                                     history.push(`/quote/${i}`)
                                 }
                               }, (Error) => {     
-                                console.log(Error);
+                                
                               }); 
                     }
                   }, (Error) => {     
-                    console.log(Error);
+                    
                   });
             }
         }, (Error) => {
-            console.log(Error);
+            
         })
             
     }

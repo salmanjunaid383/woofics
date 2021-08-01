@@ -187,7 +187,7 @@
 //                     setData(response.data.phase_type)
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -199,7 +199,7 @@
 //                     setOptions(res.data)
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //         GetLed();
 //     }, [])
@@ -215,11 +215,11 @@
 //             .then((response) => {
 //                 setwait('Update led')
 //                 setdisable('')
-//                 console.log(response.data)
+//                 
 //                 history.goBack()
 //             }, (Error) => {
                  
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -236,7 +236,7 @@
 //         const list = [...Options];
 //         list[index][name] = value;
 //         setOptions(list);
-//         console.log(list);
+//         
 //     }
 
 //     function AddMore() {
@@ -425,14 +425,14 @@
 //                 setnewnoti(response.data)
 //                 seen()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //    function notificationDelete(e) {
 //         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
 //                 .then((response) => {notification()
 //                 }, (Error) => {
-//                         console.log(Error);
+//                         
 //                 });
 // }
 
@@ -442,7 +442,7 @@
 //             .then((response) => {
 //                 setunseen(response.data)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //     useEffect(() => {

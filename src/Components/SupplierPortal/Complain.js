@@ -80,7 +80,7 @@ export default function SupComplain() {
             .then((response) => {
                 setComplain(response.data)
             }, (error) => {
-                console.log(Error);
+                
                 history.push('/supcomplain');
             });
     }

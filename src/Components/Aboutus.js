@@ -65,11 +65,11 @@ export default function Aboutus() {
     //         user_id:"2"
     //     })
     //         .then((response) => {
-    //             console.log(response);
+    //             
     //             handleClose()
     //             getQuestion();
     //         }, (error) => {
-    //             console.log(error);
+    //             
     //         });
     // }
 
@@ -80,7 +80,7 @@ export default function Aboutus() {
                 setQuestions(response.data);
 
             }, (error) => {
-                console.log(error);
+                
             });
     }
 

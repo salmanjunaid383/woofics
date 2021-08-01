@@ -54,7 +54,7 @@ export default function OfferList() {
                         setUserId(decoded.sub)
                     }
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
 
         }

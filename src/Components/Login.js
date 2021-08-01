@@ -53,11 +53,11 @@ export default function Login() {
                             history.push('/superdashboard');
                         }
                     }
-                    // console.log(response)
+                    // 
                 }, (error) => {
                     setWait('Log In')
                     setOpen3(true)
-                    console.log(error);
+                    
                     history.push('/');
                 });
         }
@@ -101,7 +101,7 @@ export default function Login() {
     // Google Auth
 
     const responseGoogle = (respons) => {
-        console.log(respons)
+        
         const res = axios.post(`https://api.woofics.com/api/social_login`, {
             email: respons.profileObj.email,
         })
@@ -119,10 +119,10 @@ export default function Login() {
                     history.push('/superdashboard');
                 }
             }
-            // console.log(response)
+            // 
         }, (error) => {
             setOpen3(true)
-            console.log(error);
+            
             history.push('/');
         });
     }

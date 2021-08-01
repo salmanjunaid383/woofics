@@ -48,7 +48,7 @@ export default function SupAllNotification() {
                 setName(response.data)
                 
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     function notificationDelete(e) {
@@ -56,7 +56,7 @@ export default function SupAllNotification() {
                 .then((response) => {
                     notification()
                 }, (Error) => {
-                        console.log(Error);
+                        
                 });
 }
 useEffect(()=>{

@@ -42,7 +42,7 @@ export default function SupResponses() {
                     setForm(res.data)
                 }
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -58,7 +58,7 @@ export default function SupResponses() {
                     Feedback()
                 }
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

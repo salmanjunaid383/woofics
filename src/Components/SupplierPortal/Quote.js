@@ -58,10 +58,10 @@ export default function Quote() {
             .then((response) => {
                 setservice(response.data.form)
                 setservicet(response.data.package)
-                console.log(response.data)
+                
 
             }, (Error) => {
-                console.log(Error);
+                
             });
             
     }, [])
@@ -77,7 +77,7 @@ export default function Quote() {
                         history.push("/quotation");
                     }
                   }, (Error) => {     
-                    console.log(Error);
+                    
                   });
     }
 
@@ -108,7 +108,7 @@ export default function Quote() {
                 }, (Error) => {
                     //  
                     setOpenn(true);
-                    console.log(Error);
+                    
                 });
         }
     }
@@ -123,7 +123,7 @@ export default function Quote() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

@@ -44,7 +44,7 @@ export default function AllNotification() {
                 setnewnoti(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     function notificationDelete(e) {
@@ -52,7 +52,7 @@ export default function AllNotification() {
                 .then((response) => {
                     notification()
                 }, (Error) => {
-                        console.log(Error);
+                        
                 });
 }
 useEffect(()=>{
@@ -66,7 +66,7 @@ useEffect(()=>{
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

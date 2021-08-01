@@ -30,7 +30,7 @@
 //         const list = [...feild];
 //         list[index][name] = value;
 //         setfeild(list);
-//         console.log(list);
+//         
 //         const quantity = feild.map(a => parseInt(a.qty))
 //         setqty(quantity.reduce((a, b) => a + b))
 
@@ -76,7 +76,7 @@
 //                     sessionId: response.data.session_id,
 //                 });
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
     

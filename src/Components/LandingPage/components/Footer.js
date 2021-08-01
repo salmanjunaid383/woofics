@@ -29,17 +29,17 @@ function Footer() {
         const { data: response } = axios.get(`https://api.woofics.com/api/footer`)
             .then((response) => {
                 getDot(response.data);
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
         
             const { data: responses } = axios.get(`https://api.woofics.com/api/slogun`)
             .then((response) => {
                 getText(response.data);
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     useEffect(() => {

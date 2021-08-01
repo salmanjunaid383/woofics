@@ -20,9 +20,9 @@ export default function Moredetailsdiscussionforum() {
         const { data: response } = axios.get(`https://api.woofics.com/api/forum_question/${quid}`)
             .then((response) => {
                 setQuestion(response.data);
-                console.log(response.data)
+                
             }, (error) => {
-                console.log(error);
+                
             });
         }
         
@@ -33,9 +33,9 @@ export default function Moredetailsdiscussionforum() {
         const { data: response } = axios.get(`https://api.woofics.com/api/forum_answer/${quid}`)
         .then((response) => {
             setAllreplies(response.data);
-            console.log(response.data)
+            
         }, (error) => {
-            console.log(error);
+            
         });
     }
     
@@ -51,12 +51,12 @@ export default function Moredetailsdiscussionforum() {
     //         replied_by:'Mubeen Malik'
     //     })
     //     .then((response) => {
-    //         console.log(response);
+    //         
     //         getQuestion();
     //         getReply();
     //         setReply('');
     //         }, (error) => {
-    //             console.log(error);
+    //             
     //         });
     // }
 

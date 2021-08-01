@@ -98,13 +98,13 @@ export default function Project() {
                     .then((res) => {
                         if (res) {
                             setForm(res.data)
-                            console.log(res.data);
+                            
                             setdays(res.data.due_date)
                             setQuoteid(res.data.supplier_quotation_id)
                             setCompleted(res.data.status)
                         }
                     }, (error) => {
-                        console.log(Error);
+                        
                     });
     
             }
@@ -116,7 +116,7 @@ export default function Project() {
                             setSupplier(res.data)
                         }
                     }, (error) => {
-                        console.log(Error);
+                        
                         // history.push('/allquotation');
                     });
     
@@ -126,7 +126,7 @@ export default function Project() {
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
             }, (Error) => {
-                console.log(Error);
+                
             });
             getTodo()
         }
@@ -163,7 +163,7 @@ export default function Project() {
         //             sessionId: response.data.session_id,
         //         });
         //     }, (Error) => {
-        //         console.log(Error);
+        //         
         //     });
 
         var result = window.confirm("Do you want to mark this project as completed?");
@@ -173,7 +173,7 @@ export default function Project() {
                     alert("Project completed!")
                     Feedback()
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
     }
@@ -202,7 +202,7 @@ export default function Project() {
                     history.push('/chat')
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -234,7 +234,7 @@ export default function Project() {
                     setDeadLine('')
                 }
             }, (error) => {
-                console.log(Error);
+                
                 alert('Please Add Todo and Select Date')
             });
     }
@@ -246,7 +246,7 @@ export default function Project() {
             .then((response) => {
                 setData(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -259,7 +259,7 @@ export default function Project() {
             .then((response) => {
                 getTodo();
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 

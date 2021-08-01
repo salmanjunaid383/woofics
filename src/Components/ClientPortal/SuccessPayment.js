@@ -9,14 +9,14 @@ import CustomClientAuth from "../CustomClientAuth";
 export default function SuccessPayment(props) {
    
 const {pid} = useParams()  
-console.log(pid)
+
 
 useEffect(() => {
     const { data: response } = axios.post(`https://api.woofics.com/api/payment_success/${pid}`)
     .then((response) => {
-       console.log(response)
+       
     }, (Error) => {
-        console.log(Error);
+        
     });
 },[])
 

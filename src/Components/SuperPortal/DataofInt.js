@@ -39,9 +39,9 @@ export default function DataofInt() {
         const { data: response } = axios.get(`https://api.woofics.com/api/data_of_interest`)
             .then((response) => {
                 getDot(response.data);
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     useEffect(() => {
@@ -61,7 +61,7 @@ export default function DataofInt() {
 
             }
         }, (error) => {
-            console.log(error);
+            
         });   
     }
 
@@ -70,7 +70,7 @@ export default function DataofInt() {
                 .then((res) => {
                     GetDot();
                 }, (error) => {
-                    console.log(error);
+                    
                 });
     }
     var index =0;

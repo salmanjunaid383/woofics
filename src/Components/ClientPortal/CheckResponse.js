@@ -42,7 +42,7 @@ export default function CheckResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -52,7 +52,7 @@ export default function CheckResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -80,7 +80,7 @@ export default function CheckResponse() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

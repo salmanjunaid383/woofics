@@ -40,7 +40,7 @@ export default function ComplainResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -50,7 +50,7 @@ export default function ComplainResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -82,7 +82,7 @@ export default function ComplainResponse() {
             }, (error) => {
                 setdisable('')
                 setwait('Send Reply')
-                console.log(Error);
+                
             });
 
     }

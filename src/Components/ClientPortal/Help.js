@@ -60,7 +60,7 @@ export default function Help() {
                 history.push('/responses');
                 }
             }, (Error) => {
-                console.log(Error);
+                
                 history.push('/help');
             });
     }

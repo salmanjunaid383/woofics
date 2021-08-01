@@ -42,7 +42,7 @@ export default function AdminComplainResponses() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -52,7 +52,7 @@ export default function AdminComplainResponses() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -79,7 +79,7 @@ export default function AdminComplainResponses() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

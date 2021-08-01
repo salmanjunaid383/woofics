@@ -42,7 +42,7 @@ export default function SupCheckComplainResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -52,7 +52,7 @@ export default function SupCheckComplainResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -81,7 +81,7 @@ export default function SupCheckComplainResponse() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }
