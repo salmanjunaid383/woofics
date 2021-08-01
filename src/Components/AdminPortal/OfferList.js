@@ -47,7 +47,7 @@ export default function OfferList() {
     useEffect(() => {
 
         function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/offer`)
+            const res = axios.get(`https://api.woofics.com/api/show_offer_provider/`+decoded.sub)
                 .then((res) => {
                     if (res) {
                         setForm(res.data)
@@ -111,7 +111,7 @@ export default function OfferList() {
                                                                         <td className="txt-oflo text-center">{(val.description).slice(0,10)+'...'}</td>
                                                                         <td className="text-oflo text-center">{val.price}</td>
                                                                         <td className="txt-oflo text-center">{val.time}</td>
-                                                                        <td className="txt-oflo text-center">{val.locked === 1 ? "Accepted" : "Pending"}</td>
+                                                                        <td className="txt-oflo text-center">{val.locked === 0 ? "Accepted" : "Pending"}</td>
                                                                     </tr>
                                                                 </>
                                                             )
