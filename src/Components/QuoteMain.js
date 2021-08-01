@@ -19,7 +19,7 @@ import "../Components/ClientPortal/quotemain.css"
 import salman from "../Components/survey.png"
 // import shopping from "../Components/shopping.png"
 import shopping from "../Components/shopping.png"
-
+import firebase from './Firebase'
 import "../Components/quotemain.css"
 
 //Sidebar
@@ -366,7 +366,21 @@ export default function QuoteMain() {
 
     }
 
-
+    const uploadfile = async (e) => {
+        
+        const file = e.target.files[0];
+        const type = file.type
+        const image = type.split("/")
+        
+        const ImagesRef = firebase.storage().ref('images').child(file.name);
+        await ImagesRef.put(file)
+        ImagesRef.getDownloadURL().then((url) => {
+            setdoc(url)
+            
+            
+        })
+        
+    }
 
 
     function getSteps() {
@@ -907,7 +921,7 @@ export default function QuoteMain() {
                         </div> */}
                     </p></div>
                     <h4 className="text-center w-100 text-dark">Attach documents and images?</h4>
-                    <div className="w-100 my-lg-2"><TextField onChange={(e) => setdoc(e.target.value)} className="w-50" id="outlined-basic" type="file" variant="outlined" /> </div>
+                    <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
             default:
 
@@ -1155,7 +1169,7 @@ export default function QuoteMain() {
                             <h4 className="text-center w-100 text-dark for-name-sec">Email?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setemail(e.target.value)} className="w-50" id="outlined-basic" label="Email?" variant="outlined" /> </div>
                             <h4 className="text-center w-100 text-dark for-name-sec">Attach documents and images?</h4>
-                            <div className="w-100 my-lg-2"><input onChange={(e) => setdoc(e.target.value)} className="w-50" type="file" style={{ outline: "none", border: "none", margin: "auto" }} /> </div>
+                            <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /></div>
                             <h4 className="text-center w-100 text-dark for-name-sec">Comments?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcomments(e.target.value)} className="w-50" id="outlined-basic" label="Comments?" variant="outlined" /> </div>
                         </div>

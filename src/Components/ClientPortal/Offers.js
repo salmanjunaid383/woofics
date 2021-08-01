@@ -39,7 +39,7 @@ export default function Offers() {
     var decoded = jwt_decode(token)
 
     function Feedback() {
-        const res = axios.get(`https://api.woofics.com/api/offer`)
+        const res = axios.get(`https://api.woofics.com/api/show_offer_client/`+decoded.sub)
             .then((res) => {
                 setForm(res.data)
             }, (error) => {

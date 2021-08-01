@@ -64,7 +64,7 @@ export default function AllQuotation() {
 
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/form/${sid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${sid}`)
             .then((response) => {
                 setserviceb(response.data.form)
                 setservicet(response.data.package)
