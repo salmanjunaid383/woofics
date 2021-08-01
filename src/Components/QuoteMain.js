@@ -1105,20 +1105,21 @@ export default function QuoteMain() {
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcompany(e.target.value)} className="w-50" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
                             {/* <h4 className="text-center w-100 text-dark">Price?</h4> */}
                             {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div> */}
-                            <div className="w-100 my-lg-2"> <p className="d-inline w-100">
+                            <div className="w-100 my-lg-2"> 
+                            <p className="d-inline w-100 ">
                                 <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Intermediary / end customer?</h4>
-                                <div className="w-50 text-center float-left">
-                                    <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
+                                <div className="w-50 text-center float-left end-customer-right ">
+                                    <input type="radio" name="q3" className="w-25 text-right" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
                                 </div>
-                                <div className="w-50 text-center float-left">
-                                    <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
+                                <div className="w-50 text-center float-left ">
+                                    <input type="radio" name="q3" className="w-25 text-right" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
                                 </div>
                             </p>
                             </div>
 
                             {/* <div className="w-100 my-lg-2 " style={{margin:"auto"}}>  */}
                             {/* <p className="d-inline w-100"> */}
-                            <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
+                            <h4 className="text-center w-100 text-dark sector" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
                             <div className="for-question-res" style={{ display: "flex"}}>
                                 <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />Sport

@@ -1,18 +1,27 @@
+/* .end-customer-right{
+    margin-left:-45px
+} */
 @media(max-width:600px){
     .for-question-mobile{
         margin-bottom: 10px;
     }
     .for-name-sec{
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         margin-top:10px
     }
     .for-question-res{
         flex-direction: column;
+        width:28%;
+        text-align: left;
+        margin:auto;
+        /* margin-right: -2px !important; */
     }
-    /* .for-ques-mob{
-        width:100px !important;
-        text-align: center !important;
-    } */
+    .sector{
+        margin-top: 75px !important;
+        margin-bottom: 20px !important;
+        font-size: 20px !important;
+    }
+
 }
 
 
