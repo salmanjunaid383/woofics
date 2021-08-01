@@ -19,7 +19,7 @@ import "../Components/ClientPortal/quotemain.css"
 import salman from "../Components/survey.png"
 // import shopping from "../Components/shopping.png"
 import shopping from "../Components/shopping.png"
-import firebase from '../Firebase'
+import firebase from './Firebase'
 import "../Components/quotemain.css"
 
 //Sidebar
