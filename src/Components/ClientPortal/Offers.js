@@ -157,7 +157,7 @@ export default function Offers() {
                                                                             </div>
                                                                             <div className="col-md-5 text-right p-md-5 ">
                                                                                 <p>All COntract</p>
-                                                                                <h3 style={{ fontWeight: 'bold' }}>$ {val.price}</h3>
+                                                                                <h3 style={{ fontWeight: 'bold' }}>€ {val.price}</h3>
                                                                                 {/* <small>20% discount</small> */}
                                                                             </div>
                                                                         </div>

@@ -77,7 +77,7 @@ export default function Quotation() {
                                 if (response) {
                                     setPackage(response.data.package)
                                     console.log(response.data.package)
-                                    if(window.confirm("This package is currently locked you will have to pay "+response.data.package.charge+" euro to access it, are you sure ?")){
+                                    if(window.confirm("This package is currently locked you will have to pay "+response.data.package.charge+" € to access it, are you sure ?")){
                                         if(window.confirm("Can u please confirm again?")){
                                             const {data : responseStore} = axios.post("https://api.woofics.com/api/lead" , {
                                                 user_id:decoded.sub,
@@ -102,7 +102,21 @@ export default function Quotation() {
                         
                     }
                     else{
-                        history.push(`/quote/${i}`)
+                        const {data : response} = axios.post('https://api.woofics.com/api/check_quotation', {
+                                supplier_id : decoded.sub,
+                                form_id: i
+                            })
+                            .then((response) => {
+                                if(response.data===1){
+                                    
+                                    alert("Cannot bid on the same lead twice");
+                                }
+                                else{
+                                    history.push(`/quote/${i}`)
+                                }
+                              }, (Error) => {     
+                                console.log(Error);
+                              }); 
                     }
                   }, (Error) => {     
                     console.log(Error);
