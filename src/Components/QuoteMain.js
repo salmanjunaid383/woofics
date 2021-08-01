@@ -1120,7 +1120,7 @@ export default function QuoteMain() {
                             {/* <p className="d-inline w-100"> */}
                             <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
                             <div className="for-question-res" style={{ display: "flex"}}>
-                                <div className="w-100 ">
+                                <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />Sport
                                 </div>
 
@@ -1144,7 +1144,7 @@ export default function QuoteMain() {
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />Hotel
                                 </div>
                                 <div className="w-100">
-                                    <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />Congresses
+                                    <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />Congress
                                 </div>
                             </div>
                             {/* </p> */}
