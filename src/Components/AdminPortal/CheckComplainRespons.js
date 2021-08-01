@@ -41,7 +41,7 @@ export default function ProviderCheckComplainResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -51,7 +51,7 @@ export default function ProviderCheckComplainResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -78,7 +78,7 @@ export default function ProviderCheckComplainResponse() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

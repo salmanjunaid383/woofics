@@ -137,7 +137,7 @@ export default function DiscussionForum() {
                 setUser(response.data);
 
             }, (error) => {
-                console.log(error);
+                
             });
         }
 
@@ -157,7 +157,7 @@ export default function DiscussionForum() {
                 handleClosee()
                 getQuestion();
             }, (error) => {
-                console.log(error);
+                
             });
     }
 
@@ -168,7 +168,7 @@ export default function DiscussionForum() {
                 setQuestions(response.data);
 
             }, (error) => {
-                console.log(error);
+                
             });
     }
 

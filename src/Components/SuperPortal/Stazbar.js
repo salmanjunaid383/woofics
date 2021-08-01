@@ -138,9 +138,9 @@ export default function StazBar() {
             cluster: 'ap1'
           });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
+        
         channel.bind("my-event",function(returnData){
-            console.log("run event");
+            
             seen();
         });
         seen()
@@ -337,7 +337,7 @@ export default function StazBar() {
                 seen()
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
     }
 
@@ -347,7 +347,7 @@ export default function StazBar() {
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     

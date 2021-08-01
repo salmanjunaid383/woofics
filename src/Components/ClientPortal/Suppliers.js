@@ -44,10 +44,10 @@ export default function Supppliers() {
         const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`)
             .then((response) => {
                 setSuppliers(response.data)
-                console.log(response.data);
+                
 
             }, (Error) => {
-                console.log(Error);
+                
             });
     }, [])
 
@@ -59,7 +59,7 @@ export default function Supppliers() {
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
             }, (Error) => {
-                console.log(Error);
+                
             });
     })
 
@@ -79,7 +79,7 @@ export default function Supppliers() {
                     history.push('/chat')
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
     }
 

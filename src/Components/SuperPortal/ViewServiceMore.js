@@ -32,11 +32,11 @@ export default function ViewServiceMore() {
                 if (response) {
                     setBlog(response.data.form)
                     // setservicet(response.data.package)
-                    console.log(response.data)
-                    console.log(response.data.form);
+                    
+                    
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }

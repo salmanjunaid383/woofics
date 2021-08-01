@@ -32,7 +32,7 @@ export default function LedList() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -48,7 +48,7 @@ export default function LedList() {
                 .then((response) => {
                     GetLed()
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
     }

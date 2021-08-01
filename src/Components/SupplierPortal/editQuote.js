@@ -42,6 +42,7 @@ export default function Quote() {
     const [progress, setProgress] = useState('Send Quotation');
     const [disable, setDisable] = useState('disabled');
 
+    const[quotationData,setquotationData]=useState([]);
 
     //token decode
     var token = localStorage.getItem("user_token");
@@ -52,17 +53,30 @@ export default function Quote() {
     const [service, setservice] = useState([]);
     const [servicet, setservicet] = useState([]);
     useEffect(() => {
-        
-        cardStatus();
-        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serrid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/quotation/${serrid}`)
             .then((response) => {
-                setservice(response.data.form)
-                setservicet(response.data.package)
+                setquotationData(response.data[0])
+                setDescription(response.data[0].description)
+                setcomments(response.data[0].extra_comments)
+                setprice(response.data[0].price)
+                setDate(response.data[0].delivery_days)
                 
+                const { data: response2 } = axios.get(`https://api.woofics.com/api/form_details/`+response.data[0].form_id)
+                .then((response) => {
+                    setservice(response.data.form)
+                    setservicet(response.data.package)
+                    
+
+                }, (Error) => {
+                    
+                });
 
             }, (Error) => {
                 
             });
+
+        cardStatus();
+        
             
     }, [])
 
@@ -81,24 +95,22 @@ export default function Quote() {
                   });
     }
 
-
-
+    // 
+    // 
+    // 
 
     function sendQuote(e) {
         e.preventDefault();
         alert("Are you sure you want to send this quotation?")
         setProgress('Loading...')
-        if (description === "" || comments === "" || price === "" || date === "" || phase === "") {
-            setOpenn2(true);
-        } else {
-            const response = axios.post(`https://api.woofics.com/api/supplier_quotation`, {
+       
+            const response = axios.put(`https://api.woofics.com/api/supplier_quotation/`+quotationData.id, {
                 description: description,
                 extra_comments: comments,
-                form_id: serrid,
+                form_id: quotationData.form_id,
                 supplier_id: decoded.sub,
                 price: price,
                 status: 'pending',
-                payment_phase_id: phase,
                 delivery_days: date
             })
                 .then((response) => {
@@ -110,7 +122,7 @@ export default function Quote() {
                     setOpenn(true);
                     
                 });
-        }
+        
     }
 
 
@@ -338,7 +350,7 @@ export default function Quote() {
                                                     <div className="col-md-12">
                                                         <label class="col-md-12 pt-3">Description</label>
                                                         <div class="col-md-12 border-bottom p-0">
-                                                            <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
+                                                            <textarea rows="4" class="form-control p-0 border-0" placeholder={quotationData.description}  onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,7 +360,8 @@ export default function Quote() {
                                                             onChange={(e) => setcomments(e.target.value)}
                                                             id="standard-textarea"
                                                             label="Comments"
-                                                            placeholder="Add Comments"
+                                                            placeholder={quotationData.extra_comments}
+                                                            
                                                             multiline
                                                             fullWidth
                                                             InputLabelProps={{
@@ -357,9 +370,10 @@ export default function Quote() {
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
                                                             id="standard-number"
-                                                            placeholder="Service Quotation"
+                                                            placeholder={quotationData.price}
                                                             fullWidth
                                                             label="Price"
+                                                            
                                                             type="number"
                                                             onChange={(e) => setprice(e.target.value)}
                                                             InputLabelProps={{
@@ -371,9 +385,10 @@ export default function Quote() {
                                                 <div className="row mt-5">
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
-                                                            placeholder="Delivery Days for Service"
+                                                            placeholder={quotationData.delivery_days}
                                                             id="standard-number"
                                                             fullWidth
+                                                            
                                                             label="Delivery Days"
                                                             type="number"
                                                             onChange={(e) => setDate(e.target.value)}
@@ -383,25 +398,12 @@ export default function Quote() {
                                                         />
                                                     </div>
                                                     <div className="col-md-6  px-2 w-100 p-0 ">
-                                                        <FormControl component="fieldset">
-                                                        {/* Payment Phase */}
-                                                            <FormLabel component="legend"></FormLabel>
-                                                            <RadioGroup defaultValue="two-phase" className="d-inline" aria-label="phase" name="customized-radios">
-                                                                {blog.map((val) => {
-                                                                    return (
-                                                                        <>
-                                                                            <FormControlLabel value={val.phase_type} onChange={() => setPhase(val.id)} control={<StyledRadio />} label={val.phase_type} />
-                                                                        </>
-                                                                    )
-                                                                })
-                                                                }
-                                                            </RadioGroup>
-                                                        </FormControl>
+                                                      
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-4 mt-4">
                                                     <div class="col-sm-12 text-center">
-                                                        <button class={`btn text-white ${date == '' || price == '' || comments == '' || description == '' || phase == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{progress}</button>
+                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>Update Quotation</button>
                                                     </div>
                                                 </div>
                                             </form>

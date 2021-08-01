@@ -42,7 +42,7 @@ export default function SupCheckComplainResponse() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -52,7 +52,7 @@ export default function SupCheckComplainResponse() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -81,7 +81,7 @@ export default function SupCheckComplainResponse() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -121,7 +121,7 @@ export default function SupCheckComplainResponse() {
                         <div class="container-fluid p-5" style={{ height: '100%' }}>
                             <div class="row">
                                 <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
-                                    <h4 className="text-center p-4">HELP RESPONSES</h4>
+                                    <h4 className="text-center p-4">Respuestas de ayuda</h4>
                                     <div class="card-body">
                                         <div className="d-flex h5 bold">
                                             Help:  <p className="" style={{ fontSize: 20 }}> {blog.description}</p>

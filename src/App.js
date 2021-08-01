@@ -143,6 +143,7 @@ import forum from './Components/forum'
 import detailforum from './Components/detailforum'
 import invoice from './Components/SupplierPortal/SupplierInvoice'
 import invoicedetail from './Components/SupplierPortal/InvoiceDetail'
+import editquote from './Components/SupplierPortal/editQuote'
 function App() {
 
 
@@ -192,6 +193,7 @@ function App() {
           <Route exact path="/supplierdashboard" component={SupplierDashboard} />
           <Route exact path="/quotation" component={Quotation} />
           <Route exact path="/allquotation/:sid" component={AllQuotation} />
+          <Route exact path="/editquote/:serrid" component={editquote}></Route>
           <Route exact path="/quote/:serrid" component={Quote} />
           <Route exact path="/invoice" component={Invoice} />
           <Route exact path="/chat" component={Chat} />

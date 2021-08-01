@@ -20,7 +20,7 @@ export default function Blog() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }, [])
 

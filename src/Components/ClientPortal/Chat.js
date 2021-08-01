@@ -61,25 +61,25 @@ export default function Chat() {
 
 
     
-    // console.log("channel "+channel);
+    // 
 
     useEffect(() => {
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
           });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
+        
         channel.bind("my-event",function(returnData){
-            console.log("my-event");
+            
             function Users() {
-             console.log(returnData);
+             
                 const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                     from_user: id,
                     to_user: returnData.from_user
                 })
                     .then((response) => {
                         if (response) {
-                            console.log(response.data)
+                            
                             setMsg(response.data)
                             setRight(response.data.from_user)
                             SendData()
@@ -88,8 +88,8 @@ export default function Chat() {
 
                         }
                     }, (Error) => {
-                        console.log("userID "+id+" to user "+stazId);
-                        console.log(Error);
+                        
+                        
                     })
             }
             Users();
@@ -125,7 +125,7 @@ export default function Chat() {
     //                 }
     //             }, (Error) => {
     //                 //  
-    //                 // console.log(Error);
+    //                 // 
     //             });
     //     }
     //     SendData();
@@ -136,11 +136,11 @@ export default function Chat() {
         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
             .then((response) => {
                 if (response) {
-                    // console.log(response.data)
+                    // 
                     setUser(response.data)
                 }
             }, (Error) => {
-                // console.log(Error);
+                // 
             });
     }
 
@@ -179,7 +179,7 @@ export default function Chat() {
                             })
                                 .then((response) => {
                                     if (response) {
-                                        console.log(response.data)
+                                        
                                         setMsg(response.data)
                                         setRight(response.data.from_user)
                                         SendData()
@@ -188,13 +188,13 @@ export default function Chat() {
 
                                     }
                                 }, (Error) => {
-                                    // console.log(Error);
+                                    // 
                                 })
                         }
                         Users()
                         setsentMsg('')
                     }, (Error) => {
-                        // console.log(Error);
+                        // 
                     });
             }
         })
@@ -211,7 +211,7 @@ export default function Chat() {
             .then((response) => {
                 if (response) {
                     valuStaz=valu;
-                    // console.log(response.data)
+                    // 
                     setMsg(response.data)
                     setRight(response.data.from_user)
                     SendData()
@@ -224,7 +224,7 @@ export default function Chat() {
                     // setOpen(true);
                 }
             }, (Error) => {
-                // console.log(Error);
+                // 
             });
     }
 
@@ -246,7 +246,7 @@ export default function Chat() {
                     })
                         .then((response) => {
                             if (response) {
-                                console.log(response.data)
+                                
                                 setMsg(response.data)
                                 setRight(response.data.from_user)
                                 SendData()
@@ -255,13 +255,13 @@ export default function Chat() {
 
                             }
                         }, (Error) => {
-                            // console.log(Error);
+                            // 
                         })
                 }
                 Users()
                 setsentMsg('')
             }, (Error) => {
-                // console.log(Error);
+                // 
             });
     }
 

@@ -33,7 +33,7 @@ export default function AdminComplain() {
                 }
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
 
     }

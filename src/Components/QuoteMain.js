@@ -333,7 +333,7 @@ export default function QuoteMain() {
             }
 
         }
-        // console.log(description,
+        // 
         //     buy,
         //     indoor,
         //     install,

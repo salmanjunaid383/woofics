@@ -53,7 +53,7 @@ export default function Todo() {
                     setDeadLine('')
                 }
             }, (error) => {
-                console.log(Error);
+                
                 history.push('/suppliertodo');
                 alert('Please Add Todo and Select Date')
             });
@@ -66,7 +66,7 @@ export default function Todo() {
             .then((response) => {
                 setData(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -83,7 +83,7 @@ export default function Todo() {
                 .then((response) => {
                     getTodo();
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
         }
     }

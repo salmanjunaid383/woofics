@@ -28,9 +28,9 @@ export default function Registration() {
         const { data: response } = axios.get(`https://api.woofics.com/api/getsupplier`)
             .then((response) => {
                 setBlog(response.data)
-                console.log(response)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -49,7 +49,7 @@ export default function Registration() {
 
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -62,7 +62,7 @@ export default function Registration() {
                     getReg();
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }

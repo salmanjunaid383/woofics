@@ -58,7 +58,7 @@ export default function ProviderHelp() {
                     setAnswer('')
                 }
             }, (Error) => {
-                console.log(Error);
+                
                 history.push('/help');
                  
             });

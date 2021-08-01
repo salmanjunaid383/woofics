@@ -175,7 +175,7 @@ export default function Feedback() {
                 setOpenNoti(true)
                 history.push('/coupon');
             }, (error) => {
-                console.log(Error);
+                
                 history.push('/feedback');
                 alert("Please fillout all fields !")
             });
@@ -187,7 +187,7 @@ export default function Feedback() {
         //             history.push('/admindashboard');
         //         }
         //     }, (error) => {
-        //         console.log(Error);
+        //         
         //         history.push('/feedback');
         //          
         //     });
@@ -332,7 +332,7 @@ export default function Feedback() {
                 setName(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -342,7 +342,7 @@ export default function Feedback() {
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -354,7 +354,7 @@ export default function Feedback() {
                  setUnseenMxg(response.data)
                  seen()
              }, (Error) => {
-                 console.log(Error);
+                 
              });
      }
 
@@ -378,7 +378,7 @@ export default function Feedback() {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
                 .then((response) => {notification()
                 }, (Error) => {
-                        console.log(Error);
+                        
                 });
 }
 

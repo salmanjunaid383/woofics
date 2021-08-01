@@ -55,7 +55,7 @@ export default function AllQuotation() {
                     // history.push('/myservice');
                 }
             }, (error) => {
-                console.log(Error);
+                
                 history.push('/allquotation');
 
             });
@@ -68,10 +68,10 @@ export default function AllQuotation() {
             .then((response) => {
                 setserviceb(response.data.form)
                 setservicet(response.data.package)
-                console.log(response.data)
+                
 
             }, (Error) => {
-                console.log(Error);
+                
             });
         Feedback();
         Services();
@@ -90,7 +90,7 @@ export default function AllQuotation() {
         const sorted = form.sort((a, b) =>
             b[sortProperty] - a[sortProperty]
         );
-        console.log(sorted);
+        
         setData(sorted);
     };
 
@@ -107,7 +107,7 @@ export default function AllQuotation() {
                     setService(response.data);
                 },
                 (error) => {
-                    console.log(Error);
+                    
                 }
             );
     }
@@ -125,7 +125,22 @@ export default function AllQuotation() {
                     alert("Project started!");
                 },
                 (error) => {
-                    console.log(Error);
+                    
+                }
+            );
+        }
+    }
+    function RedoOffer(val){
+        var result = window.confirm("Are you sure ?");
+        if (result) {
+        const response = axios
+            .put(`https://api.woofics.com/api/allow/`+val)
+            .then(
+                (response) => {
+                    
+                },
+                (error) => {
+                    
                 }
             );
         }
@@ -319,6 +334,7 @@ export default function AllQuotation() {
                                                             <tr>
                                                                 <th className="border-top-0 text-white text-center">DATE</th>
                                                                 <th className="border-top-0 text-white text-center">REQUESTS</th>
+                                                                <th className="border-top-0 text-white text-center">Comment</th>
                                                                 <th className="border-top-0 text-white text-center">OFFERS</th>
                                                                 <th className="border-top-0 text-white text-center">DELIVERY DAYS</th>
                                                                 <th className="border-top-0 text-white text-center">ACTIONS</th>
@@ -331,10 +347,12 @@ export default function AllQuotation() {
                                                                     <>
                                                                         <tr style={{ height: '5rem' }} className="border-bottom text-center ">
                                                                             <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
-                                                                            <td className="text-oflo text-center bold">{val.description.slice(0, 30)}...</td>
+                                                                            <td className="text-oflo text-center bold">{val.description}...</td>
+                                                                            <td className="text-oflo text-center bold">{val.extra_comments}...</td>
                                                                             <td style={{padding:"10px"}} className={val.price > 15000 ? 'txt-oflo text-center bold  badge badge-pill badge-danger' : val.price > 10000 ? 'txt-oflo text-center bold   badge badge-pill badge-success' : val.price > 100 ? 'txt-oflo text-center bold   badge badge-pill badge-info' : val.price > 500 ? 'txt-oflo text-center bold   badge badge-pill badge-warning' : val.price > 1000 ? 'txt-oflo text-center bold   badge badge-pill badge-success' : val.price > 5000 ? 'txt-oflo text-center bold   badge badge-pill badge-secondary' : val.price > 10000 ? 'txt-oflo text-center bold   badge badge-pill badge-primary' : val.price > 20000 ? 'txt-oflo text-center bold   badge badge-pill badge-info' : val.price > 500000 ? 'txt-oflo text-center bold   badge badge-pill badge-danger' : 'txt-oflo text-center bold badge badge-pill badge-danger'}>$ {val.price}</td>
                                                                             <td className="txt-oflo text-center bold">{val.delivery_days} Days</td>
                                                                             <td className="txt-oflo text-center bold">
+                                                                                <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => RedoOffer(val.id)} >Redo Offer</button>
                                                                                 <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => StartProj(val.id)} >Start project</button>
                                                                             </td>
                                                                         </tr>

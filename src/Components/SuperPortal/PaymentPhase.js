@@ -190,7 +190,7 @@
 //             }, (Error) => {
                  
 //                 setwait('Add Payment Phase')
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -207,7 +207,7 @@
 //         const list = [...feild];
 //         list[index][name] = value;
 //         setfeild(list);
-//         console.log(list);
+//         
 //     }
 
 //     function AddMore() {
@@ -396,14 +396,14 @@
 //                 setnewnoti(response.data)
 //                 seen()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //    function notificationDelete(e) {
 //         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
 //                 .then((response) => {notification()
 //                 }, (Error) => {
-//                         console.log(Error);
+//                         
 //                 });
 // }
 
@@ -413,7 +413,7 @@
 //             .then((response) => {
 //                 setunseen(response.data)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //     useEffect(() => {

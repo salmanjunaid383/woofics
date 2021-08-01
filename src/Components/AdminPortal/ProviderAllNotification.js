@@ -48,7 +48,7 @@ export default function ProviderAllNotification() {
                 setName(response.data)
                 
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     useEffect(()=>{
@@ -63,7 +63,7 @@ export default function ProviderAllNotification() {
             .then((response) => {
                 notification()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

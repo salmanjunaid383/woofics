@@ -34,9 +34,9 @@ export default function Help() {
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance`)
             .then((response) => {
                 setBlog(response.data)
-                // console.log(response.data)
+                // 
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     function getServiceledger() {
@@ -44,9 +44,9 @@ export default function Help() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance`)
             .then((response) => {
                 setBlog(response.data)
-                // console.log(response.data)
+                // 
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

@@ -40,13 +40,13 @@ export default function Dashboard() {
         })
             .then((response) => {
                 if (response) {
-                    console.log(response)
+                    
                     getTodo();
                     setTodo('');
                     setDeadLine('')
                 }
             }, (error) => {
-                console.log(Error);
+                
                 alert('Please Add Todo and Select Date')
             });
     }
@@ -56,10 +56,10 @@ export default function Dashboard() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/client_todo/${decoded.sub}`)
             .then((response) => {
-                console.log(response)
+                
                 setData(response.data)
             }, (error) => {
-                console.log(Error);
+                
 
             });
     }
@@ -77,7 +77,7 @@ export default function Dashboard() {
                 .then((response) => {
                     getTodo();
                 }, (error) => {
-                    console.log(Error);
+                    
 
                 });
         }
@@ -86,7 +86,7 @@ export default function Dashboard() {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
             .then((response) => {
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -106,11 +106,11 @@ export default function Dashboard() {
     function ClientOngoinProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_client_project/${decoded.sub}`)
             .then((response) => {
-                console.log(response.data)
+                
                 setOngoinProject(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -119,11 +119,11 @@ export default function Dashboard() {
     function ClientCompletedProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`)
             .then((response) => {
-                console.log(response.data)
+                
                 setCompletedProject(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -132,22 +132,22 @@ export default function Dashboard() {
     function ClientService() {
         const { data: response } = axios.get(`https://api.woofics.com/api/client_service/${decoded.sub}`)
             .then((response) => {
-                console.log(response.data)
+                
                 setClientTotalService(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
     function CountExpense() {
         const { data: response } = axios.get(`https://api.woofics.com/api/client_expense/${decoded.sub}`)
             .then((response) => {
-                console.log(response.data)
+                
                 settotalExpnse(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -179,10 +179,10 @@ export default function Dashboard() {
                     if (res) {
                         setForm(res.data)
                         setdays(parseInt(res.data.due_date))
-                        console.log(res.data)
+                        
                     }
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
 
         }

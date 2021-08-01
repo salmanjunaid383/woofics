@@ -58,7 +58,7 @@ export default function CreateBlog() {
             
             .then((res) => {
                 if (res) {
-                    console.log("Blog post request");
+                    
                     setwait('Add Blog')
                     setdisable('')
                     history.push('/blog');
@@ -68,7 +68,7 @@ export default function CreateBlog() {
                 
                 setwait('Add Blog')
                 setdisable('')
-                console.log(Error);
+                
                 history.push('/createblog');
             });
         }
@@ -94,7 +94,7 @@ export default function CreateBlog() {
         ImagesRef.getDownloadURL().then((url) => {
             setImageUrl(url)
             setProgress('') 
-            console.log(url)
+            
         })
     }
     return (

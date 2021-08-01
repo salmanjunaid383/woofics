@@ -27,12 +27,12 @@ export default function ViewServices() {
         const { data: response } = axios.get(`https://api.woofics.com/api/form`)
             .then((response) => {
                 if (response) {
-                    console.log(response.data)
+                    
                     setBlog(response.data)
                 }
             }, (Error) => {
                  
-                console.log(Error);
+                
             });
 
     }

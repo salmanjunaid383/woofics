@@ -41,7 +41,7 @@ export default function ComplainResponses() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -51,7 +51,7 @@ export default function ComplainResponses() {
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -78,7 +78,7 @@ export default function ComplainResponses() {
                 getRes()
                 setArticle('')
             }, (error) => {
-                console.log(Error);
+                
             });
 
     }

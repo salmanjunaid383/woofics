@@ -89,10 +89,10 @@ export default function Contact() {
         message: message,
     })
         .then((response) => {
-           console.log(response)
+           
            alert("Message Sent!")
         }, (Error) => {
-            // console.log(Error);
+            // 
         });
 }
 

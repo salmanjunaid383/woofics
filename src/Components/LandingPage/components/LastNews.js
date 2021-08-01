@@ -19,18 +19,18 @@ function LastNews() {
           setBlog(response.data)
         }
       }, (Error) => {
-        console.log(Error);
+        
       });
 
 
     const { data: respons } = axios.get(`https://api.woofics.com/api/data_of_interest`)
       .then((respons) => {
         if (respons) {
-          console.log(respons.data)
+          
           setsupp(respons.data)
         }
       }, (Error) => {
-        console.log(Error);
+        
       });
 
   }, [])

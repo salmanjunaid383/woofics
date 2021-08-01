@@ -34,13 +34,13 @@ export default function Blog() {
     function createBlog() {
         const { data: response } = axios.get(`https://api.woofics.com/api/blog`)
             .then((response) => {
-                console.log("Blog Response "+response)
+                
                 if (response) {
-                    console.log("Blog response data "+response.data)
+                    
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log("Blog post "+Error);
+                
             });
     }
 
@@ -51,8 +51,8 @@ export default function Blog() {
                 .then((response) => {
                     createBlog()
                 }, (Error) => {
-                    console.log("delete error")
-                    console.log(Error);
+                    
+                    
                 });
         }
     }

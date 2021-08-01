@@ -57,7 +57,7 @@ export default function SuperDashboard() {
             .then((response) => {
                 getData(response.data)
             }, (Error)=> {
-                console.log(Error);
+                
             });
     }
 
@@ -65,11 +65,11 @@ export default function SuperDashboard() {
     function TotalClient() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_client`)
             .then((response) => {
-                console.log(response.data)
+                
                 settotalClient(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -79,11 +79,11 @@ export default function SuperDashboard() {
     function TotalSupplier() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_supplier`)
             .then((response) => {
-                console.log(response.data)
+                
                 settotalSupplier(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -92,11 +92,11 @@ export default function SuperDashboard() {
     function TotalProvider() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_provider`)
             .then((response) => {
-                console.log(response.data)
+                
                 settotalProvider(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
     const classes = useStyles();
@@ -105,33 +105,33 @@ export default function SuperDashboard() {
     function CompletedPro() {
         const { data: response } = axios.get(`https://api.woofics.com/api/completed_projects`)
             .then((response) => {
-                console.log(response.data)
+                
                 setCompletedProject(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
     //...ongoing pro
     function OngoingPro() {
         const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_projects`)
             .then((response) => {
-                console.log(response.data)
+                
                 setOnGoingProject(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
     //....TOtal 
     function TotalSer() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service`)
             .then((response) => {
-                console.log(response.data)
+                
                 settotalServ(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -140,11 +140,11 @@ export default function SuperDashboard() {
     function CountBlogs() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_blog`)
             .then((response) => {
-                console.log(response.data)
+                
                 settotalBlogs(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -153,11 +153,11 @@ export default function SuperDashboard() {
     function PendingRegistration() {
         const { data: response } = axios.get(`https://api.woofics.com/api/pending_registration`)
             .then((response) => {
-                console.log(response.data)
+                
                 setPendingReg(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -166,11 +166,11 @@ export default function SuperDashboard() {
     function CountComplain() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_complains`)
             .then((response) => {
-                console.log(response.data)
+                
                 setTotalComplain(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -181,11 +181,11 @@ export default function SuperDashboard() {
     function TotoalUsers() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_users`)
             .then((response) => {
-                console.log(response.data)
+                
                 setTotalUser(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 
@@ -195,7 +195,7 @@ export default function SuperDashboard() {
     function TotoalProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/per_month_project`)
             .then((response) => {
-                console.log(response.data)
+                
                 setTotalPerProjects(response.data)
                 for (var i = 0; i < 12; i++) {
                     if (response.data[i].value !== 0) {
@@ -205,7 +205,7 @@ export default function SuperDashboard() {
                 }
             }, (Error) => {
 
-                console.log(Error);
+                
             });
 
 
@@ -216,11 +216,11 @@ export default function SuperDashboard() {
     function TotoalUser() {
         const { data: response } = axios.get(`https://api.woofics.com/api/per_month_user`)
             .then((response) => {
-                console.log(response.data)
+                
                 setuser(response.data)
             }, (Error) => {
 
-                console.log(Error);
+                
             });
     }
 

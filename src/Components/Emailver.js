@@ -13,7 +13,7 @@ useEffect(() => {
     const { data: response } = axios.post(`https://api.woofics.com/api/activate/${uuid}`)
     .then((response) => {
     }, (Error) => {
-        console.log(Error);
+        
     });
 },[])
 

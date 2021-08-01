@@ -31,7 +31,7 @@ export default function Help() {
                     setBlog(response.data)
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
 
     }
@@ -45,10 +45,10 @@ export default function Help() {
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/help/${id}`)
                 .then((response) => {
-                    console.log(response.data)
+                    
                     GetLed()
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
     }

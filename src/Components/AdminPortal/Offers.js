@@ -15,6 +15,7 @@ import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
 
 import CustomProviderAuth from "../CustomProviderAuth";
+import { LaptopWindows } from "@material-ui/icons";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,26 +53,47 @@ export default function Offers() {
 
     function sendQuote(e) {
         e.preventDefault();
-        setoffer('Please wait...')
-        console.log("userid is "+description);
-        const response = axios.post(`https://api.woofics.com/api/offer`, {
-            description: description,
-            time: comments,
-            service_provider_id: decoded.sub,
-            price: price,
-            client_id: oid
+        // setoffer('Please wait...')
+        
+        const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).
+        then((response1) => {
+            if(response1.data === 0){
+                alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
+            }
+            else{
+                if(window.confirm("Are you sure you want to send this offer, you will be charged 4 € for this offer")){
+                    if(window.confirm("Can you please confirm again")){
+                        const response = axios.post(`https://api.woofics.com/api/offer`, {
+                            description: description,
+                            time: comments,
+                            service_provider_id: decoded.sub,
+                            price: price,
+                            client_id: oid
+                        })
+                            .then((response) => {
+                                setoffer('Send Offer')
+                                setOpenpop(true);
+                                setTimeout(() => {
+                                    history.push("/providerchat");
+                                }, 2000);
+                            }, (Error) => {
+                                // sucess open popover
+                                setOpenpop2(true);
+                                
+                            });
+                    }
+                    else{
+
+                    }
+                }
+                else{
+
+                }
+            }
+        },(Error) => {
+            
         })
-            .then((response) => {
-                setoffer('Send Offer')
-                setOpenpop(true);
-                setTimeout(() => {
-                    history.push("/providerchat");
-                  }, 2000);
-            }, (Error) => {
-                // sucess open popover
-                setOpenpop2(true);
-                console.log(Error);
-            });
+        
 
     }
 

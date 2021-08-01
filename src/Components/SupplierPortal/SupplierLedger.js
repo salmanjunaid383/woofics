@@ -57,9 +57,9 @@ export default function SupplierLedger() {
                 setUserId(decoded.sub);
                 setArticle(response.data[0])
                 setTotalAmount(response.data.balance)
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     useEffect(() => {
@@ -71,7 +71,7 @@ export default function SupplierLedger() {
 
     const stripePromise = loadStripe("pk_test_51IIWuIApAAjWKIoNrjwEcTyuCykDQVAqXWIBpwsNt1trDbRXD9n6uKPRvZlDKdQLNyIRiKaSAwpPgbUAjhEkqOJ400HEEcjDh1");
     async function stripePayment(e){
-        console.log(name,currency,description,amount,userId);
+        
         e.preventDefault();
         const stripe = await stripePromise;
         const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
@@ -86,7 +86,7 @@ export default function SupplierLedger() {
                     sessionId: response.data.session_id,
                 });
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

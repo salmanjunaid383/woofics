@@ -64,7 +64,7 @@ export default function SupplierProjects() {
                         setSupplier(res.data)
                     }
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
 
         }
@@ -78,7 +78,7 @@ export default function SupplierProjects() {
                         setCompleted(res.data.status)
                     }
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
 
         }
@@ -87,7 +87,7 @@ export default function SupplierProjects() {
         .then((response) => {
             setName(response.data.first_name + " " + response.data.last_name)
         }, (Error) => {
-            console.log(Error);
+            
         });
     }, [])
 
@@ -119,7 +119,7 @@ export default function SupplierProjects() {
                     history.push('/chat')
                 }
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -185,7 +185,7 @@ export default function SupplierProjects() {
                     setDeadLine('')
                 }
             }, (error) => {
-                console.log(Error);
+                
                 alert('Please Add Todo and Select Date')
             });
     }
@@ -197,7 +197,7 @@ export default function SupplierProjects() {
             .then((response) => {
                 setData(response.data)
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -210,7 +210,7 @@ export default function SupplierProjects() {
             .then((response) => {
                 getTodo();
             }, (error) => {
-                console.log(Error);
+                
             });
     }
 

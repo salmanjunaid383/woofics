@@ -55,18 +55,18 @@ export default function ProviderChat() {
             cluster: 'ap1'
           });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
+        
         channel.bind("my-event",function(returnData){
-            console.log("my-event");
+            
             function Users() {
-             console.log(returnData);
+             
                 const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                     from_user: id,
                     to_user: returnData.from_user
                 })
                     .then((response) => {
                         if (response) {
-                            console.log(response.data)
+                            
                             setMsg(response.data)
                             setRight(response.data.from_user)
                             SendData()
@@ -74,8 +74,8 @@ export default function ProviderChat() {
 
                         }
                     }, (Error) => {
-                        console.log("userID "+id+" to user ");
-                        console.log(Error);
+                        
+                        
                     })
             }
             Users();
@@ -98,7 +98,7 @@ export default function ProviderChat() {
                     setUser(response.data)
                 }
             }, (Error) => {
-                // console.log(Error);
+                // 
             });
     }
 
@@ -120,7 +120,7 @@ export default function ProviderChat() {
         const ImagesRef = firebase.storage().ref('images').child(file.name);
         await ImagesRef.put(file)
         ImagesRef.getDownloadURL().then((url) => {
-            console.log(url)
+            
             setsentMsg(url)
         })
     }
@@ -134,7 +134,7 @@ export default function ProviderChat() {
         })
             .then((response) => {
                 if (response) {
-                    // console.log(response.data)
+                    // 
                     chatnotification()
                     setMsg(response.data)
                     setRight(response.data.from_user)
@@ -146,7 +146,7 @@ export default function ProviderChat() {
                     // setOpen(true);
                 }
             }, (Error) => {
-                // console.log(Error);
+                // 
             });
     }
 
@@ -175,13 +175,13 @@ export default function ProviderChat() {
 
                             }
                         }, (Error) => {
-                            console.log(Error);
+                            
                         })
                 }
                 Users()
                 setsentMsg('')
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -201,13 +201,13 @@ export default function ProviderChat() {
         })
             .then((response) => {
                 if (response) {
-                    // console.log(response.data)
+                    // 
                     setMsg(response.data)
                     setRight(response.data.from_user)
                     SendData()
                 }
             }, (Error) => {
-                // console.log(Error);
+                // 
             });
         // }
         // Users()
@@ -252,7 +252,7 @@ export default function ProviderChat() {
                 setnotification(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -262,7 +262,7 @@ export default function ProviderChat() {
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -274,7 +274,7 @@ export default function ProviderChat() {
                 setUnseenMxg(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -294,7 +294,7 @@ export default function ProviderChat() {
             .then((response) => {
                 notificationfun()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 

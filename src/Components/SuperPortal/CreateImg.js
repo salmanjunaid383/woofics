@@ -59,7 +59,7 @@ export default function CreateImg() {
             }, (error) => {
                 setwait('Add Blog')
                 setdisable('')
-                console.log(Error);
+                
             });
 
     }
@@ -79,14 +79,14 @@ export default function CreateImg() {
         const file = e.target.files[0];
         const type = file.type
         const image = type.split("/")
-        console.log(image[0]);
+        
         const ImagesRef = firebase.storage().ref('images').child(file.name);
         await ImagesRef.put(file)
         ImagesRef.getDownloadURL().then((url) => {
             setImageUrl(url)
             setContent(image[0])
             setProgress('')
-            console.log(url)
+            
         })
     }
     return (

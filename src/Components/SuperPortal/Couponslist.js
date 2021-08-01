@@ -28,12 +28,12 @@ export default function Coupons() {
         const { data: response } = axios.get(`https://api.woofics.com/api/discount_coupons`)
             .then((response) => {
                 if (response) {
-                    console.log(response.data)
+                    
                     setBlog(response.data)
                 }
             }, (Error) => {
 
-                console.log(Error);
+                
             });
 
     }
@@ -50,7 +50,7 @@ export default function Coupons() {
                 .then((response) => {
                     GetLed()
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
     }
@@ -66,7 +66,7 @@ export default function Coupons() {
                     setRes(response.data)
                     GetLed()
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
     }

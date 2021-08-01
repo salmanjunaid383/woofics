@@ -105,10 +105,10 @@ function LandingPage() {
                             history.push('/superdashboard');
                         }
                     }
-                    // console.log(response)
+                    // 
                 }, (error) => {
                     setOpen3(true)
-                    console.log(error);
+                    
                     history.push('/login');
                 });
         }
@@ -169,10 +169,10 @@ function LandingPage() {
                         history.push('/superdashboard');
                     }
                 }
-                // console.log(response)
+                // 
             }, (error) => {
                 setOpen3(true)
-                console.log(error);
+                
                 history.push('/login');
             });
     }

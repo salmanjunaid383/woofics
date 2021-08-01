@@ -71,7 +71,7 @@ export default function SupCoupons() {
                     history.push('/couponslist')
                 }, (Error) => {
                     setwait('Add Coupon')
-                    console.log(Error);
+                    
                 });
         }
     }

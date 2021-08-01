@@ -37,10 +37,10 @@ export default function Confirmpassword() {
             })
                 .then((response) => {
                         history.push("/login");
-                    // console.log(response)
+                    // 
                 }, (error) => {
                     setOpen3(true)
-                    console.log(error);
+                    
                 });
         }
     }

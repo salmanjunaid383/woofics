@@ -207,11 +207,11 @@ export default function Login() {
         })
             .then((response) => {
                 if (response) {
-                    console.log(response)
+                    
                     history.push('/myservice')
                 }
             }, (error) => {
-                console.log(error);
+                
                 alert('Please fill all feild!')
             });
     }

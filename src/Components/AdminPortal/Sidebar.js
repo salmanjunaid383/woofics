@@ -116,9 +116,9 @@ export default function ServiceSidebar(props) {
             cluster: 'ap1'
           });;
         const channel = pusher.subscribe(""+decoded.sub+"");   
-        console.log("channel success "+ channel);    
+        
         channel.bind("my-event",function(returnData){
-            console.log("run event");
+            
             seen();
         });
         chatnotification()
@@ -260,14 +260,14 @@ export default function ServiceSidebar(props) {
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
-                console.log(Error);
+                
             });
         }
         function notificationDelete(e) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
                 .then((response) => {
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
         }
      
@@ -280,7 +280,7 @@ export default function ServiceSidebar(props) {
                 setUnseenMxg(response.data)
                 seen()
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
     const [Imagedata, setImageData] = useState('');

@@ -29,9 +29,9 @@ export default function OfferBadge() {
         const { data: response } = axios.get(`https://api.woofics.com/api/offer`)
             .then((response) => {
                 setBlog(response.data)
-                console.log(response.data)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -52,7 +52,7 @@ export default function OfferBadge() {
 
                     }
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
 
         }

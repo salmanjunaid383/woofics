@@ -29,9 +29,9 @@ export default function GetInspired() {
         const { data: response } = axios.get(`https://api.woofics.com/api/questionnaire`)
             .then((response) => {
                 setBlog(response.data)
-                console.log(response)
+                
             }, (Error) => {
-                console.log(Error);
+                
             });
     }
 
@@ -52,7 +52,7 @@ export default function GetInspired() {
 
                     }
                 }, (Error) => {
-                    console.log(Error);
+                    
                 });
 
         }

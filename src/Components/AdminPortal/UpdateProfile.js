@@ -59,6 +59,7 @@ export default function UpdateProfile() {
     const[expMonth,setExpMonth]=useState("")
     const[expYear,setExpYear]=useState("")
     const[stripeEmail,setStripeEmail]=useState("")
+    const [cardData,setCardData]=useState("");
 
     const [cardProgress,setCardProgress]=useState("Update Credit Card")
 
@@ -77,15 +78,27 @@ export default function UpdateProfile() {
                 user_id:decoded.sub
                 
             }).then((response) => {
-                console.log(response)
+                
                 setCardProgress('Update Profile')
                 // setOpenpop(true);
             }, (Error) => {
-                console.log(Error);
+                
                 setCardProgress('Update Profile')
             });
 
     }
+    function getCreditCardData(){
+        const {data: response} = axios.get(`https://api.woofics.com/api/get_card_details/`+decoded.sub)
+            .then((response)=> {
+                setCardData(response.data);
+                
+            }, (Error) => {
+                
+            })
+    }
+    useEffect(() => {
+        getCreditCardData();
+    },[])
 
     function LoginBtn(e) {
         e.preventDefault();
@@ -117,7 +130,7 @@ export default function UpdateProfile() {
         function getData() {
             const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
                 .then((res) => {
-                    console.log(res.data)
+                    
                     setData(res.data)
                     setFirstname(res.data.first_name)
                     setLastname(res.data.last_name)
@@ -278,33 +291,36 @@ export default function UpdateProfile() {
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Card no</label>
-                                                    <input type="text" 
-                                                        class="form-control p-0 border-0" onChange={(e) => setCard(e.target.value)} /> </div>
+                                                    <input type="text" defaultValue={cardData !== "" ? "**** **** **** "+cardData.card.last4 : null}
+                                                        placeholder="Enter card number without space" class="form-control p-0 border-0" onChange={(e) => setCard(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Name</label>
-                                                    <input type="text"  class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
+                                                    <input type="text" defaultValue={cardData !== "" ? cardData.billing_details.name : null}
+                                                      class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
                                             
                                             </div>
 
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Expiry Month</label>
-                                                    <input type="text" 
+                                                    <input type="text" defaultValue={cardData !== "" ? cardData.card.exp_month : null}
                                                         class="form-control p-0 border-0" onChange={(e) => setExpMonth(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Expiry Year</label>
-                                                    <input type="text"  class="form-control p-0 border-0" onChange={(e) => setExpYear(e.target.value)} /> </div>
+                                                    <input type="text"  defaultValue={cardData !== "" ? cardData.card.exp_year : null}
+                                                      class="form-control p-0 border-0" onChange={(e) => setExpYear(e.target.value)} /> </div>
                                             
                                             </div>  
 
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">CVC</label>
-                                                    <input type="text" 
+                                                    <input type="text" defaultValue={cardData !== "" ? "***" : null}
                                                         class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
                                                     <label class="col-md-6 p-0 bold">Stripe Email</label>
-                                                    <input type="text" class="form-control p-0 border-0" onChange={(e) => setStripeEmail(e.target.value)} /> </div>
+                                                    <input type="text" defaultValue={cardData !== "" ? cardData.billing_details.email : null}
+                                                     class="form-control p-0 border-0" onChange={(e) => setStripeEmail(e.target.value)} /> </div>
                                             
                                             </div>                                              
                                             <div class="form-group mb-4">

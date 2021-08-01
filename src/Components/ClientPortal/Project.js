@@ -51,7 +51,7 @@ export default function Project() {
                         setdays(parseInt(res.data.due_date))
                     }
                 }, (error) => {
-                    console.log(Error);
+                    
                 });
 
         }

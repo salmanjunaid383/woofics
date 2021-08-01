@@ -124,7 +124,7 @@
 //                     setBlog(response.data)
 //                 }
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     },[])
         
@@ -286,7 +286,7 @@
 //                 setName(response.data)
 //                 seen()
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 
@@ -296,7 +296,7 @@
 //             .then((response) => {
 //                 setunseen(response.data)
 //             }, (Error) => {
-//                 console.log(Error);
+//                 
 //             });
 //     }
 //     useEffect(() => {
@@ -306,7 +306,7 @@
 //         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
 //                 .then((response) => {notification()
 //                 }, (Error) => {
-//                         console.log(Error);
+//                         
 //                 });
 // }
 

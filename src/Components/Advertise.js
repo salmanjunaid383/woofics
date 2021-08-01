@@ -29,12 +29,12 @@ export default function Advertise() {
       content_type: contenttype,
     })
       .then((response) => {
-        console.log(response)
+        
         alert("Message Sent!")
       }, (Error) => {
-        console.log(name,email,number,campaignlocation,campaignduration,videoduration,screentype,contenttype);
+        
         alert(Error)
-        console.log(Error);
+        
       });
   }
   return (
