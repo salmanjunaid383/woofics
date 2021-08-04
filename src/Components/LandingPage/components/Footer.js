@@ -45,6 +45,10 @@ function Footer() {
     useEffect(() => {
         GetDot();
     }, [])
+
+  
+
+
     return (
         <>
             {/* <div style={{marginTop:'-50px' }}> */}
@@ -82,7 +86,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12  text-center marginclass footer-margin" >
+                    <div class="col-md-4 col-sm-12  text-center marginclass footer-margin footer-new" >
 
                         <div class="woofic_middle_side text-center mb-3 mx-auto">
                             <ol>
@@ -102,14 +106,14 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-12 pr-md-5 marginclass footer-margin" >
+                    <div class="col-md-4 col-sm-12 pr-md-5 marginclass footer-margin footer-new" >
                         <div className="row  text-center wooficslogo footer-right-side" >
                         {
                             dot.map((val,id) => {
                                 return (
                                     <>
-                                        <div className="col-md-6 col-sm-12 col-xs-6">
-                                            <a href="#" target="_blank" >  <img src={val.value} className="footerLogo" /></a>
+                                        <div className="col-md-6 col-sm-12 col-xs-6" >
+                                            <a href="#" target="_blank">  <img src={val.value} className="footerLogo"/></a>
 
                                         </div>
                                     </>
@@ -125,7 +129,7 @@ function Footer() {
 
                 {/* </div> */}
             </div>
-            <div className="container-fluid woofic_search_sec text-center " style={{ backgroundColor: '#934CFF' }}>
+            <div className="container-fluid woofic_search_sec text-center" style={{ backgroundColor: '#934CFF' }}>
                 <div className="row p-lg-2">
                     <div className="col-sm-12 col-md-12 text-center">
                         <div className="text-white text-center">

@@ -1,9 +1,16 @@
 .wooficsfooter{
     margin-top: 15%;
+    
 }
 .marginclass{
     margin-top: 15%;
-    /* padding: 0!important; */
+   
+}
+
+.footer-new{
+    display:flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 .backimg{
