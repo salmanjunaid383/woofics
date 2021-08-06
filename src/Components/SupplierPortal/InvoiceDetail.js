@@ -139,7 +139,7 @@ export default function SupplierLedger() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                            
-                                            <div className="table-responsive">
+                                            <div className="table-responsive salman-table-change">
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>

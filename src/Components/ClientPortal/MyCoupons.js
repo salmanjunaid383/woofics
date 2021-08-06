@@ -421,7 +421,7 @@ export default function MyCoupon() {
                                                 <h1 className="box-title h1 mb-0 text-center mx-auto">Your Coupons</h1>
                                             </div>
                                             <hr className="w-50" />
-                                            <div className="table-responsive">
+                                            <div className="table-responsive salman-table-change">
                                                 {form == "" ? <h3 className="text-center my-auto p-md-3">No Coupons!</h3>
                                                     : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                         <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>

@@ -477,7 +477,7 @@ export default function SuperDashboard() {
                                         </div>
                                     </section>
                                 </div>
-                                <div className="table-div">
+                                <div className="table-div salman-table-change">
                                     <table  id="for-table-setting" className="for-table-setting table no-wrap for-table-setting">
                                         <tr className="heading-row">
                                             <th>Id</th>

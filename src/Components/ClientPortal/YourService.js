@@ -99,7 +99,7 @@ export default function YourService() {
                           My Services
                         </h1>
                       </div>
-                      <div className="table-responsive">
+                      <div className="table-responsive salman-table-change">
                         <table  id="for-table-setting" className="table no-wrap" >
                           <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                             <tr>

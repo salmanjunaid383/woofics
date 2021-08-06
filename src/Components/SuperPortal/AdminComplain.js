@@ -70,7 +70,7 @@ export default function AdminComplain() {
                                         <div className="d-md-flex mb-3">
                                             <h3 className="box-title mb-0 mx-auto text-center">Lista De Quejas</h3>
                                         </div>
-                                        <div className="table-responsive">
+                                        <div className="table-responsive salman-table-change">
                                             {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nada Que Mostrar...</div>
                                                 : <table  id="for-table-setting" className="table no-wrap text-center">
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>

@@ -28,11 +28,12 @@
     padding-top:10px;
     margin-top: 20px;
     border-radius: 5px;
+    /* overflow:auto; */
 }
-.for-table-setting{
+/* .for-table-setting{
     width:100%;
-    table-layout: fixed;
-}
+    table-layout: auto;
+} */
 
 .heading-row{
     background-image: linear-gradient(to right, #9b88f6 , #f25c8a);
