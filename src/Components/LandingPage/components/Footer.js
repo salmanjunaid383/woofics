@@ -113,7 +113,7 @@ function Footer() {
                                 return (
                                     <>
                                         <div className="col-md-6 col-sm-12 col-xs-6" >
-                                            <a href="#" target="_blank">  <img src={val.value} className="footerLogo"/></a>
+                                            <a href="#" target="_blank" data-toggle="tooltip" title={val.label}>  <img src={val.value} className="footerLogo"/></a>
 
                                         </div>
                                     </>

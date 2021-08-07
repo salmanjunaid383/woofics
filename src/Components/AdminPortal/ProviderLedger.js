@@ -234,7 +234,7 @@ export default function ProviderLedger() {
                                                             article !== '' ?
                                                             <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generar Factura</button></td>
+                                                                <td></td>
                                                                 {/* <td className="txt-oflo text-center"></td> */}
                                                                 
                                                             </tr> : <h3></h3> 

@@ -70,6 +70,7 @@ function Navbar() {
     const [namee, setnamee] = useState('')
     const [profile_image, setprofile_image] = useState('')
     const [navbar, setNavBar] = useState(false)
+    const [mediaState,setMediaState]=useState(false)
 
     const [logoImg, setLogo] = useState(false);
 
@@ -105,9 +106,9 @@ function Navbar() {
             match.addEventListener("change", resize);
             function resize(e) {
                 if (e.matches) { // If media query matches
-                    setLogo(true);
+                    setMediaState(true);
                 } else {
-                   setLogo(false);
+                   setMediaState(false);
                 }
             }
 
@@ -125,12 +126,12 @@ function Navbar() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav pb-1 pt-1 fixed-top text-white") {
             x.className = "topnav pb-1 pt-1 fixed-top text-white responsive";
-            document.getElementById("taglink7").style.marginRight="50px"
-            document.getElementById("taglink7").style.marginTop="8px"
+            // document.getElementById("taglink7").style.marginRight="50px"
+            // document.getElementById("taglink7").style.marginTop="8px"
         } else {
             x.className = "topnav pb-1 pt-1 fixed-top text-white";
-            document.getElementById("taglink7").style.marginRight="0px"
-            document.getElementById("taglink7").style.marginTop="0px"
+            // document.getElementById("taglink7").style.marginRight="0px"
+            // document.getElementById("taglink7").style.marginTop="0px"
         }
     }
 
@@ -395,15 +396,7 @@ function Navbar() {
                 setNavState(true);
                
                 setLogo(true);
-                const match = window.matchMedia("(max-width: 1024px)");
-                match.addEventListener("change", resize);
-                function resize(e) {
-                    if (e.matches) { // If media query matches
-                        setLogo(true);
-                    } else {
-                    setLogo(false);
-                    }
-                }
+               
                 
             }
             catch {
@@ -416,6 +409,7 @@ function Navbar() {
             try {
                 setNavState(false);
                 setLogo(false)
+               
             }
             catch {
 
@@ -438,11 +432,21 @@ function Navbar() {
                 <div class="woofic_background  my-auto ">
                     <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : "topnav pb-1 pt-1 fixed-top "} id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
-                            <img
+                            {
+                                mediaState === false ?
+                                <img
                                 src={logoImg ? logo1 : logo2}
                                 className="pl-lg-4 mr-5 pt-1 "
                                 id="woofic-logo"
-                            />
+                                /> : 
+                                <img
+                                src={logo1}
+                                className="pl-lg-4 mr-5 pt-1 "
+                                id="woofic-logo"
+                                />
+
+                            }
+                            
                         </Link>
                         <Link className="pt-3 taglink hover-effect" to="/" id="" >
                             Home

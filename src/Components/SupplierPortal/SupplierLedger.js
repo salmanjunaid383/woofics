@@ -223,8 +223,7 @@ export default function SupplierLedger() {
                                                             article !== '' ?
                                                             <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td className="txt-oflo text-center"><button class={/*val.locked !== 0 ?*/"btn text-white btn-success"}  onClick={() => setcheck('true')}>Generate Invoice</button></td>
-                                                                {/* <td className="txt-oflo text-center"></td> */}
+                                                                <td></td>
                                                                 
                                                             </tr> : <h3></h3> 
                                                         }
