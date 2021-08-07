@@ -327,7 +327,7 @@ export default function AllQuotation() {
 
                                                 </div> <hr />
                                             </div>
-                                            <div className="table-responsive">
+                                            <div className="table-responsive salman-table-change">
                                                 {form == "" ? <h3 className="text-center my-auto">No Quotation!</h3>
                                                     : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                         <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>

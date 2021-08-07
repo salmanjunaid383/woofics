@@ -81,7 +81,7 @@ export default function OfferBadge() {
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
-                                        <div className="table-responsive">
+                                        <div className="table-responsive salman-table-change">
                                         
                                             {blog.map((val, key) => {
                                                 return (

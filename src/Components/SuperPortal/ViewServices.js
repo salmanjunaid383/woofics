@@ -82,7 +82,7 @@ export default function ViewServices() {
                                         <div className="d-md-flex mb-3">
                                             <h3 className="box-title mb-0 h1 text-center mx-auto">Lista De Servicios</h3>
                                         </div>
-                                        <div className="table-responsive">
+                                        <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                 <thead id="heading-row" className="py-3 heading-row" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
