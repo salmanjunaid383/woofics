@@ -182,7 +182,9 @@ body{
 }
 
 
-
+.nonLandingPageNav{
+  background-image:linear-gradient(to right, #934CFF 0%, #F62B84 100%)  !important;
+}
 
 
 

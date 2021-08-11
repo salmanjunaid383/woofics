@@ -432,7 +432,7 @@ function Navbar() {
 
             <div className="container.fluid ">
                 <div class="woofic_background  my-auto ">
-                    <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : "topnav pb-1 pt-1 fixed-top "} id="myTopnav" style={{height:"65px"}}>
+                    <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : location.pathname==="/" ? "topnav pb-1 pt-1 fixed-top" : "topnav pb-1 pt-1 fixed-top noLandingPageNav" } id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
                             {
                                 mediaState === false ?
