@@ -85,17 +85,17 @@ export default function SupResponses() {
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
-                                                <div class="col-md-12 bold h5">Help & Support Responses</div>
+                                                <div class="col-md-12 bold h5">Respuestas de Ayuda y Soporte</div>
                                                 <div class="col-md-12">
                                                     {/* <input class="form-control" type="text" placeholder="Search Query..." /> */}
-                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Find your Solution...</div>
+                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra tu solución...</div>
                                                 </div>
-                                                {form == '' ? <h3 className="text-center my-auto mx-auto">Nothing to show!</h3>
+                                                {form == '' ? <h3 className="text-center my-auto mx-auto">Nada Que Mostrar!</h3>
                                                     :
                                                     form.map((val, id) => {
                                                         return (
                                                             <>
-                                                              <div class="col-md-11 py-4  border-bottom mx-auto"> <Link to={`/supcheckresponse/${val.id}`}> Query: {val.description}<i className="fas fa-chevron-right float-right"></i></Link></div>
+                                                              <div class="col-md-11 py-4  border-bottom mx-auto"> <Link to={`/supcheckresponse/${val.id}`}> Consulta: {val.description}<i className="fas fa-chevron-right float-right"></i></Link></div>
                                                             </>
                                                         )
                                                     })}

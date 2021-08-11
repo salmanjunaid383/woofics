@@ -81,7 +81,7 @@ useEffect(()=>{
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className=" mb-0 mx-auto text-center">All Notifications</h3>
+                                            <h3 className=" mb-0 mx-auto text-center">Todas las Notificaciones</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
@@ -91,7 +91,7 @@ useEffect(()=>{
                                                             <>
                                                                 <tr>
                                                                     <td className="txt-oflo">{val.notification}</td>
-                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Remove</button></td>
+                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Eliminar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

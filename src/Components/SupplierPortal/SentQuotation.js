@@ -62,23 +62,23 @@ export default function SentQuotation() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-xl-12 col-lg-12 col-sm-12 border bg-light " style={{width:"1px"}}>
                                             <div className="d-md-flex mb-3">
-                                                <h1 className=" h1 mb-0 text-center mx-auto">Manage Requests</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Gestionar Solicitudes</h1>
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive salman-table-change">
                                                 <table  id="for-table-setting" className="table no-wrap for-table-setting" style={{tableLayout:"auto"}} >
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white text-center">DATE</th>
-                                                            <th className="border-top-0 text-white text-center">DESCRIPTION</th>
-                                                            <th className="border-top-0 text-white text-center">COMMENTS</th>
-                                                            <th className="border-top-0 text-white text-center">DELIVERY DAYS</th>
-                                                            <th className="border-top-0 text-white text-center">PRICE</th>
-                                                            <th className="border-top-0 text-white text-center">ACTION</th>
+                                                            <th className="border-top-0 text-white text-center">FECHA</th>
+                                                            <th className="border-top-0 text-white text-center">DESCRIPCIÓN</th>
+                                                            <th className="border-top-0 text-white text-center">COMENTARIOS</th>
+                                                            <th className="border-top-0 text-white text-center">DÍAS DE ENTREGA</th>
+                                                            <th className="border-top-0 text-white text-center">PRECIO</th>
+                                                            <th className="border-top-0 text-white text-center">ACCIÓN</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row" >
-                                                    {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nothing to show!</h3></td> </tr> :
+                                                    {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
                                                blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -86,10 +86,10 @@ export default function SentQuotation() {
                                                                         <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
                                                                         <td className="text-oflo text-center bold">{val.description}...</td>
                                                                         <td className="txt-oflo text-center bold">{val.extra_comments}</td>
-                                                                        <td className="txt-oflo text-center bold">{val.delivery_days} Days</td>
+                                                                        <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                         <td className="txt-oflo text-center bold">{val.price}</td>
                                                                         <td className="txt-oflo text-center bold">
-                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editquote/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Edit</button>                                                                    </td>
+                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editquote/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )
