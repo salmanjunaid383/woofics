@@ -187,7 +187,7 @@ export default function SupplierDashboard() {
                                 <section id="stats-subtitle">
                                     <div class="row">
                                         <div className="col-md-12">
-                                            <h1 style={{ fontSize: "27px", marginBottom: "20px", color: "#9b88f6", fontWeight: "bold" }}>Supplier Dashboard</h1>
+                                            <h1 style={{ fontSize: "27px", marginBottom: "20px", color: "#9b88f6", fontWeight: "bold" }}>Panel de Proveedores</h1>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -195,7 +195,7 @@ export default function SupplierDashboard() {
                                             <div className="container-fluid">
                                                 <div class="row" style={{ border: "2px solid #f3f3f3", padding: "10px" }}>
                                                     <div className="col-md-12">
-                                                        <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color: "#223e92" }}>All Information</h4>
+                                                        <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color: "#223e92" }}>Toda la Informacion</h4>
                                                     </div>
                                                     <div class="col-xl-6 col-md-12">
                                                         <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJ1c2luZXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
@@ -206,8 +206,8 @@ export default function SupplierDashboard() {
                                                                             <i class="fa fa-spinner fa-4x text-success  icon-pencil primary font-large-2 mr-2"></i>
                                                                         </div>
                                                                         <div class="media-body ml-md-3">
-                                                                            <h4>Projects</h4>
-                                                                            <span>Ongoing Projects</span>
+                                                                            <h4>Proyectos</h4>
+                                                                            <span>Proyectos en Marcha</span>
                                                                         </div>
                                                                         <div class="align-self-center">
                                                                             <h1>{ongoinProject}</h1>
@@ -227,8 +227,8 @@ export default function SupplierDashboard() {
                                                                             <i class="fa fa-tasks fa-4x text-danger  icon-speech warning font-large-2 mr-2"></i>
                                                                         </div>
                                                                         <div class="media-body ml-md-3">
-                                                                            <h4>Projects</h4>
-                                                                            <span>Completed Projects</span>
+                                                                            <h4>Proyectos</h4>
+                                                                            <span>Proyectos Completados</span>
                                                                         </div>
                                                                         <div class="align-self-center">
                                                                             <h1>{CompletedProject}</h1>
@@ -250,8 +250,8 @@ export default function SupplierDashboard() {
                                                                             <i class="fa fa-paste fa-4x text-info  icon-heart danger font-large-2"></i>
                                                                         </div>
                                                                         <div class="media-body ml-md-3">
-                                                                            <h4>Total Quotations</h4>
-                                                                            <span>Quotations</span>
+                                                                            <h4>Cotizaciones Totales</h4>
+                                                                            <span>Citas</span>
                                                                         </div>
                                                                         <div class="align-self-center">
                                                                             <h1 class="mr-2">{ClientTotalService}</h1>
@@ -271,8 +271,8 @@ export default function SupplierDashboard() {
                                                                             <i class="fa fa-money fa-4x text-primary  icon-wallet success font-large-2"></i>
                                                                         </div>
                                                                         <div class="media-body ml-md-3" >
-                                                                            <h4>Earnings</h4>
-                                                                            <span>Total Earnings</span>
+                                                                            <h4>Ganancias</h4>
+                                                                            <span>Ganancias Totales</span>
                                                                         </div>
                                                                         <div class="align-self-center ml-md-3">
                                                                             <h1 class="mr-2">${totalEarnings}</h1>
@@ -293,7 +293,7 @@ export default function SupplierDashboard() {
                                                     <div class="col" >
                                                         <div class="p-1 h1 text-primary text-center mx-auto display-inline-block" >
                                                             <i class="fa fa-check bg-primary text-white rounded "> </i>
-                                                            <bold> My Todo-s</bold>
+                                                            <bold> Mis Todo-s</bold>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -309,7 +309,7 @@ export default function SupplierDashboard() {
                                                                 <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                                                             </div>
                                                             <div class="col-auto px-0 mx-0 mr-2">
-                                                                <button type="button" onClick={Feedback} class={`btn btn-primary ${todo == '' || deadline == '' ? disable : ''}`}>Add</button>
+                                                                <button type="button" onClick={Feedback} class={`btn btn-primary ${todo == '' || deadline == '' ? disable : ''}`}>Agregar</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -356,23 +356,23 @@ export default function SupplierDashboard() {
                                         <div className="row m-lg-5">
                                             <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
                                                 <div className="d-md-flex mb-3">
-                                                    <h1 className=" h1 mb-0 text-center mx-auto">Manage Projects</h1>
+                                                    <h1 className=" h1 mb-0 text-center mx-auto">Gestionar Proyectos</h1>
                                                 </div>
                                                 <hr className="w-50" />
                                                 <div className="table-responsive salman-table-change">
                                                     <table id="for-table-setting" className="table no-wrap for-table-setting" >
                                                         <thead id="heading-row" className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
-                                                                <th className="border-top-0 text-white text-center">DATE</th>
-                                                                <th className="border-top-0 text-white text-center">REQUESTS</th>
-                                                                <th className="border-top-0 text-white text-center">OFFERS</th>
-                                                                <th className="border-top-0 text-white text-center">DELIVERY DAYS</th>
+                                                                <th className="border-top-0 text-white text-center">FECHA</th>
+                                                                <th className="border-top-0 text-white text-center">PETICIONES</th>
+                                                                <th className="border-top-0 text-white text-center">OFERTAS</th>
+                                                                <th className="border-top-0 text-white text-center">DÍAS DE ENTREGA</th>
                                                                 {/* <th className="border-top-0 text-white text-center">PAYMENT PHASE</th> */}
-                                                                <th className="border-top-0 text-white text-center">ACTIONS</th>
+                                                                <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody id="data-row" >
-                                                            {form == '' ? <tr scope="row"><td colspan="0"><h3 className="my-lg-3 mx-auto ">Nothing to show!</h3></td> </tr> :
+                                                            {form == '' ? <tr scope="row"><td colspan="0"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
                                                                 form.map((val, id) => {
                                                                     return (
                                                                         <>
@@ -380,10 +380,10 @@ export default function SupplierDashboard() {
                                                                                 <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
                                                                                 <td className="text-oflo text-center bold">{val.description.slice(0, 30)}...</td>
                                                                                 <td className="txt-oflo text-center bold">$ {val.price}</td>
-                                                                                <td className="txt-oflo text-center bold">{val.delivery_days} Days</td>
+                                                                                <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                                 {/* <td className="txt-oflo text-center bold">{val.phase}</td> */}
                                                                                 <td className="txt-oflo text-center bold">
-                                                                                    <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/supplierprojects/${val.client_id}/${val.id}`)} >More Details</button>
+                                                                                    <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/supplierprojects/${val.client_id}/${val.id}`)} >Más detalles</button>
                                                                                 </td>
                                                                             </tr>
                                                                         </>

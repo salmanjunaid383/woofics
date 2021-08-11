@@ -110,7 +110,7 @@ export default function SupplierLedger() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className=" h1 mb-0 text-center mx-auto">Ledger</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Libro Mayor</h1>
                                             </div>
                                             <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
@@ -179,7 +179,7 @@ export default function SupplierLedger() {
                                                             </div>
                                                             <div class="mb-4 mt-4 text-center mx-auto">
                                                                     <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Pay Invoice</button>
+                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Factura De Pago</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
@@ -197,15 +197,15 @@ export default function SupplierLedger() {
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             
-                                                            <th className="border-top-0 text-white text-center">BALANCE</th>
-                                                            <th className="border-top-0 text-white text-center">CREATED AT</th>
+                                                            <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
+                                                            <th className="border-top-0 text-white text-center">CREADO EN</th>
                                                             {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row">
                                                         {
 
-                                                            article == '' ? <h3 className="mt-5"> Nothing to show!</h3> :
+                                                            article == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                                 article.map((val, id) => {
                                                                     return (
                                                                         <>
@@ -221,7 +221,7 @@ export default function SupplierLedger() {
                                                         }
                                                         {
                                                             article !== '' ?
-                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Total Amount : {totalAmount} $ </td>
+                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
                                                                 <td></td>
                                                                 

@@ -228,36 +228,36 @@ export default function UpdateProfile() {
                                             <form class="form-horizontal form-material" >
                                             <div className="row">
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">First Name</label>
+                                                    <label class="col-md-6 p-0 bold">Nombre de pila</label>
                                                     <input type="text" defaultValue={data.first_name}
                                                         class="form-control p-0 border-0" onChange={(e) => setFirstname(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Last Name</label>
+                                                    <label class="col-md-6 p-0 bold">Apellido</label>
                                                     <input type="text" defaultValue={data.last_name}
                                                         class="form-control p-0 border-0" onChange={(e) => setLastname(e.target.value)} /> </div>
                                             </div>
                                             <div className="row">
 
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                    <label for="example-email" class="col-md-12 p-0">Correo Electrónico</label>
                                                     <input type="email" defaultValue={data.email}
                                                         class="form-control p-0 border-0" name="example-email"
                                                         id="example-email1" onChange={(e) => setEmail(e.target.value)} />
                                                 </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-12 p-0">Phone No</label>
+                                                    <label class="col-md-12 p-0">Telefono no</label>
                                                     <input type="text" defaultValue={data.contact_number}
                                                         class="form-control p-0 border-0" onChange={(e) => setContact(e.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="row">
                                                 <div class="form-group mb-4 row col-md-6">
-                                                    <label class="col-md-12 p-0">Company Size </label>
+                                                    <label class="col-md-12 p-0">Tamaño de la Empresa </label>
                                                     <input type="text" defaultValue={data.company_size}
                                                         class="form-control p-0 border-0" onChange={(e) => setsize(e.target.value)} />
                                                 </div>
                                                 <div class="form-group mb-4 row col-md-6">
-                                                    <label class="col-md-12 p-0">Business Name</label>
+                                                    <label class="col-md-12 p-0">Nombre del Negocio</label>
                                                     <input type="text" defaultValue={data.name_of_your_business ? data.name_of_your_business : ""}
                                                         class="form-control p-0 border-0" onChange={(e) => setbname(e.target.value)} />
                                                 </div>
@@ -269,7 +269,7 @@ export default function UpdateProfile() {
                                                         class="form-control p-0 border-0" onChange={(e) => setservic(e.target.value)} />
                                                 </div> */}
                                                 <div class="form-group mb-4 row col-md-6">
-                                                    <label class="col-md-12 p-0">Location</label>
+                                                    <label class="col-md-12 p-0">Localización</label>
                                                     <input type="text" defaultValue={data.location_of_your_business}
                                                         class="form-control p-0 border-0" onChange={(e) => setLocation(e.target.value)} />
                                                 </div>
@@ -305,11 +305,11 @@ export default function UpdateProfile() {
                                             <form class="form-horizontal form-material" >
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Card no</label>
+                                                    <label class="col-md-6 p-0 bold">Tarjeta no</label>
                                                     <input type="text" defaultValue={cardData !== "" ? "**** **** **** "+cardData.card.last4 : null}
                                                        placeholder="Enter card number without space" class="form-control p-0 border-0" onChange={(e) => setCard(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Name</label>
+                                                    <label class="col-md-6 p-0 bold">Nombre</label>
                                                     <input type="text" defaultValue={cardData !== "" ? cardData.billing_details.name : null}
                                                       class="form-control p-0 border-0" onChange={(e) => setCardName(e.target.value)} /> </div>
                                             
@@ -317,11 +317,11 @@ export default function UpdateProfile() {
 
                                             <div className="row">
                                             <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Expiry Month</label>
+                                                    <label class="col-md-6 p-0 bold">Meses de Vencimiento</label>
                                                     <input type="text" defaultValue={cardData !== "" ? cardData.card.exp_month : null}
                                                         class="form-control p-0 border-0" onChange={(e) => setExpMonth(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Expiry Year</label>
+                                                    <label class="col-md-6 p-0 bold">Año de Caducidad</label>
                                                     <input type="text"  defaultValue={cardData !== "" ? cardData.card.exp_year : null}
                                                       class="form-control p-0 border-0" onChange={(e) => setExpYear(e.target.value)} /> </div>
                                             
@@ -333,7 +333,7 @@ export default function UpdateProfile() {
                                                     <input type="text" defaultValue={cardData !== "" ? "***" : null}
                                                         class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
                                                 <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Stripe Email</label>
+                                                    <label class="col-md-6 p-0 bold">Correo electrónico de Stripe</label>
                                                     <input type="text" defaultValue={cardData !== "" ? cardData.billing_details.email : null}
                                                      class="form-control p-0 border-0" onChange={(e) => setStripeEmail(e.target.value)} /> </div>
                                             

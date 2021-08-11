@@ -147,25 +147,25 @@ export default function Quotation() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light " style={{width:"1px"}}>
                                             <div className="d-md-flex mb-3">
-                                                <h1 className=" h1 mb-0 text-center mx-auto">Manage Requests</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Gestionar Solicitudes</h1>
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive" >
                                                 <table  id="for-table-setting" className="table no-wrap for-table-setting" style={{tableLayout:"auto"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white text-center">DATE</th>
-                                                            <th className="border-top-0 text-white text-center">Description</th>
+                                                            <th className="border-top-0 text-white text-center">FECHA</th>
+                                                            <th className="border-top-0 text-white text-center">Descripción</th>
                                                             <th className="border-top-0 text-white text-center">EMAIL</th>
-                                                            <th className="border-top-0 text-white text-center">DELIVERY TIME</th>
-                                                            <th className="border-top-0 text-white text-center">BUYER NAME</th>
-                                                            <th className="border-top-0 text-white text-center">INSTALLATION</th>
-                                                            <th className="border-top-0 text-white text-center">MODEL</th>
-                                                            <th className="border-top-0 text-white text-center">ACTIONS</th>
+                                                            <th className="border-top-0 text-white text-center">EL TIEMPO DE ENTREGA</th>
+                                                            <th className="border-top-0 text-white text-center">NOMBRE DEL COMPRADOR</th>
+                                                            <th className="border-top-0 text-white text-center">INSTALACIÓN</th>
+                                                            <th className="border-top-0 text-white text-center">MODELO</th>
+                                                            <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row" >
-                                                    {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nothing to show!</h3></td> </tr> :
+                                                    {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
                                                blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -179,7 +179,7 @@ export default function Quotation() {
                                                                         <td className="txt-oflo text-center bold">{val.model}</td>
                                                                         <td className="txt-oflo text-center bold">
                                                                         {/* { history.push(`/quote/${val.id}`); localStorage.setItem('qid', val.id) }} */}
-                                                                            <button class="btn pull-right marginBottom10 greenbtn text-white"  value={val.id} onClick={() => purchaseLead(val.id) } >Quote</button>                                                                    </td>
+                                                                            <button class="btn pull-right marginBottom10 greenbtn text-white"  value={val.id} onClick={() => purchaseLead(val.id) } >Cita</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )

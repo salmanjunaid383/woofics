@@ -141,9 +141,9 @@ export default function SupplierLedger() {
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white text-center">Inoivce Id</th>
+                                                            <th className="border-top-0 text-white text-center">ID De Factura</th>
                                                             <th className="border-top-0 text-white text-center">Total</th>
-                                                            <th className="border-top-0 text-white text-center">Date</th>
+                                                            <th className="border-top-0 text-white text-center">Fecha</th>
                                                             <th></th>
                                                             {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
@@ -151,7 +151,7 @@ export default function SupplierLedger() {
                                                     <tbody id="data-row">
                                                         {
 
-                                                            data == '' ? <h3 className="mt-5"> Nothing to show!</h3> :
+                                                            data == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                                 data.map((val, id) => {
                                                                     return (
                                                                         <>
@@ -159,7 +159,7 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.invoice_id}</td>
                                                                                 <td className="txt-oflo text-center">{val.total}</td>
                                                                                 <td className="txt-oflo text-center">{(val.date).slice(0, 10)}</td>
-                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/invoicedetail/${val.id}`)}}>Detail</button>
+                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/invoicedetail/${val.id}`)}}>Detalle</button>
                                                                             </tr>
                                                                         </>
                                                                     )

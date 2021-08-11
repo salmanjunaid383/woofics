@@ -143,9 +143,9 @@ export default function SupplierLedger() {
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white text-center">Description</th>
-                                                            <th className="border-top-0 text-white text-center">Amount</th>
-                                                            <th className="border-top-0 text-white text-center">Date</th>
+                                                            <th className="border-top-0 text-white text-center">Descripción</th>
+                                                            <th className="border-top-0 text-white text-center">Monto</th>
+                                                            <th className="border-top-0 text-white text-center">Fecha</th>
                                                             
                                                             {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
@@ -153,7 +153,7 @@ export default function SupplierLedger() {
                                                     <tbody id="data-row">
                                                         {
 
-                                                            data == '' ? <h3 className="mt-5"> Nothing to show!</h3> :
+                                                            data == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                                 data.map((val, id) => {
                                                                     return (
                                                                         <>

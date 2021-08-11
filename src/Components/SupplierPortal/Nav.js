@@ -155,25 +155,25 @@ export default function Nav() {
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                             <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                            <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                            <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                         </a>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                             <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                            <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                            <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                         </a>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                             <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                            <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                            <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                         </a>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" >
                             <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36" className="img-circle" />
-                            <span className="text-black font-medium ml-1"> Steave has sent an registration request to you </span>
+                            <span className="text-black font-medium ml-1"> Steve le ha enviado una solicitud de registro </span>
                         </a>
                     </Typography>
                 </Popover>
@@ -199,13 +199,13 @@ export default function Nav() {
                     <Typography className={classes.typography}>
                         <Link className="profile-pic" to="/supplierupdateprofile" style={{ textDecoration: 'none' }}>
                             <i className="fa fa-user mx-3"></i>
-                            <span className="text-black font-medium mr-3">Profile</span>
+                            <span className="text-black font-medium mr-3">Perfil</span>
                         </Link>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/login') }}>
                             <i className="fa fa-sign-out mx-3"></i>
-                            <span className="text-black font-medium mr-3">Logout</span>
+                            <span className="text-black font-medium mr-3">Cerrar Sesión</span>
                         </a>
                     </Typography>
 

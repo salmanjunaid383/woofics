@@ -116,7 +116,7 @@ export default function SupHelp() {
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Zaskia Amanda</strong></p>
                                                     <Link to="/supresponses" className="pt-3 responseLinkStaz text-black "  >
                                                     
-                                                        Responses
+                                                    Respuestas
                                                         
                                                     </Link>
 
@@ -139,7 +139,7 @@ export default function SupHelp() {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <button class={`btn btn-sm ${query == '' || answer == '' ? disable : ''}`} onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Send</button>
+                                                            <button class={`btn btn-sm ${query == '' || answer == '' ? disable : ''}`} onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
                                                         </td>
                                                     </tr>
                                                 </table>

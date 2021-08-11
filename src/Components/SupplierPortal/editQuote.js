@@ -205,113 +205,113 @@ export default function Quote() {
                                             <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row">
                                                     <div className="w-100">
-                                                        <h3 className="w-100 text-center">Service Details</h3>
+                                                        <h3 className="w-100 text-center">Enviar respuesta</h3>
                                                         <table  id="for-table-setting" class="table table-hover">
                                                             <tbody id="data-row">
                                                                 <tr>
-                                                                    <td>Package Charge</td>
+                                                                    <td>Cargo por paquete</td>
                                                                     <td>{servicet.charge}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Package Name</td>
+                                                                    <td>Nombre del paquete</td>
                                                                     <td>{servicet.name}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Name</td>
+                                                                    <td>Nombre</td>
                                                                     <td>{service.name}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Email</td>
+                                                                    <td>Correo electrónico</td>
                                                                     <td>{service.email}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Adverse Weather</td>
+                                                                    <td>Clima adverso</td>
                                                                     <td>{service.adverse_weather}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Buy</td>
+                                                                    <td>Comprar</td>
                                                                     <td>{service.buy}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Carcass Material</td>
+                                                                    <td>Material de la carcasa</td>
                                                                     <td>{service.carcass_material}</td>
                                                                 </tr>
 
                                                                 <tr>
-                                                                    <td>Comments</td>
+                                                                    <td>Comentarios</td>
                                                                     <td>{service.comments}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Company</td>
+                                                                    <td>Compañía</td>
                                                                     <td>{service.company}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Contact</td>
+                                                                    <td>Contacto</td>
                                                                     <td>{service.contact}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Control System</td>
+                                                                    <td>Sistema de Control</td>
                                                                     <td>{service.control_system}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Sustomer Type</td>
+                                                                    <td>Tipo De Cliente</td>
                                                                     <td>{service.customer_type}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Delivery Time</td>
+                                                                    <td>El Tiempo De Entrega</td>
                                                                     <td>{service.delivery_time}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Description</td>
+                                                                    <td>Descripción</td>
                                                                     <td>{service.description}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Documents</td>
+                                                                    <td>Documentos</td>
                                                                     <td>{service.documents}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Entity</td>
+                                                                    <td>Entidad</td>
                                                                     <td>{service.entity}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Fly Cases</td>
+                                                                    <td>Cajas De Moscas</td>
                                                                     <td>{service.fly_cases}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Indoor</td>
+                                                                    <td>Interior</td>
                                                                     <td>{service.indoor}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Installation</td>
+                                                                    <td>Instalación</td>
                                                                     <td>{service.installation}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Model</td>
+                                                                    <td>Modelo</td>
                                                                     <td>{service.model}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Postal Code</td>
+                                                                    <td>Código Postal</td>
                                                                     <td>{service.postal_code}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Screen Access</td>
+                                                                    <td>Acceso a la Pantalla</td>
                                                                     <td>{service.screen_access}</td>
                                                                 </tr>
 
                                                                 <tr>
-                                                                    <td>Screen Height</td>
+                                                                    <td>Altura De la Pantalla</td>
                                                                     <td>{service.screen_height}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Screen Orientation</td>
+                                                                    <td>Orientación De la Pantalla</td>
                                                                     <td>{service.screen_orientation}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Screen Use</td>
+                                                                    <td>Uso de Pantalla</td>
                                                                     <td>{service.screen_use}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Screen Width</td>
+                                                                    <td>Ancho de Pantalla</td>
                                                                     <td>{service.screen_width}</td>
                                                                 </tr>
 
@@ -325,21 +325,21 @@ export default function Quote() {
                                                                 </tr>
 
                                                                 <tr>
-                                                                    <td>Shipping</td>
+                                                                    <td>Transporte</td>
                                                                     <td>{service.shipping}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Structure</td>
+                                                                    <td>Estructura</td>
                                                                     <td>{service.structure}</td>
                                                                 </tr>
 
 
                                                                 <tr>
-                                                                    <td>Visual Distance</td>
+                                                                    <td>Distancia Visual</td>
                                                                     <td>{service.visual_distance}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Warranty</td>
+                                                                    <td>Garantía</td>
                                                                     <td>{service.warranty}</td>
                                                                 </tr>
                                                             </tbody>
@@ -348,7 +348,7 @@ export default function Quote() {
 
                                                     </div> <hr />
                                                     <div className="col-md-12">
-                                                        <label class="col-md-12 pt-3">Description</label>
+                                                        <label class="col-md-12 pt-3">Descripción</label>
                                                         <div class="col-md-12 border-bottom p-0">
                                                             <textarea rows="4" class="form-control p-0 border-0" placeholder={quotationData.description}  onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>
@@ -403,7 +403,7 @@ export default function Quote() {
                                                 </div>
                                                 <div class="form-group mb-4 mt-4">
                                                     <div class="col-sm-12 text-center">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>Update Quotation</button>
+                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>Actualizar cotización</button>
                                                     </div>
                                                 </div>
                                             </form>
