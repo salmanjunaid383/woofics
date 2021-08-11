@@ -116,14 +116,14 @@ export default function SupComplain() {
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
-                                                <div class="col-md-4 bold h5">Help & Support</div>
+                                                <div class="col-md-4 bold h5">Servicio de asistencia</div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-4">
                                                    
                                                 </div>
-                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Find your Solution...</div>
-                                                {complain == '' ? <h3 className="text-center my-auto mx-auto">Nothing to show!</h3>
+                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra tu solución...</div>
+                                                {complain == '' ? <h3 className="text-center my-auto mx-auto">¡Nada que mostrar!</h3>
                                                     :
                                                     complain.map((val, id) => {
                                                         return (
@@ -142,9 +142,9 @@ export default function SupComplain() {
                                             <div class="col-md-12 row" style={{ padding: '0px', marginBottom: '10px' }}>
 
                                                 <div class="col-md-10 ">
-                                                    Didn't find your solution ?
+                                                ¿No encontraste tu solución ?
                                                             </div>
-                                                <div class="col-md-8 ml-2 m-2" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Ask your query</div>
+                                                <div class="col-md-8 ml-2 m-2" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Pregunta tu consulta</div>
                                             </div>
 
                                             <form>
@@ -161,7 +161,7 @@ export default function SupComplain() {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <button class={`btn btn-sm ${question == '' || title == '' ? disable :''}`} onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Send</button>
+                                                            <button class={`btn btn-sm ${question == '' || title == '' ? disable :''}`} onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
                                                         </td>
                                                     </tr>
                                                 </table>

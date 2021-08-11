@@ -109,7 +109,7 @@ export default function Todo() {
                                 <div class="col" >
                                     <div class="p-1 h1 text-primary text-center mx-auto display-inline-block" style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
                                         <i class="fa fa-check bg-primary text-white rounded " > </i>
-                                        <bold> My Todo-s</bold>
+                                        <bold> Mis Todo-s</bold>
                                     </div>
                                 </div>
                             </div>
@@ -120,12 +120,12 @@ export default function Todo() {
                                             <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new .." onChange={(e) => setTodo(e.target.value)} value={todo} />
                                         </div>
                                         <div class="col-auto m-0 px-2 d-flex align-items-center">
-                                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
+                                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Fecha de vencimiento no establecida</label>
                                             <input class="form-control form-control-md border-0 add-todo-input bg-transparent rounded" type="date" placeholder="Add new .." onChange={(e) => setDeadLine(e.target.value)}  value={deadline}/>
                                             <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                                         </div>
                                         <div class="col-auto px-0 mx-0 mr-2">
-                                            <button type="button" onClick={Feedback} class={`btn btn-primary ${todo == '' || deadline == '' ? disable : ''}`}>Add</button>
+                                            <button type="button" onClick={Feedback} class={`btn btn-primary ${todo == '' || deadline == '' ? disable : ''}`}>Agregar</button>
                                         </div>
                                     </div>
                                 </div>
