@@ -80,13 +80,13 @@ export default function ViewServices() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 h1 text-center mx-auto">Lista De Servicios</h3>
+                                            <h3 className=" mb-0 h1 text-center mx-auto">Lista De Servicios</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                 <thead id="heading-row" className="py-3 heading-row" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white text-center text-white">#</th>
+                                                        
                                                         <th className="border-top-0 text-white text-center text-white">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-center text-white">DESCRIPCIÓN</th>
                                                         <th className="border-top-0 text-white text-center text-white">EMPRESA</th>
@@ -103,7 +103,7 @@ export default function ViewServices() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{returnIndex()}</td>
+                                                                        
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{val.description}</td>
                                                                         <td className="txt-oflo">{val.company}</td>

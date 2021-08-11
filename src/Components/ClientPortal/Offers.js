@@ -93,7 +93,7 @@ export default function Offers() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Service Provider's Offers</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Service Provider's Offers</h1>
                                             </div>
 
                                             {/* {form == '' ? <h3 className="my-md-5 text-center mx-auto w-100">Nothing to show!</h3> :

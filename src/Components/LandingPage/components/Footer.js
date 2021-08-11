@@ -94,10 +94,10 @@ function Footer() {
                                     <Link className="text-white h5" to="/aboutus">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/contact"> CONTACTO </Link>
+                                    <Link className="text-white h5" to="/contact"> Contacto </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/allblog"> BLOG </Link>
+                                    <Link className="text-white h5" to="/allblog"> Blog </Link>
                                 </li>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/aboutus"> Preguntas más frecuentes </Link>
@@ -113,8 +113,7 @@ function Footer() {
                                 return (
                                     <>
                                         <div className="col-md-6 col-sm-12 col-xs-6" >
-                                            <a href="#" target="_blank" data-toggle="tooltip" title={val.label}>  <img src={val.value} className="footerLogo"/></a>
-
+                                            <img src={val.value} className="footerLogo"  alt={val.label}/>
                                         </div>
                                     </>
                                 )
@@ -139,11 +138,9 @@ function Footer() {
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className=" border-right px-2  ">
-                                            <a href="https://carnovo.com/en/terms-and-conditions" target="_blank" className="text-white">TÉRMINOS Y CONDICIONES</a>
+                                            <a href="https://carnovo.com/es/terminos-y-condiciones" target="_blank" className="text-white">TÉRMINOS Y CONDICIONES</a>
                                         </div>
-                                        <div className=" border-right px-2">
-                                            <a href="https://carnovo.com/en/legal-notice" target="_blank" className="text-white">ADVERTENCIA LEGAL</a>
-                                        </div>
+
                                         <div className="mx-2 ">
                                             <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">POLÍTICA DE PRIVACIDAD</a>
                                         </div>

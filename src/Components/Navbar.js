@@ -454,9 +454,7 @@ function Navbar() {
                         <Link to="/clientdiscussionforum" className="pt-3 taglink" id="" >
                             Forum
                         </Link>
-                        <Link to="/allblog" className="pt-3 taglink" id="" >
-                            Blog
-                        </Link>
+                       
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
                         <Link to="/quotemain" className="pt-3 taglink hover-effect" id="">
                             Offer
@@ -846,7 +844,7 @@ function Navbar() {
                     borderRadius: "50px",
                 }}
             >
-                <WhatsAppWidget phoneNumber="34648411313" />
+                <WhatsAppWidget phoneNumber="34680494729" />
             </div>
             <div
                 style={{

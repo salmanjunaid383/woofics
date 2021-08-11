@@ -175,7 +175,7 @@ export default function AllQuotation() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto manage-heading">Manage Requests</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto manage-heading">Manage Requests</h1>
                                             </div>
                                             <select onChange={(e) => sortArray(e.target.value)} className="float-right lowest">
                                                 <option value="price">Lowest Price</option>

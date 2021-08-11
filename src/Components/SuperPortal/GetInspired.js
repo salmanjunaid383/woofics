@@ -90,13 +90,13 @@ export default function GetInspired() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 h1 mx-auto text-center ">Lista De Imágenes</h3>
+                                            <h3 className=" mb-0 h1 mx-auto text-center ">Lista De Imágenes</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap text-center">
                                                 <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white">#</th>
+                                                        
                                                         <th className="border-top-0 text-white">NOMBRE DE LA IMÁGEN</th>
                                                         <th className="border-top-0 text-white">ENLACE DE IMÁGEN</th>
                                                         <th className="border-top-0 text-white">CATEGORIA DE IMAGEN</th>
@@ -109,7 +109,7 @@ export default function GetInspired() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{returnIndex()}</td>
+                                                                        
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{(val.url).slice(0, 20)}</td>
                                                                         <td className="txt-oflo">{val.category}</td>

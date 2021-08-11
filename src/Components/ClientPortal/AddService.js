@@ -999,7 +999,7 @@ export default function Test() {
                                 <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
                             </div>
                             <div class="d-md-flex mb-3" style={{ width: "100%" }}>
-                                <h3 class="box-title h1 mb-0 text-center mx-auto">SERVICE PROVIDER</h3>
+                                <h3 class=" h1 mb-0 text-center mx-auto">SERVICE PROVIDER</h3>
                             </div>
                             <div class="row">
                                 <div className="col-md-12 mx-auto">

@@ -95,7 +95,7 @@ export default function YourService() {
                   <div className="row m-lg-5">
                     <div className="col-md-12 col-lg-12 col-sm-12">
                       <div className="d-md-flex mb-3">
-                        <h1 className="box-title h1 mb-0 text-center mx-auto">
+                        <h1 className=" h1 mb-0 text-center mx-auto">
                           My Services
                         </h1>
                       </div>
@@ -103,7 +103,7 @@ export default function YourService() {
                         <table  id="for-table-setting" className="table no-wrap" >
                           <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                             <tr>
-                              <th className="border-top-0 text-white text-center">#</th>
+                              
                               <th className="border-top-0 text-white text-center">NAME</th>
                               <th className="border-top-0 text-white text-center">DESCRIPTION</th>
                               <th className="border-top-0 text-white text-center">COMPANY</th>
@@ -120,7 +120,7 @@ export default function YourService() {
                                 return (
                                   <>
                                     <tr>
-                                      <td>{returnIndex()}</td>
+                                      
                                       <td className="txt-oflo">{val.name}</td>
                                       <td className="txt-oflo">{val.description}</td>
                                       <td className="txt-oflo">{val.company}</td>

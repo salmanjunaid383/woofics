@@ -221,7 +221,7 @@ export default function CreateForms() {
                     <div className="page-wrapper bg-light">
                         <div class="container-fluid">
                             <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0 mx-auto text-center">CARGOS</h3>
+                                <h3 class=" mb-0 mx-auto text-center">CARGOS</h3>
                             </div> 
                             <div class="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
@@ -292,7 +292,7 @@ export default function CreateForms() {
                                                     <table  id="for-table-setting" class="table table-hover mt-2 text-center">
                                                         <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
-                                                                <th scope="col " className="text-white" >#</th>
+                                                                
                                                                 <th scope="col " className="text-white" >Nombre</th>
                                                                 <th scope="col " className="text-white" >Cargo</th>
                                                                 <th scope="col " className="text-white" >Comienzo</th>
@@ -338,7 +338,7 @@ export default function CreateForms() {
                                                         <table  id="for-table-setting" class="table table-hover" style={{tableLayout:"fixed"}}>
                                                             <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                 <tr style={{tableLayout:"fixed"}}>
-                                                                    <th scope="col" className="text-white">#</th>
+                                                                    
                                                                     <th scope="col" className="text-white">Cargo</th>
                                                                     <th scope="col" className="text-white">Comportamiento</th>
                                                                 </tr>
@@ -382,7 +382,7 @@ export default function CreateForms() {
                                                             <table  id="for-table-setting" class="table table-hover" style={{tableLayout:"fixed"}}>
                                                                 <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
-                                                                        <th scope="col" className="text-white">#</th>
+                                                                        
                                                                         <th scope="col" className="text-white">Cargo</th>
                                                                         <th scope="col" className="text-white">Comportamiento</th>
                                                                     </tr>
@@ -424,7 +424,7 @@ export default function CreateForms() {
                                                             <table  id="for-table-setting" class="table table-hover" style={{tableLayout:"fixed"}}>
                                                                 <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                                     <tr>
-                                                                        <th scope="col" className="text-white">#</th>
+                                                                        
                                                                         <th scope="col" className="text-white">Cargo</th>
                                                                         <th scope="col" className="text-white">Comportamiento</th>
                                                                     </tr>

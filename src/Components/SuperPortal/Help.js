@@ -78,14 +78,14 @@ export default function Help() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">Lista De Ayuda</h3>
+                                            <h3 className=" mb-0 text-center mx-auto">Lista De Ayuda</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             {blog == '' ? <div className="my-auto mx-auto w-100 text-center">Nada Que Mostrar...</div>
                                                 : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
-                                                            <th className="border-top-0 text-white">#</th>
+                                                            
                                                             <th className="border-top-0 text-white">CONSULTA</th>
                                                             <th className="border-top-0 text-white">DESCRIPCIÓN</th>
                                                             <th className="border-top-0 text-white">FECHA</th>
@@ -97,7 +97,7 @@ export default function Help() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{returnIndex()}</td>
+                                                                        
                                                                         <td className="txt-oflo">{(val.question).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.description).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>

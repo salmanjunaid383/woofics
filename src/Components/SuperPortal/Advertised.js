@@ -78,7 +78,7 @@ export default function GetInspired() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div class="d-md-flex mb-3">
-                                            <h3 class="box-title mb-0 h1 text-center mx-auto"> Anunciar</h3>
+                                            <h3 class=" mb-0 h1 text-center mx-auto"> Anunciar</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >

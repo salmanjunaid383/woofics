@@ -121,7 +121,7 @@ export default function DataofInt() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Logo</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Logo</h1>
                                             </div>
                                             <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">

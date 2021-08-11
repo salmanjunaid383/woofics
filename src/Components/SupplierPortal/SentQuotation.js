@@ -62,7 +62,7 @@ export default function SentQuotation() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-xl-12 col-lg-12 col-sm-12 border bg-light " style={{width:"1px"}}>
                                             <div className="d-md-flex mb-3">
-                                                <h1 className="box-title h1 mb-0 text-center mx-auto">Manage Requests</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Manage Requests</h1>
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive salman-table-change">

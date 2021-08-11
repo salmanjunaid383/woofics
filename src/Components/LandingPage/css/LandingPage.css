@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@00&display=swap');
 body{
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
 }
 .woofic_background{
     /* width:100%; */
@@ -9,6 +9,7 @@ body{
     /* background-image:linear-gradient(180deg,#0767c4 0%, #fff 100%); */
     background-size: cover;
     /* color: #fff; */
+    
 }
 .text-blackStaz{
   color:black;

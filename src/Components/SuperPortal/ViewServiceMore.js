@@ -27,7 +27,7 @@ export default function ViewServiceMore() {
 
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/form/${serid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serid}`)
             .then((response) => {
                 if (response) {
                     setBlog(response.data.form)
@@ -68,7 +68,7 @@ export default function ViewServiceMore() {
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="d-md-flex mb-3">
-                                        <h3 className="box-title mb-0 h1 mx-auto text-center">Detalles Del Servicio</h3>
+                                        <h3 className=" mb-0 h1 mx-auto text-center">Detalles Del Servicio</h3>
                                     </div>
 
                                     <table  id="for-table-setting" class="table table-hover">

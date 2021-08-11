@@ -85,7 +85,7 @@ export default function ViewReviews() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 text-center mx-auto">Lista De Reseñas</h3>
+                                            <h3 className=" mb-0 text-center mx-auto">Lista De Reseñas</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap text-center">

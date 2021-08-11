@@ -104,13 +104,13 @@ export default function Coupons() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div className="d-md-flex mb-3">
-                                            <h3 className="box-title mb-0 h1 mx-auto text-center">Lista De Cupones</h3>
+                                            <h3 className=" mb-0 h1 mx-auto text-center">Lista De Cupones</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                 <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        <th className="border-top-0 text-white text-white">#</th>
+                                                        
                                                         <th className="border-top-0 text-white text-white">TIPO DE CUPÓN</th>
                                                         <th className="border-top-0 text-white text-white">TIPO DE DESCUENTO</th>
                                                         <th className="border-top-0 text-white text-white">DESCRIPCIÓN</th>
@@ -126,7 +126,7 @@ export default function Coupons() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td>{returnIndex()}</td>
+                                                                        
                                                                         <td className="txt-oflo">{val.coupon_type}</td>
                                                                         <td className="txt-oflo">{val.discount_type}</td>
                                                                         <td className="txt-oflo">{(val.discount_discription).slice(0, 30) + "..."}</td>

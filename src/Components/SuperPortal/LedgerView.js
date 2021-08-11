@@ -84,13 +84,13 @@ export default function LedgerView() {
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="d-md-flex mb-3">
-                                        <h1 className="box-title h1 mb-0 text-center mx-auto">Libro mayor</h1>
+                                        <h1 className=" h1 mb-0 text-center mx-auto">Libro mayor</h1>
                                     </div>
                                     <div className="table-responsive salman-table-change">
                                         <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                             <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                 <tr>
-                                                    <th className="border-top-0 text-white text-center">#</th>
+                                                    
                                                     <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
                                                     <th className="border-top-0 text-white text-center">CREADO EN</th>
                                                 </tr>
