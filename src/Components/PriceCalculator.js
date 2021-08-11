@@ -206,7 +206,8 @@ export default function PriceCalculator() {
     const classes = useStyles();
     const [age, setAge] = React.useState('');
     const [open, setOpen] = React.useState(false);
-
+    const [value, setValue] = React.useState(100);
+    const [value2, setValue2] = React.useState(100);
     // const handleChange = (event) => {
     //     setAge(event.target.value);
     // };
@@ -233,7 +234,10 @@ export default function PriceCalculator() {
                     alert(error.response.data.message);
                 }
             });
+        
     }, [])
+    
+    
 
     const handleChange = e => setAge(e.target.value);
 
@@ -243,6 +247,7 @@ export default function PriceCalculator() {
     const [height, setheight] = useState(0);
     const [width, setwidth] = useState(0);
     const [style, setStyle] = useState('')
+    
 
     function AutoFunction(e) {
         setAge(e)
@@ -250,7 +255,7 @@ export default function PriceCalculator() {
         // getCal()
     }
     function getCal() {
-        console.log(value)
+        
         if(age !== ''){
             const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
             height: value,
@@ -287,8 +292,7 @@ export default function PriceCalculator() {
 
     const [search, setSearch] = useState('')
     const [application, setApplication] = useState('')
-    const [value, setValue] = React.useState(30);
-    const [value2, setValue2] = React.useState(30);
+    
 
     const handleSliderChange = (event, newValue) => {
         setValue(newValue);
@@ -296,12 +300,31 @@ export default function PriceCalculator() {
     };
     const handleSliderChange2 = (event, newValue) => {
         setValue2(newValue);
-        getCal();
+        
         
     };
-    const handleInputChange = (event) => {
+    const handleInputChange =  (event) => {
+        
         setValue(event.target.value === '' ? '' : Number(event.target.value));
-        getCal();
+        if(age !== ''){
+            
+            const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
+            height: Number(event.target.value),
+            width: value2,
+            led_id: age
+        })
+            .then((response) => {
+                if (response) {
+                    setarea(response.data)
+                    setareaprice(response.data.led_option.price)
+                    
+                }
+            }).catch((error) => {
+                if (error.response) {
+                    alert(error.response.data.message);
+                }
+            });
+        }
     };
 
     const handleBlur = () => {
@@ -312,8 +335,26 @@ export default function PriceCalculator() {
         }
     };
 
-    const handleInputChange2 = (event) => {
+    const handleInputChange2 =  (event) => {
         setValue2(event.target.value === '' ? '' : Number(event.target.value));
+        if(age !== ''){
+            const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
+            height: value,
+            width: Number(event.target.value),
+            led_id: age
+        })
+            .then((response) => {
+                if (response) {
+                    setarea(response.data)
+                    setareaprice(response.data.led_option.price)
+                    
+                }
+            }).catch((error) => {
+                if (error.response) {
+                    alert(error.response.data.message);
+                }
+            });
+        }
     };
 
     const handleBlur2 = () => {
@@ -337,8 +378,8 @@ export default function PriceCalculator() {
 
                     <div className="row main-row" >
                         <div className="col-1 heading">
-                            <h4>Price</h4>
-                            <h1>Calculator</h1>
+                            <h4>Precio</h4>
+                            <h1>Calculadora</h1>
                         </div>
                         <div className="col-sm-12 ">
                         <div className="row" style={{ height: '300px', overflowY: 'scroll' }}>
@@ -351,8 +392,8 @@ export default function PriceCalculator() {
                                                     </div>
                                                     <div className="col-md-8">
                                                         <h3>*{val.name}</h3>
-                                                        <small><span>Location: {val.location}</span></small><br />
-                                                        <small><span>Application: {val.application}</span></small><br />
+                                                        <small><span>Localización: {val.location}</span></small><br />
+                                                        <small><span>Solicitud: {val.application}</span></small><br />
                                                     </div>
                                                 </div>
                                             </>
@@ -365,7 +406,7 @@ export default function PriceCalculator() {
                    
                             <div className={classes.root} style={{ margin: "auto",textAlign:"center" }}>
 
-                            <Typography gutterBottom>Height should be in centimeter</Typography>
+                            <Typography gutterBottom>La altura debe estar en centímetros</Typography>
                             
                             <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" max={1000} className="w-100" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} 
                             onChangeCommitted={getCal} /> <Input
@@ -374,13 +415,13 @@ export default function PriceCalculator() {
                                 margin="dense"
                                 onChange={handleInputChange}
                                 
-                                max={1000}
+                                max={10000}
                                 onBlur={handleBlur}
                                 inputProps={{
                                     
                                     step: 10,
                                     min: 0,
-                                    max: 2000, 
+                                    max: 10000, 
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
                                 
@@ -393,19 +434,21 @@ export default function PriceCalculator() {
                         <div className="col-sm-12">
                        
                             <div className={classes.root} style={{ margin: "auto",textAlign:"center" }}>
-                                <Typography gutterBottom>Width should be in centimeter</Typography>
+                                <Typography gutterBottom>El ancho debe estar en centímetros</Typography>
                             <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2} 
                             onChangeCommitted={getCal}  /> <Input
                                 className="mb-2 ml-3"
                                 value={value2}
                                 margin="dense"
+                                max={10000}
                                 onChange={handleInputChange2}
                                 onBlur={handleBlur2}
                                 inputProps={{
                                     
                                     step: 10,
                                     min: 0,
-                                    max: 1000,
+                                    max: 10000,
+                                    
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
                                 }}
@@ -427,12 +470,12 @@ export default function PriceCalculator() {
                     <div className="row main-row" >
                         <div className="col-1 heading">
                             <h4></h4>
-                            <h1>Result</h1>
+                            <h1>Resultado</h1>
                         </div>
 
                         <div className="main-parent" style={{display:"flex",justifyContent:"space-between", flexWrap:"wrap",alignItems:"center"}}>
                             <div className="col-xl-6 col-6" >
-                                <h1 className="result-heading">Resolution</h1>
+                                <h1 className="result-heading">Resolución</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -454,7 +497,7 @@ export default function PriceCalculator() {
                             </div>
 
                             <div className="col-xl-6 col-6" style={{}}>
-                            <h1 className="result-heading">Surface</h1>
+                            <h1 className="result-heading">Superficie</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -476,7 +519,7 @@ export default function PriceCalculator() {
                             </div>
 
                             <div className="col-xl-6 col-6" >
-                            <h1 className="result-heading">Max.Power</h1>
+                            <h1 className="result-heading">Máximo poder</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -498,7 +541,7 @@ export default function PriceCalculator() {
                             </div>
 
                             <div className="col-xl-6 col-6" style={{}}>
-                            <h1 className="result-heading">Type Power</h1>
+                            <h1 className="result-heading">Tipo de Potencia</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -520,7 +563,7 @@ export default function PriceCalculator() {
                             </div>
 
                             <div className="col-xl-6 col-6" >
-                            <h1 className="result-heading">Length</h1>
+                            <h1 className="result-heading">Larga</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -542,7 +585,7 @@ export default function PriceCalculator() {
                             </div>
 
                             <div className="col-xl-6 col-6" style={{}}>
-                            <h1 className="result-heading">Weight</h1>
+                            <h1 className="result-heading">Peso</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -568,7 +611,7 @@ export default function PriceCalculator() {
                                 </button>
                             </div> */}
                             <div className="col-xl-12 final-price">
-                                <span className="price">Price: </span>
+                                <span className="price">Precio: </span>
                                 <span className="value">{area ? area.led_option.price : '00'}</span>
                             </div>
                         </div>

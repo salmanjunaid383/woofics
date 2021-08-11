@@ -165,7 +165,7 @@ export default function Moredetailsdiscussionforum() {
                                             </p>
                                         </div>
                                         <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                                            { allreplies == '' ? <h3  className="text-center mx-auto m-lg-5"> No reply...</h3> :
+                                            { allreplies == '' ? <h3  className="text-center mx-auto m-lg-5"> Sin Respuesta...</h3> :
                                                 allreplies.map((val, id) => {
                                                     return (
                                                         <>

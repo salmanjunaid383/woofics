@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
 import logo from './LandingPage/images/wooficc.png';
@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './Contact.css'
 import ScrollToTop from './ScrollToTop'
-
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ContactUs() {
     ScrollToTop();
     let history = useHistory();
-
+    
     const classes = useStyles();
 
     const [name, setname] = useState("");
@@ -59,7 +58,7 @@ export default function ContactUs() {
                     <div class="container ">
                         <div class="row mx-auto mobile-res">
                             <div className="col-12  col-md-6 border-right mt-md-5 pt-md-5 w-75">
-                                <h3>We Want To Know Your Opinion</h3>
+                                <h3>Nosotras queremos saber tu opinión</h3>
                                 <TextField className="w-75 my-1" id="standard-basic" label="Name *"
                                     onChange={(e) => setname(e.target.value)}
                                 />
@@ -74,19 +73,19 @@ export default function ContactUs() {
                                 <br />
                                 <br />
 
-                                <button className="btn btn-primary" onClick={()=>Message()} style={{marginTop:"10px"}}>Send Message</button>
+                                <button className="btn btn-primary" onClick={()=>Message()} style={{marginTop:"10px"}}>Enviar Mensaje</button>
 
                             </div>
                             <div className="col-12 col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5 for-margin">
-                                <h4>Write To Us At:</h4>
+                                <h4>Escríbanos a:</h4>
                                 <h5 className="text-primary"><a>hola@woofics.com</a></h5>
                                 <br />
                                 <h4>Telephone:</h4>
-                                <h5 className="text-primary"><a>+34 680 49 47 29</a></h5>
+                                <h5 className="text-primary"><a>+34 648 411 313</a></h5>
                                 <br />
                                 <br />
 
-                                <h4 className="mob-mar" style={{marginTop:"-21px",marginBottom:"3px"}}>Follow us:</h4>
+                                <h4 className="mob-mar" style={{marginTop:"-21px",marginBottom:"3px"}}>Síguenos:</h4>
 
                                 <div className="social_icons" style={{marginTop:"2px"}}>
                             <span
@@ -131,7 +130,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="woofic.com@gmail.com">
+                              <a target="_blank" href="https://www.instagram.com/woofic_com/">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>

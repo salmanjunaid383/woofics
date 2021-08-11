@@ -40,7 +40,7 @@ export default function Blog() {
                         <div class="col-md-8 text-left pt-2">
                             <h1 class="card-title">{blog.author}</h1>
                             <h3 class="card-text">{blog.article}</h3>
-                            <h5 class="card-text">Date: {(blog.created_at)}</h5>
+                            <h5 class="card-text">Fecha: {(blog.created_at)}</h5>
                         </div>
 
                         {/* <div class="card" >

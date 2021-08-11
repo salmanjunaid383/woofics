@@ -35,7 +35,7 @@ export default function ViewMore() {
             <div className="page-wrapper mt-5 ">
                 <div class="container-fluid no-gutters ">
                     <div className="row no-gutters">
-                        {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nothing to show!</h3></td> </tr>
+                        {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nada que mostrar!</h3></td> </tr>
                             : blog.map((val, id) => {
                                 return (
                                     <>

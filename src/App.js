@@ -237,7 +237,7 @@ function App() {
           <Route exact path="/provideroffer/:oid" component={Offers} />
           <Route exact path="/customeroffer" component={ClientOffers} />
           <Route exact path="/offerlist" component={OfferList} />
-          <Route exact path="/aboutus" component={Contact} />
+          <Route exact path="/aboutus/:fid?" component={Contact} />
           <Route exact path="/complainresponse/:comid" component={ComplainResponses} />
 
 

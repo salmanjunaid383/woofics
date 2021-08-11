@@ -122,7 +122,7 @@ export default function Aboutus() {
                 <div class="row">
                     <div class="col-md-12">
                         {questions == "" ? <div class="alert alert-success w-100 text-center m-5 col-md-12" role="alert">
-                                        No Discussions! </div>
+                        No hay discusiones! </div>
                                         : 
                             questions.map((val, id) => {
                                 return (
@@ -142,7 +142,7 @@ export default function Aboutus() {
                                                 </div>
                                                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                                                 <div class="px-4 pt-3"></div>
-                                                    <div class="px-4 pt-3"> <button type="button" class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; View all Replies</button> </div>
+                                                    <div class="px-4 pt-3"> <button type="button" class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Ver Todas las Respuestas</button> </div>
                                                 </div>
                                             </div>
                                         </Link>

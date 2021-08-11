@@ -28,8 +28,8 @@ useEffect(() => {
                <div class="check"></div>
             </div>
             <div class="content-success py-4">
-               <h1>Email Verified !</h1>
-               <Link to="/" className="btn btn-success my-4">Login</Link>
+               <h1>Correo verificado !</h1>
+               <Link to="/" className="btn btn-success my-4">Acceso</Link>
             </div>
             
          </div>
