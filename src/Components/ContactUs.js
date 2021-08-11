@@ -51,14 +51,15 @@ export default function ContactUs() {
 
     return (
         <>
-
-            <Navbar />
+            <div className="new-nav">
+            <Navbar/>
+            </div>
             <div className="container.fluid for-mobile">
                 <div className="" style={{ height: '100%' }}>
                     <div class="container ">
                         <div class="row mx-auto mobile-res">
                             <div className="col-12  col-md-6 border-right mt-md-5 pt-md-5 w-75">
-                                <h3>We Want to know your opinion</h3>
+                                <h3>We Want To Know Your Opinion</h3>
                                 <TextField className="w-75 my-1" id="standard-basic" label="Name *"
                                     onChange={(e) => setname(e.target.value)}
                                 />
@@ -77,7 +78,7 @@ export default function ContactUs() {
 
                             </div>
                             <div className="col-12 col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5 for-margin">
-                                <h4>Write to us at:</h4>
+                                <h4>Write To Us At:</h4>
                                 <h5 className="text-primary"><a>hola@woofics.com</a></h5>
                                 <br />
                                 <h4>Telephone:</h4>

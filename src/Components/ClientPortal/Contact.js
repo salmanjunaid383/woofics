@@ -18,6 +18,7 @@ import Footer from "../LandingPage/components/Footer";
 import { TextField } from "@material-ui/core";
 import ScrollToTop from '../ScrollToTop'
 import CustomClientAuth from "../CustomClientAuth";
+// import "../../Components/Contact.css"
 
 ///About us page
 export default function Contact() {
@@ -107,7 +108,10 @@ export default function Contact() {
 
   return (
     <>
-      <Navbar />
+    <div  className="new-nav">
+      <Navbar/>
+      </div>
+      
       <div className="mt-5 pt-5">
         <div className="container" style={{marginTop:"20px"}}>
           <div className="row mx-auto">

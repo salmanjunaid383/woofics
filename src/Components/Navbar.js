@@ -18,7 +18,7 @@ import GoogleLogin from 'react-google-login';
 // import Supplier from './Supplier'
 import ReCAPTCHA from "react-google-recaptcha";
 // import side_image from './LandingPage/images/img-01.png';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory,useLocation } from 'react-router-dom';
 // import Youtube from './LandingPage/components/youtube.png'
 import WhatsAppWidget from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
@@ -83,12 +83,14 @@ function Navbar() {
     const handleCloseStaz = () => {
         setAnchorElStaz(null);
     };
+    const location = useLocation();
 
     const openStaz = Boolean(anchorElStaz);
     const idStaz = openStaz ? 'simple-popover' : undefined;
     let profileImageStaz = "https://image.flaticon.com/icons/png/512/147/147144.png"
     useEffect(() => {
-
+        
+        console.log("pathname is" +location.pathname);
             if (localStorage.getItem('user_token'))
                 {
                     

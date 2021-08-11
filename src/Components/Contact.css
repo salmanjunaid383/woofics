@@ -3,3 +3,10 @@
 
 
 .container{font-family: 'Poppins', sans-serif;}
+
+.new-nav{
+    background-image:linear-gradient(to right, #934CFF 0%, #F62B84 100%) !important;
+    position: static;
+    height:65px;
+}
+
