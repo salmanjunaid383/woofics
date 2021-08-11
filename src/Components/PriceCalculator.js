@@ -571,7 +571,7 @@ export default function PriceCalculator() {
             </div>
 
 
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

@@ -115,20 +115,6 @@ export default function Aboutus() {
     }
     return (
         <>
-              {/* <div class="topnav" id="myTopnav">
-                <Link to="/" >
-                    <img src={logo} className="img-fluid float-left w-50 pl-lg-4" />
-                </Link>
-                <Link className="sm-mt-3" to="/">Home</Link>
-                <Link to="/allblog">Blog</Link>
-                <Link to='/contactus'>About Us</Link>
-                <Link to='/pricecalculator'>Price Calculator</Link>
-                <Link to="/discussionforum">Forum</Link>
-                <Link to="/login" className="float-right mr-lg-4"> <button type="submit" class="f-button btn btn-white text-white ">Login/Register</button></Link>
-                <a href="javascript:void(0);" class="icon" onClick={myFunction}>
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div> */}
             <Navbar />
 
             <div class="container mt-100">
