@@ -206,7 +206,8 @@ export default function PriceCalculator() {
     const classes = useStyles();
     const [age, setAge] = React.useState('');
     const [open, setOpen] = React.useState(false);
-
+    const [value, setValue] = React.useState(100);
+    const [value2, setValue2] = React.useState(100);
     // const handleChange = (event) => {
     //     setAge(event.target.value);
     // };
@@ -233,7 +234,10 @@ export default function PriceCalculator() {
                     alert(error.response.data.message);
                 }
             });
+        
     }, [])
+    
+    
 
     const handleChange = e => setAge(e.target.value);
 
@@ -243,6 +247,7 @@ export default function PriceCalculator() {
     const [height, setheight] = useState(0);
     const [width, setwidth] = useState(0);
     const [style, setStyle] = useState('')
+    
 
     function AutoFunction(e) {
         setAge(e)
@@ -250,7 +255,7 @@ export default function PriceCalculator() {
         // getCal()
     }
     function getCal() {
-        console.log(value)
+        
         if(age !== ''){
             const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
             height: value,
@@ -287,8 +292,7 @@ export default function PriceCalculator() {
 
     const [search, setSearch] = useState('')
     const [application, setApplication] = useState('')
-    const [value, setValue] = React.useState(30);
-    const [value2, setValue2] = React.useState(30);
+    
 
     const handleSliderChange = (event, newValue) => {
         setValue(newValue);
@@ -296,12 +300,31 @@ export default function PriceCalculator() {
     };
     const handleSliderChange2 = (event, newValue) => {
         setValue2(newValue);
-        getCal();
+        
         
     };
-    const handleInputChange = (event) => {
+    const handleInputChange =  (event) => {
+        
         setValue(event.target.value === '' ? '' : Number(event.target.value));
-        getCal();
+        if(age !== ''){
+            
+            const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
+            height: Number(event.target.value),
+            width: value2,
+            led_id: age
+        })
+            .then((response) => {
+                if (response) {
+                    setarea(response.data)
+                    setareaprice(response.data.led_option.price)
+                    
+                }
+            }).catch((error) => {
+                if (error.response) {
+                    alert(error.response.data.message);
+                }
+            });
+        }
     };
 
     const handleBlur = () => {
@@ -312,8 +335,26 @@ export default function PriceCalculator() {
         }
     };
 
-    const handleInputChange2 = (event) => {
+    const handleInputChange2 =  (event) => {
         setValue2(event.target.value === '' ? '' : Number(event.target.value));
+        if(age !== ''){
+            const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
+            height: value,
+            width: Number(event.target.value),
+            led_id: age
+        })
+            .then((response) => {
+                if (response) {
+                    setarea(response.data)
+                    setareaprice(response.data.led_option.price)
+                    
+                }
+            }).catch((error) => {
+                if (error.response) {
+                    alert(error.response.data.message);
+                }
+            });
+        }
     };
 
     const handleBlur2 = () => {
@@ -374,13 +415,13 @@ export default function PriceCalculator() {
                                 margin="dense"
                                 onChange={handleInputChange}
                                 
-                                max={1000}
+                                max={10000}
                                 onBlur={handleBlur}
                                 inputProps={{
                                     
                                     step: 10,
                                     min: 0,
-                                    max: 2000, 
+                                    max: 10000, 
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
                                 
@@ -399,13 +440,15 @@ export default function PriceCalculator() {
                                 className="mb-2 ml-3"
                                 value={value2}
                                 margin="dense"
+                                max={10000}
                                 onChange={handleInputChange2}
                                 onBlur={handleBlur2}
                                 inputProps={{
                                     
                                     step: 10,
                                     min: 0,
-                                    max: 1000,
+                                    max: 10000,
+                                    
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
                                 }}
