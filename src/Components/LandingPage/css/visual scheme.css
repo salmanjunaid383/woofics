@@ -133,6 +133,11 @@ margin-bottom: 5px;
 
 }
 
+@media(max-width:600px){
+    .woofic_visiual_representation{
+            width:95%;
+    }
+}
 
 @media(max-width:770px){
     .woofic_visiual_representation{
@@ -142,6 +147,7 @@ margin-bottom: 5px;
 @media(max-width:600px){
     .woofic_visiual_representation{
         margin-top:40px;
+        width:95% !important;
     }
     .second-section{
         display:flex;

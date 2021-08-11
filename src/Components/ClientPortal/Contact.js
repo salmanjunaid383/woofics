@@ -380,12 +380,12 @@ export default function Contact() {
                           </button>
                         </div>
                         <div className="col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5">
-                          <h4>Write to us at:</h4>
+                          <h4 style={{marginTop:"20px"}}>Write to us at:</h4>
                           <h5 className="h5" className="text-primary">
                             <a>hola@woofics.com</a>
                           </h5>
                           <br />
-                          <h4>Telephone:</h4>
+                          <h4 style={{marginTop:"20px"}}>Telephone:</h4>
                           <h5 className="h5" className="text-primary">
                             <a>+34 680 49 47 29</a>
                           </h5>
@@ -394,14 +394,14 @@ export default function Contact() {
 
                           <h5 className="h5 follow">Follow us:</h5>
 
-                          <div className="social_icons">
+                          <div className="social_icons" style={{marginTop:"20px"}}>
                             <span
                               style={{
-                                backgroundColor: "lightgray",
+                                backgroundColor: "#fff",
                                 borderRadius: "50%",
-                                padding: 10,
+                                border:"3px solid #F62B84",
+                                padding: 7,
                                 margin: 7,
-                                color: "white",
                                 
                               }}
                             >
@@ -414,9 +414,10 @@ export default function Contact() {
                             </span>
                             <span
                               style={{
-                                backgroundColor: "lightgray",
+                                backgroundColor: "#fff",
                                 borderRadius: "50%",
-                                padding: 10,
+                                border:"3px solid #F62B84",
+                                padding: 7,
                                 margin: 7,
                                 color: "white",
                               }}
@@ -427,9 +428,11 @@ export default function Contact() {
                             </span>
                             <span
                               style={{
-                                backgroundColor: "lightgray",
+                                backgroundColor: "#fff",
                                 borderRadius: "50%",
-                                padding: 10,
+                                border:"3px solid #F62B84",
+
+                                padding: 7,
                                 margin: 7,
                                 color: "white",
                               }}
@@ -440,9 +443,11 @@ export default function Contact() {
                             </span>
                             <span
                               style={{
-                                backgroundColor: "lightgray",
+                                backgroundColor: "#fff",
                                 borderRadius: "50%",
-                                padding: 10,
+                                border:"3px solid #F62B84",
+
+                                padding: 7,
                                 margin: 7,
                                 color: "white",
                               }}

@@ -87,12 +87,72 @@ export default function ContactUs() {
 
                                 <h4 className="mob-mar" style={{marginTop:"-21px",marginBottom:"3px"}}>Follow us:</h4>
 
-                                <div>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"><i className="px-2 fa fa-facebook"></i></a></span>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="woofic.com@gmail.com"><i className="px-1 fa fa-twitter"></i></a></span>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="woofic.com@gmail.com"><i className="px-1 fa fa-instagram"></i></a></span>
-                                    <span style={{ backgroundColor: "lightgray", borderRadius: "50%", padding: 5, margin: 7, color: 'white' }}><a target="_blank" href="https://www.linkedin.com/company/woofic"><i className="px-1 fa fa-linkedin"></i></a></span>
-                                </div>
+                                <div className="social_icons" style={{marginTop:"2px"}}>
+                            <span
+                              style={{
+                                backgroundColor: "#fff",
+                                borderRadius: "50%",
+                                border:"3px solid #F62B84",
+                                padding: 7,
+                                margin: 7,
+                                
+                              }}
+                            >
+                              <a
+                                target="_blank"
+                                href="https://www.facebook.com/Woofic-110333384466812"
+                              >
+                                <i className="px-2 fa fa-facebook"></i>
+                              </a>
+                            </span>
+                            <span
+                              style={{
+                                backgroundColor: "#fff",
+                                borderRadius: "50%",
+                                border:"3px solid #F62B84",
+                                padding: 7,
+                                margin: 7,
+                                color: "white",
+                              }}
+                            >
+                              <a target="_blank" href="woofic.com@gmail.com">
+                                <i className="px-1 fa fa-twitter"></i>
+                              </a>
+                            </span>
+                            <span
+                              style={{
+                                backgroundColor: "#fff",
+                                borderRadius: "50%",
+                                border:"3px solid #F62B84",
+
+                                padding: 7,
+                                margin: 7,
+                                color: "white",
+                              }}
+                            >
+                              <a target="_blank" href="woofic.com@gmail.com">
+                                <i className="px-1 fa fa-instagram"></i>
+                              </a>
+                            </span>
+                            <span
+                              style={{
+                                backgroundColor: "#fff",
+                                borderRadius: "50%",
+                                border:"3px solid #F62B84",
+
+                                padding: 7,
+                                margin: 7,
+                                color: "white",
+                              }}
+                            >
+                              <a
+                                target="_blank"
+                                href="https://www.linkedin.com/company/woofic"
+                              >
+                                <i className="px-1 fa fa-linkedin"></i>
+                              </a>
+                            </span>
+                          </div>
                             </div>
                         </div>
                     </div>

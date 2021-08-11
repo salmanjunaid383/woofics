@@ -115,6 +115,19 @@ footer .glyphicon {
 }
 
 
+.social_icons i{
+      color:rgb(116, 116, 116) !important;
+}
+
+.social_icons span:hover{
+  cursor: pointer;
+  background-color: #f72a85 !important;
+}
+.social_icons span:hover i{
+  color: #fff !important;
+}
+
+
 @keyframes slide {
   0% {
     opacity: 0;
