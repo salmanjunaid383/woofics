@@ -249,7 +249,7 @@ function LandingPage() {
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div class="woofic_receive_button text-left mt-lg-4" style={{marginBottom:"20px"}}>
-                                                    <Link to="/quotemain">RECIBIR OFERTAS</Link>
+                                                    <Link to="/quotemain">Recibir Ofertas</Link>
                                                 </div>
                                             </div>
                                         </div>
