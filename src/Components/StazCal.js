@@ -43,8 +43,8 @@ export default function StazCal() {
 
                     <div className="row main-row" >
                         <div className="col-1 heading">
-                            <h4>Price</h4>
-                            <h1>Calculator</h1>
+                            <h4>Precio</h4>
+                            <h1>Calculadora</h1>
                         </div>
                         <div className="col-sm-12 for-vid">
 
@@ -52,7 +52,7 @@ export default function StazCal() {
                         <div className="col-sm-12">
                             <div className="price-heading">
                                 <div className="heading">
-                                    Price
+                                Precio
                         </div>
                                 <div className="value">
                                     $1,000,000
@@ -74,7 +74,7 @@ export default function StazCal() {
                         <div className="col-sm-12">
                             <div className="price-heading">
                                 <div className="heading">
-                                    Price
+                                Precio
                         </div>
                                 <div className="value">
                                     $1,000,000
@@ -94,7 +94,7 @@ export default function StazCal() {
                         <div className="col-sm-12">
                             <div className="price-heading">
                                 <div className="heading">
-                                    Price
+                                    Precio
                         </div>
                                 <div className="value">
                                     $1,000,000
@@ -125,12 +125,12 @@ export default function StazCal() {
                     <div className="row main-row" >
                         <div className="col-1 heading">
                             <h4></h4>
-                            <h1>Result</h1>
+                            <h1>Resultado</h1>
                         </div>
 
                         <div className="main-parent" style={{display:"flex",justifyContent:"space-between", flexWrap:"wrap",alignItems:"center"}}>
                             <div className="col-xl-6 col-6" >
-                                <h1 className="result-heading">Resolution</h1>
+                                <h1 className="result-heading">Resolución</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -152,7 +152,7 @@ export default function StazCal() {
                             </div>
 
                             <div className="col-xl-6 col-6" style={{}}>
-                            <h1 className="result-heading">Surface</h1>
+                            <h1 className="result-heading">Superficie</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -174,7 +174,7 @@ export default function StazCal() {
                             </div>
 
                             <div className="col-xl-6 col-6" >
-                            <h1 className="result-heading">Max.Power</h1>
+                            <h1 className="result-heading">Máximo poder</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -196,7 +196,7 @@ export default function StazCal() {
                             </div>
 
                             <div className="col-xl-6 col-6" style={{}}>
-                            <h1 className="result-heading">Type Power</h1>
+                            <h1 className="result-heading">Tipo de potencia</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -218,7 +218,7 @@ export default function StazCal() {
                             </div>
 
                             <div className="col-xl-6 col-6" >
-                            <h1 className="result-heading">Length</h1>
+                            <h1 className="result-heading">Larga</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -240,7 +240,7 @@ export default function StazCal() {
                             </div>
 
                             <div className="col-xl-6 col-6" style={{}}>
-                            <h1 className="result-heading">Weight</h1>
+                            <h1 className="result-heading">Peso</h1>
                                 <div class="circular" style={{margin:"auto"}}>
                                     <div class="inner"></div>
                                     <div class="outer"></div>
@@ -262,11 +262,11 @@ export default function StazCal() {
                             </div>
                             <div className="col-xl-12 calculate-button">
                                 <button type="submit">
-                                    Calculate Total Price
+                                Calcular Precio Total
                                 </button>
                             </div>
                             <div className="col-xl-12 final-price">
-                                <span className="price">Price: </span>
+                                <span className="price">Precio: </span>
                                 <span className="value">$1200</span>
                             </div>
                         </div>

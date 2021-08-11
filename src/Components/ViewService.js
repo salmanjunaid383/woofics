@@ -34,7 +34,7 @@ export default function ViewService() {
             <div className="page-wrapper mt-5 ">
                 <div class="container no-gutters ">
                     <div className="row no-gutters">
-                        {blog == '' ? <div className="col-md-12 text-center m-5"><div ><h3 className="my-lg-3 mx-auto text-center w-100">No service provider related to this service!</h3></div> </div>
+                        {blog == '' ? <div className="col-md-12 text-center m-5"><div ><h3 className="my-lg-3 mx-auto text-center w-100">Ningún proveedor de servicios relacionado con este servicio!</h3></div> </div>
                             : blog.map((val, id) => {
                                 return (
                                     <>

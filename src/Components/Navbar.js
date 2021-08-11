@@ -449,15 +449,15 @@ function Navbar() {
                             
                         </Link>
                         <Link className="pt-3 taglink hover-effect" to="/" id="" >
-                            Home
+                            Casa
                         </Link>
                         <Link to="/clientdiscussionforum" className="pt-3 taglink" id="" >
-                            Forum
+                            Foro
                         </Link>
                        
                         {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
                         <Link to="/quotemain" className="pt-3 taglink hover-effect" id="">
-                            Offer
+                            Oferta
                         </Link>
                         {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
 
@@ -473,18 +473,18 @@ function Navbar() {
                             {/* Advertise */}
                             
                             <div class="dropdown hover-effect">
-                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Tools</button>
+                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
                                 <div class="dropdown-content">
                                 <Link to="/pricecalculator" className="pt-3 " id="taglink4" style={{color:"#000"}}>
-                                    Price Calculator
+                                    Calculadora de precios
                                 </Link>
 
                                 <Link to="/getinspire" className="pt-3 " id="taglink5" style={{color:"#000"}}>
-                                    Get Inspire
+                                    Inspírate
                                 </Link>
 
                                 <Link to="/advertise"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
-                                    Advertise
+                                    Anunciar
                                 </Link>
                                 </div>
                                 </div>
@@ -494,18 +494,18 @@ function Navbar() {
                             {/* Advertise */}
                             
                             <div class="dropdown hover-effect">
-                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Profile Options</button>
+                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Opciones de Perfil</button>
                                 <div class="dropdown-content">
                                 <Typography className={classes.typography}>
                         <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
                             <i className="fa fa-user mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Profile</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Perfil</span>
                         </Link>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" style={{display:"flex",justifyContent:"center",alignItems:"center"}} onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
                             <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Logout</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Cerrar sesión</span>
                         </a>
                     </Typography>
                                 </div>
@@ -530,7 +530,7 @@ function Navbar() {
                                         class="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join"
                                         onClick={handleOpenpop2}
                                     >
-                                        <b>JOIN NOW</b>{" "}
+                                        <b>ÚNETE AHORA</b>{" "}
                                     </button>
                                 </Link>
                                 <Link className="float-right p-0 m-0">
@@ -539,7 +539,7 @@ function Navbar() {
                                         class="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign"
                                         onClick={handleOpenpop}
                                     >
-                                        <i className="fa fa-sign-out"> </i> <b>SIGN IN</b>
+                                        <i className="fa fa-sign-out"> </i> <b>REGISTRARSE</b>
                                     </button>
                                 </Link>
                             </>
@@ -607,7 +607,7 @@ function Navbar() {
                                             onClick={handleOpenpop2}
                                             style={{ cursor: "pointer", backgroundColor:"blue", borderRadius:"5px", width:"175px", padding:"5px", margin:"auto",marginBottom:"10px", color:"#fff", fontWeight:"900" }}
                                         >
-                                            Create an account?
+                                            ¿Crea una cuenta?
                                         </p>
                                     </div>
                                     <div className="col-md-7 col-lg-7 col-sm-12  pr-lg-5 my-auto ">
@@ -618,7 +618,7 @@ function Navbar() {
                                                         className="mb-0 text-sm "
                                                         style={{ fontWeight: "bolder" }}
                                                     >
-                                                        Email Address
+                                                        Dirección de correo electrónico
                                                     </h6>
                                                 </label>{" "}
                                                 <input
@@ -637,7 +637,7 @@ function Navbar() {
                                                         className="mb-0 text-sm"
                                                         style={{ fontWeight: "bolder" }}
                                                     >
-                                                        Password
+                                                        Clave
                                                     </h6>
                                                 </label>{" "}
                                                 <input
@@ -653,7 +653,7 @@ function Navbar() {
                                                         className=" mb-0 text-sm"
                                                         onClick={() => history.push("/forgetpwd")}
                                                     >
-                                                        Forgot Password?
+                                                        ¿Has olvidado tu contraseña?
                                                     </a>{" "}
                                                 </div>
                                             </div>
@@ -663,7 +663,7 @@ function Navbar() {
                                                 onChange={onChange}
                                             />
                                             {captcha == false ? (
-                                                <small className="text-danger">Required*</small>
+                                                <small className="text-danger">Requerida*</small>
                                             ) : (
                                                 ""
                                             )}
@@ -720,7 +720,7 @@ function Navbar() {
                                                                 <div className="pt-1">
                                                                     <i className="fa fa-google text-danger"></i>
                                                                     <span className="pl-2 ">
-                                                                        Sign in with Google
+                                                                    Inicia sesión con Google
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -779,13 +779,13 @@ function Navbar() {
                                             className=" py-3
                                          h3 bolder"
                                         >
-                                            <b>Get new clients</b>
+                                            <b>Consiga nuevos clientes</b>
                                         </h3>
                                         <h5 className=" py-3 h5 text-muted">
-                                            Get to the next level, get to where you've never been
-                                            before and discover new opportunities!
+                                            Llega al siguiente nivel, llega a donde nunca has estado
+                                            antes y descubre nuevas oportunidades!
                                         </h5>
-                                        <b>We advise you without obligation </b>
+                                        <b>Te asesoramos sin compromiso </b>
                                         <h5 className=" py-34 h5">
                                             <i className="fa fa-phone"> </i>{" "}
                                             <u>
@@ -798,7 +798,7 @@ function Navbar() {
                                             <u>
                                                 <a href="/contact" className="text-dark">
                                                     {" "}
-                                                    we will call you for free
+                                                    te llamaremos gratis
                                                 </a>
                                             </u>{" "}
                                         </h5>
@@ -873,7 +873,7 @@ function Navbar() {
                 disableScrollLock={true}
                 className="profilePopover"
                 
-                body={<div className="profilePopover">Popover Content</div>}
+                body={<div className="profilePopover">Contenido de Popover</div>}
                 // container={anchorElStaz.current}
                 anchorOrigin={{
                     vertical: 'bottom',
@@ -887,13 +887,13 @@ function Navbar() {
                 <Typography className={classes.typography}>
                         <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
                             <i className="fa fa-user mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Profile</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Perfil</span>
                         </Link>
                     </Typography>
                     <Typography className={classes.typography}>
                         <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
                             <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Logout</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz">Cerrar Sesión</span>
                         </a>
                     </Typography>
             </Popover>
