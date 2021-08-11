@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import '../css/footer.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -12,14 +13,14 @@ import footer_logo2 from '../images/Logo-2.png';
 import footer_logo3 from '../images/Logo-3.png';
 import footer_logo4 from '../images/Logo-1.png';
 import footer_logo5 from '../images/Logo-4.png';
-import { Link } from 'react-router-dom'
+
 
 
 
 function Footer() {
     const [label,setLabel]=useState('');
     const [value,setValue]=useState('');
-
+    
     const [dot,getDot]=useState([]);
 
     const [text,getText]=useState([]);
@@ -91,7 +92,7 @@ function Footer() {
                         <div class="woofic_middle_side text-center mb-3 mx-auto">
                             <ol>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/aboutus">  Sobre nosotras </Link>
+                                    <Link className="text-white h5" to="/aboutus/1">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/contact"> Contacto </Link>
@@ -100,7 +101,7 @@ function Footer() {
                                     <Link className="text-white h5" to="/allblog"> Blog </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/aboutus"> Preguntas más frecuentes </Link>
+                                    <Link className="text-white h5" to="/aboutus/2"> Preguntas más frecuentes </Link>
                                 </li>
                             </ol>
                         </div>
@@ -138,11 +139,11 @@ function Footer() {
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className=" border-right px-2  ">
-                                            <a href="https://carnovo.com/es/terminos-y-condiciones" target="_blank" className="text-white">TÉRMINOS Y CONDICIONES</a>
+                                            <a href="https://carnovo.com/es/terminos-y-condiciones" target="_blank" className="text-white">Términos Y Condiciones</a>
                                         </div>
 
                                         <div className="mx-2 ">
-                                            <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">POLÍTICA DE PRIVACIDAD</a>
+                                            <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">Política De Privacidad</a>
                                         </div>
                                     </div>
                                 </div>

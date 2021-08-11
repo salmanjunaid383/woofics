@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory,useParams } from "react-router-dom";
 import loginside from "../../Images/loginside.jpg";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -39,6 +39,8 @@ export default function Contact() {
     fontWeight: "700",
     color: "grey",
   };
+    const { fid } = useParams()
+    
 
   const display1 = "none";
   const display2 = "block";
@@ -74,8 +76,20 @@ export default function Contact() {
     sethide2(display1);
     sethide3(display2);
   }
-
-
+ 
+  useEffect(() => {
+   
+    if(fid==='1')
+    {
+      
+      setbtnstyle12();    
+    }
+    if(fid==='2')
+    {
+      console.log("Setbtn")
+      setbtnstyle12();    
+    }
+  },[])
 
 
   const [name, setname] = useState("");
@@ -387,7 +401,7 @@ export default function Contact() {
                           <br />
                           <h4 style={{marginTop:"20px"}}>Telephone:</h4>
                           <h5 className="h5" className="text-primary">
-                            <a>+34 680 49 47 29</a>
+                            <a>+34 648 411 313</a>
                           </h5>
                           <br />
                           <br />
@@ -437,7 +451,7 @@ export default function Contact() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="woofic.com@gmail.com">
+                              <a target="_blank" href="https://www.instagram.com/woofic_com/">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>

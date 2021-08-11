@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
 import logo from './LandingPage/images/wooficc.png';
@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './Contact.css'
 import ScrollToTop from './ScrollToTop'
-
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ContactUs() {
     ScrollToTop();
     let history = useHistory();
-
+    
     const classes = useStyles();
 
     const [name, setname] = useState("");
@@ -81,7 +80,7 @@ export default function ContactUs() {
                                 <h5 className="text-primary"><a>hola@woofics.com</a></h5>
                                 <br />
                                 <h4>Telephone:</h4>
-                                <h5 className="text-primary"><a>+34 680 49 47 29</a></h5>
+                                <h5 className="text-primary"><a>+34 648 411 313</a></h5>
                                 <br />
                                 <br />
 
@@ -130,7 +129,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="woofic.com@gmail.com">
+                              <a target="_blank" href="https://www.instagram.com/woofic_com/">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>
