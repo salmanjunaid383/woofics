@@ -250,7 +250,8 @@ export default function PriceCalculator() {
         // getCal()
     }
     function getCal() {
-        if(age !== null){
+        console.log(value)
+        if(age !== ''){
             const { data: response } = axios.post(`https://api.woofics.com/api/area`, {
             height: value,
             width: value2,
@@ -295,10 +296,12 @@ export default function PriceCalculator() {
     };
     const handleSliderChange2 = (event, newValue) => {
         setValue2(newValue);
+        getCal();
         
     };
     const handleInputChange = (event) => {
         setValue(event.target.value === '' ? '' : Number(event.target.value));
+        getCal();
     };
 
     const handleBlur = () => {
@@ -364,18 +367,20 @@ export default function PriceCalculator() {
 
                             <Typography gutterBottom>Height should be in centimeter</Typography>
                             
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} 
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" max={1000} className="w-100" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} 
                             onChangeCommitted={getCal} /> <Input
                                 className="mb-2 ml-3" 
                                 value={value}
                                 margin="dense"
                                 onChange={handleInputChange}
-                            
+                                
+                                max={1000}
                                 onBlur={handleBlur}
                                 inputProps={{
+                                    
                                     step: 10,
                                     min: 0,
-                                    max: 100,
+                                    max: 2000, 
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
                                 
@@ -397,9 +402,10 @@ export default function PriceCalculator() {
                                 onChange={handleInputChange2}
                                 onBlur={handleBlur2}
                                 inputProps={{
+                                    
                                     step: 10,
                                     min: 0,
-                                    max: 100,
+                                    max: 1000,
                                     type: 'number',
                                     'aria-labelledby': 'input-slider',
                                 }}

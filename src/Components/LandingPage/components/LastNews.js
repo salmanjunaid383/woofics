@@ -44,7 +44,7 @@ function LastNews() {
           <div className="row text-center">
             <div className="col-sm-12 col-md-12">
               <div class="woofic_lastnews_header">
-                <div class="woofic_lastnews_heading">DATOS DE INTERÉS</div>
+                <div class="woofic_lastnews_heading">datos de interés</div>
                 <div class="woofic_lastnews_hline"></div>
               </div>
             </div>
@@ -125,7 +125,7 @@ function LastNews() {
         <div className="row mx-auto">
           <div className="col-sm-12 col-md-12">
             <div class="woofic_lastnews_header">
-              <div class="woofic_lastnews_heading">PREGUNTAS FRECUENTES</div>
+              <div class="woofic_lastnews_heading">preguntas frecuentes</div>
               <div class="woofic_lastnews_hline"></div>
             </div>
           </div>

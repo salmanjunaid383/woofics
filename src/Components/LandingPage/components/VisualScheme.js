@@ -14,7 +14,7 @@ function VisualScheme() {
                     <div class="col-md-12 col-sm-12">
                         <div class="woofic_visiual_content">
                             <div class="woofic_visiual_representation">
-                                CÓMO FUNCIONA LA PLATAFORMA
+                                cómo funciona la plataforma
                     </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@ experiencia, para que el resto del usuario pueda tomar mejores decisiones.
             {/* <br />
                 <br /> */}
             <div class="receive_offer text-center">
-                <Link to="/quotemain">RECIBIR OFERTA</Link>
+                <Link to="/quotemain">recibir oferta</Link>
             </div>
         </>
     );
