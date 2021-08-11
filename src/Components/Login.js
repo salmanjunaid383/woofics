@@ -143,13 +143,13 @@ export default function Login() {
                                     <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
                                 </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
-                                    <h6 className="mb-0 text-sm">Email Address</h6>
+                                    <h6 className="mb-0 text-sm">Dirección de correo Electrónico</h6>
                                 </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter a valid email address" /> </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
-                                    <h6 className="mb-0 text-sm">Password</h6>
+                                    <h6 className="mb-0 text-sm">Clave</h6>
                                 </label> <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" placeholder="Enter password" /> </div>
                                 <div className="row mb-4 w-100 mx-auto">
-                                    <div className="custom-control custom-checkbox custom-control-inline"><a className="ml-5 mb-0 text-sm" onClick={()=>history.push('/forgetpwd')}>Forgot Password?</a> </div>
+                                    <div className="custom-control custom-checkbox custom-control-inline"><a className="ml-5 mb-0 text-sm" onClick={()=>history.push('/forgetpwd')}>¿Has olvidado tu contraseña?</a> </div>
                                 </div>
                                 <div className="mb-4 mx-auto d-flex justify-content-center w-100">
                                     <button type="submit" className="btn btn-blue mx-auto" style={{ backgroundColor: 'rgb(118, 50, 63)' }} onClick={LoginBtn}>{wait}</button>
@@ -158,7 +158,7 @@ export default function Login() {
                                     <div className="line"></div><small className="or text-center">or</small><div className="line"></div>
                                 </div>
                                 <div className="row mb-4 pl-1 mx-auto">
-                                    <h6 className="mb-0 mr-4 mt-2">Sign in with</h6>
+                                    <h6 className="mb-0 mr-4 mt-2">Inicia sesión con</h6>
                                     {/* <div className="facebook text-center mr-3">
                                         <div className="fa fa-facebook"></div>
                                     </div>
@@ -178,10 +178,10 @@ export default function Login() {
                                         cookiePolicy={'single_host_origin'}
                                     />
                                 </div>
-                                <div className="row mb-4 pl-3 pr-auto"> <small className="font-weight-bold">Don't have an account? <Link className="text-danger" to="/client">Register</Link></small> </div>
+                                <div className="row mb-4 pl-3 pr-auto"> <small className="font-weight-bold">¿No tienes una cuenta? <Link className="text-danger" to="/client">Register</Link></small> </div>
                             </div>
                             <div className="text-center mx-auto mb-3">
-                                <Link to="/"><button className="btn btn-success ">Go Home</button></Link>
+                                <Link to="/"><button className="btn btn-success ">Vete a casa</button></Link>
                             </div>
                         </div>
 

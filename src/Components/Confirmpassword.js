@@ -81,14 +81,14 @@ export default function Confirmpassword() {
                                     <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
                                 </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
-                                    <h6 className="mb-0 text-sm">Password</h6>
+                                    <h6 className="mb-0 text-sm">Clave</h6>
                                 </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="password" name="email" placeholder="Enter new password " /> </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
-                                    <h6 className="mb-0 text-sm">Confirm Password</h6>
+                                    <h6 className="mb-0 text-sm">confirmar Contraseña</h6>
                                 </label> <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" placeholder="Enter confirm password" /> </div>
                                 
                                 <div className="mb-4 mx-auto d-flex justify-content-center w-100">
-                                    <button type="submit" className="btn btn-blue mx-auto" style={{ backgroundColor: 'rgb(118, 50, 63)' }} onClick={LoginBtn}>Reset Password</button>
+                                    <button type="submit" className="btn btn-blue mx-auto" style={{ backgroundColor: 'rgb(118, 50, 63)' }} onClick={LoginBtn}>Restablecer la Contraseña</button>
                                 </div>
                             </div>
                            

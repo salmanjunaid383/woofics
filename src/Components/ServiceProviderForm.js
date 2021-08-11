@@ -208,83 +208,83 @@ export default function ServiceProvider() {
                     <div className="row d-block text-center ml-3">
                       <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
                     </div>
-                    <h3 className=" py-3 h3 bolder"><b>Get new clients</b></h3>
-                    <h5 className=" py-3 h5">Get to the next level, get to where you've never been before and discover new opportunities!</h5>
-                    <b>We advise you without obligation </b>
-                    <h5 className=" py-34 h5"><i className="fa fa-phone"> </i> <u><a href="callto:680494729" className="text-dark"> 680 49 47 29</a></u> or <u><a href="/contact" className="text-dark"> we will call you for free</a></u> </h5>
+                    <h3 className=" py-3 h3 bolder"><b>Consiga nuevos clientes</b></h3>
+                    <h5 className=" py-3 h5">¡Pasa al siguiente nivel, llega a donde nunca has estado antes y descubre nuevas oportunidades!</h5>
+                    <b>Te asesoramos sin compromiso</b>
+                    <h5 className=" py-34 h5"><i className="fa fa-phone"> </i> <u><a href="callto:680494729" className="text-dark"> 680 49 47 29</a></u> o <u><a href="/contact" className="text-dark"> te llamaremos gratis</a></u> </h5>
                     <img className="img-fluid w-75 mx-auto" src={reg} style={{ display: "flex", justifyContent: 'center', alignSelf: 'center' }} />
                   </div>
                   <div className="col-md-6 col-lg-6 col-sm-12 mx-auto">
                     <div className=" py-3 px-lg-4 px-2 ">
                       <div className="border rounded">
                         <div className="w-100 rounded no-gutters">
-                          <h5 className="h2 text-green text-center m-0 py-3">Join for free!</h5>
+                          <h5 className="h2 text-green text-center m-0 py-3">Únete gratis!</h5>
                         </div>
                         <div className="px-md-4 px-2 py-3">
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Name of your business</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Nombre de su empresa</h6>
                             </label> <input className="mb-4" onChange={(e) => setnameBusiness(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>First name</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Nombre de pila</h6>
                             </label> <input className="mb-4" onChange={(e) => setname(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Last name</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Apellido</h6>
                             </label> <input className="mb-4" onChange={(e) => setlastname(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
 
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Email Address</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}> Dirección de correo electrónico</h6>
                             </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Telephone</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Teléfono</h6>
                             </label> <input className="mb-4" onChange={(e) => settelephone(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Company size</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Tamaño de la empresa</h6>
                             </label> <input className="mb-4" onChange={(e) => setcompanySize(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Location of your business (zip code)</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Ubicación de su negocio (código postal)</h6>
                             </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Enter here" />
                           </div>
 
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Password</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Clave</h6>
                             </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Enter here" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Confirm Password</h6>
+                              <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>confirmar Contraseña</h6>
                             </label>
                             <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Enter here" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
-                              <h6 className="mb-0 text-sm pr-3" style={{ fontWeight: 'bolder' }}>What do you mainly do:</h6>
+                              <h6 className="mb-0 text-sm pr-3" style={{ fontWeight: 'bolder' }}>Qué haces principalmente:</h6>
                             </label>
                             <select onChange={(e) => setcheck(e.target.value)}>
-                              <option value="supplier">Supplier</option>
-                              <option value="service">Service Provider</option>
+                              <option value="supplier">Proveedora</option>
+                              <option value="service">Proveedor de servicio</option>
                             </select>
                           </div>
 
@@ -292,7 +292,7 @@ export default function ServiceProvider() {
                           {check === "service" ? <div className="row w-100 mx-auto ">
                             <div className="col-md-12  px-2 w-100 p-0 pt-3">
                               <FormControl component="fieldset">
-                                <FormLabel component="legend">Your service:</FormLabel>
+                                <FormLabel component="legend">Tu servicio:</FormLabel>
                                 <RadioGroup defaultValue="two-phase" className="d-inline" aria-label="phase" name="customized-radios">
                                   <FormControlLabel value="REPAIRS" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="REPAIRS" />
                                   <FormControlLabel value="ELECTRICIAN" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ELECTRICIAN" />
@@ -309,9 +309,9 @@ export default function ServiceProvider() {
                         </div>
                         <div className="row mb-3 pl-4 mx-auto text-center">
                           <small className="font-weight-bold mx-auto text-center">
-                            Already a member ?  &nbsp;
+                          ¿Ya eres usuario?  &nbsp;
                             <Link className="text-danger" to="/">
-                              Login
+                            Acceso
                             </Link>
                           </small>
                         </div>

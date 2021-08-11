@@ -176,7 +176,7 @@ export default function DiscussionForum() {
                 <div className="row mx-auto">
                     <div className="col-sm-12 col-md-12">
                         <div class="woofic_lastnews_header">
-                            <div class="woofic_lastnews_heading">FREQUENTLY ASKED QUESTION</div>
+                            <div class="woofic_lastnews_heading">PREGUNTAS FRECUENTES</div>
                             <div class="woofic_lastnews_hline"></div>
                         </div>
                     </div>
@@ -193,7 +193,7 @@ export default function DiscussionForum() {
                                             aria-expanded="false"
                                             aria-controls="collapseOne"
                                         >
-                                            How does Woofic work?
+                                            ¿Cómo actúa Woofic?
                                         </button>
                                     </h2>
                                 </div>
@@ -205,10 +205,10 @@ export default function DiscussionForum() {
                                     data-parent="#accordionExample"
                                 >
                                     <div class="card-body">
-                                        Woofic sends its collaborators (suppliers) the questionnaire
-                                        filled out by the client, within a maximum period of 48
-                                        hours the suppliers have to answer questions and present a
-                                        binding offer.
+                                        Woofic envía a sus colaboradores (proveedores) el cuestionario
+                                        cumplimentado por el cliente, en un plazo máximo de 48
+                                        horas que los proveedores tienen para responder preguntas y presentar un
+                                        oferta vinculante.
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@ export default function DiscussionForum() {
                                             aria-expanded="false"
                                             aria-controls="collapseTwo"
                                         >
-                                            Why do I have to register?
+                                            ¿Por qué tengo que registrarme?
                                         </button>
                                     </h2>
                                 </div>
@@ -234,9 +234,9 @@ export default function DiscussionForum() {
                                     data-parent="#accordionExample"
                                 >
                                     <div class="card-body">
-                                        Woofic is a comprehensive platform, in which you will receive and manage offers, perform
-                                        supplier ratings and many more advantages, that is why it is necessary to register, to be
-                                        able to access your personal administration panel.
+                                        Woofic es una plataforma integral, en la que recibirás y gestionarás ofertas, realizarás
+                                        calificaciones de proveedores y muchas más ventajas, por eso es necesario registrarse, ser
+                                        poder acceder a su panel de administración personal.
 
                                     </div>
                                 </div>
@@ -284,7 +284,7 @@ export default function DiscussionForum() {
                                             aria-expanded="false"
                                             aria-controls="collapseFour"
                                         >
-                                            Does Woofic favor any company?
+                                            ¿Woofic favorece a alguna empresa?
                                         </button>
                                     </h2>
                                 </div>
@@ -295,12 +295,12 @@ export default function DiscussionForum() {
                                     data-parent="#accordionExample"
                                 >
                                     <div class="card-body">
-                                        No. Woofic.com is a totally independent portal, we only put
-                                        customers in contact with suppliers and each supplier makes
-                                        its personalized offer directly to the final customer, the
-                                        order in which the results are shown by default is by order
-                                        of arrival, the first quote is displayed at position 1 so
-                                        on.
+                                        No. Woofic.com es un portal totalmente independiente, solo ponemos
+                                        clientes en contacto con proveedores y cada proveedor hace
+                                        su oferta personalizada directamente al cliente final, el
+                                        El orden en el que se muestran los resultados por defecto es por orden.
+                                        de llegada, la primera cita se muestra en la posición 1, por lo que
+                                        en.
                                     </div>
                                 </div>
                             </div>
@@ -315,7 +315,7 @@ export default function DiscussionForum() {
                                             aria-expanded="false"
                                             aria-controls="collapseFive"
                                         >
-                                            How does Woofic.com make money?
+                                            ¿Cómo gana dinero Woofic.com?
                                         </button>
                                     </h2>
                                 </div>
@@ -326,12 +326,12 @@ export default function DiscussionForum() {
                                     data-parent="#accordionExample"
                                 >
                                     <div class="card-body">
-                                        Our service is completely free. The offers that you will
-                                        find from the different providers in Woofic are the same
-                                        that you will find in each company. There are no
-                                        commissions, no price increases. Every time a project,
-                                        product or service is contracted, we charge a commission to
-                                        the provider, never to the user.
+                                        Nuestro servicio es completamente gratuito. Las ofertas que harás
+                                        encontrar de los diferentes proveedores en Woofic son los mismos
+                                        que encontrarás en cada empresa. No existen
+                                        comisiones, sin incrementos de precio. Cada vez que un proyecto,
+                                        se contrate producto o servicio, cobramos una comisión a
+                                        al proveedor, nunca al usuario.
                                     </div>
                                 </div>
                             </div>

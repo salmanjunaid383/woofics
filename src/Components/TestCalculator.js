@@ -324,11 +324,11 @@ export default function PriceCalculator() {
             </section>
             
             <br />
-            <h2 className="text-center text-primary pt-5">Led Screen Configurator</h2>
+            <h2 className="text-center text-primary pt-5">Configurador de pantalla LED</h2>
             <div className="container w-75 p-0 shadow" >
                 <div className="row mx-auto   no-gutters" style={{ backgroundColor: "#f7527f", border: '5px #f95c87 solid' }}>
                     <div className="col-md-12 px-5 bg-white mobile" style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
-                        <h3 className="pt-2"><b>Dimension</b></h3>
+                        <h3 className="pt-2"><b>Dimensión</b></h3>
                         <div className={classes.root} noValidate autoComplete="off" style={{width:"70%"}}>
                             {/* <Tooltip title="Height should be in centimeter's" arrow placement="top">
                                 <TextField id="standard-basic" className="w-50 px-2" type="number" label="Height (cm)" onChange={(e) => setheight(e.target.value)} />
@@ -336,7 +336,7 @@ export default function PriceCalculator() {
                             <Tooltip title="Width should be in centimeter's" arrow placement="top">
                                 <TextField id="standard-basic" className="w-50 " type="number" label="Width (cm)" onChange={(e) => setwidth(e.target.value)} />
                             </Tooltip> */}
-                            <Typography gutterBottom>Height should be in centimeter's</Typography>
+                            <Typography gutterBottom>La altura debe estar en centímetros</Typography>
                             
                             <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-75" value={typeof value === 'number' ? value : 0} onChange={handleSliderChange} /> <Input
                                 className="mb-2 ml-3"
@@ -352,7 +352,7 @@ export default function PriceCalculator() {
                                     'aria-labelledby': 'input-slider',
                                 }}
                             />
-                            <Typography gutterBottom>Width should be in centimeter's</Typography>
+                            <Typography gutterBottom>El ancho debe estar en centímetros</Typography>
                             <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-75" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2} /> <Input
                                 className="mb-2 ml-3"
                                 value={value2}
@@ -369,26 +369,26 @@ export default function PriceCalculator() {
                             />
 
                         </div>
-                        <h3 className="my-3"><b>Choose a Product</b></h3>
+                        <h3 className="my-3"><b>Elija un producto</b></h3>
                         <div className="w-75 mr-2 margin-setting">
                             <span className="float-right w-50">
-                                <span className="w-50">Location : </span>
+                                <span className="w-50">Localización : </span>
                                 <select className="w-100" onChange={(e) => setSearch(e.target.value)}>
-                                    <option value=''>All</option>
-                                    <option value="indoor">Indoor</option>
-                                    <option value="outdoor">Outdoor</option>
-                                    <option value="both">Both</option>
+                                    <option value=''>Todos</option>
+                                    <option value="indoor">Interior</option>
+                                    <option value="outdoor">Exterior</option>
+                                    <option value="both">Ambas</option>
                                 </select>
                             </span>
                         </div>
                         <div className="w-75 mb-4" onChange={(e) => setApplication(e.target.value)}>
-                            <span className="w-50">Application : </span>
+                            <span className="w-50">Solicitud : </span>
                             <span className="float-right w-50">
                                 <select className="w-100">
-                                    <option value=''>All</option>
-                                    <option value="rent">Rental/Events</option>
-                                    <option value="install">Fixed Installation</option>
-                                    <option value="both">Both</option>
+                                    <option value=''>Todos</option>
+                                    <option value="rent">Alquiler / Eventos</option>
+                                    <option value="install">Instalación fija</option>
+                                    <option value="both">Ambas</option>
                                 </select>
                             </span>
                         </div>
@@ -416,8 +416,8 @@ export default function PriceCalculator() {
                                                     </div>
                                                     <div className="col-md-8">
                                                         <h3>*{val.name}</h3>
-                                                        <small><span>Location: {val.location}</span></small><br />
-                                                        <small><span>Application: {val.application}</span></small><br />
+                                                        <small><span>Localización: {val.location}</span></small><br />
+                                                        <small><span>Solicitud: {val.application}</span></small><br />
                                                     </div>
                                                 </div>
                                             </>
@@ -430,33 +430,33 @@ export default function PriceCalculator() {
                     </div>
                     <div className="col-md-12 px-4" style={{ height: '100%' }}>
                         <div className="p-auto w-100">
-                            <h3 className="pt-2 mt-3 text-white text-center" style={{fontSize:"30px"}}><b>Results</b></h3>
+                            <h3 className="pt-2 mt-3 text-white text-center" style={{fontSize:"30px"}}><b>Resultados</b></h3>
                             <div className="row text-center" style={{ alignSelf: 'center' }}>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Resolution</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.resolution : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Dimensions</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.dimension : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Resolución</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.resolution : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Dimensiones</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.dimension : '00'}</span></div>
                                 <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Diagonal</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.diagnol : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Aspect Ratio</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.aspect_ratio : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Surface</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.surface : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Max. power</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.max_power_consumption : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Type Power</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.type_power_consumption : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Length</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.length : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Weight</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.weight : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Relación de aspecto</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.aspect_ratio : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Superficie</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.surface : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Max. poder</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.max_power_consumption : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Tipo de potencia</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.type_power_consumption : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Larga</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.length : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center"><p className="text-center pb-2 heading-margin">Peso</p><span style={{  borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.weight : '00'}</span></div>
                                 
                                 
 
                                 <div className="row" style={{width:"90%", margin:"auto"}}>
-                                <div className="col-md-4 p-4 text-white text-center mx-auto" ><p className="text-center pb-2 heading-margin">View distance</p><span style={{ justifySelf:"center", borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.optimal_distance : '00'}</span></div>
-                                <div className="col-md-4 p-4 text-white text-center mx-auto" ><p className="text-center pb-2 heading-margin">Led Tiles</p><span style={{ justifySelf:"center", borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.led_tiles : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center mx-auto" ><p className="text-center pb-2 heading-margin">Ver distancia</p><span style={{ justifySelf:"center", borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.optimal_distance : '00'}</span></div>
+                                <div className="col-md-4 p-4 text-white text-center mx-auto" ><p className="text-center pb-2 heading-margin">Azulejos LED</p><span style={{ justifySelf:"center", borderRadius: "50%", borderColor: 'white', borderWidth: 2, width: "100px", height: "100px", borderStyle: 'dotted', alignSelf: 'center', padding: 20 }}>{area ? area.led_option.led_tiles : '00'}</span></div>
                                 </div>
                                 <div className="col-md-12 my-3 d-inline text-center mx-auto">
                                     
                                 </div>
 
                                     <div className="col-md-6 ">
-                                        <h3 class="text-white py-2 px-2" style={{ backgroundColor: "#934CFF" }}>Price : <span>{area ? area.led_option.price : '00'}</span></h3>
+                                        <h3 class="text-white py-2 px-2" style={{ backgroundColor: "#934CFF" }}>Precio : <span>{area ? area.led_option.price : '00'}</span></h3>
                                     </div>
                                     <div className="col-md-6">
-                                        <button className="btn " style={{ backgroundColor: "#40cc71", color: "white" }} onClick={getCal}> Calculate Total Price  </button>
+                                        <button className="btn " style={{ backgroundColor: "#40cc71", color: "white" }} onClick={getCal}> Calcular precio total  </button>
                                     </div>
                                 </div>
                             

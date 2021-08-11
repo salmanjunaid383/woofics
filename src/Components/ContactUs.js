@@ -57,7 +57,7 @@ export default function ContactUs() {
                     <div class="container ">
                         <div class="row mx-auto mobile-res">
                             <div className="col-12  col-md-6 border-right mt-md-5 pt-md-5 w-75">
-                                <h3>We Want to know your opinion</h3>
+                                <h3>Nosotras queremos saber tu opinión</h3>
                                 <TextField className="w-75 my-1" id="standard-basic" label="Name *"
                                     onChange={(e) => setname(e.target.value)}
                                 />
@@ -72,11 +72,11 @@ export default function ContactUs() {
                                 <br />
                                 <br />
 
-                                <button className="btn btn-primary" onClick={()=>Message()} style={{marginTop:"10px"}}>Send Message</button>
+                                <button className="btn btn-primary" onClick={()=>Message()} style={{marginTop:"10px"}}>Enviar Mensaje</button>
 
                             </div>
                             <div className="col-12 col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5 for-margin">
-                                <h4>Write to us at:</h4>
+                                <h4>Escríbanos a:</h4>
                                 <h5 className="text-primary"><a>hola@woofics.com</a></h5>
                                 <br />
                                 <h4>Telephone:</h4>
@@ -84,7 +84,7 @@ export default function ContactUs() {
                                 <br />
                                 <br />
 
-                                <h4 className="mob-mar" style={{marginTop:"-21px",marginBottom:"3px"}}>Follow us:</h4>
+                                <h4 className="mob-mar" style={{marginTop:"-21px",marginBottom:"3px"}}>Síguenos:</h4>
 
                                 <div className="social_icons" style={{marginTop:"2px"}}>
                             <span

@@ -69,7 +69,7 @@ export default function Blog() {
                             <div class="row ">
                                 <div class="card-deck ">
                                     {blog == "" ? <div class="alert alert-success w-100 text-center m-5 col-md-12" role="alert">
-                                        No Blog! </div>
+                                    Sin Blog! </div>
                                         : blog.map((val, id) => {
                                             return (
                                                 <>
@@ -81,7 +81,7 @@ export default function Blog() {
                                                                 <p class="card-text">{(val.article).slice(0, 80) + '...'}</p>
                                                             </div>
                                                             <div class="card-footer">
-                                                                <h5 class="card-text">Date: {(val.created_at).slice(0, 10)}</h5>
+                                                                <h5 class="card-text">Fecha: {(val.created_at).slice(0, 10)}</h5>
                                                             </div>
                                                         </div>
                                                     </div>

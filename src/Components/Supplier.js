@@ -107,7 +107,7 @@ export default function Supplier() {
                 <div className="align-item-center">
                   <div className="row d-block text-center">
                     <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
-                    <p>Register as: Supplier</p>
+                    <p>Registrarse como: Proveedor</p>
                   </div>
                   <div className="row ">
                     <div className="col-md-6">

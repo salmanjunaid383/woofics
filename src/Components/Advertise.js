@@ -48,17 +48,17 @@ export default function Advertise() {
           <div className="row">
             <div className="col-md-10">
               <h1 className="mt-5 ml-3 " style={{ fontSize: "6vw", fontWeight: '500', textTransform: 'uppercase', lineHeight: '1em', letterSpacing: '-1.5px', color: 'white', fontFamily: '"Rubik", Sans-serif', }}>
-                Do you want to find led advertising spaces where you can
-                advertise?
+              ¿Quieres encontrar espacios publicitarios led donde puedas
+                 ¿anunciar?
               </h1>
               {/* <br /> */}
               <h3 className="ml-3" style={{ color: 'white', fontSize: 20 }}>
-                Woofic is a partner of the main led advertising agencies in
-                Spain.
+              Woofic es socio de las principales agencias de publicidad led en
+                 España.
                 <br />
                 <br />
                 <br />
-                If you are thinking of advertising and do not know how?
+                ¿Si estás pensando en publicidad y no sabes cómo?
               </h3>
               {/* <button className="btn btn-primary p-2 ml-3 mb-5">REQUEST A BUDGET</button> */}
             </div>
@@ -69,7 +69,7 @@ export default function Advertise() {
             <div class="container">
               <div class="row mx-auto">
                 <div className="col-md-12  mt-md-5 pt-md-5 w-75">
-                  <h3>Please fill this form below:</h3>
+                  <h3>Por favor llene este formulario a continuación:</h3>
                   <span>
                     <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Name *" onChange={(e) => setname(e.target.value)} />
                     <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Email *" onChange={(e) => setemail(e.target.value)} />
@@ -89,7 +89,7 @@ export default function Advertise() {
                   <br />
 
 
-                  <button className="btn btn-primary ml-3" onClick={Message}>Submit</button>
+                  <button className="btn btn-primary ml-3" onClick={Message}>Entregar</button>
 
                 </div>
               </div>
