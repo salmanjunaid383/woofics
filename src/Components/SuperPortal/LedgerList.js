@@ -94,7 +94,7 @@ export default function Help() {
                                                         return (
                                                             <>
                                                                 <tr>
-                                                                    <td className="txt-oflo text-center">{val.id}</td>
+                                                                 
                                                                     <td className="txt-oflo text-center">{val.balance}</td>
                                                                     <td className="txt-oflo text-center">{val.supplier_id ? val.supplier_id : val.service_provider_id}</td>
                                                                     <td className="txt-oflo text-center"><button className="btn greenbtn text-white" onClick={(e) => history.push(`/ledgerview/${che}/${val.supplier_id ? val.supplier_id : val.service_provider_id}`)}>Ver más</button></td>

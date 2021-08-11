@@ -53,7 +53,7 @@ function LastNews() {
                 supp.map((val,id) => {
                   return (
                     <>
-                        <div class="col-sm-12 col-md-4 mx-auto text-center">
+                        <div class="col-sm-12 mx-auto text-center">
                         <div className="border px-5 shadow rounded py-5">
                           <h2>{val.value}</h2>
                           <div class="woofic_lastnews_content_description">
