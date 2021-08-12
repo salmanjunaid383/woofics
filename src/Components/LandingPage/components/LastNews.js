@@ -48,21 +48,24 @@ function LastNews() {
                 <div class="woofic_lastnews_hline"></div>
               </div>
             </div>
-            <div class="row mx-auto ">
+            <div class="row mx-auto" style={{height:"80%",width:"65%", display:"flex", justifyContent:"center", flexWrap:"wrap"}}>
               {
                 supp.map((val,id) => {
                   return (
                     <>
-                        <div class="col-sm-12 mx-auto text-center">
-                        <div className="border px-5 shadow rounded py-5">
+                    
+                        <div class="text-center" style={{width:"200px",padding:"0"}}>
+                        <div className="border shadow rounded" style={{height:"130px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center",margin:"15px" }}>
+                          <div style={{display:"flex", justifyContent:"center" , alignItems:"center", flexDirection:"column"}}>
                           <h2>{val.value}</h2>
                           <div class="woofic_lastnews_content_description">
-
                             <h3>{val.label}</h3>   <br />
                             <br />
                           </div>
+                          </div>
                         </div>
                       </div>
+                      
                     </>
                   )
                 })

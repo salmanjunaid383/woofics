@@ -83,7 +83,6 @@ export default function Help() {
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                 <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                     <tr>
-                                                        
                                                         <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
                                                         <th className="border-top-0 text-white text-center">IDENTIFICACIÓN DEL PROVEEDOR</th>
                                                         <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
@@ -94,7 +93,6 @@ export default function Help() {
                                                         return (
                                                             <>
                                                                 <tr>
-                                                                 
                                                                     <td className="txt-oflo text-center">{val.balance}</td>
                                                                     <td className="txt-oflo text-center">{val.supplier_id ? val.supplier_id : val.service_provider_id}</td>
                                                                     <td className="txt-oflo text-center"><button className="btn greenbtn text-white" onClick={(e) => history.push(`/ledgerview/${che}/${val.supplier_id ? val.supplier_id : val.service_provider_id}`)}>Ver más</button></td>
