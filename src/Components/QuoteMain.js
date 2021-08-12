@@ -390,13 +390,13 @@ export default function QuoteMain() {
     const [buycolor,setbuycolor]=useState('');
     const [indoorcolor,setindoorcolor]=useState('');
     const [screenaccesscolor,setscreenaccesscolor]=useState('');
-    const[structurecolor,setstructurecolor]=useState('');
+    const [structurecolor,setstructurecolor]=useState('');
 
     function getStepContent(stepIndex) {
         switch (stepIndex) {
             case 0:
                 return <div className="w-100  my-lg-5">
-                    <h4 className="text-center w-100 text-dark">¿Quiere comprar o alquilar?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
                     {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
                     <input value="purchase" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
                         type="radio" name="emotion"
@@ -407,10 +407,10 @@ export default function QuoteMain() {
                             alt="I'm sad"
                             className="mx-lg-5 p-2" style={{ cursor: "pointer", color:"#934CFF" }} /> */}
                             <div className="mx-lg-3 p-2">
-                            <i className="fa fa-shopping-cart" style={buycolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className="fa fa-shopping-cart" style={buycolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
 
-                        <h4 className="text-center">COMPRA</h4>
+                        <h4 className="text-center" style={buycolor === "true" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' }}>COMPRA</h4>
                     </label>
 
                     <input value="rent" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
@@ -422,15 +422,15 @@ export default function QuoteMain() {
                             alt="I'm happy" className="p-2" style={{ cursor: "pointer" }} /> */}
 
                         <div className="mx-lg-3 p-2">
-                            <i className=" fa fa-archive" style={buycolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-archive" style={buycolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">ALQUILER</h4>
+                        <h4 className="text-center" style={buycolor === "false" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' } }>ALQUILER</h4>
                     </label>
                     {/* </div> */}
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">¿Quieres para interior o exterior?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue">Quieres para interior o exterior?</h4>
                     <input value="indoor" onChange={(e) => {setindoor(e.target.value); setindoorcolor("true")}}
                         type="radio" name="ff"
                         id="sadd" class="input-hidden " />
@@ -441,9 +441,9 @@ export default function QuoteMain() {
                             className="mx-lg-5 p-2" style={{ cursor: "pointer" }} /> */}
 
                         <div className="mx-lg-3 p-2">
-                            <i className=" fa fa-home" style={indoorcolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-home" style={indoorcolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">INTERIOR</h4>
+                        <h4 className="text-center" style={indoorcolor === "true" ? { cursor: 'pointer',color: "#1010ff" } : { cursor: 'pointer' } }>INTERIOR</h4>
                     </label>
 
                     <input value="outdoor" onChange={(e) => {setindoor(e.target.value); setindoorcolor("false")}}
@@ -455,20 +455,20 @@ export default function QuoteMain() {
                             alt="I'm happy" className="p-2" style={{ cursor: "pointer" }} /> */}
 
                         <div className="mx-lg-3 p-2">
-                            <i className=" fa fa-sun-o" style={indoorcolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-sun-o" style={indoorcolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">EXTERIOR</h4>
+                        <h4 className="text-center" style={indoorcolor === "false" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' } }>EXTERIOR</h4>
                     </label>
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">¿Instalación fija o instalación para evento?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-pink">Instalación fija o instalación para evento?</h4>
                     <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation" variant="outlined" /> </div>
                     <br />
                     <br />
 
                     <div style={{ marginTop: "-18px" }}>
-                        <h4 className="text-center w-100 text-dark">¿Conoce el modelo que busca?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">Conoce el modelo que busca?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
                                 <FormControlLabel value="yes" control={<Radio color="primary" />} label="Yes" />
@@ -479,7 +479,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <div style={{ marginTop: "-18px" }}>
-                        <h4 className="text-center w-100 text-dark d-inline">Distancia de visión máxima y mínima?</h4>
+                        <h4 className="text-center w-100 text-dark d-inline frank-color-pink">Distancia de visión máxima y mínima?</h4>
                         <div>
                             <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Max and Min" variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
@@ -487,9 +487,9 @@ export default function QuoteMain() {
                     </div>
                     <br />
                     <br />
-                    <h4 className="text-center w-100 text-dark">¿Uso de la pantalla?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue">Uso de la pantalla?</h4>
                     <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" style={{ justifyContent: "flex-start",width:"86%",margin:"auto" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
+                        <RadioGroup row aria-label="position" style={{ justifyContent: "center",width:"86%",margin:"auto" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
                             <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
                             <FormControlLabel value="ORPORATE IMAGE" control={<Radio color="primary" />} label="ORPORATE IMAGE" />
                             <FormControlLabel value="ADVERTISING" control={<Radio color="primary" />} label="ADVERTISING" />
@@ -541,19 +541,19 @@ export default function QuoteMain() {
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">¿Pantalla?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue">Pantalla?</h4>
                     <input value="front" onChange={(e) => {setscreenaccess(e.target.value);setscreenaccesscolor("true")}}
                         type="radio" name="fqf"
                         id="sadd" class="input-hidden " />
-                    <label for="sadd">
+                    <label for="sadd" style={{marginRight:"10px"}}>
                         {/* <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3VMEMNOqtMCbm09-ybyc_roZbsJG2UdT_wXZze1yQrIGlnQFIm5nHnOy2Ko8-7t56TFA&usqp=CAU"
                             alt="I'm sad"
                             className="mx-lg-5 p-2" style={{ cursor: "pointer" }} /> */}
                              <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-home" style={screenaccesscolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-home" style={screenaccesscolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"} : { cursor: 'pointer', fontSize:"40px"}}></i>
                         </div>
-                        <h4 className="text-center">Acceso frontal</h4>
+                        <h4 className="text-center" style={screenaccesscolor === "true" ? { cursor: 'pointer',color: "#1010ff"} : { cursor: 'pointer'}}>Acceso frontal</h4>
                     </label>
 
                     <input value="rear" onChange={(e) => {setscreenaccess(e.target.value);setscreenaccesscolor("false")}}
@@ -564,15 +564,15 @@ export default function QuoteMain() {
                             src="data:image/png;base64,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"
                             alt="I'm happy" className="p-2" style={{ cursor: "pointer" }} /> */}
                              <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-sun-o" style={screenaccesscolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-sun-o" style={screenaccesscolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">Acceso trasero</h4>
+                        <h4 className="text-center" style={screenaccesscolor === "false" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' } }>Acceso trasero</h4>
                     </label>
 
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>¿Sistema de control?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "15px" }}>Sistema de control?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
                                 <FormControlLabel value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
@@ -597,7 +597,7 @@ export default function QuoteMain() {
                 </div>
             case 2:
                 return <div className="w-100 my-lg-5">
-                    <h4 className="text-center w-100 text-dark">¿Orientación de la pantalla?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue">Orientación de la pantalla?</h4>
                     <input
                         type="radio" name="fqwgqwfq"
                         id="ssaad" class="input-hidden " value='north' onChange={(e) => setscreenorientation(e.target.value)} />
@@ -641,7 +641,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginBottom: "10px", marginTop: "15px" }}>¿Está la pantalla expuesta a condiciones climáticas adversas?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginBottom: "10px", marginTop: "15px" }}>Está la pantalla expuesta a condiciones climáticas adversas?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
                                 <FormControlLabel value="NEAR THE SEA" control={<Radio color="primary" />} label="NEAR THE SEA" />
@@ -668,20 +668,17 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <br />
-                    <h4 className="text-center w-100 text-dark" style={{ marginTop: "-10px" }}>¿Necesitas estructura?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "-10px" }}>Necesitas estructura?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
                         id="dsdq" class="input-hidden " value='Monoposte' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
 
                     <label value="Monoposte" for="dsdq">
-                        {/* <img
-                            src={one}
-                            alt="North"
-                            className="mx-auto mx-lg-4 p-2" style={{ cursor: "pointer" }} /> */}
+                     
                         <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center mx-lg-2">Monoposte</h4>
+                        <h4 className="text-center mx-lg-2" style={structurecolor === "1" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Monoposte</h4>
                     </label>
 
                     <input
@@ -689,9 +686,9 @@ export default function QuoteMain() {
                         id="Truss for events" class="input-hidden" value='Truss for events' onChange={(e) => {setstructure(e.target.value); setstructurecolor("2")}} />
                     <label value="Truss for events" for="Truss for events">
                     <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-building-o" style={structurecolor === "2" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-building-o" style={structurecolor === "2" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center mx-lg-2">Truss para eventos
+                        <h4 className="text-center mx-lg-2" style={structurecolor === "2" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Truss para eventos
                         </h4>
                     </label>
 
@@ -700,15 +697,15 @@ export default function QuoteMain() {
                         id="Mupi" class="input-hidden" value='Mupi' onChange={(e) => {setstructure(e.target.value); setstructurecolor("3")}} />
                     <label value="Mupi" for="Mupi">
                     <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-cog" style={structurecolor === "3" ? { cursor: 'pointer', fontSize:"40px",color: "#934CFF"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            <i className=" fa fa-cog" style={structurecolor === "3" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center mx-lg-2">Mupi
+                        <h4 className="text-center mx-lg-2" style={structurecolor === "3" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Mupi
                         </h4>
                     </label>
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>¿El tiempo de entrega?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "15px" }}>El tiempo de entrega?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel control={<Radio color="primary" />} label="Select date from Calander" value="date" />
@@ -752,7 +749,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">¿INSTALACIÓN O ENVÍO?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">INSTALACIÓN O ENVÍO?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel value="WEEKS" control={<Radio color="primary" />} label="WEEKS" />
@@ -770,7 +767,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">SENSOR DE BRILLO / SENSOR DE TEMPERATURA?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">SENSOR DE BRILLO / SENSOR DE TEMPERATURA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsensor(e.target.value)}>
                                 <FormControlLabel value="BRIGHTNESS SENSOR" control={<Radio color="primary" />} label="BRIGHTNESS SENSOR" />
@@ -788,7 +785,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">¿POSIBILIDAD DE AUMENTAR LA GARANTÍA?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">POSIBILIDAD DE AUMENTAR LA GARANTÍA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setwarranty(e.target.value)}>
                                 <FormControlLabel value="2 years (default should be selected)" control={<Radio color="primary" />} label="2 years (default should be selected)" />
@@ -810,7 +807,7 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">¿MATERIAL CARCASA?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">MATERIAL CARCASA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcarcass(e.target.value)}>
                                 <FormControlLabel value="CHAPA SLIM MODEL 8mm thick" control={<Radio color="primary" />} label="CHAPA SLIM MODEL 8mm thick" />
@@ -830,7 +827,7 @@ export default function QuoteMain() {
                     <br />
 
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">¿CASOS DE MOSCA?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">CASOS DE MOSCA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setflycases(e.target.value)}>
                                 <FormControlLabel value="YES" control={<Radio color="primary" />} label="YES" />
@@ -850,7 +847,7 @@ export default function QuoteMain() {
                     <br />
 
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">¿QUE ERES?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue">QUE ERES?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setentity(e.target.value)}>
                                 <FormControlLabel value="PUBLIC ENTITY" control={<Radio color="primary" />} label="PUBLIC ENTITY" />
@@ -880,7 +877,7 @@ export default function QuoteMain() {
                         {/* <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}></div><TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" /> */}
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "25px" }}>¿Intermediaria / cliente final?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "25px" }}>Intermediaria / cliente final?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcustomertype(e.target.value)}>
                                 <FormControlLabel value="Intermediary" control={<Radio color="primary" />} label="Intermediary" />
@@ -895,7 +892,7 @@ export default function QuoteMain() {
                         </div> */}
                     </p></div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "10px" }}>¿Sector?</h4>
+                        <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "10px" }}>Sector?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsector(e.target.value)}>
                                 <FormControlLabel style={{ textAlign: "left" }} value="SPORT" control={<Radio color="primary" />} label="SPORT" />
@@ -933,7 +930,7 @@ export default function QuoteMain() {
                             <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
                         </div> */}
                     </p></div>
-                    <h4 className="text-center w-100 text-dark">¿Adjuntar documentos e imágenes?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-pink">Adjuntar documentos e imágenes?</h4>
                     <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
             default:
@@ -1051,20 +1048,19 @@ export default function QuoteMain() {
             </section>
 
 
-            <div className="page-wrapper bg-light" style={{ display: display1 }}>
+            <div className="page-wrapper" style={{ display: display1 }}>
                 <div class="container-fluid acc-to-frac" >
                     <div class="row">
                         <div className="col-md-12 pr-5">
                             <i className="fa fa-chevron-left fa-2x" style={{ cursor: 'pointer', marginBottom:"20px",marginLeft:"20px" }} onClick={() => Displaythree()}></i>
                         </div>
-                        <div class="col-xl-6 col-md-12 left-side-pic">
+                        {/* <div class="col-xl-6 col-md-12 left-side-pic">
                             <img src={salman} style={{width:"100%", height:"100%"}}/>
-                            {/* <img src="" style={{width:"100%", height:"70%"}}/> */}
-                        </div>
-                        <div class="col-xl-6 col-lg-12  mx-auto text-center right-side">
+                        </div> */}
+                        <div class="col-xl-12 col-lg-12  mx-auto text-center right-side bg-light">
                             {/* col-xlg-9 col-md-9 */}
                             <div className={classes.root}>
-                                <div className="d-none d-md-block mt-md-4">
+                                <div className="d-none d-md-block mt-md-4"style={{width:"95%", margin:"auto"}}>
                                     <Stepper activeStep={activeStep} alternativeLabel>
                                         {steps.map((label) => (
                                             <Step key={label}>
@@ -1119,22 +1115,22 @@ export default function QuoteMain() {
                     <div class="row text-center">
                         <div className="w-100 mx-auto mt-md-4">
                             <br />
-                            <label className="for-question-mobile">¡Háganos saber lo que quiere! Mencione todo a continuación:</label>
+                            <label className="for-question-mobile frank-color-pink">¡Háganos saber lo que quiere! Mencione todo a continuación:</label>
                             <textarea onChange={(e) => setdescription(e.target.value)}>
                             </textarea>
                         </div>
                         <div className="w-100 mx-auto ">
-                            <h4 className="text-center w-100 text-dark for-name-sec">Nombre?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-pink">Nombre?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setname(e.target.value)} className="w-50" id="outlined-basic" label="Name?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark for-name-sec">Contacto?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-pink">Contacto?</h4>
                             <div className="w-100 my-lg-2"><TextField type="number" onChange={(e) => setcontact(e.target.value)} className="w-50" id="outlined-basic" label="Contact?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark for-name-sec">¿Nombre de empresa?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-pink">Nombre de empresa?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcompany(e.target.value)} className="w-50" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
                             {/* <h4 className="text-center w-100 text-dark">Price?</h4> */}
                             {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div> */}
                             <div className="w-100 my-lg-2"> 
                             <p className="d-inline w-100 ">
-                                <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>¿Intermediaria / cliente final?</h4>
+                                <h4 className="text-center w-100 text-dark frank-color-blue" style={{marginTop:"50px", marginBottom:"20px"}}>Intermediaria / cliente final?</h4>
                                 <div className="w-50 text-center float-left end-customer-right ">
                                     <input type="radio" name="q3" className="w-25 text-right" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediaria
                                 </div>
@@ -1146,7 +1142,7 @@ export default function QuoteMain() {
 
                             {/* <div className="w-100 my-lg-2 " style={{margin:"auto"}}>  */}
                             {/* <p className="d-inline w-100"> */}
-                            <h4 className="text-center w-100 text-dark sector" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
+                            <h4 className="text-center w-100 text-dark sector frank-color-blue" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
                             <div className="for-question-res" style={{ display: "flex"}}>
                                 <div className="w-100">
                                     <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />Deporte
@@ -1177,13 +1173,13 @@ export default function QuoteMain() {
                             </div>
                             {/* </p> */}
                             {/* </div> */}
-                            <h4 className="text-center w-100 text-dark for-name-sec" style={{marginTop:"50px"}}>¿Código postal?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue" style={{marginTop:"50px"}}>Código postal?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setpostalcode(e.target.value)} className="w-50" id="outlined-basic" label="Postal Code?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark for-name-sec">¿Correo electrónico?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue">Correo electrónico?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setemail(e.target.value)} className="w-50" id="outlined-basic" label="Email?" variant="outlined" /> </div>
-                            <h4 className="text-center w-100 text-dark for-name-sec">¿Adjuntar documentos e imágenes?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue">Adjuntar documentos e imágenes?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /></div>
-                            <h4 className="text-center w-100 text-dark for-name-sec">Comentarios?</h4>
+                            <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue">Comentarios?</h4>
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcomments(e.target.value)} className="w-50" id="outlined-basic" label="Comments?" variant="outlined" /> </div>
                         </div>
                         <div className="w-100 text-center mx-auto my-3 ">
@@ -1209,7 +1205,7 @@ export default function QuoteMain() {
                         {/* <div className="col-md-12 pr-5">
                             <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
                         </div> */}
-                        <h3 className="text-dark w-100 pl-lg-5" >¿Sabes lo que buscas? </h3>
+                        <h3 className="text-dark w-100 pl-lg-5" >Sabes lo que buscas? </h3>
                         <div className="w-100 pl-lg-5" >
                             <FormControl component="fieldset">
                                 <RadioGroup row aria-label="position" name="position" defaultValue="top">

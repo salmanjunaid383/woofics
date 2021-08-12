@@ -1,41 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory } from "react-router-dom";
 import "../css/last news.css";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import people from "../images/people.jpg";
 import people1 from "../images/people 1.jpg";
 import people2 from "../images/people2.jpg";
-import axios from 'axios';
+import axios from "axios";
 
 function LastNews() {
-  const history = useHistory()
+  const history = useHistory();
 
   const [blog, setBlog] = useState([]);
   const [supp, setsupp] = useState([]);
   useEffect(() => {
-    const { data: response } = axios.get(`https://api.woofics.com/api/blog`)
-      .then((response) => {
-        if (response) {
-          setBlog(response.data)
-        }
-      }, (Error) => {
-        
-      });
+    const { data: response } = axios
+      .get(`https://api.woofics.com/api/blog`)
+      .then(
+        (response) => {
+          if (response) {
+            setBlog(response.data);
+          }
+        },
+        (Error) => {}
+      );
 
-
-    const { data: respons } = axios.get(`https://api.woofics.com/api/data_of_interest`)
-      .then((respons) => {
-        if (respons) {
-          
-          setsupp(respons.data)
-        }
-      }, (Error) => {
-        
-      });
-
-  }, [])
-
-
+    const { data: respons } = axios
+      .get(`https://api.woofics.com/api/data_of_interest`)
+      .then(
+        (respons) => {
+          if (respons) {
+            setsupp(respons.data);
+          }
+        },
+        (Error) => {}
+      );
+  }, []);
 
   return (
     <>
@@ -48,38 +47,57 @@ function LastNews() {
                 <div class="woofic_lastnews_hline"></div>
               </div>
             </div>
-            <div class="row mx-auto" style={{height:"80%",width:"65%", display:"flex", justifyContent:"center", flexWrap:"wrap"}}>
-              {
-                supp.map((val,id) => {
-                  return (
-                    <>
-                    
-                        <div class="text-center" style={{width:"200px",padding:"0"}}>
-                        <div className="border shadow rounded" style={{height:"130px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center",margin:"15px" }}>
-                          <div style={{display:"flex", justifyContent:"center" , alignItems:"center", flexDirection:"column"}}>
-                          <h2>{val.value}</h2>
+            <div
+              class="row mx-auto"
+              style={{
+                height: "80%",
+                width: "65%",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                
+              }}>
+              {supp.map((val, id) => {
+                return (
+                  <>
+                    <div
+                      class="text-center"
+                      style={{ width: "250px", padding: "0" }}
+                    >
+                      <div
+                        className="border shadow rounded for-gradient"
+                        style={{
+                          height: "130px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          margin: "15px"
+                        
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            flexDirection: "column",
+                          }}
+                        >
+                          <h2 style={{color:"#fff", fontWeight:"900",marginBottom:"2px"}}>{val.value}</h2>
                           <div class="woofic_lastnews_content_description">
-                            <h3>{val.label}</h3>   <br />
+                            <h3>{val.label}</h3> <br />
                             <br />
-                          </div>
                           </div>
                         </div>
                       </div>
-                      
-                    </>
-                  )
-                })
-              }
-    
-
-              
-
-             
+                    </div>
+                  </>
+                );
+              })}
             </div>
           </div>
         </div>
-
-
 
         <div className="container">
           <div class="row">
@@ -97,32 +115,34 @@ function LastNews() {
             </div>
           </div>
         </div>
-        <div class="woofic_lastnews_cards_container" onClick={() => history.push("/allblog")}>
+        <div
+          class="woofic_lastnews_cards_container"
+          onClick={() => history.push("/allblog")}
+        >
           <div class="woofic_lastnews_card container ">
             <div className="row ">
               {blog.slice(0, 3).map((val, id) => {
                 return (
-                  <> <div className="col-sm-12 col-md-4 text-center">
-                    <div class="woofic_last-news_cards">
-                      <img src={val.image} />
-                      <div class="woofic_lastnews_card-heading text-center">
-                        {(val.author).slice(0, 40)}
-                      </div>
-                      <div class="woofic_lastnews_card-subheading text-center">
-                        {(val.article).slice(0, 180) + '...'}
+                  <>
+                    {" "}
+                    <div className="col-sm-12 col-md-4 text-center">
+                      <div class="woofic_last-news_cards">
+                        <img src={val.image} />
+                        <div class="woofic_lastnews_card-heading text-center">
+                          {val.author.slice(0, 40)}
+                        </div>
+                        <div class="woofic_lastnews_card-subheading text-center">
+                          {val.article.slice(0, 180) + "..."}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  </>)
+                  </>
+                );
               })}
-
             </div>
           </div>
         </div>
       </div>
-
-
-
 
       <div className="container text-center mx-auto mt-lg-5">
         <div className="row mx-auto">
@@ -157,10 +177,10 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    Woofic envía a sus colaboradores (proveedores) el cuestionario
-                    cumplimentado por el cliente, en un plazo máximo de 48
-                    horas que los proveedores tienen para responder preguntas y presentar un
-                    oferta vinculante.
+                    Woofic envía a sus colaboradores (proveedores) el
+                    cuestionario cumplimentado por el cliente, en un plazo
+                    máximo de 48 horas que los proveedores tienen para responder
+                    preguntas y presentar un oferta vinculante.
                   </div>
                 </div>
               </div>
@@ -186,10 +206,11 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    Woofic es una plataforma integral, en la que recibirás y gestionarás ofertas, realizarás
-                    calificaciones de proveedores y muchas más ventajas, por eso es necesario registrarse, ser
-                    poder acceder a su panel de administración personal.
-
+                    Woofic es una plataforma integral, en la que recibirás y
+                    gestionarás ofertas, realizarás calificaciones de
+                    proveedores y muchas más ventajas, por eso es necesario
+                    registrarse, ser poder acceder a su panel de administración
+                    personal.
                   </div>
                 </div>
               </div>
@@ -247,12 +268,12 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    No. Woofic.com es un portal totalmente independiente, solo ponemos
-                    clientes en contacto con proveedores y cada proveedor hace
-                    su oferta personalizada directamente al cliente final, el
-                    El orden en el que se muestran los resultados por defecto es por orden.
-                    de llegada, la primera cita se muestra en la posición 1, por lo que
-                    en.
+                    No. Woofic.com es un portal totalmente independiente, solo
+                    ponemos clientes en contacto con proveedores y cada
+                    proveedor hace su oferta personalizada directamente al
+                    cliente final, el El orden en el que se muestran los
+                    resultados por defecto es por orden. de llegada, la primera
+                    cita se muestra en la posición 1, por lo que en.
                   </div>
                 </div>
               </div>
@@ -278,12 +299,12 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    Nuestro servicio es completamente gratuito. Las ofertas que harás
-                    encontrar de los diferentes proveedores en Woofic son los mismos
-                    que encontrarás en cada empresa. No existen
-                    comisiones, sin incrementos de precio. Cada vez que un proyecto,
-                    se contrate producto o servicio, cobramos una comisión a
-                    al proveedor, nunca al usuario.
+                    Nuestro servicio es completamente gratuito. Las ofertas que
+                    harás encontrar de los diferentes proveedores en Woofic son
+                    los mismos que encontrarás en cada empresa. No existen
+                    comisiones, sin incrementos de precio. Cada vez que un
+                    proyecto, se contrate producto o servicio, cobramos una
+                    comisión a al proveedor, nunca al usuario.
                   </div>
                 </div>
               </div>
@@ -291,7 +312,6 @@ function LastNews() {
           </div>
         </div>
       </div>
-
     </>
   );
 }
