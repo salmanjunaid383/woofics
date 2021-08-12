@@ -163,7 +163,7 @@ export default function DataofInt() {
                                                             
                                                             <th className="border-top-0 text-white text-center">Etiqueta</th>
                                                             <th className="border-top-0 text-white text-center">Valor</th>
-                                                            <th className="border-top-0 text-white text-center"></th> 
+                                                            <th className="border-top-0 text-white text-center">acción</th> 
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row">
@@ -174,7 +174,6 @@ export default function DataofInt() {
                                                                 return (
                                                                     <>
                                                                         <tr>
-                                                                            
                                                                             <td className="txt-oflo text-center">{val.label}</td>
                                                                             <td className="txt-oflo text-center">{(val.value)}</td>
                                                                             <td className="txt-oflo text-center "><button  class="btn text-white btn-danger " onClick={(e) => deleteQuote(val.id)}>Borrar</button></td>
