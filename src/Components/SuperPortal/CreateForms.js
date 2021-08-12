@@ -304,7 +304,7 @@ export default function CreateForms() {
                                                             {paymentPackag.map((val, i) => {
                                                                 return (<>
                                                                     <tr>
-                                                                        <th scope="row">1</th>
+                                                                        
                                                                         <td>{val.name}</td>
                                                                         <td>{val.charge}</td>
                                                                         <td>{val.start}</td>
@@ -345,7 +345,6 @@ export default function CreateForms() {
                                                             </thead>
                                                             <tbody id="data-row">
                                                                 <tr>
-                                                                    <th scope="row">1</th>
                                                                     <td>{valueCharge.charge}</td>
                                                                     <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck('true')}>Editar</button></td>
                                                                     {/* <button class={`btn btn-danger text-white`} onClick={valueCharges}>Delete </button> */}
@@ -389,7 +388,7 @@ export default function CreateForms() {
                                                                 </thead>
                                                                 <tbody id="data-row">
                                                                     <tr>
-                                                                        <th scope="row">1</th>
+                                                                        
                                                                         <td>{supplierRenta.charge}</td>
                                                                         <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck2('true')}>Editar</button></td> 
                                                                         {/* <button class={`btn btn-danger text-white`} onClick={() => supplierRentalDel(supplierRenta.id)}>Delete </button> */}
@@ -431,7 +430,7 @@ export default function CreateForms() {
                                                                 </thead>
                                                                 <tbody id="data-row">
                                                                     <tr>
-                                                                        <th scope="row">1</th>
+                                                                        
                                                                         <td>{serviceCharge.charge}</td>
                                                                         <td><button class={`btn text-white mr-2 greenbtn text-white `}  onClick={() => setcheck3('true')}>Editar</button></td>
                                                                         {/* <button class={`btn btn-danger text-white`} onClick={() => serviceChargesDel(serviceCharge.id)}>Delete </button> */}

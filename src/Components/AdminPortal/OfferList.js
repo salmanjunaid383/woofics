@@ -86,7 +86,7 @@ export default function OfferList() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className=" h1 mb-0 text-center mx-auto">Ofertas Enviadas</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">ofertas Enviadas</h1>
                                             </div>
                                             <div className="table-responsive salman-table-change">
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
@@ -107,7 +107,7 @@ export default function OfferList() {
                                                             return (
                                                                 <>
                                                                     <tr>
-                                                                        <td className="text-center" >{returnIndex()}</td>
+                                                                        
                                                                         <td className="txt-oflo text-center">{(val.description).slice(0,10)+'...'}</td>
                                                                         <td className="text-oflo text-center">{val.price}</td>
                                                                         <td className="txt-oflo text-center">{val.time}</td>

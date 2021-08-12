@@ -90,7 +90,7 @@ export default function LedgerView() {
                                         <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                             <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                 <tr>
-                                                    
+                                                <th className="border-top-0 text-white text-center">Id</th>
                                                     <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
                                                     <th className="border-top-0 text-white text-center">CREADO EN</th>
                                                 </tr>

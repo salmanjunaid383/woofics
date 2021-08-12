@@ -159,6 +159,14 @@ export default function StazBar() {
         {
             setPathName("/clientdiscussionforum")
         }
+        else if(location.pathname.split('/')[1]==="createforms")
+        {
+            setPathName("/charges")
+        }
+        else if(location.pathname.split('/')[1]==="createblog")
+        {
+            setPathName("blog")
+        }
         else{
             setPathName(location.pathname)
         }
@@ -256,11 +264,11 @@ export default function StazBar() {
             icon: <LoyaltyIcon  />,
             to: '/offerbadge'
         },
-        {
-            name: 'Reviews',
-            icon: <RateReviewIcon  />,
-            to: '/viewreviews'
-        },
+        // {
+        //     name: 'Reviews',
+        //     icon: <RateReviewIcon  />,
+        //     to: '/viewreviews'
+        // },
         {
             name: 'Led ',
             icon: <DvrIcon  />,

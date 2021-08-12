@@ -94,20 +94,23 @@ export default function Registration() {
                                                     <tr className="heading-row" >
                                                         <th className="">NAME</th>
                                                         <th className="">EMAIL</th>
+                                                        <th className="">Role</th>
                                                         <th className="">DATE</th>
                                                         <th className="">ACTIONS</th>
                                                     </tr>
                                                 <tbody id="data-row">
                                                     {blog.map((val, key) => {
                                                         return (
+                                                            ((val.type).split("\\")[2]==="Supplier" || (val.type).split("\\")[2]==="ServiceProvider") ? 
                                                             <>
                                                                 <tr className="data-row">
                                                                     <td className="txt-oflo">{val.first_name} {val.last_name}</td>
                                                                     <td className="txt-oflo">{val.email}<a href={"mailto:" + val.email} className="float-right pr-lg-4"><i className="fa fa-envelope ml-3 text-primary"></i></a></td>
+                                                                    <td className="txt-oflo">{(val.type).split("\\")[2]}</td>
                                                                     <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
                                                                     <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} onClick={() => approveReg(val.id)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button class="btn text-white btn-danger ml-2" onClick={() => blockReg(val.id)}>{val.blocked === 0 ? 'Block' : 'Unblock'}</button></td>
                                                                 </tr>
-                                                            </>
+                                                            </> : null
                                                         )
                                                     }).reverse()}
                                                 </tbody>
