@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import '../SuperPortal/SupCoupons.css'
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -100,11 +100,12 @@ export default function ServiceSidebar(props) {
 
     CustomProviderAuth();
     const history = useHistory();
-
+    const location = useLocation();
     // const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [pathName,setPathName]=useState();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -112,6 +113,7 @@ export default function ServiceSidebar(props) {
     
 
     useEffect(() => {
+        setPathName(location.pathname)
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
           });;
@@ -169,22 +171,22 @@ export default function ServiceSidebar(props) {
     const Data = [
           {
             name: 'Dashboard',
-            icon: <DashboardIcon  style={{color:"white"}}/>,
+            icon: <DashboardIcon  />,
             to: '/admindashboard'
         },
         {
             name: 'Todo',
-            icon: <PlaylistAddCheckIcon style={{ color: "#cdcdcd" }}/>,
+            icon: <PlaylistAddCheckIcon />,
             to: '/todo'
         },
         {
             name: 'Offers List',
-            icon: <ListIcon style={{ color: "#cdcdcd" }}/>,
+            icon: <ListIcon />,
             to: '/offerlist'
         },
         {
             name: 'Ledger',
-            icon: <BorderColorIcon  style={{color:"white"}}/>,
+            icon: <BorderColorIcon />,
             to: '/providerledger'
         },
         // {
@@ -194,17 +196,17 @@ export default function ServiceSidebar(props) {
         // },
         {
             name: 'Discussion Forum',
-            icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
+            icon: <ContactMailIcon  />,
             to: 'clientdiscussionforum'
         },
         {
             name: 'Help',
-            icon: <LiveHelpIcon style={{ color: "#cdcdcd" }}/>,
+            icon: <LiveHelpIcon />,
             to: '/providerhelp'
         },
         {
             name: 'Complain',
-            icon: <CallEndIcon style={{ color: "#cdcdcd" }}/>,
+            icon: <CallEndIcon />,
             to: '/providercomplain'
         },
 
@@ -225,12 +227,22 @@ export default function ServiceSidebar(props) {
            
             <List>
                 {Data.map((text, index) => (
-                    <Link to={text.to} className={classes.link}>
-                          <ListItem button key={text} className={text.name == "Dashboard"? classes.item : ''}>
-                            <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
+                    
+                    <Link to={{pathname:text.to, state: {from:text.to}}} className={classes.link}  >
+                        {text.to === pathName ? 
+                            <ListItem button key={text} style={{backgroundColor:"rgba(0, 0, 0, 0.04)"}} >
+                            <ListItemIcon ><span style={{color:'white'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px", color:'white'}} />
+                        </ListItem> :
+                            <ListItem button key={text}  >
+                            <ListItemIcon ><span style={{color:'#8da2b1'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
+                        }
+                        
+                        
                     </Link>
+                    
                 ))}
             </List>
         </div>

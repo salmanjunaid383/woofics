@@ -51,6 +51,7 @@ export default function OfferList() {
                 .then((res) => {
                     if (res) {
                         setForm(res.data)
+                        console.log(res)
                         setUserId(decoded.sub)
                     }
                 }, (error) => {
@@ -95,6 +96,7 @@ export default function OfferList() {
                                                             
                                                             <th className="border-top-0 text-center text-white">Descripción</th>
                                                             <th className="border-top-0 text-center text-white">Precio</th>
+                                                            <th className="border-top-0 text-center text-white">Created</th>
                                                             <th className="border-top-0 text-center text-white">Dias</th>
                                                             <th className="border-top-0 text-center text-white">Status</th>
                                                         </tr>
@@ -110,6 +112,7 @@ export default function OfferList() {
                                                                         
                                                                         <td className="txt-oflo text-center">{(val.description).slice(0,10)+'...'}</td>
                                                                         <td className="text-oflo text-center">{val.price}</td>
+                                                                        <td className="text-oflo text-center">{(val.created_at).slice(0,10)}</td>
                                                                         <td className="txt-oflo text-center">{val.time}</td>
                                                                         <td className="txt-oflo text-center">{val.locked === 0 ? "Accepted" : "Pending"}</td>
                                                                     </tr>

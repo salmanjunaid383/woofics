@@ -121,20 +121,20 @@ export default function CreateImg() {
                                                         <MenuItem value="">
                                                             <em>Ninguna</em>
                                                         </MenuItem>
-                                                        <MenuItem value='HOTELS'>HOTELES</MenuItem>
-                                                        <MenuItem value='RESTAURANTS'>RESTAURANTES</MenuItem>
-                                                        <MenuItem value='RETAIL'>TIENDA AL POR MENOR</MenuItem>
-                                                        <MenuItem value='FAIRS'>FERIAS</MenuItem>
-                                                        <MenuItem value='EVENTS'>EVENTOS</MenuItem>
-                                                        <MenuItem value='SPORTS'>DEPORTES</MenuItem>
-                                                        <MenuItem value='HEALTH'>SALUD</MenuItem>
-                                                        <MenuItem value='ADVERTISING'>PUBLICIDAD</MenuItem>
-                                                        <MenuItem value='PUBLIC'>SECTOR PÚBLICO</MenuItem>
-                                                        <MenuItem value='INFORMATION'>INFORMACIÓN</MenuItem>
-                                                        <MenuItem value='LARGE'>SUPERFICIES / CENTROS COMERCIALES</MenuItem>
-                                                        <MenuItem value='SHOPPING'>COMPRAS</MenuItem>
-                                                        <MenuItem value='CONCERTS'>CONCIERTOS</MenuItem>
-                                                        <MenuItem value='AUTOMOTIVE'>AUTOMOTORA</MenuItem>
+                                                        <MenuItem value='HOTELS'>Hoteles</MenuItem>
+                                                        <MenuItem value='RESTAURANTS'>Restaurantes</MenuItem>
+                                                        <MenuItem value='RETAIL'>Tienda Al Por Menor</MenuItem>
+                                                        <MenuItem value='FAIRS'>Ferias</MenuItem>
+                                                        <MenuItem value='EVENTS'>Eventos</MenuItem>
+                                                        <MenuItem value='SPORTS'>Deportes</MenuItem>
+                                                        <MenuItem value='HEALTH'>Salud</MenuItem>
+                                                        <MenuItem value='ADVERTISING'>Publicidad</MenuItem>
+                                                        <MenuItem value='PUBLIC'>Sector Público</MenuItem>
+                                                        <MenuItem value='INFORMATION'>Información</MenuItem>
+                                                        <MenuItem value='LARGE'>Superficies / Centros Comerciales</MenuItem>
+                                                        <MenuItem value='SHOPPING'>Compras</MenuItem>
+                                                        <MenuItem value='CONCERTS'>Conciertos</MenuItem>
+                                                        <MenuItem value='AUTOMOTIVE'>Automotora</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import axios from 'axios';
 
 
@@ -106,8 +106,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SupplierSidebar() {
     CustomSupplierAuth();
     const history = useHistory();
-
-
+    const location = useLocation();
+    const[pathName,setPathName]=useState();
     //Sidebaaaaar/..........................
     // const { window } = props;
     const classes = useStyles();
@@ -160,53 +160,53 @@ export default function SupplierSidebar() {
     const Data = [
         {
             name: 'Supplier Dashboard',
-            icon: <DashboardIcon style={{color:"white"}}/>,
-            to: 'supplierdashboard'
+            icon: <DashboardIcon />,
+            to: '/supplierdashboard'
         },
         {
             name: 'Projects',
-            icon: <PollIcon  style={{ color: "#cdcdcd" }}/>,
-            to: 'supproject'
+            icon: <PollIcon  />,
+            to: '/supproject'
         },
         {
             name: 'Todo',
-            icon: <LocalOfferIcon  style={{ color: "#cdcdcd" }}/>,
-            to: 'suppliertodo'
+            icon: <LocalOfferIcon  />,
+            to: '/suppliertodo'
         },
         {
             name: 'Leads',
-            icon: <PlaylistAddCheckIcon  style={{ color: "#cdcdcd" }}/>,
-            to: 'quotation'
+            icon: <PlaylistAddCheckIcon  />,
+            to: '/quotation'
         },
         {
             name: 'Sent Quotation',
-            icon: <AssistantIcon  style={{ color: "#cdcdcd" }}/>,
-            to: 'sentquotation'
+            icon: <AssistantIcon  />,
+            to: '/sentquotation'
         },
         {
             name: 'Ledger',
-            icon: <BorderColorIcon style={{ color: "cdcdcd" }} />,
-            to: 'supplierledger'
+            icon: <BorderColorIcon  />,
+            to: '/supplierledger'
         },
         {
             name: 'Invoice',
-            icon : <PaymentIcon style={{color: "cdcdcd"}}/>,
-            to: 'supplierinvoice'
+            icon : <PaymentIcon />,
+            to: '/supplierinvoice'
         },
         {
             name: 'Discussion Forum',
-            icon: <AssignmentIcon style={{ color: "#cdcdcd" }}/>,
+            icon: <AssignmentIcon />,
             to :'/clientdiscussionforum'
         },
         {
             name: 'Help',
-            icon: <LiveHelpIcon  style={{ color: "#cdcdcd" }}/>,
-            to: 'suphelp'
+            icon: <LiveHelpIcon  />,
+            to: '/suphelp'
         },
         {
             name: 'Complain',
-            icon: <CallEndIcon  style={{ color: "#cdcdcd" }}/>,
-            to: 'supcomplain'
+            icon: <CallEndIcon  />,
+            to: '/supcomplain'
         },
     ]
 
@@ -221,12 +221,22 @@ export default function SupplierSidebar() {
            
             <List>
                 {Data.map((text, index) => (
-                    <Link to={text.to} className={classes.link}>
-                          <ListItem button key={text} className={text.name == "Supplier Dashboard"? classes.item : ''}>
-                            <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
+                    
+                    <Link to={{pathname:text.to, state: {from:text.to}}} className={classes.link}  >
+                        {text.to === pathName ? 
+                            <ListItem button key={text} style={{backgroundColor:"rgba(0, 0, 0, 0.04)"}} >
+                            <ListItemIcon ><span style={{color:'white'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px", color:'white'}} />
+                        </ListItem> :
+                            <ListItem button key={text}  >
+                            <ListItemIcon ><span style={{color:'#8da2b1'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
+                        }
+                        
+                        
                     </Link>
+                    
                 ))}
             </List>
         </div>
@@ -293,6 +303,15 @@ export default function SupplierSidebar() {
                 });
         }
     useEffect(() => {
+        if(location.pathname.split("/")[1]==="supplierprojects")
+        {
+            setPathName("/supproject")
+        }
+        else{
+            setPathName(location.pathname)
+        }
+        
+        
         getData()
         seen()
         chatnotification()
