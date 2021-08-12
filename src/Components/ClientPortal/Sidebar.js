@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory,useLocation } from 'react-router-dom'
 import axios from 'axios';
 import './Sidebar.css'
 import jwt_decode from 'jwt-decode'
@@ -109,7 +109,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Sidebar() {
     CustomClientAuth();
     const history = useHistory();
-
+    const location = useLocation()
+    const[pathName,setPathName]=useState();
     
 
     //Sidebaaaaar/..........................
@@ -122,6 +123,14 @@ export default function Sidebar() {
         setMobileOpen(!mobileOpen);
     };
     useEffect(() => {
+        if(location.pathname==="/myservice")
+        {
+            setPathName("/addservice")
+        }
+        else{
+            setPathName(location.pathname)
+        }
+        
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
           });;
@@ -194,43 +203,43 @@ export default function Sidebar() {
     const Data = [
         {
             name: 'Dashboard',
-            icon: <DashboardIcon style={{ color: "#cdcdcd" }} />,
-            to: 'dashboard'
+            icon: <DashboardIcon  />,
+            to: '/dashboard'
         },
         {
             name: 'Services',
-            icon: <InsertEmoticonIcon style={{ color: "#cdcdcd" }} />,
-            to: 'addservice'
+            icon: <InsertEmoticonIcon  />,
+            to: '/addservice'
         },
         {
             name: 'Offers',
-            icon: <LocalOfferIcon style={{ color: "#cdcdcd" }} />,
-            to: 'customeroffer'
+            icon: <LocalOfferIcon  />,
+            to: '/customeroffer'
         },
         {
             name: 'Projects',
-            icon: <PlaylistAddCheckIcon style={{ color: "#cdcdcd" }} />,
-            to: 'project'
+            icon: <PlaylistAddCheckIcon  />,
+            to: '/project'
         },
         {
             name: 'Service Provider',
-            icon: <AssistantIcon style={{ color: "#cdcdcd" }} />,
-            to: 'suppliers'
+            icon: <AssistantIcon  />,
+            to: '/suppliers'
         },
         {
             name: 'Discussion Forum',
-            icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
-            to: 'clientdiscussionforum'
+            icon: <ContactMailIcon  />,
+            to: '/clientdiscussionforum'
         },
         {
             name: 'Help',
-            icon: <LiveHelpIcon style={{ color: "#cdcdcd" }} />,
-            to: 'help'
+            icon: <LiveHelpIcon  />,
+            to: '/help'
         },
         {
             name: 'Complain',
-            icon: <CallEndIcon style={{ color: "#cdcdcd" }} />,
-            to: 'complain'
+            icon: <CallEndIcon  />,
+            to: '/complain'
         },
 
 
@@ -247,13 +256,22 @@ export default function Sidebar() {
 
             <List>
                 {Data.map((text, index) => (
-                    <Link to={text.to} className={classes.link}>
-                        {/* className={text.name == "Dashboard" ? classes.item : ''} */}
-                        <ListItem button key={text} >
-                            <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
+                    
+                    <Link to={{pathname:text.to, state: {from:text.to}}} className={classes.link}  >
+                        {text.to === pathName ? 
+                            <ListItem button key={text} style={{backgroundColor:"rgba(0, 0, 0, 0.04)"}} >
+                            <ListItemIcon ><span style={{color:'white'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px", color:'white'}} />
+                        </ListItem> :
+                            <ListItem button key={text}  >
+                            <ListItemIcon ><span style={{color:'#8da2b1'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
+                        }
+                        
+                        
                     </Link>
+                    
                 ))}
             </List>
         </div>

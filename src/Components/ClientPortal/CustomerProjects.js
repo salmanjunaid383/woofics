@@ -79,7 +79,7 @@ export default function Project() {
             setdhours('A');
             setdminutes('T');
             setdseconds('E')
-        } else if (completed == 'Completed') {
+        } else if (completed === 'Completed') {
             
             setddays(0);
             setdhours(0);

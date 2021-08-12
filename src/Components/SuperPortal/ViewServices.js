@@ -89,8 +89,7 @@ export default function ViewServices() {
                                                         
                                                         <th className="border-top-0 text-white text-center text-white">NOMBRE</th>
                                                         <th className="border-top-0 text-white text-center text-white">DESCRIPCIÓN</th>
-                                                        <th className="border-top-0 text-white text-center text-white">EMPRESA</th>
-                                                        <th className="border-top-0 text-white text-center text-white">COMENTARIOS</th>
+                                                        
                                                         <th className="border-top-0 text-white text-center text-white">EL TIEMPO DE ENTREGA</th>
                                                         <th className="border-top-0 text-white text-center text-white">EMAIL</th>
                                                         <th className="border-top-0 text-white text-center text-white">COMPORTAMIENTO</th>
@@ -106,8 +105,7 @@ export default function ViewServices() {
                                                                         
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{val.description}</td>
-                                                                        <td className="txt-oflo">{val.company}</td>
-                                                                        <td className="txt-oflo">{val.comments}</td>
+                                                                        
                                                                         <td className="txt-oflo">{val.delivery_time}</td>
                                                                         <td className="txt-oflo">{val.email}</td>
                                                                         <td className="text-danger"><button class="btn text-white greenbtn" onClick={() => history.push(`/viewservicemore/${val.id}`)}>Ver más</button></td>
