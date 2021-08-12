@@ -174,7 +174,7 @@ export default function DataofInt() {
                                                                 return (
                                                                     <>
                                                                         <tr>
-                                                                            <td className="txt-oflo text-center">{returnIndex()}</td>
+                                                                            
                                                                             <td className="txt-oflo text-center">{val.label}</td>
                                                                             <td className="txt-oflo text-center">{(val.value)}</td>
                                                                             <td className="txt-oflo text-center "><button  class="btn text-white btn-danger " onClick={(e) => deleteQuote(val.id)}>Borrar</button></td>

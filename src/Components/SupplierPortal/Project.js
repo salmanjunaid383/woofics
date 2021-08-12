@@ -90,7 +90,7 @@ export default function Project() {
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center" id="text">FECHA</th>
                                                             <th className="border-top-0 text-white text-center">PETICIONES</th>
-                                                            <th className="border-top-0 text-white text-center">OFERTAS</th>
+                                                            <th className="border-top-0 text-white text-center">ofertas</th>
                                                             <th className="border-top-0 text-white text-center">DÍAS DE ENTREGA</th>
                                                             {/* <th className="border-top-0 text-white text-center">PAYMENT PHASE</th> */}
                                                             <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>

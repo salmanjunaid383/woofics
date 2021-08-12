@@ -221,7 +221,7 @@ export default function ProviderLedger() {
                                                                     return (
                                                                         <>
                                                                             <tr>
-                                                                                <td className="txt-oflo text-center">{returnIndex()}</td>
+                                                                                
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0,10)}</td>
                                                                                 {/* <td></td> */}

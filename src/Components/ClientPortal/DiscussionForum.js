@@ -253,15 +253,15 @@ export default function DiscussionForum() {
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
                     
-
+                    
 
                     <div className="float-right mt-4  mr-4">
-                        <button type="submit" class="s-butto greenbtn text-white" onClick={handleOpenn}>Ask a Question?</button>
+                        <button type="submit" class="s-butto greenbtn text-white" onClick={handleOpenn}>Hacer una pregunta?</button>
                     </div>
                     <div className="page-wrapper bg-light">
                         <div class="container mt-100">
                                    <div class="d-md-flex mb-3">
-                    <h3 class=" h1 mb-0 text-center mx-auto">DISCUSSION FORUM</h3>
+                    <h3 class=" h1 mb-0 text-center mx-auto">Foro De Discusion</h3>
                 </div>
                             <div class="row">
                                 <div class="col-md-10 mx-auto">
@@ -286,7 +286,7 @@ export default function DiscussionForum() {
                                                                 </div>
                                                                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                                                                     <div class="px-4 pt-3"></div>
-                                                                    <div class="px-4 pt-3"> <button type="button" class="btn greenbtn text-white"><i class="ion ion-md-create"></i>&nbsp; View more & Reply</button> </div>
+                                                                    <div class="px-4 pt-3"> <button type="button" class="btn greenbtn text-white"><i class="ion ion-md-create"></i>&nbsp; Ver más y responder</button> </div>
                                                                 </div>
                                                             </div>
                                                         </Link>

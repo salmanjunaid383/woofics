@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory,useLocation } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from './Sidebar'
 import Nav from './Nav'
@@ -130,10 +130,50 @@ export default function StazBar() {
     let history = useHistory();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-    
+    const location = useLocation();
+    const[pathName,setPathName]=useState();
+    const[routeCheck,setRouteCheck]=useState(false);
     
 
       useEffect(() => {
+        var test = location.pathname;
+        test=test.split("/")[1]    
+        if(test==="viewservicemore")
+        {
+            console.log(true)
+            setPathName("/viewservices")
+        }
+        else if(location.pathname==="/led")
+        {
+            setPathName("/ledlist")
+        }
+        else if(location.pathname==="/createimg")
+        {
+            setPathName("/getinspired")
+        }
+        else if(location.pathname.split('/')[1]==="ledgerlist")
+        {
+            setPathName("/ledger")
+        }
+        else if(location.pathname.split('/')[1]==="clientmoredetailsdiscussionforum")
+        {
+            setPathName("/clientdiscussionforum")
+        }
+        else if(location.pathname.split('/')[1]==="createforms")
+        {
+            setPathName("/charges")
+        }
+        else if(location.pathname.split('/')[1]==="createblog")
+        {
+            setPathName("blog")
+        }
+        else{
+            setPathName(location.pathname)
+        }
+        
+          
+        
+        
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
           });;
@@ -206,95 +246,108 @@ export default function StazBar() {
     const Data = [
         {
             name: 'Admin Dashboard',
-            icon: <DashboardIcon style={{ color: "#8da2b1" }} />,
+            icon: <DashboardIcon    />,
             to: '/superdashboard'
         },
         {
             name: 'Registrations',
-            icon: <PollIcon style={{ color: "#8da2b1" }} />,
+            icon: <PollIcon  />,
             to: '/registration'
         },
         {
             name: 'Services',
-            icon: <FindInPageIcon style={{ color: "#8da2b1" }} />,
+            icon: <FindInPageIcon  />,
             to: '/viewservices'
         },
         {
             name: 'Offers',
-            icon: <LoyaltyIcon style={{ color: "#8da2b1" }} />,
+            icon: <LoyaltyIcon  />,
             to: '/offerbadge'
         },
-        {
-            name: 'Reviews',
-            icon: <RateReviewIcon style={{ color: "#8da2b1" }} />,
-            to: '/viewreviews'
-        },
+        // {
+        //     name: 'Reviews',
+        //     icon: <RateReviewIcon  />,
+        //     to: '/viewreviews'
+        // },
         {
             name: 'Led ',
-            icon: <DvrIcon style={{ color: "#8da2b1" }} />,
+            icon: <DvrIcon  />,
             to: '/ledlist'
         },
         {
             name: 'Get Inspire',
-            icon: <FeaturedVideoIcon style={{ color: "#8da2b1" }} />,
+            icon: <FeaturedVideoIcon  />,
             to: '/getinspired'
         },
         {
             name: 'Advertise',
-            icon: <PhotoAlbumIcon style={{ color: "#8da2b1" }} />,
+            icon: <PhotoAlbumIcon  />,
             to: '/advertised'
         },
         {
             name: 'Ledger',
-            icon: <HourglassEmptyIcon style={{ color: "#8da2b1" }} />,
+            icon: <HourglassEmptyIcon  />,
             to: '/ledger'
         },
          {
             name: 'Data of Interest',
-            icon: <SwapVertIcon style={{ color: "#8da2b1" }} />,
+            icon: <SwapVertIcon  />,
             to: '/dataofint'
         },
         {
             name: 'Charges',
-            icon: <EqualizerIcon style={{ color: "#8da2b1" }} />,
+            icon: <EqualizerIcon  />,
             to: '/charges'
         },
         {
             name: 'View Contacts',
-            icon: <ContactMailIcon style={{ color: "#8da2b1" }} />,
+            icon: <ContactMailIcon  />,
             to: '/viewcontact'
         },
         {
             name: "Logo",
-            icon: <ImageIcon style={{color: "#8da2b1" }} />,
-            to: "logo"
+            icon: <ImageIcon />,
+            to: "/logo"
         },
         {
             name: "Description",
-            icon: <DescriptionIcon style={{color: "#8da2b1"}}/>,
-            to: "description"
+            icon: <DescriptionIcon />,
+            to: "/description"
         },
         {
             name: 'Discussion Forum',
-            icon: <AssignmentIcon style={{ color: "#8da2b1" }}/>,
+            icon: <AssignmentIcon />,
             to :'/clientdiscussionforum'
         },
         {
             name: 'Help List',
-            icon: <HelpIcon style={{ color: "#8da2b1" }} />,
+            icon: <HelpIcon  />,
             to: '/helplist'
         },
         {
             name: 'Complain',
-            icon: <AssistantIcon style={{ color: "#8da2b1" }} />,
+            icon: <AssistantIcon  />,
             to: '/admincomplain'
         },
         {
             name: 'Blog',
-            icon: <BookIcon style={{ color: "#8da2b1" }} />,
+            icon: <BookIcon  />,
             to: '/blog'
         },
     ]
+    function getRoute(){
+        for(var i =0;i<Data.length;i++){
+            try{
+                if(Data[i].to===location.state.from){
+                    setRouteCheck(true)
+                }
+            }
+            catch{
+
+            }
+            
+        }
+    }
 
     const drawer = (
         <div>
@@ -307,13 +360,22 @@ export default function StazBar() {
 
             <List>
                 {Data.map((text, index) => (
-                    <Link to={text.to} className={classes.link}>
-                        {/* className={text.name == "Complain" ? classes.item : ''} */}
-                        <ListItem button key={text} >
-                            <ListItemIcon>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.name} style={{marginLeft:"-17px"}} />
+                    
+                    <Link to={{pathname:text.to, state: {from:text.to}}} className={classes.link}  >
+                        {text.to === pathName ? 
+                            <ListItem button key={text} style={{backgroundColor:"rgba(0, 0, 0, 0.04)"}} >
+                            <ListItemIcon ><span style={{color:'white'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px", color:'white'}} />
+                        </ListItem> :
+                            <ListItem button key={text}  >
+                            <ListItemIcon ><span style={{color:'#8da2b1'}}>{text.icon}</span></ListItemIcon>
+                            <ListItemText  primary={text.name} style={{marginLeft:"-17px"}} />
                         </ListItem>
+                        }
+                        
+                        
                     </Link>
+                    
                 ))}
             </List>
         </div>

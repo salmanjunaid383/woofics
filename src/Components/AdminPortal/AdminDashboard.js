@@ -136,7 +136,7 @@ export default function AdminDashboard() {
                                                         <i class="fa fa-anchor fa-4x text-success  icon-pencil primary font-large-2 mr-2"></i>
                                                     </div>
                                                     <div class="media-body ml-md-3">
-                                                        <h4>Ofertas</h4>
+                                                        <h4>ofertas</h4>
                                                         <span>Oferta Total</span>
                                                     </div>
                                                     <div class="align-self-center">
