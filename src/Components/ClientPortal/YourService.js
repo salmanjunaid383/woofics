@@ -96,7 +96,7 @@ export default function YourService() {
                     <div className="col-md-12 col-lg-12 col-sm-12">
                       <div className="d-md-flex mb-3">
                         <h1 className=" h1 mb-0 text-center mx-auto">
-                          My Services
+                        Mis servicios
                         </h1>
                       </div>
                       <div className="table-responsive salman-table-change">
@@ -104,18 +104,18 @@ export default function YourService() {
                           <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                             <tr>
                               
-                              <th className="border-top-0 text-white text-center">NAME</th>
-                              <th className="border-top-0 text-white text-center">DESCRIPTION</th>
-                              <th className="border-top-0 text-white text-center">COMPANY</th>
-                              <th className="border-top-0 text-white text-center">COMMENTS</th>
-                              <th className="border-top-0 text-white text-center">DELIVERY TIME</th>
+                              <th className="border-top-0 text-white text-center">NOMBRE</th>
+                              <th className="border-top-0 text-white text-center">DESCRIPCIÓN</th>
+                              <th className="border-top-0 text-white text-center">EMPRESA</th>
+                              <th className="border-top-0 text-white text-center">COMENTARIOS</th>
+                              <th className="border-top-0 text-white text-center">EL TIEMPO DE ENTREGA</th>
                               <th className="border-top-0 text-white text-center">EMAIL</th>
-                              <th className="border-top-0 text-white text-center">ACTIONS</th>
+                              <th className="border-top-0 text-white text-center">COMPORTAMIENTO</th>
                             </tr>
                           </thead>
                           <tbody id="data-row">
 
-                            {form == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">Nothing to show! Start creating projects...</h3></td> </tr>
+                            {form == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                               : form.map((val, id) => {
                                 return (
                                   <>
@@ -136,14 +136,14 @@ export default function YourService() {
                                           )
                                         }
                                       >
-                                        Check Quotation
+                                        Consultar Cotización
                                       </button>
                                         <button
                                           class="btn btn-danger ml-md-2 marginBottom10"
                                           value={val.id}
                                           onClick={() => DeleteService(val.id)}
                                         >
-                                          Delete Service
+                                          Eliminar Servicio
                                         </button></td>
                                     </tr>
                                   </>

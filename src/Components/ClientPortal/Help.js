@@ -105,9 +105,9 @@ export default function Help() {
                                                 </div>
                                                 <div class="col-md-10">
                                                     <hr />
-                                                    <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Admin</strong></p>
+                                                    <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Administradora</strong></p>
                                                     <Link to="/Responses" className="pt-3  responseLinkStaz"  >
-                                                        Responses
+                                                    Respuestas
                                                     </Link>
 
                                                 </div>
@@ -129,7 +129,7 @@ export default function Help() {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <button class={`btn btn-sm ${query == '' || answer == '' ? disable : ''}`}  onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Send</button>
+                                                            <button class={`btn btn-sm ${query == '' || answer == '' ? disable : ''}`}  onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
                                                         </td>
                                                     </tr>
                                                 </table>

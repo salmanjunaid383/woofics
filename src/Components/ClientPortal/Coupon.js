@@ -410,15 +410,15 @@ export default function Coupon() {
                                     <div class="coupon">
                                         <img src="https://i.pinimg.com/originals/fd/2c/1a/fd2c1a96b654e220d09525f006482477.gif" alt="Avatar" className="h-75 w-75 mx-auto" />
                                         <div class="container" style={{ backgroundColor: "white" }}>
-                                            <h2><b>DISCOUNT COUPON FOR YOU !</b></h2>
+                                            <h2><b>CUPÓN DE DESCUENTO PARA USTED !</b></h2>
                                             <h3 className="bg-light">Discount : {couponData.rate} {couponData.coupon_type == 'percentage' ? '%' : '$'}</h3>
                                         </div>
                                         <div class="container">
-                                            <p>Use Promo Code: <span class="promo bg-info text-white">{couponData.code}</span></p>
-                                            <p class="expire">Expires: {couponData.expiry_date}</p>
+                                            <p>Usar Código Promocional: <span class="promo bg-info text-white">{couponData.code}</span></p>
+                                            <p class="expire">Expira: {couponData.expiry_date}</p>
                                         </div>
                                         <div class="container">
-                                            <button className="btn btn-primary mb-2" onClick={() => history.push('/dashboard')}> Continue ...</button>
+                                            <button className="btn btn-primary mb-2" onClick={() => history.push('/dashboard')}>  Continuar ...</button>
                                         </div>
                                     </div>
                                 </div>
@@ -466,7 +466,7 @@ export default function Coupon() {
                 <Link to='/clientallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -503,20 +503,20 @@ export default function Coupon() {
         <Typography className={classes.typography}>
           <a className="profile-pic" onClick={() => history.push("/responses")}>
             <i className="fa fa-support mx-3"></i>
-            <span className="text-black font-medium mr-3">Help & Support</span>
+            <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
           </a>
         </Typography>
         <hr />
         <Typography className={classes.typography}>
           <a className="profile-pic" onClick={() => history.push("/mycoupon")}>
             <i className="fa fa-heart mx-3"></i>
-            <span className="text-black font-medium mr-3">My Coupons</span>
+            <span className="text-black font-medium mr-3">Mis Cupones</span>
           </a>
         </Typography>
         <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
         <Typography className={classes.typography}>
@@ -528,7 +528,7 @@ export default function Coupon() {
             }}
           >
             <i className="fa fa-sign-out mx-3"></i>
-            <span className="text-black font-medium mr-3">Logout</span>
+            <span className="text-black font-medium mr-3">Cerrar Sesión</span>
           </a>
         </Typography>
       </Popover>

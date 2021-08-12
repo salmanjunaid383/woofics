@@ -182,7 +182,7 @@ export default function Moredetailsdiscussionforum() {
                                             </p>
                                         </div>
                                         <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                                            { allreplies == '' ? <h3  className="text-center mx-auto m-lg-5"> No reply...</h3> :
+                                            { allreplies == '' ? <h3  className="text-center mx-auto m-lg-5"> Sin respuesta...</h3> :
                                                 allreplies.map((val, id) => {
                                                     return (
                                                         <>
@@ -203,7 +203,7 @@ export default function Moredetailsdiscussionforum() {
                                                 })
                                             }
                                             <div className="col-md-12 text-center pl-5">
-                                                <input type="text" placeholder="Type reply..." className="w-75 py-2.5" value={reply} onChange={(e) => setReply(e.target.value)} onKeyPress={handleKeyDown} /><button className="p-2 mx-3 greenbtn text-white" onClick={Forum}>Send</button>
+                                                <input type="text" placeholder="Type reply..." className="w-75 py-2.5" value={reply} onChange={(e) => setReply(e.target.value)} onKeyPress={handleKeyDown} /><button className="p-2 mx-3 greenbtn text-white" onClick={Forum}>Enviar</button>
                                             </div>
                                         </div>
                                     </div>

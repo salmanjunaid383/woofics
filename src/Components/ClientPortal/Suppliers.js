@@ -123,7 +123,7 @@ export default function Supppliers() {
                                                         <i className="fa fa-map-marker px-2 text-muted"> {val.location}</i><br />
                                                         <hr />
                                                         <div className="d-flex">
-                                                        <button class="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => history.push(`/providerdetails/${val.id}`)} >More Details</button>
+                                                        <button class="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => history.push(`/providerdetails/${val.id}`)} >Más Detalles</button>
                                                         <button class="btn pull-right marginBottom10  mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => SendData(val.id, val.first_name + " " + val.last_name, val.profile_image )} >Chat</button>
                                                         </div>
                                                     </div>

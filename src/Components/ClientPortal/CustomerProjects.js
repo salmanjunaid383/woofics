@@ -288,13 +288,13 @@ export default function Project() {
                                 {form.status == "Completed" ? <div className="container-fluid mt-2">
                                     <div className="row bg-light ">
                                         <div className="col-md-4 text-right d-none d-md-block d-lg-block">
-                                            <img className="img-fluid" src={tick} style={{ height: '60px' }} />Payment Done
+                                            <img className="img-fluid" src={tick} style={{ height: '60px' }} />Pago Hecho
                                         </div>
                                         <div className="col-md-4 text-center d-none d-md-block d-lg-block">
-                                            <img className="img-fluid" src={tick} style={{ height: '60px' }} />Order Delivered
+                                            <img className="img-fluid" src={tick} style={{ height: '60px' }} />Pedido Entregado
                                         </div>
                                         <div className="col-md-4 text-left">
-                                            <img className="img-fluid" src={tick} style={{ height: '60px' }} />Order Mark as Completed
+                                            <img className="img-fluid" src={tick} style={{ height: '60px' }} />Marca de Pedido Como Completada
                                         </div>
                                     </div>
                                 </div> : ''}
@@ -302,10 +302,10 @@ export default function Project() {
                                     <div class="car p-3">
                                         <div className="mx-auto d-flex justify-content-center align-item-center">
                                             <div id="clockdiv" className="mx-auto text-center">
-                                                <div className="mx-2"><span>{days}</span><div class="smalltext text-dark mx-2">Days</div></div>
-                                                <div className="mx-2"><span >{hours}</span><div class="smalltext text-dark mx-2">Hours</div></div>
-                                                <div className="mx-2"><span >{minutes}</span><div class="smalltext text-dark mx-2">Minutes</div></div>
-                                                <div className="mx-2"><span >{seconds}</span><div class="smalltext text-dark mx-2">Seconds</div></div>
+                                                <div className="mx-2"><span>{days}</span><div class="smalltext text-dark mx-2">Dias</div></div>
+                                                <div className="mx-2"><span >{hours}</span><div class="smalltext text-dark mx-2">Horas</div></div>
+                                                <div className="mx-2"><span >{minutes}</span><div class="smalltext text-dark mx-2">Minutos</div></div>
+                                                <div className="mx-2"><span >{seconds}</span><div class="smalltext text-dark mx-2">Segundos</div></div>
                                             </div>
                                         </div>
                                         <div class="card-body pb-5">
@@ -328,21 +328,21 @@ export default function Project() {
                                                 <table  id="for-table-setting" class="table table-hover table table-bordered">
                                                     <tbody id="data-row">
                                                         <tr>
-                                                            <th scope="row">Description</th>
+                                                            <th scope="row">Descripción</th>
                                                             <td> {form.description}</td>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="row">Delivery Days</th>
+                                                            <th scope="row">Días de Entrega</th>
                                                             <td>{form.delivery_days}</td>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="row">Status</th>
+                                                            <th scope="row">Estado</th>
                                                             <td className={form.status === 'Completed' ? 'text-success' : 'text-primary'}>{form.status}</td>
                                                         </tr>
 
                                                     </tbody>
                                                 </table>
-                                                {form.status == "Completed" ? <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={(e) => history.push(`/feedback/${supplier.id}`)} >Feedback</button> : <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={(e) => Stripe(form.id)} >Mark as Complete</button>}
+                                                {form.status == "Completed" ? <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={(e) => history.push(`/feedback/${supplier.id}`)} >Realimentación</button> : <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={(e) => Stripe(form.id)} >Marcar Como Completa</button>}
                                                 <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={supplier.id} onClick={() => SendData(supplier.id, supplier.first_name + " " + supplier.last_name)}>Chat</button>
 
                                             </div>
@@ -350,7 +350,7 @@ export default function Project() {
                                                 <div class="col " >
                                                     <div class="p-1 h1 text-primary text-center mx-auto display-inline-block" >
                                                         <i class="fa fa-check bg-primary text-white rounded p-2"> </i>
-                                                        <bold>Manage Project</bold>
+                                                        <bold>Gestionar Proyecto</bold>
                                                     </div>
                                                 </div>
                                             </div>
@@ -361,12 +361,12 @@ export default function Project() {
                                                             <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new .." onChange={(e) => setTodo(e.target.value)} value={todo} />
                                                         </div>
                                                         <div class="col-auto m-0 px-2 d-flex align-items-center">
-                                                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
+                                                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Fecha de vencimiento no establecida</label>
                                                             <input class="form-control form-control-md border-0 add-todo-input bg-transparent rounded" type="date" placeholder="Add new .." onChange={(e) => setDeadLine(e.target.value)} value={deadline} />
                                                             <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                                                         </div>
                                                         <div class="col-auto px-0 mx-0 mr-2">
-                                                            <button type="button" onClick={Feedback} class="btn btn-primary">Add</button>
+                                                            <button type="button" onClick={Feedback} class="btn btn-primary">Agregar</button>
                                                         </div>
                                                     </div>
                                                 </div>

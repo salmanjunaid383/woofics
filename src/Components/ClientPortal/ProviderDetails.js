@@ -95,7 +95,7 @@ export default function ProviderDetails() {
                                <div className="page-wrapper bg-light">
                                     <div class="container w-100 ">
                                     <div class="d-md-flex mb-3">
-                                        <h3 class=" h1 mb-0 text-center mx-auto">SERVICE PROVIDER</h3>
+                                        <h3 class=" h1 mb-0 text-center mx-auto">PROVEEDOR DE SERVICIO</h3>
                                     </div>
                                         <div class="row w-100 mx-auto">
                                             <div class="twPc-div w-100 mx-auto ">

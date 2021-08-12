@@ -31,8 +31,8 @@ useEffect(() => {
                <div class="check"></div>
             </div>
             <div class="content-success py-4">
-               <h1>Payment Success !</h1>
-               <Link to="/project" className="btn btn-success my-4">Go to Home</Link>
+               <h1>Pago Exitoso !</h1>
+               <Link to="/project" className="btn btn-success my-4">Ir a Casa</Link>
             </div>
             
          </div>

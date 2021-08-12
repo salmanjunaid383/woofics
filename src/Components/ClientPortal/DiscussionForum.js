@@ -266,7 +266,7 @@ export default function DiscussionForum() {
                             <div class="row">
                                 <div class="col-md-10 mx-auto">
                                     {
-                                        questions == '' ? <h3 className="text-center my-auto">Nothing to show! Start a new Discussion...</h3> :
+                                        questions == '' ? <h3 className="text-center my-auto">¡Nada que mostrar! Iniciar una nueva discusión...</h3> :
                                             questions.map((val, id) => {
                                                 return (
                                                     <>
@@ -310,14 +310,14 @@ export default function DiscussionForum() {
 
                             >
                                 <div className={classes.paper}>
-                                    <h2 id="simple-modal-title " className="mx-auto text-center "> Ask a Question ?</h2>
+                                    <h2 id="simple-modal-title " className="mx-auto text-center "> ¿Hacer una pregunta? </h2>
                                     <div className="container-fluid text-center">
                                         <div className="row">
                                             <div className="col-md-8  mx-auto">
                                                 <textarea type="text" placeholder="Type your question here .........." onChange={(e) => setQuestion(e.target.value)}>
 
                                                 </textarea>
-                                                <button onClick={Forum} className="greenbtn text-white">Send Question </button>
+                                                <button onClick={Forum} className="greenbtn text-white">Enviar pregunta </button>
                                             </div>
                                         </div>
                                     </div>

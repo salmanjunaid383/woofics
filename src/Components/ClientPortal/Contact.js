@@ -136,21 +136,21 @@ export default function Contact() {
                   style={button1}
                   onClick={() => setbtnstyle1()}
                 >
-                  About us
+                  Sobre nosotras
                 </button>
                 <button
                   className="btn mx-2 px-3 py-2 "
                   style={button2}
                   onClick={() => setbtnstyle12()}
                 >
-                  Frequent Questions
+                  Preguntas frecuentes
                 </button>
                 <button
                   className="btn mx-2 px-3 py-2 "
                   style={button3}
                   onClick={() => setbtnstyle3()}
                 >
-                  Contact us
+                  Contacta Con Nosotras
                 </button>
               </span>
             </div>
@@ -227,7 +227,7 @@ export default function Contact() {
                 <div className="col-md-10 mx-auto">
                   <div class="woofic_lastnews_header">
                     <div class="woofic_lastnews_heading text-center">
-                      FREQUENTLY ASKED QUESTION
+                    PREGUNTAS FRECUENTES
                     </div>
                     <div class="woofic_lastnews_hline"></div>
                   </div>
@@ -245,7 +245,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseOne"
                           >
-                            <h4>How does Woofic work?</h4>
+                            <h4>¿Cómo actúa Woofic?</h4>
                           </button>
                         </h2>
                       </div>
@@ -257,10 +257,10 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div class="card-body">
-                          Woofic sends its collaborators (suppliers) the
-                          questionnaire filled out by the client, within a
-                          maximum period of 48 hours the suppliers have to
-                          answer questions and present a binding offer.
+                          Woofic envía a sus colaboradores (proveedores) el
+                          cuestionario cumplimentado por el cliente, dentro de un
+                          plazo máximo de 48 horas que tienen los proveedores para
+                          responder preguntas y presentar una oferta vinculante.
                         </div>
                       </div>
                     </div>
@@ -275,7 +275,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseTwo"
                           >
-                            <h4>Why do I have to register?</h4>
+                            <h4>¿Por qué tengo que registrarme?</h4>
                           </button>
                         </h2>
                       </div>
@@ -286,11 +286,11 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div class="card-body">
-                          Woofic is a comprehensive platform, in which you will
-                          receive and manage offers, perform supplier ratings
-                          and many more advantages, that is why it is necessary
-                          to register, to be able to access your personal
-                          administration panel.
+                          Woofic es una plataforma integral, en la que podrás
+                          recibir y gestionar ofertas, realizar valoraciones de proveedores
+                          y muchas más ventajas, por eso es necesario
+                          para registrarse, para poder acceder a su personal
+                          panel de administración.
                         </div>
                       </div>
                     </div>
@@ -305,7 +305,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseFour"
                           >
-                            <h4>Does Woofic favor any company?</h4>
+                            <h4>¿Woofic favorece a alguna empresa?</h4>
                           </button>
                         </h2>
                       </div>
@@ -316,12 +316,12 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div class="card-body">
-                          No. Woofic.com is a totally independent portal, we
-                          only put customers in contact with suppliers and each
-                          supplier makes its personalized offer directly to the
-                          final customer, the order in which the results are
-                          shown by default is by order of arrival, the first
-                          quote is displayed at position 1 so on.
+                          No. Woofic.com es un portal totalmente independiente, nosotros
+                          solo poner a los clientes en contacto con los proveedores y cada
+                          proveedor hace su oferta personalizada directamente al
+                          cliente final, el orden en el que se obtienen los resultados
+                          que se muestra por defecto es por orden de llegada, la primera
+                          la cotización se muestra en la posición 1 y así sucesivamente.
                         </div>
                       </div>
                     </div>
@@ -336,7 +336,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseFive"
                           >
-                            <h4>How does Woofic.com make money?</h4>
+                            <h4>¿Cómo gana dinero Woofic.com?</h4>
                           </button>
                         </h2>
                       </div>
@@ -347,12 +347,12 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div class="card-body">
-                          Our service is completely free. The offers that you
-                          will find from the different providers in Woofic are
-                          the same that you will find in each company. There are
-                          no commissions, no price increases. Every time a
-                          project, product or service is contracted, we charge a
-                          commission to the provider, never to the user.
+                          Nuestro servicio es completamente gratuito. Las ofertas que tu
+                          encontrará de los diferentes proveedores en Woofic son
+                          las mismas que encontrarás en cada empresa. Existen
+                          sin comisiones, sin incrementos de precio. Cada vez que un
+                          se contrate proyecto, producto o servicio, cobramos un
+                          comisión al proveedor, nunca al usuario.
                         </div>
                       </div>
                     </div>
@@ -368,7 +368,7 @@ export default function Contact() {
                     <div class="container">
                       <div class="row mx-auto">
                         <div className="col-md-6 border-right mt-md-5 pt-md-5 w-75">
-                          <h3>We Want to know your opinion</h3>
+                          <h3>Nosotras queremos saber tu opinión</h3>
                           <TextField
                             className="w-75 my-1"
                             id="standard-basic"
@@ -394,11 +394,11 @@ export default function Contact() {
                           <br />
 
                           <button className="btn btn-primary" onClick={()=>Message()}>
-                            Send Message
+                          Enviar Mensaje
                           </button>
                         </div>
                         <div className="col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5">
-                          <h4 style={{marginTop:"20px"}}>Write to us at:</h4>
+                          <h4 style={{marginTop:"20px"}}>Escríbanos a:</h4>
                           <h5 className="h5" className="text-primary">
                             <a>hola@woofics.com</a>
                           </h5>
@@ -410,7 +410,7 @@ export default function Contact() {
                           <br />
                           <br />
 
-                          <h5 className="h5 follow">Follow us:</h5>
+                          <h5 className="h5 follow">Síguenos:</h5>
 
                           <div className="social_icons" style={{marginTop:"20px"}}>
                             <span

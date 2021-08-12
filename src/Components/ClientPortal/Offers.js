@@ -93,7 +93,7 @@ export default function Offers() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className=" h1 mb-0 text-center mx-auto">Service Provider's Offers</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Ofertas de proveedores de servicios</h1>
                                             </div>
 
                                             {/* {form == '' ? <h3 className="my-md-5 text-center mx-auto w-100">Nothing to show!</h3> :
@@ -134,7 +134,7 @@ export default function Offers() {
                                             <div className="container">
                                                 <div class="row">
 
-                                                    {form.length == 0 ? <h3 className="my-md-5 text-center mx-auto w-100">Nothing to show!</h3> :
+                                                    {form.length == 0 ? <h3 className="my-md-5 text-center mx-auto w-100">Nada Que Mostrar!</h3> :
                                                         form.map((val, id) => {
                                                             return (
                                                                 <>
@@ -156,7 +156,7 @@ export default function Offers() {
                                                                                 <p><i className="fa fa-question pr-2 "></i>{val.service}</p>
                                                                             </div>
                                                                             <div className="col-md-5 text-right p-md-5 ">
-                                                                                <p>All COntract</p>
+                                                                                <p>Todo contrato</p>
                                                                                 <h3 style={{ fontWeight: 'bold' }}>€ {val.price}</h3>
                                                                                 {/* <small>20% discount</small> */}
                                                                             </div>

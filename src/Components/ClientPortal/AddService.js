@@ -266,7 +266,7 @@ export default function Test() {
         switch (stepIndex) {
             case 0:
                 return <div className="w-100  my-lg-5">
-                    <h4 className="text-center w-100 text-dark">Do you want to purchase or rent ?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Quiere comprar o alquilar?</h4>
                     {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
                     <input value="purchase" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
                         type="radio" name="emotion"
@@ -280,7 +280,7 @@ export default function Test() {
                             <i className="fa fa-shopping-cart" style={buycolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
 
-                        <h4 className="text-center">PURCHASE</h4>
+                        <h4 className="text-center">COMPRA</h4>
                     </label>
 
                     <input value="rent" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
@@ -294,13 +294,13 @@ export default function Test() {
                         <div className="mx-lg-3 p-2">
                             <i className=" fa fa-archive" style={buycolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">RENT</h4>
+                        <h4 className="text-center">ALQUILER</h4>
                     </label>
                     {/* </div> */}
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">Do you want for indoor or outdoor ?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Quieres para interior o exterior?</h4>
                     <input value="indoor" onChange={(e) => {setindoor(e.target.value); setindoorcolor("true")}}
                         type="radio" name="ff"
                         id="sadd" class="input-hidden " />
@@ -313,7 +313,7 @@ export default function Test() {
                         <div className="mx-lg-3 p-2">
                             <i className=" fa fa-home" style={indoorcolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">INDOOR</h4>
+                        <h4 className="text-center">INTERIOR</h4>
                     </label>
 
                     <input value="outdoor" onChange={(e) => {setindoor(e.target.value); setindoorcolor("false")}}
@@ -327,18 +327,18 @@ export default function Test() {
                         <div className="mx-lg-3 p-2">
                             <i className=" fa fa-sun-o" style={indoorcolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">OUTDOOR</h4>
+                        <h4 className="text-center">EXTERIOR</h4>
                     </label>
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">Fixed installation or installation for event ?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Instalación fija o instalación para evento?</h4>
                     <div className="w-100  my-lg-2"><TextField onChange={(e) => setinstall(e.target.value)} className="w-50" id="outlined-basic" label="Installation" variant="outlined" /> </div>
                     <br />
                     <br />
 
                     <div style={{ marginTop: "-18px" }}>
-                        <h4 className="text-center w-100 text-dark">Do you know the model you are looking for?</h4>
+                        <h4 className="text-center w-100 text-dark">¿Conoce el modelo que busca?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
                                 <FormControlLabel value="yes" control={<Radio color="primary" />} label="Yes" />
@@ -349,7 +349,7 @@ export default function Test() {
                     <br />
                     <br />
                     <div style={{ marginTop: "-18px" }}>
-                        <h4 className="text-center w-100 text-dark d-inline">Maximum and minimum vision distance?</h4>
+                        <h4 className="text-center w-100 text-dark d-inline">Distancia de visión máxima y mínima?</h4>
                         <div>
                             <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Max and Min" variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
@@ -357,7 +357,7 @@ export default function Test() {
                     </div>
                     <br />
                     <br />
-                    <h4 className="text-center w-100 text-dark">Use of Screen?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Uso de la pantalla?</h4>
                     <FormControl component="fieldset">
                         <RadioGroup row aria-label="position" style={{ justifyContent: "flex-start",width:"86%",margin:"auto" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
                             <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
@@ -402,7 +402,7 @@ export default function Test() {
             case 1:
                 return <div className="w-100 my-lg-5">
                     <div>
-                        <h4 className="text-center w-100 text-dark d-inline">Screen dimension?</h4>
+                        <h4 className="text-center w-100 text-dark d-inline">Dimensión de la pantalla?</h4>
                         <div style={{ marginTop: "10px" }}>
                             <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
                             <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
@@ -411,7 +411,7 @@ export default function Test() {
                     <br />
                     <br />
 
-                    <h4 className="text-center w-100 text-dark">Screen?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Pantalla?</h4>
                     <input value="front" onChange={(e) => {setscreenaccess(e.target.value);setscreenaccesscolor("true")}}
                         type="radio" name="fqf"
                         id="sadd" class="input-hidden " />
@@ -423,7 +423,7 @@ export default function Test() {
                              <div className="mx-lg-4 p-2">
                             <i className=" fa fa-home" style={screenaccesscolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">Front access</h4>
+                        <h4 className="text-center">Acceso frontal</h4>
                     </label>
 
                     <input value="rear" onChange={(e) => {setscreenaccess(e.target.value);setscreenaccesscolor("false")}}
@@ -436,13 +436,13 @@ export default function Test() {
                              <div className="mx-lg-4 p-2">
                             <i className=" fa fa-sun-o" style={screenaccesscolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center">Rear access</h4>
+                        <h4 className="text-center">Acceso Trasero</h4>
                     </label>
 
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>Control System?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>¿Sistema de control?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcontrolsys(e.target.value)}>
                                 <FormControlLabel value="SYNCHRONE (Live Broadcast)" control={<Radio color="primary" />} label="SYNCHRONE (Live Broadcast)" />
@@ -467,7 +467,7 @@ export default function Test() {
                 </div>
             case 2:
                 return <div className="w-100 my-lg-5">
-                    <h4 className="text-center w-100 text-dark">Screen Orientation?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Orientación de la pantalla?</h4>
                     <input
                         type="radio" name="fqwgqwfq"
                         id="ssaad" class="input-hidden " value='north' onChange={(e) => setscreenorientation(e.target.value)} />
@@ -477,7 +477,7 @@ export default function Test() {
                             src="data:image/png;base64,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"
                             alt="North"
                             className="mx-lg-4 p-2" style={{ cursor: "pointer" }} />
-                        <h4 className="text-center">NORTH</h4>
+                        <h4 className="text-center">NORTE</h4>
                     </label>
 
                     <input
@@ -496,7 +496,7 @@ export default function Test() {
                         <img
                             src="data:image/png;base64,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"
                             alt="east" className="mx-lg-4 p-2" style={{ cursor: "pointer", transform: 'rotate(90deg)' }} />
-                        <h4 className="text-center">EAST</h4>
+                        <h4 className="text-center">ESTE</h4>
                     </label>
                     <input
                         type="radio" name="fqwgqwfq"
@@ -505,13 +505,13 @@ export default function Test() {
                         <img
                             src="data:image/png;base64,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"
                             alt="west" className="mx-lg-4 p-2" style={{ cursor: "pointer", transform: 'rotate(270deg)' }} />
-                        <h4 className="text-center">WEST</h4>
+                        <h4 className="text-center">OESTE</h4>
                     </label>
 
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginBottom: "10px", marginTop: "15px" }}>Is the display exposed to adverse weather?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginBottom: "10px", marginTop: "15px" }}>¿Está la pantalla expuesta a condiciones climáticas adversas?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setadverseweather(e.target.value)}>
                                 <FormControlLabel value="NEAR THE SEA" control={<Radio color="primary" />} label="NEAR THE SEA" />
@@ -538,7 +538,7 @@ export default function Test() {
                     <br />
                     <br />
                     <br />
-                    <h4 className="text-center w-100 text-dark" style={{ marginTop: "-10px" }}>Need Structure?</h4>
+                    <h4 className="text-center w-100 text-dark" style={{ marginTop: "-10px" }}>¿Necesitas estructura?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
                         id="dsdq" class="input-hidden " value='Monoposte' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
@@ -551,7 +551,7 @@ export default function Test() {
                         <div className="mx-lg-4 p-2">
                             <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center mx-lg-2">Monoposte</h4>
+                        <h4 className="text-center mx-lg-2">Monopolo</h4>
                     </label>
 
                     <input
@@ -561,7 +561,7 @@ export default function Test() {
                     <div className="mx-lg-4 p-2">
                             <i className=" fa fa-building-o" style={structurecolor === "2" ? { cursor: 'pointer', fontSize:"40px",color: "purple"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
-                        <h4 className="text-center mx-lg-2">Truss for events
+                        <h4 className="text-center mx-lg-2">Truss para eventos
                         </h4>
                     </label>
 
@@ -578,7 +578,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>Delivery Time?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "15px" }}>¿El tiempo de entrega?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup style={{ justifyContent: "center" }} row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel control={<Radio color="primary" />} label="Select date from Calander" value="date" />
@@ -622,7 +622,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">INSTALLATION OR SHIPPING?</h4>
+                        <h4 className="text-center w-100 text-dark">¿INSTALACIÓN O ENVÍO?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setdeliverytime(e.target.value)}>
                                 <FormControlLabel value="WEEKS" control={<Radio color="primary" />} label="WEEKS" />
@@ -640,7 +640,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">BRIGHTNESS SENSOR / TEMPERATURE SENSOR?</h4>
+                        <h4 className="text-center w-100 text-dark">SENSOR DE BRILLO / SENSOR DE TEMPERATURA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsensor(e.target.value)}>
                                 <FormControlLabel value="BRIGHTNESS SENSOR" control={<Radio color="primary" />} label="BRIGHTNESS SENSOR" />
@@ -658,7 +658,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">POSSIBILITY TO INCREASE WARRANTY?</h4>
+                        <h4 className="text-center w-100 text-dark">¿POSIBILIDAD DE AUMENTAR LA GARANTÍA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setwarranty(e.target.value)}>
                                 <FormControlLabel value="2 years (default should be selected)" control={<Radio color="primary" />} label="2 years (default should be selected)" />
@@ -680,7 +680,7 @@ export default function Test() {
                     <br />
                     <br />
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">CARCASA MATERIAL?</h4>
+                        <h4 className="text-center w-100 text-dark">¿MATERIAL CARCASA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcarcass(e.target.value)}>
                                 <FormControlLabel value="CHAPA SLIM MODEL 8mm thick" control={<Radio color="primary" />} label="CHAPA SLIM MODEL 8mm thick" />
@@ -700,7 +700,7 @@ export default function Test() {
                     <br />
 
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">FLY CASES?</h4>
+                        <h4 className="text-center w-100 text-dark">¿CASOS DE MOSCA?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setflycases(e.target.value)}>
                                 <FormControlLabel value="YES" control={<Radio color="primary" />} label="YES" />
@@ -720,7 +720,7 @@ export default function Test() {
                     <br />
 
                     <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark">WHAT ARE YOU?</h4>
+                        <h4 className="text-center w-100 text-dark">¿QUE ERES?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setentity(e.target.value)}>
                                 <FormControlLabel value="PUBLIC ENTITY" control={<Radio color="primary" />} label="PUBLIC ENTITY" />
@@ -750,7 +750,7 @@ export default function Test() {
                         {/* <div className="col-md-12 my-lg-2" style={{display:"flex",justifyContent:"center"}}></div><TextField onChange={(e) => setPrice(e.target.value)} className="w-25" id="outlined-basic" label="Price?" variant="outlined" /> */}
                     </div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "25px" }}>Intermediary / end customer?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "25px" }}>¿Intermediaria / cliente final?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setcustomertype(e.target.value)}>
                                 <FormControlLabel value="Intermediary" control={<Radio color="primary" />} label="Intermediary" />
@@ -765,7 +765,7 @@ export default function Test() {
                         </div> */}
                     </p></div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "10px" }}>Sector?</h4>
+                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "10px" }}>¿Sector?</h4>
                         <FormControl component="fieldset">
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setsector(e.target.value)}>
                                 <FormControlLabel style={{ textAlign: "left" }} value="SPORT" control={<Radio color="primary" />} label="SPORT" />
@@ -803,7 +803,7 @@ export default function Test() {
                             <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
                         </div> */}
                     </p></div>
-                    <h4 className="text-center w-100 text-dark">Attach documents and images?</h4>
+                    <h4 className="text-center w-100 text-dark">¿Adjuntar documentos e imágenes?</h4>
                     <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /> </div>
                 </div>
             default:
@@ -941,7 +941,7 @@ export default function Test() {
                             <div class="row">
                                 <div className="col-md-12 pr-5">
                                     <i className="fa fa-chevron-left fa-2x" onClick={() => Displaythree()}></i>
-                                    <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
+                                    <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">Mis servicios</button></Link>
                                 </div>
                                 <div class="col-lg-11 col-xlg-11 col-md-11 mx-auto" style={{ textAlign: "center" }}>
                                     <div className={classes.root}>
@@ -957,13 +957,13 @@ export default function Test() {
                                         <div>
                                             {activeStep === steps.length ? (
                                                 <div className="w-100 text-center my-md-5 my-sm-0">
-                                                    <Typography className={classes.instructions}>All steps completed</Typography>
+                                                    <Typography className={classes.instructions}>Todos los pasos completados</Typography>
                                                     <Button
                                                         // disabled={activeStep === 0}
                                                         onClick={handleBack}
                                                         className={classes.backButton}
                                                     >
-                                                        Back
+                                                        Atrás
                                                     </Button>
                                                     <Button variant="contained" color="primary" onClick={() => SendService()}>{progress}</Button>
                                                 </div>
@@ -976,7 +976,7 @@ export default function Test() {
                                                             onClick={handleBack}
                                                             className={classes.backButton}
                                                         >
-                                                            Back
+                                                            Atrás
                                                         </Button>
                                                         <Button variant="contained" malik color="primary" onClick={handleNext}>
                                                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
@@ -996,16 +996,16 @@ export default function Test() {
                         <div class="container-fluid">
                             <div className="col-md-12 pr-5">
                                 <i className="fa fa-chevron-left fa-2x" onClick={() => Displaythree()}></i>
-                                <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
+                                <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">Mis servicios</button></Link>
                             </div>
                             <div class="d-md-flex mb-3" style={{ width: "100%" }}>
-                                <h3 class=" h1 mb-0 text-center mx-auto">SERVICE PROVIDER</h3>
+                                <h3 class=" h1 mb-0 text-center mx-auto">PROVEEDOR DE SERVICIO</h3>
                             </div>
                             <div class="row">
                                 <div className="col-md-12 mx-auto">
                                     <div className="w-100 mx-auto ">
                                         <br />
-                                        <label>Please let us know what do you want! Mention every thing below:</label>
+                                        <label>¡Háganos saber lo que quiere! Mencione todo a continuación:</label>
                                         <textarea onChange={(e) => setdescription(e.target.value)}>
                                         </textarea>
                                     </div>
@@ -1022,42 +1022,42 @@ export default function Test() {
                                         <div className="w-100 my-lg-2">
                                         </div> */}
                                         <div className="w-100 my-lg-2"> <p className="d-inline w-100">
-                                            <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>Intermediary / end customer?</h4>
+                                            <h4 className="text-center w-100 text-dark" style={{marginTop:"50px", marginBottom:"20px"}}>¿Intermediaria / cliente final?</h4>
                                             <div className="w-50 text-center float-left">
-                                                <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
+                                                <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediaria
                                             </div>
                                             <div className="w-50 text-center float-left">
-                                                <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
+                                                <input type="radio" name="q3" className="w-25 text-center" onChange={(e) => setcustomertype(e.target.value)} value="End customer" /> Cliente final
                                             </div>
                                         </p>
                                         </div>
                                         {/* <div className="w-100 my-lg-2">
                                         <p className="d-inline w-100"> */}
-                                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "50px", marginBottom: "20px" }}>Sector?</h4>
+                                        <h4 className="text-center w-100 text-dark" style={{ marginTop: "50px", marginBottom: "20px" }}>Cliente final</h4>
                                         <div style={{ display: "flex", marginBottom:"20px" }}>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="SPORT" />DEPORTE
                                             </div>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="RETAIL" />AL POR MENOR
                                             </div>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="PUBLIC" />PÚBLICA
                                             </div>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HEALTH" />SALUD
                                             </div>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="MOTOR" />MOTORA
                                             </div>
                                             <div className="w-50">
                                                 <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
                                             </div>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELES
                                             </div>
                                             <div className="w-50">
-                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESS
+                                                <input type="radio" name="q1" className="w-25 text-center" onChange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESO
                                             </div>
                                         </div>
                                         {/* </p>
@@ -1090,9 +1090,9 @@ export default function Test() {
                         <div class="container-fluid">
                             <div class="row">
                                 <div className="col-md-12 pr-5">
-                                    <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
+                                    <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">Mis servicios</button></Link>
                                 </div>
-                                <h3 className="text-dark w-100 pl-lg-5" >Do you know what you are looking for? </h3>
+                                <h3 className="text-dark w-100 pl-lg-5" >¿Sabes lo que buscas? </h3>
                                 <div className="w-100 pl-lg-5" >
                                     <FormControl component="fieldset">
                                         <RadioGroup row aria-label="position" name="position" defaultValue="top">

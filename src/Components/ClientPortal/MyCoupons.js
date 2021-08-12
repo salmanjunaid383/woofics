@@ -418,18 +418,18 @@ export default function MyCoupon() {
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
                                             <div className="d-md-flex mb-3">
-                                                <h1 className=" h1 mb-0 text-center mx-auto">Your Coupons</h1>
+                                                <h1 className=" h1 mb-0 text-center mx-auto">Sus Cupones</h1>
                                             </div>
                                             <hr className="w-50" />
                                             <div className="table-responsive salman-table-change">
-                                                {form == "" ? <h3 className="text-center my-auto p-md-3">No Coupons!</h3>
+                                                {form == "" ? <h3 className="text-center my-auto p-md-3">Sin Cupones!</h3>
                                                     : <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                         <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                             <tr>
-                                                                <th className="border-top-0 text-white text-center">CODE</th>
-                                                                <th className="border-top-0 text-white text-center">TYPE</th>
-                                                                <th className="border-top-0 text-white text-center">DESCRIPTION</th>
-                                                                <th className="border-top-0 text-white text-center">EXPIRY DATE</th>
+                                                                <th className="border-top-0 text-white text-center">CÓDIGO</th>
+                                                                <th className="border-top-0 text-white text-center">ESCRIBE</th>
+                                                                <th className="border-top-0 text-white text-center">DESCRIPCIÓN</th>
+                                                                <th className="border-top-0 text-white text-center">FECHA DE CADUCIDAD</th>
                                                                 <th className="border-top-0 text-white text-center">TOTAL</th>
                                                             </tr>
                                                         </thead>
@@ -496,7 +496,7 @@ export default function MyCoupon() {
                 <Link to='/clientallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -533,20 +533,20 @@ export default function MyCoupon() {
         <Typography className={classes.typography}>
           <a className="profile-pic" onClick={() => history.push("/responses")}>
             <i className="fa fa-support mx-3"></i>
-            <span className="text-black font-medium mr-3">Help & Support</span>
+            <span className="text-black font-medium mr-3">Servicio de Asistencia</span>
           </a>
         </Typography>
         <hr />
         <Typography className={classes.typography}>
           <a className="profile-pic" onClick={() => history.push("/mycoupon")}>
             <i className="fa fa-heart mx-3"></i>
-            <span className="text-black font-medium mr-3">My Coupons</span>
+            <span className="text-black font-medium mr-3">Mis Cupones</span>
           </a>
         </Typography>
         <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
         <Typography className={classes.typography}>
@@ -558,7 +558,7 @@ export default function MyCoupon() {
             }}
           >
             <i className="fa fa-sign-out mx-3"></i>
-            <span className="text-black font-medium mr-3">Logout</span>
+            <span className="text-black font-medium mr-3">Cerrar Sesión</span>
           </a>
         </Typography>
       </Popover>

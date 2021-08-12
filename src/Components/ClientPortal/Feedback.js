@@ -468,9 +468,9 @@ export default function Feedback() {
                                     <div class="card">
                                         <div class="card-body">
                                             <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
-                                                <label class="col-md-12 p-0 h5">Reviews</label>
+                                                <label class="col-md-12 p-0 h5">Reseñas</label>
                                                 <div class="col-md-12 border-bottom p-0">
-                                                    <p>1. On a rating of 5, how was the overall project?</p>
+                                                    <p>1. Con una calificación de 5, ¿cómo fue el proyecto en general?</p>
                                                     <p> <StarRatings
                                                         starRatedColor='rgb(230, 67, 47)'
                                                         rating={rating1}
@@ -478,7 +478,7 @@ export default function Feedback() {
                                                         starSpacing="10px"
                                                         changeRating={changeRating1}
                                                     /></p>
-                                                    <p>2. How would you rate your experience obtaining the supplier/service provider's quote?</p>
+                                                    <p>2. ¿Cómo calificaría su experiencia al obtener la cotización del proveedor / proveedor de servicios?</p>
                                                     <p> <StarRatings
                                                         starRatedColor='rgb(230, 67, 47)'
                                                         rating={rating2}
@@ -486,7 +486,7 @@ export default function Feedback() {
                                                         starSpacing="10px"
                                                         changeRating={changeRating2}
                                                     /></p>
-                                                    <p>3. How was the payment process?</p>
+                                                    <p>3. ¿Cómo fue el proceso de pago?</p>
                                                     <p> <StarRatings
                                                         starRatedColor='rgb(230, 67, 47)'
                                                         rating={rating3}
@@ -494,7 +494,7 @@ export default function Feedback() {
                                                         starSpacing="10px"
                                                         changeRating={changeRating3}
                                                     /></p>
-                                                    <p>4. How would you rate your experience with Woofic?</p>
+                                                    <p>4. ¿Cómo calificaría su experiencia con Woofic?</p>
                                                     <p> <StarRatings
                                                         starRatedColor='rgb(230, 67, 47)'
                                                         rating={rating4}
@@ -502,7 +502,7 @@ export default function Feedback() {
                                                         starSpacing="10px"
                                                         changeRating={changeRating4}
                                                     /></p>
-                                                    <p>5. How likely are you going to recommend Woofic to your friends or colleagues?</p>
+                                                    <p>5. ¿Qué probabilidades hay de que recomiende Woofic a sus amigos o colegas?</p>
                                                     <p> <StarRatings
                                                         starRatedColor='rgb(230, 67, 47)'
                                                         rating={rating5}
@@ -511,13 +511,13 @@ export default function Feedback() {
                                                         changeRating={changeRating5}
                                                     /></p>
                                                 </div>
-                                                <label class="col-md-12 p-0">Comments</label>
+                                                <label class="col-md-12 p-0">Comentarios</label>
                                                 <div class="col-md-12 border-bottom p-0">
                                                     <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Comments for Feedback" onChange={(e) => setComments(e.target.value)}></textarea>
                                                 </div>
                                                 <div class="form-group mb-4">
                                                     <div class="col-sm-12 mt-3">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>Feedback</button>
+                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>Realimentación</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -565,7 +565,7 @@ export default function Feedback() {
             >
            {name == '' ? <Typography className={classes.typography}>
                     <a className="profile-pic" >
-                        <span className="text-black font-medium ml-1">No Notification !</span>
+                        <span className="text-black font-medium ml-1">Sin notificación !</span>
                     </a>
                 </Typography> :
                     name.slice(0, 5).map((val) => {
@@ -586,7 +586,7 @@ export default function Feedback() {
                 <Link to='/clientallnotification'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
-                            <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
+                            <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
                         </a>
                     </Typography>
                 </Link>
@@ -617,26 +617,26 @@ export default function Feedback() {
             style={{ textDecoration: "none" }}
           >
             <i className="fa fa-user mx-3"></i>
-            <span className="text-black font-medium mr-3">Profile</span>
+            <span className="text-black font-medium mr-3">Perfil</span>
           </Link>
         </Typography>
         <Typography className={classes.typography}>
           <a className="profile-pic" onClick={() => history.push("/responses")}>
             <i className="fa fa-support mx-3"></i>
-            <span className="text-black font-medium mr-3">Help & Support</span>
+            <span className="text-black font-medium mr-3">Servicio de asistencia</span>
           </a>
         </Typography>
         <hr />
         <Typography className={classes.typography}>
           <a className="profile-pic" onClick={() => history.push("/mycoupon")}>
             <i className="fa fa-heart mx-3"></i>
-            <span className="text-black font-medium mr-3">My Coupons</span>
+            <span className="text-black font-medium mr-3">Mis Cupones</span>
           </a>
         </Typography>
         <Typography className={classes.typography}>
                     <a className="profile-pic" onClick={() => { history.push('/') }}>
                         <i className="fa fa-home mx-3"></i>
-                        <span className="text-black font-medium mr-3">Go home</span>
+                        <span className="text-black font-medium mr-3">Vete a Casa</span>
                     </a>
                 </Typography>
         <Typography className={classes.typography}>
@@ -648,7 +648,7 @@ export default function Feedback() {
             }}
           >
             <i className="fa fa-sign-out mx-3"></i>
-            <span className="text-black font-medium mr-3">Logout</span>
+            <span className="text-black font-medium mr-3">Cerrar Sesión</span>
           </a>
         </Typography>
       </Popover>

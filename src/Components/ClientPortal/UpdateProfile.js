@@ -250,24 +250,24 @@ export default function UpdateProfile() {
                                             <form class="form-horizontal form-material" >
                                                 <div className="row">
                                                     <div class="form-group mb-4 col-md-6">
-                                                        <label class="col-md-6 p-0 bold">First Name</label>
+                                                        <label class="col-md-6 p-0 bold">Primer Nombre</label>
                                                         <input type="text" defaultValue={data.first_name}
                                                             class="form-control p-0 border-0" onChange={(e) => setFirstname(e.target.value)} /> </div>
                                                     <div class="form-group mb-4 col-md-6">
-                                                        <label class="col-md-6 p-0 bold">Last Name</label>
+                                                        <label class="col-md-6 p-0 bold">Apellido</label>
                                                         <input type="text" defaultValue={data.last_name}
                                                             class="form-control p-0 border-0" onChange={(e) => setLastname(e.target.value)} /> </div>
                                                 </div>
                                                 <div className="row">
 
                                                     <div class="form-group mb-4 col-md-6">
-                                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                        <label for="example-email" class="col-md-12 p-0">Correo Electrónico</label>
                                                         <input type="email" defaultValue={data.email}
                                                             class="form-control p-0 border-0" name="example-email"
                                                             id="example-email1" onChange={(e) => setEmail(e.target.value)} />
                                                     </div>
                                                     <div class="form-group mb-4 col-md-6">
-                                                        <label class="col-md-12 p-0">Phone No</label>
+                                                        <label class="col-md-12 p-0">Telefono no</label>
                                                         <input type="text" defaultValue={data.contact_number}
                                                             class="form-control p-0 border-0" onChange={(e) => setContact(e.target.value)} />
                                                     </div>
@@ -279,7 +279,7 @@ export default function UpdateProfile() {
                                                             class="form-control p-0 border-0" onChange={(e) => setSector(e.target.value)} />
                                                     </div>
                                                     <div class="form-group mb-4 row col-md-6">
-                                                        <label class="col-md-12 p-0">Location</label>
+                                                        <label class="col-md-12 p-0">Localización</label>
                                                         <input type="text" defaultValue={data.location}
                                                             class="form-control p-0 border-0" onChange={(e) => setLocation(e.target.value)} />
                                                     </div>
@@ -303,7 +303,7 @@ export default function UpdateProfile() {
                                         <input type="file" id='file' name='img' onChange={onchange}  className='imagesinput mx-auto' accept='image/*' />
                                     </div>
                                     <div className="text-center">
-                                        <h5 className="h5">Connect your social accounts</h5>
+                                        <h5 className="h5">Conecta Tus Cuentas Sociales</h5>
                                         <FacebookLogin
                                                     appId="2736881086597729"
                                                     // autoLoad={true}
