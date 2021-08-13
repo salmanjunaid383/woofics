@@ -532,10 +532,7 @@ export default function Test() {
                     })
                 }
             </div>
-            
-           
-            
-            
+              
             </div>
         </div>
             case 1:
