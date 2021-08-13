@@ -278,8 +278,8 @@ export default function QuoteMain() {
                 }
                 else {
                     setprogress('Please wait...')
-
-
+                    
+                    console.log()
                     const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
                         product_type:productType,
                         product_image:prdouctTypeImg,
@@ -322,6 +322,7 @@ export default function QuoteMain() {
                         }, (error) => {
                             setprogress('Publish your Service?')
                             alert('You left some feilds empty !')
+                            console.log(error.message)
                         });
                 }
             }
@@ -1062,12 +1063,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="SHIPPING" control={<Radio color="primary" />} label="SHIPPING" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="INSTALLATION" />INSTALLATION
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="SHIPPING" />SHIPPING
-                        </div> */}
+                        
                     </p>
                     <br />
                     <br />
