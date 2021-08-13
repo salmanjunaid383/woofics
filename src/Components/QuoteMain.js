@@ -252,12 +252,12 @@ export default function QuoteMain() {
     const [price, setPrice] = useState("");
 
     const [malik, setmalik] = useState('disabled')
-    // useEffect(()=> {
-    //     alert("Woofic is a comprehensive platform, which allows you to obtain tailored quotes from"+
-    //     "different suppliers, negotiate with them and place the order. All with maximum transparency"+
-    //     "and security, that is why it is necessary to register, in order to access your management"+
-    //     "panel.");
-    // },[])
+    useEffect(()=> {
+        alert("Woofic is a comprehensive platform, which allows you to obtain tailored quotes from"+
+        "different suppliers, negotiate with them and place the order. All with maximum transparency"+
+        "and security, that is why it is necessary to register, in order to access your management"+
+        "panel.");
+    },[])
 
     function SendService(i) {
         const token = localStorage.getItem('user_token');
