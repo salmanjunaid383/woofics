@@ -515,7 +515,7 @@ export default function Test() {
                      
                         <div className="mx-lg-4 p-2">
                             {/* <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
-                            <img src={pared} style={{height:"100px",width:"100px"}}/>
+                            <img src={pared} style={{height:"100px",width:"100px", cursor:"pointer"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "4" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Pared</h4>
                     </label>
@@ -528,7 +528,7 @@ export default function Test() {
                      
                         <div className="mx-lg-4 p-2">
                             {/* <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
-                            <img src={monoposte} style={{height:"100px",width:"100px"}}/>
+                            <img src={monoposte} style={{height:"100px",width:"100px", cursor:"pointer"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "1" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Monoposte</h4>
                     </label>
@@ -539,7 +539,7 @@ export default function Test() {
                     <label value="Truss for events" for="Truss for events">
                     <div className="mx-lg-4 p-2">
                             {/* <i className=" fa fa-building-o" style={structurecolor === "2" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
-                            <img src={truss} style={{height:"100px", width:"100px"}}/>
+                            <img src={truss} style={{height:"100px", width:"100px", cursor:"pointer"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "2" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Truss para eventos
                         </h4>
@@ -551,7 +551,7 @@ export default function Test() {
                     <label value="Mupi" for="Mupi">
                     <div className="mx-lg-4 p-2">
                             {/* <i className=" fa fa-cog" style={structurecolor === "3" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
-                            <img src={mupi} style={{height:"100px",width:"100px"}}/>
+                            <img src={mupi} style={{height:"100px",width:"100px", cursor:"pointer"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "3" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Mupi
                         </h4>
