@@ -609,7 +609,11 @@ export default function QuoteMain() {
                             <>
                                 <div class="col-md-4 img-box" style={{padding:'5px'}}>
                                     
-                                    <h4>{val.author}</h4>
+                                {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
                                     <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
                                     onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
                                     
@@ -629,7 +633,11 @@ export default function QuoteMain() {
                                 <>
                                     <div class="col-md-4" style={{padding:'5px'}}>
                                         
-                                        <h4>{val.author}</h4>
+                                    {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
                                         <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
                                         onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
                                         
@@ -648,7 +656,11 @@ export default function QuoteMain() {
                                 <>
                                     <div class="col-md-4" style={{padding:'5px'}}>
                                         
-                                        <h4>{val.author}</h4>
+                                    {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                    }
                                         <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
                                         onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
                                         
@@ -1321,7 +1333,11 @@ export default function QuoteMain() {
                             <>
                                 <div class="col-md-4 img-box " style={{padding:'5px'}}>
                                     
-                                    <h4 >{val.author}</h4>
+                                {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
                                     <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
                                     onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
                                     
@@ -1341,7 +1357,11 @@ export default function QuoteMain() {
                                 <>
                                     <div class="col-md-4" style={{padding:'5px'}}>
                                         
-                                        <h4>{val.author}</h4>
+                                    {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
                                         <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
                                         onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
                                         
@@ -1360,7 +1380,12 @@ export default function QuoteMain() {
                                 <>
                                     <div class="col-md-4" style={{padding:'5px'}}>
                                         
-                                        <h4>{val.author}</h4>
+                                    {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                
                                         <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
                                         onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
                                         
