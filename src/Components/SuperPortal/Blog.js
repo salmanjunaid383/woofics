@@ -73,7 +73,7 @@ export default function Blog() {
                     <div className="page-wrapper bg-light">
                         <div class="container">
                             <div className="d-md-flex mb-3">
-                                    <h3 className=" mb-0 mx-auto text-center mt-2"> BLOG </h3>
+                                    <h3 className=" mb-0 mx-auto text-center mt-2 text-change"> BLOG </h3>
                             </div>
 
                             <div id="blog" class="row">

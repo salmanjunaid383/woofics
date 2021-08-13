@@ -325,14 +325,14 @@ export default function SuperDashboard() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-12 col-xl-8">
+                            <div className="col-md-12 col-xl-12">
 
 
                                 {/* <div className="page-wrapper bg-light"> */}
                                 {/* <div class="grey-bg container-fluid"> */}
                                 <div class="container-fluid">
                                     <section id="minimal-statistics">
-                                        <div class="row" style={{ border: "2px solid #f3f3f3", padding: "10px" }}>
+                                        <div class="row salman-cards" style={{ border: "2px solid #f3f3f3", padding: "10px" }}>
                                             <div className="col-md-12">
                                                 <h4 style={{ fontSize: "20px", marginTop: "20px", marginBottom: "20px", color: "#223e92" }}>All Information</h4>
                                             </div>
@@ -506,7 +506,7 @@ export default function SuperDashboard() {
 
                             </div>
                             
-                            <div className="col-md-12 col-xl-4" style={{ border: "2px solid #f3f3f3" }}>
+                            {/* <div className="col-md-12 col-xl-4" style={{ border: "2px solid #f3f3f3" }}>
 
                                 <div className="container my-lg-5">
 
@@ -533,11 +533,11 @@ export default function SuperDashboard() {
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <br></br>
                         <div class="row links-parent">
-                            <div class="col-md-6 col-sm-6 col-12 col-xl-4 col-lg-6">
+                            <div class="col-md-6 col-sm-6 col-12 col-xl-6 col-lg-6">
                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                     <div class="card-content text-center">
                                         <div class="card-body" >
@@ -552,7 +552,7 @@ export default function SuperDashboard() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12 col-xl-4 col-lg-6">
+                            <div class="col-md-6 col-sm-6 col-12 col-xl-6 col-lg-6">
                                 <div class="card" style={{ borderRadius: "10px", backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg')`, backgroundSize: 'cover', backgroundRepeat: "no-repeat", }}>
                                     <div class="card-content text-center">
                                         <div class="card-body">
