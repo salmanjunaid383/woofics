@@ -377,29 +377,7 @@ export default function Test() {
                         <FormControlLabel value="CONTROL ROOM" control={<Radio color="primary" />} label="CONTROL ROOM" />
                     </RadioGroup>
                 </FormControl>
-                    {/* <p className="d-inline w-100">
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="FAIR/EVENT/CONCERTS/PLATO TV" />FAIR/EVENT/CONCERTS/PLATO-TV
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="CORPORATE IMAGE" />CORPORATE IMAGE
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="ADVERTISING" />ADVERTISING
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="INFORMATION" />INFORMATION
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="TRAFFIC" />TRAFFIC
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="SPORTS EVENT" />SPORTS EVENT
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="CONTROL ROOM" />CONTROL ROOM
-                        </div>
-                    </p> */}
+               
                     <br />
                     <br />
                     <br />
@@ -458,15 +436,7 @@ export default function Test() {
                                 <FormControlLabel value="VIDEO PROCESSOR (Managing Different Signals)" control={<Radio color="primary" />} label="VIDEO PROCESSOR (Managing Different Signals)" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="SYNCHRONE (Live Broadcast)" />SYNCHRONE (Live Broadcast)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="ASYNCHRONOUS (From Memory)" />ASYNCHRONOUS (From Memory)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="VIDEO PROCESSOR (Managing Different Signals)" />VIDEO PROCESSOR (Managing Different Signals)
-                        </div> */}
+                        
                     </p>
                     <br />
                     <br />
@@ -528,18 +498,7 @@ export default function Test() {
                                 <FormControlLabel value="HEAT VENTILATION" control={<Radio color="primary" />} label="HEAT VENTILATION" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="NEAR THE SEA" />NEAR THE SEA
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="HIGH MOUNTAIN" />HIGH MOUNTAIN
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="LITTLE EXTREME" />LITTLE EXTREME
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="HEAT VENTILATION" />HEAT VENTILATION
-                        </div> */}
+                        
                     </p>
 
 
@@ -550,7 +509,7 @@ export default function Test() {
 
                     <input
                         type="radio" name="fqwfqwfas"
-                        id="dsdq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
+                        id="dsdq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("4")}} />
 
                     <label value="Pared" for="dsdq">
                      
@@ -620,18 +579,7 @@ export default function Test() {
                                 <FormControlLabel value="8 WEEKS BARCO (Standard Manufacturing)" control={<Radio color="primary" />} label="8 WEEKS BARCO (Standard Manufacturing)" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="Select date from Calander" />Select date from Calander
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="2 WEEKS STOCK (In stock)" />2 WEEKS STOCK (In stock)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="4 PLANE WEEKS , (Express Manufacturing)" />4 PLANE WEEKS , (Express Manufacturing)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="8 WEEKS BARCO (Standard Manufacturing)" />8 WEEKS BARCO (Standard Manufacturing)
-                        </div> */}
+                        
                     </p>
 
 
@@ -651,12 +599,7 @@ export default function Test() {
                                 <FormControlLabel value="SHIPPING" control={<Radio color="primary" />} label="SHIPPING" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="INSTALLATION" />INSTALLATION
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="SHIPPING" />SHIPPING
-                        </div> */}
+                       
                     </p>
                     <br />
                     <br />
@@ -669,12 +612,7 @@ export default function Test() {
                                 <FormControlLabel value="TEMPERATURE SENSOR" control={<Radio color="primary" />} label="TEMPERATURE SENSOR" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="bgweg" className="w-25 text-center" onchange={(e) => setsensor(e.target.value)} value="BRIGHTNESS SENSOR" />BRIGHTNESS SENSOR
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="bgweg" className="w-25 text-center" onchange={(e) => setsensor(e.target.value)} value="TEMPERATURE SENSOR" /> TEMPERATURE SENSOR
-                        </div> */}
+                       
                     </p>
                     <br />
                     <br />
@@ -709,13 +647,7 @@ export default function Test() {
                                 <FormControlLabel value="ALUMINIUM SLIM MODEL 8mm thick" control={<Radio color="primary" />} label="ALUMINIUM SLIM MODEL 8mm thick" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="webe" className="w-25 text-center" onchange={(e) => setcarcass(e.target.value)} value="CHAPA SLIM MODEL 8mm thick" />CHAPA SLIM MODEL 8mm thick
-
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="webe" className="w-25 text-center" onchange={(e) => setcarcass(e.target.value)} value="ALUMINIUM SLIM MODEL 8mm thick" />ALUMINIUM SLIM MODEL 8mm thick
-                        </div> */}
+                    
                     </p>
                     <br />
                     <br />
@@ -729,13 +661,7 @@ export default function Test() {
                                 <FormControlLabel value="NO" control={<Radio color="primary" />} label="NO" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="wqeqv" className="w-25 text-center" onchange={(e) => setflycases(e.target.value)} value="YES" />YES
-
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="wqeqv" className="w-25 text-center" onchange={(e) => setflycases(e.target.value)} value="NO" />NO
-                        </div> */}
+                      
                     </p>
                     <br />
                     <br />
@@ -749,14 +675,7 @@ export default function Test() {
                                 <FormControlLabel value="PRIVATE ENTITY" control={<Radio color="primary" />} label="PRIVATE ENTITY" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="bqea" className="w-25 text-center" onchange={(e) => setentity(e.target.value)} value="PUBLIC ENTITY" />PUBLIC ENTITY
-
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="bqea" className="w-25 text-center" onchange={(e) => setentity(e.target.value)} value="PRIVATE ENTITY" />PRIVATE ENTITY
-
-                        </div> */}
+                        
                     </p>
                     <br />
                     <br />
