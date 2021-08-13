@@ -158,7 +158,8 @@ export default function Test() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
 
-
+    const [productType,setProductType]=useState('')
+    const [prdouctTypeImg,setProductTypeImg]=useState('')
     const [description, setdescription] = useState("");
     const [buy, setbuy] = useState("");
     const [indoor, setindoor] = useState("");
@@ -212,6 +213,8 @@ export default function Test() {
         else {
             setprogress('Please wait...')
             const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                product_type:productType,
+                product_image:prdouctTypeImg,
                 description: description,
                 buy: buy,
                 indoor: indoor,
@@ -259,20 +262,283 @@ export default function Test() {
 
     }
 
-
+    const data1 = [
+        {
+          id: 1,
+          author: "Pantalla Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F1%20Pantalla%20Led.jpg?alt=media&token=b16abc9b-2761-4c90-8ebb-62f9154205fc"
+          
+        },
+        {
+          id: 2,
+          author: "Pantalla Curve",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F2%20Pantalla%20Curva.jpg?alt=media&token=0c2cc35a-7674-4bf0-8b33-cff9c4d3a058"
+          
+        },
+        {
+          id: 3,
+          author: "Suelo Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F3%20Suelo%20Led.jpg?alt=media&token=8437ff8d-1f7d-4dc9-9f79-7c518a367663"
+        },
+        {
+          id: 4,
+          author: "MUPI",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F4%20MUPI.jpg?alt=media&token=a821c0fe-58a8-4cb3-96ae-cc54cd404c4c"
+        },
+        {
+          id: 5,
+          author: "Pantalla Deporte",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F5%20Pantalla%20Deporte.jpg?alt=media&token=3f77b49a-c4f9-4c4a-80e1-b3a1510e202c"
+        },
+        {
+          id: 6,
+          author: "Cortina Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F6%20Cortina%20Led.jpg?alt=media&token=be806081-84cd-45b7-8d3e-075145564c98"
+        },
+        {
+          id: 7,
+          author: "Rotulo Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F7%20Rotulo%20led.jpg?alt=media&token=5042ce73-c1ff-49dc-aa71-0f0e23d234cd"
+        }
+      ]
+    const data2=[
+        {
+          
+          author: "LCD Tactil",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F1%20LCD%20TACTIL.jpg?alt=media&token=d8afa667-7a4f-42e2-9526-eee13f46da41"
+      
+        },
+        {
+          
+          author: "LCD Exterior",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F2%20LCD%20EXTERIOR.jpg?alt=media&token=79f052d6-19ea-45e8-914d-fd052b53042a"
+      
+        },
+        {
+          
+          author: "LCD Alto Brillo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F3%20LCD%20ALTO%20BRILLO.jpg?alt=media&token=54ced319-2b12-4c53-8f7c-9bb72f4638a6"
+        },
+        {
+          
+          author: "Video Wall",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F4%20VIDEO%20WALL.jpg?alt=media&token=27e1a0e2-fbf6-4add-a2de-86e4ea48082b"
+        }
+      ]
+    const date3=[
+        {
+          id: 12,
+          author: "Circulo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fcirculo.jpg?alt=media&token=dfafe6c4-edb8-4e4d-8cb1-e89a2973e438"
+        },
+        {
+          id: 13,
+          author: "Cruz Farmacia",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fcruz%20farmacia.webp?alt=media&token=0f7ec9d8-8562-4a4c-916b-da9c630df172"
+        },
+        {
+          id: 14,
+          author: "Cubo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fcubo.jpg?alt=media&token=30c6341d-9f17-4869-8bbc-099ff2dfac07"
+        },
+        {
+          id: 15,
+          author: "Esfera Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fesfera%20led.jpg?alt=media&token=c8ad7f37-ff72-482d-8051-49d4223b7df1"
+        },
+        {
+          id: 16,
+          author: "Farola",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Ffarola.jpg?alt=media&token=2bff213e-44b4-4972-8bb3-36ef65227b0f"
+        },
+        {
+          id: 17,
+          author: "Gasolinera",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fgasolinera.jpg?alt=media&token=949f80e0-cb79-46f3-912f-d5440223fe9c"
+        },
+        {
+          id: 18,
+          author: "Hexagono",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fhexagono.png?alt=media&token=83a8635b-4c43-4b1c-861b-5a2a1f83ecc4"
+        },
+        {
+          id: 19,
+          author: "Immobiliaria",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Finmobiliaria.jpg?alt=media&token=fa984875-3c88-4bdd-a7dd-befbba365eef"
+        },
+        {
+          id: 20,
+          author: "Lcd espejo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Flcd%20espejo.jpg?alt=media&token=ba5ec55b-c463-4a90-885f-766e291c915e"
+        },
+        {
+          id: 21,
+          author: "Marcador",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fmarcador.png?alt=media&token=f0e897b7-68d8-4c04-aecb-1dcfeae39b72"
+        },
+        {
+          id: 22,
+          author: "Proyector",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fproyector.jpg?alt=media&token=53187343-1ac7-42c4-8307-890996b7da15"
+        },
+        {
+          id: 23,
+          author: "Sistema Control",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2FSistema%20control.jpg?alt=media&token=4c92069a-faf3-4349-a167-9ce9c79c5f22"
+        },
+        {
+          id: 24,
+          author: "Supermercado",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fsupermercado.jpg?alt=media&token=d1190837-1089-47c6-922d-52f695c30c78"
+        },
+        {
+          id: 25,
+          author: "Taxi",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Ftaxi.jpg?alt=media&token=38c182dd-25fa-4103-b7c9-4a655bcc029f"
+        },
+        {
+          id: 26,
+          author: "Truss",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Ftruss.jpg?alt=media&token=91965c01-efcf-4836-87c0-cb28b0688e65"
+      
+        },
+        {
+          id: 27,
+          author: "Ventilador",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fventilador.png?alt=media&token=2322b0e4-1bf0-4ba5-b943-d54b1a22bad8"
+      
+        }
+    ]
 
 
     function getSteps() {
         // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'
-        return ['USE', 'SCREEN', 'INSTALLATION', 'Extra Data', 'Contact Details'];
+        return ['Product Type','Use', 'Screen', 'Installation', 'Extra Data', 'Contact Details'];
+    }
+    const [screenDisplay,setScreenDisplay]=useState('block')
+    const [lcdDisplay,setLcdDisplay]=useState('none')
+    const [variosDisplay,setVariousDisplay]=useState('none')
+    function showLedType(i){
+        if(i===1){
+           setScreenDisplay('block')
+           setLcdDisplay('none')
+           setVariousDisplay('none')
+        }
+        if(i===2){
+            setScreenDisplay('none')
+           setLcdDisplay('block')
+           setVariousDisplay('none')
+        }
+        if(i===3)
+        {
+            setScreenDisplay('none')
+           setLcdDisplay('none')
+           setVariousDisplay('block')
+        }
     }
     const [buycolor,setbuycolor]=useState('');
     const [indoorcolor,setindoorcolor]=useState('');
     const [screenaccesscolor,setscreenaccesscolor]=useState('');
     const[structurecolor,setstructurecolor]=useState('');
+    function setProductTypefunc(name,image){
+        
+        setProductType(name);
+        setProductTypeImg(image);
+    }
     function getStepContent(stepIndex) {
         switch (stepIndex) {
-            case 0:
+            case 0 : return <div className="w-100  my-lg-5">
+                
+            <div class="container" >
+            <div class ="row" style={{paddingBottom:"5px"}}>
+                <div class="col-md-4">
+                <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Led Screens</a>
+                </div>
+                <div class="col-md-4">
+                <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>LCD</a>
+                </div>
+                <div class="col-md-4">
+                <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Various</a>
+                </div>
+            </div>
+            <div class="row">
+            <div id="screens" style={{display:screenDisplay}}>
+            {
+                
+                data1.map((val,id) => {
+                    return(
+                        <>
+                            <div class="col-md-4 img-box" style={{padding:'5px'}}>
+                                {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                
+                                <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                
+                            </div>
+                        
+                        </>
+                    )
+                })
+            }
+            </div>
+            </div>
+            
+            <div id="lcd" style={{display:lcdDisplay}}>
+                {
+                    data2.map((val,id) => {
+                        return(
+                            <>
+                                <div class="col-md-4" style={{padding:'5px'}}>
+                                    
+                                {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                    <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                    onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                    
+                                </div>
+                            
+                            </>
+                        )
+                    })
+                }
+            </div>
+            
+            <div id="various" style={{display:variosDisplay}}>
+            {
+                    date3.map((val,id) => {
+                        return(
+                            <>
+                                <div class="col-md-4" style={{padding:'5px'}}>
+                                    
+                                {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                    <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                    onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                    
+                                </div>
+                            
+                            </>
+                        )
+                    })
+                }
+            </div>
+            
+           
+            
+            
+            </div>
+        </div>
+            case 1:
                 return <div className="w-100  my-lg-5">
                 <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
                 {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
@@ -385,7 +651,7 @@ export default function Test() {
 
 
                 </div>
-            case 1:
+            case 2:
                 return <div className="w-100 my-lg-5">
                     <div>
                         <h4 className="text-center w-100 text-dark d-inline frank-color-blue">Dimensión de la pantalla?</h4>
@@ -443,7 +709,7 @@ export default function Test() {
                     <br />
                     <br />
                 </div>
-            case 2:
+            case 3:
                 return <div className="w-100 my-lg-5">
                     <h4 className="text-center w-100 text-dark frank-color-blue">Orientación de la pantalla?</h4>
                     <input
@@ -587,7 +853,7 @@ export default function Test() {
                     <br />
                 </div>;
             // <div className="w-100 my-lg-5"><TextField value={modal} onChange={(e) => setModal(e.target.value)} className="w-75" id="outlined-basic" label="Do you know the modal you are looking for?" variant="outlined" /> </div>;
-            case 3:
+            case 4:
                 return <div className="w-100 my-lg-5">
                     <br />
                     <br />
@@ -685,7 +951,7 @@ export default function Test() {
                 </div>;
                         
                    
-                        case 4:
+                        case 5:
                             return <div>
                                 <div className="row">
                                     <div className="col-md-12 my-lg-2" style={{ display: "flex", justifyContent: "center" }}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
@@ -803,8 +1069,19 @@ export default function Test() {
 
     const handleNext = () => {
         window.scrollTo(0, 0);
-        if (activeStep < 3) {
-            if (activeStep === 0) {
+        if (activeStep <= 3) {
+            if(activeStep === 0)
+            {
+                
+                if(productType === '' || prdouctTypeImg === '')
+                {
+                    alert("please select a product")
+                }
+                else {
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                }
+            }
+            if (activeStep === 1) {
                 if (buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '') {
                     alert("please fill in the form");
                 }
@@ -812,7 +1089,7 @@ export default function Test() {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
                 }
             }
-            if (activeStep === 1) {
+            if (activeStep === 2) {
                 if (screenheight === "" || screenbase === "" || screenaccess === "" || controlsys === '') {
                     alert("please fill in the form");
                 }
@@ -820,7 +1097,7 @@ export default function Test() {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
                 }
             }
-            if (activeStep === 2) {
+            if (activeStep === 3) {
                 if (screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === "") {
                     alert("please fill in the form");
                 }
@@ -944,6 +1221,98 @@ export default function Test() {
                         <i className="fa fa-chevron-left fa-2x" style={{ cursor: 'pointer' }} onClick={() => Displaythree()}></i>
                     </div>
                     <div class="row text-center">
+                    <div className="w-100  my-lg-5">
+                
+                <div class="container" >
+                <div class ="row" style={{paddingBottom:"5px"}}>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Led Screens</a>
+                    </div>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>LCD</a>
+                    </div>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Various</a>
+                    </div>
+                </div>
+                <div class="row">
+                <div id="screens" style={{display:screenDisplay}}>
+                {
+                    
+                    data1.map((val,id) => {
+                        return(
+                            <>
+                                <div class="col-md-4 img-box " style={{padding:'5px'}}>
+                                    
+                                {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                    <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                    onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                    
+                                </div>
+                            
+                            </>
+                        )
+                    })
+                }
+                </div>
+                </div>
+                
+                <div id="lcd" style={{display:lcdDisplay}}>
+                    {
+                        data2.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                    {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                
+                <div id="various" style={{display:variosDisplay}}>
+                {
+                        date3.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                    {
+                                    productType===val.author ? 
+                                    <h4 value={val.author} style={{color:"#ff14ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                }
+                                
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                
+               
+                
+                
+                </div>
+            </div>
                         <div className="w-100 mx-auto mt-md-4">
                             <br />
                             <label className="for-question-mobile frank-color-pink">¡Háganos saber lo que quiere! Mencione todo a continuación:</label>
