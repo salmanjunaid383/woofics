@@ -202,42 +202,42 @@ export default function Sidebar() {
 
     const Data = [
         {
-            name: 'Dashboard',
+            name: 'Panel',
             icon: <DashboardIcon  />,
             to: '/dashboard'
         },
         {
-            name: 'Services',
+            name: 'Servicios',
             icon: <InsertEmoticonIcon  />,
             to: '/addservice'
         },
         {
-            name: 'Offers',
+            name: 'Ofertas',
             icon: <LocalOfferIcon  />,
             to: '/customeroffer'
         },
         {
-            name: 'Projects',
+            name: 'Proyectos',
             icon: <PlaylistAddCheckIcon  />,
             to: '/project'
         },
         {
-            name: 'Service Provider',
+            name: 'Proveedor de servicio',
             icon: <AssistantIcon  />,
             to: '/suppliers'
         },
         {
-            name: 'Discussion Forum',
+            name: 'Foro de discusion',
             icon: <ContactMailIcon  />,
             to: '/clientdiscussionforum'
         },
         {
-            name: 'Help',
+            name: 'Ayuda',
             icon: <LiveHelpIcon  />,
             to: '/help'
         },
         {
-            name: 'Complain',
+            name: 'Quejarse',
             icon: <CallEndIcon  />,
             to: '/complain'
         },

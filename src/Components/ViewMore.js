@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "./LandingPage/components/Footer";
 import Navbar from "./Navbar";
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+import { useParams ,useLocation} from "react-router-dom";
 import ModalImage from "react-modal-image";
 // import "node_modules/video-react/dist/video-react.css";
 // import { Player } from 'video-react';
@@ -11,16 +11,15 @@ export default function ViewMore() {
     const [blog, setBlog] = useState([]);
 
     const { category } = useParams()
-
+    const location = useLocation();
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/get_inspired`)
             .then((response) => {
                 if (response) {
-                    
                     setBlog(response.data)
                 }
             }, (Error) => {
-
+                console.log(Error)
                 
             });
 
@@ -31,7 +30,9 @@ export default function ViewMore() {
     }, [])
     return (
         <>
+            <div style={{backgroundImage:'linear-gradient(to right, #934CFF 0%, #F62B84 100%)', height:'65px'}}>
             <Navbar />
+            </div>
             <div className="page-wrapper mt-5 ">
                 <div class="container-fluid no-gutters ">
                     <div className="row no-gutters">

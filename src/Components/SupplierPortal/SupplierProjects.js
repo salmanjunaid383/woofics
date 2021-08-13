@@ -51,7 +51,7 @@ export default function SupplierProjects() {
     const [supplier, setSupplier] = useState('');
     const [ddays, setdays] = useState();
     const [completed, setCompleted] = useState('');
-
+    const[mounted,isMounted]=useState(false);
 
    
 
@@ -69,29 +69,38 @@ export default function SupplierProjects() {
 
         }
         Supplierid();
-        function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`)
-                .then((res) => {
-                    if (res) {
-                        setForm(res.data)
-                        setdays(res.data.due_date)
-                        setCompleted(res.data.status)
-                    }
-                }, (error) => {
-                    
-                });
-
+        if(!mounted){
+            function Feedback() {
+                const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`)
+                    .then((res) => {
+                        if (res) {
+                            setForm(res.data)
+                            setdays(res.data.due_date)
+                            setCompleted(res.data.status)
+                        }
+                    }, (error) => {
+                        
+                    });
+    
+            }
+            Feedback();
+            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            .then((response) => {
+                setName(response.data.first_name + " " + response.data.last_name)
+            }, (Error) => {
+                
+            });
         }
-        Feedback();
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
-        .then((response) => {
-            setName(response.data.first_name + " " + response.data.last_name)
-        }, (Error) => {
-            
-        });
+        return () => {
+            isMounted(true);
+        }
+        
     }, [])
 
-
+    useEffect(() => {
+        const timer = setInterval(() => {myGreeting()},1000)
+        return () => clearInterval(timer);
+    },[])
 
 
 
@@ -131,8 +140,8 @@ export default function SupplierProjects() {
     const [minutes, setdminutes] = useState('')
     const [seconds, setdseconds] = useState('')
 
-    let myGreeting = setInterval(() => {
-        clearInterval()
+    const myGreeting =() => {
+       
         const countdownleft = new Date(ddays).getTime();
         const nowTime = new Date().getTime();
         const left = countdownleft - nowTime;
@@ -142,25 +151,21 @@ export default function SupplierProjects() {
         setdminutes(Math.floor((left % (1000 * 60 * 60)) / (1000 * 60)));
         setdseconds(Math.floor((left % (1000 * 60)) / (1000)));
 
-        // if (left < 0) {
-        //     clearInterval(x);
-        //     document.getElementById("demo").innerHTML = "EXPIRED";
-        // }
         if (left < 0) {
-            clearInterval(myGreeting);
+            
             setddays('L');
             setdhours('A');
             setdminutes('T');
             setdseconds('E')
-        } else if (completed == 'Completed') {
-            clearInterval(myGreeting);
+        } else if (completed === 'Completed') {
+            
             setddays(0);
             setdhours(0);
             setdminutes(0);
             setdseconds(0)
         }
-        clearTimeout(myGreeting)
-    }, 1000);
+     
+    }
 
 
 
@@ -284,18 +289,7 @@ export default function SupplierProjects() {
                                                             <th scope="row" >Estado</th>
                                                             <td className={form.status === 'Completed' ? 'text-success' : 'text-primary'}>{form.status}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th scope="row">Fase de Pago Actual</th>
-                                                            <td>{form.current_phase}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">Pagada</th>
-                                                            <td>{form.paid}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">Pago restante </th>
-                                                            <td>{form.amount_left}</td>
-                                                        </tr>
+                                                            
                                                     </tbody>
                                                 </table>
                                                 <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={supplier.id} onClick={() => SendData(supplier.id, supplier.first_name + " " + supplier.last_name)}>Chat</button>

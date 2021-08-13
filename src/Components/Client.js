@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory,useLocation } from "react-router-dom";
 import signupside from "../Images/star.png";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
@@ -23,7 +23,7 @@ export default function Client() {
   const [cpassword, setCpassword] = useState("");
   const [wait, setWait] = useState('Register')
   const [disable, setDisable] = useState('disabled')
-
+  const pathLocation = useLocation();
 
   function SendLoginDetails(e) {
     e.preventDefault();
@@ -59,9 +59,13 @@ export default function Client() {
         }).then((response) => {
           setWait('Register')
           setOpen4(true)
-          setTimeout(() => {
-            history.push("/");
-          }, 3000);
+          if(pathLocation.pathname==="/quotemain")
+          {
+            setTimeout(() => {
+              history.push("/");
+            }, 3000);
+          }
+          
         }).catch((error) => {
           if (error.response) {
             setWait('Register')

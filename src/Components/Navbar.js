@@ -71,6 +71,7 @@ function Navbar() {
     const [profile_image, setprofile_image] = useState('')
     const [navbar, setNavBar] = useState(false)
     const [mediaState,setMediaState]=useState(false)
+    const [landingPage,setLandingPage]=useState(true)
 
     const [logoImg, setLogo] = useState(false);
 
@@ -89,7 +90,7 @@ function Navbar() {
     const idStaz = openStaz ? 'simple-popover' : undefined;
     let profileImageStaz = "https://image.flaticon.com/icons/png/512/147/147144.png"
     useEffect(() => {
-        
+        if(location.pathname!=="/")setLandingPage(false);
         console.log("pathname is" +location.pathname);
             if (localStorage.getItem('user_token'))
                 {
@@ -193,28 +194,37 @@ function Navbar() {
                     localStorage.setItem('user_token', response.data);
                     if (response) {
                         setWait('Log In')
+                        console.log("pathname is"+location.pathname)
                         const role = jwt_decode(localStorage.getItem('user_token'))
-                        if (role.role === 'Client') {
-                            localStorage.setItem('url', '/dashboard')
-                            history.push('/dashboard');
-                        } else if (role.role === 'ServiceProvider') {
-                            localStorage.setItem('url', '/admindashboard')
-                            history.push('/admindashboard');
+                        if(location.pathname!=="/quotemain")
+                        {
+                            if (role.role === 'Client') {
+                                localStorage.setItem('url', '/dashboard')
+                                history.push('/dashboard');
+                            } else if (role.role === 'ServiceProvider') {
+                                localStorage.setItem('url', '/admindashboard')
+                                history.push('/admindashboard');
+                            }
+                            else if (role.role === 'Supplier') {
+                                localStorage.setItem('url', '/supplierdashboard')
+                                history.push('/supplierdashboard');
+                            } else {
+                                localStorage.setItem('url', '/superdashboard')
+                                history.push('/superdashboard');
+                            }
                         }
-                        else if (role.role === 'Supplier') {
-                            localStorage.setItem('url', '/supplierdashboard')
-                            history.push('/supplierdashboard');
-                        } else {
-                            localStorage.setItem('url', '/superdashboard')
-                            history.push('/superdashboard');
-                        }
+                        
+                        
                     }
                     // 
                 }, (error) => {
                     setWait('Log In')
                     setOpen3(true)
+                    if(location.pathname!=="/quotemain")
+                    {
+                        history.push('/');
+                    }
                     
-                    history.push('/');
                 });
         }
     }
@@ -432,7 +442,7 @@ function Navbar() {
 
             <div className="container.fluid ">
                 <div class="woofic_background  my-auto ">
-                    <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : location.pathname==="/" ? "topnav pb-1 pt-1 fixed-top" : "topnav pb-1 pt-1 fixed-top noLandingPageNav" } id="myTopnav" style={{height:"65px"}}>
+                    <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : landingPage ? "topnav pb-1 pt-1 fixed-top" : "topnav pb-1 pt-1 fixed-top nonLandingPageNav" } id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
                             {
                                 mediaState === false ?

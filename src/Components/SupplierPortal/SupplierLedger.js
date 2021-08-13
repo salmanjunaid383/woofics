@@ -210,7 +210,6 @@ export default function SupplierLedger() {
                                                                     return (
                                                                         <>
                                                                             <tr>
-                                                                                <td className="txt-oflo text-center">{val.id}</td>
                                                                                 <td className="txt-oflo text-center">{val.balance}</td>
                                                                                 <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
                                                                                 {/* <td className="text-success text-center"></td> */}
@@ -223,7 +222,7 @@ export default function SupplierLedger() {
                                                             article !== '' ?
                                                             <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td></td>
+                                                                
                                                                 
                                                             </tr> : <h3></h3> 
                                                         }

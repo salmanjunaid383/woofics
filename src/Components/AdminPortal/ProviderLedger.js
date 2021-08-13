@@ -234,7 +234,7 @@ export default function ProviderLedger() {
                                                             article !== '' ?
                                                             <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} $ </td>
                                                                 <td className="txt-oflo text-center"></td>
-                                                                <td></td>
+                                                                
                                                                 {/* <td className="txt-oflo text-center"></td> */}
                                                                 
                                                             </tr> : <h3></h3> 

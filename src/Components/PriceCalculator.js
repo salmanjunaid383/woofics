@@ -435,7 +435,7 @@ export default function PriceCalculator() {
                        
                             <div className={classes.root} style={{ margin: "auto",textAlign:"center" }}>
                                 <Typography gutterBottom>El ancho debe estar en centímetros</Typography>
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2} 
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" className="w-100" max={1000} value={typeof value2 === 'number' ? value2 : 0} onChange={handleSliderChange2} 
                             onChangeCommitted={getCal}  /> <Input
                                 className="mb-2 ml-3"
                                 value={value2}

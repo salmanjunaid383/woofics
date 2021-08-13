@@ -217,6 +217,14 @@ export default function Quote() {
                                                                     <td>{service.adverse_weather}</td>
                                                                 </tr>
                                                                 <tr>
+                                                                <td>Producto</td>
+                                                                <td>{service.product_type}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Imagen del producto</td>
+                                                                <td><a style={{color:'grey'}} href={service.product_image}>Imagen</a></td>
+                                                            </tr>
+                                                                <tr>
                                                                     <td>Comprar</td>
                                                                     <td>{service.buy}</td>
                                                                 </tr>

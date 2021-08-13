@@ -245,22 +245,22 @@ export default function StazBar() {
 
     const Data = [
         {
-            name: 'Admin Dashboard',
+            name: 'Panel de administración',
             icon: <DashboardIcon    />,
             to: '/superdashboard'
         },
         {
-            name: 'Registrations',
+            name: 'Inscripciones',
             icon: <PollIcon  />,
             to: '/registration'
         },
         {
-            name: 'Services',
+            name: 'Servicios',
             icon: <FindInPageIcon  />,
             to: '/viewservices'
         },
         {
-            name: 'Offers',
+            name: 'Ofertas',
             icon: <LoyaltyIcon  />,
             to: '/offerbadge'
         },
@@ -275,32 +275,32 @@ export default function StazBar() {
             to: '/ledlist'
         },
         {
-            name: 'Get Inspire',
+            name: 'Inspírate',
             icon: <FeaturedVideoIcon  />,
             to: '/getinspired'
         },
         {
-            name: 'Advertise',
+            name: 'Anunciar',
             icon: <PhotoAlbumIcon  />,
             to: '/advertised'
         },
         {
-            name: 'Ledger',
+            name: 'Libro mayor',
             icon: <HourglassEmptyIcon  />,
             to: '/ledger'
         },
          {
-            name: 'Data of Interest',
+            name: 'Datos de interés',
             icon: <SwapVertIcon  />,
             to: '/dataofint'
         },
         {
-            name: 'Charges',
+            name: 'Cargos',
             icon: <EqualizerIcon  />,
             to: '/charges'
         },
         {
-            name: 'View Contacts',
+            name: 'Ver contactos',
             icon: <ContactMailIcon  />,
             to: '/viewcontact'
         },
@@ -310,22 +310,22 @@ export default function StazBar() {
             to: "/logo"
         },
         {
-            name: "Description",
+            name: "Descripción",
             icon: <DescriptionIcon />,
             to: "/description"
         },
         {
-            name: 'Discussion Forum',
+            name: 'Foro de discusion',
             icon: <AssignmentIcon />,
             to :'/clientdiscussionforum'
         },
         {
-            name: 'Help List',
+            name: 'Lista de ayuda',
             icon: <HelpIcon  />,
             to: '/helplist'
         },
         {
-            name: 'Complain',
+            name: 'Quejarse',
             icon: <AssistantIcon  />,
             to: '/admincomplain'
         },
