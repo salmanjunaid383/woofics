@@ -7,10 +7,7 @@ import Nav from './Nav'
 import StarRatings from 'react-star-ratings';
 import './BLog.css';
 import jwt_decode from 'jwt-decode'
-
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-
-
 import CustomClientAuth from "../CustomClientAuth";
 const useStyles = makeStyles((theme) => ({
 

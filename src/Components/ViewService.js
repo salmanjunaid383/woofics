@@ -12,10 +12,10 @@ export default function ViewService() {
     const { servicei } = useParams()
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/service/${servicei}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`)
             .then((response) => {
                 if (response) {
-                    
+                    console.log(response)
                     setBlog(response.data)
                 }
             }, (Error) => {
@@ -38,32 +38,33 @@ export default function ViewService() {
                             : blog.map((val, id) => {
                                 return (
                                     <>
-                                        <div class="col-md-4 mx-auto">
+                                        {
+                                            val.service=== servicei ? <div class="col-md-4 col-lg-6 justify-content-space-around">
                                             <div class="card mx-auto mt-4" style={{ width: '18rem' }}>
+                                                {/* <img class="card-img-top img-fluid mx-auto" src={val.bg_image} alt="Backgound image" /> */}
                                                 <div class="card-body">
+                                                   
                                                     <h4 className="mt-0">{val.first_name + " " + val.last_name}
-                                                        <img class="card-img-top img-fluid w-25 mx-auto float-left p-2" src={val.profile_image} style={{ borderRadius: "50px" }} />
+                                                        <img class="card-img-top img-fluid w-25 mx-auto float-left p-2 ipad-res" src={val.profile_image}  style={{borderRadius:"50px"}}/>
+                                                        </h4><br></br>
                                                         <StarRatings
                                                             starRatedColor='rgb(230, 67, 47)'
-                                                            rating={val.rating}
+                                                            rating={3}
                                                             starDimension="15px"
                                                             starSpacing="3px"
                                                         />
-                                                    </h4>
-                                                    <br />
-                                                    <span className="d-flex"><i className="fa fa-map-marker px-2 text-muted "> </i><span><p className="p ">{" " + val.location_of_your_business}</p></span></span>
-                                                    <span className="d-flex"><i className="fa fa-envelope px-2 text-muted "> </i><span><p className="p ">{" " + val.email}</p></span></span>
-                                                    <span className="d-flex"><i className="fa fa-phone px-2 text-muted "> </i><span><p className="p ">{" " + val.contact_number}</p></span></span>
-                                                    <span className="d-flex"><i className="fa fa-area-chart px-2 text-muted "> </i><span><p className="p ">{" " + val.company_size}</p></span></span>
-
-
+                                                    
                                                     <hr />
-                                                    <div className="d-flex">
-                                                        <button class="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => alert("Seems you are not logged in.. Please login or Create your account first!")} >Contact</button>
-                                                    </div>
+                                                    <br />
+                                                    <i className="fa fa-map-marker px-2 text-muted"> {val.location}</i><br />
+                                                    <i className="fa fa-envelope-o px-2 text-muted"> {val.email}</i><br />
+                                                    <i className="fa fa-phone px-2 text-muted"> {val.contact_number}</i><br />
+                                                    
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>: null
+                                        }
+                                        
                                     </>
                                 )
                             })}
