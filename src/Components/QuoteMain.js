@@ -752,10 +752,11 @@ export default function QuoteMain() {
 
                     <div style={{ marginTop: "-18px" }}>
                         <h4 className="text-center w-100 text-dark frank-color-blue">Conoce el modelo que busca?</h4>
-                        <FormControl component="fieldset">
+                        <FormControl component="fieldset">     
+                        <br></br>    
                             <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
-                                <FormControlLabel value="yes" control={<Radio color="primary" />} label="Yes" />
-                                <FormControlLabel value="no" control={<Radio color="primary" />} label="No" />
+                            <TextField onChange={(e) => setmodel(e.target.value)} className="w-50" id="outlined-basic" label="Model no" style={{marginRIght:"10px"}} variant="outlined" /> 
+                                <FormControlLabel value="no" control={<Radio color="primary" />}  label="No" />
                             </RadioGroup>
                         </FormControl>
                     </div>

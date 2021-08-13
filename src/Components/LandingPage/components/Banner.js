@@ -10,6 +10,7 @@ import six from '../images/six.png';
 import seven from '../images/seven.jpg';
 import eight from '../images/eight.png';
 import { useHistory } from 'react-router-dom';
+import {Animated} from "react-animated-css";
 
 function Banner(){
     let history = useHistory();
@@ -17,6 +18,7 @@ function Banner(){
     return(
             <>
            <div class="woofic_banner text-center ">
+          
                 <div class="woofic_banner_heading">
                    <span style={{color:"#333333"}}> Servicios </span><span style={{color:"#F62B84"}}>/</span> <span style={{color:"#F62B84"}}>profesional</span>
                 </div>

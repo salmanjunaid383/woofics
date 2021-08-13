@@ -1,17 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
+import {Animated} from "react-animated-css";
 import "../css/last news.css";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import people from "../images/people.jpg";
 import people1 from "../images/people 1.jpg";
 import people2 from "../images/people2.jpg";
+import useOnScreen from "./OnScreen";
 import axios from "axios";
 
 function LastNews() {
   const history = useHistory();
-
+  const domRef = React.useRef();
   const [blog, setBlog] = useState([]);
   const [supp, setsupp] = useState([]);
+  const ref = useRef()
+  const isVisible = useOnScreen(ref)
+    
+    
+    
+
+
   useEffect(() => {
     const { data: response } = axios
       .get(`https://api.woofics.com/api/blog`)
@@ -36,8 +45,11 @@ function LastNews() {
       );
   }, []);
 
+
   return (
     <>
+    
+    
       <div className="container text-center mx-auto">
         <div class="woofic_lastnewner">
           <div className="row text-center">
@@ -49,6 +61,7 @@ function LastNews() {
             </div>
             <div
               class="row mx-auto"
+              ref={ref}
               style={{
                 height: "80%",
                 width: "65%",
@@ -60,6 +73,8 @@ function LastNews() {
               {supp.map((val, id) => {
                 return (
                   <>
+                  
+                  <Animated animationIn="fadeInLeft"  animationInDuration={1000} isVisible={isVisible}>
                     <div
                       class="text-center"
                       style={{ width: "250px", padding: "0" }}
@@ -92,6 +107,8 @@ function LastNews() {
                         </div>
                       </div>
                     </div>
+                    </Animated>
+                   
                   </>
                 );
               })}
