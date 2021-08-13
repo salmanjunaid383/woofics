@@ -614,10 +614,12 @@ export default function Test() {
                 <div style={{ marginTop: "-18px" }}>
                     <h4 className="text-center w-100 text-dark frank-color-blue">Conoce el modelo que busca?</h4>
                     <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
+                        <div style={{display:"flex", justifyContent:"space-around"}}>
                         <TextField onChange={(e) => setmodel(e.target.value)} className="w-50" id="outlined-basic" label="Model no" style={{marginRIght:"10px"}} variant="outlined" /> 
+                        <RadioGroup row aria-label="position" constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setmodel(e.target.value)}>
                             <FormControlLabel value="no" control={<Radio color="primary" />} label="No" />
                         </RadioGroup>
+                        </div>
                     </FormControl>
                 </div>
                 <br />
