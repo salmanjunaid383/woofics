@@ -68,6 +68,11 @@ import three from '../Images/three.png';
 import Footer from './LandingPage/components/Footer';
 import ScrollToTop from "./ScrollToTop";
 
+import monoposte from "../Components/monoposte.png";
+import pared from "../Components/pared.png";
+import mupi from "../Components/Mupi.png";
+import truss from "../Components/truss.png"
+
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -532,7 +537,7 @@ export default function QuoteMain() {
             case 1:
                 return <div className="w-100 my-lg-5">
                     <div>
-                        <h4 className="text-center w-100 text-dark d-inline">Dimensión de la pantalla?</h4>
+                        <h4 className="text-center w-100 text-dark d-inline frank-color-blue">Dimensión de la pantalla?</h4>
                         <div style={{ marginTop: "10px" }}>
                             <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
                             <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
@@ -671,12 +676,26 @@ export default function QuoteMain() {
                     <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "-10px" }}>Necesitas estructura?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
+                        id="dsdq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
+
+                    <label value="Pared" for="dsdq">
+                     
+                        <div className="mx-lg-4 p-2">
+                            {/* <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
+                            <img src={pared} style={{height:"100px",width:"100px"}}/>
+                        </div>
+                        <h4 className="text-center mx-lg-2" style={structurecolor === "1" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Pared</h4>
+                    </label>
+
+                    <input
+                        type="radio" name="fqwfqwfas"
                         id="dsdq" class="input-hidden " value='Monoposte' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
 
                     <label value="Monoposte" for="dsdq">
                      
                         <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            {/* <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
+                            <img src={monoposte} style={{height:"100px",width:"100px"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "1" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Monoposte</h4>
                     </label>
@@ -686,7 +705,8 @@ export default function QuoteMain() {
                         id="Truss for events" class="input-hidden" value='Truss for events' onChange={(e) => {setstructure(e.target.value); setstructurecolor("2")}} />
                     <label value="Truss for events" for="Truss for events">
                     <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-building-o" style={structurecolor === "2" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            {/* <i className=" fa fa-building-o" style={structurecolor === "2" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
+                            <img src={truss} style={{height:"100px", width:"100px"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "2" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Truss para eventos
                         </h4>
@@ -697,7 +717,8 @@ export default function QuoteMain() {
                         id="Mupi" class="input-hidden" value='Mupi' onChange={(e) => {setstructure(e.target.value); setstructurecolor("3")}} />
                     <label value="Mupi" for="Mupi">
                     <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-cog" style={structurecolor === "3" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                            {/* <i className=" fa fa-cog" style={structurecolor === "3" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
+                            <img src={mupi} style={{height:"100px",width:"100px"}}/>
                         </div>
                         <h4 className="text-center mx-lg-2" style={structurecolor === "3" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Mupi
                         </h4>
