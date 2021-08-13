@@ -72,10 +72,10 @@ import three from '../Images/three.png';
 import Footer from './LandingPage/components/Footer';
 import ScrollToTop from "./ScrollToTop";
 
-import monoposte from "../Components/monoposte.png";
-import pared from "../Components/pared.png";
-import mupi from "../Components/Mupi.png";
-import truss from "../Components/truss.png"
+import monoposte from "../Images/structure/monoposte.jpg";
+import pared from "../Images/structure/pared.jpg";
+import mupi from "../Images/structure/tothem.jpg";
+import truss from "../Images/structure/truss.jpg"
 
 
 const drawerWidth = 240;
@@ -252,12 +252,12 @@ export default function QuoteMain() {
     const [price, setPrice] = useState("");
 
     const [malik, setmalik] = useState('disabled')
-    useEffect(()=> {
-        alert("Woofic is a comprehensive platform, which allows you to obtain tailored quotes from"+
-        "different suppliers, negotiate with them and place the order. All with maximum transparency"+
-        "and security, that is why it is necessary to register, in order to access your management"+
-        "panel.");
-    },[])
+    // useEffect(()=> {
+    //     alert("Woofic is a comprehensive platform, which allows you to obtain tailored quotes from"+
+    //     "different suppliers, negotiate with them and place the order. All with maximum transparency"+
+    //     "and security, that is why it is necessary to register, in order to access your management"+
+    //     "panel.");
+    // },[])
 
     function SendService(i) {
         const token = localStorage.getItem('user_token');
@@ -549,6 +549,58 @@ export default function QuoteMain() {
       
         }
       ]
+    const date4=[
+        {
+          id: 1,
+          author: "Conciertos",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FCONCIERTOS.jpg?alt=media&token=82ffd5dc-4cda-4648-9897-a263a2477aed"
+        },
+        {
+          id: 2,
+          author: "Evento Deportivo",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FEVENTO%20DEPORTIVO.jpg?alt=media&token=f6e94203-8cc3-47b7-84cb-a9f1fb09705d"
+        },
+        {
+          id: 3,
+          author: "Ferias",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FFERIAS.jpg?alt=media&token=b01bc4bb-acdf-4ecf-a6e7-9691ce259200"
+        },
+        {
+          id: 4,
+          author: "Imagen Coprativa",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FIMAGEN%20CORPORATIVA.jpg?alt=media&token=d04cf5b5-bdd6-4b54-99b4-e954324179b9"
+        },
+        {
+          id: 5,
+          author: "Informacion",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FINFORMACION.jpg?alt=media&token=d80a4ce7-90a8-4eb6-8025-435c19819329"
+        },
+        {
+          id: 6,
+          author: "Plato Tv",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FPLATO%20TV.jpeg?alt=media&token=a2f934b0-b660-4e8e-8339-b255c3fa6eb7"
+        },
+        {
+          id: 7,
+          author: "Presentacion",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FPRESENTACION.jpg?alt=media&token=8b6c88ab-c211-479d-afe5-4824b65f0923"
+        },
+        {
+          id: 8,
+          author: "Publicidad",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FPUBLICIDAD.jpg?alt=media&token=38703e61-d5d6-4e06-8e65-1df15f2956af"
+        },
+        {
+          id: 9,
+          author: "Sala De Control",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FSALA%20DE%20CONTROL.jpg?alt=media&token=04a06afa-19f1-4efd-952b-89bee1e4902a"
+        },
+        {
+          id: 10,
+          author: "Trafico",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FTRAFICO.jpg?alt=media&token=2781f3be-f12b-408a-8834-5eb12ecba004"
+        }
+      ]
 
     function getSteps() {
         // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'
@@ -772,22 +824,32 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <h4 className="text-center w-100 text-dark frank-color-blue">Uso de la pantalla?</h4>
-                    <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" style={{ justifyContent: "center",width:"86%",margin:"auto" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
-                            <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
-                            <FormControlLabel value="ORPORATE IMAGE" control={<Radio color="primary" />} label="ORPORATE IMAGE" />
-                            <FormControlLabel value="ADVERTISING" control={<Radio color="primary" />} label="ADVERTISING" />
-                            <FormControlLabel value="INFORMATION" control={<Radio color="primary" />} label="INFORMATION" />
-                            <FormControlLabel value="TRAFFIC" control={<Radio color="primary" />} label="TRAFFIC" />
-                            <FormControlLabel value="SPORTS EVENT" control={<Radio color="primary" />} label="SPORTS EVENT" />
-                            <FormControlLabel value="CONTROL ROOM" control={<Radio color="primary" />} label="CONTROL ROOM" />
-                        </RadioGroup>
-                    </FormControl>
+                    <div className="w-100  my-lg-5">
+                    <div className="row">
+                    {
+                        date4.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                    {
+                                    screenuse===val.author ? 
+                                    <h4 value={val.author} style={{color:"#1010ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                    }
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setscreenuse(val.author)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                    </div>
+                    </div>
                     
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    
 
 
                 </div>
@@ -909,15 +971,15 @@ export default function QuoteMain() {
                     <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "-10px" }}>Necesitas estructura?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
-                        id="dsdq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
+                        id="dsdqq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("4")}} />
 
-                    <label value="Pared" for="dsdq">
+                    <label value="Pared" for="dsdqq">
                      
                         <div className="mx-lg-4 p-2">
                             {/* <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
                             <img src={pared} style={{height:"100px",width:"100px"}}/>
                         </div>
-                        <h4 className="text-center mx-lg-2" style={structurecolor === "1" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Pared</h4>
+                        <h4 className="text-center mx-lg-2" style={structurecolor === "4" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Pared</h4>
                     </label>
 
                     <input
