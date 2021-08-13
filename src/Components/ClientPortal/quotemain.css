@@ -7,3 +7,6 @@ input[type=radio] + label >img {
     padding:10px;
     border-radius: 50%; */
 }
+.img-box:hover{
+    border: bisque;
+}

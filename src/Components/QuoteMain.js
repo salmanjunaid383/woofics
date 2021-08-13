@@ -13,6 +13,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
+import reg from "../Images/rmbg.png";
 import clsx from 'clsx';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import "../Components/ClientPortal/quotemain.css"
@@ -21,7 +22,9 @@ import salman from "../Components/survey.png"
 import shopping from "../Components/shopping.png"
 import firebase from './Firebase'
 import "../Components/quotemain.css"
-
+import Fade from '@material-ui/core/Fade';
+import Modal from '@material-ui/core/Modal';
+import Client from './Client';
 //Sidebar
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -30,6 +33,7 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 // import IconButton from '@material-ui/core/IconButton';
+import Backdrop from '@material-ui/core/Backdrop';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -71,6 +75,28 @@ import ScrollToTop from "./ScrollToTop";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        // backgroundColor: theme.palette.background.paper,
+        // margin: theme.spacing(15, 2),
+        // border: '2px solid #000',
+        // boxShadow: theme.shadows[5],
+        overflow: 'hidden',
+        width: '100%',
+        height: '90vh',
+        overflowY: 'scroll'
+    },
+    typography: {
+        padding: theme.spacing(2),
+        color: 'black'
+    },
+    typographyLink: {
+        color:'black',
+    },
     root: {
         display: 'flex',
     },
@@ -183,7 +209,8 @@ export default function QuoteMain() {
     // var token = localStorage.getItem("user_token");
     // var decoded = jwt_decode(token)
 
-
+    const [productType,setProductType]=useState('')
+    const [prdouctTypeImg,setProductTypeImg]=useState('')
     const [description, setdescription] = useState("");
     const [buy, setbuy] = useState("");
     const [indoor, setindoor] = useState("");
@@ -220,11 +247,18 @@ export default function QuoteMain() {
     const [price, setPrice] = useState("");
 
     const [malik, setmalik] = useState('disabled')
+    useEffect(()=> {
+        alert("Woofic is a comprehensive platform, which allows you to obtain tailored quotes from"+
+        "different suppliers, negotiate with them and place the order. All with maximum transparency"+
+        "and security, that is why it is necessary to register, in order to access your management"+
+        "panel.");
+    },[])
 
     function SendService(i) {
         const token = localStorage.getItem('user_token');
         if (token === null) {
             alert("Please logged in or register to post the offer")
+            handleOpenpop2();
         }
         else {
             var decoded = jwt_decode(token);
@@ -242,6 +276,8 @@ export default function QuoteMain() {
 
 
                     const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                        product_type:productType,
+                        product_image:prdouctTypeImg,
                         description: description,
                         buy: buy,
                         indoor: indoor,
@@ -290,6 +326,8 @@ export default function QuoteMain() {
 
 
                 const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
+                    product_type:productType,
+                    product_image:prdouctTypeImg,
                     description: description,
                     buy: buy,
                     indoor: indoor,
@@ -333,39 +371,17 @@ export default function QuoteMain() {
             }
 
         }
-        // 
-        //     buy,
-        //     indoor,
-        //     install,
-        //     model,
-        //     visuald,
-        //     screenuse,
-        //     screenbase,
-        //     screenheight,
-        //     screenaccess,
-        //     screenorientation,
-        //     controlsys,
-        //     adverseweather,
-        //     structure,
-        //     deliverytime,
-        //     shipping,
-        //     sensor,
-        //     warranty,
-        //     carcass,
-        //     flycases,
-        //     entity,
-        //     name,
-        //     contact,
-        //     company,
-        //     customertype,
-        //     sector,
-        //     postalcode,
-        //     comments,
-        //     email)
+     
 
 
     }
-
+    const [openpop2, setOpenpop2] = React.useState(false);
+    const handleOpenpop2 = () => {
+        setOpenpop2(true);
+    };
+    const handleClosepop2 = () => {
+        setOpenpop2(false);
+    };
     const uploadfile = async (e) => {
         
         const file = e.target.files[0];
@@ -381,20 +397,270 @@ export default function QuoteMain() {
         })
         
     }
-
+    const data1 = [
+        {
+          id: 1,
+          author: "Pantalla Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F1%20Pantalla%20Led.jpg?alt=media&token=b16abc9b-2761-4c90-8ebb-62f9154205fc"
+          
+        },
+        {
+          id: 2,
+          author: "Pantalla Curve",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F2%20Pantalla%20Curva.jpg?alt=media&token=0c2cc35a-7674-4bf0-8b33-cff9c4d3a058"
+          
+        },
+        {
+          id: 3,
+          author: "Suelo Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F3%20Suelo%20Led.jpg?alt=media&token=8437ff8d-1f7d-4dc9-9f79-7c518a367663"
+        },
+        {
+          id: 4,
+          author: "MUPI",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F4%20MUPI.jpg?alt=media&token=a821c0fe-58a8-4cb3-96ae-cc54cd404c4c"
+        },
+        {
+          id: 5,
+          author: "Pantalla Deporte",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F5%20Pantalla%20Deporte.jpg?alt=media&token=3f77b49a-c4f9-4c4a-80e1-b3a1510e202c"
+        },
+        {
+          id: 6,
+          author: "Cortina Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F6%20Cortina%20Led.jpg?alt=media&token=be806081-84cd-45b7-8d3e-075145564c98"
+        },
+        {
+          id: 7,
+          author: "Rotulo Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F7%20Rotulo%20led.jpg?alt=media&token=5042ce73-c1ff-49dc-aa71-0f0e23d234cd"
+        }
+      ]
+    const data2=[
+        {
+          
+          author: "LCD Tactil",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F1%20LCD%20TACTIL.jpg?alt=media&token=d8afa667-7a4f-42e2-9526-eee13f46da41"
+      
+        },
+        {
+          
+          author: "LCD Exterior",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F2%20LCD%20EXTERIOR.jpg?alt=media&token=79f052d6-19ea-45e8-914d-fd052b53042a"
+      
+        },
+        {
+          
+          author: "LCD Alto Brillo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F3%20LCD%20ALTO%20BRILLO.jpg?alt=media&token=54ced319-2b12-4c53-8f7c-9bb72f4638a6"
+        },
+        {
+          
+          author: "Video Wall",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2F4%20VIDEO%20WALL.jpg?alt=media&token=27e1a0e2-fbf6-4add-a2de-86e4ea48082b"
+        }
+      ]
+    const date3=[
+        {
+          id: 12,
+          author: "Circulo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fcirculo.jpg?alt=media&token=dfafe6c4-edb8-4e4d-8cb1-e89a2973e438"
+        },
+        {
+          id: 13,
+          author: "Cruz Farmacia",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fcruz%20farmacia.webp?alt=media&token=0f7ec9d8-8562-4a4c-916b-da9c630df172"
+        },
+        {
+          id: 14,
+          author: "Cubo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fcubo.jpg?alt=media&token=30c6341d-9f17-4869-8bbc-099ff2dfac07"
+        },
+        {
+          id: 15,
+          author: "Esfera Led",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fesfera%20led.jpg?alt=media&token=c8ad7f37-ff72-482d-8051-49d4223b7df1"
+        },
+        {
+          id: 16,
+          author: "Farola",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Ffarola.jpg?alt=media&token=2bff213e-44b4-4972-8bb3-36ef65227b0f"
+        },
+        {
+          id: 17,
+          author: "Gasolinera",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fgasolinera.jpg?alt=media&token=949f80e0-cb79-46f3-912f-d5440223fe9c"
+        },
+        {
+          id: 18,
+          author: "Hexagono",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fhexagono.png?alt=media&token=83a8635b-4c43-4b1c-861b-5a2a1f83ecc4"
+        },
+        {
+          id: 19,
+          author: "Immobiliaria",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Finmobiliaria.jpg?alt=media&token=fa984875-3c88-4bdd-a7dd-befbba365eef"
+        },
+        {
+          id: 20,
+          author: "Lcd espejo",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Flcd%20espejo.jpg?alt=media&token=ba5ec55b-c463-4a90-885f-766e291c915e"
+        },
+        {
+          id: 21,
+          author: "Marcador",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fmarcador.png?alt=media&token=f0e897b7-68d8-4c04-aecb-1dcfeae39b72"
+        },
+        {
+          id: 22,
+          author: "Proyector",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fproyector.jpg?alt=media&token=53187343-1ac7-42c4-8307-890996b7da15"
+        },
+        {
+          id: 23,
+          author: "Sistema Control",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2FSistema%20control.jpg?alt=media&token=4c92069a-faf3-4349-a167-9ce9c79c5f22"
+        },
+        {
+          id: 24,
+          author: "Supermercado",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fsupermercado.jpg?alt=media&token=d1190837-1089-47c6-922d-52f695c30c78"
+        },
+        {
+          id: 25,
+          author: "Taxi",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Ftaxi.jpg?alt=media&token=38c182dd-25fa-4103-b7c9-4a655bcc029f"
+        },
+        {
+          id: 26,
+          author: "Truss",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Ftruss.jpg?alt=media&token=91965c01-efcf-4836-87c0-cb28b0688e65"
+      
+        },
+        {
+          id: 27,
+          author: "Ventilador",
+          image: "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2Fventilador.png?alt=media&token=2322b0e4-1bf0-4ba5-b943-d54b1a22bad8"
+      
+        }
+      ]
 
     function getSteps() {
         // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'
-        return ['USE', 'SCREEN', 'INSTALLATION', 'Extra Data', 'Contact Details'];
+        return ['Product Type','Use', 'Screen', 'Installation', 'Extra Data', 'Contact Details'];
+    }
+    const [screenDisplay,setScreenDisplay]=useState('block')
+    const [lcdDisplay,setLcdDisplay]=useState('none')
+    const [variosDisplay,setVariousDisplay]=useState('none')
+    function showLedType(i){
+        if(i===1){
+           setScreenDisplay('block')
+           setLcdDisplay('none')
+           setVariousDisplay('none')
+        }
+        if(i===2){
+            setScreenDisplay('none')
+           setLcdDisplay('block')
+           setVariousDisplay('none')
+        }
+        if(i===3)
+        {
+            setScreenDisplay('none')
+           setLcdDisplay('none')
+           setVariousDisplay('block')
+        }
     }
     const [buycolor,setbuycolor]=useState('');
     const [indoorcolor,setindoorcolor]=useState('');
     const [screenaccesscolor,setscreenaccesscolor]=useState('');
     const [structurecolor,setstructurecolor]=useState('');
-
+    function setProductTypefunc(name,image){
+        
+        setProductType(name);
+        setProductTypeImg(image);
+    }
     function getStepContent(stepIndex) {
         switch (stepIndex) {
-            case 0:
+            case 0: return <div className="w-100  my-lg-5">
+                
+                <div class="container" >
+                <div class ="row" style={{paddingBottom:"5px"}}>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Led Screens</a>
+                    </div>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>LCD</a>
+                    </div>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Various</a>
+                    </div>
+                </div>
+                <div class="row">
+                <div id="screens" style={{display:screenDisplay}}>
+                {
+                    
+                    data1.map((val,id) => {
+                        return(
+                            <>
+                                <div class="col-md-4 img-box" style={{padding:'5px'}}>
+                                    
+                                    <h4>{val.author}</h4>
+                                    <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                    onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                    
+                                </div>
+                            
+                            </>
+                        )
+                    })
+                }
+                </div>
+                </div>
+                
+                <div id="lcd" style={{display:lcdDisplay}}>
+                    {
+                        data2.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                        <h4>{val.author}</h4>
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                
+                <div id="various" style={{display:variosDisplay}}>
+                {
+                        date3.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                        <h4>{val.author}</h4>
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                
+               
+                
+                
+                </div>
+            </div>
+            case 1:
                 return <div className="w-100  my-lg-5">
                     <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
                     {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
@@ -499,29 +765,7 @@ export default function QuoteMain() {
                             <FormControlLabel value="CONTROL ROOM" control={<Radio color="primary" />} label="CONTROL ROOM" />
                         </RadioGroup>
                     </FormControl>
-                    {/* <p className="d-inline w-100">
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="FAIR/EVENT/CONCERTS/PLATO TV" />FAIR/EVENT/CONCERTS/PLATO-TV
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="CORPORATE IMAGE" />CORPORATE IMAGE
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="ADVERTISING" />ADVERTISING
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="INFORMATION" />INFORMATION
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="TRAFFIC" />TRAFFIC
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="SPORTS EVENT" />SPORTS EVENT
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" className="w-25 text-center" onchange={(e) => setscreenuse(e.target.value)} value="CONTROL ROOM" />CONTROL ROOM
-                        </div>
-                    </p> */}
+                    
                     <br />
                     <br />
                     <br />
@@ -529,7 +773,7 @@ export default function QuoteMain() {
 
 
                 </div>
-            case 1:
+            case 2:
                 return <div className="w-100 my-lg-5">
                     <div>
                         <h4 className="text-center w-100 text-dark d-inline">Dimensión de la pantalla?</h4>
@@ -546,10 +790,7 @@ export default function QuoteMain() {
                         type="radio" name="fqf"
                         id="sadd" class="input-hidden " />
                     <label for="sadd" style={{marginRight:"10px"}}>
-                        {/* <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3VMEMNOqtMCbm09-ybyc_roZbsJG2UdT_wXZze1yQrIGlnQFIm5nHnOy2Ko8-7t56TFA&usqp=CAU"
-                            alt="I'm sad"
-                            className="mx-lg-5 p-2" style={{ cursor: "pointer" }} /> */}
+                       
                              <div className="mx-lg-4 p-2">
                             <i className=" fa fa-home" style={screenaccesscolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"} : { cursor: 'pointer', fontSize:"40px"}}></i>
                         </div>
@@ -560,9 +801,7 @@ export default function QuoteMain() {
                         type="radio" name="fqf"
                         id="happpy" class="input-hidden" />
                     <label for="happpy">
-                        {/* <img
-                            src="data:image/png;base64,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"
-                            alt="I'm happy" className="p-2" style={{ cursor: "pointer" }} /> */}
+                       
                              <div className="mx-lg-4 p-2">
                             <i className=" fa fa-sun-o" style={screenaccesscolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
                         </div>
@@ -580,22 +819,14 @@ export default function QuoteMain() {
                                 <FormControlLabel value="VIDEO PROCESSOR (Managing Different Signals)" control={<Radio color="primary" />} label="VIDEO PROCESSOR (Managing Different Signals)" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="SYNCHRONE (Live Broadcast)" />SYNCHRONE (Live Broadcast)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="ASYNCHRONOUS (From Memory)" />ASYNCHRONOUS (From Memory)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="qqq1" className="w-25 text-center" onchange={(e) => setcontrolsys(e.target.value)} value="VIDEO PROCESSOR (Managing Different Signals)" />VIDEO PROCESSOR (Managing Different Signals)
-                        </div> */}
+                       
                     </p>
                     <br />
                     <br />
                     <br />
                     <br />
                 </div>
-            case 2:
+            case 3:
                 return <div className="w-100 my-lg-5">
                     <h4 className="text-center w-100 text-dark frank-color-blue">Orientación de la pantalla?</h4>
                     <input
@@ -650,18 +881,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="HEAT VENTILATION" control={<Radio color="primary" />} label="HEAT VENTILATION" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="NEAR THE SEA" />NEAR THE SEA
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="HIGH MOUNTAIN" />HIGH MOUNTAIN
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="LITTLE EXTREME" />LITTLE EXTREME
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="adsd" className="w-25 text-center" onchange={(e) => setadverseweather(e.target.value)} value="HEAT VENTILATION" />HEAT VENTILATION
-                        </div> */}
+                        
                     </p>
 
 
@@ -725,26 +945,14 @@ export default function QuoteMain() {
                                 <FormControlLabel value="8 WEEKS BARCO (Standard Manufacturing)" control={<Radio color="primary" />} label="8 WEEKS BARCO (Standard Manufacturing)" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="Select date from Calander" />Select date from Calander
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="2 WEEKS STOCK (In stock)" />2 WEEKS STOCK (In stock)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="4 PLANE WEEKS , (Express Manufacturing)" />4 PLANE WEEKS , (Express Manufacturing)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="gwegwe" className="w-25 text-center" onchange={(e) => setdeliverytime(e.target.value)} value="8 WEEKS BARCO (Standard Manufacturing)" />8 WEEKS BARCO (Standard Manufacturing)
-                        </div> */}
+                       
                     </p>
 
 
                     <br />
                     <br />
                 </div>;
-            // <div className="w-100 my-lg-5"><TextField value={modal} onChange={(e) => setModal(e.target.value)} className="w-75" id="outlined-basic" label="Do you know the modal you are looking for?" variant="outlined" /> </div>;
-            case 3:
+            case 4:
                 return <div className="w-100 my-lg-5">
                     <br />
                     <br />
@@ -774,12 +982,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="TEMPERATURE SENSOR" control={<Radio color="primary" />} label="TEMPERATURE SENSOR" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="bgweg" className="w-25 text-center" onchange={(e) => setsensor(e.target.value)} value="BRIGHTNESS SENSOR" />BRIGHTNESS SENSOR
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="bgweg" className="w-25 text-center" onchange={(e) => setsensor(e.target.value)} value="TEMPERATURE SENSOR" /> TEMPERATURE SENSOR
-                        </div> */}
+                     
                     </p>
                     <br />
                     <br />
@@ -793,15 +996,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="5s year" control={<Radio color="primary" />} label="5s year" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="wgwea" className="w-25 text-center" onchange={(e) => setwarranty(e.target.value)} value="2 years (default should be selected)" />2 years (default should be selected)
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="wgwea" className="w-25 text-center" onchange={(e) => setwarranty(e.target.value)} value="3 years" />3 years
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="wgwea" className="w-25 text-center" onchange={(e) => setwarranty(e.target.value)} value="5s year" />5s year
-                        </div> */}
+                       
                     </p>
                     <br />
                     <br />
@@ -814,13 +1009,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="ALUMINIUM SLIM MODEL 8mm thick" control={<Radio color="primary" />} label="ALUMINIUM SLIM MODEL 8mm thick" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="webe" className="w-25 text-center" onchange={(e) => setcarcass(e.target.value)} value="CHAPA SLIM MODEL 8mm thick" />CHAPA SLIM MODEL 8mm thick
-
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="webe" className="w-25 text-center" onchange={(e) => setcarcass(e.target.value)} value="ALUMINIUM SLIM MODEL 8mm thick" />ALUMINIUM SLIM MODEL 8mm thick
-                        </div> */}
+                       
                     </p>
                     <br />
                     <br />
@@ -834,13 +1023,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="NO" control={<Radio color="primary" />} label="NO" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="wqeqv" className="w-25 text-center" onchange={(e) => setflycases(e.target.value)} value="YES" />YES
-
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="wqeqv" className="w-25 text-center" onchange={(e) => setflycases(e.target.value)} value="NO" />NO
-                        </div> */}
+                      
                     </p>
                     <br />
                     <br />
@@ -854,14 +1037,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="PRIVATE ENTITY" control={<Radio color="primary" />} label="PRIVATE ENTITY" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="bqea" className="w-25 text-center" onchange={(e) => setentity(e.target.value)} value="PUBLIC ENTITY" />PUBLIC ENTITY
-
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="bqea" className="w-25 text-center" onchange={(e) => setentity(e.target.value)} value="PRIVATE ENTITY" />PRIVATE ENTITY
-
-                        </div> */}
+                       
                     </p>
                     <br />
                     <br />
@@ -869,7 +1045,7 @@ export default function QuoteMain() {
 
 
                 </div>;
-            case 4:
+            case 5:
                 return <div>
                     <div className="row">
                         <div className="col-md-12 my-lg-2" style={{ display: "flex", justifyContent: "center" }}><TextField onChange={(e) => setname(e.target.value)} className="mx-1" id="outlined-basic" label="Name?" variant="outlined" /> <TextField type="number" onChange={(e) => setcontact(e.target.value)} className="mx-1" id="outlined-basic" label="Contact?" variant="outlined" /><TextField onChange={(e) => setcompany(e.target.value)} className="mx-1" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
@@ -884,12 +1060,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="End customer" style={{marginLeft:"-20px"}} control={<Radio color="primary" />} label="End customer" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="fegqbq" className="w-25 text-center" onchange={(e) => setcustomertype(e.target.value)} value="Intermediary" />Intermediary
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="fegqbq" className="w-25 text-center" onchange={(e) => setcustomertype(e.target.value)} value="End customer" /> End customer
-                        </div> */}
+                       
                     </p></div>
                     <div className="w-100 my-lg-2"> <p className="d-inline w-100">
                         <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "10px" }}>Sector?</h4>
@@ -905,30 +1076,7 @@ export default function QuoteMain() {
                                 <FormControlLabel style={{ textAlign: "left" }} value="CONGRESSES" control={<Radio color="primary" />} label="CONGRESSES" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="SPORT" />SPORT
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="RETAIL" />RETAIL
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="PUBLIC" />PUBLIC
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="HEALTH" />HEALTH
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="MOTOR" />MOTOR
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="OCIO" />OCIO
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="HOTELS" />HOTELS
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="aa" className="w-25 text-center" onchange={(e) => setsector(e.target.value)} value="CONGRESSES" />CONGRESSES
-                        </div> */}
+                     
                     </p></div>
                     <h4 className="text-center w-100 text-dark frank-color-pink">Adjuntar documentos e imágenes?</h4>
                     <div className="w-100 my-lg-2"><TextField onChange={uploadfile} className="w-50 p-25 my-2" id="outlined-basic" type="file" variant="outlined" /> </div>
@@ -970,9 +1118,23 @@ export default function QuoteMain() {
     const steps = getSteps();
 
     const handleNext = () => {
+        
         window.scrollTo(0, 0);
-        if (activeStep < 3) {
-            if (activeStep === 0) {
+        console.log(activeStep)
+       
+        if (activeStep <= 3) {
+            if(activeStep === 0)
+            {
+                
+                if(productType === '' || prdouctTypeImg === '')
+                {
+                    alert("please select a product")
+                }
+                else {
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                }
+            }
+            if (activeStep === 1) {
                 if (buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '') {
                     alert("please fill in the form");
                 }
@@ -980,7 +1142,7 @@ export default function QuoteMain() {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
                 }
             }
-            if (activeStep === 1) {
+            if (activeStep === 2) {
                 if (screenheight === "" || screenbase === "" || screenaccess === "" || controlsys === '') {
                     alert("please fill in the form");
                 }
@@ -988,7 +1150,7 @@ export default function QuoteMain() {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
                 }
             }
-            if (activeStep === 2) {
+            if (activeStep === 3) {
                 if (screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === "") {
                     alert("please fill in the form");
                 }
@@ -1046,6 +1208,7 @@ export default function QuoteMain() {
             <           section className="nav-section" style={{ backgroundImage: "linear-gradient(to right, #934CFF 10%, #F62B84)", height: "60px" }} >
                 <Navbar />
             </section>
+            
 
 
             <div className="page-wrapper" style={{ display: display1 }}>
@@ -1057,7 +1220,7 @@ export default function QuoteMain() {
                         {/* <div class="col-xl-6 col-md-12 left-side-pic">
                             <img src={salman} style={{width:"100%", height:"100%"}}/>
                         </div> */}
-                        <div class="col-xl-12 col-lg-12  mx-auto text-center right-side bg-light">
+                        <div class="col-xl-12 col-lg-12  mx-auto text-center right-side ">
                             {/* col-xlg-9 col-md-9 */}
                             <div className={classes.root}>
                                 <div className="d-none d-md-block mt-md-4"style={{width:"95%", margin:"auto"}}>
@@ -1107,14 +1270,94 @@ export default function QuoteMain() {
                 </div>
             </div>
 
-            <div className="page-wrapper bg-light" style={{ display: display2 }}>
+            <div className="page-wrapper " style={{ display: display2 }}>
+                
                 <div class="container  pt-lg-5 mt-lg-5">
                     <div className="col-md-12 pr-5">
                         <i className="fa fa-chevron-left fa-2x" style={{ cursor: 'pointer' }} onClick={() => Displaythree()}></i>
                     </div>
                     <div class="row text-center">
+                    <div className="w-100  my-lg-5">
+                
+                <div class="container" >
+                <div class ="row" style={{paddingBottom:"5px"}}>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Led Screens</a>
+                    </div>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>LCD</a>
+                    </div>
+                    <div class="col-md-4">
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Various</a>
+                    </div>
+                </div>
+                <div class="row">
+                <div id="screens" style={{display:screenDisplay}}>
+                {
+                    
+                    data1.map((val,id) => {
+                        return(
+                            <>
+                                <div class="col-md-4 img-box " style={{padding:'5px'}}>
+                                    
+                                    <h4 >{val.author}</h4>
+                                    <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                    onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                    
+                                </div>
+                            
+                            </>
+                        )
+                    })
+                }
+                </div>
+                </div>
+                
+                <div id="lcd" style={{display:lcdDisplay}}>
+                    {
+                        data2.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                        <h4>{val.author}</h4>
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                
+                <div id="various" style={{display:variosDisplay}}>
+                {
+                        date3.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                        <h4>{val.author}</h4>
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setProductTypefunc(val.author,val.image)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                
+               
+                
+                
+                </div>
+            </div>
                         <div className="w-100 mx-auto mt-md-4">
-                            <br />
+                            
                             <label className="for-question-mobile frank-color-pink">¡Háganos saber lo que quiere! Mencione todo a continuación:</label>
                             <textarea onChange={(e) => setdescription(e.target.value)}>
                             </textarea>
@@ -1140,8 +1383,7 @@ export default function QuoteMain() {
                             </p>
                             </div>
 
-                            {/* <div className="w-100 my-lg-2 " style={{margin:"auto"}}>  */}
-                            {/* <p className="d-inline w-100"> */}
+                           
                             <h4 className="text-center w-100 text-dark sector frank-color-blue" style={{marginTop:"50px", marginBottom:"20px"}}>Sector?</h4>
                             <div className="for-question-res" style={{ display: "flex"}}>
                                 <div className="w-100">
@@ -1202,9 +1444,7 @@ export default function QuoteMain() {
             <div className="page-wrapper bg-light" style={{ display: display3 }}>
                 <div class="container-fluid">
                     <div class="row">
-                        {/* <div className="col-md-12 pr-5">
-                            <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
-                        </div> */}
+                        
                         <h3 className="text-dark w-100 pl-lg-5" >Sabes lo que buscas? </h3>
                         <div className="w-100 pl-lg-5" >
                             <FormControl component="fieldset">
@@ -1215,38 +1455,92 @@ export default function QuoteMain() {
                             </FormControl>
 
                         </div>
-                        {/* <div className="text-center w-100"> */}
-                        {/* <p className="d-inline w-100 ">
-                                        <div className="w-25 float-left ">
-                                            <input type="radio" name="q1" className="w-25 text-center" value="yes" />Yes
-                                          </div>
-                                        <div className="w-75 text-center float-left">
-                                            <input type="radio" name="q1" className="w-25 text-center" value="no" />No
-                                         </div>
-                                    </p> */}
-                        {/* </div> */}
+                       
                     </div>
                 </div>
             </div>
             <Footer />
-
-            {/* <Snackbar
-                anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                className={classes.modal}
+                open={openpop2}
+                onClose={handleClosepop2}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
                 }}
-                open={open3}
-                autoHideDuration={6000}
-                onClose={handleClose3}
-                message={"Oops! seems you are not logged in. Please Login to your account to create an offer/quote."}
-                action={
-                    <React.Fragment>
-                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose3}>
-                            <CloseIcon fontSize="small" />
-                        </IconButton>
-                    </React.Fragment>
-                }
-            /> */}
+            >
+            <Fade in={openpop2}>
+                    <div className={classes.paper}>
+                        <div className="container rounded">
+                            <div className="container bg-white rounded ">
+                                <div className="row">
+                                    <div className="col-md-12 col-lg-6 col-sm-12 p-0 m-0 d-none d-lg-block mx-auto p-5">
+                                        <div className="row d-block text-center ml-3">
+                                            <img
+                                                src="assets/plugins/images/woofic.jpeg "
+                                                className="img-fluid w-50 mx-auto text-center mb-3"
+                                            />
+                                        </div>
+                                        <h3
+                                            className=" py-3
+                                         h3 bolder"
+                                        >
+                                            <b>Consiga nuevos clientes</b>
+                                        </h3>
+                                        <h5 className=" py-3 h5 text-muted">
+                                            Llega al siguiente nivel, llega a donde nunca has estado
+                                            antes y descubre nuevas oportunidades!
+                                        </h5>
+                                        <b>Te asesoramos sin compromiso </b>
+                                        <h5 className=" py-34 h5">
+                                            <i className="fa fa-phone"> </i>{" "}
+                                            <u>
+                                                <a href="callto:680494729" className="text-dark">
+                                                    {" "}
+                                                    680 49 47 29
+                                                </a>
+                                            </u>{" "}
+                                            or{" "}
+                                            <u>
+                                                <a href="/contact" className="text-dark">
+                                                    {" "}
+                                                    te llamaremos gratis
+                                                </a>
+                                            </u>{" "}
+                                        </h5>
+                                        <img
+                                            className="img-fluid w-75 mx-auto"
+                                            src={reg}
+                                            style={{
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                alignSelf: "center",
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="col-md-12 col-lg-6 col-sm-12 mx-auto">
+                                        <span
+                                            className="float-right pr-2"
+                                            onClick={handleClosepop2}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <i className="fa fa-times fa-2x pt-2"></i>
+                                        </span>
+                                        <div className=" py-3 px-4">
+                                            <div style={{ display: display1 }}>
+                                                <Client />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Fade>
+            </Modal>
 
         </>
     );

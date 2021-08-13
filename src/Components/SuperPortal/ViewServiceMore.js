@@ -99,6 +99,14 @@ export default function ViewServiceMore() {
                                                 <td>{blog.buy}</td>
                                             </tr>
                                             <tr>
+                                                                <td>Producto</td>
+                                                                <td>{blog.product_type}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Imagen del producto</td>
+                                                                <td><a style={{color:'grey'}} href={blog.product_image}>Imagen</a></td>
+                                                            </tr>
+                                            <tr>
                                                 <td>Material De La Carcasa</td>
                                                 <td>{blog.carcass_material}</td>
                                             </tr>

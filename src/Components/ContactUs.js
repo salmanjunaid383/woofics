@@ -50,9 +50,9 @@ export default function ContactUs() {
 
     return (
         <>
-            <div className="new-nav">
+            {/* <div className="new-nav"> */}
             <Navbar/>
-            </div>
+            {/* </div> */}
             <div className="container.fluid for-mobile">
                 <div className="" style={{ height: '100%' }}>
                     <div class="container ">

@@ -209,6 +209,14 @@ export default function AllQuotation() {
                                                                 <td>{serviceb.adverse_weather}</td>
                                                             </tr>
                                                             <tr>
+                                                                <td>Producto</td>
+                                                                <td>{serviceb.product_type}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Imagen del producto</td>
+                                                                <td><a style={{color:'grey'}} href={serviceb.product_image}>Imagen</a></td>
+                                                            </tr>
+                                                            <tr>
                                                                 <td>Comprar</td>
                                                                 <td>{serviceb.buy}</td>
                                                             </tr>

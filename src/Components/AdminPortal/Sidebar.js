@@ -170,7 +170,7 @@ export default function ServiceSidebar(props) {
 
     const Data = [
           {
-            name: 'Dashboard',
+            name: 'Panel',
             icon: <DashboardIcon  />,
             to: '/admindashboard'
         },
@@ -180,12 +180,12 @@ export default function ServiceSidebar(props) {
             to: '/todo'
         },
         {
-            name: 'Offers List',
+            name: 'Lista de ofertas',
             icon: <ListIcon />,
             to: '/offerlist'
         },
         {
-            name: 'Ledger',
+            name: 'Libro mayor',
             icon: <BorderColorIcon />,
             to: '/providerledger'
         },
@@ -195,17 +195,17 @@ export default function ServiceSidebar(props) {
         //     to: 'supplierinvoice'
         // },
         {
-            name: 'Discussion Forum',
+            name: 'Foro de discusion',
             icon: <ContactMailIcon  />,
             to: 'clientdiscussionforum'
         },
         {
-            name: 'Help',
+            name: 'Ayuda',
             icon: <LiveHelpIcon />,
             to: '/providerhelp'
         },
         {
-            name: 'Complain',
+            name: 'Quejarse',
             icon: <CallEndIcon />,
             to: '/providercomplain'
         },

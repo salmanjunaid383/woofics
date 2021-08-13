@@ -159,12 +159,12 @@ export default function SupplierSidebar() {
 
     const Data = [
         {
-            name: 'Supplier Dashboard',
+            name: 'Panel de proveedores',
             icon: <DashboardIcon />,
             to: '/supplierdashboard'
         },
         {
-            name: 'Projects',
+            name: 'Proyectos',
             icon: <PollIcon  />,
             to: '/supproject'
         },
@@ -179,32 +179,32 @@ export default function SupplierSidebar() {
             to: '/quotation'
         },
         {
-            name: 'Sent Quotation',
+            name: 'Cotización enviada',
             icon: <AssistantIcon  />,
             to: '/sentquotation'
         },
         {
-            name: 'Ledger',
+            name: 'Libro mayor',
             icon: <BorderColorIcon  />,
             to: '/supplierledger'
         },
         {
-            name: 'Invoice',
+            name: 'Factura',
             icon : <PaymentIcon />,
             to: '/supplierinvoice'
         },
         {
-            name: 'Discussion Forum',
+            name: 'Foro de discusion',
             icon: <AssignmentIcon />,
             to :'/clientdiscussionforum'
         },
         {
-            name: 'Help',
+            name: 'Ayuda',
             icon: <LiveHelpIcon  />,
             to: '/suphelp'
         },
         {
-            name: 'Complain',
+            name: 'Quejarse',
             icon: <CallEndIcon  />,
             to: '/supcomplain'
         },
