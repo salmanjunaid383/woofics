@@ -135,6 +135,9 @@ export default function SupplierLedger() {
                             <div id="blog" class="row ">
                                 <div class="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
+                                        <div className="col-xl-12">
+                                            <h3 className="text-change text-center">Rechnung</h3>
+                                        </div>
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                            
                                             <div className="table-responsive salman-table-change">
@@ -150,7 +153,6 @@ export default function SupplierLedger() {
                                                     </thead>
                                                     <tbody id="data-row">
                                                         {
-
                                                             data == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                                 data.map((val, id) => {
                                                                     return (
