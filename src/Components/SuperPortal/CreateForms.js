@@ -221,7 +221,7 @@ export default function CreateForms() {
                     <div className="page-wrapper bg-light">
                         <div class="container-fluid">
                             <div class="d-md-flex mb-3">
-                                <h3 class=" mb-0 mx-auto text-center">CARGOS</h3>
+                                <h3 class=" mb-0 mx-auto text-center text-change">CARGOS</h3>
                             </div> 
                             <div class="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">

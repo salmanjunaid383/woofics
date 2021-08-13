@@ -75,12 +75,13 @@ export default function OfferBadge() {
 
                     <div className="page-wrapper bg-light">
                         <div class="d-md-flex mb-3">
-                            <h3 class=" mb-0 h1 text-center mx-auto" style={{fontSize:"16px", lineHeight:"30px", fontWeight:"500"}}>ofertas</h3>
+
                         </div>
                         <div class="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
+                                    <h3 class=" mb-0 h1 text-center mx-auto text-change" style={{fontSize:"36px", fontWeight:"500", marginTop:"15px"}}>ofertas</h3>
                                         <div className="table-responsive salman-table-change">
                                         
                                             {blog.map((val, key) => {

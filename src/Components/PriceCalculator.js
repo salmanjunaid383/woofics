@@ -382,7 +382,7 @@ export default function PriceCalculator() {
                             <h1>Calculadora</h1>
                         </div>
                         <div className="col-sm-12 ">
-                        <div className="row" style={{ height: '300px', overflowY: 'scroll' }}>
+                        <div className="row" style={{ height: '260px', overflowY: 'scroll' }}>
                                     {led.map((val) => {
                                         return (
                                             <>

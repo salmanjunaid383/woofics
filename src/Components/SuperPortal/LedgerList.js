@@ -77,7 +77,7 @@ export default function Help() {
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
                                         <div style={{textAlign:"center"}}>
-                                            <h3 className=" mb-0">Lista de libro mayor</h3>
+                                            <h3 className=" mb-0 text-change">Lista de libro mayor</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
