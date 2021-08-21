@@ -224,7 +224,7 @@ export default function QuoteMain() {
     const [visuald, setvisuald] = useState("");
     const [screenuse, setscreenuse] = useState("");
     const [screenbase, setscreenbase] = useState();
-    const [screenheight, setscreenheight] = useState("");
+    const [screenheight, setscreenheight] = useState();
     const [screenaccess, setscreenaccess] = useState('');
     const [screenorientation, setscreenorientation] = useState("");
     const [controlsys, setcontrolsys] = useState("");

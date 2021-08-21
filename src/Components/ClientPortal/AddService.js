@@ -1464,9 +1464,9 @@ export default function Test() {
             <div className="page-wrapper bg-light" style={{ display: display3 }}>
                 <div class="container-fluid">
                     <div class="row">
-                        {/* <div className="col-md-12 pr-5">
+                        <div className="col-md-12 pr-5">
                             <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
-                        </div> */}
+                        </div>
                         <h3 className="text-dark w-100 pl-lg-5" >Sabes lo que buscas? </h3>
                         <div className="w-100 pl-lg-5" >
                             <FormControl component="fieldset">
