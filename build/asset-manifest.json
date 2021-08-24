@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.a37a36b3.chunk.css",
-    "main.js": "/static/js/main.a7e65e1a.chunk.js",
-    "main.js.map": "/static/js/main.a7e65e1a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9a5d4bec.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9a5d4bec.js.map",
+    "main.css": "/static/css/main.83ea1285.chunk.css",
+    "main.js": "/static/js/main.910a5b08.chunk.js",
+    "main.js.map": "/static/js/main.910a5b08.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2fbbf2a2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2fbbf2a2.js.map",
     "static/css/2.274a2bd7.chunk.css": "/static/css/2.274a2bd7.chunk.css",
-    "static/js/2.2728f55a.chunk.js": "/static/js/2.2728f55a.chunk.js",
-    "static/js/2.2728f55a.chunk.js.map": "/static/js/2.2728f55a.chunk.js.map",
-    "static/js/3.c4676a79.chunk.js": "/static/js/3.c4676a79.chunk.js",
-    "static/js/3.c4676a79.chunk.js.map": "/static/js/3.c4676a79.chunk.js.map",
+    "static/js/2.f5c23a2f.chunk.js": "/static/js/2.f5c23a2f.chunk.js",
+    "static/js/2.f5c23a2f.chunk.js.map": "/static/js/2.f5c23a2f.chunk.js.map",
+    "static/js/3.e460e0a3.chunk.js": "/static/js/3.e460e0a3.chunk.js",
+    "static/js/3.e460e0a3.chunk.js.map": "/static/js/3.e460e0a3.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.274a2bd7.chunk.css.map": "/static/css/2.274a2bd7.chunk.css.map",
-    "static/css/main.a37a36b3.chunk.css.map": "/static/css/main.a37a36b3.chunk.css.map",
-    "static/js/2.2728f55a.chunk.js.LICENSE.txt": "/static/js/2.2728f55a.chunk.js.LICENSE.txt",
+    "static/css/main.83ea1285.chunk.css.map": "/static/css/main.83ea1285.chunk.css.map",
+    "static/js/2.f5c23a2f.chunk.js.LICENSE.txt": "/static/js/2.f5c23a2f.chunk.js.LICENSE.txt",
     "static/media/footer.css": "/static/media/Footer4k.81443f1b.png",
     "static/media/Logo-1.9a4c450e.png": "/static/media/Logo-1.9a4c450e.png",
     "static/media/Logo-2.2f453859.png": "/static/media/Logo-2.2f453859.png",
@@ -60,10 +60,10 @@
     "static/media/—Pngtree—chat icon_4756851.385172dc.png": "/static/media/—Pngtree—chat icon_4756851.385172dc.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a5d4bec.js",
+    "static/js/runtime-main.2fbbf2a2.js",
     "static/css/2.274a2bd7.chunk.css",
-    "static/js/2.2728f55a.chunk.js",
-    "static/css/main.a37a36b3.chunk.css",
-    "static/js/main.a7e65e1a.chunk.js"
+    "static/js/2.f5c23a2f.chunk.js",
+    "static/css/main.83ea1285.chunk.css",
+    "static/js/main.910a5b08.chunk.js"
   ]
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from 'react-router-dom'
 import "../ClientPortal/allquotation.css"
-
+import Backdrop from '@material-ui/core/Backdrop';
 import axios from 'axios';
 import Sidebar from './Sidebar'
-
+import Modal from '@material-ui/core/Modal';
 import jwt_decode from 'jwt-decode';
+import Fade from '@material-ui/core/Fade';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
@@ -17,11 +18,26 @@ const useStyles = makeStyles((theme) => ({
 
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
-
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     content: {
         flexGrow: 1,
         padding: theme.spacing(0),
-    }
+    },
+    paper: {
+        // backgroundColor: theme.palette.background.paper,
+        // margin: theme.spacing(15, 2),
+        // border: '2px solid #000',
+        // boxShadow: theme.shadows[5],
+        overflow: 'hidden',
+        width: '60%',
+        padding:'10%',
+        height: 'auto',
+        overflowY: 'scroll'
+    },
 
 }));
 
@@ -145,6 +161,25 @@ export default function AllQuotation() {
             );
         }
     }
+    const[items,setItems]=useState([])
+    const [openpop2, setOpenpop2] = React.useState(false);
+    const handleOpenpop2 = (val) => {
+        const response = axios
+            .get(`https://api.woofics.com/api/quotation_items/${val}`)
+            .then(
+                (response) => {
+                    setItems(response.data)
+                    console.log(response.data);
+                },
+                (error) => {
+                    
+                }
+            );
+        setOpenpop2(true);
+    };
+    const handleClosepop2 = () => {
+        setOpenpop2(false);
+    };
 
 
     //Sidebaaaaar/..........................
@@ -360,6 +395,7 @@ export default function AllQuotation() {
                                                                             <td style={{padding:"10px"}} className={val.price > 15000 ? 'txt-oflo text-center bold  badge badge-pill badge-danger' : val.price > 10000 ? 'txt-oflo text-center bold   badge badge-pill badge-success' : val.price > 100 ? 'txt-oflo text-center bold   badge badge-pill badge-info' : val.price > 500 ? 'txt-oflo text-center bold   badge badge-pill badge-warning' : val.price > 1000 ? 'txt-oflo text-center bold   badge badge-pill badge-success' : val.price > 5000 ? 'txt-oflo text-center bold   badge badge-pill badge-secondary' : val.price > 10000 ? 'txt-oflo text-center bold   badge badge-pill badge-primary' : val.price > 20000 ? 'txt-oflo text-center bold   badge badge-pill badge-info' : val.price > 500000 ? 'txt-oflo text-center bold   badge badge-pill badge-danger' : 'txt-oflo text-center bold badge badge-pill badge-danger'}>$ {val.price}</td>
                                                                             <td className="txt-oflo text-center bold">{val.delivery_days} Days</td>
                                                                             <td className="txt-oflo text-center bold">
+                                                                            <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => handleOpenpop2(val.id)} >Detalle</button>
                                                                                 <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => RedoOffer(val.id)} >Rehacer Oferta</button>
                                                                                 <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => StartProj(val.id)} >Iniciar Proyecto</button>
                                                                             </td>
@@ -384,6 +420,54 @@ export default function AllQuotation() {
 
                 </main>
             </div>
+            <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={openpop2}
+            onClose={handleClosepop2}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}>
+                
+            <Fade in={openpop2}>
+                    <div className={classes.paper}>
+                        <div className="container rounded">
+                            <div className="container bg-white rounded ">
+                                <div className="row">
+
+                                <table  id="for-table-setting text-center" class="table table-hover">
+                                    <tr>
+                                        <td style={{textAlign:"center"}}>Name</td>
+                                        <td style={{textAlign:"center"}}>Price</td>
+                                    </tr>
+
+                                  <tbody id="data-row"> 
+                                  {
+                                  items.map((val, id) => {
+                                    return (
+                                        <>
+
+                                                                <tr>
+                                                                    <td>{val.item}</td>
+                                                                    <td>{val.price}€</td>
+                                                                </tr>    
+
+                                        </>
+                                    )
+                                  }
+                                  )}
+                                  </tbody>
+                                  </table>
+                                                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Fade>
+            </Modal>
 
         </>
     );

@@ -83,12 +83,16 @@ export default function Contact() {
     if(fid==='1')
     {
       
-      setbtnstyle12();    
+      setbtnstyle1();    
     }
     if(fid==='2')
     {
       console.log("Setbtn")
       setbtnstyle12();    
+    }
+    if(fid==='3')
+    {
+      setbtnstyle3();
     }
   },[])
 

@@ -185,7 +185,7 @@ export default function ServiceSidebar(props) {
             to: '/offerlist'
         },
         {
-            name: 'Libro mayor',
+            name: 'Gastos',
             icon: <BorderColorIcon />,
             to: '/providerledger'
         },

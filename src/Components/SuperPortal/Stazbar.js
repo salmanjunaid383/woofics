@@ -34,6 +34,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PollIcon from '@material-ui/icons/Poll';
+import ReceiptIcon from '@material-ui/icons/Receipt';
 import SuperDashboard from './SuperDashboard';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
@@ -288,6 +289,11 @@ export default function StazBar() {
             name: 'Libro mayor',
             icon: <HourglassEmptyIcon  />,
             to: '/ledger'
+        },
+        {
+            name:"Invoices",
+            icon: <ReceiptIcon></ReceiptIcon>,
+            to: '/admininvoice'
         },
          {
             name: 'Datos de interés',

@@ -323,8 +323,10 @@ export default function CreateForms() {
                                                         <TextField
                                                             id="standard-textarea"
                                                             label="Charges"
+                                                            
+                                                            
                                                             onChange={(e) => setchargeOne(e.target.value)}
-                                                            placeholder="Add Charges"
+                                                            placeholder="Add Charges, only accept numeric values"
                                                             multiline
                                                             fullWidth
                                                             InputLabelProps={{
@@ -364,7 +366,7 @@ export default function CreateForms() {
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setchargeTwo(e.target.value)}
                                                                     label="Charges"
-                                                                    placeholder="Add Charges"
+                                                                    placeholder="Add Charges, only accept numeric values"
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{
@@ -406,7 +408,7 @@ export default function CreateForms() {
                                                                     id="standard-textarea"
                                                                     label="Charges"
                                                                     onChange={(e) => setchargeThree(e.target.value)}
-                                                                    placeholder="Add Charges"
+                                                                    placeholder="Add Charges, only accept numeric values"
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{

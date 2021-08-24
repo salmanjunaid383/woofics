@@ -184,7 +184,7 @@ export default function SupplierSidebar() {
             to: '/sentquotation'
         },
         {
-            name: 'Libro mayor',
+            name: 'Gastos',
             icon: <BorderColorIcon  />,
             to: '/supplierledger'
         },

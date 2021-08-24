@@ -95,7 +95,7 @@ function Footer() {
                                     <Link className="text-white h5" to="/aboutus/1">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/contact"> Contacto </Link>
+                                    <Link className="text-white h5" to="/aboutus/3"> Contacto </Link>
                                 </li>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/allblog"> Blog </Link>
@@ -139,11 +139,11 @@ function Footer() {
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className=" border-right px-2  ">
-                                            <a href="https://carnovo.com/es/terminos-y-condiciones" target="_blank" className="text-white">Términos Y Condiciones</a>
+                                            <a  target="_blank" className="text-white">Términos Y Condiciones</a>
                                         </div>
 
                                         <div className="mx-2 ">
-                                            <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">Política De Privacidad</a>
+                                            <a  target="_blank" className="text-white">Política De Privacidad</a>
                                         </div>
                                     </div>
                                 </div>

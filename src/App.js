@@ -72,7 +72,7 @@ import Logo from './Components/SuperPortal/Logo';
 // Landing Pager 
 import Landing from './Components/LandingPage';
 import PriceCalculator from './Components/PriceCalculator';
-
+import QuoteDetail from './Components/ClientPortal/Quote';
 
 import QuoteMain from './Components/QuoteMain';
 import BlogDetail from './Components/BlogDetail';
@@ -102,6 +102,7 @@ import CreateForms from './Components/SuperPortal/CreateForms';
 import ComplainResponse from './Components/SuperPortal/ComplainResponse';
 import DataofInt from './Components/SuperPortal/DataofInt';
 import description from './Components/SuperPortal/description';
+import superinvoice from './Components/SuperPortal/SuperInvoice';
 
 //provider
 import ProviderHelp from './Components/AdminPortal/Help';
@@ -143,6 +144,7 @@ import forum from './Components/forum'
 import detailforum from './Components/detailforum'
 import invoice from './Components/SupplierPortal/SupplierInvoice'
 import invoicedetail from './Components/SupplierPortal/InvoiceDetail'
+import superinvoicedetail from './Components/SuperPortal/SuperInvoiceDetail'
 import editquote from './Components/SupplierPortal/editQuote'
 function App() {
 
@@ -182,7 +184,7 @@ function App() {
           <Route exact path="/serviceprovider" component={ServiceProvider} />
           <Route exact path="/supplier" component={Supplier} />
           <Route exact path="/description" component={description}></Route>
-          <Route exact path="/suppliers" component={Suppliers} />
+          <Route exact path="/providers" component={Suppliers} />
           <Route exact path="/updateprofile" component={UpdateProfile} />
           <Route exact path="/adminupdateprofile" component={AdminUpdateProfile} />
           <Route exact path="/supplierupdateprofile" component={SupplierUpdateProfile} />
@@ -239,7 +241,7 @@ function App() {
           <Route exact path="/offerlist" component={OfferList} />
           <Route exact path="/aboutus/:fid?" component={Contact} />
           <Route exact path="/complainresponse/:comid" component={ComplainResponses} />
-
+          <Route exact path="/QuoteDetail/:qid" componenet={QuoteDetail}></Route>
 
 
 
@@ -249,6 +251,8 @@ function App() {
           {/* admin */}
           <Route exact path="/adminallnotification" component={AllNotification} />
           <Route exact path="/stazbar" component={StazBar} />
+          <Route exact path="/admininvoice" component={superinvoice}></Route>
+          <Route exact path="/superinvoicedetail/:quid" component={superinvoicedetail}></Route>
 
           {/* provider    */}
           <Route exact path="/providerhelp" component={ProviderHelp} />
@@ -303,6 +307,7 @@ function App() {
           <Route exact path="/dataofint" component={DataofInt} />
           <Route exact path="/providerledger" component={ProviderLedger} />
           <Route exact path="/supplierledger" component={SupplierLedger} />
+
 
 
         </Switch>

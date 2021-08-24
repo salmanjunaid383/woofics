@@ -225,57 +225,57 @@ export default function ServiceProvider() {
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Nombre de su empresa</h6>
-                            </label> <input className="mb-4" onChange={(e) => setnameBusiness(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setnameBusiness(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Nombre de pila</h6>
-                            </label> <input className="mb-4" onChange={(e) => setname(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setname(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Apellido</h6>
-                            </label> <input className="mb-4" onChange={(e) => setlastname(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setlastname(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}> Dirección de correo electrónico</h6>
-                            </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Teléfono</h6>
-                            </label> <input className="mb-4" onChange={(e) => settelephone(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => settelephone(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Tamaño de la empresa</h6>
-                            </label> <input className="mb-4" onChange={(e) => setcompanySize(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setcompanySize(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Ubicación de su negocio (código postal)</h6>
-                            </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Clave</h6>
-                            </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>confirmar Contraseña</h6>
                             </label>
-                            <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Enter here" />
+                            <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
