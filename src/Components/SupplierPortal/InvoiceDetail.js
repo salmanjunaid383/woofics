@@ -4,7 +4,6 @@ import axios from 'axios';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import logo1 from '../LandingPage/images/wetransfer-01f136/Woofic-1.png';
 import TextField from '@material-ui/core/TextField';
-import { loadStripe } from "@stripe/stripe-js";
 import  '../SuperPortal/invoice.css';
 import jwt_decode from 'jwt-decode'
 import CustomAuth from "../CustomAuth";

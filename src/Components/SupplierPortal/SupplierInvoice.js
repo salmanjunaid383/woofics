@@ -7,7 +7,6 @@ import ProBar from '../AdminPortal/Sidebar'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import TextField from '@material-ui/core/TextField';
-import { loadStripe } from "@stripe/stripe-js";
 
 import jwt_decode from 'jwt-decode'
 import CustomAuth from "../CustomAuth";

@@ -4,7 +4,6 @@
 // import Nav from './Nav'
 // import './Invoice .css'
 // import axios from 'axios'
-// import { loadStripe } from "@stripe/stripe-js";
 // import Pusher from 'pusher-js';
 // import Snackbar from '@material-ui/core/Snackbar';
 // import IconButton from '@material-ui/core/IconButton';

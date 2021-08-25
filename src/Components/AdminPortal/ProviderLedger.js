@@ -10,7 +10,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import CustomProviderAuth from "../CustomProviderAuth";
 import TextField from '@material-ui/core/TextField';
-import { loadStripe } from "@stripe/stripe-js";
 const useStyles = makeStyles((theme) => ({
 
     // necessary for content to be below app bar
@@ -60,27 +59,27 @@ export default function ProviderLedger() {
     useEffect(() => {
         getServiceledger();
     }, [])
-    const stripePromise = loadStripe("pk_test_51IIWuIApAAjWKIoNrjwEcTyuCykDQVAqXWIBpwsNt1trDbRXD9n6uKPRvZlDKdQLNyIRiKaSAwpPgbUAjhEkqOJ400HEEcjDh1");
+    // const stripePromise = loadStripe("pk_test_51IIWuIApAAjWKIoNrjwEcTyuCykDQVAqXWIBpwsNt1trDbRXD9n6uKPRvZlDKdQLNyIRiKaSAwpPgbUAjhEkqOJ400HEEcjDh1");
 
-    async function stripePayment(e){
+    // async function stripePayment(e){
         
-        e.preventDefault();
-        const stripe = await stripePromise;
-        const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
-            name: providerName,
-            description: description,
-            currency: 'usd',
-            amount: amount,
-            user_id: userId
-        })
-            .then((response) => {
-                stripe.redirectToCheckout({
-                    sessionId: response.data.session_id,
-                });
-            }, (Error) => {
+    //     e.preventDefault();
+    //     const stripe = await stripePromise;
+    //     const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
+    //         name: providerName,
+    //         description: description,
+    //         currency: 'usd',
+    //         amount: amount,
+    //         user_id: userId
+    //     })
+    //         .then((response) => {
+    //             stripe.redirectToCheckout({
+    //                 sessionId: response.data.session_id,
+    //             });
+    //         }, (Error) => {
                 
-            });
-    }
+    //         });
+    // }
 
 
     //Sidebaaaaar/..........................
@@ -189,7 +188,7 @@ export default function ProviderLedger() {
                                                             </div>
                                                             <div class="mb-4 mt-4 text-center mx-auto">
                                                                     <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Factura De Pago</button>
+                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  >Factura De Pago</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
