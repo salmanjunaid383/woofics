@@ -46,10 +46,14 @@ export default function Offers() {
     //token decode
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
-
+    const [serviceCharge, setserviceCharge] = useState([]);
 
 
     const { oid } = useParams()
+
+    useEffect(() => {
+        getProviderCharge();
+    },[])
 
     function sendQuote(e) {
         e.preventDefault();
@@ -61,7 +65,7 @@ export default function Offers() {
                 alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
             }
             else{
-                if(window.confirm("Are you sure you want to send this offer, you will be charged 4 € for this offer")){
+                if(window.confirm("Are you sure you want to send this offer, you will be charged "+serviceCharge.charge+"€ for this offer")){
                     if(window.confirm("Can you please confirm again")){
                         const response = axios.post(`https://api.woofics.com/api/offer`, {
                             description: description,
@@ -95,6 +99,24 @@ export default function Offers() {
         })
         
 
+    }
+    function getProviderCharge()
+    {
+        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_charge`)
+            .then((response) => {
+                if(response.data[0]==null)
+                {
+                    setserviceCharge("sorry no service data found");
+                }
+                else
+                {
+                    setserviceCharge(response.data[0])
+                }
+                
+                
+            }, (Error) => {
+                
+            });
     }
 
 

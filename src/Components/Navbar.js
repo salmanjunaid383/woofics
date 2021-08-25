@@ -76,9 +76,10 @@ function Navbar() {
     const [logoImg, setLogo] = useState(false);
 
     const [anchorElStaz, setAnchorElStaz] = React.useState(null);
-
+    
+   
     const handleClickStaz = (event) => {
-        setAnchorElStaz(event.currentTarget);
+        setAnchorElStaz(event.currentTarget);   
     };
 
     const handleCloseStaz = () => {
@@ -105,15 +106,9 @@ function Navbar() {
                         })
     
                 }
-            const match = window.matchMedia("(max-width: 1024px)");
-            match.addEventListener("change", resize);
-            function resize(e) {
-                if (e.matches) { // If media query matches
-                    setMediaState(true);
-                } else {
-                   setMediaState(false);
-                }
-            }
+               
+            
+            
 
         // if (localStorage.getItem('url')) {
         //     if (localStorage.getItem('url')) {
@@ -444,20 +439,14 @@ function Navbar() {
                 <div class="woofic_background  my-auto ">
                     <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : landingPage ? "topnav pb-1 pt-1 fixed-top" : "topnav pb-1 pt-1 fixed-top nonLandingPageNav" } id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
-                            {
-                                mediaState === false ?
+                                
                                 <img
                                 src={logoImg ? logo1 : logo2}
                                 className="pl-lg-4 mr-5 pt-1 "
                                 id="woofic-logo"
-                                /> : 
-                                <img
-                                src={logo1}
-                                className="pl-lg-4 mr-5 pt-1 "
-                                id="woofic-logo"
-                                />
+                                /> 
 
-                            }
+                            
                             
                         </Link>
                         <Link className="pt-3 taglink hover-effect" to="/" id="" >
@@ -709,15 +698,21 @@ function Navbar() {
                                                         //     <div className="fa fa-facebook"></div>
                                                         // </div>
                                                         // )}
-                                                        icon="fa fa-facebook"
+                                                        
                                                         fields="name,email,picture"
                                                         onClick={componentClicked}
                                                         callback={responseFacebook}
-                                                        cssClass="btnFacebook"
+                                                        cssClass="btnFacebook text-center py-2"
                                                         icon={
-                                                            <i className="fa fa-facebook text-primary"></i>
+                                                            <div className="pt-1">
+                                                                    <i className="fa fa-facebook text-primary"></i>
+                                                                    <span className="pl-2 " style={{fontSize:'16px'}}>
+                                                                    Iniciar sesión con Facebook
+                                                                    </span>
+                                                                </div>
                                                         }
-                                                        textButton="&nbsp;&nbsp;Sign In with Facebook"
+                                                        textButton="&nbsp;&nbsp;
+                                                        "
                                                     />
                                                 </div>
                                                 <div className="col-md-12 mt-3 text-center">

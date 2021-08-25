@@ -115,7 +115,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="woofic.com@gmail.com">
+                              <a target="_blank" href="https://twitter.com/Woofic1">
                                 <i className="px-1 fa fa-twitter"></i>
                               </a>
                             </span>

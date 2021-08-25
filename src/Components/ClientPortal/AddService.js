@@ -593,7 +593,7 @@ export default function Test() {
                 return <div className="w-100  my-lg-5">
                 <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
                 {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
-                <input value="purchase" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
+                <input value="Buy" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
                     type="radio" name="emotion"
                     id="sad" class="input-hidden " />
                 <label for="sad">
@@ -608,7 +608,7 @@ export default function Test() {
                     <h4 className="text-center" style={buycolor === "true" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' }}>COMPRA</h4>
                 </label>
 
-                <input value="rent" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
+                <input value="Rental" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
                     type="radio" name="emotion"
                     id="happy" class="input-hidden" />
                 <label for="happy">
@@ -1378,7 +1378,7 @@ export default function Test() {
                         <div className="w-100 mx-auto mt-md-4">
                         <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
                 {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
-                <input value="purchase" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
+                <input value="Buy" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
                     type="radio" name="emotion"
                     id="sad" class="input-hidden " />
                 <label for="sad">
@@ -1393,7 +1393,7 @@ export default function Test() {
                     <h4 className="text-center" style={buycolor === "true" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' }}>COMPRA</h4>
                 </label>
 
-                <input value="rent" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
+                <input value="Rental" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
                     type="radio" name="emotion"
                     id="happy" class="input-hidden" />
                 <label for="happy">

@@ -78,8 +78,8 @@ function Footer() {
                                     </div>
                                     <div class="woofic_social_logo ">
                                         <a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"> <FacebookIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="woofic.com@gmail.com"> <InstagramIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="woofic.com@gmail.com"> <TwitterIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://www.instagram.com/woofic_com/"> <InstagramIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://twitter.com/Woofic1"> <TwitterIcon className="text-white mx-2" /></a>
                                         <a target="_blank" href="https://www.linkedin.com/company/woofic"> <LinkedInIcon className="text-white mx-2" /></a>
 
                                     </div>

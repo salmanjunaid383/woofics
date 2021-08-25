@@ -348,7 +348,7 @@ body{
     }
     .topnav{
       height:auto !important;
-      background-color:#fff;
+      /* background-color:#fff; */
     }
 
     .topnav a {
@@ -405,7 +405,7 @@ body{
   }
   .topnav{
     height:auto !important;
-    background-color:#fff;
+    /* background-color:#fff; */
   }
   .dropbtn{
     width: 100vw !important;

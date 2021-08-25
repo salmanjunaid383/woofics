@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory ,useParams} from 'react-router-dom'
-import SideBar from './Sidebar';
 import axios from 'axios';
-import ProBar from '../AdminPortal/Sidebar'
-
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-
+import logo1 from '../LandingPage/images/wetransfer-01f136/Woofic-1.png';
 import TextField from '@material-ui/core/TextField';
 import { loadStripe } from "@stripe/stripe-js";
-
+import  '../SuperPortal/invoice.css';
 import jwt_decode from 'jwt-decode'
 import CustomAuth from "../CustomAuth";
 
@@ -30,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SupplierLedger() {
     CustomAuth();
+    
     let history = useHistory();
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState([]);
@@ -47,7 +45,9 @@ export default function SupplierLedger() {
     // const[userId,setUserId]=useState(0)
     // const[totalAmount,setTotalAmount]=useState(0)
 
-    const[data,setData]=useState([])
+    const[invoice,setInvoice]=useState([])
+    const[item,setItem]=useState([])
+    const[user,setUser]=useState([])
 
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
@@ -56,7 +56,9 @@ export default function SupplierLedger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/invoice/${quid}`)
             .then((response) => {
-                setData(response.data.items)
+                setInvoice(response.data.invoice)
+                setItem(response.data.items);
+                setUser(response.data.user)
                 console.log(response.data)
                 
             }, (Error) => {
@@ -116,71 +118,102 @@ export default function SupplierLedger() {
     return (
         <>
 
-            <div className="d-sm-flex">
-            {
-                    supplierSideBar ? (
-                        <SideBar></SideBar>
-                    ) : null
-                }
-                {
-                    providerSideBar ? (
-                        <ProBar></ProBar>
-                    ) : (null)
-                }
+            <div className="d-sm-flex" style={{backgroundColor:"#f6f9fc"}}>
+            
 
-                <main className={classes.content}>
-                    <div className={classes.toolbar} />
-                    
-
-                    <div className="page-wrapper bg-light">
-                    
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4">
-                                    <div className="row m-lg-5">
-                                        <div className="col-md-12 col-lg-12 col-sm-12">
-                                           
-                                            <div className="table-responsive salman-table-change">
-                                                <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
-                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
-                                                        <tr>
-                                                            <th className="border-top-0 text-white text-center">Descripción</th>
-                                                            <th className="border-top-0 text-white text-center">Monto</th>
-                                                            <th className="border-top-0 text-white text-center">Fecha</th>
-                                                            
-                                                            {/* <th className="border-top-0 text-white text-center"></th> */}
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="data-row">
-                                                        {
-
-                                                            data == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
-                                                                data.map((val, id) => {
-                                                                    return (
-                                                                        <>
-                                                                            <tr>
-                                                                                <td className="txt-oflo text-center">{val.description}</td>
-                                                                                <td className="txt-oflo text-center">{val.amount}</td>
-                                                                                <td className="txt-oflo text-center">{(val.created_at).slice(0, 10)}</td>
-                                                                                
-                                                                            </tr>
-                                                                        </>
-                                                                    )
-                                                                })             
-                                                        }
-                                                      
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 gap10"></div>
+                
+            <div class="container invoice-container"  style={{padding:"7%"}}>
+<div class="row">
+    				
+					<div class="col-xs-12">
+						<div class="grid invoice">
+							<div class="grid-body">
+								<div class="invoice-title">
+									<div class="row">
+										<div class="col-xs-12">
+											<img src={logo1} alt="" height="35"/>
+										</div>
+									</div>
+									<br></br>
+									<div class="row">
+										<div class="col-xs-12">
+											<h2 style={{color:'blue'}}>invoice<br></br>
+											<span class="small">order #{invoice.invoice_id}</span></h2>
+										</div>
+									</div>
+								</div>
+								<hr></hr>
+								<div class="row">
+									<div class="col-xs-6">
+                                    <address>
+											<strong>Billed to:</strong><br></br>
+											<span style={{lineHeight: '18px'}}>{user.first_name} {user.last_name}</span><br></br>
+											<span style={{lineHeight: '22px'}}>{user.email}</span><br></br>
+                                            <span style={{lineHeight: '22px'}}>P:{user.contact_number}</span>
+										</address>
+									</div>
+									<div class="col-xs-6 text-right">
+										<address>
+                                        <strong>Order Date:</strong><br></br>
+											<span style={{lineHeight: '22px'}}>{(invoice.date)}</span>
+                                        </address>
+									</div>
+								</div>
+                                <br></br>
+								<div class="row">
+									<div class="col-md-12">
+										<h3>ORDER SUMMARY</h3>
+										<table class="table table-striped">
+											<thead>
+												<tr class="line">
+													<td class="text-center"><strong>Id</strong></td>
+													<td class="text-center"><strong>Description</strong></td>
+													<td class="text-right"><strong>Amount</strong></td>
+													<td class="text-right"><strong>SUBTOTAL</strong></td>
+												</tr>
+											</thead>
+											<tbody>
+                                                {
+                                                    item.map((val,id) => {
+                                                        return (
+                                                           <>
+                                                           <tr>
+                                                           <td class="text-center">{val.id}</td>
+                                                           <td class="text-center">{val.description}</td>
+                                                           <td class="text-right">€{val.amount}</td>
+                                                           <td></td>
+                                                           </tr>
+                                                           </>
+                                                        )
+                                                   })
+                                                }
+                                            
+												
+												<tr>
+													<td colspan="2">
+													</td><td class="text-right"><strong>Total</strong></td>
+													<td class="text-right"><strong>€{invoice.total}</strong></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>									
+								</div>
+								<div class="row">
+									<div class="col-md-12 text-center identity">
+										<p style={{fontSize:'10px'}}>Copyright © 2021 Woofic.Com, All Rights Reserved</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+</div>
+                        
                            
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+                              
+                        
+                   
             </div>
 
           
