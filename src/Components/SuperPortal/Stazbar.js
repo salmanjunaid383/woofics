@@ -11,7 +11,7 @@ import RateReviewIcon from '@material-ui/icons/RateReview';
 import './SupCoupons.css'
 import '../SuperPortal/Stazbar.css'
 import backgroundImage from './Dashboard.png';
-
+import logo from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 
 //Sidebar
 import PropTypes from 'prop-types';
@@ -359,7 +359,8 @@ export default function StazBar() {
         <div>
             <Link className="navbar-brand " to="/superdashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                   <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
+                {/* assets/plugins/images/Woofic-2.png */}
+                   <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
             </Link>
             <div className={classes.toolbar} />

@@ -14,9 +14,7 @@ import reg from "../Images/rmbg.png";
 import clsx from 'clsx';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import "../Components/ClientPortal/quotemain.css"
-import salman from "../Components/survey.png"
-// import shopping from "../Components/shopping.png"
-import shopping from "../Components/shopping.png"
+
 import firebase from './Firebase'
 import "../Components/quotemain.css"
 import Fade from '@material-ui/core/Fade';

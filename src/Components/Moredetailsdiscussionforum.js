@@ -3,7 +3,6 @@ import { Link, useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import './DiscussionForum.css'
-import logo from './LandingPage/images/wooficc.png';
 import Navbar from './Navbar' 
 
 import Footer from './LandingPage/components/Footer'

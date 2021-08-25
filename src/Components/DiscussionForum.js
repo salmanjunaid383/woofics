@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from 'react-router-dom'
-import logo from './LandingPage/images/wooficc.png';
 import loginside from '../Images/service.png'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'

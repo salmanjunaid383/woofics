@@ -28,9 +28,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
-import one from './one.jpg';
-import two from './two.webp';
-import three from './three.png';
+
 import CustomClientAuth from "../CustomClientAuth";
 import firebase from '../Firebase';
 

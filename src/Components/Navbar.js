@@ -28,8 +28,8 @@ import Client from './Client';
 // import ReactDom from 'react-dom';
 import './LandingPage/css/LandingPage.css';
 // import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
-import logo1 from './LandingPage/images/wetransfer-01f136/Woofic-1.png';
-import logo2 from './LandingPage/images/wetransfer-01f136/Woofic-2.png';
+import logo1 from './LandingPage/images/woofics-new/WooficsLogo.png'
+import logo2 from './LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png';
 // import { useWindowScroll } from 'react-use';
 // import transitions from '@material-ui/core/styles/transitions';
 
@@ -599,7 +599,7 @@ function Navbar() {
                                         </span>
                                         <h5 className="h5 pt-3">Log In</h5>
                                         <img
-                                            src="assets/plugins/images/woofic.jpeg "
+                                            src={logo1}
                                             className=" mx-auto text-center my-2"
                                             style={{ width: "200px" }}
                                         />
@@ -778,7 +778,7 @@ function Navbar() {
                                     <div className="col-md-12 col-lg-6 col-sm-12 p-0 m-0 d-none d-lg-block mx-auto p-5">
                                         <div className="row d-block text-center ml-3">
                                             <img
-                                                src="assets/plugins/images/woofic.jpeg "
+                                                src={logo1}
                                                 className="img-fluid w-50 mx-auto text-center mb-3"
                                             />
                                         </div>

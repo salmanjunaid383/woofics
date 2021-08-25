@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 // import ReactDom from 'react-dom';
 import '../css/LandingPage.css';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
-import logo from '../images/wooficc.png';
 import side_image from '../images/img-01.png';
 import { Link, useHistory } from 'react-router-dom'
 import Youtube from './youtube.png'

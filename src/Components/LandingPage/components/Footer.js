@@ -8,11 +8,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import footer_logo from '../images/Woofic-2.png';
-import footer_logo2 from '../images/Logo-2.png';
-import footer_logo3 from '../images/Logo-3.png';
-import footer_logo4 from '../images/Logo-1.png';
-import footer_logo5 from '../images/Logo-4.png';
+import footer_logo from '../images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png';
+
 
 
 

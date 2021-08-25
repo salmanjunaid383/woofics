@@ -15,7 +15,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-
+import logo from './LandingPage/images/woofics-new/WooficsLogo.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -206,7 +206,7 @@ export default function ServiceProvider() {
                 <div className="align-item-center">
                   <div className="col-md-6 col-lg-6 col-sm-12 p-0 m-0 mx-auto p-5">
                     <div className="row d-block text-center ml-3">
-                      <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
+                      <img src={logo} alt="Logo" className="img-fluid w-50 mx-auto text-center mb-3" />
                     </div>
                     <h3 className=" py-3 h3 bolder"><b>Consiga nuevos clientes</b></h3>
                     <h5 className=" py-3 h5">¡Pasa al siguiente nivel, llega a donde nunca has estado antes y descubre nuevas oportunidades!</h5>

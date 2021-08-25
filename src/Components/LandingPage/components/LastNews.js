@@ -3,9 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import {Animated} from "react-animated-css";
 import "../css/last news.css";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
-import people from "../images/people.jpg";
-import people1 from "../images/people 1.jpg";
-import people2 from "../images/people2.jpg";
+
 import useOnScreen from "./OnScreen";
 import axios from "axios";
 
