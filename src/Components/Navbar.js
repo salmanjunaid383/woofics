@@ -22,7 +22,6 @@ import { Link, useHistory,useLocation } from 'react-router-dom';
 // import Youtube from './LandingPage/components/youtube.png'
 import WhatsAppWidget from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
-// import log from "../Images/log.png"
 import reg from "../Images/rmbg.png";
 import Client from './Client';
 // import ReactDom from 'react-dom';

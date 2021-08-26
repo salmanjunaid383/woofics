@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.342a4d72.chunk.css",
-    "main.js": "/static/js/main.20fb82fa.chunk.js",
-    "main.js.map": "/static/js/main.20fb82fa.chunk.js.map",
+    "main.js": "/static/js/main.0ffb8672.chunk.js",
+    "main.js.map": "/static/js/main.0ffb8672.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2fbbf2a2.js",
     "runtime-main.js.map": "/static/js/runtime-main.2fbbf2a2.js.map",
     "static/css/2.274a2bd7.chunk.css": "/static/css/2.274a2bd7.chunk.css",
@@ -22,10 +22,10 @@
     "static/media/eight.1ee1dbb5.png": "/static/media/eight.1ee1dbb5.png",
     "static/media/five.920d232a.png": "/static/media/five.920d232a.png",
     "static/media/img-01.3b75a2e0.png": "/static/media/img-01.3b75a2e0.png",
-    "static/media/loginside.a53c8a4e.jpg": "/static/media/loginside.a53c8a4e.jpg",
-    "static/media/monoposte.f612071d.jpg": "/static/media/monoposte.f612071d.jpg",
+    "static/media/loginside.42e9620f.jpg": "/static/media/loginside.42e9620f.jpg",
+    "static/media/monoposte.f4c9df0e.jpg": "/static/media/monoposte.f4c9df0e.jpg",
     "static/media/one.d6f44987.jpg": "/static/media/one.d6f44987.jpg",
-    "static/media/pared.a048e868.jpg": "/static/media/pared.a048e868.jpg",
+    "static/media/pared.12e7fb23.jpg": "/static/media/pared.12e7fb23.jpg",
     "static/media/rmbg.2caba546.png": "/static/media/rmbg.2caba546.png",
     "static/media/service.b333952b.png": "/static/media/service.b333952b.png",
     "static/media/seven.65e2a668.jpg": "/static/media/seven.65e2a668.jpg",
@@ -36,8 +36,8 @@
     "static/media/SuccessPayment.css": "/static/media/success.f0f1d756.gif",
     "static/media/three.7a6fa35d.jpg": "/static/media/three.7a6fa35d.jpg",
     "static/media/tick.d33f6dcc.png": "/static/media/tick.d33f6dcc.png",
-    "static/media/tothem.e9f27083.jpg": "/static/media/tothem.e9f27083.jpg",
-    "static/media/truss.eb5fdc9d.jpg": "/static/media/truss.eb5fdc9d.jpg",
+    "static/media/tothem.6564ee83.jpg": "/static/media/tothem.6564ee83.jpg",
+    "static/media/truss.2a331f85.jpg": "/static/media/truss.2a331f85.jpg",
     "static/media/two.923cd077.jpg": "/static/media/two.923cd077.jpg",
     "static/media/v2.78f28c66.jpg": "/static/media/v2.78f28c66.jpg",
     "static/media/v3.a2546366.png": "/static/media/v3.a2546366.png",
@@ -51,6 +51,6 @@
     "static/css/2.274a2bd7.chunk.css",
     "static/js/2.64d6cd25.chunk.js",
     "static/css/main.342a4d72.chunk.css",
-    "static/js/main.20fb82fa.chunk.js"
+    "static/js/main.0ffb8672.chunk.js"
   ]
 }

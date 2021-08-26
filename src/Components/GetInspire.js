@@ -149,7 +149,7 @@ export default function GetInspire() {
           </div>
           <div className="row no-gutters">
             <div onClick={() => viewMore('SHOPPING')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Large-Surfaces.jpg" />
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Large-Surfacesc.jpg" />
               <div class="mid">
                 <div class="tex">COMPRAS</div>
               </div>
