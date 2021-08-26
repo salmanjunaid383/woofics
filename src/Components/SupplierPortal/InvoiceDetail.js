@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import logo1 from '../LandingPage/images/wetransfer-01f136/Woofic-1.png';
+import logo1 from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 import TextField from '@material-ui/core/TextField';
 import  '../SuperPortal/invoice.css';
 import jwt_decode from 'jwt-decode'

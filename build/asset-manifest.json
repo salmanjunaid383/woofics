@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.342a4d72.chunk.css",
-    "main.js": "/static/js/main.0a5b4189.chunk.js",
-    "main.js.map": "/static/js/main.0a5b4189.chunk.js.map",
+    "main.js": "/static/js/main.2f548ba0.chunk.js",
+    "main.js.map": "/static/js/main.2f548ba0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2fbbf2a2.js",
     "runtime-main.js.map": "/static/js/runtime-main.2fbbf2a2.js.map",
     "static/css/2.274a2bd7.chunk.css": "/static/css/2.274a2bd7.chunk.css",
@@ -16,7 +16,6 @@
     "static/js/2.64d6cd25.chunk.js.LICENSE.txt": "/static/js/2.64d6cd25.chunk.js.LICENSE.txt",
     "static/media/footer.css": "/static/media/Footer4k.81443f1b.png",
     "static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.658c8f83.png": "/static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.658c8f83.png",
-    "static/media/Woofic-1.f664b96e.png": "/static/media/Woofic-1.f664b96e.png",
     "static/media/WooficsLogo.914c7509.png": "/static/media/WooficsLogo.914c7509.png",
     "static/media/stazcal.css": "/static/media/background.9f0b4474.jpg",
     "static/media/chat.43bd0b47.png": "/static/media/chat.43bd0b47.png",
@@ -52,6 +51,6 @@
     "static/css/2.274a2bd7.chunk.css",
     "static/js/2.64d6cd25.chunk.js",
     "static/css/main.342a4d72.chunk.css",
-    "static/js/main.0a5b4189.chunk.js"
+    "static/js/main.2f548ba0.chunk.js"
   ]
 }

@@ -476,8 +476,8 @@ function Navbar() {
                             <div class="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
                                 <div class="dropdown-content">
-                                <Link to="/pricecalculator" className="pt-3 " id="taglink4" style={{color:"#000"}}>
-                                    Calculadora de precios
+                                <Link to="/pricecalculator" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
+                                    <span style={{textAlign:"left"}}>Calculadora de precios</span>
                                 </Link>
 
                                 <Link to="/getinspire" className="pt-3 " id="taglink5" style={{color:"#000"}}>
