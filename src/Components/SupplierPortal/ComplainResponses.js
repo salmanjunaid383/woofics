@@ -37,7 +37,9 @@ export default function SupplierComplainResponses() {
     const [reponses, setreponses] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${commid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${commid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -49,7 +51,9 @@ export default function SupplierComplainResponses() {
     }
 
     function getRes() {
-        const response = axios.get(`https://api.woofics.com/api/complain_response/${commid}`)
+        const response = axios.get(`https://api.woofics.com/api/complain_response/${commid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
@@ -74,7 +78,9 @@ export default function SupplierComplainResponses() {
             complain_id: commid,
             // title: blog.description,
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 // setOpen3(true);
                 getRes()

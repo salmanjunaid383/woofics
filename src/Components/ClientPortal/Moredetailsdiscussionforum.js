@@ -38,7 +38,9 @@ export default function Moredetailsdiscussionforum() {
     var decoded = jwt_decode(token);
     function getUserData() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setUser(response.data);
 
@@ -50,7 +52,9 @@ export default function Moredetailsdiscussionforum() {
 
     function getQuestion() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/forum_question/${quid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/forum_question/${quid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setQuestion(response.data);
             }, (error) => {
@@ -62,7 +66,9 @@ export default function Moredetailsdiscussionforum() {
 
     function getReply() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/forum_answer/${quid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/forum_answer/${quid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setAllreplies(response.data);
             }, (error) => {
@@ -80,7 +86,9 @@ export default function Moredetailsdiscussionforum() {
             answer: reply,
             forum_question_id: quid,
             replied_by: user.first_name + " " + user.last_name
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 getQuestion();
                 getReply();

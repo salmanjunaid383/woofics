@@ -36,14 +36,18 @@ export default function ProviderDetails() {
     var decoded = jwt_decode(token)
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${pid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/users/${pid}`,{
+            headers:window.header
+          })
             .then((response) => {
                     setSuppliers(response.data)
             }, (Error) => {
                  
                 
             });
-            const { data: responseA } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            const { data: responseA } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+                headers:window.header
+              })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
             }, (Error) => {
@@ -68,7 +72,9 @@ export default function ProviderDetails() {
             avatar: uimge,
             associate_name: uname,
             main_name: name
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     history.push('/chat')

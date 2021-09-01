@@ -12,7 +12,9 @@ export default function ViewService() {
     const { servicei } = useParams()
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     console.log(response)

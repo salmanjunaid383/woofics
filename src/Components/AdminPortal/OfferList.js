@@ -47,7 +47,9 @@ export default function OfferList() {
     useEffect(() => {
 
         function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/show_offer_provider/`+decoded.sub)
+            const res = axios.get(`https://api.woofics.com/api/show_offer_provider/`+decoded.sub,{
+                headers:window.header
+              })
                 .then((res) => {
                     if (res) {
                         setForm(res.data)

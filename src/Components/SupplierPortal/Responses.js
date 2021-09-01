@@ -36,7 +36,9 @@ export default function SupResponses() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     function Feedback() {
-        const res = axios.get(`https://api.woofics.com/api/help/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/help/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 if (res) {
                     setForm(res.data)
@@ -52,7 +54,9 @@ export default function SupResponses() {
     }, [])
 
     function ConfirmOffer(id) {
-        const res = axios.put(`https://api.woofics.com/api/offer_approved/${id}`)
+        const res = axios.put(`https://api.woofics.com/api/offer_approved/${id}`,{
+            headers:window.header
+          })
             .then((res) => {
                 if (res) {
                     Feedback()

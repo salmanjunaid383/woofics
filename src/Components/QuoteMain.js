@@ -297,7 +297,9 @@ export default function QuoteMain() {
                         email: email,
                         documents: doc,
                         client_id: decoded.sub
-                    })
+                    },{
+                        headers:window.header
+                      })
                         .then((response) => {
                             setprogress('Published')
                             Swal.fire({
@@ -356,7 +358,9 @@ export default function QuoteMain() {
                     email: email,
                     documents: doc,
                     client_id: decoded.sub
-                })
+                },{
+                    headers:window.header
+                  })
                     .then((response) => {
                         setprogress('Published')
                         Swal.fire({

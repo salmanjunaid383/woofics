@@ -34,7 +34,9 @@ export default function Quotation() {
     const [btnStatus,setBtnStatus]=useState(true);
     const [packageInfo,setPackage]=useState([]);
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/form`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/form`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -47,7 +49,9 @@ export default function Quotation() {
     }, [])
 
     function cardStatus(){
-        const {data: response} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).then((response) => {
+        const {data: response} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub,{
+            headers:window.header
+          }).then((response) => {
             if(response.data === 0){
                 alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
             }
@@ -61,7 +65,9 @@ export default function Quotation() {
         
         
         
-          const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub).then((response) => {
+          const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub,{
+            headers:window.header
+          }).then((response) => {
             if(response.data === 0){
                 alert("Please link your stripe account with woofics. You can link your card by going in to the profile section by clicking on the profile image");
             }
@@ -69,10 +75,14 @@ export default function Quotation() {
                 const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
                     user_id : decoded.sub,
                     form_id: i
-                })
+                },{
+                    headers:window.header
+                  })
                 .then((response) => {
                     if(response.data===0){
-                        const { data: response } = axios.get(`https://api.woofics.com/api/form/`+i)
+                        const { data: response } = axios.get(`https://api.woofics.com/api/form/`+i,{
+                            headers:window.header
+                          })
                             .then((response) => {
                                 if (response) {
                                     setPackage(response.data.package)
@@ -83,7 +93,9 @@ export default function Quotation() {
                                                 user_id:decoded.sub,
                                                 payment_package_id: response.data.package.id,
                                                 form_id:i
-                                            }).then((response) => {
+                                            },{
+                                                headers:window.header
+                                              }).then((response) => {
                                                    
                                                    alert("Payment Successfull");
                                             }, (Error) => {
@@ -105,7 +117,9 @@ export default function Quotation() {
                         const {data : response} = axios.post('https://api.woofics.com/api/check_quotation', {
                                 supplier_id : decoded.sub,
                                 form_id: i
-                            })
+                            },{
+                                headers:window.header
+                              })
                             .then((response) => {
                                 if(response.data===1){
                                     

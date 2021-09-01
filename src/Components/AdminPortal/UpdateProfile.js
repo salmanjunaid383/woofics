@@ -76,7 +76,9 @@ export default function UpdateProfile() {
                 cvc: cvc,
                 user_id:decoded.sub
                 
-            }).then((response) => {
+            },{
+                headers:window.header
+              }).then((response) => {
                 
                 setCardProgress('Card Info Save Successfully')
                 getCreditCardData();
@@ -88,7 +90,9 @@ export default function UpdateProfile() {
 
     }
     function getCreditCardData(){
-        const {data: response} = axios.get(`https://api.woofics.com/api/get_card_details/`+decoded.sub)
+        const {data: response} = axios.get(`https://api.woofics.com/api/get_card_details/`+decoded.sub,{
+            headers:window.header
+          })
             .then((response)=> {
                 setCardData(response.data);
                 
@@ -116,7 +120,9 @@ export default function UpdateProfile() {
                 name_of_your_business: bname,
                 service: servic,
                 rating:rat,
-            }).then((response) => {
+            },{
+                headers:window.header
+              }).then((response) => {
                 setprogress('Update Profile')
                 // history.push("/admindashboard");
             }, (Error) => {
@@ -128,7 +134,9 @@ export default function UpdateProfile() {
 
     useEffect(() => {
         function getData() {
-            const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+                headers:window.header
+              })
                 .then((res) => {
                     
                     setData(res.data)
@@ -184,7 +192,9 @@ export default function UpdateProfile() {
                     location_of_your_business: location,
                     name_of_your_business: bname,
                     service: servic
-                }).then((response) => {
+                },{
+                    headers:window.header
+                  }).then((response) => {
                     setImageLoading('')
                 }, (Error) => {
 

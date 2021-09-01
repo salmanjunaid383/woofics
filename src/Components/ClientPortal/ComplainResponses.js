@@ -35,7 +35,9 @@ export default function ComplainResponses() {
     const [reponses, setreponses] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${comid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${comid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -52,7 +54,9 @@ export default function ComplainResponses() {
                 setreponses(response.data)
             }, (error) => {
                 
-            });
+            },{
+                headers:window.header
+              });
     }
 
     useEffect(() => {
@@ -72,7 +76,9 @@ export default function ComplainResponses() {
             complain_id: comid,
             // title: blog.description,
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 // setOpen3(true);
                 getRes()

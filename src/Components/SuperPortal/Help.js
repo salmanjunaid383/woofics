@@ -25,7 +25,9 @@ export default function Help() {
     const [blog, setBlog] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/help`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/help`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -43,7 +45,9 @@ export default function Help() {
     function DeleteLed(id) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/help/${id}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/help/${id}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     
                     GetLed()

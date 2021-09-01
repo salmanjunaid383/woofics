@@ -56,6 +56,8 @@ export default function Supplier() {
           password: password,
           profile_image: 'https://image.flaticon.com/icons/png/512/147/147144.png',
           rating: 0
+        },{
+          headers:window.header
         }).then((response) => {
           alert('We will review your apllication, and will email you as soon as possible')
           history.push("/")

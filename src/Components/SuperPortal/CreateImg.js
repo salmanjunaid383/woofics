@@ -49,7 +49,9 @@ export default function CreateImg() {
             name: name,
             url: imageUrl,
             content : content
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 if (res) {
                     setwait('Add Blog')

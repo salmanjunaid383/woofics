@@ -134,6 +134,8 @@ export default function ServiceProvider() {
           contact_number: telephone,
           company_size: companySize,
           profile_image: 'https://image.flaticon.com/icons/png/512/147/147144.png',
+        },{
+          headers:window.header
         })
         .then((response) => {
           setWait('Register')

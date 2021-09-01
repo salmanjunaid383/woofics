@@ -26,7 +26,9 @@ export default function OfferBadge() {
 
     function getReg() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/offer`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/offer`,{
+            headers:window.header
+          })
             .then((response) => {
                 setBlog(response.data)
                 
@@ -44,7 +46,9 @@ export default function OfferBadge() {
     function deleteAdv(e) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.put(`https://api.woofics.com/api/offer/${e}`)
+            const { data: response } = axios.put(`https://api.woofics.com/api/offer/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     if (response) {
                         setRes(response.data)

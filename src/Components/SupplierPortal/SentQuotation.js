@@ -29,7 +29,9 @@ export default function SentQuotation() {
     var decoded = jwt_decode(token)
     const [blog, setBlog] = useState([]);
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_quotation/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_quotation/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)

@@ -36,7 +36,9 @@ export default function SupplierDashboard() {
 
 
     function ClientOngoinProject() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_supplier_project/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_supplier_project/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setOngoinProject(response.data)
             }, (Error) => {
@@ -47,7 +49,9 @@ export default function SupplierDashboard() {
     //...total supplierCompletedProject
 
     function ClientCompletedProject() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setCompletedProject(response.data)
             }, (Error) => {
@@ -58,7 +62,9 @@ export default function SupplierDashboard() {
     //.......Total Provider
 
     function ClientService() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/count_quotation/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/count_quotation/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setClientTotalService(response.data)
             }, (Error) => {
@@ -67,7 +73,9 @@ export default function SupplierDashboard() {
     }
 
     function TotalEarn() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_earnings/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_earnings/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 settotalEarnings(response.data)
             }, (Error) => {
@@ -84,7 +92,9 @@ export default function SupplierDashboard() {
         TotalEarn()
         getTodo()
         function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`)
+            const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`,{
+                headers:window.header
+              })
                 .then((res) => {
                     if (res) {
                         setForm(res.data)
@@ -118,7 +128,9 @@ export default function SupplierDashboard() {
             user_id: decoded.sub,
             task: todo,
             deadline: deadline,
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     getTodo();
@@ -135,7 +147,9 @@ export default function SupplierDashboard() {
     const [data, setData] = useState([])
     function getTodo() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_todo/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_todo/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setData(response.data)
             }, (error) => {
@@ -150,7 +164,9 @@ export default function SupplierDashboard() {
     function deleteTodo(e) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/supplier_todo/${e}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/supplier_todo/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     getTodo();
                 }, (error) => {

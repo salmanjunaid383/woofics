@@ -53,7 +53,9 @@ export default function SuperDashboard() {
     const [data,getData]=useState([]);
 
     function getRegister(){
-        const {data: response}=axios.get(`https://api.woofics.com/api/latest_user`)
+        const {data: response}=axios.get(`https://api.woofics.com/api/latest_user`,{
+            headers:window.header
+          })
             .then((response) => {
                 getData(response.data)
             }, (Error)=> {
@@ -63,7 +65,9 @@ export default function SuperDashboard() {
 
 
     function TotalClient() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/total_client`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/total_client`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 settotalClient(response.data)
@@ -77,7 +81,9 @@ export default function SuperDashboard() {
     //...total Provider
 
     function TotalSupplier() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/total_supplier`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/total_supplier`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 settotalSupplier(response.data)
@@ -90,7 +96,9 @@ export default function SuperDashboard() {
     //.......Total Provider
 
     function TotalProvider() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/total_provider`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/total_provider`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 settotalProvider(response.data)
@@ -103,7 +111,9 @@ export default function SuperDashboard() {
 
     //....Completed Projectt
     function CompletedPro() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/completed_projects`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/completed_projects`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setCompletedProject(response.data)
@@ -114,7 +124,9 @@ export default function SuperDashboard() {
     }
     //...ongoing pro
     function OngoingPro() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_projects`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_projects`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setOnGoingProject(response.data)
@@ -125,7 +137,9 @@ export default function SuperDashboard() {
     }
     //....TOtal 
     function TotalSer() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/service`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/service`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 settotalServ(response.data)
@@ -138,7 +152,9 @@ export default function SuperDashboard() {
     //.......Count Blogs
 
     function CountBlogs() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/count_blog`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/count_blog`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 settotalBlogs(response.data)
@@ -151,7 +167,9 @@ export default function SuperDashboard() {
     //...pending reg
 
     function PendingRegistration() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/pending_registration`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/pending_registration`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setPendingReg(response.data)
@@ -164,7 +182,9 @@ export default function SuperDashboard() {
     //...Complain Count
 
     function CountComplain() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/count_complains`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/count_complains`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setTotalComplain(response.data)
@@ -179,7 +199,9 @@ export default function SuperDashboard() {
     //...Complain Count
 
     function TotoalUsers() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/total_users`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/total_users`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setTotalUser(response.data)
@@ -193,7 +215,9 @@ export default function SuperDashboard() {
     //...Complain Count
 
     function TotoalProject() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/per_month_project`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/per_month_project`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setTotalPerProjects(response.data)
@@ -214,7 +238,9 @@ export default function SuperDashboard() {
 
     const [user, setuser] = useState([])
     function TotoalUser() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/per_month_user`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/per_month_user`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setuser(response.data)

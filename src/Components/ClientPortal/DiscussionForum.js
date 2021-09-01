@@ -132,7 +132,9 @@ export default function DiscussionForum() {
     function getUserData() {
         if(token !== null)
         {
-            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+                headers:window.header
+              })
             .then((response) => {
                 setUser(response.data);
 
@@ -152,7 +154,9 @@ export default function DiscussionForum() {
             question: question,
             asked_by: user.first_name + " " + user.last_name,
             user_id: user.id
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 handleClosee()
                 getQuestion();
@@ -163,7 +167,12 @@ export default function DiscussionForum() {
 
     function getQuestion() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/forum_question`)
+        const { data: response } = 
+axios.get(`https://api.woofics.com/api/forum_question`,{
+            headers:window.header
+          },{
+            headers:window.header
+          })
             .then((response) => {
                 setQuestions(response.data);
 

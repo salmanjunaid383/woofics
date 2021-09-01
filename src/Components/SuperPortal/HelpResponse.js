@@ -39,7 +39,9 @@ export default function HelpResponse() {
     var decoded = jwt_decode(token)
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${hid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${hid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -51,7 +53,9 @@ export default function HelpResponse() {
     }
 
     function getRes() {
-        const response = axios.get(`https://api.woofics.com/api/help_response/${hid}`)
+        const response = axios.get(`https://api.woofics.com/api/help_response/${hid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
@@ -78,7 +82,9 @@ export default function HelpResponse() {
             help_id: hid,
             title: blog.description,
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 setwait('Send Reply')
         setdisable('')

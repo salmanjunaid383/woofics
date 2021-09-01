@@ -61,7 +61,9 @@ export default function ProviderComplain() {
             user_id: decoded.sub,
             status: 'pending',
             title: title,
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setOpenpop(true)
@@ -81,7 +83,9 @@ export default function ProviderComplain() {
 
     function getComplain() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/complain/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/complain/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setComplain(response.data)
             }, (error) => {
