@@ -260,7 +260,7 @@ export default function CreateForms() {
                                                 <div className="row mt-5">
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
-                                                            placeholder="Starting Date"
+                                                            placeholder="Starting Value"
                                                             id="standard-number"
                                                             fullWidth
                                                             label="Start"
@@ -273,7 +273,7 @@ export default function CreateForms() {
                                                     </div>
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
-                                                            placeholder="Ending Date"
+                                                            placeholder="Ending Value"
                                                             onChange={(e) => setend(e.target.value)}
                                                             id="standard-number"
                                                             fullWidth 
@@ -323,8 +323,10 @@ export default function CreateForms() {
                                                         <TextField
                                                             id="standard-textarea"
                                                             label="Charges"
+                                                            
+                                                            
                                                             onChange={(e) => setchargeOne(e.target.value)}
-                                                            placeholder="Add Charges"
+                                                            placeholder="Add Charges, only accept numeric values"
                                                             multiline
                                                             fullWidth
                                                             InputLabelProps={{
@@ -364,7 +366,7 @@ export default function CreateForms() {
                                                                     id="standard-textarea"
                                                                     onChange={(e) => setchargeTwo(e.target.value)}
                                                                     label="Charges"
-                                                                    placeholder="Add Charges"
+                                                                    placeholder="Add Charges, only accept numeric values"
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{
@@ -406,7 +408,7 @@ export default function CreateForms() {
                                                                     id="standard-textarea"
                                                                     label="Charges"
                                                                     onChange={(e) => setchargeThree(e.target.value)}
-                                                                    placeholder="Add Charges"
+                                                                    placeholder="Add Charges, only accept numeric values"
                                                                     multiline
                                                                     fullWidth
                                                                     InputLabelProps={{

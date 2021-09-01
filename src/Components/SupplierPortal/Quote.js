@@ -41,7 +41,7 @@ export default function Quote() {
     const [phase, setPhase] = useState();
     const [progress, setProgress] = useState('Send Quotation');
     const [disable, setDisable] = useState('disabled');
-
+    
 
     //token decode
     var token = localStorage.getItem("user_token");
@@ -85,33 +85,53 @@ export default function Quote() {
 
 
     function sendQuote(e) {
+        
         e.preventDefault();
         alert("Are you sure you want to send this quotation?")
         setProgress('Loading...')
-        if (description === "" || comments === "" || price === "" || date === "" || phase === "") {
+        if (description === "" || comments === "" ||  date === "" || phase === "") {
+            console.log("if block")
             setOpenn2(true);
         } else {
+            console.log(itemList)
+            console.log(itemList)
             const response = axios.post(`https://api.woofics.com/api/supplier_quotation`, {
                 description: description,
                 extra_comments: comments,
                 form_id: serrid,
                 supplier_id: decoded.sub,
-                price: price,
+                item:itemList,
                 status: 'pending',
                 payment_phase_id: phase,
                 delivery_days: date
             })
                 .then((response) => {
+                    console.log(response)
                     setProgress('Send Quotation')
                     localStorage.removeItem('qid')
                     history.push('/sentquotation')
                 }, (Error) => {
-                    //  
+                    console.log(Error)
                     setOpenn(true);
                     
                 });
         }
     }
+    const [itemList,setItemList]=useState([{item: '' ,price: 0}]);
+    function AddMore() {
+        setItemList([...itemList, {item: '' ,price: ''}])
+    }
+    function handleChange(e, index) {
+        
+        const { name,value  } = e.target;
+        const list = [...itemList];
+        list[index][name] = value;
+        setItemList(list);
+       
+    }
+ 
+
+    
 
 
     const [blog, setBlog] = useState([])
@@ -350,6 +370,48 @@ export default function Quote() {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className="row mt-3">
+                                                {
+                                                       itemList.map((val , i) => {
+                                                           return (
+                                                               <>
+                                                               
+                                                                <div className="col-md-6 text-center px-2 w-100 p-0">
+                                                                    <TextField
+                                                                        onChange={(e) => handleChange(e, i)}
+                                                                        id="standard-textarea"
+                                                                        name='item'
+                                                                        label="item"
+                                                                        placeholder="Add item name"
+                                                                        multiline
+                                                                        fullWidth
+                                                                        InputLabelProps={{
+                                                                            shrink: true,
+                                                                        }} />                                                </div>
+                                                                <div className="col-md-6 text-center px-2 w-100 p-0">
+                                                                    <TextField
+                                                                        id="standard-number"
+                                                                        placeholder="Add Price"
+                                                                        name='price'
+                                                                        fullWidth
+                                                                        label="price"
+                                                                        type="number"
+                                                                        onChange={(e) => handleChange(e, i)}
+                                                                        InputLabelProps={{
+                                                                            shrink: true,
+                                                                        }}
+                                                                    />
+                                                                </div>
+                                                            
+                                                               </>
+                                                           )
+                                                       })
+                                                   }
+                                                   <div className="col-md-6  px-2 w-100 p-0">
+                                                   <i className="fa fa-plus p-2 text-center pt-1 bg-dark text-light" style={{marginTop:"10px",cursor:"pointer"}} onClick={AddMore} ></i>
+
+                                                   </div>
+                                                </div>
                                                 <div className="row mt-4">
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
@@ -365,14 +427,12 @@ export default function Quote() {
                                                     <div className="col-md-6 text-center px-2 w-100 p-0">
                                                         <TextField
                                                             id="standard-number"
-                                                            placeholder="Service Quotation"
+                                                            placeholder="Price will be calculated using the items price"
                                                             fullWidth
                                                             label="Price"
                                                             type="number"
-                                                            onChange={(e) => setprice(e.target.value)}
-                                                            InputLabelProps={{
-                                                                shrink: true,
-                                                            }}
+                                                            disabled="true"
+                                                            value={itemList}
                                                         />
                                                     </div>
                                                 </div>
@@ -409,7 +469,8 @@ export default function Quote() {
                                                 </div>
                                                 <div class="form-group mb-4 mt-4">
                                                     <div class="col-sm-12 text-center">
-                                                        <button class={`btn text-white ${date == '' || price == '' || comments == '' || description == '' || phase == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{progress}</button>
+                                                        <button class={`btn text-white ${date == ''  || comments == '' || description == '' || phase == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{progress}</button>
+                                                        {/* <button class={"btn text-white"} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{progress}</button> */}
                                                     </div>
                                                 </div>
                                             </form>

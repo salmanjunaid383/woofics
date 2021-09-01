@@ -28,8 +28,8 @@ import Client from './Client';
 // import ReactDom from 'react-dom';
 import './LandingPage/css/LandingPage.css';
 // import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
-import logo1 from './LandingPage/images/wetransfer-01f136/Woofic-1.png';
-import logo2 from './LandingPage/images/wetransfer-01f136/Woofic-2.png';
+import logo1 from './LandingPage/images/woofics-new/WooficsLogo.png'
+import logo2 from './LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png';
 // import { useWindowScroll } from 'react-use';
 // import transitions from '@material-ui/core/styles/transitions';
 
@@ -76,9 +76,10 @@ function Navbar() {
     const [logoImg, setLogo] = useState(false);
 
     const [anchorElStaz, setAnchorElStaz] = React.useState(null);
-
+    
+   
     const handleClickStaz = (event) => {
-        setAnchorElStaz(event.currentTarget);
+        setAnchorElStaz(event.currentTarget);   
     };
 
     const handleCloseStaz = () => {
@@ -105,15 +106,9 @@ function Navbar() {
                         })
     
                 }
-            const match = window.matchMedia("(max-width: 1024px)");
-            match.addEventListener("change", resize);
-            function resize(e) {
-                if (e.matches) { // If media query matches
-                    setMediaState(true);
-                } else {
-                   setMediaState(false);
-                }
-            }
+               
+            
+            
 
         // if (localStorage.getItem('url')) {
         //     if (localStorage.getItem('url')) {
@@ -442,20 +437,14 @@ function Navbar() {
                 <div class="woofic_background  my-auto ">
                     <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : landingPage ? "topnav pb-1 pt-1 fixed-top" : "topnav pb-1 pt-1 fixed-top nonLandingPageNav" } id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
-                            {
-                                mediaState === false ?
+                                
                                 <img
                                 src={logoImg ? logo1 : logo2}
                                 className="pl-lg-4 mr-5 pt-1 "
                                 id="woofic-logo"
-                                /> : 
-                                <img
-                                src={logo1}
-                                className="pl-lg-4 mr-5 pt-1 "
-                                id="woofic-logo"
-                                />
+                                /> 
 
-                            }
+                            
                             
                         </Link>
                         <Link className="pt-3 taglink hover-effect" to="/" id="" >
@@ -485,8 +474,8 @@ function Navbar() {
                             <div class="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
                                 <div class="dropdown-content">
-                                <Link to="/pricecalculator" className="pt-3 " id="taglink4" style={{color:"#000"}}>
-                                    Calculadora de precios
+                                <Link to="/pricecalculator" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
+                                    <span style={{textAlign:"left"}}>Calculadora de precios</span>
                                 </Link>
 
                                 <Link to="/getinspire" className="pt-3 " id="taglink5" style={{color:"#000"}}>
@@ -608,7 +597,7 @@ function Navbar() {
                                         </span>
                                         <h5 className="h5 pt-3">Log In</h5>
                                         <img
-                                            src="assets/plugins/images/woofic.jpeg "
+                                            src={logo1}
                                             className=" mx-auto text-center my-2"
                                             style={{ width: "200px" }}
                                         />
@@ -707,15 +696,21 @@ function Navbar() {
                                                         //     <div className="fa fa-facebook"></div>
                                                         // </div>
                                                         // )}
-                                                        icon="fa fa-facebook"
+                                                        
                                                         fields="name,email,picture"
                                                         onClick={componentClicked}
                                                         callback={responseFacebook}
-                                                        cssClass="btnFacebook"
+                                                        cssClass="btnFacebook text-center py-2"
                                                         icon={
-                                                            <i className="fa fa-facebook text-primary"></i>
+                                                            <div className="pt-1">
+                                                                    <i className="fa fa-facebook text-primary"></i>
+                                                                    <span className="pl-2 " style={{fontSize:'16px'}}>
+                                                                    Iniciar sesión con Facebook
+                                                                    </span>
+                                                                </div>
                                                         }
-                                                        textButton="&nbsp;&nbsp;Sign In with Facebook"
+                                                        textButton="&nbsp;&nbsp;
+                                                        "
                                                     />
                                                 </div>
                                                 <div className="col-md-12 mt-3 text-center">
@@ -781,7 +776,7 @@ function Navbar() {
                                     <div className="col-md-12 col-lg-6 col-sm-12 p-0 m-0 d-none d-lg-block mx-auto p-5">
                                         <div className="row d-block text-center ml-3">
                                             <img
-                                                src="assets/plugins/images/woofic.jpeg "
+                                                src={logo1}
                                                 className="img-fluid w-50 mx-auto text-center mb-3"
                                             />
                                         </div>

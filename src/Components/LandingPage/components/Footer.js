@@ -8,11 +8,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import footer_logo from '../images/Woofic-2.png';
-import footer_logo2 from '../images/Logo-2.png';
-import footer_logo3 from '../images/Logo-3.png';
-import footer_logo4 from '../images/Logo-1.png';
-import footer_logo5 from '../images/Logo-4.png';
+import footer_logo from '../images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png';
+
 
 
 
@@ -78,8 +75,8 @@ function Footer() {
                                     </div>
                                     <div class="woofic_social_logo ">
                                         <a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"> <FacebookIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="woofic.com@gmail.com"> <InstagramIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="woofic.com@gmail.com"> <TwitterIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://www.instagram.com/woofic_com/"> <InstagramIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://twitter.com/Woofic1"> <TwitterIcon className="text-white mx-2" /></a>
                                         <a target="_blank" href="https://www.linkedin.com/company/woofic"> <LinkedInIcon className="text-white mx-2" /></a>
 
                                     </div>
@@ -95,7 +92,7 @@ function Footer() {
                                     <Link className="text-white h5" to="/aboutus/1">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/contact"> Contacto </Link>
+                                    <Link className="text-white h5" to="/aboutus/3"> Contacto </Link>
                                 </li>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/allblog"> Blog </Link>
@@ -139,11 +136,11 @@ function Footer() {
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className=" border-right px-2  ">
-                                            <a href="https://carnovo.com/es/terminos-y-condiciones" target="_blank" className="text-white">Términos Y Condiciones</a>
+                                            <a  target="_blank" className="text-white">Términos Y Condiciones</a>
                                         </div>
 
                                         <div className="mx-2 ">
-                                            <a href="https://carnovo.com/es/politica-de-privacidad" target="_blank" className="text-white">Política De Privacidad</a>
+                                            <a  target="_blank" className="text-white">Política De Privacidad</a>
                                         </div>
                                     </div>
                                 </div>

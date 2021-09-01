@@ -10,7 +10,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import CustomProviderAuth from "../CustomProviderAuth";
 import TextField from '@material-ui/core/TextField';
-import { loadStripe } from "@stripe/stripe-js";
 const useStyles = makeStyles((theme) => ({
 
     // necessary for content to be below app bar
@@ -60,27 +59,27 @@ export default function ProviderLedger() {
     useEffect(() => {
         getServiceledger();
     }, [])
-    const stripePromise = loadStripe("pk_test_51IIWuIApAAjWKIoNrjwEcTyuCykDQVAqXWIBpwsNt1trDbRXD9n6uKPRvZlDKdQLNyIRiKaSAwpPgbUAjhEkqOJ400HEEcjDh1");
+    // const stripePromise = loadStripe("pk_test_51IIWuIApAAjWKIoNrjwEcTyuCykDQVAqXWIBpwsNt1trDbRXD9n6uKPRvZlDKdQLNyIRiKaSAwpPgbUAjhEkqOJ400HEEcjDh1");
 
-    async function stripePayment(e){
+    // async function stripePayment(e){
         
-        e.preventDefault();
-        const stripe = await stripePromise;
-        const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
-            name: providerName,
-            description: description,
-            currency: 'usd',
-            amount: amount,
-            user_id: userId
-        })
-            .then((response) => {
-                stripe.redirectToCheckout({
-                    sessionId: response.data.session_id,
-                });
-            }, (Error) => {
+    //     e.preventDefault();
+    //     const stripe = await stripePromise;
+    //     const { data: response } = axios.post(`https://api.woofics.com/api/stripe_payment`, {         
+    //         name: providerName,
+    //         description: description,
+    //         currency: 'usd',
+    //         amount: amount,
+    //         user_id: userId
+    //     })
+    //         .then((response) => {
+    //             stripe.redirectToCheckout({
+    //                 sessionId: response.data.session_id,
+    //             });
+    //         }, (Error) => {
                 
-            });
-    }
+    //         });
+    // }
 
 
     //Sidebaaaaar/..........................
@@ -91,6 +90,11 @@ export default function ProviderLedger() {
     function returnIndex(){
         returnIndexValue = returnIndexValue + 1;
         return returnIndexValue;
+    }
+    function debtFunc(x)
+    {
+        let y = x*-1
+        return y;
     }
 
 
@@ -184,7 +188,7 @@ export default function ProviderLedger() {
                                                             </div>
                                                             <div class="mb-4 mt-4 text-center mx-auto">
                                                                     <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => stripePayment(e)}>Factura De Pago</button>
+                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  >Factura De Pago</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
@@ -203,45 +207,97 @@ export default function ProviderLedger() {
 
 
 
+                                            <div class="row">
+                                                <div class="col-6" >
                                             <div className="table-responsive salman-table-change">
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             
-                                                            <th className="border-top-0 text-white text-center">EQUILIBRIO</th>
-                                                            <th className="border-top-0 text-white text-center">CREADO EN</th>
-                                                            {/* <th></th> */}
+                                                            <th className="border-top-0 text-white text-center">Deuda</th>
+                                                            <th className="border-top-0 text-white text-center" >CREADO EN</th>
+                                                            {/* <th className="border-top-0 text-white text-center"></th> */}
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row">
                                                         {
-                                                            
-                                                            article == '' ? <h3 className="mt-5 text-center"> Nada Que Mostrar!</h3> :
+
+                                                            article == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
                                                                 article.map((val, id) => {
-                                                                    return (
-                                                                        <>
-                                                                            <tr>
-                                                                                
-                                                                                <td className="txt-oflo text-center">{val.balance}</td>
-                                                                                <td className="txt-oflo text-center">{(val.created_at).slice(0,10)}</td>
-                                                                                {/* <td></td> */}
-                                                                                {/* <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e) => history.push(`/ledgerview/${val.id}`)}>View more</button></td> */}
-                                                                            </tr>
-                                                                        </>
-                                                                    )
-                                                                })}
-                                                                {
+                                                                    if(val.balance<0)
+                                                                    {
+                                                                        
+                                                                        return (
+                                                                            <>
+                                                                                <tr>
+                                                                                    <td className="txt-oflo text-center">{debtFunc(val.balance)}</td>
+                                                                                    <td className="txt-oflo text-center" style={{borderRadius:'0px'}}>{(val.created_at).slice(0, 10)}</td>
+                                                                                    {/* <td className="text-success text-center"></td> */}
+                                                                                </tr>
+                                                                            </>
+                                                                        )
+                                                                    }
+                                                                    
+                                                                })             
+                                                        }
+                                                        {
                                                             article !== '' ?
-                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} $ </td>
+                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center">Cantidad Total : {totalAmount} € </td>
                                                                 <td className="txt-oflo text-center"></td>
                                                                 
-                                                                {/* <td className="txt-oflo text-center"></td> */}
                                                                 
                                                             </tr> : <h3></h3> 
                                                         }
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            </div>
+                                            <div class="col-6" >
+                                            <div className="table-responsive salman-table-change">
+                                                <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
+                                                    <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
+                                                        <tr>
+                                                            
+                                                            <th className="border-top-0 text-white text-center" >Crédito</th>
+                                                            <th className="border-top-0 text-white text-center">CREADO EN</th>
+                                                            {/* <th className="border-top-0 text-white text-center"></th> */}
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="data-row">
+                                                    {
+
+                                                        article == '' ? <h3 className="mt-5"> Nada Que Mostrar!</h3> :
+                                                            article.map((val, id) => {
+                                                                if(val.balance>0)
+                                                                {
+                                                                    
+                                                                    return (
+                                                                        <>
+                                                                            <tr>
+                                                                                <td className="txt-oflo text-center">{val.balance}</td>
+                                                                                <td className="txt-oflo text-center" style={{borderRadius:'0px'}}>{(val.created_at).slice(0, 10)}</td>
+                                                                                {/* <td className="text-success text-center"></td> */}
+                                                                            </tr>
+                                                                        </>
+                                                                    )
+                                                                }
+                                                                
+                                                            })             
+                                                        }
+                                                        {
+                                                            article !== '' ?
+                                                            <tr style={{marginTop:'10px'}}><td className="txt-oflo text-center"></td>
+                                                                <td className="txt-oflo text-center"></td>
+                                                                
+                                                                
+                                                            </tr> : <h3></h3> 
+                                                        }
+                                                    </tbody>
+                                                    </table>
+                                                    </div>
+                                            </div>
+
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

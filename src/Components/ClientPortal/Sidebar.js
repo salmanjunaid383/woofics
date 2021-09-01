@@ -224,7 +224,7 @@ export default function Sidebar() {
         {
             name: 'Proveedor de servicio',
             icon: <AssistantIcon  />,
-            to: '/suppliers'
+            to: '/providers'
         },
         {
             name: 'Foro de discusion',

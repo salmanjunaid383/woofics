@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
-import logo from './LandingPage/images/wooficc.png';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
 import ScrollToTop from "./ScrollToTop";

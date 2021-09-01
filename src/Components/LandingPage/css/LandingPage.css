@@ -254,6 +254,7 @@ body{
     background-size:contain;
     background-repeat:no-repeat;
     width:150px;
+    margin-top:-5px;
   }
   .nav-button-join{
     background-color: #F72A85;
@@ -348,7 +349,7 @@ body{
     }
     .topnav{
       height:auto !important;
-      background-color:#fff;
+      /* background-color:#fff; */
     }
 
     .topnav a {
@@ -405,7 +406,7 @@ body{
   }
   .topnav{
     height:auto !important;
-    background-color:#fff;
+    /* background-color:#fff; */
   }
   .dropbtn{
     width: 100vw !important;

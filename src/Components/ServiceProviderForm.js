@@ -15,7 +15,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-
+import logo from './LandingPage/images/woofics-new/WooficsLogo.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -206,7 +206,7 @@ export default function ServiceProvider() {
                 <div className="align-item-center">
                   <div className="col-md-6 col-lg-6 col-sm-12 p-0 m-0 mx-auto p-5">
                     <div className="row d-block text-center ml-3">
-                      <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
+                      <img src={logo} alt="Logo" className="img-fluid w-50 mx-auto text-center mb-3" />
                     </div>
                     <h3 className=" py-3 h3 bolder"><b>Consiga nuevos clientes</b></h3>
                     <h5 className=" py-3 h5">¡Pasa al siguiente nivel, llega a donde nunca has estado antes y descubre nuevas oportunidades!</h5>
@@ -225,57 +225,57 @@ export default function ServiceProvider() {
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Nombre de su empresa</h6>
-                            </label> <input className="mb-4" onChange={(e) => setnameBusiness(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setnameBusiness(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Nombre de pila</h6>
-                            </label> <input className="mb-4" onChange={(e) => setname(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setname(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Apellido</h6>
-                            </label> <input className="mb-4" onChange={(e) => setlastname(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setlastname(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}> Dirección de correo electrónico</h6>
-                            </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Teléfono</h6>
-                            </label> <input className="mb-4" onChange={(e) => settelephone(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => settelephone(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Tamaño de la empresa</h6>
-                            </label> <input className="mb-4" onChange={(e) => setcompanySize(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setcompanySize(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Ubicación de su negocio (código postal)</h6>
-                            </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Entre aquí" />
                           </div>
 
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Clave</h6>
-                            </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Enter here" />
+                            </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">
                             <label className="mb-1">
                               <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>confirmar Contraseña</h6>
                             </label>
-                            <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Enter here" />
+                            <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Entre aquí" />
                           </div>
 
                           <div className="row w-100 mx-auto">

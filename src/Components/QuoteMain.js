@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
-import Pusher from 'pusher-js';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import Swal from 'sweetalert2';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -17,65 +14,32 @@ import reg from "../Images/rmbg.png";
 import clsx from 'clsx';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import "../Components/ClientPortal/quotemain.css"
-import salman from "../Components/survey.png"
-// import shopping from "../Components/shopping.png"
-import shopping from "../Components/shopping.png"
+
 import firebase from './Firebase'
 import "../Components/quotemain.css"
 import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
 import Client from './Client';
-//Sidebar
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-// import IconButton from '@material-ui/core/IconButton';
+
 import Backdrop from '@material-ui/core/Backdrop';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
+
 import Typography from '@material-ui/core/Typography';
-import { useTheme } from '@material-ui/core/styles';
-import Popover from '@material-ui/core/Popover';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
-import AssistantIcon from '@material-ui/icons/Assistant';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
-import LoyaltyIcon from '@material-ui/icons/Loyalty';
-import SwapVertIcon from '@material-ui/icons/SwapVert';
-import LiveHelpIcon from '@material-ui/icons/LiveHelp';
-import CallEndIcon from '@material-ui/icons/CallEnd';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
+
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 
-import Badge from '@material-ui/core/Badge';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import Navbar from './Navbar';
-import one from '../Images/one.jpg';
-import two from '../Images/two.webp';
-import three from '../Images/three.png';
+
 
 import Footer from './LandingPage/components/Footer';
 import ScrollToTop from "./ScrollToTop";
 
-import monoposte from "../Components/monoposte.png";
-import pared from "../Components/pared.png";
-import mupi from "../Components/Mupi.png";
-import truss from "../Components/truss.png"
+import monoposte from "../Images/structure/monoposte.jpg";
+import pared from "../Images/structure/pared.jpg";
+import mupi from "../Images/structure/tothem.jpg";
+import truss from "../Images/structure/truss.jpg"
 
 
 const drawerWidth = 240;
@@ -208,6 +172,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QuoteMain() {
     let history = useHistory();
     ScrollToTop();
+    const[modelState,setModelState]=useState(false);
 
     // let history = useHistory();
 
@@ -224,7 +189,7 @@ export default function QuoteMain() {
     const [visuald, setvisuald] = useState("");
     const [screenuse, setscreenuse] = useState("");
     const [screenbase, setscreenbase] = useState();
-    const [screenheight, setscreenheight] = useState("");
+    const [screenheight, setscreenheight] = useState();
     const [screenaccess, setscreenaccess] = useState('');
     const [screenorientation, setscreenorientation] = useState("");
     const [controlsys, setcontrolsys] = useState("");
@@ -253,10 +218,21 @@ export default function QuoteMain() {
 
     const [malik, setmalik] = useState('disabled')
     useEffect(()=> {
-        alert("Woofic is a comprehensive platform, which allows you to obtain tailored quotes from"+
-        "different suppliers, negotiate with them and place the order. All with maximum transparency"+
-        "and security, that is why it is necessary to register, in order to access your management"+
-        "panel.");
+        if(modelState===false)
+        {
+            Swal.fire({
+                title:"Woofics.com",
+                html: "<p style='font-size:14px'>Woofic es una plataforma integral que le permite obtener cotizaciones personalizadas de "+
+                "diferentes proveedores, negocia con ellos y haz el pedido. Todo con la máxima transparencia" +
+                "y seguridad, por eso es necesario registrarse, para poder acceder a su gestión" +
+                "panel.</p>"
+            });
+        }
+        setModelState(true)
+        
+             
+        
+        
     },[])
 
     function SendService(i) {
@@ -278,8 +254,8 @@ export default function QuoteMain() {
                 }
                 else {
                     setprogress('Please wait...')
-
-
+                    
+                    console.log()
                     const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
                         product_type:productType,
                         product_image:prdouctTypeImg,
@@ -290,7 +266,7 @@ export default function QuoteMain() {
                         model: model,
                         visual_distance: visuald,
                         screen_use: screenuse,
-                        screen_base: screenbase,
+                        screen_width: screenbase,
                         screen_height: screenheight,
                         screen_access: screenaccess,
                         screen_orientation: screenorientation,
@@ -322,6 +298,7 @@ export default function QuoteMain() {
                         }, (error) => {
                             setprogress('Publish your Service?')
                             alert('You left some feilds empty !')
+                            console.log(error.message)
                         });
                 }
             }
@@ -340,7 +317,7 @@ export default function QuoteMain() {
                     model: model,
                     visual_distance: visuald,
                     screen_use: screenuse,
-                    screen_base: screenbase,
+                    screen_width: screenbase,
                     screen_height: screenheight,
                     screen_access: screenaccess,
                     screen_orientation: screenorientation,
@@ -549,6 +526,58 @@ export default function QuoteMain() {
       
         }
       ]
+    const date4=[
+        {
+          id: 1,
+          author: "Conciertos",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FCONCIERTOS.jpg?alt=media&token=82ffd5dc-4cda-4648-9897-a263a2477aed"
+        },
+        {
+          id: 2,
+          author: "Evento Deportivo",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FEVENTO%20DEPORTIVO.jpg?alt=media&token=f6e94203-8cc3-47b7-84cb-a9f1fb09705d"
+        },
+        {
+          id: 3,
+          author: "Ferias",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FFERIAS.jpg?alt=media&token=b01bc4bb-acdf-4ecf-a6e7-9691ce259200"
+        },
+        {
+          id: 4,
+          author: "Imagen Coprativa",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FIMAGEN%20CORPORATIVA.jpg?alt=media&token=d04cf5b5-bdd6-4b54-99b4-e954324179b9"
+        },
+        {
+          id: 5,
+          author: "Informacion",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FINFORMACION.jpg?alt=media&token=d80a4ce7-90a8-4eb6-8025-435c19819329"
+        },
+        {
+          id: 6,
+          author: "Plato Tv",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FPLATO%20TV.jpeg?alt=media&token=a2f934b0-b660-4e8e-8339-b255c3fa6eb7"
+        },
+        {
+          id: 7,
+          author: "Presentacion",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FPRESENTACION.jpg?alt=media&token=8b6c88ab-c211-479d-afe5-4824b65f0923"
+        },
+        {
+          id: 8,
+          author: "Publicidad",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FPUBLICIDAD.jpg?alt=media&token=38703e61-d5d6-4e06-8e65-1df15f2956af"
+        },
+        {
+          id: 9,
+          author: "Sala De Control",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FSALA%20DE%20CONTROL.jpg?alt=media&token=04a06afa-19f1-4efd-952b-89bee1e4902a"
+        },
+        {
+          id: 10,
+          author: "Trafico",
+          image: "https:\/\/firebasestorage.googleapis.com\/v0\/b\/woofic-306700.appspot.com\/o\/images%2FTRAFICO.jpg?alt=media&token=2781f3be-f12b-408a-8834-5eb12ecba004"
+        }
+      ]
 
     function getSteps() {
         // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'
@@ -681,7 +710,7 @@ export default function QuoteMain() {
                 return <div className="w-100  my-lg-5">
                     <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
                     {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
-                    <input value="purchase" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
+                    <input value="Buy" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
                         type="radio" name="emotion"
                         id="sad" class="input-hidden " />
                     <label for="sad">
@@ -696,7 +725,7 @@ export default function QuoteMain() {
                         <h4 className="text-center" style={buycolor === "true" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' }}>COMPRA</h4>
                     </label>
 
-                    <input value="rent" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
+                    <input value="Rental" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
                         type="radio" name="emotion"
                         id="happy" class="input-hidden" />
                     <label for="happy">
@@ -774,22 +803,32 @@ export default function QuoteMain() {
                     <br />
                     <br />
                     <h4 className="text-center w-100 text-dark frank-color-blue">Uso de la pantalla?</h4>
-                    <FormControl component="fieldset">
-                        <RadioGroup row aria-label="position" style={{ justifyContent: "center",width:"86%",margin:"auto" }} constolsys="posiconstolsys" defaultValue="top" onChange={(e) => setscreenuse(e.target.value)}>
-                            <FormControlLabel value="FAIR/EVENT/CONCERTS/PLATO TV" control={<Radio color="primary" />} label="FAIR/EVENT/CONCERTS/PLATO TV" />
-                            <FormControlLabel value="ORPORATE IMAGE" control={<Radio color="primary" />} label="ORPORATE IMAGE" />
-                            <FormControlLabel value="ADVERTISING" control={<Radio color="primary" />} label="ADVERTISING" />
-                            <FormControlLabel value="INFORMATION" control={<Radio color="primary" />} label="INFORMATION" />
-                            <FormControlLabel value="TRAFFIC" control={<Radio color="primary" />} label="TRAFFIC" />
-                            <FormControlLabel value="SPORTS EVENT" control={<Radio color="primary" />} label="SPORTS EVENT" />
-                            <FormControlLabel value="CONTROL ROOM" control={<Radio color="primary" />} label="CONTROL ROOM" />
-                        </RadioGroup>
-                    </FormControl>
+                    <div className="w-100  my-lg-5">
+                    <div className="row">
+                    {
+                        date4.map((val,id) => {
+                            return(
+                                <>
+                                    <div class="col-md-4" style={{padding:'5px'}}>
+                                        
+                                    {
+                                    screenuse===val.author ? 
+                                    <h4 value={val.author} style={{color:"#1010ff"}}>{val.author}</h4> : 
+                                    <h4 value={val.author} >{val.author}</h4>
+                                    }
+                                        <img src={val.image} alt={val.author} data-toggle="tool-tip" width="150px" height="150px"
+                                        onClick={(e) => {setscreenuse(val.author)}} style={{cursor:"pointer"}}></img>
+                                        
+                                    </div>
+                                
+                                </>
+                            )
+                        })
+                    }
+                    </div>
+                    </div>
                     
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    
 
 
                 </div>
@@ -911,15 +950,15 @@ export default function QuoteMain() {
                     <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "-10px" }}>Necesitas estructura?</h4>
                     <input
                         type="radio" name="fqwfqwfas"
-                        id="dsdq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("1")}} />
+                        id="dsdqq" class="input-hidden " value='Pared' onChange={(e) => {setstructure(e.target.value); setstructurecolor("4")}} />
 
-                    <label value="Pared" for="dsdq">
+                    <label value="Pared" for="dsdqq">
                      
                         <div className="mx-lg-4 p-2">
                             {/* <i className=" fa fa-certificate" style={structurecolor === "1" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i> */}
                             <img src={pared} style={{height:"100px",width:"100px"}}/>
                         </div>
-                        <h4 className="text-center mx-lg-2" style={structurecolor === "1" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Pared</h4>
+                        <h4 className="text-center mx-lg-2" style={structurecolor === "4" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer'}}>Pared</h4>
                     </label>
 
                     <input
@@ -1000,12 +1039,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="SHIPPING" control={<Radio color="primary" />} label="SHIPPING" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <div className="w-50 text-center float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="INSTALLATION" />INSTALLATION
-                        </div>
-                        <div className="w-50 text-center float-left">
-                            <input type="radio" name="fwefwe" className="w-25 text-center" onchange={(e) => setshipping(e.target.value)} value="SHIPPING" />SHIPPING
-                        </div> */}
+                        
                     </p>
                     <br />
                     <br />
@@ -1405,7 +1439,41 @@ export default function QuoteMain() {
                 
                 </div>
             </div>
+                        
                         <div className="w-100 mx-auto mt-md-4">
+                        <h4 className="text-center w-100 text-dark frank-color-blue">Quiere comprar o alquilar?</h4>
+                {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
+                <input value="Buy" onChange={(e) => {setbuy(e.target.value); setbuycolor("true")}}
+                    type="radio" name="emotion"
+                    id="sad" class="input-hidden " />
+                <label for="sad">
+                    {/* <img
+                        src={shopping}
+                        alt="I'm sad"
+                        className="mx-lg-5 p-2" style={{ cursor: "pointer", color:"#934CFF" }} /> */}
+                        <div className="mx-lg-3 p-2">
+                        <i className="fa fa-shopping-cart" style={buycolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                    </div>
+
+                    <h4 className="text-center" style={buycolor === "true" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' }}>COMPRA</h4>
+                </label>
+
+                <input value="Rental" onChange={(e) => {setbuy(e.target.value); setbuycolor("false")}}
+                    type="radio" name="emotion"
+                    id="happy" class="input-hidden" />
+                <label for="happy">
+                    {/* <img
+                        src="data:image/png;base64,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"
+                        alt="I'm happy" className="p-2" style={{ cursor: "pointer" }} /> */}
+
+                    <div className="mx-lg-3 p-2">
+                        <i className=" fa fa-archive" style={buycolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                    </div>
+                    <h4 className="text-center" style={buycolor === "false" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' } }>ALQUILER</h4>
+                </label>
+                {/* </div> */}
+                <br />
+                <br />
                             
                             <label className="for-question-mobile frank-color-pink">¡Háganos saber lo que quiere! Mencione todo a continuación:</label>
                             <textarea onChange={(e) => setdescription(e.target.value)}>
@@ -1420,6 +1488,13 @@ export default function QuoteMain() {
                             <div className="w-100 my-lg-2"><TextField onChange={(e) => setcompany(e.target.value)} className="w-50" id="outlined-basic" label="Company Name?" variant="outlined" /> </div>
                             {/* <h4 className="text-center w-100 text-dark">Price?</h4> */}
                             {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div> */}
+                            <div>
+                            <h4 className="text-center w-100 text-dark d-inline frank-color-blue">Dimensión de la pantalla?</h4>
+                            <div style={{ marginTop: "10px" }}>
+                                <TextField value={screenbase} type="number" onChange={(e) => setscreenbase(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Base (cm) " variant="outlined" />
+                                <TextField value={screenheight} type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-30 mx-lg-2" id="outlined-basic" label="Height (cm) " variant="outlined" />
+                            </div>
+                            </div>
                             <div className="w-100 my-lg-2"> 
                             <p className="d-inline w-100 ">
                                 <h4 className="text-center w-100 text-dark frank-color-blue" style={{marginTop:"50px", marginBottom:"20px"}}>Intermediaria / cliente final?</h4>

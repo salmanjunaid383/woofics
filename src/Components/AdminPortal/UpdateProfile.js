@@ -74,12 +74,12 @@ export default function UpdateProfile() {
                 exp_month: expMonth,
                 exp_year: expYear,
                 cvc: cvc,
-                email: stripeEmail,
                 user_id:decoded.sub
                 
             }).then((response) => {
                 
-                setCardProgress('Update Profile')
+                setCardProgress('Card Info Save Successfully')
+                getCreditCardData();
                 // setOpenpop(true);
             }, (Error) => {
                 
@@ -317,15 +317,12 @@ export default function UpdateProfile() {
                                                     <label class="col-md-6 p-0 bold">CVC</label>
                                                     <input type="text" defaultValue={cardData !== "" ? "***" : null}
                                                         class="form-control p-0 border-0" onChange={(e) => setCvc(e.target.value)} /> </div>
-                                                <div class="form-group mb-4 col-md-6">
-                                                    <label class="col-md-6 p-0 bold">Stripe Email</label>
-                                                    <input type="text" defaultValue={cardData !== "" ? cardData.billing_details.email : null}
-                                                     class="form-control p-0 border-0" onChange={(e) => setStripeEmail(e.target.value)} /> </div>
+                                                
                                             
                                             </div>                                              
                                             <div class="form-group mb-4">
                                                     <div class="col-sm-12 text-center">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={updateCard}>{cardProgress}</button>
+                                                        <button class="btn text-white" disabled={cardData !== "" ? true:false} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={updateCard}>{cardProgress}</button>
                                                     </div>
                                                 </div>
 

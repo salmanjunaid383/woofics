@@ -35,7 +35,7 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import CustomProviderAuth from "../CustomProviderAuth";
 import Pusher from 'pusher-js';
-
+import logo from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -185,7 +185,7 @@ export default function ServiceSidebar(props) {
             to: '/offerlist'
         },
         {
-            name: 'Libro mayor',
+            name: 'Gastos',
             icon: <BorderColorIcon />,
             to: '/providerledger'
         },
@@ -217,7 +217,7 @@ export default function ServiceSidebar(props) {
             <div className="navbar-header" data-logobg="skin6">
                 <Link className="navbar-brand " to="/admindashboard">
                     <span className="logo-text text-dark p-0 m-0 text-center">
-                       <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px',marginTop:"20px",marginBottom:"10px" }} />
+                       <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px',marginTop:"20px",marginBottom:"10px" }} />
                     </span>
                 </Link>
                 <a className="nav-toggler waves-effect waves-light text-dark d-block d-md-none"

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory ,useParams} from 'react-router-dom'
+import SideBar from './Stazbar';
 import axios from 'axios';
+import ProBar from '../AdminPortal/Sidebar'
+import CustomAdminAuth from "../CustomAdminAuth";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import logo1 from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 import TextField from '@material-ui/core/TextField';
-import  '../SuperPortal/invoice.css';
+import  './invoice.css';
 import jwt_decode from 'jwt-decode'
 import CustomAuth from "../CustomAuth";
 
@@ -26,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SupplierLedger() {
     CustomAuth();
-    
+    CustomAdminAuth();
     let history = useHistory();
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState([]);

@@ -12,7 +12,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import { Link, useHistory } from 'react-router-dom'
-import logo from './LandingPage/images/wooficc.png';
 import axios from 'axios';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'

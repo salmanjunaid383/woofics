@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
-import logo from './LandingPage/images/wooficc.png';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
 import { makeStyles } from '@material-ui/core/styles';
@@ -115,7 +114,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="woofic.com@gmail.com">
+                              <a target="_blank" href="https://twitter.com/Woofic1">
                                 <i className="px-1 fa fa-twitter"></i>
                               </a>
                             </span>

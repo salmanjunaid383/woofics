@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
-import SideBar from './Sidebar';
+import SideBar from './Stazbar';
 import axios from 'axios';
 import ProBar from '../AdminPortal/Sidebar'
-
+import CustomAdminAuth from "../CustomAdminAuth";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import TextField from '@material-ui/core/TextField';
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SupplierLedger() {
     CustomAuth();
+    CustomAdminAuth();
     let history = useHistory();
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState([]);
@@ -53,7 +54,7 @@ export default function SupplierLedger() {
 
     function getInvoice() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_invoices/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/invoice`)
             .then((response) => {
                 setData(response.data)
                 
@@ -112,17 +113,9 @@ export default function SupplierLedger() {
     return (
         <>
 
-            <div className="d-sm-flex">
-            {
-                    supplierSideBar ? (
-                        <SideBar></SideBar>
-                    ) : null
-                }
-                {
-                    providerSideBar ? (
-                        <ProBar></ProBar>
-                    ) : (null)
-                }
+            <div className="d-sm-flex invoice-container2" >
+            <SideBar></SideBar>
+           
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
@@ -160,7 +153,7 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.invoice_id}</td>
                                                                                 <td className="txt-oflo text-center">{val.total}</td>
                                                                                 <td className="txt-oflo text-center">{(val.date).slice(0, 10)}</td>
-                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/invoicedetail/${val.id}`)}}>Detalle</button>
+                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/superinvoicedetail/${val.id}`)}}>Detalle</button>
                                                                             </tr>
                                                                         </>
                                                                     )

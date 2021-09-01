@@ -6,13 +6,11 @@ import Sidebar from "./Sidebar";
 import Nav from "./Nav";
 import jwt_decode from "jwt-decode";
 import "../ClientPortal/Contact.css";
-import fran from "./fran.jpg";
 import Pusher from "pusher-js";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import LandingPage from "../LandingPage/components/LandingPage";
-import logo from "../LandingPage/images/wooficc.png";
 import Navbar from "../Navbar";
 import Footer from "../LandingPage/components/Footer";
 import { TextField } from "@material-ui/core";
@@ -83,12 +81,16 @@ export default function Contact() {
     if(fid==='1')
     {
       
-      setbtnstyle12();    
+      setbtnstyle1();    
     }
     if(fid==='2')
     {
       console.log("Setbtn")
       setbtnstyle12();    
+    }
+    if(fid==='3')
+    {
+      setbtnstyle3();
     }
   },[])
 
