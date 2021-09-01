@@ -294,8 +294,6 @@ function App() {
           <Route exact path="/viewcontact" component={ViewContact} />
           <Route exact path="/offerbadge" component={OfferBadge} />
           <Route exact path="/createforms/:ford" component={CreateForms} />
-
-
           <Route exact path="/viewmore/:category" component={ViewMore} />
           <Route exact path="/viewservice/:servicei" component={ViewService} />
           <Route exact path="/complainresponse/:ucid/:usid" component={ComplainResponse} />

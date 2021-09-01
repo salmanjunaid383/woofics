@@ -129,12 +129,10 @@ function Navbar() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav pb-1 pt-1 fixed-top text-white") {
             x.className = "topnav pb-1 pt-1 fixed-top text-white responsive";
-            // document.getElementById("taglink7").style.marginRight="50px"
-            // document.getElementById("taglink7").style.marginTop="8px"
+          
         } else {
             x.className = "topnav pb-1 pt-1 fixed-top text-white";
-            // document.getElementById("taglink7").style.marginRight="0px"
-            // document.getElementById("taglink7").style.marginTop="0px"
+           
         }
     }
 
