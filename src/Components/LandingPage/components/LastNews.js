@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import {Animated} from "react-animated-css";
 import "../css/last news.css";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
-
+import {ReturnToken} from "../../ReturnToken";
 import useOnScreen from "./OnScreen";
 import axios from "axios";
 
@@ -15,31 +15,40 @@ function LastNews() {
   const ref = useRef()
   const isVisible = useOnScreen(ref)
     
-    
-    
+  
 
 
   useEffect(() => {
+    // console.log("window varaible "+window.name)
     const { data: response } = axios
-      .get(`https://api.woofics.com/api/blog`)
+      .get(`https://api.woofics.com/api/blog`,{
+        headers:window.header
+      })
       .then(
         (response) => {
           if (response) {
+            console.log("blog response "+ response);
             setBlog(response.data);
           }
         },
-        (Error) => {}
+        (Error) => {
+          console.log("blog response" + Error)
+        }
       );
 
     const { data: respons } = axios
-      .get(`https://api.woofics.com/api/data_of_interest`)
+      .get(`https://api.woofics.com/api/data_of_interest`,{
+        headers:window.header
+      })
       .then(
         (respons) => {
           if (respons) {
             setsupp(respons.data);
           }
         },
-        (Error) => {}
+        (Error) => {
+          console.log(Error)
+        }
       );
   }, []);
 
@@ -137,7 +146,7 @@ function LastNews() {
         >
           <div class="woofic_lastnews_card container ">
             <div className="row ">
-              {blog && blog.length>0 ? 
+              {
               blog.slice(0, 3).map((val, id) => {
                 return (
                   <>
@@ -155,7 +164,7 @@ function LastNews() {
                     </div>
                   </>
                 );
-              }): null}
+              })}
             </div>
           </div>
         </div>
