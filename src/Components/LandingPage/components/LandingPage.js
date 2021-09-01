@@ -4,7 +4,6 @@ import '../css/LandingPage.css';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import side_image from '../images/img-01.png';
 import { Link, useHistory } from 'react-router-dom'
-import Youtube from './youtube.png'
 import WhatsAppWidget from 'react-whatsapp-widget'
 import 'react-whatsapp-widget/dist/index.css'
 import { makeStyles } from '@material-ui/core/styles';

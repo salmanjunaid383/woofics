@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Sidebar.css'
 import jwt_decode from 'jwt-decode'
 
-
+import logo from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 //Sidebar
 
 import AppBar from '@material-ui/core/AppBar';
@@ -249,7 +249,7 @@ export default function Sidebar() {
         <div>
             <Link className="navbar-brand " to="/dashboard">
                 <span className="logo-text text-dark p-0 m-0 text-center">
-                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop: "20px", marginBottom: "10px" }} />
+                    <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop: "20px", marginBottom: "10px" }} />
                 </span>
             </Link>
             <div className={classes.toolbar} />
