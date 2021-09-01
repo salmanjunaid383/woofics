@@ -11,12 +11,32 @@ import seven from '../images/seven.jpg';
 import eight from '../images/eight.png';
 import { useHistory } from 'react-router-dom';
 import {Animated} from "react-animated-css";
+import pic1 from "../components/space.jpg"
 
 function Banner(){
     let history = useHistory();
 
     return(
             <>
+                  <div className="offer_sec" style={{textAlign:"center"}}>
+                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>OFFERS</h3>
+                 
+              <div className="pic_sec" style={{padding:"20px"}}>
+                  <div className="pic1">
+                      <img src={pic1}/>
+                  </div>
+                  <div className="pic1">
+                  <img src={pic1}/>
+                  </div>
+                  <div className="pic1">
+                  <img src={pic1}/>
+                  </div>
+
+              </div>
+              </div>
+
+
+
            <div class="woofic_banner text-center ">
           
                 <div class="woofic_banner_heading">
@@ -42,7 +62,7 @@ function Banner(){
                     </div>
                     <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ELECTRICIAN')}>
                         <div class="woofic_element_image">
-                            <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={two}/>
+                            <img style={{borderRadius:"50%",width:'60px',height:'60px'}}  src={two}/>
                         </div>
                         <div class="woofic_element_heading">
                         electricista
@@ -53,8 +73,8 @@ function Banner(){
                     </div>
 
                         <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ARCHITECTS')}>
-                                <div class="woofic_element_image">
-                                <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={three}/>
+                                <div class="woofic_element_image" style={{overflow:"hidden"}}>
+                                <img style={{borderRadius:"50%",width:'70px',height:'70px',marginTop:"-8px", marginLeft:"-5px"}}  src={three}/>
                                 </div>
                             <div class="woofic_element_heading">
                             arquitectos / ingenieras

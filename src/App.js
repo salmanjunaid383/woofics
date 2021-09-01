@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ConditionTerms from "./Components/ConditionsTerms"
 import Login from "./Components/Login";
 import SalmanNav from "./Components/SuperPortal/salman-nav"
 import StazBar from "./Components/SuperPortal/Stazbar";
@@ -168,6 +169,7 @@ function App() {
       <div className="App">
         <Switch>
           
+          <Route path="/Condition-Terms" component={ConditionTerms}/>
           <Route exact path="/StazCal" component={StazCal} />
           <Route path="/login" component={Login} />
           <Route path="/testcal" component={TestCalulator}></Route>

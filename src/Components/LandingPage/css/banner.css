@@ -1,3 +1,23 @@
+.offer_sec{
+    margin-top: 40px;
+    height:auto;
+    width:100%;
+    /* background-image:linear-gradient(to bottom right, #520325 0%, #F62B84 100%) */
+    /* color:#F62B84 */
+    
+}
+.pic_sec{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.pic_sec .pic1 img{
+    height:250px;  
+}
+
+
+
 .woofic_banner{
     margin-top: 10px;
     height:auto;

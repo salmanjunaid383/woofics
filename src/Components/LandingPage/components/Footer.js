@@ -135,10 +135,9 @@ function Footer() {
                             <div class=" mt-3 text-center">
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
-                                        <div className=" border-right px-2  ">
-                                            <a  target="_blank" className="text-white">Términos Y Condiciones</a>
+                                        <div className="border-right px-2">
+                                            <a  herf="/Condition-Terms" className="text-white">Términos Y Condiciones</a>
                                         </div>
-
                                         <div className="mx-2 ">
                                             <a  target="_blank" className="text-white">Política De Privacidad</a>
                                         </div>
