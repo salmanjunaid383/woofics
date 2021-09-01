@@ -68,7 +68,8 @@ function LastNews() {
                 flexWrap: "wrap",
                 
               }}>
-              {supp.map((val, id) => {
+              { supp.length>0 ?
+              supp.map((val, id) => {
                 return (
                   <>
                   
@@ -109,7 +110,7 @@ function LastNews() {
                    
                   </>
                 );
-              })}
+              }): null}
             </div>
           </div>
         </div>
@@ -136,7 +137,8 @@ function LastNews() {
         >
           <div class="woofic_lastnews_card container ">
             <div className="row ">
-              {blog.slice(0, 3).map((val, id) => {
+              {blog && blog.length>0 ? 
+              blog.slice(0, 3).map((val, id) => {
                 return (
                   <>
                     {" "}
@@ -153,7 +155,7 @@ function LastNews() {
                     </div>
                   </>
                 );
-              })}
+              }): null}
             </div>
           </div>
         </div>

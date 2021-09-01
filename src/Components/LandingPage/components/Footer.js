@@ -26,7 +26,11 @@ function Footer() {
     function GetDot(){
         const { data: response } = axios.get(`https://api.woofics.com/api/footer`)
             .then((response) => {
-                getDot(response.data);
+                if(response.data)
+                {
+                    getDot(response.data);
+                }
+                
                 
             }, (Error) => {
                 
@@ -34,6 +38,7 @@ function Footer() {
         
             const { data: responses } = axios.get(`https://api.woofics.com/api/slogun`)
             .then((response) => {
+                if(response.data)
                 getText(response.data);
                 
             }, (Error) => {

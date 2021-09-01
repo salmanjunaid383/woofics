@@ -238,7 +238,11 @@ export default function QuoteMain() {
     function SendService(i) {
         const token = localStorage.getItem('user_token');
         if (token === null) {
-            alert("Please logged in or register to post the offer")
+            Swal.fire({
+                title:"Woofics.com",
+                html: "<p> Inicie sesión o regístrese para publicar la oferta.</p>"
+            });
+            // alert("")
             handleOpenpop2();
         }
         else {
@@ -250,10 +254,13 @@ export default function QuoteMain() {
                     name === "" ||
                     contact === ""
                 ) {
-                    alert("please fill in the form");
+                    Swal.fire({
+                        title:"Woofics.com",
+                        html: "<p> Por favor rellene el formulario.</p>"
+                    });
                 }
                 else {
-                    setprogress('Please wait...')
+                    setprogress('Espere por favor...')
                     
                     console.log()
                     const { data: response } = axios.post(`https://api.woofics.com/api/form`, {
@@ -293,11 +300,19 @@ export default function QuoteMain() {
                     })
                         .then((response) => {
                             setprogress('Published')
-                            alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
+                            Swal.fire({
+                                title:"Woofics.com",
+                                html: "<p>Gracias por tu tiempo. En 48 horas recibirás las mejores ofertas personalizadas para tu proyecto..</p>"
+                            });
+                            // alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
                             history.push('/myservice')
                         }, (error) => {
-                            setprogress('Publish your Service?')
-                            alert('You left some feilds empty !')
+                            setprogress('Publica tu servicio')
+                            Swal.fire({
+                                title:"Woofics.com",
+                                html: "<p>Dejaste algunos campos vacíos!</p>"
+                            });
+                            // alert('You left some feilds empty !')
                             console.log(error.message)
                         });
                 }
@@ -344,11 +359,19 @@ export default function QuoteMain() {
                 })
                     .then((response) => {
                         setprogress('Published')
-                        alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
+                        Swal.fire({
+                            title:"Woofics.com",
+                            html: "<p>Gracias por tu tiempo. En 48 horas recibirás las mejores ofertas personalizadas para tu proyecto..</p>"
+                        });
+                        // alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
                         history.push('/myservice')
                     }, (error) => {
-                        setprogress('Publish your Service?')
-                        alert('You left some feilds empty !')
+                        setprogress('Publica tu servicio')
+                        Swal.fire({
+                            title:"Woofics.com",
+                            html: "<p>Dejaste algunos campos vacíos!</p>"
+                        });
+                        // alert('You left some feilds empty !')
                     });
             }
 
@@ -581,7 +604,7 @@ export default function QuoteMain() {
 
     function getSteps() {
         // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'
-        return ['Product Type','Use', 'Screen', 'Installation', 'Extra Data', 'Contact Details'];
+        return ['Tipo de producto', 'Uso', 'Pantalla', 'Instalación', 'Datos adicionales', 'Detalles de contacto'];
     }
     const [screenDisplay,setScreenDisplay]=useState('block')
     const [lcdDisplay,setLcdDisplay]=useState('none')
@@ -620,13 +643,13 @@ export default function QuoteMain() {
                 <div class="container" >
                 <div class ="row" style={{paddingBottom:"5px"}}>
                     <div class="col-md-4">
-                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Led Screens</a>
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Pantallas Led</a>
                     </div>
                     <div class="col-md-4">
                     <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>LCD</a>
                     </div>
                     <div class="col-md-4">
-                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Various</a>
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Varios</a>
                     </div>
                 </div>
                 <div class="row">
@@ -1198,7 +1221,10 @@ export default function QuoteMain() {
                 
                 if(productType === '' || prdouctTypeImg === '')
                 {
-                    alert("please select a product")
+                    Swal.fire({
+                        title:"Woofics.com",
+                        html: "<p>Por favor seleccione un producto !.</p>"
+                    });
                 }
                 else {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -1206,7 +1232,10 @@ export default function QuoteMain() {
             }
             if (activeStep === 1) {
                 if (buy === '' || indoor === '' || install === '' || model === '' || visuald === '' || screenuse === '') {
-                    alert("please fill in the form");
+                    Swal.fire({
+                        title:"Woofics.com",
+                        html: "<p>Por favor rellene el formulario !.</p>"
+                    });
                 }
                 else {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -1214,7 +1243,10 @@ export default function QuoteMain() {
             }
             if (activeStep === 2) {
                 if (screenheight === "" || screenbase === "" || screenaccess === "" || controlsys === '') {
-                    alert("please fill in the form");
+                    Swal.fire({
+                        title:"Woofics.com",
+                        html: "<p>Por favor rellene el formulario !.</p>"
+                    });
                 }
                 else {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -1222,7 +1254,10 @@ export default function QuoteMain() {
             }
             if (activeStep === 3) {
                 if (screenorientation === "" || adverseweather === "" || structure === "" || deliverytime === "") {
-                    alert("please fill in the form");
+                    Swal.fire({
+                        title:"Woofics.com",
+                        html: "<p>Por favor rellene el formulario !.</p>"
+                    });
                 }
                 else {
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -1558,7 +1593,7 @@ export default function QuoteMain() {
                                     sector === "" ||
                                     postalcode === null ||
                                     comments === "" ||
-                                    email === "" ? alert("please fill these") : SendService(1)}>{progress}</button>
+                                    email === "" ? alert("por favor complete estos") : SendService(1)}>{progress}</button>
                         </div>
                     </div>
                 </div>
