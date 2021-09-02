@@ -1,9 +1,10 @@
 .offer_sec{
-    margin-top: 40px;
+    /* margin-top: 40px; */
     height:auto;
     width:100%;
     /* background-image:linear-gradient(to bottom right, #520325 0%, #F62B84 100%) */
     /* color:#F62B84 */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
 }
 .pic_sec{
@@ -13,7 +14,8 @@
 
 }
 .pic_sec .pic1 img{
-    height:250px;  
+    height:250px; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
 }
 
 

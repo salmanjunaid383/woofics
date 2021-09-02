@@ -1,22 +1,11 @@
 import React from 'react';
+import StazBar from './SuperPortal/Stazbar';
 
 function ConditionTerms(){
     return (
         <>
         {/* navbar sec */}
-            <div className="termsnavbar" style={{height:"70px", width:"100%",borderBottom:"1px solid #e3e3e3", display:"flex",justifyContent:"space-between",position:"sticky",top:"0",left:"0"}}>
-                <div className="termslogo" style={{padding:"10px"}}>
-                    <img src="" alt="woofic_logo" />
-                </div>
-                <div className="termrightoption" style={{display:"flex", alignItems:"center",fontWeight:"bold",color:"#F62B84"}}>
-                    <div className="termdiv1" style={{padding:"10px"}}>
-                            <h4>Accept</h4>
-                    </div>
-                    <div className="termdiv2" style={{padding:"10px"}}>
-                            <h4>Reject</h4>
-                    </div>
-                </div>
-            </div>
+      {/* <StazBar></StazBar> */}
 
             {/* main page  */}
 
@@ -30,11 +19,13 @@ function ConditionTerms(){
                     información para los visitantes (denominados "usuarios"). Al utilizar el sitio web, acepta
                     cumplir y estar sujeto a los siguientes términos y condiciones (este "Acuerdo"), que
                     podemos cambiar en cualquier momento mediante la publicación de un aviso en el sitio
-                    web. POR FAVOR LEA ESTE ACUERDO DETENIDAMENTE Y COMPRUEBE ESTOS
-                    TÉRMINOS Y CONDICIONES PERIÓDICAMENTE PARA VER SI HAY CAMBIOS. Si no
+                    web.
+                    </p>
+                    <p> POR FAVOR LEA ESTE ACUERDO DETENIDAMENTE Y COMPRUEBE ESTOS
+                    TÉRMINOS Y CONDICIONES PERIÓDICAMENTE PARA VER SI HAY CAMBIOS. Si no</p>
                     está de acuerdo con estos términos y condiciones, no utilice el sitio web.
                     Menores.
-                </p>
+                
                 <p>
                     Este sitio web no está dirigido a usuarios menores de 18 años. Si es menor de 18 años, no
                     se le permite enviarnos ninguna información sobre usted.
