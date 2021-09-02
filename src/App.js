@@ -3,7 +3,7 @@ import axios from 'axios';
 // import { useLocation } from 'react-dom'
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route,Redirect } from "react-router-dom";
 import ConditionTerms from "./Components/ConditionsTerms";
 import Login from "./Components/Login";
 import SalmanNav from "./Components/SuperPortal/salman-nav";
@@ -146,11 +146,7 @@ import superinvoicedetail from "./Components/SuperPortal/SuperInvoiceDetail";
 import editquote from "./Components/SupplierPortal/editQuote";
 function App() {
  
-  const[adminAuth,setAdminAuth]=useState(false);
-  const[supplierAuth,setSupplierAuth]=useState(false);
-  const[providerAuth,setProivderAuth]=useState(false);
-  const[customerAuth,setCustomerAuth]=useState(false)
-  
+
   
   useEffect(() => {
      
@@ -231,7 +227,7 @@ function App() {
             path="/supplierprojects/:sid/:uid"
             component={SupplierProjects}
           />
-          {/* <Route exact path="/supproject" component={SupProject} /> */}
+          <Route exact path="/supproject" component={SupProject} />
           {/* <Route exact path="/supcoupons" component={SupCoupons} /> */}
           {/* <Route exact path="/couponslist" component={Coupons} /> */}
           <Route exact path="/sentquotation" component={SentQuotation} />

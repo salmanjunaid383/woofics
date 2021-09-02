@@ -7,25 +7,29 @@ export default function CustomClientAuth() {
   let history = useHistory();
   useEffect(() => {
     try {
+      let currentDate = new Date();
       const token = localStorage.getItem("user_token")
       const role = jwt_decode(localStorage.getItem("user_token"));
       if (!localStorage.getItem('user_token')) {
-        history.push('/')
+        localStorage.clear(); history.push('/')
     }
     else{
-      const { data: response } = axios.post(`https://api.woofics.com/api/client_token`,null, {
-        headers : {Authorization : `Bearer ${token}`}
-      }).then(response => {
-          console.log("client success")
-      }, Error => {
-        history.push('/login')
-      })
+      if(role.exp * 1000 < currentDate.getTime() )
+      {
+        localStorage.clear(); history.push('/')
+      }
+      if(role.role === "Client"){
+
+      }
+      else{
+        localStorage.clear(); history.push('/')
+      }
       
     }
       
     } catch {
-      history.push("/login");
+      localStorage.clear(); history.push('/')
     }
-  },[])
+  },[history])
  
 }

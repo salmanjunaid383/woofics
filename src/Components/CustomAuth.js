@@ -8,14 +8,14 @@ export default function CustomAuth(){
         const token = localStorage.getItem("user_token");
         if(token === null)
         {
-            history.push("/login");
+            localStorage.clear(); history.push("/login");
         }
         else{
             
         }
     }
     catch{
-        history.push("/login");
+        localStorage.clear();history.push("/login");
     }
    })
     
