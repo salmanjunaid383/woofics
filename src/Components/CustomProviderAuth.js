@@ -1,8 +1,12 @@
 import jwt_decode from "jwt-decode";
 import axios from 'axios';
+import { useEffect } from "react";
+
 import { Link, useHistory } from "react-router-dom";
 export default function CustomClientAuth() {
   let history = useHistory();
+  useEffect( () => {
+    
   try {
     const token = localStorage.getItem("user_token")
     const role = jwt_decode(localStorage.getItem("user_token"));
@@ -23,4 +27,6 @@ export default function CustomClientAuth() {
   } catch {
     history.push("/login");
   }
+  })
+  
 }
