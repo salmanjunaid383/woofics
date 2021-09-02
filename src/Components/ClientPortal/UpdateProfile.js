@@ -73,7 +73,9 @@ export default function UpdateProfile() {
                 location: location,
                 contact_number: contact_number,
                 profile_image: imageUrl
-            }).then((response) => {
+            },{
+                headers:window.header
+              }).then((response) => {
                 setOpennoti(true);
                 setProgress('Update Profile')
                 setTimeout(() => {
@@ -95,7 +97,9 @@ export default function UpdateProfile() {
 
     // useEffect(() => {
     function getSocialData() {
-        const res = axios.get(`https://api.woofics.com/api/social_media/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/social_media/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 
                 setsocialauth(res.data)
@@ -117,7 +121,9 @@ export default function UpdateProfile() {
     const [data, setData] = useState('');
 
     function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 
                 setData(res.data)
@@ -155,7 +161,9 @@ export default function UpdateProfile() {
             email: respons.profileObj.email,
             app: 'Google',
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 
                 // setDisable_google_btn(true)
@@ -174,7 +182,9 @@ export default function UpdateProfile() {
             email: response.email,
             app: 'Facebook',
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 setOpenpop(true);
                 getData()
@@ -223,7 +233,9 @@ export default function UpdateProfile() {
                     location: location,
                     contact_number: contact_number,
                     profile_image: imageUrl
-                }).then((response) => {
+                },{
+                    headers:window.header
+                  }).then((response) => {
                     setImageProgress('')
                 }, (Error) => {
                      

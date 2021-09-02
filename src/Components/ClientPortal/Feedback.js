@@ -170,7 +170,9 @@ export default function Feedback() {
             comments: comments,
             overall_rating: average,
             questions: allquestion,
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 setOpenNoti(true)
                 history.push('/coupon');
@@ -327,7 +329,9 @@ export default function Feedback() {
     const [name, setName] = useState([]);
 
     function notification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setName(response.data)
                 seen()
@@ -338,7 +342,9 @@ export default function Feedback() {
 
     const [unseen, setunseen] = useState([]);
     function seen() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
@@ -349,7 +355,9 @@ export default function Feedback() {
      //................Chat Seen
      const [UnseenMxg, setUnseenMxg] = useState([]);
      function chatnotification() {
-         const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`)
+         const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
+            headers:window.header
+          })
              .then((response) => {
                  setUnseenMxg(response.data)
                  seen()
@@ -366,7 +374,9 @@ export default function Feedback() {
     const [Imagedata, setImageData] = useState('');
 
     function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 setImageData(res.data)
             }
@@ -375,7 +385,9 @@ export default function Feedback() {
     }
 
    function notificationDelete(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
+            headers:window.header
+          })
                 .then((response) => {notification()
                 }, (Error) => {
                         

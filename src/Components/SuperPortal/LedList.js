@@ -26,7 +26,9 @@ export default function LedList() {
     const [blog, setBlog] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/led`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/led`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -44,7 +46,9 @@ export default function LedList() {
     function DeleteLed(e) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/led/${e}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/led/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     GetLed()
                 }, (Error) => {

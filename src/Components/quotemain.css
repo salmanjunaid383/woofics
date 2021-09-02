@@ -1,4 +1,24 @@
 
+.s-button{
+    color: #fff !important;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border:2px solid #f72a85;
+
+    
+}
+.s-button:hover{
+    border:2px solid #f72a85;
+    background-color: #fff;
+    color:#f72a85 !important;
+    /* font-weight: bold !important; */
+}
+.front-rear-pic img{
+    height:50px;
+    width: 50px;
+}
+
+
 @media(max-width:600px){
     .for-question-mobile{
         margin-bottom: 10px;

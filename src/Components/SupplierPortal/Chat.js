@@ -73,7 +73,9 @@ export default function Chat() {
                 const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                     from_user: id,
                     to_user: returnData.from_user
-                })
+                },{
+                    headers:window.header
+                  })
                     .then((response) => {
                         if (response) {
                             
@@ -104,7 +106,9 @@ export default function Chat() {
 
 
     function SendData() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
+        const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     // 
@@ -144,7 +148,9 @@ export default function Chat() {
         const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
             from_user: id,
             to_user: valu
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     // 
@@ -171,13 +177,17 @@ export default function Chat() {
             to_user: uid,
             message: sentmsg,
             name: name
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 function Users() {
                     const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                         from_user: id,
                         to_user: uid
-                    })
+                    },{
+                        headers:window.header
+                      })
                         .then((response) => {
                             if (response) {
                                 // 
@@ -211,7 +221,9 @@ export default function Chat() {
         const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
             from_user: id,
             to_user: uid
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     // 
@@ -271,7 +283,9 @@ export default function Chat() {
     const [Imagedata, setImageData] = useState('');
     
     function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 setImageData(res.data)
             }

@@ -50,7 +50,9 @@ export default function Led() {
             application: application,
             image_url: imageUrl,
             ledoptions: feild
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 setProgress('Add Led')
                 history.push('/ledlist')

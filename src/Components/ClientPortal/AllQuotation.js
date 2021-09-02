@@ -64,7 +64,9 @@ export default function AllQuotation() {
 
 
     function Feedback() {
-        const res = axios.get(`https://api.woofics.com/api/quotation/${sid}`)
+        const res = axios.get(`https://api.woofics.com/api/quotation/${sid}`,{
+            headers:window.header
+          })
             .then((res) => {
                 if (res) {
                     setForm(res.data)
@@ -80,7 +82,9 @@ export default function AllQuotation() {
 
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${sid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${sid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setserviceb(response.data.form)
                 setservicet(response.data.package)

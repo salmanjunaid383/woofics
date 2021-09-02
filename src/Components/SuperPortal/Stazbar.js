@@ -395,7 +395,9 @@ export default function StazBar() {
     
 
     function notification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setnewnoti(response.data)
                 seen()
@@ -407,7 +409,9 @@ export default function StazBar() {
 
     const [unseen, setunseen] = useState([]);
     function seen() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {

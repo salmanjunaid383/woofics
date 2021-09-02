@@ -94,7 +94,9 @@ export default function Project() {
         if(!mounted)
         {
             function Feedback() {
-                const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`)
+                const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`,{
+                    headers:window.header
+                  })
                     .then((res) => {
                         if (res) {
                             setForm(res.data)
@@ -110,7 +112,9 @@ export default function Project() {
             }
             Feedback();
             function Supplierid() {
-                const res = axios.get(`https://api.woofics.com/api/users/${sid}`)
+                const res = axios.get(`https://api.woofics.com/api/users/${sid}`,{
+                    headers:window.header
+                  })
                     .then((res) => {
                         if (res) {
                             setSupplier(res.data)
@@ -122,7 +126,9 @@ export default function Project() {
     
             }
             Supplierid();
-            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+            const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+                headers:window.header
+              })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
             }, (Error) => {
@@ -168,7 +174,9 @@ export default function Project() {
 
         var result = window.confirm("Do you want to mark this project as completed?");
         if (result) {
-            const { data: response } = axios.put(`https://api.woofics.com/api/project_completed/${iid}`)
+            const { data: response } = axios.put(`https://api.woofics.com/api/project_completed/${iid}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     alert("Project completed!")
                     Feedback()
@@ -196,7 +204,9 @@ export default function Project() {
             avatar: 'xyz.jpg',
             associate_name: uname,
             main_name: name
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     history.push('/chat')
@@ -226,7 +236,9 @@ export default function Project() {
             task: todo,
             deadline: deadline,
             completed: false
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     getTodo();
@@ -242,7 +254,9 @@ export default function Project() {
     const [data, setData] = useState([])
     function getTodo() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/client_project_todo`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/client_project_todo`,{
+            headers:window.header
+          })
             .then((response) => {
                 setData(response.data)
             }, (error) => {
@@ -255,7 +269,9 @@ export default function Project() {
 
     // DeleteTodo
     function deleteTodo(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/client_project_todo/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/client_project_todo/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
                 getTodo();
             }, (error) => {

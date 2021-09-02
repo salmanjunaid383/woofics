@@ -36,7 +36,9 @@ export default function DataofInt() {
 
 
     function GetDot(){
-        const { data: response } = axios.get(`https://api.woofics.com/api/slogun`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/slogun`,{
+            headers:window.header
+          })
             .then((response) => {
                 getDot(response.data);
                 
@@ -53,7 +55,9 @@ export default function DataofInt() {
 
         const res = axios.post("https://api.woofics.com/api/slogun", {
             slogun:value
-        }).then((res) => {
+        },{
+            headers:window.header
+          }).then((res) => {
             if(res){
                 GetDot();
                 
@@ -65,7 +69,9 @@ export default function DataofInt() {
     }
 
     function deleteQuote(i){
-        const res = axios.delete("https://api.woofics.com/api/slogun/"+i)
+        const res = axios.delete("https://api.woofics.com/api/slogun/"+i,{
+            headers:window.header
+          })
                 .then((res) => {
                     GetDot();
                 }, (error) => {

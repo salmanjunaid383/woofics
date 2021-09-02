@@ -104,6 +104,8 @@ export default function Contact() {
         name: name,
         email: email,
         message: message,
+    },{
+      headers:window.header
     })
         .then((response) => {
            

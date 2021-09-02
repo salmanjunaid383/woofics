@@ -54,7 +54,9 @@ export default function CreateBlog() {
             article: article,
             status: 'pending',
             image: imageUrl
-        })
+        },{
+            headers:window.header
+          })
             
             .then((res) => {
                 if (res) {

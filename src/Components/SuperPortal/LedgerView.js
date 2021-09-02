@@ -32,7 +32,9 @@ export default function LedgerView() {
 
     function getSupledger() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${cheid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${cheid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setArticle(response.data[0])
                 setTotalAmount(response.data.balance)
@@ -44,7 +46,9 @@ export default function LedgerView() {
 
     function getSerledger() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${cheid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${cheid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setArticle(response.data[0])
                 setTotalAmount(response.data.balance)

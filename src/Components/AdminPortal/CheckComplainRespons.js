@@ -35,7 +35,9 @@ export default function ProviderCheckComplainResponse() {
     const [reponses, setreponses] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${rresid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${rresid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -47,7 +49,9 @@ export default function ProviderCheckComplainResponse() {
     }
 
     function getRes() {
-        const response = axios.get(`https://api.woofics.com/api/help_response/${rresid}`)
+        const response = axios.get(`https://api.woofics.com/api/help_response/${rresid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
@@ -72,7 +76,9 @@ export default function ProviderCheckComplainResponse() {
             help_id: rresid,
             title: blog.description,
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 // setOpen3(true);
                 getRes()

@@ -39,7 +39,10 @@ import ScrollToTop from "./ScrollToTop";
 import monoposte from "../Images/structure/monoposte.jpg";
 import pared from "../Images/structure/pared.jpg";
 import mupi from "../Images/structure/tothem.jpg";
-import truss from "../Images/structure/truss.jpg"
+import truss from "../Images/structure/truss.jpg";
+import frontpic from "../Components/Frontal-min.png"
+import rearpic from "../Components/Trasero-min.png"
+
 
 
 const drawerWidth = 240;
@@ -173,12 +176,6 @@ export default function QuoteMain() {
     let history = useHistory();
     ScrollToTop();
     const[modelState,setModelState]=useState(false);
-
-    // let history = useHistory();
-
-    // var token = localStorage.getItem("user_token");
-    // var decoded = jwt_decode(token)
-
     const [productType,setProductType]=useState('')
     const [prdouctTypeImg,setProductTypeImg]=useState('')
     const [description, setdescription] = useState("");
@@ -215,7 +212,6 @@ export default function QuoteMain() {
     const [email, setemail] = useState("");
     const [progress, setprogress] = useState("Publish your Service?");
     const [price, setPrice] = useState("");
-
     const [malik, setmalik] = useState('disabled')
     useEffect(()=> {
         if(modelState===false)
@@ -297,7 +293,9 @@ export default function QuoteMain() {
                         email: email,
                         documents: doc,
                         client_id: decoded.sub
-                    })
+                    },{
+                        headers:window.header
+                      })
                         .then((response) => {
                             setprogress('Published')
                             Swal.fire({
@@ -356,7 +354,9 @@ export default function QuoteMain() {
                     email: email,
                     documents: doc,
                     client_id: decoded.sub
-                })
+                },{
+                    headers:window.header
+                  })
                     .then((response) => {
                         setprogress('Published')
                         Swal.fire({
@@ -401,6 +401,12 @@ export default function QuoteMain() {
             
         })
         
+    }
+    function NumberChange5(){
+        setstructurecolor("5")
+    }
+    function NumberChange6(){
+        setstructurecolor("6")
     }
     const data1 = [
         {
@@ -643,13 +649,16 @@ export default function QuoteMain() {
                 <div class="container" >
                 <div class ="row" style={{paddingBottom:"5px"}}>
                     <div class="col-md-4">
-                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)} >Pantallas Led</a>
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(1)}>
+                        <button className="s-button">Pantallas Led</button></a>
                     </div>
                     <div class="col-md-4">
-                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>LCD</a>
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(2)}>
+                        <button className="s-button">LCD</button></a>
                     </div>
                     <div class="col-md-4">
-                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>Varios</a>
+                    <a className="text-center w-100 text-dark frank-color-blue" onClick={() =>showLedType(3)}>
+                        <button className="s-button">Varios</button></a>
                     </div>
                 </div>
                 <div class="row">
@@ -818,9 +827,15 @@ export default function QuoteMain() {
                     <br />
                     <div style={{ marginTop: "-18px" }}>
                         <h4 className="text-center w-100 text-dark d-inline frank-color-pink">Distancia de visión máxima y mínima?</h4>
+                        <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                         <div>
-                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} className="w-50 mx-lg-2" id="outlined-basic" label="Max and Min" variant="outlined" />
+                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} style={{width:"60px"}} className="mx-lg-2" id="outlined-basic" label="Max" variant="outlined" />
                             {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
+                        </div>
+                        <div>
+                            <TextField type="number" onChange={(e) => setvisuald(e.target.value)} style={{width:"60px"}} className="mx-lg-2" id="outlined-basic" label="Min" variant="outlined" />
+                            {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
+                        </div>
                         </div>
                     </div>
                     <br />
@@ -866,15 +881,14 @@ export default function QuoteMain() {
                     </div>
                     <br />
                     <br />
-
-                    <h4 className="text-center w-100 text-dark frank-color-blue">Pantalla?</h4>
+                    <h4 className="text-center w-100 text-dark frank-color-blue">Acceso a la pantalla?</h4>
                     <input value="front" onChange={(e) => {setscreenaccess(e.target.value);setscreenaccesscolor("true")}}
                         type="radio" name="fqf"
                         id="sadd" class="input-hidden " />
                     <label for="sadd" style={{marginRight:"10px"}}>
                        
-                             <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-home" style={screenaccesscolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"} : { cursor: 'pointer', fontSize:"40px"}}></i>
+                             <div className="mx-lg-4 p-2 front-rear-pic">
+                            <img src={frontpic} style={screenaccesscolor === "true" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"} : { cursor: 'pointer', fontSize:"40px"}}/>
                         </div>
                         <h4 className="text-center" style={screenaccesscolor === "true" ? { cursor: 'pointer',color: "#1010ff"} : { cursor: 'pointer'}}>Acceso frontal</h4>
                     </label>
@@ -884,8 +898,8 @@ export default function QuoteMain() {
                         id="happpy" class="input-hidden" />
                     <label for="happpy">
                        
-                             <div className="mx-lg-4 p-2">
-                            <i className=" fa fa-sun-o" style={screenaccesscolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }></i>
+                             <div className="mx-lg-4 p-2 front-rear-pic">
+                            <img src={rearpic} className=" fa fa-sun-o" style={screenaccesscolor === "false" ? { cursor: 'pointer', fontSize:"40px",color: "#1010ff"  } : { cursor: 'pointer', fontSize:"40px"  } }/>
                         </div>
                         <h4 className="text-center" style={screenaccesscolor === "false" ? { cursor: 'pointer',color: "#1010ff"  } : { cursor: 'pointer' } }>Acceso trasero</h4>
                     </label>
@@ -961,6 +975,7 @@ export default function QuoteMain() {
                                 <FormControlLabel value="HIGH MOUNTAIN" control={<Radio color="primary" />} label="HIGH MOUNTAIN" />
                                 <FormControlLabel value="LITTLE EXTREME" control={<Radio color="primary" />} label="LITTLE EXTREME" />
                                 <FormControlLabel value="HEAT VENTILATION" control={<Radio color="primary" />} label="HEAT VENTILATION" />
+                                <FormControlLabel value="NO" control={<Radio color="primary" />} label="NO" />
                             </RadioGroup>
                         </FormControl>
                         
@@ -1021,6 +1036,11 @@ export default function QuoteMain() {
                         </h4>
                     </label>
                     <br />
+                    <br/>   
+                    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                    <h4 className="text-center mx-lg-2" onClick={NumberChange5} style={structurecolor === "5" ? { cursor: 'pointer',color: "#fff",background:"#f72a85",padding:"4px",paddingRight:"10px",paddingLeft:"10px", borderRadius:"10px"} : { cursor: 'pointer',paddingRight:"6px",paddingLeft:"6px",}}>Custom</h4>
+                    <h4 className="text-center mx-lg-2" onClick={NumberChange6}  style={structurecolor === "6" ? { cursor: 'pointer',color: "#fff",background:"#f72a85",padding:"4px",paddingRight:"10px",paddingLeft:"10px", borderRadius:"10px"} : { cursor: 'pointer',padding:"4px",paddingRight:"6px",paddingLeft:"6px",}}>No</h4>
+                    </div>
                     <br />
                     <p className="d-inline w-100">
                         <h4 className="text-center w-100 text-dark frank-color-blue" style={{ marginTop: "15px" }}>El tiempo de entrega?</h4>
