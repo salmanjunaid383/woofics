@@ -34,7 +34,9 @@ export default function ComplainResponse() {
     const [reponses, setreponses] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${ucid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${ucid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -46,7 +48,9 @@ export default function ComplainResponse() {
     }
 
     function getRes() {
-        const response = axios.get(`https://api.woofics.com/api/complain_response/${ucid}`)
+        const response = axios.get(`https://api.woofics.com/api/complain_response/${ucid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
@@ -72,7 +76,9 @@ export default function ComplainResponse() {
             complain_id: ucid,
             user_id: 1,
             title: blog.description,
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 setdisable('')
                 setwait('Send Reply')

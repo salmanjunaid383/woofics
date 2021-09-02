@@ -130,7 +130,9 @@ export default function MyCoupon() {
     useEffect(() => {
 
         function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/getcoupons/${decoded.sub}`)
+            const res = axios.get(`https://api.woofics.com/api/getcoupons/${decoded.sub}`,{
+                headers:window.header
+              })
                 .then((res) => {
                     if (res) {
                         setForm(res.data)
@@ -272,7 +274,9 @@ export default function MyCoupon() {
     var decoded = jwt_decode(token)
 
     function notification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setName(response.data)
                 seen()
@@ -283,7 +287,9 @@ export default function MyCoupon() {
 
     const [unseen, setunseen] = useState([]);
     function seen() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
@@ -291,7 +297,9 @@ export default function MyCoupon() {
             });
     }
    function notificationDelete(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
+            headers:window.header
+          })
                 .then((response) => {notification()
                 }, (Error) => {
                         
@@ -301,7 +309,9 @@ export default function MyCoupon() {
     //................Chat Seen
     const [UnseenMxg, setUnseenMxg] = useState([]);
     function chatnotification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setUnseenMxg(response.data)
                 seen()
@@ -321,7 +331,9 @@ export default function MyCoupon() {
     const [Imagedata, setImageData] = useState('');
 
     function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 setImageData(res.data)
             }

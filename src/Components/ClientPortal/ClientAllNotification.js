@@ -42,7 +42,9 @@ export default function ClientAllNotification() {
     var decoded = jwt_decode(token)
 
     function notification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setName(response.data)
             }, (Error) => {
@@ -50,7 +52,9 @@ export default function ClientAllNotification() {
             });
     }
     function notificationDelete(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
+            headers:window.header
+          })
                 .then((response) => {
                     notification()
                 }, (Error) => {

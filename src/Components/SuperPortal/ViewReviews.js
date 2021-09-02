@@ -25,7 +25,9 @@ export default function ViewReviews() {
 
     function getReg() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/review`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/review`,{
+            headers:window.header
+          })
             .then((response) => {
                     setBlog(response.data)
                     
@@ -41,7 +43,9 @@ export default function ViewReviews() {
 
     const [res, setRes] = useState('');
     function approveReg(e) {
-        const { data: response } = axios.put(`https://api.woofics.com/api/approved_review/${e}`)
+        const { data: response } = axios.put(`https://api.woofics.com/api/approved_review/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setRes(response.data)
@@ -54,7 +58,9 @@ export default function ViewReviews() {
 
     }
     function blockReg(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/review/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/review/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     getReg();

@@ -45,7 +45,9 @@ export default function Todo() {
             user_id: decoded.sub,
             task: todo,
             deadline: deadline,
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     getTodo();
@@ -62,7 +64,9 @@ export default function Todo() {
     const [data, setData] = useState([])
     function getTodo() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_todo/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_todo/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setData(response.data)
             }, (error) => {
@@ -79,7 +83,9 @@ export default function Todo() {
     function deleteTodo(e) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/supplier_todo/${e}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/supplier_todo/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     getTodo();
                 }, (error) => {

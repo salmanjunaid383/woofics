@@ -63,7 +63,9 @@ export default function ProviderChat() {
                 const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                     from_user: id,
                     to_user: returnData.from_user
-                })
+                },{
+                    headers:window.header
+                  })
                     .then((response) => {
                         if (response) {
                             
@@ -92,7 +94,9 @@ export default function ProviderChat() {
 
 
     function SendData() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,)
+        const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setUser(response.data)
@@ -131,7 +135,9 @@ export default function ProviderChat() {
         const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
             from_user: id,
             to_user: valu
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     // 
@@ -159,13 +165,17 @@ export default function ProviderChat() {
             to_user: uid,
             message: sentmsg,
             name: name
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 function Users() {
                     const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
                         from_user: id,
                         to_user: uid
-                    })
+                    },{
+                        headers:window.header
+                      })
                         .then((response) => {
                             if (response) {
                                 SendData()
@@ -198,7 +208,9 @@ export default function ProviderChat() {
         const { data: response } = axios.post(`https://api.woofics.com/api/history`, {
             from_user: id,
             to_user: uid
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     // 
@@ -247,7 +259,9 @@ export default function ProviderChat() {
     var decoded = jwt_decode(token)
 
     function notificationfun() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setnotification(response.data)
                 seen()
@@ -258,7 +272,9 @@ export default function ProviderChat() {
 
     const [unseen, setunseen] = useState([]);
     function seen() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setunseen(response.data)
             }, (Error) => {
@@ -269,7 +285,9 @@ export default function ProviderChat() {
     //................Chat Seen
     const [UnseenMxg, setUnseenMxg] = useState([]);
     function chatnotification() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setUnseenMxg(response.data)
                 seen()
@@ -282,7 +300,9 @@ export default function ProviderChat() {
     const [Imagedata, setImageData] = useState('');
 
     function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 setImageData(res.data)
             }
@@ -290,7 +310,9 @@ export default function ProviderChat() {
 
     }
     function notificationDelete(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
                 notificationfun()
             }, (Error) => {

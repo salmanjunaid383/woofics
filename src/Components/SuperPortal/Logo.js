@@ -36,7 +36,9 @@ export default function DataofInt() {
 
 
     function GetDot(){
-        const { data: response } = axios.get(`https://api.woofics.com/api/footer`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/footer`,{
+            headers:window.header
+          })
             .then((response) => {
                 getDot(response.data);
                 
@@ -54,7 +56,9 @@ export default function DataofInt() {
         const res = axios.post("https://api.woofics.com/api/footer", {
             label:label,
             value:value
-        }).then((res) => {
+        },{
+            headers:window.header
+          }).then((res) => {
             if(res){
                 GetDot();
                 
@@ -66,7 +70,9 @@ export default function DataofInt() {
     }
 
     function deleteQuote(i){
-        const res = axios.delete("https://api.woofics.com/api/footer/"+i)
+        const res = axios.delete("https://api.woofics.com/api/footer/"+i,{
+            headers:window.header
+          })
                 .then((res) => {
                     GetDot();
                 }, (error) => {

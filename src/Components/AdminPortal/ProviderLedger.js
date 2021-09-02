@@ -46,7 +46,9 @@ export default function ProviderLedger() {
 
     function getServiceledger() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setUserId(decoded.sub)
                 setArticle(response.data[0])

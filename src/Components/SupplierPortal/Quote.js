@@ -54,7 +54,9 @@ export default function Quote() {
     useEffect(() => {
         
         cardStatus();
-        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serrid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serrid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setservice(response.data.form)
                 setservicet(response.data.package)
@@ -70,7 +72,9 @@ export default function Quote() {
         const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
                     user_id : decoded.sub,
                     form_id: serrid
-                })
+                },{
+                    headers:window.header
+                  })
                 .then((response) => {
                     if(response.data===0){
                         
@@ -104,7 +108,9 @@ export default function Quote() {
                 status: 'pending',
                 payment_phase_id: phase,
                 delivery_days: date
-            })
+            },{
+                headers:window.header
+              })
                 .then((response) => {
                     console.log(response)
                     setProgress('Send Quotation')
@@ -137,7 +143,9 @@ export default function Quote() {
     const [blog, setBlog] = useState([])
 
     function getOptions() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/payment_phase`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/payment_phase`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)

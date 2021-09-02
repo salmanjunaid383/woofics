@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+var token = localStorage.getItem('user_token')
+window.header = { Authorization: `Bearer ${token}` };
 const element = (
   <App></App>
 )

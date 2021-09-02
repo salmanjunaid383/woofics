@@ -13,7 +13,9 @@ export default function Blog() {
 
     const [blog, setBlog] = useState([]);
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/blog`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/blog`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)

@@ -36,7 +36,9 @@ export default function SupCheckComplainResponse() {
     const [reponses, setreponses] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${resid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${resid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)
@@ -48,7 +50,9 @@ export default function SupCheckComplainResponse() {
     }
 
     function getRes() {
-        const response = axios.get(`https://api.woofics.com/api/help_response/${resid}`)
+        const response = axios.get(`https://api.woofics.com/api/help_response/${resid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setreponses(response.data)
             }, (error) => {
@@ -75,7 +79,9 @@ export default function SupCheckComplainResponse() {
             help_id: resid,
             title: blog.description,
             user_id: decoded.sub
-        })
+        },{
+            headers:window.header
+          })
             .then((res) => {
                 // setOpen3(true);
                 getRes()
@@ -96,7 +102,9 @@ export default function SupCheckComplainResponse() {
     const [Imagedata, setImageData] = useState('');
 
     function getData() {
-        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 setImageData(res.data)
             }

@@ -25,7 +25,9 @@ export default function Registration() {
 
     function getReg() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/getsupplier`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/getsupplier`,{
+            headers:window.header
+          })
             .then((response) => {
                 setBlog(response.data)
                 
@@ -41,7 +43,9 @@ export default function Registration() {
 
     const [res, setRes] = useState('');
     function approveReg(e) {
-        const { data: response } = axios.put(`https://api.woofics.com/api/approved/${e}`)
+        const { data: response } = axios.put(`https://api.woofics.com/api/approved/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setRes(response.data)
@@ -55,7 +59,9 @@ export default function Registration() {
     }
     const [block, setblock] = useState('');
     function blockReg(e) {
-        const { data: response } = axios.put(`https://api.woofics.com/api/blocked/${e}`)
+        const { data: response } = axios.put(`https://api.woofics.com/api/blocked/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setblock(response.data)

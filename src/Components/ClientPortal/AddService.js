@@ -247,7 +247,9 @@ export default function Test() {
                 documents: doc,
 
                 client_id: decoded.sub
-            })
+            },{
+                headers:window.header
+              })
                 .then((response) => {
                     setprogress('Published')
                     alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')

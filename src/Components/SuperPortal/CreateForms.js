@@ -45,7 +45,9 @@ export default function CreateForms() {
     const [serviceCharge, setserviceCharge] = useState([]);
 
     function valueCharges() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/value_charges`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/value_charges`,{
+            headers:window.header
+          })
             .then((response) => {
                 if(response.data[0]==null)
                 {
@@ -64,7 +66,9 @@ export default function CreateForms() {
 
 
     function paymentPackage() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/payment_package`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/payment_package`,{
+            headers:window.header
+          })
             .then((response) => {
                 setpaymentPackag(response.data)
                 
@@ -75,7 +79,9 @@ export default function CreateForms() {
 
 
     function supplierRen() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_rental`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/supplier_rental`,{
+            headers:window.header
+          })
             .then((response) => {
                 if(response.data[0] == null)
                 {
@@ -93,7 +99,9 @@ export default function CreateForms() {
 
 
     function serviceCharg() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_charge`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_charge`,{
+            headers:window.header
+          })
             .then((response) => {
                 if(response.data[0]==null)
                 {
@@ -128,7 +136,9 @@ export default function CreateForms() {
 
         const { data: response } = axios.put(`https://api.woofics.com/api/value_charges/${valueCharge.id}`, {
             charge: chargeOne
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 valueCharges()
                 
@@ -146,7 +156,9 @@ export default function CreateForms() {
             charge: chargefour,
             start: start,
             end: end
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 paymentPackage()
                 
@@ -162,7 +174,9 @@ export default function CreateForms() {
     function paymentPackDel(id) {
         // e.preventDefault();
 
-        const { data: response } = axios.delete(`https://api.woofics.com/api/payment_package/${id}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/payment_package/${id}`,{
+            headers:window.header
+          })
             .then((response) => {
                 paymentPackage()
             }, (Error) => {
@@ -176,7 +190,9 @@ export default function CreateForms() {
 
         const { data: response } = axios.put(`https://api.woofics.com/api/supplier_rental/${supplierRenta.id}`, {
             charge: chargeTwo
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 supplierRen()
                 
@@ -191,7 +207,9 @@ export default function CreateForms() {
 
         const { data: response } = axios.put(`https://api.woofics.com/api/service_provider_charge/${serviceCharge.id}`, {
             charge: chargeThree
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 serviceCharg()
                 

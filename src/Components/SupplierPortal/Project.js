@@ -43,7 +43,9 @@ export default function Project() {
     useEffect(() => {
 
         function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`)
+            const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`,{
+                headers:window.header
+              })
                 .then((res) => {
                     if (res) {
                         setForm(res.data)

@@ -38,7 +38,9 @@ export default function Supppliers() {
 
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`,{
+            headers:window.header
+          })
             .then((response) => {
                 setSuppliers(response.data)
                 
@@ -52,7 +54,9 @@ export default function Supppliers() {
     const [name, setName] = useState('');
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
             }, (Error) => {
@@ -71,7 +75,9 @@ export default function Supppliers() {
             avatar: uimage ? uimage : "xyz.png",
             associate_name: uname,
             main_name: name
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                     history.push('/chat')
             }, (Error) => {

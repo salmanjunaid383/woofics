@@ -25,7 +25,9 @@ export default function Coupons() {
     const [blog, setBlog] = useState([]);
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/discount_coupons`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/discount_coupons`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     
@@ -46,7 +48,9 @@ export default function Coupons() {
         var result = window.confirm("Want to delete?");
         if (result) {
 
-            const { data: response } = axios.delete(`https://api.woofics.com/api/discount_coupons/${e}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/discount_coupons/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     GetLed()
                 }, (Error) => {
@@ -61,7 +65,9 @@ export default function Coupons() {
     function ActivateLed(e) {
         var result = window.confirm("Do you want to activate this coupon? Rest of Activated Coupon will be Deactivated!");
         if (result) {
-            const { data: response } = axios.put(`https://api.woofics.com/api/active/${e}`)
+            const { data: response } = axios.put(`https://api.woofics.com/api/active/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     setRes(response.data)
                     GetLed()

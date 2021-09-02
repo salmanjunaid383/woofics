@@ -65,7 +65,9 @@ export default function SupCoupons() {
                 rate: rate,
                 coupon_type: coupontype,
                 expiry_date: date
-            })
+            },{
+                headers:window.header
+              })
                 .then((response) => {
                     setwait('Add Coupon')
                     history.push('/couponslist')

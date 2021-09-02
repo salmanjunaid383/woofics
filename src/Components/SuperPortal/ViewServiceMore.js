@@ -27,7 +27,9 @@ export default function ViewServiceMore() {
 
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data.form)

@@ -13,7 +13,9 @@ export default function ViewMore() {
     const { category } = useParams()
     const location = useLocation();
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/get_inspired`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/get_inspired`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)

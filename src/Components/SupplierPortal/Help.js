@@ -51,7 +51,9 @@ export default function SupHelp() {
             question: query,
             user_id: decoded.sub,
             description: answer,
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setOpenn(true);

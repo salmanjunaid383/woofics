@@ -53,7 +53,9 @@ export default function Quote() {
     const [service, setservice] = useState([]);
     const [servicet, setservicet] = useState([]);
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/quotation/${serrid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/quotation/${serrid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 setquotationData(response.data[0])
                 setDescription(response.data[0].description)
@@ -61,7 +63,9 @@ export default function Quote() {
                 setprice(response.data[0].price)
                 setDate(response.data[0].delivery_days)
                 
-                const { data: response2 } = axios.get(`https://api.woofics.com/api/form_details/`+response.data[0].form_id)
+                const { data: response2 } = axios.get(`https://api.woofics.com/api/form_details/`+response.data[0].form_id,{
+                    headers:window.header
+                  })
                 .then((response) => {
                     setservice(response.data.form)
                     setservicet(response.data.package)
@@ -84,7 +88,9 @@ export default function Quote() {
         const {data : response} = axios.post('https://api.woofics.com/api/purchase_lead', {
                     user_id : decoded.sub,
                     form_id: serrid
-                })
+                },{
+                    headers:window.header
+                  })
                 .then((response) => {
                     if(response.data===0){
                         
@@ -112,7 +118,9 @@ export default function Quote() {
                 price: price,
                 status: 'pending',
                 delivery_days: date
-            })
+            },{
+                headers:window.header
+              })
                 .then((response) => {
                     setProgress('Send Quotation')
                     localStorage.removeItem('qid')
@@ -129,7 +137,9 @@ export default function Quote() {
     const [blog, setBlog] = useState([])
 
     function getOptions() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/payment_phase`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/payment_phase`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setBlog(response.data)

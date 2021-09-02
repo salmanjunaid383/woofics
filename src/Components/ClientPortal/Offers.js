@@ -39,7 +39,9 @@ export default function Offers() {
     var decoded = jwt_decode(token)
 
     function Feedback() {
-        const res = axios.get(`https://api.woofics.com/api/show_offer_client/`+decoded.sub)
+        const res = axios.get(`https://api.woofics.com/api/show_offer_client/`+decoded.sub,{
+            headers:window.header
+          })
             .then((res) => {
                 setForm(res.data)
             }, (error) => {
@@ -54,7 +56,9 @@ export default function Offers() {
 
     function ConfirmOffer(id) {
         setLoad(true)
-        const res = axios.put(`https://api.woofics.com/api/offer_approved/${id}`)
+        const res = axios.put(`https://api.woofics.com/api/offer_approved/${id}`,{
+            headers:window.header
+          })
             .then((res) => {
                 setLoad(false)
                 Feedback()

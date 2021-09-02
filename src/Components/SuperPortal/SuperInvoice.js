@@ -54,7 +54,9 @@ export default function SupplierLedger() {
 
     function getInvoice() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/invoice`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/invoice`,{
+            headers:window.header
+          })
             .then((response) => {
                 setData(response.data)
                 

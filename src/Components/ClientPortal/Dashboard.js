@@ -37,7 +37,9 @@ export default function Dashboard() {
             user_id: decoded.sub,
             task: todo,
             deadline: deadline,
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     
@@ -54,7 +56,9 @@ export default function Dashboard() {
     const [data, setData] = useState([])
     function getTodo() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/client_todo/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/client_todo/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setData(response.data)
@@ -73,7 +77,9 @@ export default function Dashboard() {
     function deleteTodo(e) {
         var result = window.confirm("Want to delete?");
         if (result) {
-            const { data: response } = axios.delete(`https://api.woofics.com/api/client_todo/${e}`)
+            const { data: response } = axios.delete(`https://api.woofics.com/api/client_todo/${e}`,{
+                headers:window.header
+              })
                 .then((response) => {
                     getTodo();
                 }, (error) => {
@@ -83,7 +89,9 @@ export default function Dashboard() {
         }
     }
     function notificationDelete(e) {
-        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`)
+        const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
+            headers:window.header
+          })
             .then((response) => {
             }, (Error) => {
                 
@@ -104,7 +112,9 @@ export default function Dashboard() {
 
 
     function ClientOngoinProject() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_client_project/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_client_project/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setOngoinProject(response.data)
@@ -117,7 +127,9 @@ export default function Dashboard() {
     //...total ClientCompletedProject
 
     function ClientCompletedProject() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setCompletedProject(response.data)
@@ -130,7 +142,9 @@ export default function Dashboard() {
     //.......Total Provider
 
     function ClientService() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/client_service/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/client_service/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 setClientTotalService(response.data)
@@ -141,7 +155,9 @@ export default function Dashboard() {
     }
 
     function CountExpense() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/client_expense/${decoded.sub}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/client_expense/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((response) => {
                 
                 settotalExpnse(response.data)
@@ -174,7 +190,9 @@ export default function Dashboard() {
     useEffect(() => {
 
         function Feedback() {
-            const res = axios.get(`https://api.woofics.com/api/client_supplier_project/${decoded.sub}`)
+            const res = axios.get(`https://api.woofics.com/api/client_supplier_project/${decoded.sub}`,{
+                headers:window.header
+              })
                 .then((res) => {
                     if (res) {
                         setForm(res.data)

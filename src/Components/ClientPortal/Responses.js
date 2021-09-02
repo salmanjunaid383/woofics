@@ -36,7 +36,9 @@ export default function Responses() {
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     function Feedback() {
-        const res = axios.get(`https://api.woofics.com/api/help/${decoded.sub}`)
+        const res = axios.get(`https://api.woofics.com/api/help/${decoded.sub}`,{
+            headers:window.header
+          })
             .then((res) => {
                 if (res) {
                     setForm(res.data)

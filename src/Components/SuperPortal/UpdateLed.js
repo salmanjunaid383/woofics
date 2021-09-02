@@ -52,7 +52,9 @@ export default function UpdateLed() {
     const [disable, setdisable] = useState('');
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/led/${ulid}`)
+        const { data: response } = axios.get(`https://api.woofics.com/api/led/${ulid}`,{
+            headers:window.header
+          })
             .then((response) => {
                 if (response) {
                     setlocation(response.data.location)
@@ -67,7 +69,9 @@ export default function UpdateLed() {
 
 
     useEffect(() => {
-        const { data: res } = axios.get(`https://api.woofics.com/api/led_option/${ulid}`)
+        const { data: res } = axios.get(`https://api.woofics.com/api/led_option/${ulid}`,{
+            headers:window.header
+          })
             .then((res) => {
                 if (res) {
                     setOptions(res.data)
@@ -88,7 +92,9 @@ export default function UpdateLed() {
             application: application,
             image_url: 'xyz',
             ledoptions: Options
-        })
+        },{
+            headers:window.header
+          })
             .then((response) => {
                 setwait('Update Led')
                 setdisable('')

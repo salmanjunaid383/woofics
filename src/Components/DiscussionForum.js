@@ -76,7 +76,10 @@ export default function DiscussionForum() {
 
     function getQuestion() {
 
-        const { data: response } = axios.get(`https://api.woofics.com/api/forum_question`)
+        const { data: response } = 
+axios.get(`https://api.woofics.com/api/forum_question`,{
+            headers:window.header
+          })
             .then((response) => {
                 setQuestions(response.data);
 
