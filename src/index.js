@@ -1,10 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-var token = localStorage.getItem('user_token')
-window.header = { Authorization: `Bearer ${token}` };
+try{
+
+  var token = localStorage.getItem('user_token')
+  if(token){
+    window.header = { Authorization: `Bearer ${token}` };
+  }
+  
+}
+catch{
+  
+}
+
+
+
+
+
+
+
+
 const element = (
   <App></App>
 )
