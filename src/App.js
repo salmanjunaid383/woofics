@@ -1,8 +1,9 @@
 import React, { useEffect, useLayoutEffect,useState,useRef } from "react";
 import axios from 'axios';
+import jwt_decode from "jwt-decode";
 // import { useLocation } from 'react-dom'
 import "./App.css";
-
+import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
 import { BrowserRouter as Router, Switch, Route,Redirect } from "react-router-dom";
 import ConditionTerms from "./Components/ConditionsTerms";
 import Login from "./Components/Login";
@@ -151,31 +152,153 @@ function App() {
   useEffect(() => {
      
   },[]);
+  function supplierAuth(){
+    var authenticated = false;
+    try {
+      let currentDate = new Date();
+      const token = localStorage.getItem("user_token")
+      const role = jwt_decode(localStorage.getItem("user_token"));
+      if (!localStorage.getItem('user_token')) {
+        authenticated = false;
+    }
+    else{
+      if(role.exp * 1000 < currentDate.getTime() )
+      {
+        localStorage.clear(); this.authenticated = false;
+      }
+      if(role.role === "Supplier"){
+        authenticated = true;
+      }
+      else{
+        authenticated = false;
+      }
+      
+    }
+      return authenticated  
+    }
+     catch {
+      localStorage.clear(); authenticated = false;
+      return authenticated
+    }
+  }
+
+  function customerAuth(){
+    var authenticated = false;
+    try {
+      let currentDate = new Date();
+      const token = localStorage.getItem("user_token")
+      const role = jwt_decode(localStorage.getItem("user_token"));
+      if (!localStorage.getItem('user_token')) {
+        authenticated = false;
+    }
+    else{
+      if(role.exp * 1000 < currentDate.getTime() )
+      {
+        localStorage.clear(); this.authenticated = false;
+      }
+      if(role.role === "Client"){
+        authenticated = true;
+      }
+      else{
+        authenticated = false;
+      }
+      
+    }
+      return authenticated  
+    }
+     catch {
+      localStorage.clear(); authenticated = false;
+      return authenticated
+    }
+  }
+  function adminAuth(){
+    var authenticated = false;
+    try {
+      let currentDate = new Date();
+      const token = localStorage.getItem("user_token")
+      const role = jwt_decode(localStorage.getItem("user_token"));
+      if (!localStorage.getItem('user_token')) {
+        authenticated = false;
+    }
+    else{
+      if(role.exp * 1000 < currentDate.getTime() )
+      {
+        localStorage.clear(); this.authenticated = false;
+      }
+      if(role.role === "Administrator"){
+        authenticated = true;
+      }
+      else{
+        authenticated = false;
+      }
+      
+    }
+      return authenticated  
+    }
+     catch {
+      localStorage.clear(); authenticated = false;
+      return authenticated
+    }
+  }
+  function providerAuth(){
+    var authenticated = false;
+    try {
+      let currentDate = new Date();
+      const token = localStorage.getItem("user_token")
+      const role = jwt_decode(localStorage.getItem("user_token"));
+      if (!localStorage.getItem('user_token')) {
+        authenticated = false;
+    }
+    else{
+      if(role.exp * 1000 < currentDate.getTime() )
+      {
+        localStorage.clear(); this.authenticated = false;
+      }
+      if(role.role === "Provider"){
+        authenticated = true;
+      }
+      else{
+        authenticated = false;
+      }
+      
+    }
+      return authenticated  
+    }
+     catch {
+      localStorage.clear(); authenticated = false;
+      return authenticated
+    }
+  }
   
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/Condition-Terms" component={ConditionTerms} /> 
-          <Route exact path="/StazCal" component={StazCal} />
+          <Route exact path="/Condition-Terms"  component={ConditionTerms} /> 
           <Route path="/login" component={Login} />
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/forum" component={forum}></Route>
-
-          <Route path="/invoicedetail/:quid"   component={invoicedetail}></Route>
-          <Route path="/supplierinvoice" component={invoice}></Route>
-
           <Route path="/detailforum/:quid" component={detailforum}></Route>
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/admindashboard" component={ProviderDashboard} />
-          <Route exact path="/superdashboard" component={SuperDashboard} />
-          <Route exact path="/client" component={Client} />
           <Route exact path="/serviceprovider" component={ServiceProvider} />
           <Route exact path="/supplier" component={Supplier} />
-          <Route exact path="/description" component={description}></Route>
-          <Route exact path="/providers" component={Suppliers} />
-          <Route exact path="/updateprofile" component={UpdateProfile} />
+          <PrivateRoute path="/invoicedetail/:quid" authed={supplierAuth()} redirectTo={"/login"}   component={invoicedetail}></PrivateRoute>
+
+          {/* checkLater */}
+          <Route path="/supplierinvoice" component={invoice}></Route> 
+
+          
+          
+          <PrivateRoute exact path="/dashboard" authed={customerAuth()} redirectTo={"/"} component={Dashboard} />
+          <PrivateRoute exact path="/admindashboard" authe={providerAuth()} redirectTo={"/"} component={ProviderDashboard} />
+          <Route exact path="/superdashboard" authed={adminAuth()} redirectTo={"/"} component={SuperDashboard} />
+          {/* <Route exact path="/client" component={Client} /> */}
+
+          
+          <PrivateRoute exact path="/description" authed={adminAuth()} redirectTo={"/"} component={description}></PrivateRoute>
+
+          <PrivateRoute exact path="/providers" authed={customerAuth()} redirectTo={"/"} component={Suppliers} />
+          <PrivateRoute exact path="/updateprofile" authed={customerAuth()} redirectTo={"/"} component={UpdateProfile} />
           <Route
             exact
             path="/adminupdateprofile"
