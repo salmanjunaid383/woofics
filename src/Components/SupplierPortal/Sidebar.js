@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupplierSidebar() {
-    CustomSupplierAuth();
+    // CustomSupplierAuth();
     const history = useHistory();
     const location = useLocation();
     const[pathName,setPathName]=useState();

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SupplierDashboard() {
-    CustomSupplierAuth();
+    // CustomSupplierAuth();
     let history = useHistory();
     const classes = useStyles();
     var token = localStorage.getItem("user_token");

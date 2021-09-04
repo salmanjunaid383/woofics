@@ -46,70 +46,65 @@ export default function GetInspire() {
         <div class="container-fluid no-gutters ">
           <div className="row no-gutters">
 
-            <div onClick={() => viewMore('HOTELS')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Hotels.jpg" />
+            <div onClick={() => viewMore('Hotel')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Hotel.jpeg" />
               <div class="mid">
-                <div class="tex">HOTELES</div>
+                <div class="tex">Hotels</div>
               </div>
             </div>
-            <div onClick={() => viewMore('RESTAURANTS')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/restaurant.jpg" />
+            <div onClick={() => viewMore('Restaurante')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Restaurante.jpeg" />
               <div class="mid">
-                <div class="tex">RESTAURANTS</div>
-              </div>
-
-            </div>
-            <div onClick={() => viewMore('RETAIL')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Retail-Shop.jpg" />
-              <div class="mid">
-                <div class="tex">AL POR MENOR</div>
+                <div class="tex">Restaurante</div>
               </div>
 
             </div>
+            <div onClick={() => viewMore('Varios')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }}  src="../../assets/plugins/inspired_images/Varios.jpeg" />
+              <div class="mid">
+                <div class="tex">Varios</div>
+              </div>
 
-            {/* <ModalImage
-              small={urlToTinyImageFile}
-              large={urlToHugeImageFile}
-              alt="Hello World!"
-            /> 
-                <ModalImage className="img-fluid ima hvr-grow"
-                small={"../../assets/plugins/images/Images/Retail-Shop.jpg"}
-                large={"../../assets/plugins/images/Images/Retail-Shop.jpg"}
-                alt="Hello World!" onClick={() => viewMore('FAIRS')}
-              />             
-              */}
+            </div>
+
+            
 
           </div>
+
           <div className="row no-gutters">
-            <div onClick={() => viewMore('FAIRS')} className="cont col-md-6" style={{ height: "600px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Fairs.jpg" />
+
+            <div onClick={() => viewMore('Ferias')} className="cont col-md-6" style={{ height: "600px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Ferias.jpeg"/>
               <div class="mid">
                 <div class="tex">Ferias</div>
               </div>
 
             </div>
-            <div className=" col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
-              <div className="row no-gutters">
-                <div onClick={() => viewMore('EVENTS')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
-                  <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Events.jpg" />
+
+            <div className="col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
+
+              <div className="row">
+                <div onClick={() => viewMore('Eventos')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer', paddingRight:'0px' }}>
+                  <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Eventos.jpeg" />
                   <div class="mid">
-                    <div class="tex">EVENTOS</div>
+                    <div class="tex">Eventos</div>
                   </div>
 
                 </div>
-                <div onClick={() => viewMore('SPORTS')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
-                  <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Sports.jpg" />
+                <div onClick={() => viewMore('Deporte')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer',paddingLeft:'0px' }}>
+                  <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Deporte.jpeg" />
                   <div class="mid">
-                    <div class="tex">DEPORTES</div>
+                    <div class="tex">Deporte</div>
                   </div>
 
                 </div>
               </div>
-              <div className="row no-gutters">
-                <div onClick={() => viewMore('HEALTH')} className="cont col-md-12" style={{ height: "300px", cursor: 'pointer' }}>
-                  <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Healkth.jpg" />
+
+              <div className="row ">
+                <div onClick={() => viewMore('Publicidad')} className="cont col-md-12" style={{ height: "300px", cursor: 'pointer' }}>
+                  <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Publicidads.jpeg"/>
                   <div class="mid">
-                    <div class="tex">SALUD</div>
+                    <div class="tex">Publicidad</div>
                   </div>
 
                 </div>
@@ -118,54 +113,55 @@ export default function GetInspire() {
             </div>
           </div>
           <div className="row no-gutters">
-            <div onClick={() => viewMore('ADVERTISING')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Advertising.jpg" />
+            <div onClick={() => viewMore('Salud')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Salud.png" />
               <div class="mid">
-                <div class="tex">PUBLICIDAD</div>
+                <div class="tex">Salud</div>
               </div>
 
             </div>
-            <div onClick={() => viewMore('PUBLIC')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Public-Sector.jpg" />
+            <div onClick={() => viewMore('Sector')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Sector_Publico.jpeg" />
               <div class="mid">
-                <div class="tex">PÚBLICA</div>
+                <div class="tex">Sector Publico</div>
               </div>
 
             </div>
-            <div onClick={() => viewMore('INFORMATION')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Information.jpg" />
+            <div onClick={() => viewMore('Informacion')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Informacion.png" />
               <div class="mid">
-                <div class="tex">INFORMACIÓN</div>
+                <div class="tex">Informacion</div>
               </div>
 
             </div>
-            <div onClick={() => viewMore('LARGE')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/restaurant.jpg" />
+            <div onClick={() => viewMore('Automocion')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Automocion.jpeg" />
               <div class="mid">
-                <div class="tex">GRANDE</div>
+                <div class="tex">Automocion</div>
               </div>
 
             </div>
           </div>
           <div className="row no-gutters">
-            <div onClick={() => viewMore('SHOPPING')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Large-Surfacesc.jpg" />
+            
+            <div onClick={() => viewMore('Conciertos')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Conciertos_Exterior.jpeg" />
               <div class="mid">
-                <div class="tex">COMPRAS</div>
+                <div class="tex">Conciertos Exterior</div>
               </div>
 
             </div>
-            <div onClick={() => viewMore('CONCERTS')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Concerts.jpg" />
+            <div onClick={() => viewMore('Tiendas')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Tiendas.jpeg"/>
               <div class="mid">
-                <div class="tex">CONCIERTOS</div>
+                <div class="tex">Tiendas</div>
               </div>
 
             </div>
-            <div onClick={() => viewMore('AUTOMOTIVE')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
-              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/images/Images/Automotive.jpg" />
+            <div onClick={() => viewMore('Centros')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
+              <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Centros_Comerciales.jpeg"/>
               <div class="mid">
-                <div class="tex">AUTOMOTORA</div>
+                <div class="tex">Centros Comerciales</div>
               </div>
 
             </div>

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderCheckComplainResponse() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)

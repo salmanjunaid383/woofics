@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Nav() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     const history = useHistory()
 
     const url = window.location.href

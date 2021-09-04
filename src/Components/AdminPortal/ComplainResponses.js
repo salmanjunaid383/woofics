@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function AdminComplainResponses() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
 

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ComplainResponse() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
 
     const { ucid } = useParams()

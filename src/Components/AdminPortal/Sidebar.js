@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ServiceSidebar(props) {
 
-    CustomProviderAuth();
+    // CustomProviderAuth();
     const history = useHistory();
     const location = useLocation();
     // const { window } = props;

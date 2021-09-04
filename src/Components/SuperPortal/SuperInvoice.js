@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupplierLedger() {
-    CustomAuth();
-    CustomAdminAuth();
+    // CustomAuth();
+    // // CustomAdminAuth();
     let history = useHistory();
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState([]);

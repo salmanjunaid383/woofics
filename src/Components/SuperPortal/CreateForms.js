@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateForms() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
 
     const { ford } = useParams()

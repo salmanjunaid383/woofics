@@ -847,7 +847,8 @@ function Navbar() {
                     borderRadius: "50px",
                 }}
             >
-                <WhatsAppWidget phoneNumber="+34648411313" />
+                <WhatsAppWidget phoneNumber="+34648411313" textReplyTime="Normalmente responde en un día"  message="¡Hola! ¿Qué podemos hacer por ti?"
+                companyName="Woofics" sendButton="Enviar" placeholder="Escribe un mensaje"/>
             </div>
             <div
                 style={{

@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderResponses() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     const [form, setForm] = useState([]);

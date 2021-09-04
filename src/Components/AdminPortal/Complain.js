@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderComplain() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     const token = localStorage.getItem('user_token');

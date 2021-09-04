@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function CreateBlog() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
 
     const [author, setAuthor] = useState("");

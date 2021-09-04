@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Offers() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     const history = useHistory()
     const classes = useStyles();
 

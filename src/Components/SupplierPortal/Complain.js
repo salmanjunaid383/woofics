@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupComplain() {
-    CustomSupplierAuth();
+    // CustomSupplierAuth();
     let history = useHistory();
 
     const token = localStorage.getItem('user_token');

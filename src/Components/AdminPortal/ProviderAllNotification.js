@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderAllNotification() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     //Sidebaaaaar/..........................

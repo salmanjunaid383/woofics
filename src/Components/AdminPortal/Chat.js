@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderChat() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     // history
     let history = useHistory();
 

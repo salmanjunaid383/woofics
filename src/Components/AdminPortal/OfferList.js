@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function OfferList() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     const [form, setForm] = useState([]);

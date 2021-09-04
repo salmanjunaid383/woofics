@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupplierLedger() {
-    CustomSupplierAuth();
+    // CustomSupplierAuth();
     let history = useHistory();
     const [form, setForm] = useState([]);
     const [article, setArticle] = useState([]);

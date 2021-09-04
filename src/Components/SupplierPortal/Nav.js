@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Nav() {
-    CustomSupplierAuth();
+    // CustomSupplierAuth();
     const history = useHistory()
 
     const url = window.location.href

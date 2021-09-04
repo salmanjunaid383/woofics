@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderLedger() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     const [form, setForm] = useState([]);

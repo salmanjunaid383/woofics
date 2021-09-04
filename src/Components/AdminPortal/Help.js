@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderHelp() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     const [query, setQuestion] = useState("");

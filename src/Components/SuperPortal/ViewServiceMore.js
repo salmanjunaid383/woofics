@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ViewServiceMore() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
 
     let { serid } = useParams();
 

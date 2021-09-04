@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Charges() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
 
     const classes = useStyles();
