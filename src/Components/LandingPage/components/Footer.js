@@ -56,7 +56,7 @@ function Footer() {
         <>
             {/* <div style={{marginTop:'-50px' }}> */}
             {/* <div class="woofic_footer"> */}
-            <div class="footer-container" style={{height:'auto',width:'100%',position:'absolute',bottom:'0px'}}>
+            
 
             
             <div class="container-fluid my-auto pt-5 pb-5 backimg" style={{bottom:'0px'}} >
@@ -158,7 +158,7 @@ function Footer() {
                 </div>
             </div>
             {/* </div> */}
-            </div>
+            
         </>
     );
 }
