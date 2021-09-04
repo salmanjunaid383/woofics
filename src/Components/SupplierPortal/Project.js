@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Project() {
-    CustomSupplierAuth();
+    // CustomSupplierAuth();
     let history = useHistory();
 
 

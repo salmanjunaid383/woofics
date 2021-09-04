@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ProviderCheckResponse() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     let history = useHistory();
 
     const { resid } = useParams()

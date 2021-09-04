@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AllNotification() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
 
     //Sidebaaaaar/..........................

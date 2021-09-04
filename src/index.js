@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-var token = localStorage.getItem('user_token')
-window.header = { Authorization: `Bearer ${token}` };
-const element = (
-  <App></App>
-)
+try{
+
+  var token = localStorage.getItem('user_token')
+  if(token){
+    window.header = { Authorization: `Bearer ${token}` };
+  }
+  
+}
+catch{
+  
+}
+
+
+
+
+
+
+
+
+
 ReactDOM.render(
-  // <React.StrictMode>
-    element,
-  // </React.StrictMode>,
+  <BrowserRouter>
+  
+    <App></App>
+  
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

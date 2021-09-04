@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function HelpResponse() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
 
 
     const { hid } = useParams()

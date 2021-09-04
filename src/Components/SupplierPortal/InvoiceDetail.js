@@ -97,23 +97,6 @@ export default function SupplierLedger() {
     //             
     //         });
     // }
-    var adminSideBar;
-    var clientSideBar;  
-    var providerSideBar;
-    var supplierSideBar;
-    if(token !== null)
-    {
-        const role = jwt_decode(localStorage.getItem('user_token'))
-                        if (role.role === 'Client') {
-                            clientSideBar=true;
-                        } else if (role.role === 'ServiceProvider')
-                            providerSideBar=true;
-                        else if (role.role === 'Supplier') {
-                            supplierSideBar=true;
-                        } else {
-                            adminSideBar=true;
-                        }
-    }
 
 
     return (

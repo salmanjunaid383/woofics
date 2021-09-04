@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Led() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     const history = useHistory()
     const classes = useStyles();
 

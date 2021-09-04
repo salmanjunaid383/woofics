@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Help() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
     const [blog, setBlog] = useState([]);
 

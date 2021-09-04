@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function UpdateProfile() {
-    CustomProviderAuth();
+    // CustomProviderAuth();
     // useEffect(() => {
     //     if (!localStorage.getItem('user_token')) {
     //         history.push('/')

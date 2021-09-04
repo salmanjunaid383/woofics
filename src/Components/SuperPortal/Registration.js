@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Registration() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     const [blog, setBlog] = useState([]);
 
     function getReg() {

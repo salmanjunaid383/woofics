@@ -56,7 +56,10 @@ function Footer() {
         <>
             {/* <div style={{marginTop:'-50px' }}> */}
             {/* <div class="woofic_footer"> */}
-            <div class="container-fluid my-auto pt-5 pb-5 backimg" >
+            
+
+            
+            <div class="container-fluid my-auto pt-5 pb-5 backimg" style={{bottom:'0px'}} >
                 <div class="row text-center my-auto pt-5 ipad">
                     <div class="col-md-4 col-sm-12 text-center wooficsfooter footer-margin" >
 
@@ -130,6 +133,7 @@ function Footer() {
                 </div>
 
                 {/* </div> */}
+                
             </div>
             <div className="container-fluid woofic_search_sec text-center" style={{ backgroundColor: '#934CFF' }}>
                 <div className="row p-lg-2">
@@ -154,7 +158,7 @@ function Footer() {
                 </div>
             </div>
             {/* </div> */}
-
+            
         </>
     );
 }

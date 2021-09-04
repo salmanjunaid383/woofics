@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.45d198b7.chunk.css",
-    "main.js": "/static/js/main.4779ac11.chunk.js",
-    "main.js.map": "/static/js/main.4779ac11.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2fbbf2a2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2fbbf2a2.js.map",
+    "main.css": "/static/css/main.7ef6d0ae.chunk.css",
+    "main.js": "/static/js/main.eb24752b.chunk.js",
+    "main.js.map": "/static/js/main.eb24752b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6ea5c23a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6ea5c23a.js.map",
     "static/css/2.274a2bd7.chunk.css": "/static/css/2.274a2bd7.chunk.css",
-    "static/js/2.69e591c1.chunk.js": "/static/js/2.69e591c1.chunk.js",
-    "static/js/2.69e591c1.chunk.js.map": "/static/js/2.69e591c1.chunk.js.map",
-    "static/js/3.e460e0a3.chunk.js": "/static/js/3.e460e0a3.chunk.js",
-    "static/js/3.e460e0a3.chunk.js.map": "/static/js/3.e460e0a3.chunk.js.map",
+    "static/js/2.07c79338.chunk.js": "/static/js/2.07c79338.chunk.js",
+    "static/js/2.07c79338.chunk.js.map": "/static/js/2.07c79338.chunk.js.map",
+    "static/js/3.ab9cbc16.chunk.js": "/static/js/3.ab9cbc16.chunk.js",
+    "static/js/3.ab9cbc16.chunk.js.map": "/static/js/3.ab9cbc16.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.274a2bd7.chunk.css.map": "/static/css/2.274a2bd7.chunk.css.map",
-    "static/css/main.45d198b7.chunk.css.map": "/static/css/main.45d198b7.chunk.css.map",
-    "static/js/2.69e591c1.chunk.js.LICENSE.txt": "/static/js/2.69e591c1.chunk.js.LICENSE.txt",
+    "static/css/main.7ef6d0ae.chunk.css.map": "/static/css/main.7ef6d0ae.chunk.css.map",
+    "static/js/2.07c79338.chunk.js.LICENSE.txt": "/static/js/2.07c79338.chunk.js.LICENSE.txt",
     "static/media/footer.css": "/static/media/Footer4k.af15e54d.png",
+    "static/media/Frontal-min.622ab816.png": "/static/media/Frontal-min.622ab816.png",
+    "static/media/Trasero-min.337a3d8e.png": "/static/media/Trasero-min.337a3d8e.png",
     "static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.076c6451.png": "/static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.076c6451.png",
     "static/media/WooficsLogo.519146c7.png": "/static/media/WooficsLogo.519146c7.png",
     "static/media/stazcal.css": "/static/media/background.9f0b4474.jpg",
@@ -46,10 +48,10 @@
     "static/media/—Pngtree—chat icon_4756851.385172dc.png": "/static/media/—Pngtree—chat icon_4756851.385172dc.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2fbbf2a2.js",
+    "static/js/runtime-main.6ea5c23a.js",
     "static/css/2.274a2bd7.chunk.css",
-    "static/js/2.69e591c1.chunk.js",
-    "static/css/main.45d198b7.chunk.css",
-    "static/js/main.4779ac11.chunk.js"
+    "static/js/2.07c79338.chunk.js",
+    "static/css/main.7ef6d0ae.chunk.css",
+    "static/js/main.eb24752b.chunk.js"
   ]
 }

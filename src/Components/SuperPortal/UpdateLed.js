@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 export default function UpdateLed() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     const { ulid } = useParams()
     const history = useHistory()
     const classes = useStyles();

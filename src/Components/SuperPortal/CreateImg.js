@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateImg() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
 
     const [category, setcategory] = useState("");
@@ -123,20 +123,20 @@ export default function CreateImg() {
                                                         <MenuItem value="">
                                                             <em>Ninguna</em>
                                                         </MenuItem>
-                                                        <MenuItem value='HOTELS'>Hoteles</MenuItem>
-                                                        <MenuItem value='RESTAURANTS'>Restaurantes</MenuItem>
-                                                        <MenuItem value='RETAIL'>Tienda Al Por Menor</MenuItem>
-                                                        <MenuItem value='FAIRS'>Ferias</MenuItem>
-                                                        <MenuItem value='EVENTS'>Eventos</MenuItem>
-                                                        <MenuItem value='SPORTS'>Deportes</MenuItem>
-                                                        <MenuItem value='HEALTH'>Salud</MenuItem>
-                                                        <MenuItem value='ADVERTISING'>Publicidad</MenuItem>
-                                                        <MenuItem value='PUBLIC'>Sector Público</MenuItem>
-                                                        <MenuItem value='INFORMATION'>Información</MenuItem>
-                                                        <MenuItem value='LARGE'>Superficies / Centros Comerciales</MenuItem>
-                                                        <MenuItem value='SHOPPING'>Compras</MenuItem>
-                                                        <MenuItem value='CONCERTS'>Conciertos</MenuItem>
-                                                        <MenuItem value='AUTOMOTIVE'>Automotora</MenuItem>
+                                                        <MenuItem value='Hotel'>Hoteles</MenuItem>
+                                                        <MenuItem value='Restaurante'>Restaurantes</MenuItem>
+                                                        <MenuItem value='Varios'>Varios</MenuItem>
+                                                        <MenuItem value='Ferias'>Ferias</MenuItem>
+                                                        <MenuItem value='Eventos'>Eventos</MenuItem>
+                                                        <MenuItem value='Deporte'>Deportes</MenuItem>
+                                                        <MenuItem value='Publicidad'>Publicidad</MenuItem>
+                                                        <MenuItem value='Salud'>Salud</MenuItem>
+                                                        <MenuItem value='Sector'>Sector Público</MenuItem>
+                                                        <MenuItem value='Informacion'>Información</MenuItem>
+                                                        <MenuItem value='Automocion'>Automocion</MenuItem>
+                                                        <MenuItem value='Conciertos'>Conciertos</MenuItem>
+                                                        <MenuItem value='Tiendas'>Tiendas</MenuItem>
+                                                        <MenuItem value='Centros'>Centros Comerciales</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>

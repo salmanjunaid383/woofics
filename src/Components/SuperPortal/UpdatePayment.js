@@ -161,7 +161,7 @@
 
 
 // export default function UpdatePayment() {
-//     CustomAdminAuth();
+//     // CustomAdminAuth();
 //     const { uplid } = useParams()
 //     const history = useHistory()
 //     const classes = useStyles();

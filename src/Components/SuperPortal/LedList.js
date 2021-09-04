@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function LedList() {
-    CustomAdminAuth();
+    // CustomAdminAuth();
     let history = useHistory();
     const [blog, setBlog] = useState([]);
 
