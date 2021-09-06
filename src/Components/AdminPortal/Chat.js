@@ -387,7 +387,7 @@ export default function ProviderChat() {
                                 {username ? <div class="contact-profile">
                                     <img src={ImageProfile} alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
                                     <p className="ChatCapitalize">{username}</p>
-                                    <div className="bg-dark text-white float-right px-md-2" onClick={() => history.push(`/provideroffer/${uid}`)} style={{ cursor: 'pointer' }}>Crear Oferta</div>
+                                    <div className="bg-dark text-white float-right px-md-2" onClick={() => history.push(`/oferta_de_proveedor/${uid}`)} style={{ cursor: 'pointer' }}>Crear Oferta</div>
                                 </div> :
                                     <div className="container-fluid mt-lg-5 mt-md-4 mt-sm-5 ">
                                         <div className="row">

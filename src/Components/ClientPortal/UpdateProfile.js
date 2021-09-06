@@ -79,7 +79,7 @@ export default function UpdateProfile() {
                 setOpennoti(true);
                 setProgress('Update Profile')
                 setTimeout(() => {
-                    history.push("/dashboard");
+                    history.push("/tablero");
                 }, 1000);
             }, (Error) => {
                  

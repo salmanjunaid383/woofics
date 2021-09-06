@@ -123,9 +123,9 @@ export default function Sidebar() {
         setMobileOpen(!mobileOpen);
     };
     useEffect(() => {
-        if(location.pathname==="/myservice")
+        if(location.pathname==="/miservicio")
         {
-            setPathName("/addservice")
+            setPathName("/servicio_adicional")
         }
         else{
             setPathName(location.pathname)
@@ -204,42 +204,42 @@ export default function Sidebar() {
         {
             name: 'Panel',
             icon: <DashboardIcon  />,
-            to: '/dashboard'
+            to: "/tablero"
         },
         {
             name: 'Servicios',
             icon: <InsertEmoticonIcon  />,
-            to: '/addservice'
+            to: "/servicio_adicional"
         },
         {
             name: 'Ofertas',
             icon: <LocalOfferIcon  />,
-            to: '/customeroffer'
+            to: '/oferta_al_cliente'
         },
         {
             name: 'Proyectos',
             icon: <PlaylistAddCheckIcon  />,
-            to: '/project'
+            to: "/proyecto"
         },
         {
             name: 'Proveedor de servicio',
             icon: <AssistantIcon  />,
-            to: '/providers'
+            to: "/proveedores"
         },
         {
             name: 'Foro de discusion',
             icon: <ContactMailIcon  />,
-            to: '/clientdiscussionforum'
+            to: '/foro_de_discusión_del_cliente'
         },
         {
             name: 'Ayuda',
             icon: <LiveHelpIcon  />,
-            to: '/help'
+            to: "/ayuda"
         },
         {
             name: 'Quejarse',
             icon: <CallEndIcon  />,
-            to: '/complain'
+            to: "/quejar"
         },
 
 
@@ -247,7 +247,7 @@ export default function Sidebar() {
 
     const drawer = (
         <div>
-            <Link className="navbar-brand " to="/dashboard">
+            <Link className="navbar-brand " to="/tablero">
                 <span className="logo-text text-dark p-0 m-0 text-center">
                     <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop: "20px", marginBottom: "10px" }} />
                 </span>
@@ -503,7 +503,7 @@ export default function Sidebar() {
                 <Typography className={classes.typography}>
                     <Link
                         className="profile-pic"
-                        to="/updateprofile"
+                        to="/actualización_del_perfil"
                         style={{ textDecoration: "none" }}
                     >
                         <i className="fa fa-user mx-3"></i>

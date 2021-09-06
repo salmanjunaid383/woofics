@@ -126,7 +126,7 @@ export default function Quotation() {
                                     alert("Cannot bid on the same lead twice");
                                 }
                                 else{
-                                    history.push(`/quote/${i}`)
+                                    history.push(`/cita/${i}`)
                                 }
                               }, (Error) => {     
                                 

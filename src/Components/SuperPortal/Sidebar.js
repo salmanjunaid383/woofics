@@ -266,7 +266,7 @@
 //         {
 //             name: 'Discussion Forum',
 //             icon: <ContactMailIcon  style={{ color: "#cdcdcd" }}/>,
-//             to: 'clientdiscussionforum'
+//             to: 'foro_de_discusión_del_cliente'
 //         },
 //         {
 //             name: 'View Contacts',
@@ -281,12 +281,12 @@
 //         {
 //             name: 'Help List',
 //             icon: <HelpIcon style={{ color: "#cdcdcd" }} />,
-//             to: 'helplist'
+//             to: 'lista_de_ayuda'
 //         },
 //         {
 //             name: 'Complain',
 //             icon: <AssistantIcon style={{ color: "#cdcdcd" }} />,
-//             to: 'admincomplain'
+//             to: 'admin_quejarse'
 //         },
 //         {
 //             name: 'Blog',
@@ -297,7 +297,7 @@
 
 //     const drawer = (
 //         <div>
-//             <Link className="navbar-brand " to="/superdashboard">
+//             <Link className="navbar-brand " to="/tablerodemandos">
 //                 <span className="logo-text text-dark p-0 m-0 text-center">
 //                     <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px',marginTop:"20px",marginBottom:"10px" }} />
 //                 </span>

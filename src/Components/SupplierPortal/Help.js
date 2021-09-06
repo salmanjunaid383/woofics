@@ -62,7 +62,7 @@ export default function SupHelp() {
                 }
             }, (Error) => {
                 
-                history.push('/help');
+                history.push("/ayuda");
             });
     }
 

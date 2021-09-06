@@ -85,7 +85,7 @@ export default function SupComplain() {
                 setComplain(response.data)
             }, (error) => {
                 
-                history.push('/supcomplain');
+                history.push('/suplicar');
             });
     }
     useEffect(() => {

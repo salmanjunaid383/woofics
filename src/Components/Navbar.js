@@ -190,18 +190,18 @@ function Navbar() {
                         if(location.pathname!=="/quotemain")
                         {
                             if (role.role === 'Client') {
-                                localStorage.setItem('url', '/dashboard')
-                                history.push('/dashboard');
+                                localStorage.setItem('url', "/tablero")
+                                history.push("/tablero");
                             } else if (role.role === 'ServiceProvider') {
-                                localStorage.setItem('url', '/admindashboard')
-                                history.push('/admindashboard');
+                                localStorage.setItem('url', "/tablerodeadministración")
+                                history.push("/tablerodeadministración");
                             }
                             else if (role.role === 'Supplier') {
-                                localStorage.setItem('url', '/supplierdashboard')
-                                history.push('/supplierdashboard');
+                                localStorage.setItem('url', "/tablero_de_proveedores")
+                                history.push("/tablero_de_proveedores");
                             } else {
-                                localStorage.setItem('url', '/superdashboard')
-                                history.push('/superdashboard');
+                                localStorage.setItem('url', "/tablerodemandos")
+                                history.push("/tablerodemandos");
                             }
                         }
                         
@@ -268,18 +268,18 @@ function Navbar() {
                 if (response) {
                     const role = jwt_decode(localStorage.getItem('user_token'))
                     if (role.role === 'Client') {
-                        localStorage.setItem('url', '/dashboard')
-                        history.push('/dashboard');
+                        localStorage.setItem('url', "/tablero")
+                        history.push("/tablero");
                     } else if (role.role === 'ServiceProvider') {
-                        localStorage.setItem('url', '/admindashboard')
-                        history.push('/admindashboard');
+                        localStorage.setItem('url', "/tablerodeadministración")
+                        history.push("/tablerodeadministración");
                     }
                     else if (role.role === 'Supplier') {
-                        localStorage.setItem('url', '/supplierdashboard')
-                        history.push('/supplierdashboard');
+                        localStorage.setItem('url', "/tablero_de_proveedores")
+                        history.push("/tablero_de_proveedores");
                     } else {
-                        localStorage.setItem('url', '/superdashboard')
-                        history.push('/superdashboard');
+                        localStorage.setItem('url', "/tablerodemandos")
+                        history.push("/tablerodemandos");
                     }
                 }
                 
@@ -327,14 +327,14 @@ function Navbar() {
     try{
         const role = jwt_decode(localStorage.getItem('user_token'))
         if (role.role === 'Client') {
-            profileLink="/dashboard"
+            profileLink="/tablero"
         } else if (role.role === 'ServiceProvider') {
-            profileLink="/admindashboard"
+            profileLink="/tablerodeadministración"
         }
         else if (role.role === 'Supplier') {
-            profileLink="/supplierdashboard"
+            profileLink="/tablero_de_proveedores"
         } else {
-            profileLink="/superdashboard"
+            profileLink="/tablerodemandos"
         }
     }
     catch{
@@ -365,18 +365,18 @@ function Navbar() {
                 if (response) {
                     const role = jwt_decode(localStorage.getItem('user_token'))
                     if (role.role === 'Client') {
-                        localStorage.setItem('url', '/dashboard')
-                        history.push('/dashboard');
+                        localStorage.setItem('url', "/tablero")
+                        history.push("/tablero");
                     } else if (role.role === 'ServiceProvider') {
-                        localStorage.setItem('url', '/admindashboard')
-                        history.push('/admindashboard');
+                        localStorage.setItem('url', "/tablerodeadministración")
+                        history.push("/tablerodeadministración");
                     }
                     else if (role.role === 'Supplier') {
-                        localStorage.setItem('url', '/supplierdashboard')
-                        history.push('/supplierdashboard');
+                        localStorage.setItem('url', "/tablero_de_proveedores")
+                        history.push("/tablero_de_proveedores");
                     } else {
-                        localStorage.setItem('url', '/superdashboard')
-                        history.push('/superdashboard');
+                        localStorage.setItem('url', "/tablerodemandos")
+                        history.push("/tablerodemandos");
                     }
                 }
                 
@@ -448,17 +448,17 @@ function Navbar() {
                         <Link className="pt-3 taglink hover-effect" to="/" id="" >
                             Casa
                         </Link>
-                        <Link to="/clientdiscussionforum" className="pt-3 taglink" id="" >
+                        <Link to="/foro_de_discusión_del_cliente" className="pt-3 taglink" id="" >
                             Foro
                         </Link>
                        
-                        {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
+                        {/* <Link to="/foro_de_discusion" className="pt-3 ">Forum</Link> */}
                         <Link to="/quotemain" className="pt-3 taglink hover-effect" id="">
                             Oferta
                         </Link>
                         {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
 
-                        {/* <Link to="/pricecalculator" className="pt-3 " id="">
+                        {/* <Link to="/calculadora_de_precios" className="pt-3 " id="">
                             Price Calculator
                         </Link> */}
 
@@ -472,7 +472,7 @@ function Navbar() {
                             <div class="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
                                 <div class="dropdown-content">
-                                <Link to="/pricecalculator" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
+                                <Link to="/calculadora_de_precios" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
                                     <span style={{textAlign:"left"}}>Calculadora de precios</span>
                                 </Link>
 
@@ -799,7 +799,7 @@ function Navbar() {
                                             </u>{" "}
                                             or{" "}
                                             <u>
-                                                <a href="/contact" className="text-dark">
+                                                <a href="/contacto" className="text-dark">
                                                     {" "}
                                                     te llamaremos gratis
                                                 </a>

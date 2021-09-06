@@ -124,7 +124,7 @@ export default function UpdateProfile() {
                 headers:window.header
               }).then((response) => {
                 setprogress('Update Profile')
-                // history.push("/admindashboard");
+                // history.push("/tablerodeadministración");
             }, (Error) => {
 
             });

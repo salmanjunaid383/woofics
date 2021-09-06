@@ -264,7 +264,7 @@ export default function Test() {
                 .then((response) => {
                     setprogress('Published')
                     alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
-                    history.push('/myservice')
+                    history.push("/miservicio")
                 }, (error) => {
                     setprogress('Publish your Service?')
                     alert('You left some feilds empty !')
@@ -2369,7 +2369,7 @@ export default function Test() {
                 <div class="container-fluid">
                     <div class="row">
                         <div className="col-md-12 pr-5">
-                            <Link to="/myservice" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
+                            <Link to="/miservicio" style={{ textDecoration: 'none', color: '#fff' }}> <button className="btn btn-primary float-right m-2">My Services</button></Link>
                         </div>
                         <h3 className="text-dark w-100 pl-lg-5" >Sabes lo que buscas? </h3>
                         <div className="w-100 pl-lg-5" >

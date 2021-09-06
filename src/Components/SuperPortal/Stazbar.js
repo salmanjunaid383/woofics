@@ -156,9 +156,9 @@ export default function StazBar() {
         {
             setPathName("/ledger")
         }
-        else if(location.pathname.split('/')[1]==="clientmoredetailsdiscussionforum")
+        else if(location.pathname.split('/')[1]==="clientemásdetallesforumdiscussion")
         {
-            setPathName("/clientdiscussionforum")
+            setPathName("/foro_de_discusión_del_cliente")
         }
         else if(location.pathname.split('/')[1]==="createforms")
         {
@@ -248,7 +248,7 @@ export default function StazBar() {
         {
             name: 'Panel de administración',
             icon: <DashboardIcon    />,
-            to: '/superdashboard'
+            to: "/tablerodemandos"
         },
         {
             name: 'Inscripciones',
@@ -318,22 +318,22 @@ export default function StazBar() {
         {
             name: "Descripción",
             icon: <DescriptionIcon />,
-            to: "/description"
+            to: "/descripción"
         },
         {
             name: 'Foro de discusion',
             icon: <AssignmentIcon />,
-            to :'/clientdiscussionforum'
+            to :'/foro_de_discusión_del_cliente'
         },
         {
             name: 'Lista de ayuda',
             icon: <HelpIcon  />,
-            to: '/helplist'
+            to: '/lista_de_ayuda'
         },
         {
             name: 'Quejarse',
             icon: <AssistantIcon  />,
-            to: '/admincomplain'
+            to: '/admin_quejarse'
         },
         {
             name: 'Blog',
@@ -357,7 +357,7 @@ export default function StazBar() {
 
     const drawer = (
         <div>
-            <Link className="navbar-brand " to="/superdashboard">
+            <Link className="navbar-brand " to="/tablerodemandos">
                 <span className="logo-text text-dark p-0 m-0 text-center">
                 {/* assets/plugins/images/Woofic-2.png */}
                    <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />

@@ -213,7 +213,7 @@ export default function ServiceProvider() {
                     <h3 className=" py-3 h3 bolder"><b>Consiga nuevos clientes</b></h3>
                     <h5 className=" py-3 h5">¡Pasa al siguiente nivel, llega a donde nunca has estado antes y descubre nuevas oportunidades!</h5>
                     <b>Te asesoramos sin compromiso</b>
-                    <h5 className=" py-34 h5"><i className="fa fa-phone"> </i> <u><a href="callto:680494729" className="text-dark"> 680 49 47 29</a></u> o <u><a href="/contact" className="text-dark"> te llamaremos gratis</a></u> </h5>
+                    <h5 className=" py-34 h5"><i className="fa fa-phone"> </i> <u><a href="callto:680494729" className="text-dark"> 680 49 47 29</a></u> o <u><Link  to="/contacto" className="text-dark"> te llamaremos gratis</Link></u> </h5>
                     <img className="img-fluid w-75 mx-auto" src={reg} style={{ display: "flex", justifyContent: 'center', alignSelf: 'center' }} />
                   </div>
                   <div className="col-md-6 col-lg-6 col-sm-12 mx-auto">

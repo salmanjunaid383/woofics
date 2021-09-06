@@ -98,7 +98,7 @@ export default function Nav() {
                 <header className="topbar" data-navbarbg="skin5">
                     <nav className="navbar top-navbar navbar-expand-md navbar-dark">
                         <div className="navbar-header" data-logobg="skin6">
-                            <Link className="navbar-brand " to="/supplierdashboard">
+                            <Link className="navbar-brand " to="/tablero_de_proveedores">
                                 <span className="logo-text text-dark p-0 m-0 text-center">
                                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                                 </span>
@@ -197,7 +197,7 @@ export default function Nav() {
                     }}
                 >
                     <Typography className={classes.typography}>
-                        <Link className="profile-pic" to="/supplierupdateprofile" style={{ textDecoration: 'none' }}>
+                        <Link className="profile-pic" to="/proveedorupdateprofile" style={{ textDecoration: 'none' }}>
                             <i className="fa fa-user mx-3"></i>
                             <span className="text-black font-medium mr-3">Perfil</span>
                         </Link>

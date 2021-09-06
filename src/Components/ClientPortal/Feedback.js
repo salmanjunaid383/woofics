@@ -186,7 +186,7 @@ export default function Feedback() {
         // })
         //     .then((res)=> {
         //         if (res){
-        //             history.push('/admindashboard');
+        //             history.push("/tablerodeadministración");
         //         }
         //     }, (error) => {
         //         
@@ -261,22 +261,22 @@ export default function Feedback() {
         {
             name: ' Dashboard',
             icon: <DashboardIcon  style={{ color: "#cdcdcd" }}/>,
-            to: '/dashboard'
+            to: "/tablero"
         },
         {
             name: 'Services',
             icon: <InsertEmoticonIcon  style={{ color: "#cdcdcd" }}/>,
-            to: '/addservice'
+            to: "/servicio_adicional"
         },
         {
             name: 'Offers',
             icon: <LocalOfferIcon  style={{ color: "#cdcdcd" }}/>,
-            to: '/customeroffer'
+            to: '/oferta_al_cliente'
         },
         {
             name: 'Projects',
             icon: <PlaylistAddCheckIcon  style={{color:"white"}}/>,
-            to: '/project'
+            to: "/proyecto"
         },
         {
             name: 'Service Provider',
@@ -286,17 +286,17 @@ export default function Feedback() {
         {
             name: 'Discussion Forum',
             icon: <ContactMailIcon  style={{ color: "#cdcdcd" }}/>,
-            to: '/clientdiscussionforum'
+            to: '/foro_de_discusión_del_cliente'
         },
         {
             name: 'Help',
             icon: <LiveHelpIcon  style={{ color: "#cdcdcd" }}/>,
-            to: '/help'
+            to: "/ayuda"
         },
         {
             name: 'Complain',
             icon: <CallEndIcon  style={{ color: "#cdcdcd" }}/>,
-            to: '/complain'
+            to: "/quejar"
         },
 
 
@@ -304,7 +304,7 @@ export default function Feedback() {
 
     const drawer = (
         <div>
-            <Link className="navbar-brand " to="/dashboard">
+            <Link className="navbar-brand " to="/tablero">
                 <span className="logo-text text-dark p-0 m-0 text-center">
                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
@@ -625,7 +625,7 @@ export default function Feedback() {
                <Typography className={classes.typography}>
           <Link
             className="profile-pic"
-            to="/updateprofile"
+            to="/actualización_del_perfil"
             style={{ textDecoration: "none" }}
           >
             <i className="fa fa-user mx-3"></i>

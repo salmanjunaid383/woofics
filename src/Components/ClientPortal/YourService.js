@@ -50,7 +50,7 @@ export default function YourService() {
         },
         (error) => {
           
-          history.push("/myservice");
+          history.push("/miservicio");
         }
       );
   }
@@ -70,7 +70,7 @@ export default function YourService() {
           },
           (error) => {
             
-            history.push("/myservice");
+            history.push("/miservicio");
           }
         );
     }
@@ -132,7 +132,7 @@ export default function YourService() {
                                         value={val.id}
                                         onClick={() =>
                                           history.push(
-                                            `/allquotation/${val.id}`
+                                            `/toda_cotización/${val.id}`
                                           )
                                         }
                                       >

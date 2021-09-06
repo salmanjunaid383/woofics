@@ -399,7 +399,7 @@ export default function SupplierDashboard() {
                                                                                 <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                                 {/* <td className="txt-oflo text-center bold">{val.phase}</td> */}
                                                                                 <td className="txt-oflo text-center bold">
-                                                                                    <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/supplierprojects/${val.client_id}/${val.id}`)} >Más detalles</button>
+                                                                                    <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/proyectos_de_proveedores/${val.client_id}/${val.id}`)} >Más detalles</button>
                                                                                 </td>
                                                                             </tr>
                                                                         </>

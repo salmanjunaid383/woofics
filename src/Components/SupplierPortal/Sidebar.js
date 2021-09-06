@@ -162,7 +162,7 @@ export default function SupplierSidebar() {
         {
             name: 'Panel de proveedores',
             icon: <DashboardIcon />,
-            to: '/supplierdashboard'
+            to: "/tablero_de_proveedores"
         },
         {
             name: 'Proyectos',
@@ -177,12 +177,12 @@ export default function SupplierSidebar() {
         {
             name: 'Leads',
             icon: <PlaylistAddCheckIcon  />,
-            to: '/quotation'
+            to: "/cotización"
         },
         {
             name: 'Cotización enviada',
             icon: <AssistantIcon  />,
-            to: '/sentquotation'
+            to: '/cotización_enviada'
         },
         {
             name: 'Gastos',
@@ -197,23 +197,23 @@ export default function SupplierSidebar() {
         {
             name: 'Foro de discusion',
             icon: <AssignmentIcon />,
-            to :'/clientdiscussionforum'
+            to :'/foro_de_discusión_del_cliente'
         },
         {
             name: 'Ayuda',
             icon: <LiveHelpIcon  />,
-            to: '/suphelp'
+            to: '/ayudar'
         },
         {
             name: 'Quejarse',
             icon: <CallEndIcon  />,
-            to: '/supcomplain'
+            to: '/suplicar'
         },
     ]
 
     const drawer = (
         <div>
-            <Link className="navbar-brand " to="/supplierdashboard">
+            <Link className="navbar-brand " to="/tablero_de_proveedores">
                 <span className="logo-text text-dark p-0 m-0 text-center">
                    <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
@@ -314,7 +314,7 @@ export default function SupplierSidebar() {
                 });
         }
     useEffect(() => {
-        if(location.pathname.split("/")[1]==="supplierprojects")
+        if(location.pathname.split("/")[1]==="proyectos_de_proveedores")
         {
             setPathName("/supproject")
         }
@@ -473,7 +473,7 @@ export default function SupplierSidebar() {
                 }}
             >
                 <Typography className={classes.typography}>
-                    <Link className="profile-pic" to="/supplierupdateprofile" style={{ textDecoration: 'none' }}>
+                    <Link className="profile-pic" to="/proveedorupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
                         <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>

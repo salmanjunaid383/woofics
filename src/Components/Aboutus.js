@@ -130,7 +130,7 @@ export default function Aboutus() {
                                 return (
                                     <>
 
-                                        <Link to={`/moredetailsdiscussionforum/${val.id}`}>
+                                        <Link to={`/másdetallesforumdiscussion/${val.id}`}>
                                             <div class="card mb-4">
                                                 <div class="card-header">
                                                     <div class="media flex-wrap w-100 align-items-center"> 

@@ -78,7 +78,7 @@ export default function Quote() {
                 .then((response) => {
                     if(response.data===0){
                         
-                        history.push("/quotation");
+                        history.push("/cotización");
                     }
                   }, (Error) => {     
                     
@@ -115,7 +115,7 @@ export default function Quote() {
                     console.log(response)
                     setProgress('Send Quotation')
                     localStorage.removeItem('qid')
-                    history.push('/sentquotation')
+                    history.push('/cotización_enviada')
                 }, (Error) => {
                     console.log(Error)
                     setOpenn(true);

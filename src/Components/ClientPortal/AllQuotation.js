@@ -70,11 +70,11 @@ export default function AllQuotation() {
             .then((res) => {
                 if (res) {
                     setForm(res.data)
-                    // history.push('/myservice');
+                    // history.push("/miservicio");
                 }
             }, (error) => {
                 
-                history.push('/allquotation');
+                history.push('/toda_cotización');
 
             });
 

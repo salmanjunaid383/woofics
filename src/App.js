@@ -299,11 +299,11 @@ function App() {
           <Route  path="/Privacy-Policy" component={PrivacyPolicy}/>
           <Route path="/login" component={Login} />
           <Route path="/forgetpwd" component={Forgetpwd} />
-          <Route path="/forum" component={forum}></Route>
-          <Route path="/detailforum/:quid" component={detailforum}></Route>
+          <Route path="/foro" component={forum}></Route>
+          <Route path="/forodedetalles/:quid" component={detailforum}></Route>
           <Route path="/confirmpassword/:rid" component={Confirmpassword} />
-          <Route exact path="/serviceprovider" component={ServiceProvider} />
-          <Route exact path="/supplier" component={Supplier} />
+          <Route exact path="/proveedordeservicio" component={ServiceProvider} />
+          {/* <Route exact path="/supplier" component={Supplier} /> */}
           <Route path="/invoicedetail/:quid" authed={supplierAuth} redirectTo={"/login"}   component={invoicedetail}></Route>
 
           {/* checkLater */}
@@ -311,16 +311,16 @@ function App() {
 
           
           
-          <PrivateRoute exact path="/dashboard" authed={customerAuth} redirectTo={"/"} component={Dashboard} />
-          <PrivateRoute exact path="/admindashboard" authe={providerAuth} redirectTo={"/"} component={ProviderDashboard} />
-          <PrivateRoute exact path="/superdashboard" authed={adminAuth} redirectTo={"/"} component={SuperDashboard} />
+          <PrivateRoute exact path="/tablero" authed={customerAuth} redirectTo={"/"} component={Dashboard} />
+          <PrivateRoute exact path="/tablerodeadministración" authe={providerAuth} redirectTo={"/"} component={ProviderDashboard} />
+          <PrivateRoute exact path="/tablerodemandos" authed={adminAuth} redirectTo={"/"} component={SuperDashboard} />
           {/* <Route exact path="/client" component={Client} /> */}
 
           
-          <PrivateRoute exact path="/description" authed={adminAuth} redirectTo={"/"} component={description}></PrivateRoute>
+          <PrivateRoute exact path="/descripción" authed={adminAuth} redirectTo={"/"} component={description}></PrivateRoute>
 
-          <PrivateRoute exact path="/providers" authed={customerAuth} redirectTo={"/"} component={Suppliers} />
-          <PrivateRoute exact path="/updateprofile" authed={customerAuth} redirectTo={"/"} component={UpdateProfile} />
+          <PrivateRoute exact path="/proveedores" authed={customerAuth} redirectTo={"/"} component={Suppliers} />
+          <PrivateRoute exact path="/actualización_del_perfil" authed={customerAuth} redirectTo={"/"} component={UpdateProfile} />
           
           {/* <Route
             exact
@@ -329,27 +329,27 @@ function App() {
           /> */}
           <PrivateRoute
             exact
-            path="/supplierupdateprofile"
+            path="/proveedorupdateprofile"
             authed={supplierAuth} redirectTo={"/"}
             component={SupplierUpdateProfile}
           />
-          <PrivateRoute exact path="/addservice" authed={customerAuth} redirectTo={"/"} component={AddService} />
-          <PrivateRoute exact path="/myservice" authed={customerAuth} redirectTo={"/"} component={YourService} />
-          <Route exact path="/feedback/:fid" authed={customerAuth} redirectTo={"/"} component={Feedback} />
+          <PrivateRoute exact path="/servicio_adicional" authed={customerAuth} redirectTo={"/"} component={AddService} />
+          <PrivateRoute exact path="/miservicio" authed={customerAuth} redirectTo={"/"} component={YourService} />
+          {/* <Route exact path="/feedback/:fid" authed={customerAuth} redirectTo={"/"} component={Feedback} /> */}
           <PrivateRoute exact path="/logo" authed={adminAuth} redirectTo={"/"} component={Logo} />
 
           <PrivateRoute
             exact
-            path="/supplierdashboard"
+            path="/tablero_de_proveedores"
             authed={supplierAuth} redirectTo={"/"}
             component={SupplierDashboard}
           />
-          <PrivateRoute exact path="/quotation" authed={supplierAuth} redirectTo={"/"} component={Quotation} />
+          <PrivateRoute exact path="/cotización" authed={supplierAuth} redirectTo={"/"} component={Quotation} />
 
-          <Route exact path="/allquotation/:sid" authed={customerAuth} redirectTo={"/"} component={AllQuotation} />
+          <Route exact path="/toda_cotización/:sid" authed={customerAuth} redirectTo={"/"} component={AllQuotation} />
 
-          <Route exact path="/editquote/:serrid" authed={supplierAuth} redirectTo={"/"} component={editquote}/>
-          <Route exact path="/quote/:serrid" authed={supplierAuth} redirectTo={"/"} component={Quote} />
+          <Route exact path="/editar_cita/:serrid" authed={supplierAuth} redirectTo={"/"} component={editquote}/>
+          <Route exact path="/cita/:serrid" authed={supplierAuth} redirectTo={"/"} component={Quote} />
           {/* <PrivateRoute exact path="/invoice" component={Invoice} /> */}
           <PrivateRoute exact path="/chat" authed={customerAuth} redirectTo={"/"} component={Chat} />
           <Route exact path="/chat/:cid/:name" authed={customerAuth} redirectTo={"/"} component={Chat} />
@@ -359,11 +359,11 @@ function App() {
           <providerAuth exact path="/createblog" authed={adminAuth} redirectTo={"/"} component={CreateBlog} />
           <providerAuth exact path="/todo" authed={providerAuth} redirectTo={"/"} component={Todo} />
           <PrivateRoute exact path="/suppliertodo"  authed={supplierAuth} redirectTo={"/"}component={SupplierTodo} />
-          <PrivateRoute exact path="/help" authed={customerAuth} redirectTo={"/"} component={Help} />
-          <PrivateRoute exact path="/complain" authed={customerAuth} redirectTo={"/"}  component={Complain} />
+          <PrivateRoute exact path="/ayuda" authed={customerAuth} redirectTo={"/"} component={Help} />
+          <PrivateRoute exact path="/quejar" authed={customerAuth} redirectTo={"/"}  component={Complain} />
           <PrivateRoute exact path="/registration" authed={adminAuth} redirectTo={"/"} component={Registration} />
-          <Route exact path="/contact" component={ContactUs} />
-          <Route exact path="/successpayment/:pid" component={SuccessPayment} />
+          <Route exact path="/contacto" component={ContactUs} />
+          {/* <Route exact path="/successpayment/:pid" component={SuccessPayment} /> */}
           {/* <Route exact path="/detail/:sid/:uid" component={Detail} /> */}
           <Route exact path="/" component={Landing} />
           <Route exact path="/emailver/:uuid" component={Emailver} />
@@ -371,15 +371,15 @@ function App() {
 
           <Route
             exact
-            path="/customerprojects/:sid/:uid"
+            path="/proyectos_de_clientes/:sid/:uid"
             authed={customerAuth} redirectTo={"/"}
             component={CustomerProjects}
           />
 
-          <PrivateRoute exact path="/project" authed={customerAuth} redirectTo={"/"} component={Project} />
+          <PrivateRoute exact path="/proyecto" authed={customerAuth} redirectTo={"/"} component={Project} />
           <Route
             exact
-            path="/supplierprojects/:sid/:uid"
+            path="/proyectos_de_proveedores/:sid/:uid"
             authed={supplierAuth} redirectTo={"/"}
             component={SupplierProjects}
           />
@@ -387,22 +387,22 @@ function App() {
           <PrivateRoute exact path="/supproject" authed={supplierAuth} redirectTo={"/"} component={SupProject} />
           {/* <PrivateRoute exact path="/supcoupons" component={SupCoupons} /> */}
           {/* <PrivateRoute exact path="/couponslist" component={Coupons} /> */}
-          <PrivateRoute exact path="/sentquotation" authed={supplierAuth} redirectTo={"/"} component={SentQuotation} />
-          <Route exact path="/discussionforum" component={DiscussionForum} />
+          <PrivateRoute exact path="/cotización_enviada" authed={supplierAuth} redirectTo={"/"} component={SentQuotation} />
+          <Route exact path="/foro_de_discusion" component={DiscussionForum} />
           <Route
             exact
-            path="/moredetailsdiscussionforum/:quid"
+            path="/másdetallesforumdiscussion/:quid"
             component={Moredetailsdiscussionforum}
           />
           <PrivateRoute
             exact
-            path="/clientdiscussionforum"
+            path="/foro_de_discusión_del_cliente"
             authed={customAuth} redirectTo={"/"}
             component={ClientDiscussionForum}
           />
           <Route
             exact
-            path="/clientmoredetailsdiscussionforum/:quid"
+            path="/clientemásdetallesforumdiscussion/:quid"
             authed={customAuth} redirectTo={"/"}
             component={ClientMoredetailsdiscussionforum}
           />
@@ -411,21 +411,21 @@ function App() {
           {/* <Route exact path="/paymentphase" component={PaymentPhaseList} /> */}
           <Route exact path="/updateled/:ulid"  authed={adminAuth} redirectTo={"/"} component={UpdateLed} />
           <PrivateRoute exact path="/ledlist" authed={adminAuth} redirectTo={"/"} component={LedList} />
-          <PrivateRoute exact path="/helplist" authed={adminAuth} redirectTo={"/"} component={HelpList} />
-          <Route exact path="/pricecalculator" component={PriceCalculator} />
-          <PrivateRoute exact path="/admincomplain" authed={adminAuth} redirectTo={"/"} component={AdminComplain} />
+          <PrivateRoute exact path="/lista_de_ayuda" authed={adminAuth} redirectTo={"/"} component={HelpList} />
+          <Route exact path="/calculadora_de_precios" component={PriceCalculator} />
+          <PrivateRoute exact path="/admin_quejarse" authed={adminAuth} redirectTo={"/"} component={AdminComplain} />
           <Route exact path="/allblog" component={AllBlog} />
           {/* <Route exact path="/coupon" component={Coupon} /> */}
           <Route
             exact
-            path="/providerdetails/:pid"
+            path="/detalles_del_proveedor/:pid"
             authed={customerAuth} redirectTo={"/"}
             component={ProviderDetails}
           />
-          <Route exact path="/provideroffer/:oid" authed={providerAuth} redirectTo={"/"} component={Offers} />
-          <PrivateRoute exact path="/customeroffer" authed={customerAuth} redirectTo={"/"} component={ClientOffers} />
-          <PrivateRoute exact path="/offerlist" authed={customerAuth} redirectTo={"/"} component={OfferList} />
-          <Route exact path="/aboutus/:fid?" component={Contact} />
+          <Route exact path="/oferta_de_proveedor/:oid" authed={providerAuth} redirectTo={"/"} component={Offers} />
+          <PrivateRoute exact path="/oferta_al_cliente" authed={customerAuth} redirectTo={"/"} component={ClientOffers} />
+          <PrivateRoute exact path="/lista_de_ofertas" authed={customerAuth} redirectTo={"/"} component={OfferList} />
+          <Route exact path="/sobre_nosotros/:fid?" component={Contact} />
 
           <Route
             exact
@@ -488,8 +488,8 @@ function App() {
           />
 
           {/* supplier    */}
-          <PrivateRoute exact path="/suphelp" authed={supplierAuth} redirectTo={"/"} component={SupHelp} />
-          <PrivateRoute exact path="/supcomplain" authed={supplierAuth} redirectTo={"/"} component={SupComplain} />
+          <PrivateRoute exact path="/ayudar" authed={supplierAuth} redirectTo={"/"} component={SupHelp} />
+          <PrivateRoute exact path="/suplicar" authed={supplierAuth} redirectTo={"/"} component={SupComplain} />
           <PrivateRoute
             exact
             path="/supallnotification"
@@ -512,8 +512,8 @@ function App() {
 
           {/* supplier    */}
           {/* <Route exact path="/mycoupon" component={MyCoupon} /> */}
-          <PrivateRoute exact path="/help" authed={customerAuth} redirectTo={"/"} component={Help} />
-          <PrivateRoute exact path="/complain" authed={customerAuth} redirectTo={"/"} component={Complain} />
+          {/* <PrivateRoute exact path="/ayuda" authed={customerAuth} redirectTo={"/"} component={Help} /> */}
+          {/* <PrivateRoute exact path="/quejar" authed={customerAuth} redirectTo={"/"} component={Complain} /> */}
           <PrivateRoute
             exact
             path="/clientallnotification"

@@ -297,7 +297,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                                                 return (
                                                     <>
 
-                                                        <Link to={`/detailforum/${val.id}`}>
+                                                        <Link to={`/forodedetalles/${val.id}`}>
                                                             <div class="card mb-4 mx-auto">
                                                                 <div class="card-header ">
                                                                     <div class="media flex-wrap w-100 align-items-center">

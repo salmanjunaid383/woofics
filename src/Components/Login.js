@@ -44,13 +44,13 @@ export default function Login() {
                         setWait('Log In')
                         const role = jwt_decode(localStorage.getItem('user_token'))
                         if (role.role === 'Client') {
-                            history.push('/dashboard');
+                            history.push("/tablero");
                         } else if (role.role === 'ServiceProvider')
-                            history.push('/admindashboard');
+                            history.push("/tablerodeadministración");
                         else if (role.role === 'Supplier') {
-                            history.push('/supplierdashboard');
+                            history.push("/tablero_de_proveedores");
                         } else {
-                            history.push('/superdashboard');
+                            history.push("/tablerodemandos");
                         }
                     }
                     // 
@@ -110,13 +110,13 @@ export default function Login() {
             if (response) {
                 const role = jwt_decode(localStorage.getItem('user_token'))
                 if (role.role === 'Client') {
-                    history.push('/dashboard');
+                    history.push("/tablero");
                 } else if (role.role === 'ServiceProvider')
-                    history.push('/admindashboard');
+                    history.push("/tablerodeadministración");
                 else if (role.role === 'Supplier') {
-                    history.push('/supplierdashboard');
+                    history.push("/tablero_de_proveedores");
                 } else {
-                    history.push('/superdashboard');
+                    history.push("/tablerodemandos");
                 }
             }
             // 

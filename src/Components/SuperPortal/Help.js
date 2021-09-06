@@ -155,7 +155,7 @@ export default function Help() {
 //     {
 //         name: 'Sent Quotation',
 //         icon: <AssistantIcon  style={{ color: "#cdcdcd" }}/>,
-//         to: 'sentquotation'
+//         to: 'cotización_enviada'
 //     },
 //     {
 //         name: 'Ledger',
@@ -165,11 +165,11 @@ export default function Help() {
 //     {
 //         name: 'Help',
 //         icon: <LiveHelpIcon  style={{ color: "#cdcdcd" }}/>,
-//         to: 'suphelp'
+//         to: 'ayudar'
 //     },
 //     {
 //         name: 'Complain',
 //         icon: <CallEndIcon  style={{ color: "#cdcdcd" }}/>,
-//         to: 'supcomplain'
+//         to: 'suplicar'
 //     },
 // ]

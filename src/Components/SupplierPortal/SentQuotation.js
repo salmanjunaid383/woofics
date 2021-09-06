@@ -91,7 +91,7 @@ export default function SentQuotation() {
                                                                         <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                         <td className="txt-oflo text-center bold">{val.price}</td>
                                                                         <td className="txt-oflo text-center bold">
-                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editquote/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
+                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editar_cita/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )

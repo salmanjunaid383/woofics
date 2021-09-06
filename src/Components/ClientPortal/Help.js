@@ -63,7 +63,7 @@ export default function Help() {
                 }
             }, (Error) => {
                 
-                history.push('/help');
+                history.push("/ayuda");
             });
     }
 

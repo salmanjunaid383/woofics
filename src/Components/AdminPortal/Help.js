@@ -61,7 +61,7 @@ export default function ProviderHelp() {
                 }
             }, (Error) => {
                 
-                history.push('/help');
+                history.push("/ayuda");
                  
             });
     }

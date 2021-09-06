@@ -315,7 +315,7 @@ export default function QuoteMain() {
                   html: "<p>Gracias por tu tiempo. En 48 horas recibirás las mejores ofertas personalizadas para tu proyecto..</p>",
                 });
                 // alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
-                history.push("/myservice");
+                history.push("/miservicio");
               },
               (error) => {
                 setprogress("Publica tu servicio");
@@ -386,7 +386,7 @@ export default function QuoteMain() {
                 html: "<p>Gracias por tu tiempo. En 48 horas recibirás las mejores ofertas personalizadas para tu proyecto..</p>",
               });
               // alert('THANK YOU FOR YOUR TIME.  WITHIN 48 HOURS, YOU WILL RECEIVE THE BEST PERSONALIZED OFFERS FOR YOUR PROJECT ')
-              history.push("/myservice");
+              history.push("/miservicio");
             },
             (error) => {
               setprogress("Publica tu servicio");
@@ -2937,7 +2937,7 @@ export default function QuoteMain() {
                       </u>{" "}
                       or{" "}
                       <u>
-                        <a href="/contact" className="text-dark">
+                        <a href="/contacto" className="text-dark">
                           {" "}
                           te llamaremos gratis
                         </a>

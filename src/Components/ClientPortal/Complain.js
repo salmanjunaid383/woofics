@@ -85,7 +85,7 @@ export default function Complain() {
                 setComplain(response.data)
             }, (error) => {
                 
-                history.push('/complain');
+                history.push("/quejar");
             });
     }
     useEffect(() => {

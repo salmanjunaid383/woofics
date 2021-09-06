@@ -118,7 +118,7 @@ export default function DiscussionForum() {
 
     function tokenRedirect(){
         if(token===null){
-            history.push("/forum");
+            history.push("/foro");
         }
     }
     useEffect(() => {
@@ -299,7 +299,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                                                 return (
                                                     <>
 
-                                                        <Link to={`/clientmoredetailsdiscussionforum/${val.id}`}>
+                                                        <Link to={`/clientemásdetallesforumdiscussion/${val.id}`}>
                                                             <div class="card mb-4 mx-auto">
                                                                 <div class="card-header ">
                                                                     <div class="media flex-wrap w-100 align-items-center">

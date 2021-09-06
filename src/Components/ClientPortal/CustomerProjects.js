@@ -121,7 +121,7 @@ export default function Project() {
                         }
                     }, (error) => {
                         
-                        // history.push('/allquotation');
+                        // history.push('/toda_cotización');
                     });
     
             }

@@ -97,16 +97,16 @@ function Footer() {
                         <div class="woofic_middle_side text-center mb-3 mx-auto">
                             <ol>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/aboutus/1">  Sobre nosotras </Link>
+                                    <Link className="text-white h5" to="/sobre_nosotros/1">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/aboutus/3"> Contacto </Link>
+                                    <Link className="text-white h5" to="/sobre_nosotros/3"> Contacto </Link>
                                 </li>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/allblog"> Blog </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/aboutus/2"> Preguntas más frecuentes </Link>
+                                    <Link className="text-white h5" to="/sobre_nosotros/2"> Preguntas más frecuentes </Link>
                                 </li>
                             </ol>
                         </div>

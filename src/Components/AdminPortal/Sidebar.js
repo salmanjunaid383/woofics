@@ -172,7 +172,7 @@ export default function ServiceSidebar(props) {
           {
             name: 'Panel',
             icon: <DashboardIcon  />,
-            to: '/admindashboard'
+            to: "/tablerodeadministración"
         },
         {
             name: 'Todo',
@@ -182,7 +182,7 @@ export default function ServiceSidebar(props) {
         {
             name: 'Lista de ofertas',
             icon: <ListIcon />,
-            to: '/offerlist'
+            to: '/lista_de_ofertas'
         },
         {
             name: 'Gastos',
@@ -197,7 +197,7 @@ export default function ServiceSidebar(props) {
         {
             name: 'Foro de discusion',
             icon: <ContactMailIcon  />,
-            to: 'clientdiscussionforum'
+            to: 'foro_de_discusión_del_cliente'
         },
         {
             name: 'Ayuda',
@@ -215,7 +215,7 @@ export default function ServiceSidebar(props) {
     const drawer = (
         <div>
             <div className="navbar-header" data-logobg="skin6">
-                <Link className="navbar-brand " to="/admindashboard">
+                <Link className="navbar-brand " to="/tablerodeadministración">
                     <span className="logo-text text-dark p-0 m-0 text-center">
                        <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px',marginTop:"20px",marginBottom:"10px" }} />
                     </span>

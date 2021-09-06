@@ -571,7 +571,7 @@ export default function SuperDashboard() {
 
                                                 <div class="media-body text-center">
                                                     <span>Service Provider SignUp Link:</span><br />
-                                                    <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
+                                                    <small className="bold text-danger" ><a href="https://www.woofics.com/proveedordeservicio"> https://www.woofics.com/proveedordeservicio </a></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -586,7 +586,7 @@ export default function SuperDashboard() {
 
                                                 <div class="media-body text-center">
                                                     <span>Suppliers SignUp Link:</span><br />
-                                                    <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
+                                                    <small className="bold text-danger"><a href="https://www.woofics.com/proveedordeservicio">https://www.woofics.com/proveedordeservicio</a></small>
                                                 </div>
                                             </div>
                                         </div>
