@@ -7,14 +7,18 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
 }
+.latest-inspired-img{
+    
+}
 .pic_sec{
     display: flex;
     justify-content: space-around;
     align-items: center;
 
 }
-.pic_sec .pic1 img{
-    height:250px; 
+.pic_sec .pic1 {
+    height:250px;
+    width:90%; 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
 }
 

@@ -292,18 +292,18 @@ export default function ServiceProvider() {
 
 
                           {check === "service" ? <div className="row w-100 mx-auto ">
-                            <div className="col-md-12  px-2 w-100 p-0 pt-3">
+                            <div className="col-md-12  px-2 w-100 p-0 pt-3" >
                               <FormControl component="fieldset">
                                 <FormLabel component="legend">Tu servicio:</FormLabel>
-                                <RadioGroup defaultValue="two-phase" className="d-inline" aria-label="phase" name="customized-radios">
-                                  <FormControlLabel value="REPAIRS" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="REPAIRS" />
-                                  <FormControlLabel value="ELECTRICIAN" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ELECTRICIAN" />
-                                  <FormControlLabel value="ARCHITECTS" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ARCHITECTS / ENGINEERS" />
-                                  <FormControlLabel value="GRAPHIC" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="GRAPHIC DESIGNER" />
-                                  <FormControlLabel value="SCREEN" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="SCREEN MANAGEMENT" />
-                                  <FormControlLabel value="STRUCTURES" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="STRUCTURES" />
-                                  <FormControlLabel value="ADVERTISE" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ADVERTISE ON SCREENS" />
-                                  <FormControlLabel value="INSTALLER" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="INSTALLER" />
+                                <RadioGroup defaultValue="two-phase" className="d-inline" aria-label="phase" name="customized-radios" style={{textTransform:"lowercase"}}>
+                                  <FormControlLabel value="REPAIRS" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="REFACCIÓN" />
+                                  <FormControlLabel value="ELECTRICIAN" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ELECTRICISTA" />
+                                  <FormControlLabel value="ARCHITECTS" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ARQUITECTOS / INGENIEROS" />
+                                  <FormControlLabel value="GRAPHIC" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="DISEÑADOR GRAFICO" />
+                                  <FormControlLabel value="SCREEN" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="GESTIÓN DE PANTALLAS" />
+                                  <FormControlLabel value="STRUCTURES" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="ESTRUCTURAS" />
+                                  <FormControlLabel value="ADVERTISE" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="PUBLICIDAD EN PANTALLAS" />
+                                  <FormControlLabel value="INSTALLER" onChange={(e) => setservice(e.target.value)} control={<StyledRadio />} label="INSTALADOR" />
                                 </RadioGroup>
                               </FormControl>
                             </div>
