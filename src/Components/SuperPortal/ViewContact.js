@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ViewContact() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     
     let history = useHistory();
 

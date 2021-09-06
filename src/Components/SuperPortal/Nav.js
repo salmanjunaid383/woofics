@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Nav() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);

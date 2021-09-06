@@ -527,7 +527,7 @@ function Navbar() {
                                         class="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join"
                                         onClick={handleOpenpop2}
                                     >
-                                        <b>ÚNETE AHORA</b>{" "}
+                                        <b>Únete Ahora</b>{" "}
                                     </button>
                                 </Link>
                                 <Link className="float-right p-0 m-0">
@@ -536,7 +536,7 @@ function Navbar() {
                                         class="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign"
                                         onClick={handleOpenpop}
                                     >
-                                        <i className="fa fa-sign-out"> </i> <b>REGISTRARSE</b>
+                                        <i className="fa fa-sign-out"> </i> <b>Area Cliente</b>
                                     </button>
                                 </Link>
                             </>
@@ -782,19 +782,19 @@ function Navbar() {
                                             className=" py-3
                                          h3 bolder"
                                         >
-                                            <b>Consiga nuevos clientes</b>
+                                            <b>Accede a la mayor comunidad de soluciones LED de Europa
+                                            </b>
                                         </h3>
                                         <h5 className=" py-3 h5 text-muted">
-                                            Llega al siguiente nivel, llega a donde nunca has estado
-                                            antes y descubre nuevas oportunidades!
+                                        ¡Pasa Al Siguiente Nivel,Obten las mejores ofertas de provedores certificados y todo desde un mismo lugar!
                                         </h5>
-                                        <b>Te asesoramos sin compromiso </b>
+                                        <b>Si tienes alguna duda te asesoramos sin compromiso </b>
                                         <h5 className=" py-34 h5">
                                             <i className="fa fa-phone"> </i>{" "}
                                             <u>
-                                                <a href="callto:680494729" className="text-dark">
+                                                <a href="callto:34648411313" className="text-dark">
                                                     {" "}
-                                                    680 49 47 29
+                                                    +34 648 411 313
                                                 </a>
                                             </u>{" "}
                                             or{" "}

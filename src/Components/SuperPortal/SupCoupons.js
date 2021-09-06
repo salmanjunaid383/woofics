@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SupCoupons() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     const history = useHistory()
     const classes = useStyles();
 

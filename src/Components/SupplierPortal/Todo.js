@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Todo() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     var token = localStorage.getItem("user_token");

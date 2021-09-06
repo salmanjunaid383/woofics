@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ViewReviews() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const [blog, setBlog] = useState([]);

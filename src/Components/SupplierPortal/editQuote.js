@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Quote() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     const history = useHistory()
     // const classes = useStyles();
 

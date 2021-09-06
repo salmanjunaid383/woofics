@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateImg() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const [category, setcategory] = useState("");

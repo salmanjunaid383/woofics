@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function LedgerView() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     let { cheid } = useParams();
     let { cheche } = useParams();

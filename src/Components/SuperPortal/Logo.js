@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function DataofInt() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     const history = useHistory()
     const classes = useStyles();
     const [check,setCheck]=useState('true');

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupplierComplainResponses() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const { commid } = useParams()

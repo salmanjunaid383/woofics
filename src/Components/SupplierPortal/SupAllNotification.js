@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupAllNotification() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     //Sidebaaaaar/..........................

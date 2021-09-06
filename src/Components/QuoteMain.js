@@ -209,9 +209,17 @@ export default function QuoteMain() {
   const [comments, setcomments] = useState("");
   const [expiredate, setexpiredate] = useState("");
   const [clientid, setclientid] = useState("");
+  
   const [doc, setdoc] = useState("");
   const [email, setemail] = useState("");
+
+  const [minDistance,setMinDistance]=useState("");
+  const [maxDistance,setMaxDistance]=useState("");
+  const [anyQuestion,setAnyQuestion]=useState("");
+  const [city,setCity]=useState("");
+  const [telephone,setTelephone]=useState("");
   const [progress, setprogress] = useState("Publish your Service?");
+
   const [price, setPrice] = useState("");
   const [malik, setmalik] = useState("disabled");
   console.log(screenuse);
@@ -287,6 +295,11 @@ export default function QuoteMain() {
                 comments: comments,
                 entity: entity,
                 email: email,
+                minimum_distance:minDistance,
+                maximum_distance:maxDistance,
+                any_question:anyQuestion,
+                city_of_installation:city,
+                telephone:telephone,
                 documents: doc,
                 client_id: decoded.sub,
               },
@@ -353,6 +366,11 @@ export default function QuoteMain() {
               comments: comments,
               entity: entity,
               email: email,
+              minimum_distance:minDistance,
+              maximum_distance:maxDistance,
+              any_question:anyQuestion,
+              city_of_installation:city,
+              telephone:telephone,
               documents: doc,
               client_id: decoded.sub,
             },
@@ -416,10 +434,12 @@ export default function QuoteMain() {
     });
   };
   function NumberChange5() {
+    setstructure("Custom")
     setstructurecolor("5");
   }
 
   function NumberChange6() {
+    setstructure("No")
     setstructurecolor("6");
   }
 
@@ -650,7 +670,6 @@ export default function QuoteMain() {
         "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2FTRAFICO.jpg?alt=media&token=2781f3be-f12b-408a-8834-5eb12ecba004",
     },
   ];
-  document.getElementById('salman').disabled = true;
 
   function getSteps() {
     // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'
@@ -1008,13 +1027,26 @@ export default function QuoteMain() {
               Instalación fija o instalación para evento?
             </h4>
             <div className="w-100  my-lg-2">
-              <TextField
-                onChange={(e) => setinstall(e.target.value)}
-                className="w-50"
-                id="outlined-basic"
-                label="Installation"
-                variant="outlined"
-              />{" "}
+            <FormControl component="fieldset">
+                <RadioGroup
+                  row
+                  aria-label="position"
+                  constolsys="posiconstolsys"
+                  defaultValue="top"
+                  onChange={(e) => setinstall(e.target.value)}
+                >
+                  <FormControlLabel
+                    value="Instalación Fija"
+                    control={<Radio color="primary" />}
+                    label="Instalación Fija"
+                  />
+                  <FormControlLabel
+                    value="Instalación Para Evento"
+                    control={<Radio color="primary" />}
+                    label="Instalación Para Evento"
+                  />
+                </RadioGroup>
+              </FormControl>{" "}
             </div>
             <br />
             <br />
@@ -1068,7 +1100,7 @@ export default function QuoteMain() {
                 <div>
                   <TextField
                     type="number"
-                    onChange={(e) => setvisuald(e.target.value)}
+                    onChange={(e) => setMaxDistance(e.target.value)}
                     style={{ width: "60px" }}
                     className="mx-lg-2"
                     id="outlined-basic"
@@ -1080,7 +1112,7 @@ export default function QuoteMain() {
                 <div>
                   <TextField
                     type="number"
-                    onChange={(e) => setvisuald(e.target.value)}
+                    onChange={(e) => setMinDistance(e.target.value)}
                     style={{ width: "60px" }}
                     className="mx-lg-2"
                     id="outlined-basic"
@@ -1124,9 +1156,7 @@ export default function QuoteMain() {
                     </>
                   );
                 })}
-                 <div className="col-md-4" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-                            <button className="s-button">Others</button>
-                            </div>
+                 
               </div>
           
             </div>
@@ -1170,6 +1200,7 @@ export default function QuoteMain() {
               value="front"
               onChange={(e) => {
                 setscreenaccess(e.target.value);
+                console.log(e.target.value)
                 setscreenaccesscolor("true");
               }}
               type="radio"
@@ -1209,6 +1240,7 @@ export default function QuoteMain() {
               onChange={(e) => {
                 setscreenaccess(e.target.value);
                 setscreenaccesscolor("false");
+                console.log(e.target.value)
               }}
               type="radio"
               name="fqf"
@@ -1704,12 +1736,12 @@ export default function QuoteMain() {
                   <FormControlLabel
                     value="INSTALLATION"
                     control={<Radio color="primary" />}
-                    label="INSTALLATION"
+                    label="INSTALACIÓN (EL PROVEEDOR SE ENCARGA DE TODO)"
                   />
                   <FormControlLabel
                     value="SHIPPING"
                     control={<Radio color="primary" />}
-                    label="SHIPPING"
+                    label="ENVÍO (EL PROVEEDOR ENVIAR EL PRODUCTO, NO INSTALA)"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1802,14 +1834,24 @@ export default function QuoteMain() {
                   onChange={(e) => setcarcass(e.target.value)}
                 >
                   <FormControlLabel
-                    value="CHAPA SLIM MODEL 8mm thick"
+                    value="CHAPA"
                     control={<Radio color="primary" />}
-                    label="CHAPA SLIM MODEL 8mm thick"
+                    label="CHAPA (acabado básico)"
                   />
                   <FormControlLabel
-                    value="ALUMINIUM SLIM MODEL 8mm thick"
+                    value="PLÁSTICO SLIM MODEL 8mm thick"
                     control={<Radio color="primary" />}
-                    label="ALUMINIUM SLIM MODEL 8mm thick"
+                    label="PLÁSTICO (acabado medio)"
+                  />
+                  <FormControlLabel
+                    value="ALUMINIO"
+                    control={<Radio color="primary" />}
+                    label="ALUMINIO( acabado superior)"
+                  />
+                  <FormControlLabel
+                    value="INDIFERENTE"
+                    control={<Radio color="primary" />}
+                    label="INDIFERENTE (Por si no lo tienes claro)"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1885,10 +1927,12 @@ export default function QuoteMain() {
               </h4>
               <TextField
                 type="text"
+                multiline
                 className="w-50 mx-lg-2"
                 id="outlined-basic"
                 label="Tiene usted alguna pregunta"
                 variant="outlined"
+                onChange={(e) => setAnyQuestion(e.target.value)}
               />
             </div>
           </div>
@@ -1914,13 +1958,14 @@ export default function QuoteMain() {
                   onChange={(e) => setcontact(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="teléfono?"
+                  label="Contacto?"
                   variant="outlined"
                 />
+                
                 {/* frank change  */}
                 <TextField
-                  type="number"
-                  onChange={(e) => setcontact(e.target.value)}
+                  
+                  onChange={(e) => setCity(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
                   label="ciudad de instalación?"
@@ -1939,6 +1984,14 @@ export default function QuoteMain() {
                 className="col-md-12 my-lg-2"
                 style={{ display: "flex", justifyContent: "center" }}
               >
+                <TextField
+                  type="number"
+                  onChange={(e) => setTelephone(e.target.value)}
+                  className="mx-1"
+                  id="outlined-basic"
+                  label="teléfono?"
+                  variant="outlined"
+                />
                 <TextField
                   onChange={(e) => setpostalcode(e.target.value)}
                   className="mx-1"
@@ -2113,7 +2166,6 @@ export default function QuoteMain() {
   const handleNext = () => {
     window.scrollTo(0, 0);
     console.log(activeStep);
-
     if (activeStep <= 3) {
       if (activeStep === 0) {
         if (productType === "" || prdouctTypeImg === "") {
@@ -2316,7 +2368,7 @@ export default function QuoteMain() {
                       className="text-center w-100 text-dark frank-color-blue"
                       onClick={() => showLedType(1)}
                     >
-                      Led Screens
+                      <button className="s-button">Pantallas Led</button>
                     </a>
                   </div>
                   <div class="col-md-4">
@@ -2324,7 +2376,7 @@ export default function QuoteMain() {
                       className="text-center w-100 text-dark frank-color-blue"
                       onClick={() => showLedType(2)}
                     >
-                      LCD
+                      <button className="s-button">LCD</button>
                     </a>
                   </div>
                   <div class="col-md-4">
@@ -2332,7 +2384,7 @@ export default function QuoteMain() {
                       className="text-center w-100 text-dark frank-color-blue"
                       onClick={() => showLedType(3)}
                     >
-                      Various
+                      <button className="s-button">Various</button>
                     </a>
                   </div>
                 </div>
@@ -2778,6 +2830,7 @@ export default function QuoteMain() {
                 <TextField
                   onChange={(e) => setcomments(e.target.value)}
                   className="w-50"
+                  multiline
                   id="outlined-basic"
                   label="Comments?"
                   variant="outlined"

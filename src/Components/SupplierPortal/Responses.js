@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupResponses() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const [form, setForm] = useState([]);

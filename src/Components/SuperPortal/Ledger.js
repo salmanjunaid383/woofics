@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Ledger() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     const classes = useStyles();
  

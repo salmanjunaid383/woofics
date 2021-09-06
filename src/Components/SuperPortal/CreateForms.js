@@ -23,14 +23,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateForms() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const { ford } = useParams()
+    console.log(ford)
 
-    const [chargeOne, setchargeOne] = useState()
-    const [chargeTwo, setchargeTwo] = useState()
-    const [chargeThree, setchargeThree] = useState()
+    const [chargeOne, setchargeOne] = useState("")
+    const [chargeTwo, setchargeTwo] = useState("")
+    const [chargeThree, setchargeThree] = useState("")
     const [Name, setName] = useState("")
     const [chargefour, setchargefour] = useState("")
     const [start, setstart] = useState("")
@@ -338,19 +339,21 @@ export default function CreateForms() {
                                             </div> : ford === "value" ? <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-4 text-center">
                                                     <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check === 'true' ? 'block' : 'none' }}>
-                                                        <TextField
+                                                        <input
+                                                            type="number"
+                                                            onChange={(e) => setchargeOne(e.target.value)}
                                                             id="standard-textarea"
                                                             label="Charges"
+                                                            inputProps={{ type: 'number'}}
                                                             
                                                             
-                                                            onChange={(e) => setchargeOne(e.target.value)}
                                                             placeholder="Add Charges, only accept numeric values"
                                                             multiline
                                                             fullWidth
                                                             InputLabelProps={{
                                                                 shrink: true,
                                                             }} />
-                                                        <div class="col-sm-12 text-center">
+                                                        <div class="col-sm-12 text-center" style={{paddingBottom:'5px'}}>
                                                             <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={() => valCharge()}>Agregar</button>
                                                         </div>
                                                     </div>
@@ -380,8 +383,10 @@ export default function CreateForms() {
                                                     <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
                                                             <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check2 === 'true' ? 'block' : 'none' }}>
-                                                                <TextField
+                                                                <input
+                                                                    type="number"
                                                                     id="standard-textarea"
+                                                                    
                                                                     onChange={(e) => setchargeTwo(e.target.value)}
                                                                     label="Charges"
                                                                     placeholder="Add Charges, only accept numeric values"
@@ -422,8 +427,10 @@ export default function CreateForms() {
                                                     <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
                                                             <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check3 === 'true' ? 'block' : 'none' }}>
-                                                                <TextField
+                                                                    <input
+                                                                    type="number"
                                                                     id="standard-textarea"
+                                                                    
                                                                     label="Charges"
                                                                     onChange={(e) => setchargeThree(e.target.value)}
                                                                     placeholder="Add Charges, only accept numeric values"

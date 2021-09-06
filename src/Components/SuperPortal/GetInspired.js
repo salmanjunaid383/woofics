@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function GetInspired() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     const [blog, setBlog] = useState([]);
 

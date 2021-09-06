@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupHelp() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const [query, setQuestion] = useState('');

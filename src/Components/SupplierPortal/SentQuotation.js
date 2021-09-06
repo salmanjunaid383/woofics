@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SentQuotation() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)

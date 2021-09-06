@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SuperDashboard() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     //....................DAshbaord API
 

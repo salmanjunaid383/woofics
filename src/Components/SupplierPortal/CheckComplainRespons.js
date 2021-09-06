@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupCheckComplainResponse() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const { resid } = useParams()

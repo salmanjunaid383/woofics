@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function UpdateProfile() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     const history = useHistory();
 
     var token = localStorage.getItem("user_token");

@@ -114,7 +114,7 @@
 
 
 // export default function Registration() {
-//     // CustomAdminAuth();
+//     CustomAdminAuth();
 //     let history = useHistory();
 
 //     const [blog, setBlog] = useState([]);

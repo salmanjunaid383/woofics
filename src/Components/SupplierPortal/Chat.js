@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Chat() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
 
     // history
     let history = useHistory();
