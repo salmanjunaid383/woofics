@@ -145,10 +145,10 @@ function Footer() {
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className="border-right px-2">
-                                            <a  herf="/Condition-Terms" className="text-white">Términos Y Condiciones</a>
+                                            <Link  to="/Condition-Terms" className="text-white">Términos Y Condiciones</Link>
                                         </div>
                                         <div className="mx-2 ">
-                                            <a  target="_blank" className="text-white">Política De Privacidad</a>
+                                            <Link to="/Privacy-Policy"  className="text-white">Política De Privacidad</Link>
                                         </div>
                                     </div>
                                 </div>

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import "../css/banner.css"
+import axios from "axios";
+import ModalImage from "react-modal-image";
 import banner from '../images/speaker.png'
 import one from '../images/one.jpg';
 import two from '../images/two.jpg';
@@ -15,22 +17,57 @@ import pic1 from "../components/space.jpg"
 
 function Banner(){
     let history = useHistory();
+    const [inspired,setResponseData]=useState([])
+    useEffect(() => {
+        const { data: response } = 
+        axios.get(`https://api.woofics.com/api/latest_inspired`,{
+                    headers:window.header
+                  })
+                    .then((response) => {
+                        setResponseData(response.data)
+                    }, (error) => {
+                        console.log(error)
+                    });
+    })
 
     return(
             <>
                   <div className="offer_sec" style={{textAlign:"center"}}>
-                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>OFFERS</h3>
+                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>Get Inspired</h3>
                  
               <div className="pic_sec" style={{padding:"20px"}}>
-                  <div className="pic1">
-                      <img src={pic1}/>
+                {
+                    inspired.map((val,id) => {
+                        return (
+                            <>
+                            <div className="col-md-4" >
+                            <ModalImage small={val.url}
+                                large={val.url}
+                                
+                                alt={val.name}
+                                className="img-fluid ima hvr-grow pic1">
+                                
+                                                </ModalImage>
+                            </div>
+                            </>
+                        )
+                    })
+                }
+              
+                  {/* <div className="pic1">
+                      <ModalImage small={pic1}
+                         large={pic1}
+                        alt={pic1}>
+
+                                                </ModalImage>
+                      
                   </div>
                   <div className="pic1">
                   <img src={pic1}/>
                   </div>
                   <div className="pic1">
                   <img src={pic1}/>
-                  </div>
+                  </div> */}
 
               </div>
               </div>

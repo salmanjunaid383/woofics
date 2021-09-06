@@ -145,6 +145,7 @@ import invoice from "./Components/SupplierPortal/SupplierInvoice";
 import invoicedetail from "./Components/SupplierPortal/InvoiceDetail";
 import superinvoicedetail from "./Components/SuperPortal/SuperInvoiceDetail";
 import editquote from "./Components/SupplierPortal/editQuote";
+import PrivacyPolicy  from "./Components/PrivacyPolicy";
 function App() {
  
 
@@ -295,6 +296,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/Condition-Terms"  component={ConditionTerms} /> 
+          <Route  path="/Privacy-Policy" component={PrivacyPolicy}/>
           <Route path="/login" component={Login} />
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/forum" component={forum}></Route>
@@ -529,7 +531,7 @@ function App() {
             component={ViewServiceMore}
           />
           <PrivateRoute exact path="/viewreviews" authed={adminAuth()} redirectTo={"/"} component={ViewReviews} />
-          <Route exact path="/contactus" component={Aboutus} />
+          {/* <Route exact path="/contactus" component={Aboutus} /> */}
           <Route exact path="/getinspire" component={GetInspire} />
           <Route exact path="/advertise" component={Advertise} />
 

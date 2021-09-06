@@ -650,7 +650,7 @@ export default function QuoteMain() {
         "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2FTRAFICO.jpg?alt=media&token=2781f3be-f12b-408a-8834-5eb12ecba004",
     },
   ];
-  document.getElementById('salman').disabled = true;
+  // document.getElementById('salman').disabled = true;
 
   function getSteps() {
     // , 'Use', 'Dimension', 'Orientation', 'Extreme Wheather', 'Basic Info'

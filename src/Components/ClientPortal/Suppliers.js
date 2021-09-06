@@ -38,7 +38,7 @@ export default function Supppliers() {
 
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`,{
+        const { data: response } = axios.get(`https://api.woofics.com/api/get_provider`,{
             headers:window.header
           })
             .then((response) => {
@@ -121,7 +121,7 @@ export default function Supppliers() {
                                                                 starSpacing="3px"
                                                             />
                                                         </h4>
-                                                      
+                                                        <i className="fa fa-concierge-bell px-2 text-muted"> {val.service}</i><br />
                                                         <br />
                                                         <i className="fa fa-map-marker px-2 text-muted"> {val.location}</i><br />
                                                         <hr />

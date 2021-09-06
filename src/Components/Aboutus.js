@@ -74,16 +74,16 @@ export default function Aboutus() {
 
     function getQuestion() {
 
-        const { data: response } = 
-axios.get(`https://api.woofics.com/api/forum_question`,{
-            headers:window.header
-          })
-            .then((response) => {
-                setQuestions(response.data);
+//         const { data: response } = 
+// axios.get(`https://api.woofics.com/api/forum_question`,{
+//             headers:window.header
+//           })
+//             .then((response) => {
+//                 setQuestions(response.data);
 
-            }, (error) => {
+//             }, (error) => {
                 
-            });
+//             });
     }
 
     useEffect(() => {
