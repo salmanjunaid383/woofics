@@ -511,7 +511,7 @@ export default function Sidebar() {
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
-                    <a className="profile-pic" onClick={() => history.push("/responses")}>
+                    <a className="profile-pic" onClick={() => history.push("/respuestas")}>
                         <i className="fa fa-support mx-3"></i>
                         <span className="text-black font-medium mr-3">Servicio de Asistencia</span>
                     </a>

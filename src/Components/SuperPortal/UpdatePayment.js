@@ -315,7 +315,7 @@
 //         {
 //             name: 'Services',
 //             icon: <FindInPageIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/viewservices'
+//             to: '/ver_servicios'
 //         },
 //         {
 //             name: 'Offers',
@@ -345,12 +345,13 @@
 //         {
 //             name: 'Advertise',
 //             icon: <PhotoAlbumIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/advertised'
+//             to: '/
+anunciada'
 //         },
 //         {
 //             name: 'Ledger',
 //             icon: <HourglassEmptyIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/ledger'
+//             to: "/libro_mayor"
 //         },
 //          {
 //             name: 'Data of Interest',
@@ -360,12 +361,12 @@
 //         {
 //             name: 'Charges',
 //             icon: <EqualizerIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/charges'
+//             to: '/cargos'
 //         },
 //         {
 //             name: 'View Contacts',
 //             icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/viewcontact'
+//             to: '/ver_contacto'
 //         },
         
 //         {
@@ -625,7 +626,7 @@
 //                                         }).reverse()
 
 //                                         }
-//                                         <Link to='/adminallnotification'>
+//                                         <Link to='/notificación_de_administrador'>
 //                                         <Typography className={`${classes.typography} bg-dark text-light`} >
 //                                         <a className="profile-pic" >
 //                                                 <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>

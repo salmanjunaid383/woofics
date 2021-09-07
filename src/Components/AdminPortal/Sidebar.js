@@ -187,7 +187,7 @@ export default function ServiceSidebar(props) {
         {
             name: 'Gastos',
             icon: <BorderColorIcon />,
-            to: '/providerledger'
+            to: '/provider_libro_mayor/'
         },
         // {
         //     name: 'Invoice',
@@ -202,12 +202,12 @@ export default function ServiceSidebar(props) {
         {
             name: 'Ayuda',
             icon: <LiveHelpIcon />,
-            to: '/providerhelp'
+            to: '/proveedor_de_ayuda'
         },
         {
             name: 'Quejarse',
             icon: <CallEndIcon />,
-            to: '/providercomplain'
+            to: '/proveedor_quejarse'
         },
 
     ]
@@ -439,7 +439,7 @@ export default function ServiceSidebar(props) {
                     }).reverse()
 
                 }
-                <Link to='/providerallnotification'>
+                <Link to='/notificación_al_proveedor'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
                             <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
@@ -473,7 +473,7 @@ export default function ServiceSidebar(props) {
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
-                    <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
+                    <a className="profile-pic" onClick={() => history.push('/respuestas_del_proveedor') }>
                         <i className="fa fa-support mx-3"></i>
                         <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>

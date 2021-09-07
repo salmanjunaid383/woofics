@@ -187,7 +187,7 @@ function Navbar() {
                         setWait('Log In')
                         console.log("pathname is"+location.pathname)
                         const role = jwt_decode(localStorage.getItem('user_token'))
-                        if(location.pathname!=="/quotemain")
+                        if(location.pathname!=="/cita_principal")
                         {
                             if (role.role === 'Client') {
                                 localStorage.setItem('url', "/tablero")
@@ -211,7 +211,7 @@ function Navbar() {
                 }, (error) => {
                     setWait('Log In')
                     setOpen3(true)
-                    if(location.pathname!=="/quotemain")
+                    if(location.pathname!=="/cita_principal")
                     {
                         history.push('/');
                     }
@@ -453,16 +453,16 @@ function Navbar() {
                         </Link>
                        
                         {/* <Link to="/foro_de_discusion" className="pt-3 ">Forum</Link> */}
-                        <Link to="/quotemain" className="pt-3 taglink hover-effect" id="">
+                        <Link to="/cita_principal" className="pt-3 taglink hover-effect" id="">
                             Oferta
                         </Link>
-                        {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
+                        {/* <Link to="/anunciar" className="pt-3 ">Tools</Link> */}
 
                         {/* <Link to="/calculadora_de_precios" className="pt-3 " id="">
                             Price Calculator
                         </Link> */}
 
-                        {/* <Link to="/getinspire" className="pt-3 " id="">
+                        {/* <Link to="/inspirada" className="pt-3 " id="">
                             Get Inspire
                         </Link> */}
 
@@ -476,11 +476,11 @@ function Navbar() {
                                     <span style={{textAlign:"left"}}>Calculadora de precios</span>
                                 </Link>
 
-                                <Link to="/getinspire" className="pt-3 " id="taglink5" style={{color:"#000"}}>
+                                <Link to="/inspirada" className="pt-3 " id="taglink5" style={{color:"#000"}}>
                                     Inspírate
                                 </Link>
 
-                                <Link to="/advertise"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
+                                <Link to="/anunciar"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
                                     Anunciar
                                 </Link>
                                 </div>

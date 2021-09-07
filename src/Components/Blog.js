@@ -74,7 +74,7 @@ export default function Blog() {
                                         : blog.map((val, id) => {
                                             return (
                                                 <>
-                                                    <div class="col-md-3 mx-auto m-2" onClick={() => history.push(`./blogdetail/${val.id}`)}>
+                                                    <div class="col-md-3 mx-auto m-2" onClick={() => history.push(`/blogdetalle/${val.id}`)}>
                                                         <div class="card" style={{ height: "25rem", cursor: 'pointer' }} >
                                                             <img src={val.image} alt="..." className="img-fluid" style={{ height: "12rem" }} />
                                                             <div class="card-body">

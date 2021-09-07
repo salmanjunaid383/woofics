@@ -155,7 +155,7 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.invoice_id}</td>
                                                                                 <td className="txt-oflo text-center">{val.total}</td>
                                                                                 <td className="txt-oflo text-center">{(val.date).slice(0, 10)}</td>
-                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/superinvoicedetail/${val.id}`)}}>Detalle</button>
+                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/superfacturadetalle/${val.id}`)}}>Detalle</button>
                                                                             </tr>
                                                                         </>
                                                                     )

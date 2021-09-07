@@ -129,7 +129,7 @@ export default function ProviderHelp() {
                                                 <div class="col-md-10">
                                                     <hr />
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Zaskia Amanda</strong></p>
-                                                    <Link to="/providerresponses" className="pt-3 responseLinkStaz text-black "  >
+                                                    <Link to="/respuestas_del_proveedor" className="pt-3 responseLinkStaz text-black "  >
                                                     
                                                     Respuestas
                                                         

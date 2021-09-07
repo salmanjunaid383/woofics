@@ -34,11 +34,11 @@ export default function Ledger() {
                     <div className="page-wrapper bg-light">
                         <div class="container pb-lg-4">
                             <div className="row m-lg-5 text-center mx-auto my-auto">
-                                <div className="col-md-4 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/ledgerlist/supplier')}>
+                                <div className="col-md-4 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/lista_de_contabilidad/supplier')}>
                                     <i className="fa fa-5x py-3 fa-user " style={{ color: "#f25c8a" }}></i>
                                     <h5 className="h5">Libro mayor de proveedores</h5>
                                 </div>
-                                <div className="col-md-4 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/ledgerlist/service')}>
+                                <div className="col-md-4 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/lista_de_contabilidad/service')}>
                                     <i className="fas fa-5x py-3 fa-cog " style={{ color: "#9b88f6" }}></i>
                                     <h5 className="h5">Libro mayor del proveedor de servicios</h5>
                                 </div>

@@ -187,7 +187,7 @@ export default function SupplierSidebar() {
         {
             name: 'Gastos',
             icon: <BorderColorIcon  />,
-            to: '/supplierledger'
+            to: '/supplier_libro_mayor/'
         },
         {
             name: 'Factura',

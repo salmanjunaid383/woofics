@@ -247,7 +247,7 @@ function LandingPage() {
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div class="woofic_receive_button text-left mt-lg-4" style={{marginBottom:"20px"}}>
-                                                    <Link to="/quotemain">Recibir ofertas</Link>
+                                                    <Link to="/cita_principal">Recibir ofertas</Link>
                                                 </div>
                                             </div>
                                         </div>

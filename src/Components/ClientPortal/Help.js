@@ -59,7 +59,7 @@ export default function Help() {
                     setOpenn(true);
                     setQuestion('');
                     setAnswer('')
-                history.push('/responses');
+                history.push("/respuestas");
                 }
             }, (Error) => {
                 

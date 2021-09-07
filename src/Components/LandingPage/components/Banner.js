@@ -83,7 +83,7 @@ function Banner(){
                 Encuentre soluciones personalizadas y a medida para sus proyectos
                 </div>
                 <div class="woofic_first_row">
-                    <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/REPAIRS')}>
+                    <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/REPAIRS')}>
                         <div class="woofic_element_image">
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={one}/>
                         </div>
@@ -97,7 +97,7 @@ function Banner(){
                         </div>
 
                     </div>
-                    <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ELECTRICIAN')}>
+                    <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ELECTRICIAN')}>
                         <div class="woofic_element_image">
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}}  src={two}/>
                         </div>
@@ -109,7 +109,7 @@ function Banner(){
                         </div>
                     </div>
 
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ARCHITECTS')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ARCHITECTS')}>
                                 <div class="woofic_element_image" style={{overflow:"hidden"}}>
                                 <img style={{borderRadius:"50%",width:'70px',height:'70px',marginTop:"-8px", marginLeft:"-5px"}}  src={three}/>
                                 </div>
@@ -121,7 +121,7 @@ function Banner(){
                             </div>
 
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/GRAPHIC')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/GRAPHIC')}>
                             <div class="woofic_element_image">
                                 <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={four}/>
                             </div>
@@ -136,7 +136,7 @@ function Banner(){
 {/* SECOND ROW */}
 
                         <div class="woofic_first_row woofic_row_changes">
-                        <div class="woofic_first_element p-4  woofic_repair_box" onClick={()=>history.push('/viewservice/SCREEN')}>
+                        <div class="woofic_first_element p-4  woofic_repair_box" onClick={()=>history.push('/servicio_de_vista/SCREEN')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={five}/>
                             </div>
@@ -147,7 +147,7 @@ function Banner(){
                             Gestión de contenido profesional e inteligente para pantalla LED (software y hardware).
                             </div>
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/STRUCTURES')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/STRUCTURES')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="img-fluid" src={six}/>
                             </div>
@@ -159,7 +159,7 @@ function Banner(){
                                 
                             </div>
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ADVERTISE')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ADVERTISE')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={seven}/>
                             </div>
@@ -173,7 +173,7 @@ function Banner(){
                             </div>
                         </div>
 
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/INSTALLER')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/INSTALLER')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={eight}/>
                             </div>

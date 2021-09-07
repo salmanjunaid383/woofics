@@ -59,7 +59,7 @@ export default function Client() {
         }).then((response) => {
           setWait('Register')
           setOpen4(true)
-          if(pathLocation.pathname!=="/quotemain")
+          if(pathLocation.pathname!=="/cita_principal")
           {
             setTimeout(() => {
               history.push("/");

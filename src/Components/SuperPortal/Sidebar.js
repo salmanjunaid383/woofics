@@ -459,7 +459,7 @@
 //                     }).reverse()
 
 //                 }
-//                 <Link to='/adminallnotification'>
+//                 <Link to='/notificación_de_administrador'>
 //                     <Typography className={`${classes.typography} bg-dark text-light`} >
 //                         <a className="profile-pic" >
 //                             <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>

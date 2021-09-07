@@ -110,7 +110,7 @@ export default function ViewServices() {
                                                                         
                                                                         <td className="txt-oflo">{val.delivery_time}</td>
                                                                         <td className="txt-oflo">{val.email}</td>
-                                                                        <td className="text-danger"><button class="btn text-white greenbtn" onClick={() => history.push(`/viewservicemore/${val.id}`)}>Ver más</button></td>
+                                                                        <td className="text-danger"><button class="btn text-white greenbtn" onClick={() => history.push(`/ver_servicio_más/${val.id}`)}>Ver más</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

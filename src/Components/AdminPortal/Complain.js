@@ -139,7 +139,7 @@ export default function ProviderComplain() {
                                                     complain.map((val, id) => {
                                                         return (
                                                             <>
-                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/admincomplainresponse/${val.id}`}> Q.{val.description} </Link></div>
+                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/admin_quejarse_respuesta/${val.id}`}> Q.{val.description} </Link></div>
                                                             </>
                                                         )
                                                     })}

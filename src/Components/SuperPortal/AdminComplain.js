@@ -94,7 +94,7 @@ export default function AdminComplain() {
                                                                         <td className="txt-oflo">{val.title}</td>
                                                                         <td className="txt-oflo">{(val.description).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
-                                                                        <td className="text-danger"><button class="btn greenbtn text-white  mx-2" onClick={() => history.push(`/complainresponse/${val.id}/${val.user_id}`)}>Respuesta</button></td>
+                                                                        <td className="text-danger"><button class="btn greenbtn text-white  mx-2" onClick={() => history.push(`/quejarse_respuesta/${val.id}/${val.user_id}`)}>Respuesta</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

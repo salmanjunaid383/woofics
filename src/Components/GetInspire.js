@@ -30,7 +30,7 @@ export default function GetInspire() {
   }
 
   const viewMore = (category) => {
-    history.push(`/viewmore/${category}`)
+    history.push(`/ver_más/${category}`)
   }
 
   useEffect(() => {
