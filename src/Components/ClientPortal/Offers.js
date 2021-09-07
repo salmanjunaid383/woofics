@@ -40,7 +40,7 @@ export default function Offers() {
 
     function Feedback() {
         const res = axios.get(`https://api.woofics.com/api/show_offer_client/`+decoded.sub,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setForm(res.data)
@@ -57,7 +57,7 @@ export default function Offers() {
     function ConfirmOffer(id) {
         setLoad(true)
         const res = axios.put(`https://api.woofics.com/api/offer_approved/${id}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setLoad(false)

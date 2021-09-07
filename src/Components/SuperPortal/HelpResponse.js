@@ -40,7 +40,7 @@ export default function HelpResponse() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${hid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -54,7 +54,7 @@ export default function HelpResponse() {
 
     function getRes() {
         const response = axios.get(`https://api.woofics.com/api/help_response/${hid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setreponses(response.data)
@@ -83,7 +83,7 @@ export default function HelpResponse() {
             title: blog.description,
             user_id: decoded.sub
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setwait('Send Reply')

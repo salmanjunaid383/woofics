@@ -52,7 +52,7 @@ export default function SupHelp() {
             user_id: decoded.sub,
             description: answer,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {

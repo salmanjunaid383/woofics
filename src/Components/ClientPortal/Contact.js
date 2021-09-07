@@ -105,7 +105,7 @@ export default function Contact() {
         email: email,
         message: message,
     },{
-      headers:window.header
+      headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
     })
         .then((response) => {
            

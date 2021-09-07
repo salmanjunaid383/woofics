@@ -76,7 +76,7 @@ export default function Aboutus() {
 
 //         const { data: response } = 
 // axios.get(`https://api.woofics.com/api/forum_question`,{
-//             headers:window.header
+//             headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
 //           })
 //             .then((response) => {
 //                 setQuestions(response.data);

@@ -55,7 +55,7 @@ export default function Quote() {
         
         cardStatus();
         const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serrid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setservice(response.data.form)
@@ -73,7 +73,7 @@ export default function Quote() {
                     user_id : decoded.sub,
                     form_id: serrid
                 },{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                 .then((response) => {
                     if(response.data===0){
@@ -109,7 +109,7 @@ export default function Quote() {
                 payment_phase_id: phase,
                 delivery_days: date
             },{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     console.log(response)
@@ -144,7 +144,7 @@ export default function Quote() {
 
     function getOptions() {
         const { data: response } = axios.get(`https://api.woofics.com/api/payment_phase`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {

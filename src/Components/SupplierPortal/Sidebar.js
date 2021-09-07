@@ -253,7 +253,7 @@ export default function SupplierSidebar() {
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setnewnoti(response.data)
@@ -264,7 +264,7 @@ export default function SupplierSidebar() {
     }
    function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
                 .then((response) => {notification()
                 }, (Error) => {
@@ -275,7 +275,7 @@ export default function SupplierSidebar() {
     const [unseen, setunseen] = useState([]);
     function seen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setunseen(response.data)
@@ -291,7 +291,7 @@ export default function SupplierSidebar() {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data)
@@ -304,7 +304,7 @@ export default function SupplierSidebar() {
         const [UnseenMxg, setUnseenMxg] = useState([]);
         function chatnotification() {
             const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     setUnseenMxg(response.data)

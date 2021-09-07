@@ -50,7 +50,7 @@ export default function CreateImg() {
             url: imageUrl,
             content : content
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 if (res) {

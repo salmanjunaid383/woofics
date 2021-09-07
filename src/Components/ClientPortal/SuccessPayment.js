@@ -13,7 +13,7 @@ const {pid} = useParams()
 
 useEffect(() => {
     const { data: response } = axios.post(`https://api.woofics.com/api/payment_success/${pid}`,{
-      headers:window.header
+      headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
     })
     .then((response) => {
        

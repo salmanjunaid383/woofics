@@ -111,8 +111,8 @@ export default function DiscussionForum() {
     const [user, setUser] = useState("");
     const [question, setQuestion] = useState("");
     const [questions, setQuestions] = useState([]);
-    const [nextPage,setNextPage]=useState("");
-    const [prevPage,setPrevPage]=useState("");
+    const [nextPage,setNextPage]=useState();
+    const [prevPage,setPrevPage]=useState();
 
     var token = localStorage.getItem("user_token");
 
@@ -134,7 +134,7 @@ export default function DiscussionForum() {
         if(token !== null)
         {
             const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
             .then((response) => {
                 setUser(response.data);
@@ -156,7 +156,7 @@ export default function DiscussionForum() {
             asked_by: user.first_name + " " + user.last_name,
             user_id: user.id
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 handleClosee()
@@ -170,16 +170,16 @@ export default function DiscussionForum() {
 
         const { data: response } = 
 axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setQuestions(response.data.data);
                 console.log(response.data)
                 
                 setNextPage(response.data.next_page_url)
-                setPrevPage(response.data.prev_page_ur)
+                setPrevPage(null)
 
             }, (error) => {
                 
@@ -238,7 +238,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
     function goNext(route){
         console.log(route)
         const {data: response}= axios.get(route,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
         }).then((response) => {
             console.log(response.data)
             setQuestions(response.data.data)
@@ -328,16 +328,24 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                             </div>
 
                             <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center',display:'flex' }}>
-                <div class="col-md-6" >
-                  
-                    <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>
-                  
-                </div>
-                <div class="col-md-6">
-                 
-                    <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Next</button>
-                  
-                </div>
+                            {
+                                prevPage !== null? <>
+                                <div class="col-md-6" >
+                            
+                                     <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>
+                        
+                                </div> </> : null
+                            }
+                            {
+                                nextPage !== null? <>
+                                <div class="col-md-6">
+                            
+                                <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Next</button>
+                        
+                                </div>
+                                
+                                </> : null
+                            }
                 
               </div>
 

@@ -74,7 +74,7 @@ export default function UpdateProfile() {
                 contact_number: contact_number,
                 profile_image: imageUrl
             },{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               }).then((response) => {
                 setOpennoti(true);
                 setProgress('Update Profile')
@@ -98,7 +98,7 @@ export default function UpdateProfile() {
     // useEffect(() => {
     function getSocialData() {
         const res = axios.get(`https://api.woofics.com/api/social_media/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 
@@ -122,7 +122,7 @@ export default function UpdateProfile() {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 
@@ -162,7 +162,7 @@ export default function UpdateProfile() {
             app: 'Google',
             user_id: decoded.sub
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 
@@ -183,7 +183,7 @@ export default function UpdateProfile() {
             app: 'Facebook',
             user_id: decoded.sub
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setOpenpop(true);
@@ -234,7 +234,7 @@ export default function UpdateProfile() {
                     contact_number: contact_number,
                     profile_image: imageUrl
                 },{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   }).then((response) => {
                     setImageProgress('')
                 }, (Error) => {

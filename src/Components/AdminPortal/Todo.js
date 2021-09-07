@@ -51,7 +51,7 @@ export default function Todo() {
             task: todo,
             deadline: deadline,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -69,7 +69,7 @@ export default function Todo() {
     function getTodo() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/service_todo/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setData(response.data)
@@ -88,7 +88,7 @@ export default function Todo() {
         var result = window.confirm("Want to delete?");
         if (result) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/service_todo/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getTodo();

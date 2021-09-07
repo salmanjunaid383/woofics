@@ -135,7 +135,7 @@ export default function ServiceProvider() {
           company_size: companySize,
           profile_image: 'https://image.flaticon.com/icons/png/512/147/147144.png',
         },{
-          headers:window.header
+          headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
         })
         .then((response) => {
           setWait('Register')

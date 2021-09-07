@@ -47,7 +47,7 @@ export default function CreateForms() {
 
     function valueCharges() {
         const { data: response } = axios.get(`https://api.woofics.com/api/value_charges`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0]==null)
@@ -68,7 +68,7 @@ export default function CreateForms() {
 
     function paymentPackage() {
         const { data: response } = axios.get(`https://api.woofics.com/api/payment_package`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setpaymentPackag(response.data)
@@ -81,7 +81,7 @@ export default function CreateForms() {
 
     function supplierRen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_rental`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0] == null)
@@ -101,7 +101,7 @@ export default function CreateForms() {
 
     function serviceCharg() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_charge`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0]==null)
@@ -138,7 +138,7 @@ export default function CreateForms() {
         const { data: response } = axios.put(`https://api.woofics.com/api/value_charges/${valueCharge.id}`, {
             charge: chargeOne
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 valueCharges()
@@ -158,7 +158,7 @@ export default function CreateForms() {
             start: start,
             end: end
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 paymentPackage()
@@ -176,7 +176,7 @@ export default function CreateForms() {
         // e.preventDefault();
 
         const { data: response } = axios.delete(`https://api.woofics.com/api/payment_package/${id}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 paymentPackage()
@@ -192,7 +192,7 @@ export default function CreateForms() {
         const { data: response } = axios.put(`https://api.woofics.com/api/supplier_rental/${supplierRenta.id}`, {
             charge: chargeTwo
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 supplierRen()
@@ -209,7 +209,7 @@ export default function CreateForms() {
         const { data: response } = axios.put(`https://api.woofics.com/api/service_provider_charge/${serviceCharge.id}`, {
             charge: chargeThree
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 serviceCharg()

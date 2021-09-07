@@ -37,7 +37,7 @@ export default function SupResponses() {
     var decoded = jwt_decode(token)
     function Feedback() {
         const res = axios.get(`https://api.woofics.com/api/help/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 if (res) {
@@ -55,7 +55,7 @@ export default function SupResponses() {
 
     function ConfirmOffer(id) {
         const res = axios.put(`https://api.woofics.com/api/offer_approved/${id}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 if (res) {

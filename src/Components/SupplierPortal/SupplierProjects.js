@@ -59,7 +59,7 @@ export default function SupplierProjects() {
         getTodo()
         function Supplierid() {
             const res = axios.get(`https://api.woofics.com/api/users/${sid}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {
@@ -74,7 +74,7 @@ export default function SupplierProjects() {
         if(!mounted){
             function Feedback() {
                 const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`,{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                     .then((res) => {
                         if (res) {
@@ -89,7 +89,7 @@ export default function SupplierProjects() {
             }
             Feedback();
             const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
@@ -129,7 +129,7 @@ export default function SupplierProjects() {
             associate_name: uname,
             main_name: name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -191,7 +191,7 @@ export default function SupplierProjects() {
             deadline: deadline,
             completed: false
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -209,7 +209,7 @@ export default function SupplierProjects() {
     function getTodo() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_project_todo/${form.id}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setData(response.data)
@@ -224,7 +224,7 @@ export default function SupplierProjects() {
     // DeleteTodo
     function deleteTodo(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/supplier_project_todo/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getTodo();

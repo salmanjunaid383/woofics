@@ -27,7 +27,7 @@ export default function LedList() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/led`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -47,7 +47,7 @@ export default function LedList() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/led/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     GetLed()

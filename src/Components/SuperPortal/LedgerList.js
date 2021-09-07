@@ -32,7 +32,7 @@ export default function Help() {
     function getSupplierledger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setBlog(response.data)
@@ -44,7 +44,7 @@ export default function Help() {
     function getServiceledger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setBlog(response.data)

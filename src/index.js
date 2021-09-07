@@ -6,17 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-try{
 
-  var token = localStorage.getItem('user_token')
-  if(token){
-    window.header = { Authorization: `Bearer ${token}` };
-  }
-  
-}
-catch{
-  
-}
 
 
 

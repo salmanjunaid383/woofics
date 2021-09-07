@@ -40,7 +40,7 @@ export default function AllNotification() {
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setnewnoti(response.data)
@@ -51,7 +51,7 @@ export default function AllNotification() {
     }
     function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
                 .then((response) => {
                     notification()
@@ -67,7 +67,7 @@ useEffect(()=>{
     const [unseen, setunseen] = useState([]);
     function seen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setunseen(response.data)

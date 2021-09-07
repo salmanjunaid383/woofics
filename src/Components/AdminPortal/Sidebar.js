@@ -258,7 +258,7 @@ export default function ServiceSidebar(props) {
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
         .then((response) => {
             setName(response.data)
@@ -271,7 +271,7 @@ export default function ServiceSidebar(props) {
         const [unseen, setunseen] = useState([]);
         function seen() {
             const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
             .then((response) => {
                 setunseen(response.data)
@@ -281,7 +281,7 @@ export default function ServiceSidebar(props) {
         }
         function notificationDelete(e) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                 }, (Error) => {
@@ -294,7 +294,7 @@ export default function ServiceSidebar(props) {
         const [UnseenMxg, setUnseenMxg] = useState([]);
     function chatnotification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setUnseenMxg(response.data)
@@ -307,7 +307,7 @@ export default function ServiceSidebar(props) {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data.profile_image)

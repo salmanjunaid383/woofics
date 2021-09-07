@@ -37,7 +37,7 @@ export default function SupplierDashboard() {
 
     function ClientOngoinProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_supplier_project/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setOngoinProject(response.data)
@@ -50,7 +50,7 @@ export default function SupplierDashboard() {
 
     function ClientCompletedProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setCompletedProject(response.data)
@@ -63,7 +63,7 @@ export default function SupplierDashboard() {
 
     function ClientService() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_quotation/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setClientTotalService(response.data)
@@ -74,7 +74,7 @@ export default function SupplierDashboard() {
 
     function TotalEarn() {
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_earnings/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 settotalEarnings(response.data)
@@ -93,7 +93,7 @@ export default function SupplierDashboard() {
         getTodo()
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {
@@ -129,7 +129,7 @@ export default function SupplierDashboard() {
             task: todo,
             deadline: deadline,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -148,7 +148,7 @@ export default function SupplierDashboard() {
     function getTodo() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_todo/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setData(response.data)
@@ -165,7 +165,7 @@ export default function SupplierDashboard() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/supplier_todo/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     getTodo();

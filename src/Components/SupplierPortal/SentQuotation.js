@@ -30,7 +30,7 @@ export default function SentQuotation() {
     const [blog, setBlog] = useState([]);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_quotation/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -86,7 +86,7 @@ export default function SentQuotation() {
                                                                 <>
                                                                     <tr style={{ height: '5rem' }} className="border-bottom">
                                                                         <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
-                                                                        <td className="text-oflo text-center bold">{val.description}...</td>
+                                                                        <td className="text-oflo text-center bold" title={val.description}>{(val.description).slice(0,40)}</td>
                                                                         <td className="txt-oflo text-center bold">{val.extra_comments}</td>
                                                                         <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                         <td className="txt-oflo text-center bold">{val.price}</td>

@@ -26,7 +26,7 @@ export default function Registration() {
     function getReg() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/getsupplier`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setBlog(response.data)
@@ -44,7 +44,7 @@ export default function Registration() {
     const [res, setRes] = useState('');
     function approveReg(e) {
         const { data: response } = axios.put(`https://api.woofics.com/api/approved/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -60,7 +60,7 @@ export default function Registration() {
     const [block, setblock] = useState('');
     function blockReg(e) {
         const { data: response } = axios.put(`https://api.woofics.com/api/blocked/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {

@@ -39,8 +39,11 @@ export default function YourService() {
   }
 
   function Feedback() {
+    console.log({ Authorization: `Bearer ${localStorage.getItem("user_token")}` })
     const res = axios
-      .get(`https://api.woofics.com/api/forms/${decoded.sub}`)
+      .get(`https://api.woofics.com/api/forms/${decoded.sub}`,{
+        headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
+      })
       .then(
         (res) => {
           if (res) {
@@ -49,7 +52,7 @@ export default function YourService() {
           }
         },
         (error) => {
-          
+          console.log(error)
           history.push("/miservicio");
         }
       );
@@ -63,7 +66,9 @@ export default function YourService() {
     var result = window.confirm("Want to delete?");
     if (result) {
       const res = axios
-        .delete(`https://api.woofics.com/api/form/${e}`)
+        .delete(`https://api.woofics.com/api/form/${e}`,{
+          headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
+        })
         .then(
           (res) => {
             Feedback()
@@ -122,7 +127,7 @@ export default function YourService() {
                                     <tr>
                                       
                                       <td className="txt-oflo">{val.name}</td>
-                                      <td className="txt-oflo">{val.description}</td>
+                                      <td className="txt-oflo" title={val.description}>{(val.description).slice(0,40)}</td>
                                       <td className="txt-oflo">{val.company}</td>
                                       <td className="txt-oflo">{val.comments}</td>
                                       <td className="txt-oflo">{val.delivery_time}</td>

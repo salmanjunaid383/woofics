@@ -39,7 +39,7 @@ export default function Moredetailsdiscussionforum() {
     function getUserData() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setUser(response.data);
@@ -53,7 +53,7 @@ export default function Moredetailsdiscussionforum() {
     function getQuestion() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/forum_question/${quid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setQuestion(response.data);
@@ -67,7 +67,7 @@ export default function Moredetailsdiscussionforum() {
     function getReply() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/forum_answer/${quid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setAllreplies(response.data);
@@ -87,7 +87,7 @@ export default function Moredetailsdiscussionforum() {
             forum_question_id: quid,
             replied_by: user.first_name + " " + user.last_name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getQuestion();

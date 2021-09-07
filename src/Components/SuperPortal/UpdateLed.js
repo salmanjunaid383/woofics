@@ -53,7 +53,7 @@ export default function UpdateLed() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/led/${ulid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -70,7 +70,7 @@ export default function UpdateLed() {
 
     useEffect(() => {
         const { data: res } = axios.get(`https://api.woofics.com/api/led_option/${ulid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 if (res) {
@@ -93,7 +93,7 @@ export default function UpdateLed() {
             image_url: 'xyz',
             ledoptions: Options
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setwait('Update Led')

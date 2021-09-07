@@ -65,7 +65,7 @@ export default function AllQuotation() {
 
     function Feedback() {
         const res = axios.get(`https://api.woofics.com/api/quotation/${sid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 if (res) {
@@ -83,7 +83,7 @@ export default function AllQuotation() {
 
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${sid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setserviceb(response.data.form)
@@ -254,6 +254,18 @@ export default function AllQuotation() {
                                                             <tr>
                                                                 <td>Imagen del producto</td>
                                                                 <td><a style={{color:'grey'}} href={serviceb.product_image}>Imagen</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Maximum Distance</td>
+                                                                <td>{serviceb.maximum_distance}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Minimum Distance</td>
+                                                                <td>serviceb.minimum_distance</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Question</td>
+                                                                <td>serviceb.any_question</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Comprar</td>

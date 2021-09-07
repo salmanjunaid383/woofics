@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../css/banner.css"
 import axios from "axios";
 import ModalImage from "react-modal-image";
-import banner from '../images/speaker.png'
 import one from '../images/one.jpg';
 import two from '../images/two.jpg';
 import three from '../images/three.jpg';
@@ -13,7 +12,6 @@ import seven from '../images/seven.jpg';
 import eight from '../images/eight.png';
 import { useHistory } from 'react-router-dom';
 import {Animated} from "react-animated-css";
-import pic1 from "../components/space.jpg"
 
 function Banner(){
     let history = useHistory();
@@ -21,7 +19,7 @@ function Banner(){
     useEffect(() => {
         const { data: response } = 
         axios.get(`https://api.woofics.com/api/latest_inspired`,{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                     .then((response) => {
                         setResponseData(response.data)

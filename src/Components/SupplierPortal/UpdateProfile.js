@@ -85,7 +85,7 @@ export default function UpdateProfile() {
                 user_id:decoded.sub
                 
             },{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               }).then((response) => {
                 console.log(response)
                 setCardProgress('Card Info Save Successfully')
@@ -101,7 +101,7 @@ export default function UpdateProfile() {
 
     function getCreditCardData(){
         const {data: response} = axios.get(`https://api.woofics.com/api/get_card_details/`+decoded.sub,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response)=> {
                 setCardData(response.data);
@@ -131,7 +131,7 @@ export default function UpdateProfile() {
                 service: servic,
                 rating:rat,
             },{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               }).then((response) => {
                 setprogress('Update Profile')
                 setOpenpop(true);
@@ -147,7 +147,7 @@ export default function UpdateProfile() {
             
             function getData() {
                 const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                 .then((res) => {
                     
@@ -208,7 +208,7 @@ export default function UpdateProfile() {
                     name_of_your_business: bname,
                     service: servic
                 },{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   }).then((response) => {
                     setImageLoading('')
                 }, (Error) => {

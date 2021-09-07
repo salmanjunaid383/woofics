@@ -17,7 +17,7 @@ export default function ViewMore() {
         const { data: response } = axios.post(`https://api.woofics.com/api/search_inspired`,{
             category:category
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {

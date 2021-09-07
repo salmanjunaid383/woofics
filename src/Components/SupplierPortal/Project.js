@@ -44,7 +44,7 @@ export default function Project() {
 
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {

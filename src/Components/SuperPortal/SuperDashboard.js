@@ -54,7 +54,7 @@ export default function SuperDashboard() {
 
     function getRegister(){
         const {data: response}=axios.get(`https://api.woofics.com/api/latest_user`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getData(response.data)
@@ -66,7 +66,7 @@ export default function SuperDashboard() {
 
     function TotalClient() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_client`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -82,7 +82,7 @@ export default function SuperDashboard() {
 
     function TotalSupplier() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_supplier`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -97,7 +97,7 @@ export default function SuperDashboard() {
 
     function TotalProvider() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_provider`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -112,7 +112,7 @@ export default function SuperDashboard() {
     //....Completed Projectt
     function CompletedPro() {
         const { data: response } = axios.get(`https://api.woofics.com/api/completed_projects`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -125,7 +125,7 @@ export default function SuperDashboard() {
     //...ongoing pro
     function OngoingPro() {
         const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_projects`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -138,7 +138,7 @@ export default function SuperDashboard() {
     //....TOtal 
     function TotalSer() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -153,7 +153,7 @@ export default function SuperDashboard() {
 
     function CountBlogs() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_blog`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -168,7 +168,7 @@ export default function SuperDashboard() {
 
     function PendingRegistration() {
         const { data: response } = axios.get(`https://api.woofics.com/api/pending_registration`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -183,7 +183,7 @@ export default function SuperDashboard() {
 
     function CountComplain() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_complains`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -200,7 +200,7 @@ export default function SuperDashboard() {
 
     function TotoalUsers() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_users`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -216,7 +216,7 @@ export default function SuperDashboard() {
 
     function TotoalProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/per_month_project`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -239,7 +239,7 @@ export default function SuperDashboard() {
     const [user, setuser] = useState([])
     function TotoalUser() {
         const { data: response } = axios.get(`https://api.woofics.com/api/per_month_user`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 

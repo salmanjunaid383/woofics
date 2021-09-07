@@ -57,7 +57,7 @@ export default function SupplierLedger() {
     function getInvoice() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/invoice/${quid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setInvoice(response.data.invoice)

@@ -51,7 +51,7 @@ export default function Led() {
             image_url: imageUrl,
             ledoptions: feild
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setProgress('Add Led')

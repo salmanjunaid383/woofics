@@ -22,7 +22,7 @@ function LastNews() {
     // console.log("window varaible "+window.name)
     const { data: response } = axios
       .get(`https://api.woofics.com/api/blog`,{
-        headers:window.header
+        headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
       })
       .then(
         (response) => {
@@ -38,7 +38,7 @@ function LastNews() {
 
     const { data: respons } = axios
       .get(`https://api.woofics.com/api/data_of_interest`,{
-        headers:window.header
+        headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
       })
       .then(
         (respons) => {

@@ -64,7 +64,7 @@ export default function ProviderChat() {
                     from_user: id,
                     to_user: returnData.from_user
                 },{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                     .then((response) => {
                         if (response) {
@@ -95,7 +95,7 @@ export default function ProviderChat() {
 
     function SendData() {
         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -136,7 +136,7 @@ export default function ProviderChat() {
             from_user: id,
             to_user: valu
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -166,7 +166,7 @@ export default function ProviderChat() {
             message: sentmsg,
             name: name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 function Users() {
@@ -174,7 +174,7 @@ export default function ProviderChat() {
                         from_user: id,
                         to_user: uid
                     },{
-                        headers:window.header
+                        headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                       })
                         .then((response) => {
                             if (response) {
@@ -209,7 +209,7 @@ export default function ProviderChat() {
             from_user: id,
             to_user: uid
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -260,7 +260,7 @@ export default function ProviderChat() {
 
     function notificationfun() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setnotification(response.data)
@@ -273,7 +273,7 @@ export default function ProviderChat() {
     const [unseen, setunseen] = useState([]);
     function seen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setunseen(response.data)
@@ -286,7 +286,7 @@ export default function ProviderChat() {
     const [UnseenMxg, setUnseenMxg] = useState([]);
     function chatnotification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setUnseenMxg(response.data)
@@ -301,7 +301,7 @@ export default function ProviderChat() {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data)
@@ -311,7 +311,7 @@ export default function ProviderChat() {
     }
     function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 notificationfun()

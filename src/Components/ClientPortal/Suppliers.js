@@ -39,7 +39,7 @@ export default function Supppliers() {
 
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/get_provider`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setSuppliers(response.data)
@@ -55,7 +55,7 @@ export default function Supppliers() {
 
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
@@ -76,12 +76,12 @@ export default function Supppliers() {
             associate_name: uname,
             main_name: name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                     history.push('/chat')
             }, (Error) => {
-                 
+                 console.log(Error);
                 
             });
     }

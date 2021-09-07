@@ -21,13 +21,13 @@ export default function CustomSupplierAuth() {
 
       }
       else{
-        localStorage.clear(); history.push('/')
+        history.push('/')
       }
       
     }
       
     } catch {
-      localStorage.clear(); history.push('/')
+      history.push('/')
     }
   },[history])
   

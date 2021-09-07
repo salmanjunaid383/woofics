@@ -28,7 +28,7 @@ export default function ViewServiceMore() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {

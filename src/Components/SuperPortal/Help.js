@@ -26,7 +26,7 @@ export default function Help() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/help`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -46,7 +46,7 @@ export default function Help() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/help/${id}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     

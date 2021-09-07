@@ -52,7 +52,7 @@ export default function SupplierLedger() {
     function getServiceledger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setUserId(decoded.sub);

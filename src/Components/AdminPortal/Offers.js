@@ -60,7 +60,7 @@ export default function Offers() {
         // setoffer('Please wait...')
         
         const {data: response1} = axios.post('https://api.woofics.com/api/link_card/'+decoded.sub,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           }).
         then((response1) => {
             if(response1.data === 0){
@@ -76,7 +76,7 @@ export default function Offers() {
                             price: price,
                             client_id: oid
                         },{
-                            headers:window.header
+                            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                           })
                             .then((response) => {
                                 setoffer('Send Offer')
@@ -107,7 +107,7 @@ export default function Offers() {
     function getProviderCharge()
     {
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_charge`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0]==null)

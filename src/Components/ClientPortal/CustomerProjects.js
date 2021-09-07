@@ -95,7 +95,7 @@ export default function Project() {
         {
             function Feedback() {
                 const res = axios.get(`https://api.woofics.com/api/supplier_project/${uid}`,{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                     .then((res) => {
                         if (res) {
@@ -113,7 +113,7 @@ export default function Project() {
             Feedback();
             function Supplierid() {
                 const res = axios.get(`https://api.woofics.com/api/users/${sid}`,{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                     .then((res) => {
                         if (res) {
@@ -127,7 +127,7 @@ export default function Project() {
             }
             Supplierid();
             const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
@@ -175,7 +175,7 @@ export default function Project() {
         var result = window.confirm("Do you want to mark this project as completed?");
         if (result) {
             const { data: response } = axios.put(`https://api.woofics.com/api/project_completed/${iid}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     alert("Project completed!")
@@ -205,7 +205,7 @@ export default function Project() {
             associate_name: uname,
             main_name: name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -237,7 +237,7 @@ export default function Project() {
             deadline: deadline,
             completed: false
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -255,7 +255,7 @@ export default function Project() {
     function getTodo() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/client_project_todo`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setData(response.data)
@@ -270,7 +270,7 @@ export default function Project() {
     // DeleteTodo
     function deleteTodo(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/client_project_todo/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getTodo();

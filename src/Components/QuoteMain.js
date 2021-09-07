@@ -304,7 +304,7 @@ export default function QuoteMain() {
                 client_id: decoded.sub,
               },
               {
-                headers: window.header,
+                headers: { Authorization: `Bearer ${localStorage.getItem("user_token")}` },
               }
             )
             .then(
@@ -375,7 +375,7 @@ export default function QuoteMain() {
               client_id: decoded.sub,
             },
             {
-              headers: window.header,
+              headers: { Authorization: `Bearer ${localStorage.getItem("user_token")}` },
             }
           )
           .then(
@@ -1177,7 +1177,7 @@ export default function QuoteMain() {
                   onChange={(e) => setscreenbase(e.target.value)}
                   className="w-30 mx-lg-2"
                   id="outlined-basic"
-                  label="Base (cm) "
+                  label="Base (m) "
                   variant="outlined"
                 />
                 <TextField
@@ -1186,7 +1186,7 @@ export default function QuoteMain() {
                   onChange={(e) => setscreenheight(e.target.value)}
                   className="w-30 mx-lg-2"
                   id="outlined-basic"
-                  label="Height (cm) "
+                  label="Height (m) "
                   variant="outlined"
                 />
               </div>
@@ -2010,7 +2010,7 @@ export default function QuoteMain() {
 
                 <div className="col-md-12 col-xl-12">
                 <TextField style={{width:"68%",margin:"auto"}}
-                  onChange={(e) => setcomments(e.target.value)}
+                  onChange={(e) => setdescription(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
                   label="Comentarios?"
@@ -2183,7 +2183,7 @@ export default function QuoteMain() {
           indoor === "" ||
           install === "" ||
           model === "" ||
-          visuald === "" ||
+         
           screenuse === ""
         ) {
           Swal.fire({

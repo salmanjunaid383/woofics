@@ -74,7 +74,7 @@ export default function Chat() {
                     from_user: id,
                     to_user: returnData.from_user
                 },{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                     .then((response) => {
                         if (response) {
@@ -107,7 +107,7 @@ export default function Chat() {
 
     function SendData() {
         const { data: response } = axios.get(`https://api.woofics.com/api/associate/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -149,7 +149,7 @@ export default function Chat() {
             from_user: id,
             to_user: valu
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -178,7 +178,7 @@ export default function Chat() {
             message: sentmsg,
             name: name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 function Users() {
@@ -186,7 +186,7 @@ export default function Chat() {
                         from_user: id,
                         to_user: uid
                     },{
-                        headers:window.header
+                        headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                       })
                         .then((response) => {
                             if (response) {
@@ -222,7 +222,7 @@ export default function Chat() {
             from_user: id,
             to_user: uid
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -284,7 +284,7 @@ export default function Chat() {
     
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data)

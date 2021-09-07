@@ -54,7 +54,7 @@ export default function Quote() {
     const [servicet, setservicet] = useState([]);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/quotation/${serrid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setquotationData(response.data[0])
@@ -64,7 +64,7 @@ export default function Quote() {
                 setDate(response.data[0].delivery_days)
                 
                 const { data: response2 } = axios.get(`https://api.woofics.com/api/form_details/`+response.data[0].form_id,{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                 .then((response) => {
                     setservice(response.data.form)
@@ -89,7 +89,7 @@ export default function Quote() {
                     user_id : decoded.sub,
                     form_id: serrid
                 },{
-                    headers:window.header
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
                   })
                 .then((response) => {
                     if(response.data===0){
@@ -119,7 +119,7 @@ export default function Quote() {
                 status: 'pending',
                 delivery_days: date
             },{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     setProgress('Send Quotation')
@@ -138,7 +138,7 @@ export default function Quote() {
 
     function getOptions() {
         const { data: response } = axios.get(`https://api.woofics.com/api/payment_phase`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
