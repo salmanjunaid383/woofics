@@ -1,8 +1,12 @@
 import React from 'react';
 import Navbar from "./Navbar";
 import "./ConditionTerms.css";
+import ScrollToTop from './ScrollToTop';
+import Footer from './LandingPage/components/Footer';
 function PrivacyPolicy()
+
 {
+    ScrollToTop();
     return (
         <>
         <Navbar></Navbar>
@@ -137,6 +141,7 @@ electrónico y actualizaciones de productos y otras actualizaciones.</p>
 
             </div>
             </div>
+            <Footer></Footer>
         </>
     )
 }

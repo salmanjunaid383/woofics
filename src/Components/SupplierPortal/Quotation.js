@@ -190,6 +190,8 @@ export default function Quotation() {
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
                                                         <tr>
                                                             <th className="border-top-0 text-white text-center">FECHA</th>
+                                                            <th className="border-top-0 text-white text-center">Paquete</th>
+                                                            <th className="border-top-0 text-white text-center">escribe</th>
                                                             <th className="border-top-0 text-white text-center">Descripción</th>
                                                             <th className="border-top-0 text-white text-center">EMAIL</th>
                                                             <th className="border-top-0 text-white text-center">EL TIEMPO DE ENTREGA</th>
@@ -206,6 +208,8 @@ export default function Quotation() {
                                                                 <>
                                                                     <tr style={{ height: '5rem' }} className="border-bottom">
                                                                         <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
+                                                                        <td className="txt-oflo text-center bold">{val.package_name}</td>
+                                                                        <td className="txt-oflo text-center bold">{val.buy}</td>
                                                                         <td className="text-oflo text-center bold" title={val.description}>{(val.description).slice(0,40)}</td>
                                                                         <td className="txt-oflo text-center bold">{val.email}</td>
                                                                         <td className="txt-oflo text-center bold">{val.delivery_time}</td>

@@ -20,7 +20,7 @@ import "../Components/quotemain.css";
 import Fade from "@material-ui/core/Fade";
 import Modal from "@material-ui/core/Modal";
 import Client from "./Client";
-
+import logo1 from './LandingPage/images/woofics-new/WooficsLogo.png'
 import Backdrop from "@material-ui/core/Backdrop";
 
 import Typography from "@material-ui/core/Typography";
@@ -41,7 +41,8 @@ import mupi from "../Images/structure/tothem.jpg";
 import truss from "../Images/structure/truss.jpg";
 import frontpic from "../Components/Frontal-min.png";
 import rearpic from "../Components/Trasero-min.png";
-
+import custom from "../Images/structure/A medida-min.jpeg"
+import screen from "../Images/structure/No, Solo pantalla-min.jpeg";
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -218,7 +219,7 @@ export default function QuoteMain() {
   const [anyQuestion,setAnyQuestion]=useState("");
   const [city,setCity]=useState("");
   const [telephone,setTelephone]=useState("");
-  const [progress, setprogress] = useState("Publish your Service?");
+  const [progress, setprogress] = useState("Publica tu servicio?");
 
   const [price, setPrice] = useState("");
   const [malik, setmalik] = useState("disabled");
@@ -304,7 +305,7 @@ export default function QuoteMain() {
                 client_id: decoded.sub,
               },
               {
-                headers: { Authorization: `Bearer ${localStorage.getItem("user_token")}` },
+                headers: window.header,
               }
             )
             .then(
@@ -375,7 +376,7 @@ export default function QuoteMain() {
               client_id: decoded.sub,
             },
             {
-              headers: { Authorization: `Bearer ${localStorage.getItem("user_token")}` },
+              headers: window.header,
             }
           )
           .then(
@@ -669,6 +670,11 @@ export default function QuoteMain() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2FTRAFICO.jpg?alt=media&token=2781f3be-f12b-408a-8834-5eb12ecba004",
     },
+    {
+      id: 11,
+      author:'Other',
+      image:"https://firebasestorage.googleapis.com/v0/b/woofic-306700.appspot.com/o/images%2FOtros%20Proyectos.png?alt=media&token=af250fdd-3625-41ee-a9cb-c465f967c59e"
+    }
   ];
 
   function getSteps() {
@@ -842,7 +848,7 @@ export default function QuoteMain() {
         return (
           <div className="w-100  my-lg-5">
             <h4 className="text-center w-100 text-dark frank-color-blue">
-              Quiere comprar o alquilar?
+              Quiere comprar o alquilar
             </h4>
             {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
             <input
@@ -934,7 +940,7 @@ export default function QuoteMain() {
             <br />
 
             <h4 className="text-center w-100 text-dark frank-color-blue">
-              Quieres para interior o exterior?
+              Quieres para interior o exterior
             </h4>
             <input
               value="indoor"
@@ -1024,7 +1030,7 @@ export default function QuoteMain() {
             <br />
 
             <h4 className="text-center w-100 text-dark frank-color-pink">
-              Instalación fija o instalación para evento?
+              Instalación fija o instalación para evento
             </h4>
             <div className="w-100  my-lg-2">
             <FormControl component="fieldset">
@@ -1053,7 +1059,7 @@ export default function QuoteMain() {
 
             <div style={{ marginTop: "-18px" }}>
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                Conoce el modelo que busca?
+                Conoce el modelo que busca
               </h4>
               <FormControl component="fieldset">
                 <br></br>
@@ -1088,7 +1094,7 @@ export default function QuoteMain() {
             <br />
             <div style={{ marginTop: "-18px" }}>
               <h4 className="text-center w-100 text-dark d-inline frank-color-pink">
-                Distancia de visión máxima y mínima?
+                Distancia de visión máxima y mínima
               </h4>
               <div
                 style={{
@@ -1101,10 +1107,10 @@ export default function QuoteMain() {
                   <TextField
                     type="number"
                     onChange={(e) => setMaxDistance(e.target.value)}
-                    style={{ width: "60px" }}
+                    style={{ width: "80px" }}
                     className="mx-lg-2"
                     id="outlined-basic"
-                    label="Max"
+                    label="Max (m)"
                     variant="outlined"
                   />
                   {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
@@ -1113,10 +1119,10 @@ export default function QuoteMain() {
                   <TextField
                     type="number"
                     onChange={(e) => setMinDistance(e.target.value)}
-                    style={{ width: "60px" }}
+                    style={{ width: "80px" }}
                     className="mx-lg-2"
                     id="outlined-basic"
-                    label="Min"
+                    label="Min (m)"
                     variant="outlined"
                   />
                   {/* <TextField type="number" onChange={(e) => setscreenheight(e.target.value)} className="w-25 mx-lg-2" id="outlined-basic" label="Maximum" variant="outlined" /> */}
@@ -1126,7 +1132,7 @@ export default function QuoteMain() {
             <br />
             <br />
             <h4 className="text-center w-100 text-dark frank-color-blue">
-              Uso de la pantalla?
+              Uso de la pantalla
             </h4>
             <div className="w-100  my-lg-5">
               <div className="row">
@@ -1168,7 +1174,7 @@ export default function QuoteMain() {
           <div className="w-100 my-lg-5">
             <div>
               <h4 className="text-center w-100 text-dark d-inline frank-color-blue">
-                Dimensión de la pantalla?
+                Dimensión de la pantalla
               </h4>
               <div style={{ marginTop: "10px" }}>
                 <TextField
@@ -1194,10 +1200,10 @@ export default function QuoteMain() {
             <br />
             <br />
             <h4 className="text-center w-100 text-dark frank-color-blue">
-              Acceso a la pantalla?
+              Acceso a la pantalla
             </h4>
             <input
-              value="front"
+              value="el frente"
               onChange={(e) => {
                 setscreenaccess(e.target.value);
                 console.log(e.target.value)
@@ -1236,7 +1242,7 @@ export default function QuoteMain() {
             </label>
 
             <input
-              value="rear"
+              value="trasero"
               onChange={(e) => {
                 setscreenaccess(e.target.value);
                 setscreenaccesscolor("false");
@@ -1280,7 +1286,7 @@ export default function QuoteMain() {
               className="text-center w-100 text-dark frank-color-blue"
               style={{ marginTop: "15px", marginBottom: "10px" }}
             >
-              cuantas pantallas necesitas?
+              cuantas pantallas necesitas
             </h4>
             <TextField
               type="number"
@@ -1303,7 +1309,7 @@ export default function QuoteMain() {
                 className="text-center w-100 text-dark frank-color-blue"
                 style={{ marginTop: "15px" }}
               >
-                Sistema de control?
+                Sistema de control
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1315,19 +1321,19 @@ export default function QuoteMain() {
                   onChange={(e) => setcontrolsys(e.target.value)}
                 >
                   <FormControlLabel
-                    value="SYNCHRONE (Live Broadcast)"
+                    value="Synchrone (transmisión en vivo)"
                     control={<Radio color="primary" />}
-                    label="SYNCHRONE (Live Broadcast)"
+                    label="Synchrone (transmisión en vivo)"
                   />
                   <FormControlLabel
-                    value="ASYNCHRONOUS (From Memory)"
+                    value="Asincrónico (de memoria)"
                     control={<Radio color="primary" />}
-                    label="ASYNCHRONOUS (From Memory)"
+                    label="Asincrónico (de memoria)"
                   />
                   <FormControlLabel
-                    value="VIDEO PROCESSOR (Managing Different Signals)"
+                    value="Procesador de video (gestiona diferentes señales)"
                     control={<Radio color="primary" />}
-                    label="VIDEO PROCESSOR (Managing Different Signals)"
+                    label="Procesador de video (gestiona diferentes señales)"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1342,7 +1348,7 @@ export default function QuoteMain() {
         return (
           <div className="w-100 my-lg-5">
             <h4 className="text-center w-100 text-dark frank-color-blue">
-              Orientación de la pantalla?
+              Orientación de la pantalla
             </h4>
             <input
               type="radio"
@@ -1422,7 +1428,7 @@ export default function QuoteMain() {
                 className="text-center w-100 text-dark frank-color-blue"
                 style={{ marginBottom: "10px", marginTop: "15px" }}
               >
-                Está la pantalla expuesta a condiciones climáticas adversas?
+                Está la pantalla expuesta a condiciones climáticas adversas
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1434,29 +1440,29 @@ export default function QuoteMain() {
                   onChange={(e) => setadverseweather(e.target.value)}
                 >
                   <FormControlLabel
-                    value="NEAR THE SEA"
+                    value="Cerca del mar"
                     control={<Radio color="primary" />}
-                    label="NEAR THE SEA"
+                    label="Cerca del mar"
                   />
                   <FormControlLabel
-                    value="HIGH MOUNTAIN"
+                    value="Montaña alta"
                     control={<Radio color="primary" />}
-                    label="HIGH MOUNTAIN"
+                    label="Montaña alta"
                   />
                   <FormControlLabel
-                    value="LITTLE EXTREME"
+                    value="Poco extremo"
                     control={<Radio color="primary" />}
-                    label="LITTLE EXTREME"
+                    label="Poco extremoE"
                   />
                   <FormControlLabel
-                    value="HEAT VENTILATION"
+                    value="Ventilación de calor"
                     control={<Radio color="primary" />}
-                    label="HEAT VENTILATION"
+                    label="Ventilación de calor"
                   />
                   <FormControlLabel
-                    value="NO"
+                    value="No"
                     control={<Radio color="primary" />}
-                    label="NO"
+                    label="No"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1468,7 +1474,7 @@ export default function QuoteMain() {
               className="text-center w-100 text-dark frank-color-blue"
               style={{ marginTop: "-10px" }}
             >
-              Necesitas estructura?
+              Necesitas estructura
             </h4>
             <input
               type="radio"
@@ -1586,70 +1592,66 @@ export default function QuoteMain() {
                 Mupi
               </h4>
             </label>
-            <br />
-            <br />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+
+            <input
+              type="radio"
+              name="fqwfqwfas"
+              id="Custom"
+              class="input-hidden"
+              value="Personalizado"
+              onChange={(e) => {
+                setstructure(e.target.value);
+                setstructurecolor("5");
               }}
-            >
+            />
+            <label value="Personalizado" for="Custom">
+              <div className="mx-lg-4 p-2">
+                <img src={custom} style={{ height: "100px", width: "100px" }} />
+              </div>
               <h4
                 className="text-center mx-lg-2"
-                onClick={NumberChange5}
                 style={
                   structurecolor === "5"
-                    ? {
-                        cursor: "pointer",
-                        color: "#fff",
-                        background: "#f72a85",
-                        padding: "4px",
-                        paddingRight: "10px",
-                        paddingLeft: "10px",
-                        borderRadius: "10px",
-                      }
-                    : {
-                        cursor: "pointer",
-                        paddingRight: "6px",
-                        paddingLeft: "6px",
-                      }
+                    ? { cursor: "pointer", color: "#ff14ff" }
+                    : { cursor: "pointer" }
                 }
               >
-                Custom
+                Personalizado
               </h4>
+            </label>
+            <input
+              type="radio"
+              name="fqwfqwfas"
+              id="screenNo"
+              class="input-hidden"
+              value="No"
+              onChange={(e) => {
+                setstructure(e.target.value);
+                setstructurecolor("6");
+              }}
+            />
+            <label value="Personalizado" for="screenNo">
+              <div className="mx-lg-4 p-2">
+                <img src={screen} style={{ height: "100px", width: "100px" }} />
+              </div>
               <h4
                 className="text-center mx-lg-2"
-                onClick={NumberChange6}
                 style={
                   structurecolor === "6"
-                    ? {
-                        cursor: "pointer",
-                        color: "#fff",
-                        background: "#f72a85",
-                        padding: "4px",
-                        paddingRight: "10px",
-                        paddingLeft: "10px",
-                        borderRadius: "10px",
-                      }
-                    : {
-                        cursor: "pointer",
-                        padding: "4px",
-                        paddingRight: "6px",
-                        paddingLeft: "6px",
-                      }
+                    ? { cursor: "pointer", color: "#ff14ff" }
+                    : { cursor: "pointer" }
                 }
               >
-                No
+                No, Solo pantalla
               </h4>
-            </div>
+            </label>
             <br />
             <p className="d-inline w-100">
               <h4
                 className="text-center w-100 text-dark frank-color-blue"
                 style={{ marginTop: "15px" }}
               >
-                El tiempo de entrega?
+                El tiempo de entrega
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1662,7 +1664,7 @@ export default function QuoteMain() {
                 >
                   <FormControlLabel
                     control={<Radio color="primary" />}
-                    label="Select date from Calander"
+                    label="Seleccionar fecha de calander"
                     value="date"
                   />
                   {deliverytime === "date" ? (
@@ -1682,29 +1684,29 @@ export default function QuoteMain() {
                     </>
                   ) : null}
                   <FormControlLabel
-                    value="2 WEEKS STOCK (In stock)"
+                    value="2 semanas de stock (en stock)"
                     control={<Radio color="primary" />}
-                    label="2 WEEKS STOCK (In stock)"
+                    label="2 semanas de stock (en stock)"
                   />
                   <FormControlLabel
-                    value="4 PLANE WEEKS , (Express Manufacturing)"
+                    value="4 semanas de avión, (fabricación express)"
                     control={<Radio color="primary" />}
-                    label="4 PLANE WEEKS , (Express Manufacturing)"
+                    label="4 semanas de avión, (fabricación express)"
                   />
                   <FormControlLabel
-                    value="8 WEEKS BARCO (Standard Manufacturing)"
+                    value="8 semanas de barco (fabricación estándar)"
                     control={<Radio color="primary" />}
-                    label="8 WEEKS BARCO (Standard Manufacturing)"
+                    label="8 semanas de barco (fabricación estándar)"
                   />
                   <FormControlLabel
-                    value="AS SOON AS POSSIBLE"
+                    value="TAN PRONTO COMO SEA POSIBLE"
                     control={<Radio color="primary" />}
-                    label="AS SOON AS POSSIBLE"
+                    label="TAN PRONTO COMO SEA POSIBLE"
                   />
                   <FormControlLabel
-                    value="IT'S NOT URGENT, I HAVE TIME"
+                    value="NO ES URGENTE, TENGO TIEMPO"
                     control={<Radio color="primary" />}
-                    label="IT'S NOT URGENT, I HAVE TIME"
+                    label="NO ES URGENTE, TENGO TIEMPO"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1734,12 +1736,12 @@ export default function QuoteMain() {
                   onChange={(e) => setdeliverytime(e.target.value)}
                 >
                   <FormControlLabel
-                    value="INSTALLATION"
+                    value="Instalación"
                     control={<Radio color="primary" />}
                     label="INSTALACIÓN (EL PROVEEDOR SE ENCARGA DE TODO)"
                   />
                   <FormControlLabel
-                    value="SHIPPING"
+                    value="Transporte"
                     control={<Radio color="primary" />}
                     label="ENVÍO (EL PROVEEDOR ENVIAR EL PRODUCTO, NO INSTALA)"
                   />
@@ -1751,7 +1753,7 @@ export default function QuoteMain() {
             <br />
             <p className="d-inline w-100">
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                SENSOR DE BRILLO / SENSOR DE TEMPERATURA?
+                SENSOR DE BRILLO / SENSOR DE TEMPERATURA
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1762,14 +1764,14 @@ export default function QuoteMain() {
                   onChange={(e) => setsensor(e.target.value)}
                 >
                   <FormControlLabel
-                    value="BRIGHTNESS SENSOR"
+                    value="Sensor de brillo"
                     control={<Radio color="primary" />}
-                    label="BRIGHTNESS SENSOR"
+                    label="Sensor de brillo"
                   />
                   <FormControlLabel
-                    value="TEMPERATURE SENSOR"
+                    value="SENSOR DE TEMPERATURA"
                     control={<Radio color="primary" />}
-                    label="TEMPERATURE SENSOR"
+                    label="SENSOR DE TEMPERATURA"
                   />
                   <FormControlLabel
                     value="NO"
@@ -1784,7 +1786,7 @@ export default function QuoteMain() {
             <br />
             <p className="d-inline w-100">
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                POSIBILIDAD DE AUMENTAR LA GARANTÍA?
+                POSIBILIDAD DE AUMENTAR LA GARANTÍA
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1795,24 +1797,24 @@ export default function QuoteMain() {
                   onChange={(e) => setwarranty(e.target.value)}
                 >
                   <FormControlLabel
-                    value="2 years (default should be selected)"
+                    value="2 años (se debe seleccionar por defecto)"
                     control={<Radio color="primary" />}
-                    label="2 years (default should be selected)"
+                    label="2 años (se debe seleccionar por defecto)"
                   />
                   <FormControlLabel
-                    value="3 years"
+                    value="3 años"
                     control={<Radio color="primary" />}
-                    label="3 years"
+                    label="3 años"
                   />
                   <FormControlLabel
-                    value="4 years"
+                    value="4 años"
                     control={<Radio color="primary" />}
-                    label="4 years"
+                    label="4 años"
                   />
                   <FormControlLabel
-                    value="5s year"
+                    value="5 años"
                     control={<Radio color="primary" />}
-                    label="5s year"
+                    label="5 años"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1823,7 +1825,7 @@ export default function QuoteMain() {
             {/* frank changes may be implemented  */}
             <p className="d-inline w-100">
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                MATERIAL CARCASA?
+                MATERIAL CARCASA
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1862,7 +1864,7 @@ export default function QuoteMain() {
 
             <p className="d-inline w-100">
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                CASOS DE MOSCA?
+                CASOS DE MOSCA
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1891,7 +1893,7 @@ export default function QuoteMain() {
 
             <p className="d-inline w-100">
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                QUE ERES?
+                QUE ERES
               </h4>
               <FormControl component="fieldset">
                 <RadioGroup
@@ -1902,14 +1904,14 @@ export default function QuoteMain() {
                   onChange={(e) => setentity(e.target.value)}
                 >
                   <FormControlLabel
-                    value="PUBLIC ENTITY"
+                    value="ENTIDAD PÚBLICA"
                     control={<Radio color="primary" />}
-                    label="PUBLIC ENTITY"
+                    label="ENTIDAD PÚBLICA"
                   />
                   <FormControlLabel
-                    value="PRIVATE ENTITY"
+                    value="Entidad privada"
                     control={<Radio color="primary" />}
-                    label="PRIVATE ENTITY"
+                    label="Entidad privada"
                   />
                 </RadioGroup>
               </FormControl>
@@ -1923,7 +1925,7 @@ export default function QuoteMain() {
                 style={{ textTransform: "uppercase", marginBottom: "5px" }}
                 className="text-center w-100 text-dark frank-color-blue"
               >
-                tienes alguna pregunta?
+                tienes alguna pregunta
               </h4>
               <TextField
                 type="text"
@@ -1950,17 +1952,10 @@ export default function QuoteMain() {
                   onChange={(e) => setname(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="Nombre?"
+                  label="Nombre"
                   variant="outlined"
                 />{" "}
-                <TextField
-                  type="number"
-                  onChange={(e) => setcontact(e.target.value)}
-                  className="mx-1"
-                  id="outlined-basic"
-                  label="Contacto?"
-                  variant="outlined"
-                />
+               
                 
                 {/* frank change  */}
                 <TextField
@@ -1968,7 +1963,7 @@ export default function QuoteMain() {
                   onChange={(e) => setCity(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="ciudad de instalación?"
+                  label="ciudad de instalación"
                   variant="outlined"
                 />
                 
@@ -1976,7 +1971,7 @@ export default function QuoteMain() {
                   onChange={(e) => setcompany(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="nombre de empresa?"
+                  label="nombre de empresa"
                   variant="outlined"
                 />{" "}
               </div>
@@ -1989,21 +1984,21 @@ export default function QuoteMain() {
                   onChange={(e) => setTelephone(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="teléfono?"
+                  label="teléfono"
                   variant="outlined"
                 />
                 <TextField
                   onChange={(e) => setpostalcode(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="Código postal?"
+                  label="Código postal"
                   variant="outlined"
                 />
                 <TextField
                   onChange={(e) => setemail(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="Correo electrónico?"
+                  label="Correo electrónico"
                   variant="outlined"
                 />{" "}
                 </div>
@@ -2013,7 +2008,7 @@ export default function QuoteMain() {
                   onChange={(e) => setdescription(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
-                  label="Comentarios?"
+                  label="Comentarios"
                   variant="outlined"
                 />
                 </div>
@@ -2027,7 +2022,7 @@ export default function QuoteMain() {
                   className="text-center w-100 text-dark frank-color-blue"
                   style={{ marginTop: "25px" }}
                 >
-                  Intermediaria / cliente final?
+                  Intermediaria / cliente final
                 </h4>
                 <FormControl component="fieldset">
                   <RadioGroup
@@ -2038,15 +2033,15 @@ export default function QuoteMain() {
                     onChange={(e) => setcustomertype(e.target.value)}
                   >
                     <FormControlLabel
-                      value="Intermediary"
+                      value="Intermediaria"
                       control={<Radio color="primary" />}
-                      label="Intermediary"
+                      label="Intermediaria"
                     />
                     <FormControlLabel
-                      value="End customer"
+                      value="Cliente final"
                       style={{ marginLeft: "-20px" }}
                       control={<Radio color="primary" />}
-                      label="End customer"
+                      label="Cliente final"
                     />
                   </RadioGroup>
                 </FormControl>
@@ -2059,7 +2054,7 @@ export default function QuoteMain() {
                   className="text-center w-100 text-dark frank-color-blue"
                   style={{ marginTop: "10px" }}
                 >
-                  Sector?
+                  Sector
                 </h4>
                 <FormControl component="fieldset">
                   <RadioGroup
@@ -2117,12 +2112,18 @@ export default function QuoteMain() {
                       control={<Radio color="primary" />}
                       label="CONGRESSES"
                     />
+                    <FormControlLabel
+                      style={{ textAlign: "left" }}
+                      value="OTHER"
+                      control={<Radio color="primary" />}
+                      label="OTHER"
+                    />
                   </RadioGroup>
                 </FormControl>
               </p>
             </div>
             <h4 className="text-center w-100 text-dark frank-color-pink">
-              Adjuntar documentos e imágenes?
+              Adjuntar documentos e imágenes
             </h4>
             <div className="w-100 my-lg-2">
               <TextField
@@ -2166,6 +2167,7 @@ export default function QuoteMain() {
   const handleNext = () => {
     window.scrollTo(0, 0);
     console.log(activeStep);
+    // setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if (activeStep <= 3) {
       if (activeStep === 0) {
         if (productType === "" || prdouctTypeImg === "") {
@@ -2488,7 +2490,7 @@ export default function QuoteMain() {
 
             <div className="w-100 mx-auto mt-md-4">
               <h4 className="text-center w-100 text-dark frank-color-blue">
-                Quiere comprar o alquilar?
+                Quiere comprar o alquilar
               </h4>
               {/* <div style={{display:"flex",justifyContent:"space-around", alignItems:"center", width:"35%", margin:"auto"}}> */}
               <input
@@ -2588,19 +2590,19 @@ export default function QuoteMain() {
             </div>
             <div className="w-100 mx-auto ">
               <h4 className="text-center w-100 text-dark for-name-sec frank-color-pink">
-                Nombre?
+                Nombre
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
                   onChange={(e) => setname(e.target.value)}
                   className="w-50"
                   id="outlined-basic"
-                  label="Name?"
+                  label="Nombre"
                   variant="outlined"
                 />{" "}
               </div>
               <h4 className="text-center w-100 text-dark for-name-sec frank-color-pink">
-                Contacto?
+                Contacto
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
@@ -2608,27 +2610,27 @@ export default function QuoteMain() {
                   onChange={(e) => setcontact(e.target.value)}
                   className="w-50"
                   id="outlined-basic"
-                  label="Contact?"
+                  label="Teléfono"
                   variant="outlined"
                 />{" "}
               </div>
               <h4 className="text-center w-100 text-dark for-name-sec frank-color-pink">
-                Nombre de empresa?
+                Nombre de empresa
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
                   onChange={(e) => setcompany(e.target.value)}
                   className="w-50"
                   id="outlined-basic"
-                  label="Company Name?"
+                  label="Nombre de empresa"
                   variant="outlined"
                 />{" "}
               </div>
-              {/* <h4 className="text-center w-100 text-dark">Price?</h4> */}
-              {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price?" variant="outlined" /> </div> */}
+              {/* <h4 className="text-center w-100 text-dark">Price</h4> */}
+              {/* <div className="w-100 my-lg-2"><TextField onChange={(e) => setPrice(e.target.value)} className="w-50" id="outlined-basic" label="Price" variant="outlined" /> </div> */}
               <div>
                 <h4 className="text-center w-100 text-dark d-inline frank-color-blue">
-                  Dimensión de la pantalla?
+                  Dimensión de la pantalla
                 </h4>
                 <div style={{ marginTop: "10px" }}>
                   <TextField
@@ -2637,7 +2639,7 @@ export default function QuoteMain() {
                     onChange={(e) => setscreenbase(e.target.value)}
                     className="w-30 mx-lg-2"
                     id="outlined-basic"
-                    label="Base (cm) "
+                    label="Base (m)"
                     variant="outlined"
                   />
                   <TextField
@@ -2646,7 +2648,7 @@ export default function QuoteMain() {
                     onChange={(e) => setscreenheight(e.target.value)}
                     className="w-30 mx-lg-2"
                     id="outlined-basic"
-                    label="Height (cm) "
+                    label="Height (m) "
                     variant="outlined"
                   />
                 </div>
@@ -2657,7 +2659,7 @@ export default function QuoteMain() {
                     className="text-center w-100 text-dark frank-color-blue"
                     style={{ marginTop: "50px", marginBottom: "20px" }}
                   >
-                    Intermediaria / cliente final?
+                    Intermediaria / cliente final
                   </h4>
                   <div className="w-50 text-center float-left end-customer-right ">
                     <input
@@ -2686,7 +2688,7 @@ export default function QuoteMain() {
                 className="text-center w-100 text-dark sector frank-color-blue"
                 style={{ marginTop: "50px", marginBottom: "20px" }}
               >
-                Sector?
+                Sector
               </h4>
               <div className="for-question-res" style={{ display: "flex" }}>
                 <div className="w-100">
@@ -2779,7 +2781,7 @@ export default function QuoteMain() {
                     onChange={(e) => setsector(e.target.value)}
                     value="OTHERS"
                   />
-                  Congreso
+                  Other
                 </div>
               </div>
               {/* </p> */}
@@ -2788,31 +2790,31 @@ export default function QuoteMain() {
                 className="text-center w-100 text-dark for-name-sec frank-color-blue"
                 style={{ marginTop: "50px" }}
               >
-                Código postal?
+                Código postal
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
                   onChange={(e) => setpostalcode(e.target.value)}
                   className="w-50"
                   id="outlined-basic"
-                  label="Postal Code?"
+                  label="código postal"
                   variant="outlined"
                 />{" "}
               </div>
               <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue">
-                Correo electrónico?
+                Correo electrónico
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
                   onChange={(e) => setemail(e.target.value)}
                   className="w-50"
                   id="outlined-basic"
-                  label="Email?"
+                  label="Correo electrónico"
                   variant="outlined"
                 />{" "}
               </div>
               <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue">
-                Adjuntar documentos e imágenes?
+                Adjuntar documentos e imágenes
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
@@ -2824,7 +2826,7 @@ export default function QuoteMain() {
                 />
               </div>
               <h4 className="text-center w-100 text-dark for-name-sec frank-color-blue">
-                Comentarios?
+                Comentarios
               </h4>
               <div className="w-100 my-lg-2">
                 <TextField
@@ -2832,7 +2834,7 @@ export default function QuoteMain() {
                   className="w-50"
                   multiline
                   id="outlined-basic"
-                  label="Comments?"
+                  label="Comentarios"
                   variant="outlined"
                 />{" "}
               </div>
@@ -2864,7 +2866,7 @@ export default function QuoteMain() {
       <div className="page-wrapper bg-light" style={{ display: display3 }}>
         <div class="container-fluid">
           <div class="row">
-            <h3 className="text-dark w-100 pl-lg-5">Sabes lo que buscas? </h3>
+            <h3 className="text-dark w-100 pl-lg-5">Sabes lo que buscas </h3>
             <div className="w-100 pl-lg-5">
               <FormControl component="fieldset">
                 <RadioGroup
@@ -2893,86 +2895,86 @@ export default function QuoteMain() {
       </div>
       <Footer />
       <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={openpop2}
-        onClose={handleClosepop2}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={openpop2}>
-          <div className={classes.paper}>
-            <div className="container rounded">
-              <div className="container bg-white rounded ">
-                <div className="row">
-                  <div className="col-md-12 col-lg-6 col-sm-12 p-0 m-0 d-none d-lg-block mx-auto p-5">
-                    <div className="row d-block text-center ml-3">
-                      <img
-                        src="assets/plugins/images/woofic.jpeg "
-                        className="img-fluid w-50 mx-auto text-center mb-3"
-                      />
-                    </div>
-                    <h3
-                      className=" py-3
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                className={classes.modal}
+                open={openpop2}
+                onClose={handleClosepop2}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={openpop2}>
+                    <div className={classes.paper}>
+                        <div className="container rounded">
+                            <div className="container bg-white rounded ">
+                                <div className="row">
+                                    <div className="col-md-12 col-lg-6 col-sm-12 p-0 m-0 d-none d-lg-block mx-auto p-5">
+                                        <div className="row d-block text-center ml-3">
+                                            <img
+                                                src={logo1}
+                                                className="img-fluid w-50 mx-auto text-center mb-3"
+                                            />
+                                        </div>
+                                        <h3
+                                            className=" py-3
                                          h3 bolder"
-                    >
-                      <b>Consiga nuevos clientes</b>
-                    </h3>
-                    <h5 className=" py-3 h5 text-muted">
-                      Llega al siguiente nivel, llega a donde nunca has estado
-                      antes y descubre nuevas oportunidades!
-                    </h5>
-                    <b>Te asesoramos sin compromiso </b>
-                    <h5 className=" py-34 h5">
-                      <i className="fa fa-phone"> </i>{" "}
-                      <u>
-                        <a href="callto:680494729" className="text-dark">
-                          {" "}
-                          680 49 47 29
-                        </a>
-                      </u>{" "}
-                      or{" "}
-                      <u>
-                        <a href="/contacto" className="text-dark">
-                          {" "}
-                          te llamaremos gratis
-                        </a>
-                      </u>{" "}
-                    </h5>
-                    <img
-                      className="img-fluid w-75 mx-auto"
-                      src={reg}
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignSelf: "center",
-                      }}
-                    />
-                  </div>
-                  <div className="col-md-12 col-lg-6 col-sm-12 mx-auto">
-                    <span
-                      className="float-right pr-2"
-                      onClick={handleClosepop2}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <i className="fa fa-times fa-2x pt-2"></i>
-                    </span>
-                    <div className=" py-3 px-4">
-                      <div style={{ display: display1 }}>
-                        <Client />
-                      </div>
+                                        >
+                                            <b>Accede a la mayor comunidad de soluciones LED de Europa
+                                            </b>
+                                        </h3>
+                                        <h5 className=" py-3 h5 text-muted">
+                                        ¡Pasa Al Siguiente Nivel,Obten las mejores ofertas de provedores certificados y todo desde un mismo lugar!
+                                        </h5>
+                                        <b>Si tienes alguna duda te asesoramos sin compromiso </b>
+                                        <h5 className=" py-34 h5">
+                                            <i className="fa fa-phone"> </i>{" "}
+                                            <u>
+                                                <a href="callto:34648411313" className="text-dark">
+                                                    {" "}
+                                                    +34 648 411 313
+                                                </a>
+                                            </u>{" "}
+                                            or{" "}
+                                            <u>
+                                                <a href="/contacto" className="text-dark">
+                                                    {" "}
+                                                    te llamaremos gratis
+                                                </a>
+                                            </u>{" "}
+                                        </h5>
+                                        <img
+                                            className="img-fluid w-75 mx-auto"
+                                            src={reg}
+                                            style={{
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                alignSelf: "center",
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="col-md-12 col-lg-6 col-sm-12 mx-auto">
+                                        <span
+                                            className="float-right pr-2"
+                                            onClick={handleClosepop2}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <i className="fa fa-times fa-2x pt-2"></i>
+                                        </span>
+                                        <div className=" py-3 px-4">
+                                            <div style={{ display: display1 }}>
+                                                <Client></Client>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Fade>
-      </Modal>
+                </Fade>
+            </Modal>
     </>
   );
 }

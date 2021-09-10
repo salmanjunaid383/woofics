@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.dd672df0.chunk.css",
-    "main.js": "/static/js/main.49d7bdbd.chunk.js",
-    "main.js.map": "/static/js/main.49d7bdbd.chunk.js.map",
+    "main.css": "/static/css/main.fe511722.chunk.css",
+    "main.js": "/static/js/main.76fba7f8.chunk.js",
+    "main.js.map": "/static/js/main.76fba7f8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.62597bf2.js",
     "runtime-main.js.map": "/static/js/runtime-main.62597bf2.js.map",
     "static/css/2.274a2bd7.chunk.css": "/static/css/2.274a2bd7.chunk.css",
-    "static/js/2.4b1f5e9b.chunk.js": "/static/js/2.4b1f5e9b.chunk.js",
-    "static/js/2.4b1f5e9b.chunk.js.map": "/static/js/2.4b1f5e9b.chunk.js.map",
+    "static/js/2.20a38f56.chunk.js": "/static/js/2.20a38f56.chunk.js",
+    "static/js/2.20a38f56.chunk.js.map": "/static/js/2.20a38f56.chunk.js.map",
     "static/js/3.30a0d85f.chunk.js": "/static/js/3.30a0d85f.chunk.js",
     "static/js/3.30a0d85f.chunk.js.map": "/static/js/3.30a0d85f.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.274a2bd7.chunk.css.map": "/static/css/2.274a2bd7.chunk.css.map",
-    "static/css/main.dd672df0.chunk.css.map": "/static/css/main.dd672df0.chunk.css.map",
-    "static/js/2.4b1f5e9b.chunk.js.LICENSE.txt": "/static/js/2.4b1f5e9b.chunk.js.LICENSE.txt",
+    "static/css/main.fe511722.chunk.css.map": "/static/css/main.fe511722.chunk.css.map",
+    "static/js/2.20a38f56.chunk.js.LICENSE.txt": "/static/js/2.20a38f56.chunk.js.LICENSE.txt",
+    "static/media/A medida-min.b705b6f2.jpeg": "/static/media/A medida-min.b705b6f2.jpeg",
     "static/media/footer.css": "/static/media/Footer4k.af15e54d.png",
     "static/media/Frontal-min.622ab816.png": "/static/media/Frontal-min.622ab816.png",
+    "static/media/No, Solo pantalla-min.16771679.jpeg": "/static/media/No, Solo pantalla-min.16771679.jpeg",
     "static/media/Trasero-min.337a3d8e.png": "/static/media/Trasero-min.337a3d8e.png",
     "static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.076c6451.png": "/static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.076c6451.png",
     "static/media/WooficsLogo.519146c7.png": "/static/media/WooficsLogo.519146c7.png",
@@ -49,8 +51,8 @@
   "entrypoints": [
     "static/js/runtime-main.62597bf2.js",
     "static/css/2.274a2bd7.chunk.css",
-    "static/js/2.4b1f5e9b.chunk.js",
-    "static/css/main.dd672df0.chunk.css",
-    "static/js/main.49d7bdbd.chunk.js"
+    "static/js/2.20a38f56.chunk.js",
+    "static/css/main.fe511722.chunk.css",
+    "static/js/main.76fba7f8.chunk.js"
   ]
 }

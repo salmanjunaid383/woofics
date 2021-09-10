@@ -144,10 +144,10 @@ export default function Login() {
                                 </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
                                     <h6 className="mb-0 text-sm">Dirección de correo Electrónico</h6>
-                                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Enter a valid email address" /> </div>
+                                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Introduzca una dirección de correo electrónico válida" /> </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
                                     <h6 className="mb-0 text-sm">Clave</h6>
-                                </label> <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" placeholder="Enter password" /> </div>
+                                </label> <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" placeholder="Introducir la contraseña" /> </div>
                                 <div className="row mb-4 w-100 mx-auto">
                                     <div className="custom-control custom-checkbox custom-control-inline"><a className="ml-5 mb-0 text-sm" onClick={()=>history.push('/forgetpwd')}>¿Has olvidado tu contraseña?</a> </div>
                                 </div>

@@ -347,11 +347,7 @@ function Navbar() {
     // const [ser, setser] = useState('')
 
     const responseFacebook = (response) => {
-        console.log(response)
-        console.log(response.userID)
-        console.log(response.name)
-        console.log(response.email)
-        console.log(response.picture.data)
+        
         
         const res = axios.post(`https://api.woofics.com/api/facebook`, {
             userId: response.userID,
@@ -624,7 +620,7 @@ function Navbar() {
                                                     type="email"
                                                     required
                                                     name="email"
-                                                    placeholder="Enter a valid email address"
+                                                    placeholder="Introduzca una dirección de correo electrónico válida"
                                                 />{" "}
                                             </div>
                                             <div className="row w-100 mx-auto">
@@ -641,7 +637,7 @@ function Navbar() {
                                                     type="password"
                                                     onChange={(e) => setPassword(e.target.value)}
                                                     name="password"
-                                                    placeholder="Enter password"
+                                                    placeholder="Introducir la contraseña"
                                                 />{" "}
                                             </div>
                                             <div className="row mb-4 w-100 ">
@@ -863,9 +859,10 @@ function Navbar() {
                 className="text-center"
             >
                 <CookieBanner
-                    message="This website uses cookies in order to offer you the most relevant information. Please accept cookies for optimal performance."
+                    message="Este sitio web utiliza cookies para ofrecerle la información más relevante. Acepte las cookies para un rendimiento óptimo."
                     onAccept={() => { }}
                     cookie="user-has-accepted-cookies"
+                    buttonMessage="Aceptar"
                 />
             </div>
 

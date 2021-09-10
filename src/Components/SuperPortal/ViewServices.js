@@ -110,6 +110,8 @@ export default function ViewServices() {
                                                     <tr>
                                                         
                                                         <th className="border-top-0 text-white text-center text-white">NOMBRE</th>
+                                                        <th className="border-top-0 text-white text-center">Paquete</th>
+                                                            <th className="border-top-0 text-white text-center">escribe</th>
                                                         <th className="border-top-0 text-white text-center text-white">DESCRIPCIÓN</th>
                                                         
                                                         <th className="border-top-0 text-white text-center text-white">EL TIEMPO DE ENTREGA</th>
@@ -126,7 +128,9 @@ export default function ViewServices() {
                                                                     <tr>
                                                                         
                                                                         <td className="txt-oflo">{val.name}</td>
-                                                                        <td className="txt-oflo">{val.description}</td>
+                                                                        <td className="txt-oflo text-center bold">{val.package_name}</td>
+                                                                        <td className="txt-oflo text-center bold">{val.buy}</td>
+                                                                        <td className="txt-oflo" title={val.description}>{(val.description).slice(0,40)}</td>
                                                                         
                                                                         <td className="txt-oflo">{val.delivery_time}</td>
                                                                         <td className="txt-oflo">{val.email}</td>

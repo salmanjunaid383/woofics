@@ -83,7 +83,7 @@ function Footer() {
                                     </div>
                                     <div class="woofic_social_logo ">
                                         <a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"> <FacebookIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="https://www.instagram.com/woofic_com/"> <InstagramIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://www.instagram.com/woofics_com/"> <InstagramIcon className="text-white mx-2" /></a>
                                         <a target="_blank" href="https://twitter.com/Woofic1"> <TwitterIcon className="text-white mx-2" /></a>
                                         <a target="_blank" href="https://www.linkedin.com/company/woofic"> <LinkedInIcon className="text-white mx-2" /></a>
 
@@ -100,13 +100,13 @@ function Footer() {
                                     <Link className="text-white h5" to="/sobre_nosotros/1">  Sobre nosotras </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/sobre_nosotros/3"> Contacto </Link>
+                                    <Link className="text-white h5" to="/sobre_nosotros/3" style={{textTransform:"capitalize"}}> Contacto </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/allblog"> Blog </Link>
+                                    <Link className="text-white h5" to="/allblog" style={{textTransform:"capitalize"}}> Blog </Link>
                                 </li>
                                 <li className="my-3">
-                                    <Link className="text-white h5" to="/sobre_nosotros/2"> Preguntas más frecuentes </Link>
+                                    <Link className="text-white h5" to="/sobre_nosotros/2" style={{textTransform:"capitalize"}}> Preguntas más frecuentes </Link>
                                 </li>
                             </ol>
                         </div>
@@ -145,10 +145,10 @@ function Footer() {
                                 <div class=" text-center ">
                                     <div class=" text-center d-flex justify-content-center footer-label">
                                         <div className="border-right px-2">
-                                            <Link  to="/Condition-Terms" className="text-white">Términos Y Condiciones</Link>
+                                            <Link  to="/Condiciones-Términos" className="text-white">Términos Y Condiciones</Link>
                                         </div>
                                         <div className="mx-2 ">
-                                            <Link to="/Privacy-Policy"  className="text-white">Política De Privacidad</Link>
+                                            <Link to="/Política-de-privacidad"  className="text-white">Política De Privacidad</Link>
                                         </div>
                                     </div>
                                 </div>

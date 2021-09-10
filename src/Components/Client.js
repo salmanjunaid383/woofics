@@ -125,20 +125,20 @@ export default function Client() {
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Primer Nombre</h6> 
-                </label> <input className="mb-4" onChange={(e) => setFirstname(e.target.value)} type="email" required name="email" placeholder="First Name" />
+                </label> <input className="mb-4" onChange={(e) => setFirstname(e.target.value)} type="email" required name="email" placeholder="Primer nombre" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Apellido</h6>
-                </label> <input className="mb-4" onChange={(e) => setLastname(e.target.value)} type="email" required name="email" placeholder="Last Name" />
+                </label> <input className="mb-4" onChange={(e) => setLastname(e.target.value)} type="email" required name="email" placeholder="Apellido" />
               </div>
 
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Dirección de correo electrónico</h6>
-                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Email Address" />
+                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="email" required name="email" placeholder="Dirección de correo electrónico" />
               </div>
 
 
@@ -152,25 +152,25 @@ export default function Client() {
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Localización</h6>
-                </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Location" />
+                </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Localización" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
-                  <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Número de contacto</h6>
-                </label> <input className="mb-4" onChange={(e) => setContact(e.target.value)} type="email" required name="email" placeholder="Contact Number" />
+                  <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Número de teléfono</h6>
+                </label> <input className="mb-4" onChange={(e) => setContact(e.target.value)} type="email" required name="email" placeholder="Número de teléfono" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Clave</h6>
-                </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Password" />
+                </label> <input className="mb-4" onChange={(e) => setPassword(e.target.value)} type="password" required name="password" placeholder="Contraseña" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>confirmar Contraseña</h6>
-                </label> <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="Confirm Password" />
+                </label> <input className="mb-4" onChange={(e) => setCpassword(e.target.value)} type="password" required name="password" placeholder="confirmar Contraseña" />
               </div>
             </div>
             <div className="row  mb-3 pl-4 w-100">
@@ -204,7 +204,7 @@ export default function Client() {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message={"Password must be 8 digits long !"}
+        message={"La contraseña debe tener 8 dígitos!"}
         action={
           <React.Fragment>
             <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
@@ -221,7 +221,7 @@ export default function Client() {
         open={open2}
         autoHideDuration={6000}
         onClose={handleClose2}
-        message={"Please fill all feilds!"}
+        message={"Por favor complete todos los campos!"}
         action={
           <React.Fragment>
             <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
@@ -238,7 +238,7 @@ export default function Client() {
         open={open3}
         autoHideDuration={6000}
         onClose={handleClose3}
-        message={"Incorrect Password"}
+        message={"Contraseña incorrecta"}
         action={
           <React.Fragment>
             <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
@@ -255,7 +255,7 @@ export default function Client() {
         open={open4}
         autoHideDuration={6000}
         onClose={handleClose4}
-        message={"Please check your email to verify your account!"}
+        message={"¡Por favor revise su correo electrónico para verificar su cuenta!"}
         action={
           <React.Fragment>
             <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>

@@ -109,19 +109,72 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 
+      <style>
 
+body {
+  background: #020202
+}
+
+.loader {
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: helvetica, arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #eaecfa;
+  letter-spacing: 0.2em;
+}
+  
+  .loader::before, .loader::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #020202;
+    position: absolute;
+    animation: load .7s infinite alternate ease-in-out;
+  }
+  
+  .loader::before {
+    top: 0;
+  }
+  
+  .loader::after {
+    bottom: 0;
+  }
+
+
+@keyframes load {
+  0% { left: 0; height: 30px; width: 15px }
+  50% { height: 8px; width: 40px }
+  100% { left: 235px; height: 30px; width: 15px}
+}
+      </style>
 
 
   </head>
 
 <body id="wholebodytext" style="text-transform: lowercase;" class="text-capitalize" >
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root" >
+
+    <div class="loader">Loading...
+      
+    </div>
+
+
+  </div>
 
 
   <script>
 
-    
+   
       
   </script>
 

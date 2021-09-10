@@ -26,12 +26,12 @@ function Banner(){
                     }, (error) => {
                         console.log(error)
                     });
-    })
+    },[])
 
     return(
             <>
-                  <div className="offer_sec" style={{textAlign:"center"}}>
-                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>Get Inspired</h3>
+            <div className="offer_sec"  style={inspired.length  === 0 ? {display:'none'}: {textAlign:"center"}}>
+                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>Inspírate</h3>
                  
               <div className="pic_sec" style={{padding:"20px"}}>
                 {

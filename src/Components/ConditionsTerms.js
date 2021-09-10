@@ -1,7 +1,10 @@
 import React from 'react';
 import Navbar from "./Navbar";
 import "./ConditionTerms.css";
+import ScrollToTop from './ScrollToTop';
+import Footer from './LandingPage/components/Footer';
 function ConditionTerms(){
+    ScrollToTop()
     return (
         <>
         <Navbar></Navbar>
@@ -149,7 +152,8 @@ function ConditionTerms(){
             </div>
         </div>
         </div>
-           
+        
+        <Footer></Footer>
 
         </>
     )

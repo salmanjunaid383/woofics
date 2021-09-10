@@ -175,7 +175,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                 console.log(response.data)
                 
                 setNextPage(response.data.next_page_url)
-                setPrevPage(response.data.prev_page_ur)
+                setPrevPage(response.data.prev_page_url)
             }, (error) => {
                 
             });
@@ -326,7 +326,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                             
                 <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
                             {
-                                prevPage !== null ? <>
+                                prevPage !== null? <>
                                 <div class="col-md-6" >
                             
                                      <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>

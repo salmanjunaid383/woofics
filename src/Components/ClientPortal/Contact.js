@@ -104,12 +104,10 @@ export default function Contact() {
         name: name,
         email: email,
         message: message,
-    },{
-      headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
     })
         .then((response) => {
            
-           alert("Message Sent!")
+           alert("Mensaje enviado!")
         }, (Error) => {
             // 
         });
@@ -372,25 +370,25 @@ export default function Contact() {
                     <div class="container">
                       <div class="row mx-auto">
                         <div className="col-md-6 border-right mt-md-5 pt-md-5 w-75">
-                          <h3>Nosotras queremos saber tu opinión</h3>
+                          <h3>Queremos saber tu opinión</h3>
                           <TextField
                             className="w-75 my-1"
                             id="standard-basic"
-                            label="Name *"
+                            label="Nombre *"
                             onChange={(e)=>setname(e.target.value)}
                             />
                           <br />
                           <TextField
                             className="w-75 my-1"
                             id="standard-basic"
-                            label="Email *"
+                            label="Correo electrónico *"
                             onChange={(e)=>setemail(e.target.value)}
                             />
                           <br />
                           <TextField
                             className="w-75 my-1"
                             id="standard-basic"
-                            label="Message *"
+                            label="Mensaje *"
                             onChange={(e)=>setmessage(e.target.value)}
                             multiline={true}
                           />
@@ -459,7 +457,7 @@ export default function Contact() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="https://www.instagram.com/woofic_com/">
+                              <a target="_blank" href="https://www.instagram.com/woofics_com/">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>

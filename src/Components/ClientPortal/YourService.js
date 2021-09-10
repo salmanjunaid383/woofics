@@ -153,7 +153,7 @@ export default function YourService() {
                                     </tr>
                                   </>
                                 )
-                              })}
+                              }).reverse()}
                           </tbody>
                         </table>
                       </div>

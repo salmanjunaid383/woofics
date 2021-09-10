@@ -98,12 +98,12 @@ export default function Registration() {
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                     <tr className="heading-row" >
-                                                        <th className="">NAME</th>
+                                                        <th className="">NOMBRE</th>
                                                         <th className="">EMAIL</th>
-                                                        <th className="">contact number</th>
-                                                        <th className="">Role</th>
-                                                        <th className="">DATE</th>
-                                                        <th className="">ACTIONS</th>
+                                                        <th className="">Número de teléfono</th>
+                                                        <th className="">Papel</th>
+                                                        <th className="">FECHA</th>
+                                                        <th className="">COMPORTAMIENTO</th>
                                                     </tr>
                                                 <tbody id="data-row">
                                                     {blog.map((val, key) => {
