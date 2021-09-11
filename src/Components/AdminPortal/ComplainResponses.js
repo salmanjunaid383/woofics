@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 import axios from 'axios';
 import Sidebar from './Sidebar'
 
 import jwt_decode from 'jwt-decode';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import CustomProviderAuth from "../CustomProviderAuth";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -111,11 +110,11 @@ export default function AdminComplainResponses() {
                     <div className={classes.toolbar} />
 
                    <div className="page-wrapper bg-light">
-                        <div class="container-fluid p-5" style={{ height: '100%' }}>
-                            <div class="row">
-                                <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
+                        <div className="container-fluid p-5" style={{ height: '100%' }}>
+                            <div className="row">
+                                <div className="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
                                     <h4 className="text-center p-4">RESPUESTAS PARA QUEJAS</h4>
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         <div className="d-flex h5 bold">
                                         Quejarse: <p className="" style={{ fontSize: 20 }}> {blog.description}</p>
                                         </div>
@@ -131,14 +130,14 @@ export default function AdminComplainResponses() {
                                                 })
                                             }
                                         </div>
-                                        <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0 mt-3">Respuesta</label>
-                                            <div class="col-md-12 border-bottom p-0">
-                                                <textarea rows="4" class="form-control p-0 border-0" value={article} placeholder="Type your reply here..." onChange={(e) => setArticle(e.target.value)}></textarea>
+                                        <form className="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
+                                            <label className="col-md-12 p-0 mt-3">Respuesta</label>
+                                            <div className="col-md-12 border-bottom p-0">
+                                                <textarea rows="4" className="form-control p-0 border-0" value={article} placeholder="Type your reply here..." onChange={(e) => setArticle(e.target.value)}></textarea>
                                             </div>
-                                            <div class="form-group mb-4">
-                                                <div class="col-sm-12 mt-3 text-center">
-                                                    <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>Send Reply</button>
+                                            <div className="form-group mb-4">
+                                                <div className="col-sm-12 mt-3 text-center">
+                                                    <button className="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>Send Reply</button>
                                                 </div>
                                             </div>
                                         </form>

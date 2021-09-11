@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
-import loginside from '../../Images/loginside.jpg'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import SideBar from './Sidebar';
 import StarRatings from 'react-star-ratings';
@@ -12,7 +11,7 @@ import tick from './tick.png'
 
 
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
@@ -264,19 +263,19 @@ export default function SupplierProjects() {
                                     </div>
                                 </div> : ''}
                                 <div className="container">
-                                    <div class="car p-3">
+                                    <div className="car p-3">
                                         <div className="mx-auto d-flex justify-content-center align-item-center">
                                             <div id="clockdiv" className="mx-auto text-center">
-                                                <div className="mx-2"><span>{days}</span><div class="smalltext text-dark mx-2">Dias</div></div>
-                                                <div className="mx-2"><span >{hours}</span><div class="smalltext text-dark mx-2">Horas</div></div>
-                                                <div className="mx-2"><span >{minutes}</span><div class="smalltext text-dark mx-2">Minutos</div></div>
-                                                <div className="mx-2"><span >{seconds}</span><div class="smalltext text-dark mx-2">Segundos</div></div>
+                                                <div className="mx-2"><span>{days}</span><div className="smalltext text-dark mx-2">Dias</div></div>
+                                                <div className="mx-2"><span >{hours}</span><div className="smalltext text-dark mx-2">Horas</div></div>
+                                                <div className="mx-2"><span >{minutes}</span><div className="smalltext text-dark mx-2">Minutos</div></div>
+                                                <div className="mx-2"><span >{seconds}</span><div className="smalltext text-dark mx-2">Segundos</div></div>
                                             </div>
                                         </div>
-                                        <div class="card-body pb-5">
+                                        <div className="card-body pb-5">
                                             <div className="border p-5">
                                                 <h4 className="mt-0">
-                                                    <img class="card-img-top img-fluid mr-3" style={{ width: '40px' }} src="https://img.pngio.com/avatar-icon-png-105-images-in-collection-page-3-avatarpng-512_512.png" alt="Card image cap" />
+                                                    <img className="card-img-top img-fluid mr-3" style={{ width: '40px' }} src="https://img.pngio.com/avatar-icon-png-105-images-in-collection-page-3-avatarpng-512_512.png" alt="Card image cap" />
                                                     {supplier.first_name + " " + supplier.last_name}
                                                     <span className="ml-2">
                                                         <StarRatings
@@ -289,7 +288,7 @@ export default function SupplierProjects() {
                                                 </h4>
                                                 <i className="fa fa-map-marker px-2 mb-4 ml-5 text-muted"> {supplier.location}</i>
                                                 <h2 className="float-right">$ {form.price}</h2>
-                                                <table  id="for-table-setting" class="table table-hover table table-bordered">
+                                                <table  id="for-table-setting" className="table table-hover table table-bordered">
                                                     <tbody id="data-row">
                                                         <tr>
                                                             <th scope="row">Descripción</th>
@@ -306,59 +305,59 @@ export default function SupplierProjects() {
                                                             
                                                     </tbody>
                                                 </table>
-                                                <button class="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={supplier.id} onClick={() => SendData(supplier.id, supplier.first_name + " " + supplier.last_name)}>Chat</button>
+                                                <button className="btn pull-right marginBottom10 mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={supplier.id} onClick={() => SendData(supplier.id, supplier.first_name + " " + supplier.last_name)}>Chat</button>
 
                                             </div>
-                                            <div class="row m-1 p-4">
-                                                <div class="col " >
-                                                    <div class="p-1 h1 text-primary text-center mx-auto display-inline-block" >
-                                                        <i class="fa fa-check bg-primary text-white rounded p-2"> </i>
+                                            <div className="row m-1 p-4">
+                                                <div className="col " >
+                                                    <div className="p-1 h1 text-primary text-center mx-auto display-inline-block" >
+                                                        <i className="fa fa-check bg-primary text-white rounded p-2"> </i>
                                                         <bold>Gestionar Proyecto</bold>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row m-1 p-3 ">
-                                                <div class="col col-11 mx-auto">
-                                                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-                                                        <div class="col">
-                                                            <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new .." onChange={(e) => setTodo(e.target.value)} value={todo} />
+                                            <div className="row m-1 p-3 ">
+                                                <div className="col col-11 mx-auto">
+                                                    <div className="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                                                        <div className="col">
+                                                            <input className="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new .." onChange={(e) => setTodo(e.target.value)} value={todo} />
                                                         </div>
-                                                        <div class="col-auto m-0 px-2 d-flex align-items-center">
-                                                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Fecha de Vencimiento no Establecida</label>
-                                                            <input class="form-control form-control-md border-0 add-todo-input bg-transparent rounded" type="date" placeholder="Add new .." onChange={(e) => setDeadLine(e.target.value)} />
-                                                            <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
+                                                        <div className="col-auto m-0 px-2 d-flex align-items-center">
+                                                            <label className="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Fecha de Vencimiento no Establecida</label>
+                                                            <input className="form-control form-control-md border-0 add-todo-input bg-transparent rounded" type="date" placeholder="Add new .." onChange={(e) => setDeadLine(e.target.value)} />
+                                                            <i className="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                                                         </div>
-                                                        <div class="col-auto px-0 mx-0 mr-2">
-                                                            <button type="button" onClick={Feedback} class="btn btn-primary">Agregar</button>
+                                                        <div className="col-auto px-0 mx-0 mr-2">
+                                                            <button type="button" onClick={Feedback} className="btn btn-primary">Agregar</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="p-2 mx-4 border-black-25 border-bottom"></div>
-                                            <div class="row mx-1 px-5 pb-3 w-80">
-                                                <div class="col mx-auto">
+                                            <div className="p-2 mx-4 border-black-25 border-bottom"></div>
+                                            <div className="row mx-1 px-5 pb-3 w-80">
+                                                <div className="col mx-auto">
 
                                                     {
                                                         data.map((val, id) => {
                                                             return (
                                                                 <>
-                                                                    <div class="row px-3 align-items-center todo-item rounded">
-                                                                        <div class="col px-1 m-1 d-flex align-items-center">
-                                                                            <p type="text" class="form-control form-control-lg border-0 bg-transparent rounded px-3" value={val.task} title={val.task} >{val.task}</p>
-                                                                            <p type="text" class="form-control form-control-lg border-0 rounded px-3 d-none" value={val.task} >{val.task}</p>
+                                                                    <div className="row px-3 align-items-center todo-item rounded">
+                                                                        <div className="col px-1 m-1 d-flex align-items-center">
+                                                                            <p type="text" className="form-control form-control-lg border-0 bg-transparent rounded px-3" value={val.task} title={val.task} >{val.task}</p>
+                                                                            <p type="text" className="form-control form-control-lg border-0 rounded px-3 d-none" value={val.task} >{val.task}</p>
                                                                         </div>
-                                                                        <div class="col-auto m-1 p-0 px-3">
-                                                                            <div class="row">
-                                                                                <div class="col-auto d-flex align-items-center rounded bg-white border border-warning">
-                                                                                    <i class="fa fa-hourglass-2 my-2 px-2 text-warning btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Due on date"></i>
-                                                                                    <h6 class="text my-2 pr-2">{val.deadline}</h6>
+                                                                        <div className="col-auto m-1 p-0 px-3">
+                                                                            <div className="row">
+                                                                                <div className="col-auto d-flex align-items-center rounded bg-white border border-warning">
+                                                                                    <i className="fa fa-hourglass-2 my-2 px-2 text-warning btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Due on date"></i>
+                                                                                    <h6 className="text my-2 pr-2">{val.deadline}</h6>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-auto m-1 p-0">
-                                                                            <div class="row d-flex align-items-center justify-content-end">
-                                                                                <h5 class="m-0 p-0 px-2">
-                                                                                    <i class="fa fa-trash-o text-danger btn m-0 px-2" data-toggle="tooltip" data-placement="bottom" title="Delete todo" onClick={() => deleteTodo(val.id)}></i>
+                                                                        <div className="col-auto m-1 p-0">
+                                                                            <div className="row d-flex align-items-center justify-content-end">
+                                                                                <h5 className="m-0 p-0 px-2">
+                                                                                    <i className="fa fa-trash-o text-danger btn m-0 px-2" data-toggle="tooltip" data-placement="bottom" title="Delete todo" onClick={() => deleteTodo(val.id)}></i>
                                                                                 </h5>
                                                                             </div>
                                                                         </div>

@@ -1,32 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory,useLocation } from 'react-router-dom'
 import axios from 'axios';
-import Sidebar from './Sidebar'
-import Nav from './Nav'
-import { Brightness1, Delete } from "@material-ui/icons";
 // import './BLog.css';
 import Badge from '@material-ui/core/Badge';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
-import RateReviewIcon from '@material-ui/icons/RateReview';
 import './SupCoupons.css'
 import '../SuperPortal/Stazbar.css'
 import backgroundImage from './Dashboard.png';
 import logo from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 
 //Sidebar
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -35,15 +26,10 @@ import Popover from '@material-ui/core/Popover';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PollIcon from '@material-ui/icons/Poll';
 import ReceiptIcon from '@material-ui/icons/Receipt';
-import SuperDashboard from './SuperDashboard';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import AssistantIcon from '@material-ui/icons/Assistant';
-import DesktopWindowsIcon from '@material-ui/icons/DesktopWindows';
 import DvrIcon from '@material-ui/icons/Dvr';
 import HelpIcon from '@material-ui/icons/Help';
 import BookIcon from '@material-ui/icons/Book';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import jwt_decode from 'jwt-decode'
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
@@ -177,7 +163,7 @@ export default function StazBar() {
         
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
-          });;
+          });
         const channel = pusher.subscribe(""+decoded.sub+"");   
         
         channel.bind("my-event",function(returnData){

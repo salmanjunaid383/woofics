@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import axios from 'axios';
 import StazBar from './Sidebar'
@@ -7,7 +7,7 @@ import StazBar from './Sidebar'
 import StarRatings from 'react-star-ratings';
 import jwt_decode from 'jwt-decode';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 import CustomClientAuth from "../CustomClientAuth";
@@ -91,9 +91,9 @@ export default function Offers() {
 
 
                     <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
@@ -136,14 +136,14 @@ export default function Offers() {
                                                 })} */}
 
                                             <div className="container">
-                                                <div class="row">
+                                                <div className="row">
 
                                                     {form.length == 0 ? <h3 className="my-md-5 text-center mx-auto w-100">Nada Que Mostrar!</h3> :
                                                         form.map((val, id) => {
                                                             return (
                                                                 <>
 
-                                                                    <div class="col-xl-12 col-md-12 mx-auto shadow p-3 mb-3 " style={{ backgroundColor: "white", border: '3px #f95c87 solid', borderRadius: 10 }}>
+                                                                    <div className="col-xl-12 col-md-12 mx-auto shadow p-3 mb-3 " style={{ backgroundColor: "white", border: '3px #f95c87 solid', borderRadius: 10 }}>
                                                                         <div className="row">
                                                                             <div className="col-md-2 text-center"><img src={val.profile_image == "xyz.jpg" ? "https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png" : val.profile_image} className="img-fluid for-pic" style={{ width: 100,height:100,borderRadius: 150 }} /></div>
                                                                             <div className="col-md-5">
@@ -187,7 +187,7 @@ export default function Offers() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
 

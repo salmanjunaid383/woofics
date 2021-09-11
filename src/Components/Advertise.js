@@ -44,7 +44,7 @@ export default function Advertise() {
             </section>
             
       <div className="page-wrapper">
-        <div class="container-fluid " style={{ backgroundImage: 'url(https://www.gimage.es/wp-content/uploads/2018/02/contacto.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+        <div className="container-fluid " style={{ backgroundImage: 'url(https://www.gimage.es/wp-content/uploads/2018/02/contacto.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
           <div className="row">
             <div className="col-md-10">
               <h1 className="mt-5 ml-3 " style={{ fontSize: "6vw", fontWeight: '500', textTransform: 'uppercase', lineHeight: '1em', letterSpacing: '-1.5px', color: 'white', fontFamily: '"Rubik", Sans-serif', }}>
@@ -66,8 +66,8 @@ export default function Advertise() {
         </div>
         <div className="container.fluid">
           <div className="" style={{ height: '100%' }}>
-            <div class="container">
-              <div class="row mx-auto">
+            <div className="container">
+              <div className="row mx-auto">
                 <div className="col-md-12  mt-md-5 pt-md-5 w-75">
                   <h3>Por favor llene este formulario a continuación:</h3>
                   <span>

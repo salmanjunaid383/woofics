@@ -77,12 +77,12 @@ export default function GetInspired() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
-                                        <div class="d-md-flex mb-3">
-                                            <h3 class=" mb-0 h1 text-center mx-auto"> Anunciar</h3>
+                                        <div className="d-md-flex mb-3">
+                                            <h3 className=" mb-0 h1 text-center mx-auto"> Anunciar</h3>
                                         </div>
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
@@ -108,7 +108,7 @@ export default function GetInspired() {
                                                                     <td className="txt-oflo text-center">{val.campaign_duration}</td>
                                                                     <td className="txt-oflo text-center">{val.contact_number}</td>
                                                                     <td className="txt-oflo text-center">{val.screen_type}</td>
-                                                                    <td className="text-danger text-center"><button class="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Borrar</button></td>
+                                                                    <td className="text-danger text-center"><button className="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Borrar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

@@ -428,7 +428,7 @@ function Navbar() {
             {/* ${colorChange?"bg-dark" : "bg-light"} */}
 
             <div className="container.fluid ">
-                <div class="woofic_background  my-auto ">
+                <div className="woofic_background  my-auto ">
                     <div className={navState ? "topnav topnavresponsive pb-1 pt-1 fixed-top " : landingPage ? "topnav pb-1 pt-1 fixed-top" : "topnav pb-1 pt-1 fixed-top nonLandingPageNav" } id="myTopnav" style={{height:"65px"}}>
                         <Link to="/">
                                 
@@ -465,9 +465,9 @@ function Navbar() {
                         <Link id="scroll-effect" className="for-res"  style={{marginLeft:"-12px",marginTop:"1px"}} >
                             {/* Advertise */}
                             
-                            <div class="dropdown hover-effect">
+                            <div className="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
-                                <div class="dropdown-content">
+                                <div className="dropdown-content">
                                 <Link to="/calculadora_de_precios" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
                                     <span style={{textAlign:"left"}}>Calculadora de precios</span>
                                 </Link>
@@ -486,9 +486,9 @@ function Navbar() {
                         <Link id="scroll-effect " className="salman for-res"  style={{marginLeft:"-12px",marginTop:"1px"}} >
                             {/* Advertise */}
                             
-                            <div class="dropdown hover-effect">
+                            <div className="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Opciones de Perfil</button>
-                                <div class="dropdown-content">
+                                <div className="dropdown-content">
                                 <Typography className={classes.typography}>
                         <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
                             <i className="fa fa-user mx-3 text-blackStaz"></i>
@@ -520,7 +520,7 @@ function Navbar() {
                                 >
                                     <button
                                         type="submit"
-                                        class="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join"
+                                        className="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join"
                                         onClick={handleOpenpop2}
                                     >
                                         <b>Únete Ahora</b>{" "}
@@ -529,7 +529,7 @@ function Navbar() {
                                 <Link className="float-right p-0 m-0">
                                     <button
                                         type="submit"
-                                        class="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign"
+                                        className="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign"
                                         onClick={handleOpenpop}
                                     >
                                         <i className="fa fa-sign-out"> </i> <b>Area Cliente</b>
@@ -537,8 +537,8 @@ function Navbar() {
                                 </Link>
                             </>
                         )}
-                        <a href="javascript:void(0);" class="icon" onClick={myFunction} >
-                            <i class="fa fa-bars" id="taglink7"></i>
+                        <a href="javascript:void(0);" className="icon" onClick={myFunction} >
+                            <i className="fa fa-bars" id="taglink7"></i>
                         </a>
                     </div>
                     <div className="container-fluid w-100">

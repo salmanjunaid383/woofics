@@ -1,43 +1,27 @@
-import React, { useEffect, useLayoutEffect,useState,useRef } from "react";
-import axios from 'axios';
 import jwt_decode from "jwt-decode";
-import auth from "./auth";
 // import { useLocation } from 'react-dom'
 import "./App.css";
-import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
-import { BrowserRouter as Router, Switch, Route,Redirect } from "react-router-dom";
+import { PrivateRoute } from 'react-router-with-props';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import ConditionTerms from "./Components/ConditionsTerms";
 import Login from "./Components/Login";
-import SalmanNav from "./Components/SuperPortal/salman-nav";
-import StazBar from "./Components/SuperPortal/Stazbar";
 import Forgetpwd from "./Components/Forgetpwd";
 import Confirmpassword from "./Components/Confirmpassword";
-import Sidebar from "./Components/ClientPortal/Sidebar";
-import ServiceSidebar from "./Components/AdminPortal/Sidebar";
 import ProviderChat from "./Components/AdminPortal/Chat";
 import ServiceProvider from "./Components/ServiceProviderForm";
-import Client from "./Components/Client";
-import Supplier from "./Components/Supplier";
 import UpdateProfile from "./Components/ClientPortal/UpdateProfile";
 import AdminUpdateProfile from "./Components/AdminPortal/UpdateProfile";
 import SupplierUpdateProfile from "./Components/SupplierPortal/UpdateProfile";
 import AddService from "./Components/ClientPortal/AddService";
 import YourService from "./Components/ClientPortal/YourService";
 import AllQuotation from "./Components/ClientPortal/AllQuotation";
-import Feedback from "./Components/ClientPortal/Feedback";
 import AdminComplain from "./Components/SuperPortal/AdminComplain";
 import SupplierDashboard from "./Components/SupplierPortal/SupplierDashboard";
-import SupplierSidebar from "./Components/SupplierPortal/Sidebar";
-import SuperSidebar from "./Components/SuperPortal/Sidebar";
-import SupCoupons from "./Components/SuperPortal/SupCoupons";
 import Led from "./Components/SuperPortal/Led";
-import PaymentPhaseList from "./Components/SuperPortal/PaymentPhaseList";
-import PaymentPhase from "./Components/SuperPortal/PaymentPhase";
 import LedList from "./Components/SuperPortal/LedList";
 import HelpList from "./Components/SuperPortal/Help";
 import HelpResponse from "./Components/SuperPortal/HelpResponse";
 import UpdateLed from "./Components/SuperPortal/UpdateLed";
-import Coupons from "./Components/SuperPortal/Couponslist";
 import Registration from "./Components/SuperPortal/Registration";
 import Quotation from "./Components/SupplierPortal/Quotation";
 import Quote from "./Components/SupplierPortal/Quote";
@@ -52,9 +36,6 @@ import Todo from "./Components/AdminPortal/Todo";
 import SupplierTodo from "./Components/SupplierPortal/Todo";
 import Help from "./Components/ClientPortal/Help";
 import Complain from "./Components/ClientPortal/Complain";
-import Invoice from "./Components/ClientPortal/Invoice";
-import Detail from "./Components/ClientPortal/Detail";
-import SuccessPayment from "./Components/ClientPortal/SuccessPayment";
 import Emailver from "./Components/Emailver";
 import CustomerProjects from "./Components/ClientPortal/CustomerProjects";
 import Project from "./Components/ClientPortal/Project";
@@ -65,22 +46,18 @@ import DiscussionForum from "./Components/DiscussionForum";
 import Moredetailsdiscussionforum from "./Components/Moredetailsdiscussionforum";
 import ClientDiscussionForum from "./Components/ClientPortal/DiscussionForum";
 import ClientMoredetailsdiscussionforum from "./Components/ClientPortal/Moredetailsdiscussionforum";
-import Coupon from "./Components/ClientPortal/Coupon";
 import ProviderDetails from "./Components/ClientPortal/ProviderDetails";
 import Offers from "./Components/AdminPortal/Offers";
 import ClientOffers from "./Components/ClientPortal/Offers";
 import OfferList from "./Components/AdminPortal/OfferList";
 import ContactUs from "./Components/ContactUs";
-import StazCal from "./Components/StazCal";
 import Logo from "./Components/SuperPortal/Logo";
 // Landing Pager
 import Landing from "./Components/LandingPage";
 import PriceCalculator from "./Components/PriceCalculator";
-import QuoteDetail from "./Components/ClientPortal/Quote";
 
 import QuoteMain from "./Components/QuoteMain";
 import BlogDetail from "./Components/BlogDetail";
-import Aboutus from "./Components/Aboutus";
 import GetInspire from "./Components/GetInspire";
 import Advertise from "./Components/Advertise";
 import ViewMore from "./Components/ViewMore";
@@ -90,7 +67,6 @@ import ViewService from "./Components/ViewService";
 import AllNotification from "./Components/SuperPortal/AllNotification";
 import ViewServices from "./Components/SuperPortal/ViewServices";
 import ViewServiceMore from "./Components/SuperPortal/ViewServiceMore";
-import ViewReviews from "./Components/SuperPortal/ViewReviews";
 import Advertised from "./Components/SuperPortal/Advertised";
 import ViewContact from "./Components/SuperPortal/ViewContact";
 import GetInspired from "./Components/SuperPortal/GetInspired";
@@ -125,7 +101,6 @@ import SupCheckResponse from "./Components/SupplierPortal/CheckResponse";
 import SupplierLedger from "./Components/SupplierPortal/SupplierLedger";
 
 //Suppplier
-import MyCoupon from "./Components/ClientPortal/MyCoupons";
 import ClientAllNotification from "./Components/ClientPortal/ClientAllNotification";
 import ComplainResponses from "./Components/ClientPortal/ComplainResponses";
 // import Help from './Components/SupplierPortal/Help';
@@ -135,11 +110,9 @@ import ComplainResponses from "./Components/ClientPortal/ComplainResponses";
 import Responses from "./Components/ClientPortal/Responses";
 import CheckResponse from "./Components/ClientPortal/CheckResponse";
 import ProviderLedger from "./Components/AdminPortal/ProviderLedger";
-import cookie from "react-cookies";
 import SuperDashboard from "./Components/SuperPortal/SuperDashboard";
 import Dashboard from "./Components/ClientPortal/Dashboard";
 import ProviderDashboard from "./Components/AdminPortal/AdminDashboard";
-import TestCalulator from "./Components/TestCalculator";
 import forum from "./Components/forum";
 import detailforum from "./Components/detailforum";
 import invoice from "./Components/SupplierPortal/SupplierInvoice";
@@ -156,7 +129,6 @@ function App() {
     var authenticated = false;
     try {
       let currentDate = new Date();
-      const token = localStorage.getItem("user_token")
       const role = jwt_decode(localStorage.getItem("user_token"));
       if (!localStorage.getItem('user_token')) {
         authenticated = false;
@@ -186,7 +158,6 @@ function App() {
     var authenticated = false;
     try {
       let currentDate = new Date();
-      const token = localStorage.getItem("user_token")
       const role = jwt_decode(localStorage.getItem("user_token"));
       if (!localStorage.getItem('user_token')) {
         authenticated = false;

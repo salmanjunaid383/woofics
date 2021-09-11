@@ -1,6 +1,5 @@
 import jwt_decode from "jwt-decode";
-import axios from 'axios';
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 export default function CustomSupplierAuth() {
   let history = useHistory();

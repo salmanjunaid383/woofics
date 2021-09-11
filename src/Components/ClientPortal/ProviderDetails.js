@@ -99,23 +99,23 @@ export default function ProviderDetails() {
                     <div className={classes.toolbar} />
                     
                                <div className="page-wrapper bg-light">
-                                    <div class="container w-100 ">
-                                    <div class="d-md-flex mb-3">
-                                        <h3 class=" h1 mb-0 text-center mx-auto">PROVEEDOR DE SERVICIO</h3>
+                                    <div className="container w-100 ">
+                                    <div className="d-md-flex mb-3">
+                                        <h3 className=" h1 mb-0 text-center mx-auto">PROVEEDOR DE SERVICIO</h3>
                                     </div>
-                                        <div class="row w-100 mx-auto">
-                                            <div class="twPc-div w-100 mx-auto ">
-                                                <a class="twPc-bg twPc-block"></a>
+                                        <div className="row w-100 mx-auto">
+                                            <div className="twPc-div w-100 mx-auto ">
+                                                <a className="twPc-bg twPc-block"></a>
                 
-                                                <div class="twPc-div w-100 mx-auto  p-4">
-                                                <button class="btn pull-right marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={suppliers.id} onClick={() => SendData(suppliers.id, suppliers.first_name + " " + suppliers.last_name,suppliers.profile_image)} >Chat</button>
+                                                <div className="twPc-div w-100 mx-auto  p-4">
+                                                <button className="btn pull-right marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={suppliers.id} onClick={() => SendData(suppliers.id, suppliers.first_name + " " + suppliers.last_name,suppliers.profile_image)} >Chat</button>
                 
-                                                    <a title="Mert S. Kaplan" href="" class="twPc-avatarLink">
-                                                        <img alt="P. Image" src={suppliers.profile_image} class="twPc-avatarImg" />
+                                                    <a title="Mert S. Kaplan" href="" className="twPc-avatarLink">
+                                                        <img alt="P. Image" src={suppliers.profile_image} className="twPc-avatarImg" />
                                                     </a>
                 
-                                                    <div class="twPc-divUser">
-                                                        <div class="twPc-divName">
+                                                    <div className="twPc-divUser">
+                                                        <div className="twPc-divName">
                                                             <a href="">{suppliers.first_name+" "+ suppliers.last_name}</a>
                                                         </div>
                                                         <span>

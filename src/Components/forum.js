@@ -12,7 +12,6 @@ import Modal from '@material-ui/core/Modal';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
 import { useTheme } from '@material-ui/core/styles';
-import ScrollToTop from "./ScrollToTop";
 // import CustomAuth from "../CustomAuth";
 
 
@@ -285,12 +284,12 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
 
                     
                     <div className="page-wrapper bg-light">
-                        <div class="container mt-100">
-                                   <div class="d-md-flex mb-3">
-                    <h3 class=" h1 mb-0 text-center mx-auto">FORO DE DISCUSION</h3>
+                        <div className="container mt-100">
+                                   <div className="d-md-flex mb-3">
+                    <h3 className=" h1 mb-0 text-center mx-auto">FORO DE DISCUSION</h3>
                 </div>
-                            <div class="row">
-                                <div class="col-md-10 mx-auto">
+                            <div className="row">
+                                <div className="col-md-10 mx-auto">
                                     {
                                         questions === '' ? <h3 className="text-center my-auto">¡Nada que mostrar! Iniciar una nueva discusión...</h3> :
                                             questions.map((val, id) => {
@@ -298,21 +297,21 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                                                     <>
 
                                                         <Link to={`/forodedetalles/${val.id}`}>
-                                                            <div class="card mb-4 mx-auto">
-                                                                <div class="card-header ">
-                                                                    <div class="media flex-wrap w-100 align-items-center">
+                                                            <div className="card mb-4 mx-auto">
+                                                                <div className="card-header ">
+                                                                    <div className="media flex-wrap w-100 align-items-center">
                                                                         {/* <img src={"https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"} class="d-block ui-w-40 rounded-circle" alt="" /> */}
-                                                                        <div class="media-body ml-3 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{val.asked_by}</a>
-                                                                            <div class="text-muted small">{(val.created_at).slice(0, 10)}</div>
+                                                                        <div className="media-body ml-3 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{val.asked_by}</a>
+                                                                            <div className="text-muted small">{(val.created_at).slice(0, 10)}</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="card-body">
+                                                                <div className="card-body">
                                                                     <p> {val.question}</p>
                                                                 </div>
-                                                                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                                                                    <div class="px-4 pt-3"></div>
-                                                                    <div class="px-4 pt-3"> <button type="button" class="btn greenbtn text-white"><i class="ion ion-md-create"></i>&nbsp; Ver más y responder</button> </div>
+                                                                <div className="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                                                    <div className="px-4 pt-3"></div>
+                                                                    <div className="px-4 pt-3"> <button type="button" className="btn greenbtn text-white"><i className="ion ion-md-create"></i>&nbsp; Ver más y responder</button> </div>
                                                                 </div>
                                                             </div>
                                                         </Link>
@@ -324,10 +323,10 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                                 
                             </div>
                             
-                <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
+                <div className="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
                             {
                                 prevPage !== null? <>
-                                <div class="col-md-6" >
+                                <div className="col-md-6" >
                             
                                      <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>
                         
@@ -335,7 +334,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                             }
                             {
                                 nextPage !== null? <>
-                                <div class="col-md-6">
+                                <div className="col-md-6">
                             
                                 <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Next</button>
                         

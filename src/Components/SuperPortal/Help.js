@@ -77,7 +77,7 @@ export default function Help() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
@@ -106,8 +106,8 @@ export default function Help() {
                                                                         <td className="txt-oflo">{(val.description).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
                                                                         <td className="text-danger">
-                                                                            <button class="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/respuesta_de_ayuda/${val.id}`)}>Respuesta</button>
-                                                                            <button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button>
+                                                                            <button className="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/respuesta_de_ayuda/${val.id}`)}>Respuesta</button>
+                                                                            <button className="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button>
                                                                         </td>
                                                                     </tr>
                                                                 </>

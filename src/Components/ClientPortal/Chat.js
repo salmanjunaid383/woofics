@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useHistory, useParams, } from 'react-router-dom'
-import loginside from '../../Images/loginside.jpg'
+import { useHistory, } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from './Sidebar'
 
@@ -9,7 +8,7 @@ import jwt_decode from 'jwt-decode'
 import Pusher from 'pusher-js';
 import chatimg from '../../Images/chat.png'
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 import firebase from '../Firebase'
@@ -66,7 +65,7 @@ export default function Chat() {
     useEffect(() => {
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
-          });;
+          });
         const channel = pusher.subscribe(""+decoded.sub+"");   
         
         channel.bind("my-event",function(returnData){
@@ -339,14 +338,14 @@ export default function Chat() {
                         <div id="frame">
                             <div id="sidepanel">
                                 <div id="profile">
-                                    <div class="wrap">
-                                        <img id="profile-img" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" } class="online" alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
+                                    <div className="wrap">
+                                        <img id="profile-img" src={Imagedata.profile_image !== null ? Imagedata.profile_image :  "https://image.flaticon.com/icons/png/512/147/147144.png" } className="online" alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
                                         <p>WOofic</p>
-                                        <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
+                                        <i className="fa fa-chevron-down expand-button" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div id="search">
-                                    <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+                                    <label htmlFor=""><i className="fa fa-search" aria-hidden="true"></i></label>
                                     <input type="text" placeholder="Search contacts..." />
                                 </div>
                                 <div id="contacts">
@@ -357,12 +356,12 @@ export default function Chat() {
                                                 <> 
                                                 
                                                     {val.main_user === decoded.sub ?
-                                                        <li class="contact active" onClick={() => { Users(val.associate_user, val.main_name); setUsername(val.associate_name); setImageProfile(val.avatar) }}>
-                                                        <div class="wrap text-left">
+                                                        <li className="contact active" onClick={() => { Users(val.associate_user, val.main_name); setUsername(val.associate_name); setImageProfile(val.avatar) }}>
+                                                        <div className="wrap text-left">
                                                             <img src={val.avatar} style={{ borderRadius: 50, width: 50, height: 50 }} alt="" />
-                                                            <div class="meta">
+                                                            <div className="meta">
                                                                 <p className="name chatCapitalize mb-0 pb-0">{val.associate_name}</p>
-                                                                {val.total_seen != 0 ? <p class="preview pl-md-5 text-danger text-left" style={{ width: '950px' }}>{val.total_seen} Mensajes no Leídos...</p> : <p class="preview pl-md-5 text-left " style={{ width: '950px' }}> {val.last_message ? (val.last_message).slice(0, 20) + '...' : ''}</p>}
+                                                                {val.total_seen != 0 ? <p className="preview pl-md-5 text-danger text-left" style={{ width: '950px' }}>{val.total_seen} Mensajes no Leídos...</p> : <p className="preview pl-md-5 text-left " style={{ width: '950px' }}> {val.last_message ? (val.last_message).slice(0, 20) + '...' : ''}</p>}
                                                             </div>
                                                         </div>
                                                         </li>
@@ -376,8 +375,8 @@ export default function Chat() {
                                     </ul>
                                 </div>
                             </div>
-                            <div class="content ">
-                                {username ? <div class="contact-profile">
+                            <div className="content ">
+                                {username ? <div className="contact-profile">
                                     <img src={ImageProfile} alt="" style={{ borderRadius: 50, width: 50, height: 50 }} />
                                     <p className="ChatCapitalize">{username}</p>
                                 </div> :
@@ -392,13 +391,13 @@ export default function Chat() {
                                         </div>
                                     </div>
                                 }
-                                <div class="messages" style={{ overflowY: "scroll" }}>
+                                <div className="messages" style={{ overflowY: "scroll" }}>
                                     <ul >
                                         {msg ?
                                             msg.map((val, id) => {
                                                 return (
                                                     <>
-                                                        <li class={decoded.sub == val.from_user ? 'replies' : 'sent'} ref={divRef} value={val.to_user == id ? 'me hu' : 'dost'}>
+                                                        <li className={decoded.sub == val.from_user ? 'replies' : 'sent'} ref={divRef} value={val.to_user == id ? 'me hu' : 'dost'}>
                                                             <img src={decoded.sub === val.from_user ? Imagedata.profile_image : ImageProfile} alt="" style={{ borderRadius: 50, width: 30, height: 30 }} />
                                                             {(val.message).slice(0, 8) == 'https://' ? <p >Descarga De Archivos: <a href={val.message} download><i className="fa fa-download px-2 text-white"></i></a></p> : <p>{val.message}</p>}
                                                         </li>
@@ -407,10 +406,10 @@ export default function Chat() {
                                             }) : ''}
                                     </ul>
                                 </div>
-                                {username ? <div class="message-input">
-                                    <div class="d-flex bg-light">
+                                {username ? <div className="message-input">
+                                    <div className="d-flex bg-light">
                                         <input type="text" placeholder="Write your message..." onChange={(e) => setsentMsg(e.target.value)} value={sentmsg} onKeyPress={handleKeyDown} />
-                                        <i class="fa fa-paperclip mx-auto p-2 my-auto" aria-hidden="true" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClickmenu}></i>
+                                        <i className="fa fa-paperclip mx-auto p-2 my-auto" aria-hidden="true" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClickmenu}></i>
                                         <Menu id="simple-menu"
                                             anchorEl={anchorElmenu}
                                             keepMounted
@@ -420,7 +419,7 @@ export default function Chat() {
                                             <label ><MenuItem onClick={handleClosemenu} >Imagenes<input type="file" onChange={docOnchange} accept="image/*" className="d-none" /></MenuItem></label>
                                             <label ><MenuItem onClick={handleClosemenu} >Documentos <input type="file" onChange={docOnchange} className="d-none" /></MenuItem></label>
                                         </Menu>
-                                        <button class="submit btn btn-primary my-1 mx-1" onClick={() => Message()}><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                        <button className="submit btn btn-primary my-1 mx-1" onClick={() => Message()}><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
                                     </div>
                                 </div> : ""
                                 }

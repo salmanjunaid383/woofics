@@ -76,9 +76,9 @@ export default function LedList() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
-                                <div class="col-md-12">
+                                <div className="col-md-12">
                                     <div className="mr-auto mb-5">
                                         <button className="btn greenbtn text-white float-right" onClick={() => history.push('/led')}>Agregar LED</button>
                                     </div>
@@ -99,7 +99,7 @@ export default function LedList() {
                                                     </tr>
                                                 </thead>
                                                 <tbody id="data-row">
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colSpan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -107,7 +107,7 @@ export default function LedList() {
                                                                         
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
-                                                                        <td className="text-danger"><Link to={`/updateled/${val.id}`}><button class="btn greenbtn text-white " >Actualización / Detalles</button></Link><button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Borrar</button></td>
+                                                                        <td className="text-danger"><Link to={`/updateled/${val.id}`}><button className="btn greenbtn text-white " >Actualización / Detalles</button></Link><button className="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Borrar</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

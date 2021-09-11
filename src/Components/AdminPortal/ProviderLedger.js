@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import axios from 'axios';
 import Sidebar from './Sidebar'
 
 import jwt_decode from 'jwt-decode';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import CustomProviderAuth from "../CustomProviderAuth";
 import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles((theme) => ({
 
@@ -113,9 +112,9 @@ export default function ProviderLedger() {
 
 
                     <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
@@ -123,11 +122,11 @@ export default function ProviderLedger() {
                                             </div>
 
 
-                                            <div class="form-horizontal form-material" style={{ textAlign: 'left', transition:"0.3s"}}>
+                                            <div className="form-horizontal form-material" style={{ textAlign: 'left', transition:"0.3s"}}>
                                                         <div className="row mt-4 mx-auto">
                                                             <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
-                                                            <div class="card">
-                                                            <div class="card-body">
+                                                            <div className="card">
+                                                            <div className="card-body">
                                                             <div className="row mt-4">
                                                             <div className="col-md-6 text-center px-2 w-100 p-0">
                                                             <TextField
@@ -188,16 +187,16 @@ export default function ProviderLedger() {
                                                                     
                                                                     
                                                             </div>
-                                                            <div class="mb-4 mt-4 text-center mx-auto">
-                                                                    <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  >Factura De Pago</button>
+                                                            <div className="mb-4 mt-4 text-center mx-auto">
+                                                                    <div className="col-sm-12 text-center">
+                                                                    <button className={`btn text-white mt-2 greenbtn text-white `}  >Factura De Pago</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-12 mb-4 mt-4 w-100 text-center mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
-                                                                <div class="col-sm-12 text-center">
+                                                            <div className="col-md-12 mb-4 mt-4 w-100 text-center mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
+                                                                <div className="col-sm-12 text-center">
                                                                     {/* <button class={`btn text-white greenbtn text-white `}  onClick={() => supplierRental()}>Add</button> */}
                                                                 </div>
                                                             </div>
@@ -209,8 +208,8 @@ export default function ProviderLedger() {
 
 
 
-                                            <div class="row">
-                                                <div class="col-6" >
+                                            <div className="row">
+                                                <div className="col-6" >
                                             <div className="table-responsive salman-table-change">
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
@@ -254,7 +253,7 @@ export default function ProviderLedger() {
                                                 </table>
                                             </div>
                                             </div>
-                                            <div class="col-6" >
+                                            <div className="col-6" >
                                             <div className="table-responsive salman-table-change">
                                                 <table  id="for-table-setting" className="table no-wrap" style={{tableLayout:"fixed", width:"100%"}}>
                                                     <thead id="heading-row"className="py-3" style={{ backgroundColor: "#f25c8a", borderRadius: 10 }}>
@@ -303,7 +302,7 @@ export default function ProviderLedger() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
 

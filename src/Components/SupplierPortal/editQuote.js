@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
 import SideBar from './Sidebar';
@@ -207,16 +203,16 @@ export default function Quote() {
 
                     <div className="page-wrapper bg-light">
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-8 col-xlg-9 col-md-12 mx-auto">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <form className="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row">
                                                     <div className="w-100">
                                                         <h3 className="w-100 text-center">Enviar respuesta</h3>
-                                                        <table  id="for-table-setting" class="table table-hover">
+                                                        <table  id="for-table-setting" className="table table-hover">
                                                             <tbody id="data-row">
                                                                 <tr>
                                                                     <td>Cargo por paquete</td>
@@ -369,9 +365,9 @@ export default function Quote() {
 
                                                     </div> <hr />
                                                     <div className="col-md-12">
-                                                        <label class="col-md-12 pt-3">Descripción</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <textarea rows="4" class="form-control p-0 border-0" placeholder={quotationData.description}  onChange={(e) => setDescription(e.target.value)}></textarea>
+                                                        <label className="col-md-12 pt-3">Descripción</label>
+                                                        <div className="col-md-12 border-bottom p-0">
+                                                            <textarea rows="4" className="form-control p-0 border-0" placeholder={quotationData.description}  onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -422,9 +418,9 @@ export default function Quote() {
                                                       
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-4 mt-4">
-                                                    <div class="col-sm-12 text-center">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>Actualizar cotización</button>
+                                                <div className="form-group mb-4 mt-4">
+                                                    <div className="col-sm-12 text-center">
+                                                        <button className="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>Actualizar cotización</button>
                                                     </div>
                                                 </div>
                                             </form>

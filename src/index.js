@@ -1,6 +1,5 @@
-import React, { useEffect, useLayoutEffect,useState,useRef } from "react";
+import React from "react";
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';

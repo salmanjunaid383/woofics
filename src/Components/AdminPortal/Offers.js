@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from './Sidebar'
 
@@ -14,8 +14,6 @@ import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import clsx from 'clsx';
 
-import CustomProviderAuth from "../CustomProviderAuth";
-import { LaptopWindows } from "@material-ui/icons";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -186,17 +184,17 @@ export default function Offers() {
 
                    <div className="page-wrapper bg-light">
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-8 col-xlg-9 col-md-12 mx-auto">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <form className="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row">
                                                     <div className="col-md-12">
-                                                        <label class="col-md-12 p-0">Descripción</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
+                                                        <label className="col-md-12 p-0">Descripción</label>
+                                                        <div className="col-md-12 border-bottom p-0">
+                                                            <textarea rows="4" className="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -226,9 +224,9 @@ export default function Offers() {
                                                         />
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-4 mt-4">
-                                                    <div class="col-sm-12 text-center">
-                                                        <button class={`btn text-white ${description == '' || price == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{offer}</button>
+                                                <div className="form-group mb-4 mt-4">
+                                                    <div className="col-sm-12 text-center">
+                                                        <button className={`btn text-white ${description == '' || price == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{offer}</button>
                                                     </div>
                                                 </div>
                                             </form>

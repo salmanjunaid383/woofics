@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
-import StarRatings from "react-star-ratings";
-import StazBar from "./Stazbar";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import axios from 'axios';
+import StarRatings from 'react-star-ratings';
+import StazBar from './Stazbar';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
@@ -73,20 +75,20 @@ export default function OfferBadge() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="d-md-flex mb-3">
+                        <div className="d-md-flex mb-3">
 
                         </div>
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
-                                    <h3 class=" mb-0 h1 text-center mx-auto text-change" style={{fontSize:"36px", fontWeight:"500", marginTop:"15px"}}>ofertas</h3>
+                                    <h3 className=" mb-0 h1 text-center mx-auto text-change" style={{fontSize:"36px", fontWeight:"500", marginTop:"15px"}}>ofertas</h3>
                                         <div className="table-responsive salman-table-change">
                                         
                                             {blog.map((val, key) => {
                                                 return (
                                                     <>
-                                                        <div class="col-xl-12 col-md-12 mx-auto shadow p-3 mb-3 " style={{ backgroundColor: "white", border: '3px #f95c87 solid', borderRadius: 10 }}>
+                                                        <div className="col-xl-12 col-md-12 mx-auto shadow p-3 mb-3 " style={{ backgroundColor: "white", border: '3px #f95c87 solid', borderRadius: 10 }}>
                                                             <div className="row">
                                                                 <div className="col-md-2 text-center"><img src={val.profile_image == "xyz.jpg" ? "https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png" : val.profile_image} className="img-fluid " style={{ width: 100, borderRadius: 150 }} /></div>
                                                                 <div className="col-md-5">

@@ -1,9 +1,7 @@
 import React, { useState, useEffect,useRef } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {Animated} from "react-animated-css";
 import "../css/last news.css";
-import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
-import {ReturnToken} from "../../ReturnToken";
 import useOnScreen from "./OnScreen";
 import axios from "axios";
 
@@ -58,16 +56,16 @@ function LastNews() {
     
     
       <div className="container text-center mx-auto">
-        <div class="woofic_lastnewner">
+        <div className="woofic_lastnewner">
           <div className="row text-center">
             <div className="col-sm-12 col-md-12">
-              <div class="woofic_lastnews_header">
-                <div class="woofic_lastnews_heading">datos de interés</div>
-                <div class="woofic_lastnews_hline"></div>
+              <div className="woofic_lastnews_header">
+                <div className="woofic_lastnews_heading">datos de interés</div>
+                <div className="woofic_lastnews_hline"></div>
               </div>
             </div>
             <div
-              class="row mx-auto"
+              className="row mx-auto"
               ref={ref}
               style={{
                 height: "80%",
@@ -84,7 +82,7 @@ function LastNews() {
                   
                   <Animated animationIn="fadeInLeft"  animationInDuration={1000} isVisible={isVisible}>
                     <div
-                      class="text-center"
+                      className="text-center"
                       style={{ width: "250px", padding: "0" }}
                     >
                       <div
@@ -108,7 +106,7 @@ function LastNews() {
                           }}
                         >
                           <h2 style={{color:"#fff", fontWeight:"900",marginBottom:"2px"}}>{val.value}</h2>
-                          <div class="woofic_lastnews_content_description">
+                          <div className="woofic_lastnews_content_description">
                             <h3>{val.label}</h3> <br />
                             <br />
                           </div>
@@ -125,26 +123,26 @@ function LastNews() {
         </div>
 
         <div className="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="woofic_lastnews_below_header">
+          <div className="row">
+            <div className="col-sm-12">
+              <div className="woofic_lastnews_below_header">
                 {/* <div class="woofic_visiual_left"> */}
-                <div class="woofic_lastnews_heading text-center">
+                <div className="woofic_lastnews_heading text-center">
                   Últimas noticias
-                  <div class="woofic_lastnews_sub-heading">
+                  <div className="woofic_lastnews_sub-heading">
                     Empiece hoy para un gran futuro
                   </div>
                 </div>
-                <div class="woofic_lastnews_hline"></div>
+                <div className="woofic_lastnews_hline"></div>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="woofic_lastnews_cards_container"
+          className="woofic_lastnews_cards_container"
           onClick={() => history.push("/allblog")}
         >
-          <div class="woofic_lastnews_card container ">
+          <div className="woofic_lastnews_card container ">
             <div className="row ">
               {
               blog.slice(0, 3).map((val, id) => {
@@ -152,12 +150,12 @@ function LastNews() {
                   <>
                     {" "}
                     <div className="col-sm-12 col-md-4 text-center">
-                      <div class="woofic_last-news_cards">
+                      <div className="woofic_last-news_cards">
                         <img src={val.image} />
-                        <div class="woofic_lastnews_card-heading text-center">
+                        <div className="woofic_lastnews_card-heading text-center">
                           {val.author.slice(0, 40)}
                         </div>
-                        <div class="woofic_lastnews_card-subheading text-center">
+                        <div className="woofic_lastnews_card-subheading text-center">
                           {val.article.slice(0, 180) + "..."}
                         </div>
                       </div>
@@ -173,18 +171,18 @@ function LastNews() {
       <div className="container text-center mx-auto mt-lg-5">
         <div className="row mx-auto">
           <div className="col-sm-12 col-md-12">
-            <div class="woofic_lastnews_header">
-              <div class="woofic_lastnews_heading">preguntas frecuentes</div>
-              <div class="woofic_lastnews_hline"></div>
+            <div className="woofic_lastnews_header">
+              <div className="woofic_lastnews_heading">preguntas frecuentes</div>
+              <div className="woofic_lastnews_hline"></div>
             </div>
           </div>
           <div className="col-md-10 mx-auto">
-            <div class="accordion" id="accordionExample">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h2 class="mb-0">
+            <div className="accordion" id="accordionExample">
+              <div className="card">
+                <div className="card-header" id="headingOne">
+                  <h2 className="mb-0">
                     <button
-                      class="btn btn-link btn-block text-left collapsed"
+                      className="btn btn-link btn-block text-left collapsed"
                       type="button"
                       data-toggle="collapse"
                       data-target="#collapseOne"
@@ -198,11 +196,11 @@ function LastNews() {
 
                 <div
                   id="collapseOne"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="headingOne"
                   data-parent="#accordionExample"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     Woofic envía a sus colaboradores (proveedores) el
                     cuestionario cumplimentado por el cliente, en un plazo
                     máximo de 48 horas que los proveedores tienen para responder
@@ -210,11 +208,11 @@ function LastNews() {
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <h2 class="mb-0">
+              <div className="card">
+                <div className="card-header" id="headingTwo">
+                  <h2 className="mb-0">
                     <button
-                      class="btn btn-link btn-block text-left collapsed"
+                      className="btn btn-link btn-block text-left collapsed"
                       type="button"
                       data-toggle="collapse"
                       data-target="#collapseTwo"
@@ -227,11 +225,11 @@ function LastNews() {
                 </div>
                 <div
                   id="collapseTwo"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="headingTwo"
                   data-parent="#accordionExample"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     Woofic es una plataforma integral, en la que recibirás y
                     gestionarás ofertas, realizarás calificaciones de
                     proveedores y muchas más ventajas, por eso es necesario
@@ -272,11 +270,11 @@ function LastNews() {
                   </div>
                 </div>
               </div> */}
-              <div class="card">
-                <div class="card-header" id="headingFour">
-                  <h2 class="mb-0">
+              <div className="card">
+                <div className="card-header" id="headingFour">
+                  <h2 className="mb-0">
                     <button
-                      class="btn btn-link btn-block text-left collapsed"
+                      className="btn btn-link btn-block text-left collapsed"
                       type="button"
                       data-toggle="collapse"
                       data-target="#collapseFour"
@@ -289,11 +287,11 @@ function LastNews() {
                 </div>
                 <div
                   id="collapseFour"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="headingFour"
                   data-parent="#accordionExample"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     No. Woofic.com es un portal totalmente independiente, solo
                     ponemos clientes en contacto con proveedores y cada
                     proveedor hace su oferta personalizada directamente al
@@ -303,11 +301,11 @@ function LastNews() {
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingFive">
-                  <h2 class="mb-0">
+              <div className="card">
+                <div className="card-header" id="headingFive">
+                  <h2 className="mb-0">
                     <button
-                      class="btn btn-link btn-block text-left collapsed"
+                      className="btn btn-link btn-block text-left collapsed"
                       type="button"
                       data-toggle="collapse"
                       data-target="#collapseFive"
@@ -320,11 +318,11 @@ function LastNews() {
                 </div>
                 <div
                   id="collapseFive"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="headingFive"
                   data-parent="#accordionExample"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     Nuestro servicio es completamente gratuito. Las ofertas que
                     harás encontrar de los diferentes proveedores en Woofic son
                     los mismos que encontrarás en cada empresa. No existen

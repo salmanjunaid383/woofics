@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from '../ClientPortal/Sidebar'
 
@@ -13,7 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import firebase from '../Firebase'
 
@@ -254,60 +254,60 @@ export default function UpdateProfile() {
                     
 
                     <div className="page-wrapper px-lg-5">
-                        <div class="container-fluid">
-                            <div class="row mx-auto border bg-light">
-                                <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 ">
-                                    <div class="">
-                                        <div class="card-body">
-                                            <form class="form-horizontal form-material" >
+                        <div className="container-fluid">
+                            <div className="row mx-auto border bg-light">
+                                <div className="col-lg-8 col-xlg-9 col-md-12 col-sm-12 ">
+                                    <div className="">
+                                        <div className="card-body">
+                                            <form className="form-horizontal form-material" >
                                                 <div className="row">
-                                                    <div class="form-group mb-4 col-md-6">
-                                                        <label class="col-md-6 p-0 bold">Primer Nombre</label>
+                                                    <div className="form-group mb-4 col-md-6">
+                                                        <label className="col-md-6 p-0 bold">Primer Nombre</label>
                                                         <input type="text" defaultValue={data.first_name}
-                                                            class="form-control p-0 border-0" onChange={(e) => setFirstname(e.target.value)} /> </div>
-                                                    <div class="form-group mb-4 col-md-6">
-                                                        <label class="col-md-6 p-0 bold">Apellido</label>
+                                                            className="form-control p-0 border-0" onChange={(e) => setFirstname(e.target.value)} /> </div>
+                                                    <div className="form-group mb-4 col-md-6">
+                                                        <label className="col-md-6 p-0 bold">Apellido</label>
                                                         <input type="text" defaultValue={data.last_name}
-                                                            class="form-control p-0 border-0" onChange={(e) => setLastname(e.target.value)} /> </div>
+                                                            className="form-control p-0 border-0" onChange={(e) => setLastname(e.target.value)} /> </div>
                                                 </div>
                                                 <div className="row">
 
-                                                    <div class="form-group mb-4 col-md-6">
-                                                        <label for="example-email" class="col-md-12 p-0">Correo Electrónico</label>
+                                                    <div className="form-group mb-4 col-md-6">
+                                                        <label htmlFor="example-email" className="col-md-12 p-0">Correo Electrónico</label>
                                                         <input type="email" defaultValue={data.email}
-                                                            class="form-control p-0 border-0" name="example-email"
+                                                            className="form-control p-0 border-0" name="example-email"
                                                             id="example-email1" onChange={(e) => setEmail(e.target.value)} />
                                                     </div>
-                                                    <div class="form-group mb-4 col-md-6">
-                                                        <label class="col-md-12 p-0">Telefono no</label>
+                                                    <div className="form-group mb-4 col-md-6">
+                                                        <label className="col-md-12 p-0">Telefono no</label>
                                                         <input type="text" defaultValue={data.contact_number}
-                                                            class="form-control p-0 border-0" onChange={(e) => setContact(e.target.value)} />
+                                                            className="form-control p-0 border-0" onChange={(e) => setContact(e.target.value)} />
                                                     </div>
                                                 </div>
                                                 <div className="row">
-                                                    <div class="form-group mb-4 row col-md-6">
-                                                        <label class="col-md-12 p-0">Sector</label>
+                                                    <div className="form-group mb-4 row col-md-6">
+                                                        <label className="col-md-12 p-0">Sector</label>
                                                         <input type="text" defaultValue={data.sector}
-                                                            class="form-control p-0 border-0" onChange={(e) => setSector(e.target.value)} />
+                                                            className="form-control p-0 border-0" onChange={(e) => setSector(e.target.value)} />
                                                     </div>
-                                                    <div class="form-group mb-4 row col-md-6">
-                                                        <label class="col-md-12 p-0">Localización</label>
+                                                    <div className="form-group mb-4 row col-md-6">
+                                                        <label className="col-md-12 p-0">Localización</label>
                                                         <input type="text" defaultValue={data.location}
-                                                            class="form-control p-0 border-0" onChange={(e) => setLocation(e.target.value)} />
+                                                            className="form-control p-0 border-0" onChange={(e) => setLocation(e.target.value)} />
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-4">
-                                                    <div class="col-sm-12 text-center ">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={LoginBtn}>{progress}</button>
+                                                <div className="form-group mb-4">
+                                                    <div className="col-sm-12 text-center ">
+                                                        <button className="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={LoginBtn}>{progress}</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-xlg-3 col-md-12 border-left">
-                                    <div class="">
-                                        <div class=" pt-5 w-50 mx-auto" >
+                                <div className="col-lg-4 col-xlg-3 col-md-12 border-left">
+                                    <div className="">
+                                        <div className=" pt-5 w-50 mx-auto" >
                                             <img alt="user" className="img-fluid" src={imageUrl} />
                                             {imageProgress}
                                         </div>
@@ -329,7 +329,7 @@ export default function UpdateProfile() {
                                                     // onClick={componentClicked}
                                                     callback={responseFacebook}
                                                     cssClass="my-facebook-button"
-                                                    textButton={<span class="ml-3">Facebook</span>}
+                                                    textButton={<span className="ml-3">Facebook</span>}
                                                      />
                                         <GoogleLogin
                                             clientId="101523716211-l7m06jsccfe7fa6u3tdinal5fofer8qt.apps.googleusercontent.com"

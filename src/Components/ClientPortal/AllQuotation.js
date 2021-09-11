@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import "../ClientPortal/allquotation.css"
 import Backdrop from '@material-ui/core/Backdrop';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import Modal from '@material-ui/core/Modal';
 import jwt_decode from 'jwt-decode';
 import Fade from '@material-ui/core/Fade';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CustomClientAuth from "../CustomClientAuth";
 
@@ -208,9 +208,9 @@ export default function AllQuotation() {
 
 
                     <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row ">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
                                             <div className="d-md-flex mb-3">
@@ -224,7 +224,7 @@ export default function AllQuotation() {
                                             <div className="col-md-12 mx-auto w-100">
                                                 <div className="w-100">
                                                     <h3 className="w-100 text-center service-detail" style={{fontWeight:"bold"}}>Detalles del servicio</h3>
-                                                    <table  id="for-table-setting" class="table table-hover">
+                                                    <table  id="for-table-setting" className="table table-hover">
                                                         <tbody id="data-row">
                                                             {servicet  ? <>
                                                                 <tr>
@@ -411,9 +411,9 @@ export default function AllQuotation() {
                                                                             <td style={{padding:"10px"}} className={val.price > 15000 ? 'txt-oflo text-center bold  badge badge-pill badge-danger' : val.price > 10000 ? 'txt-oflo text-center bold   badge badge-pill badge-success' : val.price > 100 ? 'txt-oflo text-center bold   badge badge-pill badge-info' : val.price > 500 ? 'txt-oflo text-center bold   badge badge-pill badge-warning' : val.price > 1000 ? 'txt-oflo text-center bold   badge badge-pill badge-success' : val.price > 5000 ? 'txt-oflo text-center bold   badge badge-pill badge-secondary' : val.price > 10000 ? 'txt-oflo text-center bold   badge badge-pill badge-primary' : val.price > 20000 ? 'txt-oflo text-center bold   badge badge-pill badge-info' : val.price > 500000 ? 'txt-oflo text-center bold   badge badge-pill badge-danger' : 'txt-oflo text-center bold badge badge-pill badge-danger'}>$ {val.price}</td>
                                                                             <td className="txt-oflo text-center bold">{val.delivery_days} Days</td>
                                                                             <td className="txt-oflo text-center bold">
-                                                                            <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => handleOpenpop2(val.id)} >Detalle</button> <span> | </span> 
-                                                                                <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => RedoOffer(val.id)} >Rehacer Oferta</button> <span> | </span> 
-                                                                                <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => StartProj(val.id)} >Iniciar Proyecto</button>
+                                                                            <button className="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => handleOpenpop2(val.id)} >Detalle</button> <span> | </span> 
+                                                                                <button className="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => RedoOffer(val.id)} >Rehacer Oferta</button> <span> | </span> 
+                                                                                <button className="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => StartProj(val.id)} >Iniciar Proyecto</button>
                                                                             </td>
                                                                         </tr>
                                                                     </>
@@ -427,7 +427,7 @@ export default function AllQuotation() {
                                 </div>
 
 
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
                     </div>
@@ -454,7 +454,7 @@ export default function AllQuotation() {
                             <div className="container bg-white rounded ">
                                 <div className="row">
 
-                                <table  id="for-table-setting text-center" class="table table-hover">
+                                <table  id="for-table-setting text-center" className="table table-hover">
                                     <tr>
                                         <td style={{textAlign:"center"}}>Name</td>
                                         <td style={{textAlign:"center"}}>Price</td>

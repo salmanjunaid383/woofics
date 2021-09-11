@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory ,useParams} from 'react-router-dom'
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
 import Navbar from './Navbar'
@@ -54,8 +54,8 @@ export default function ContactUs() {
             {/* </div> */}
             <div className="container.fluid for-mobile">
                 <div className="" style={{ height: '100%' }}>
-                    <div class="container ">
-                        <div class="row mx-auto mobile-res">
+                    <div className="container ">
+                        <div className="row mx-auto mobile-res">
                             <div className="col-12  col-md-6 border-right mt-md-5 pt-md-5 w-75">
                                 <h3>Queremos saber tu opinión</h3>
                                 <TextField className="w-75 my-1" id="standard-basic" label="Name *"
@@ -99,7 +99,7 @@ export default function ContactUs() {
                             >
                               <a
                                 target="_blank"
-                                href="https://www.facebook.com/Woofic-110333384466812"
+                                href="https://www.facebook.com/Woofic-110333384466812" rel="noreferrer"
                               >
                                 <i className="px-2 fa fa-facebook"></i>
                               </a>
@@ -114,7 +114,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="https://twitter.com/Woofic1">
+                              <a target="_blank" href="https://twitter.com/Woofic1" rel="noreferrer">
                                 <i className="px-1 fa fa-twitter"></i>
                               </a>
                             </span>
@@ -129,7 +129,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="https://www.instagram.com/woofics_com/">
+                              <a target="_blank" href="https://www.instagram.com/woofics_com/" rel="noreferrer">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>
@@ -146,7 +146,7 @@ export default function ContactUs() {
                             >
                               <a
                                 target="_blank"
-                                href="https://www.linkedin.com/company/woofic"
+                                href="https://www.linkedin.com/company/woofic" rel="noreferrer"
                               >
                                 <i className="px-1 fa fa-linkedin"></i>
                               </a>

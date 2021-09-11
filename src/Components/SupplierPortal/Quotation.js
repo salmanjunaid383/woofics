@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import SideBar from './Sidebar';
 import axios from 'axios';
 import "../ClientPortal/quotation.css"
 import jwt_decode from 'jwt-decode'
 
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 import CustomSupplierAuth from "../CustomSupplierAuth";
@@ -176,9 +176,9 @@ export default function Quotation() {
                     
 
                    <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4 quotation-ipad">
+                        <div className="container">
+                            <div id="blog" className="row ">
+                                <div className="container-fluid pb-lg-4 quotation-ipad">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light " style={{width:"1px"}}>
                                             <div className="d-md-flex mb-3">
@@ -202,7 +202,7 @@ export default function Quotation() {
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row" >
-                                                    {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
+                                                    {blog == '' ? <tr scope="row"><td colSpan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
                                                blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -218,7 +218,7 @@ export default function Quotation() {
                                                                         <td className="txt-oflo text-center bold">{val.model}</td>
                                                                         <td className="txt-oflo text-center bold">
                                                                         {/* { history.push(`/quote/${val.id}`); localStorage.setItem('qid', val.id) }} */}
-                                                                            <button class="btn pull-right marginBottom10 greenbtn text-white"  value={val.id} onClick={() => purchaseLead(val.id) } >Cita</button>                                                                    </td>
+                                                                            <button className="btn pull-right marginBottom10 greenbtn text-white"  value={val.id} onClick={() => purchaseLead(val.id) } >Cita</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )
@@ -231,13 +231,13 @@ export default function Quotation() {
                                 </div>
 
 
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
 
-                            <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
+                            <div className="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
                             {
                                 prevPage !== null   ? <>
-                                <div class="col-md-6" >
+                                <div className="col-md-6" >
                             
                                      <button className="s-button"  onClick={e => {goNext(prevPage)}}>Previous</button>
                         
@@ -245,7 +245,7 @@ export default function Quotation() {
                             }
                             {
                                 nextPage !== null  ? <>
-                                <div class="col-md-6">
+                                <div className="col-md-6">
                             
                                 <button className="s-button"  onClick={e => {goNext(nextPage)}}>Next</button>
                         

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import LandingPage from './LandingPage/components/LandingPage';
 import Footer from './LandingPage/components/Footer';
 import Banner from './LandingPage/components/Banner'

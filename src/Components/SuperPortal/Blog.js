@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios';
 import StazBar from './Stazbar';
 import './BLog.css';
@@ -67,7 +67,7 @@ export default function Blog() {
    
     return (
         <>
-            <div class="d-sm-flex">
+            <div className="d-sm-flex">
                 <StazBar></StazBar>
 
                 <main className={classes.content}>
@@ -75,17 +75,17 @@ export default function Blog() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container">
+                        <div className="container">
                             <div className="d-md-flex mb-3">
                                     <h3 className=" mb-0 mx-auto text-center mt-2 text-change"> BLOG </h3>
                             </div>
 
-                            <div id="blog" class="row">
+                            <div id="blog" className="row">
 
-                                <div class="col-md-12">
+                                <div className="col-md-12">
                                     
                                     <div className="mr-auto mb-3 mt-2">
-                                        <a class="btn pull-right greenbtn text-white mb-3" onClick={() => history.push('/createblog')}>Crear Nuevo Blog</a>
+                                        <a className="btn pull-right greenbtn text-white mb-3" onClick={() => history.push('/createblog')}>Crear Nuevo Blog</a>
                                     </div>
                                    
                                 </div>
@@ -95,19 +95,19 @@ export default function Blog() {
                                             return (
                                                 <>
                                                     
-                                                    <div class="card mb-3 w-100">
+                                                    <div className="card mb-3 w-100">
 
-                                                        <div class="row ">
-                                                            <div class="col-md-4 my-auto">
+                                                        <div className="row ">
+                                                            <div className="col-md-4 my-auto">
                                                                 <img src={val.image} alt="..."  className="img-fluid"/>
                                                             </div>
-                                                            <div class="col-md-8 my-auto">
-                                                                <div class="card-body">
+                                                            <div className="col-md-8 my-auto">
+                                                                <div className="card-body">
                                                                 
-                                                                    <h3 class="card-title">{val.author}</h3>
-                                                                    <h5 class="card-text">{val.article}</h5>
-                                                                    <p class="card-text"><small class="text-muted ">Fecha: {(val.created_at).slice(0, 10)}</small></p>
-                                                                    <button value={val.id} class="btn btn-danger" onClick={e => deleteBlog(e.target.value)} >Borrar</button>
+                                                                    <h3 className="card-title">{val.author}</h3>
+                                                                    <h5 className="card-text">{val.article}</h5>
+                                                                    <p className="card-text"><small className="text-muted ">Fecha: {(val.created_at).slice(0, 10)}</small></p>
+                                                                    <button value={val.id} className="btn btn-danger" onClick={e => deleteBlog(e.target.value)} >Borrar</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -117,7 +117,7 @@ export default function Blog() {
                                         }).reverse()}
 
                                 </div>
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
                     </div>

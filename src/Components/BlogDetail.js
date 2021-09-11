@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
 import Navbar from './Navbar'
@@ -29,18 +29,18 @@ export default function Blog() {
 
             <Navbar />
             <div className="page-wrapper ">
-                <div class="container mt-lg-5 pt-lg-5">
+                <div className="container mt-lg-5 pt-lg-5">
                         <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
                             <i className="fas fa-chevron-left fa-2x" onClick={() => history.goBack()} style={{ cursor: 'pointer' }}></i>
                         </div>
-                    <div class="row bg-light p-md-3">
-                        <div class="col-md-4 mx-auto">
+                    <div className="row bg-light p-md-3">
+                        <div className="col-md-4 mx-auto">
                             <img src={blog.image} alt="..." className="img-fluid" />
                         </div>
-                        <div class="col-md-8 text-left pt-2">
-                            <h1 class="card-title">{blog.author}</h1>
-                            <h3 class="card-text">{blog.article}</h3>
-                            <h5 class="card-text">Fecha: {(blog.created_at)}</h5>
+                        <div className="col-md-8 text-left pt-2">
+                            <h1 className="card-title">{blog.author}</h1>
+                            <h3 className="card-text">{blog.article}</h3>
+                            <h5 className="card-text">Fecha: {(blog.created_at)}</h5>
                         </div>
 
                         {/* <div class="card" >
@@ -53,7 +53,7 @@ export default function Blog() {
                 </div>
 
                 {/* </div> */}
-                <div class="col-md-12 gap10"></div>
+                <div className="col-md-12 gap10"></div>
             </div>
 
             <Footer />

@@ -102,19 +102,19 @@ export default function CreateImg() {
 
 
                     <div className="page-wrapper bg-light">
-                        <div class="container-fluid p-5" style={{ height: '100%' }}>
-                            <div class="row">
-                                <div class="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
+                        <div className="container-fluid p-5" style={{ height: '100%' }}>
+                            <div className="row">
+                                <div className="col-lg-8 col-xlg-9 col-md-12 col-sm-12 mx-auto ">
                                     <h4 className="text-center p-4">Artículo</h4>
-                                    <div class="card-body">
-                                        <form class="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
-                                            <label class="col-md-12 p-0">Imagen</label>
-                                            <div class="col-md-12 border p-2 text-center">
+                                    <div className="card-body">
+                                        <form className="form-horizontal form-material my-lg-3" style={{ textAlign: 'left' }}>
+                                            <label className="col-md-12 p-0">Imagen</label>
+                                            <div className="col-md-12 border p-2 text-center">
                                                 {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
-                                                 */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file"  />
+                                                 */}{Progress}<input onChange={onchange} className="form-control p-0 border-0" type="file"  />
                                                 <img className="text-center mx-auto img-fluid" src={imageUrl} style={{}} />
                                             </div>
-                                            <div class="col-md-12 p-0">
+                                            <div className="col-md-12 p-0">
                                                 <TextField id="standard-basic" className="w-25 mx-3" label="Name" onChange={(e) => setname(e.target.value)} />
                                                 {/* <TextField id="standard-basic" className="w-25 mx-3" label="Category" onChange={(e) => setcategory(e.target.value)} /> */}
                                                 <FormControl className="w-25 mx-3">
@@ -140,9 +140,9 @@ export default function CreateImg() {
                                                     </Select>
                                                 </FormControl>
                                             </div>
-                                            <div class="form-group mb-4">
-                                                <div class="col-sm-12 mt-3 text-center">
-                                                    <button class={`btn text-white ${disable}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>{wait}</button>
+                                            <div className="form-group mb-4">
+                                                <div className="col-sm-12 mt-3 text-center">
+                                                    <button className={`btn text-white ${disable}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>{wait}</button>
                                                 </div>
                                             </div>
                                         </form>

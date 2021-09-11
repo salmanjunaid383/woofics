@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {useHistory } from 'react-router-dom'
 import StazBar from './Stazbar';
 import axios from 'axios';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import CustomAdminAuth from "../CustomAdminAuth";
 
 const useStyles = makeStyles((theme) => ({
@@ -86,7 +86,7 @@ export default function ViewReviews() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
@@ -111,7 +111,7 @@ export default function ViewReviews() {
                                                                     <td className="txt-oflo">{val.first_name} {val.last_name}</td>
                                                                     <td className="txt-oflo">{val.email}<a href={"mailto:"+val.email} className="float-right pr-lg-4"><i className="fa fa-envelope ml-3 text-primary"></i></a></td>
                                                                     <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
-                                                                    <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e)=>approveReg(e.target.value)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button class="btn text-white btn-danger ml-2" value={val.id} onClick={(e)=>blockReg(e.target.value)}>Borrar</button></td>
+                                                                    <td className="text-danger text-center"><button className={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} value={val.id} onClick={(e)=>approveReg(e.target.value)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button className="btn text-white btn-danger ml-2" value={val.id} onClick={(e)=>blockReg(e.target.value)}>Borrar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

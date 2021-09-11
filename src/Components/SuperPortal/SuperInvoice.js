@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import SideBar from './Stazbar';
 import axios from 'axios';
-import ProBar from '../AdminPortal/Sidebar'
-import CustomAdminAuth from "../CustomAdminAuth";
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import TextField from '@material-ui/core/TextField';
 
 import jwt_decode from 'jwt-decode'
-import CustomAuth from "../CustomAuth";
 
 
 
@@ -125,9 +121,9 @@ export default function SupplierLedger() {
 
                     <div className="page-wrapper bg-light">
                     
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row ">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-xl-12">
                                             <h3 className="text-change text-center">Rechnung</h3>
@@ -155,7 +151,7 @@ export default function SupplierLedger() {
                                                                                 <td className="txt-oflo text-center">{val.invoice_id}</td>
                                                                                 <td className="txt-oflo text-center">{val.total}</td>
                                                                                 <td className="txt-oflo text-center">{(val.date).slice(0, 10)}</td>
-                                                                                <button type="submit" class="btn btn-info" onClick={() => { history.push(`/superfacturadetalle/${val.id}`)}}>Detalle</button>
+                                                                                <button type="submit" className="btn btn-info" onClick={() => { history.push(`/superfacturadetalle/${val.id}`)}}>Detalle</button>
                                                                             </tr>
                                                                         </>
                                                                     )
@@ -167,7 +163,7 @@ export default function SupplierLedger() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 gap10"></div>
+                                    <div className="col-md-12 gap10"></div>
                            
                                 </div>
                             </div>

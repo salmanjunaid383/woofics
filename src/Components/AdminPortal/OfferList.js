@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import "../AdminPortal/offerlist.css";
-import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
 import Sidebar from './Sidebar'
 
 import jwt_decode from 'jwt-decode';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import CustomProviderAuth from "../CustomProviderAuth";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -83,9 +81,9 @@ export default function OfferList() {
 
 
                    <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
@@ -128,7 +126,7 @@ export default function OfferList() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
 

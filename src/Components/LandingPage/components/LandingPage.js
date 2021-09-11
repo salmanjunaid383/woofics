@@ -1,25 +1,13 @@
 import React, { useState } from 'react';
 // import ReactDom from 'react-dom';
 import '../css/LandingPage.css';
-import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import side_image from '../images/img-01.png';
 import { Link, useHistory } from 'react-router-dom'
-import WhatsAppWidget from 'react-whatsapp-widget'
 import 'react-whatsapp-widget/dist/index.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
-import { Alert, Button } from 'react-bootstrap'
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
 import Navbar from '../../Navbar'
-import CookieBanner from 'react-cookie-banner';
 
 
 
@@ -180,7 +168,7 @@ function LandingPage() {
     return (
         <>
             <div className="container.fluid" >
-                <div class="woofic_background" >
+                <div className="woofic_background" >
 
 
                     <Navbar />
@@ -234,19 +222,19 @@ function LandingPage() {
                     <div id='stars3'></div>
                     <div id='title'>
                         <div className="container woofic_slogan_container">
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-md-7 col-sm-12">
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-md-12">
-                                                <div class="woofic_slogan text-left mt-lg-5 pt-lg-5 pt-sm-2" >
+                                                <div className="woofic_slogan text-left mt-lg-5 pt-lg-5 pt-sm-2" >
                                                     Encuentra, compara y contrata a los principales proveedores de pantallas led
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="col-md-12">
-                                                <div class="woofic_receive_button text-left mt-lg-4" style={{marginBottom:"20px"}}>
+                                                <div className="woofic_receive_button text-left mt-lg-4" style={{marginBottom:"20px"}}>
                                                     <Link to="/cita_principal">Recibir ofertas</Link>
                                                 </div>
                                             </div>
@@ -255,7 +243,7 @@ function LandingPage() {
 
                                 </div>
                                 <div className="col-md-5 col-sm-7 mt-md-5 d-none d-md-block">
-                                    <div class="side_ige w-100 mx-auto my-auto ">
+                                    <div className="side_ige w-100 mx-auto my-auto ">
                                         <img src={side_image} className="img-fluid man-image" />
                                     </div>
 

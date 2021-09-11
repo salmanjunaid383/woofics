@@ -6,7 +6,7 @@ import StazBar from './Sidebar'
 
 import jwt_decode from 'jwt-decode'
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CustomClientAuth from "../CustomClientAuth";
 
@@ -114,25 +114,25 @@ export default function Complain() {
 
 
                    <div className="page-wrapper bg-light">
-                        <div class="container p-4">
-                            <div class="row">
+                        <div className="container p-4">
+                            <div className="row">
                                 <div className="col-md-8">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-4 bold h5">Servicio de asistencia</div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
+                                    <div className="panel panel-default">
+                                        <div className="panel-body">
+                                            <div className="row">
+                                                <div className="col-md-4 bold h5">Servicio de asistencia</div>
+                                                <div className="col-md-2"></div>
+                                                <div className="col-md-2"></div>
+                                                <div className="col-md-4">
                                                     {/* <input class="form-control" type="text" placeholder="Search Query..." /> */}
                                                 </div>
-                                                <div class="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra Tu Solución...</div>
+                                                <div className="col-md-8 py-2 ml-4" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Encuentra Tu Solución...</div>
                                                 {complain == '' ? <h3 className="text-center my-auto mx-auto w-100">Nada Que Mostrar!</h3>
                                                     :
                                                     complain.map((val, id) => {
                                                         return (
                                                             <>
-                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/quejarse_respuesta/${val.id}`}> Q.{val.description} </Link></div>
+                                                                <div className="col-md-11 py-4  border-bottom mx-auto"><Link to={`/quejarse_respuesta/${val.id}`}> Q.{val.description} </Link></div>
                                                             </>
                                                         )
                                                     }).reverse()}
@@ -140,32 +140,32 @@ export default function Complain() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <div class="col-md-12 row" style={{ padding: '0px', marginBottom: '10px' }}>
+                                <div className="col-md-4">
+                                    <div className="panel panel-default">
+                                        <div className="panel-body">
+                                            <div className="col-md-12 row" style={{ padding: '0px', marginBottom: '10px' }}>
 
-                                                <div class="col-md-10 ">
+                                                <div className="col-md-10 ">
                                                 No encontré tu solución ?
                                                             </div>
-                                                <div class="col-md-8 ml-2 m-2" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Pregunta tu consulta</div>
+                                                <div className="col-md-8 ml-2 m-2" style={{ borderLeft: '4px solid rgba(7, 72, 138, 0.71)' }}>Pregunta tu consulta</div>
                                             </div>
 
                                             <form>
-                                                <table  id="for-table-setting" class="table">
+                                                <table  id="for-table-setting" className="table">
                                                     <tr>
                                                         <td>
-                                                            <input type="text" class="form-control" value={title} id="mailtip2" placeholder="Title" onChange={(e) => settitle(e.target.value)} />
+                                                            <input type="text" className="form-control" value={title} id="mailtip2" placeholder="Title" onChange={(e) => settitle(e.target.value)} />
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <textarea class="form-control" rows="4" value={question} placeholder="Your Complain . . ." onChange={(e) => setQuestion(e.target.value)}></textarea>
+                                                            <textarea className="form-control" rows="4" value={question} placeholder="Your Complain . . ." onChange={(e) => setQuestion(e.target.value)}></textarea>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <button class={`btn btn-sm ${question == '' || title == '' ? disable :''}`} onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
+                                                            <button className={`btn btn-sm ${question == '' || title == '' ? disable :''}`} onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i className="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
                                                         </td>
                                                     </tr>
                                                 </table>

@@ -1,12 +1,10 @@
 import React, {useState,useEffect} from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import '../css/footer.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import footer_logo from '../images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png';
 
@@ -59,18 +57,18 @@ function Footer() {
             
 
             
-            <div class="container-fluid my-auto pt-5 pb-5 backimg" style={{bottom:'0px'}} >
-                <div class="row text-center my-auto pt-5 ipad">
-                    <div class="col-md-4 col-sm-12 text-center wooficsfooter footer-margin" >
+            <div className="container-fluid my-auto pt-5 pb-5 backimg" style={{bottom:'0px'}} >
+                <div className="row text-center my-auto pt-5 ipad">
+                    <div className="col-md-4 col-sm-12 text-center wooficsfooter footer-margin" >
 
-                        <div class="woofic_footer_content text-center">
-                            <div class="woofic_flex_parent">
+                        <div className="woofic_footer_content text-center">
+                            <div className="woofic_flex_parent">
 
-                                <div class="woofic_left_side">
-                                    <div class="woofic_footer_logo mb-4 ">
+                                <div className="woofic_left_side">
+                                    <div className="woofic_footer_logo mb-4 ">
                                         <img src={footer_logo} style={{ width: 250 }} />
                                     </div>
-                                    <div class="text-white mb-4 p leftside-text">
+                                    <div className="text-white mb-4 p leftside-text">
                                         {
                                             text.map((val,id) => {
                                                 return (
@@ -81,20 +79,20 @@ function Footer() {
                                             })
                                         }
                                     </div>
-                                    <div class="woofic_social_logo ">
-                                        <a target="_blank" href="https://www.facebook.com/Woofic-110333384466812"> <FacebookIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="https://www.instagram.com/woofics_com/"> <InstagramIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="https://twitter.com/Woofic1"> <TwitterIcon className="text-white mx-2" /></a>
-                                        <a target="_blank" href="https://www.linkedin.com/company/woofic"> <LinkedInIcon className="text-white mx-2" /></a>
+                                    <div className="woofic_social_logo ">
+                                        <a target="_blank" href="https://www.facebook.com/Woofic-110333384466812" rel="noreferrer"> <FacebookIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://www.instagram.com/woofics_com/" rel="noreferrer"> <InstagramIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://twitter.com/Woofic1" rel="noreferrer"> <TwitterIcon className="text-white mx-2" /></a>
+                                        <a target="_blank" href="https://www.linkedin.com/company/woofic" rel="noreferrer"> <LinkedInIcon className="text-white mx-2" /></a>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12  text-center marginclass footer-margin footer-new" >
+                    <div className="col-md-4 col-sm-12  text-center marginclass footer-margin footer-new" >
 
-                        <div class="woofic_middle_side text-center mb-3 mx-auto">
+                        <div className="woofic_middle_side text-center mb-3 mx-auto">
                             <ol>
                                 <li className="my-3">
                                     <Link className="text-white h5" to="/sobre_nosotros/1">  Sobre nosotras </Link>
@@ -112,7 +110,7 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-12 pr-md-5 marginclass footer-margin footer-new" >
+                    <div className="col-md-4 col-sm-12 pr-md-5 marginclass footer-margin footer-new" >
                         <div className="row  text-center wooficslogo footer-right-side" >
                         {
                             dot.map((val,id) => {
@@ -141,9 +139,9 @@ function Footer() {
                         <div className="text-white text-center">
                             Copyright © 2021 Woofic.com, todos los derechos reservados
 
-                            <div class=" mt-3 text-center">
-                                <div class=" text-center ">
-                                    <div class=" text-center d-flex justify-content-center footer-label">
+                            <div className=" mt-3 text-center">
+                                <div className=" text-center ">
+                                    <div className=" text-center d-flex justify-content-center footer-label">
                                         <div className="border-right px-2">
                                             <Link  to="/Condiciones-Términos" className="text-white">Términos Y Condiciones</Link>
                                         </div>

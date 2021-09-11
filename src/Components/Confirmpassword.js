@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
-import loginside from '../Images/service.png'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
-import jwt_decode from 'jwt-decode'
-import { Alert, Button } from 'react-bootstrap'
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
