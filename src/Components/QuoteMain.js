@@ -1310,7 +1310,7 @@ export default function QuoteMain() {
                 Sistema de control
               </h4>
               <FormControl component="fieldset">
-                <RadioGroup
+                <RadioGroup className="Sistema-res"
                   style={{ justifyContent: "center" }}
                   row
                   aria-label="position"
@@ -1652,7 +1652,7 @@ export default function QuoteMain() {
                 El tiempo de entrega
               </h4>
               <FormControl component="fieldset">
-                <RadioGroup
+                <RadioGroup className="Sistema-res"
                   style={{ justifyContent: "center" }}
                   row
                   aria-label="position"
@@ -1946,7 +1946,7 @@ export default function QuoteMain() {
                 style={{ display: "flex", justifyContent: "center" }}
               >
                   {/* frank changes */}
-                <TextField
+                <TextField className="feild-changes"
                   onChange={(e) => setname(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
@@ -1957,7 +1957,7 @@ export default function QuoteMain() {
                 
                 {/* frank change  */}
                 <TextField
-                  
+                  className="feild-changes"
                   onChange={(e) => setCity(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"

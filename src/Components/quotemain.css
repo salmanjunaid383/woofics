@@ -101,4 +101,10 @@
     .Procesador-res{
         text-align: left;
     }
+    .Sistema-res{
+        display: flex;
+        justify-content: flex-start !important;
+        width:87%;
+        margin: auto;
+    }
 }
