@@ -120,6 +120,7 @@ import invoicedetail from "./Components/SupplierPortal/InvoiceDetail";
 import superinvoicedetail from "./Components/SuperPortal/SuperInvoiceDetail";
 import editquote from "./Components/SupplierPortal/editQuote";
 import PrivacyPolicy  from "./Components/PrivacyPolicy";
+
 function App() {
  
   
