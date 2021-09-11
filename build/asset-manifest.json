@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.c2d10be1.chunk.css",
-    "main.js": "/static/js/main.a07def04.chunk.js",
-    "main.js.map": "/static/js/main.a07def04.chunk.js.map",
+    "main.css": "/static/css/main.2b1be259.chunk.css",
+    "main.js": "/static/js/main.b238cbbe.chunk.js",
+    "main.js.map": "/static/js/main.b238cbbe.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d4243252.js",
     "runtime-main.js.map": "/static/js/runtime-main.d4243252.js.map",
     "static/css/2.274a2bd7.chunk.css": "/static/css/2.274a2bd7.chunk.css",
-    "static/js/2.20802654.chunk.js": "/static/js/2.20802654.chunk.js",
-    "static/js/2.20802654.chunk.js.map": "/static/js/2.20802654.chunk.js.map",
+    "static/js/2.c92df6f2.chunk.js": "/static/js/2.c92df6f2.chunk.js",
+    "static/js/2.c92df6f2.chunk.js.map": "/static/js/2.c92df6f2.chunk.js.map",
     "static/js/3.516a6131.chunk.js": "/static/js/3.516a6131.chunk.js",
     "static/js/3.516a6131.chunk.js.map": "/static/js/3.516a6131.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.274a2bd7.chunk.css.map": "/static/css/2.274a2bd7.chunk.css.map",
-    "static/css/main.c2d10be1.chunk.css.map": "/static/css/main.c2d10be1.chunk.css.map",
-    "static/js/2.20802654.chunk.js.LICENSE.txt": "/static/js/2.20802654.chunk.js.LICENSE.txt",
+    "static/css/main.2b1be259.chunk.css.map": "/static/css/main.2b1be259.chunk.css.map",
+    "static/js/2.c92df6f2.chunk.js.LICENSE.txt": "/static/js/2.c92df6f2.chunk.js.LICENSE.txt",
     "static/media/A medida-min.b705b6f2.jpeg": "/static/media/A medida-min.b705b6f2.jpeg",
     "static/media/footer.css": "/static/media/Footer4k.af15e54d.png",
     "static/media/Frontal-min.622ab816.png": "/static/media/Frontal-min.622ab816.png",
@@ -21,6 +21,7 @@
     "static/media/Trasero-min.337a3d8e.png": "/static/media/Trasero-min.337a3d8e.png",
     "static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.076c6451.png": "/static/media/WhatsApp-Image-2021-08-25-at-2.43-Copy.076c6451.png",
     "static/media/WooficsLogo.519146c7.png": "/static/media/WooficsLogo.519146c7.png",
+    "static/media/prize.css": "/static/media/background.9f0b4474.jpg",
     "static/media/chat.43bd0b47.png": "/static/media/chat.43bd0b47.png",
     "static/media/eight.1ee1dbb5.png": "/static/media/eight.1ee1dbb5.png",
     "static/media/five.920d232a.png": "/static/media/five.920d232a.png",
@@ -46,8 +47,8 @@
   "entrypoints": [
     "static/js/runtime-main.d4243252.js",
     "static/css/2.274a2bd7.chunk.css",
-    "static/js/2.20802654.chunk.js",
-    "static/css/main.c2d10be1.chunk.css",
-    "static/js/main.a07def04.chunk.js"
+    "static/js/2.c92df6f2.chunk.js",
+    "static/css/main.2b1be259.chunk.css",
+    "static/js/main.b238cbbe.chunk.js"
   ]
 }
