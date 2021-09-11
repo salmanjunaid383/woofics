@@ -22,7 +22,12 @@ div::first-letter,th::first-letter,a::first-letter,p::first-letter,h1::first-let
 a{
   text-transform:capitalize 
 }
-
+label::first-letter{
+  text-transform:uppercase
+}
+label{
+  text-transform: lowercase;
+}
 
 .for-table-setting{
   width:100%;

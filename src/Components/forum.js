@@ -286,7 +286,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                     <div className="page-wrapper bg-light">
                         <div className="container mt-100">
                                    <div className="d-md-flex mb-3">
-                    <h3 className=" h1 mb-0 text-center mx-auto">FORO DE DISCUSION</h3>
+                    <h3 className=" h1 mb-0 text-center mx-auto" style={{textTransform:"capitalize"}}>Foro de Discusión</h3>
                 </div>
                             <div className="row">
                                 <div className="col-md-10 mx-auto">

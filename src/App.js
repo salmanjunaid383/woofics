@@ -361,7 +361,7 @@ function App() {
           {/* <PrivateRoute exact path="/supcoupons" component={SupCoupons} /> */}
           {/* <PrivateRoute exact path="/couponslist" component={Coupons} /> */}
           <PrivateRoute exact path="/cotización_enviada" authed={supplierAuth} redirectTo={"/"} component={SentQuotation} />
-          <Route exact path="/foro_de_discusion" component={DiscussionForum} />
+          {/* <Route exact path="/foro_de_discusion" component={DiscussionForum} /> */}
           <Route
             exact
             path="/másdetallesforumdiscussion/:quid"
