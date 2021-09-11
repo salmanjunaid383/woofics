@@ -1,17 +1,13 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from 'react-router-dom'
-import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import './Nav.css'
 import message from './—Pngtree—chat icon_4756851.png'
-import Pusher from 'pusher-js';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import Badge from '@material-ui/core/Badge';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
 const useStyles = makeStyles((theme) => ({

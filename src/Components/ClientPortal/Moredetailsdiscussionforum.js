@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import './DiscussionForum.css'
 import Sidebar from './Sidebar'
 import AdminBar from '../SuperPortal/Stazbar';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import SupBar from '../SupplierPortal/Sidebar';
 import ProBar from '../AdminPortal/Sidebar';
 import Pusher from 'pusher-js';
-import CustomClientAuth from "../CustomClientAuth";
 import CustomAuth from "../CustomAuth";
 const useStyles = makeStyles((theme) => ({
 
@@ -110,7 +109,7 @@ export default function Moredetailsdiscussionforum() {
     useEffect(() => {
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
-          });;
+          });
         const channel = pusher.subscribe(""+decoded.sub+"");   
         
         channel.bind("my-event",function(returnData){
@@ -173,33 +172,33 @@ export default function Moredetailsdiscussionforum() {
 
 
                    <div className="page-wrapper bg-light">
-                        <div class="container mt-100">
-                            <div class="row">
-                                <div class="col-md-10 mx-auto">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            <div class="media flex-wrap w-100 align-items-center"> 
+                        <div className="container mt-100">
+                            <div className="row">
+                                <div className="col-md-10 mx-auto">
+                                    <div className="card mb-4">
+                                        <div className="card-header">
+                                            <div className="media flex-wrap w-100 align-items-center"> 
                                             {/* <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg" class="d-block ui-w-40 rounded-circle" alt="" /> */}
-                                                <div class="media-body ml-3 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{question.asked_by}</a>
-                                                    <div class="text-muted small"></div>
+                                                <div className="media-body ml-3 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{question.asked_by}</a>
+                                                    <div className="text-muted small"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body">
+                                        <div className="card-body">
                                             <p> {question.question}
                                             </p>
                                         </div>
-                                        <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                        <div className="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                                             { allreplies == '' ? <h3  className="text-center mx-auto m-lg-5"> Sin respuesta...</h3> :
                                                 allreplies.map((val, id) => {
                                                     return (
                                                         <>
 
                                                             <div className="container w-75 my-2">
-                                                                <div class="media flex-wrap w-100 align-items-center">
+                                                                <div className="media flex-wrap w-100 align-items-center">
                                                                      {/* <img src="https://image.freepik.com/free-vector/smiling-girl-avatar_102172-32.jpg" class="d-block ui-w-40 rounded-circle" alt="" /> */}
-                                                                    <div class="media-body ml-3 w-100 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{val.replied_by}</a>
-                                                                        <div class="text-muted small">{(val.created_at).slice(0, 10)}</div>
+                                                                    <div className="media-body ml-3 w-100 ChatCapitalize"> <a href="javascript:void(0)" data-abc="true">{val.replied_by}</a>
+                                                                        <div className="text-muted small">{(val.created_at).slice(0, 10)}</div>
                                                                     </div>
                                                                     <div className="mt-2 border-top w-100">
                                                                         <p> {val.answer}</p>

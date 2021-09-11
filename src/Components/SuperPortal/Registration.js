@@ -80,7 +80,7 @@ export default function Registration() {
 
     return (
         <>
-        <div class="d-sm-flex">
+        <div className="d-sm-flex">
                 <StazBar/>
 
                 <main className={classes.content}>
@@ -88,7 +88,7 @@ export default function Registration() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
@@ -116,7 +116,7 @@ export default function Registration() {
                                                                     <td className="txt-oflo">{val.contact_number}</td>
                                                                     <td className="txt-oflo">{(val.type).split("\\")[2]}</td>
                                                                     <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
-                                                                    <td className="text-danger text-center"><button class={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} onClick={() => approveReg(val.id)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button class="btn text-white btn-danger ml-2" onClick={() => blockReg(val.id)}>{val.blocked === 0 ? 'Block' : 'Unblock'}</button></td>
+                                                                    <td className="text-danger text-center"><button className={val.locked !== 0 ? "btn text-white btn-danger" : "btn text-white btn-success"} onClick={() => approveReg(val.id)}>{val.locked !== 0 ? 'Pending...' : 'Approved'}</button><button className="btn text-white btn-danger ml-2" onClick={() => blockReg(val.id)}>{val.blocked === 0 ? 'Block' : 'Unblock'}</button></td>
                                                                 </tr>
                                                             </> : null
                                                         )

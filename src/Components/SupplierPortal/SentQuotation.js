@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import SideBar from './Sidebar';
 import axios from 'axios';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import jwt_decode from 'jwt-decode'
 import CustomSupplierAuth from "../CustomSupplierAuth";
@@ -58,9 +58,9 @@ export default function SentQuotation() {
                     
 
                    <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4 quotation-ipad">
+                        <div className="container">
+                            <div id="blog" className="row ">
+                                <div className="container-fluid pb-lg-4 quotation-ipad">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-xl-12 col-lg-12 col-sm-12 border bg-light " style={{width:"1px"}}>
                                             <div className="d-md-flex mb-3">
@@ -80,7 +80,7 @@ export default function SentQuotation() {
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row" >
-                                                    {blog == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
+                                                    {blog == '' ? <tr scope="row"><td colSpan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
                                                blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -91,7 +91,7 @@ export default function SentQuotation() {
                                                                         <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                         <td className="txt-oflo text-center bold">{val.price}</td>
                                                                         <td className="txt-oflo text-center bold">
-                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editar_cita/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
+                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editar_cita/`+val.form_id); localStorage.setItem('qid', val.id) }} className={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )
@@ -103,7 +103,7 @@ export default function SentQuotation() {
                                     </div>
 
 
-                                    <div class="col-md-12 gap10"></div>
+                                    <div className="col-md-12 gap10"></div>
                                 </div>
                             </div>
                         </div>

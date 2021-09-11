@@ -121,23 +121,23 @@ export default function DataofInt() {
 
                     <div className="page-wrapper bg-light">
                     
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row ">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12">
                                             <div className="d-md-flex mb-3">
                                                 <h1 className=" h1 mb-0 text-center mx-auto">Logo</h1>
                                             </div>
-                                            <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                            <div className="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
                                                             <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
-                                                            <div class="card">
-                                                            <div class="card-body">
-                                                            <label class="col-md-12 p-0">Imagen</label>
-                                                            <div class="col-md-12 border p-2 text-center">
+                                                            <div className="card">
+                                                            <div className="card-body">
+                                                            <label className="col-md-12 p-0">Imagen</label>
+                                                            <div className="col-md-12 border p-2 text-center">
                                                             {/* {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '250px' }} /> : }
-                                                            */}{Progress}<input onChange={onchange} class="form-control p-0 border-0" type="file"  />
+                                                            */}{Progress}<input onChange={onchange} className="form-control p-0 border-0" type="file"  />
                                                             <img className="text-center mx-auto img-fluid" src={imageUrl}  style={{}} />
                                                             </div>
                                                             <div className="row mt-5">
@@ -159,16 +159,16 @@ export default function DataofInt() {
                                                                     
                                                                     
                                                             </div>
-                                                            <div class="mb-4 mt-4 text-center mx-auto">
-                                                                    <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => sendQuote(e)}>Generar</button>
+                                                            <div className="mb-4 mt-4 text-center mx-auto">
+                                                                    <div className="col-sm-12 text-center">
+                                                                    <button className={`btn text-white mt-2 greenbtn text-white `}  onClick={(e) => sendQuote(e)}>Generar</button>
                                                                     </div>
                                                             </div>
                                                                 </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-12 mb-4 mt-4 w-100 text-center mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
-                                                                <div class="col-sm-12 text-center">
+                                                            <div className="col-md-12 mb-4 mt-4 w-100 text-center mx-auto" style={{ display: check === 'true' ? 'block' : 'none' }}>
+                                                                <div className="col-sm-12 text-center">
                                                                     {/* <button class={`btn text-white greenbtn text-white `}  onClick={() => supplierRental()}>Add</button> */}
                                                                 </div>
                                                             </div>
@@ -196,7 +196,7 @@ export default function DataofInt() {
                                                                             
                                                                             <td className="txt-oflo text-center">{val.label}</td>
                                                                             <td className="txt-oflo text-center">{(val.value).slice(0, 20)}</td>
-                                                                            <td className="txt-oflo text-center "><button  class="btn text-white btn-danger " onClick={(e) => deleteQuote(val.id)}>Borrar</button></td>
+                                                                            <td className="txt-oflo text-center "><button  className="btn text-white btn-danger " onClick={(e) => deleteQuote(val.id)}>Borrar</button></td>
                                                                             {/* <td className="text-success text-center"></td> */}
                                                                         </tr>
                                                                     </>
@@ -208,7 +208,7 @@ export default function DataofInt() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 gap10"></div>
+                                    <div className="col-md-12 gap10"></div>
                                 </div>
                             </div>
                         </div>

@@ -10,7 +10,7 @@ function ConditionTerms(){
         <Navbar></Navbar>
 
         <div className="page-wrapper mt-5 bg-light">
-                <div class="container-fluid no-gutters ">
+                <div className="container-fluid no-gutters ">
 
                 <div>
                 <h1 style={{textAlign:"center",padding:"20px",fontSize:"35px",fontWeight:"700 ",color:"#F62B84",lineHeight: '1.2'}}>Términos y Condiciones de uso: WOOFIC LLC.</h1>

@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory ,useParams} from 'react-router-dom'
-import SideBar from './Stazbar';
+import { useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
-import ProBar from '../AdminPortal/Sidebar'
-import CustomAdminAuth from "../CustomAdminAuth";
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import logo1 from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
-import TextField from '@material-ui/core/TextField';
 import  './invoice.css';
 import jwt_decode from 'jwt-decode'
-import CustomAuth from "../CustomAuth";
 
 
 
@@ -126,29 +121,29 @@ export default function SupplierLedger() {
             
 
                 
-            <div class="container invoice-container"  style={{padding:"7%"}}>
-<div class="row">
+            <div className="container invoice-container"  style={{padding:"7%"}}>
+<div className="row">
     				
-					<div class="col-xs-12">
-						<div class="grid invoice">
-							<div class="grid-body">
-								<div class="invoice-title">
-									<div class="row">
-										<div class="col-xs-12">
+					<div className="col-xs-12">
+						<div className="grid invoice">
+							<div className="grid-body">
+								<div className="invoice-title">
+									<div className="row">
+										<div className="col-xs-12">
 											<img src={logo1} alt="" height="35"/>
 										</div>
 									</div>
 									<br></br>
-									<div class="row">
-										<div class="col-xs-12">
+									<div className="row">
+										<div className="col-xs-12">
 											<h2 style={{color:'blue'}}>invoice<br></br>
-											<span class="small">order #{invoice.invoice_id}</span></h2>
+											<span className="small">order #{invoice.invoice_id}</span></h2>
 										</div>
 									</div>
 								</div>
 								<hr></hr>
-								<div class="row">
-									<div class="col-xs-6">
+								<div className="row">
+									<div className="col-xs-6">
                                     <address>
 											<strong>Billed to:</strong><br></br>
 											<span style={{lineHeight: '18px'}}>{user.first_name} {user.last_name}</span><br></br>
@@ -156,7 +151,7 @@ export default function SupplierLedger() {
                                             <span style={{lineHeight: '22px'}}>P:{user.contact_number}</span>
 										</address>
 									</div>
-									<div class="col-xs-6 text-right">
+									<div className="col-xs-6 text-right">
 										<address>
                                         <strong>Order Date:</strong><br></br>
 											<span style={{lineHeight: '22px'}}>{(invoice.date)}</span>
@@ -164,16 +159,16 @@ export default function SupplierLedger() {
 									</div>
 								</div>
                                 <br></br>
-								<div class="row">
-									<div class="col-md-12">
+								<div className="row">
+									<div className="col-md-12">
 										<h3>ORDER SUMMARY</h3>
-										<table class="table table-striped">
+										<table className="table table-striped">
 											<thead>
-												<tr class="line">
-													<td class="text-center"><strong>Id</strong></td>
-													<td class="text-center"><strong>Description</strong></td>
-													<td class="text-right"><strong>Amount</strong></td>
-													<td class="text-right"><strong>SUBTOTAL</strong></td>
+												<tr className="line">
+													<td className="text-center"><strong>Id</strong></td>
+													<td className="text-center"><strong>Description</strong></td>
+													<td className="text-right"><strong>Amount</strong></td>
+													<td className="text-right"><strong>SUBTOTAL</strong></td>
 												</tr>
 											</thead>
 											<tbody>
@@ -182,9 +177,9 @@ export default function SupplierLedger() {
                                                         return (
                                                            <>
                                                            <tr>
-                                                           <td class="text-center">{val.id}</td>
-                                                           <td class="text-center">{val.description}</td>
-                                                           <td class="text-right">€{val.amount}</td>
+                                                           <td className="text-center">{val.id}</td>
+                                                           <td className="text-center">{val.description}</td>
+                                                           <td className="text-right">€{val.amount}</td>
                                                            <td></td>
                                                            </tr>
                                                            </>
@@ -194,16 +189,16 @@ export default function SupplierLedger() {
                                             
 												
 												<tr>
-													<td colspan="2">
-													</td><td class="text-right"><strong>Total</strong></td>
-													<td class="text-right"><strong>€{invoice.total}</strong></td>
+													<td colSpan="2">
+													</td><td className="text-right"><strong>Total</strong></td>
+													<td className="text-right"><strong>€{invoice.total}</strong></td>
 												</tr>
 											</tbody>
 										</table>
 									</div>									
 								</div>
-								<div class="row">
-									<div class="col-md-12 text-center identity">
+								<div className="row">
+									<div className="col-md-12 text-center identity">
 										<p style={{fontSize:'10px'}}>Copyright © 2021 Woofic.Com, All Rights Reserved</p>
 									</div>
 								</div>

@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory,useParams } from "react-router-dom";
-import loginside from "../../Images/loginside.jpg";
+import {useParams } from "react-router-dom";
 import axios from "axios";
-import Sidebar from "./Sidebar";
-import Nav from "./Nav";
-import jwt_decode from "jwt-decode";
 import "../ClientPortal/Contact.css";
-import Pusher from "pusher-js";
-import Snackbar from "@material-ui/core/Snackbar";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
-import LandingPage from "../LandingPage/components/LandingPage";
 import Navbar from "../Navbar";
 import Footer from "../LandingPage/components/Footer";
 import { TextField } from "@material-ui/core";
 import ScrollToTop from '../ScrollToTop'
-import CustomClientAuth from "../CustomClientAuth";
 // import "../../Components/Contact.css"
 
 ///About us page
@@ -227,20 +217,20 @@ export default function Contact() {
             <div className="container mx-auto " style={{ display: hide2 }}>
               <div className="row">
                 <div className="col-md-10 mx-auto">
-                  <div class="woofic_lastnews_header">
-                    <div class="woofic_lastnews_heading text-center">
+                  <div className="woofic_lastnews_header">
+                    <div className="woofic_lastnews_heading text-center">
                     PREGUNTAS FRECUENTES
                     </div>
-                    <div class="woofic_lastnews_hline"></div>
+                    <div className="woofic_lastnews_hline"></div>
                   </div>
                 </div>
                 <div className="col-md-10 mx-auto">
-                  <div class="accordion" id="accordionExample">
-                    <div class="card">
-                      <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
+                  <div className="accordion" id="accordionExample">
+                    <div className="card">
+                      <div className="card-header" id="headingOne">
+                        <h2 className="mb-0">
                           <button
-                            class="btn btn-link btn-block text-left collapsed"
+                            className="btn btn-link btn-block text-left collapsed"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapseOne"
@@ -254,11 +244,11 @@ export default function Contact() {
 
                       <div
                         id="collapseOne"
-                        class="collapse"
+                        className="collapse"
                         aria-labelledby="headingOne"
                         data-parent="#accordionExample"
                       >
-                        <div class="card-body">
+                        <div className="card-body">
                           Woofic envía a sus colaboradores (proveedores) el
                           cuestionario cumplimentado por el cliente, dentro de un
                           plazo máximo de 48 horas que tienen los proveedores para
@@ -266,11 +256,11 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                    <div class="card">
-                      <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
+                    <div className="card">
+                      <div className="card-header" id="headingTwo">
+                        <h2 className="mb-0">
                           <button
-                            class="btn btn-link btn-block text-left collapsed"
+                            className="btn btn-link btn-block text-left collapsed"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapseTwo"
@@ -283,11 +273,11 @@ export default function Contact() {
                       </div>
                       <div
                         id="collapseTwo"
-                        class="collapse"
+                        className="collapse"
                         aria-labelledby="headingTwo"
                         data-parent="#accordionExample"
                       >
-                        <div class="card-body">
+                        <div className="card-body">
                           Woofic es una plataforma integral, en la que podrás
                           recibir y gestionar ofertas, realizar valoraciones de proveedores
                           y muchas más ventajas, por eso es necesario
@@ -296,11 +286,11 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                    <div class="card">
-                      <div class="card-header" id="headingFour">
-                        <h2 class="mb-0">
+                    <div className="card">
+                      <div className="card-header" id="headingFour">
+                        <h2 className="mb-0">
                           <button
-                            class="btn btn-link btn-block text-left collapsed"
+                            className="btn btn-link btn-block text-left collapsed"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapseFour"
@@ -313,11 +303,11 @@ export default function Contact() {
                       </div>
                       <div
                         id="collapseFour"
-                        class="collapse"
+                        className="collapse"
                         aria-labelledby="headingFour"
                         data-parent="#accordionExample"
                       >
-                        <div class="card-body">
+                        <div className="card-body">
                           No. Woofic.com es un portal totalmente independiente, nosotros
                           solo poner a los clientes en contacto con los proveedores y cada
                           proveedor hace su oferta personalizada directamente al
@@ -327,11 +317,11 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                    <div class="card">
-                      <div class="card-header" id="headingFive">
-                        <h2 class="mb-0">
+                    <div className="card">
+                      <div className="card-header" id="headingFive">
+                        <h2 className="mb-0">
                           <button
-                            class="btn btn-link btn-block text-left collapsed"
+                            className="btn btn-link btn-block text-left collapsed"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapseFive"
@@ -344,11 +334,11 @@ export default function Contact() {
                       </div>
                       <div
                         id="collapseFive"
-                        class="collapse"
+                        className="collapse"
                         aria-labelledby="headingFive"
                         data-parent="#accordionExample"
                       >
-                        <div class="card-body">
+                        <div className="card-body">
                           Nuestro servicio es completamente gratuito. Las ofertas que tu
                           encontrará de los diferentes proveedores en Woofic son
                           las mismas que encontrarás en cada empresa. Existen
@@ -367,8 +357,8 @@ export default function Contact() {
               <div className="row">
                 <div className="col-md-12 mx-auto">
                   <div className="" style={{ height: "100%" }}>
-                    <div class="container">
-                      <div class="row mx-auto">
+                    <div className="container">
+                      <div className="row mx-auto">
                         <div className="col-md-6 border-right mt-md-5 pt-md-5 w-75">
                           <h3>Queremos saber tu opinión</h3>
                           <TextField
@@ -427,7 +417,7 @@ export default function Contact() {
                             >
                               <a
                                 target="_blank"
-                                href="https://www.facebook.com/Woofic-110333384466812"
+                                href="https://www.facebook.com/Woofic-110333384466812" rel="noreferrer"
                               >
                                 <i className="px-2 fa fa-facebook"></i>
                               </a>
@@ -457,7 +447,7 @@ export default function Contact() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="https://www.instagram.com/woofics_com/">
+                              <a target="_blank" href="https://www.instagram.com/woofics_com/" rel="noreferrer">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>
@@ -474,7 +464,7 @@ export default function Contact() {
                             >
                               <a
                                 target="_blank"
-                                href="https://www.linkedin.com/company/woofic"
+                                href="https://www.linkedin.com/company/woofic" rel="noreferrer"
                               >
                                 <i className="px-1 fa fa-linkedin"></i>
                               </a>

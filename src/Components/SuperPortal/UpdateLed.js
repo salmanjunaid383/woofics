@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios';
 import Sidebar from './Stazbar'
 
@@ -158,15 +158,15 @@ export default function UpdateLed() {
 
                    <div className="page-wrapper bg-light">
 
-                        <div class="container-fluid">
-                            <div class="row">
+                        <div className="container-fluid">
+                            <div className="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
                                     <i className="fas fa-chevron-left fa-2x" onClick={() => history.goBack()} style={{ cursor: 'pointer' }}></i>
                                 </div>
-                                <div class="col-lg-12 col-xlg-12 col-md-12 mx-auto">
-                                    <div class="">
-                                        <div class="cay">
-                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                <div className="col-lg-12 col-xlg-12 col-md-12 mx-auto">
+                                    <div className="">
+                                        <div className="cay">
+                                            <form className="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-5">
                                                     <div className="col-md-5 m-1 text-center p-2 w-100 p-0">
                                                         <label className="float-left">Nombre Del LED</label>
@@ -187,7 +187,7 @@ export default function UpdateLed() {
                                                     <img className="text-center mx-auto" src={data} style={{ height: '90px' }} /> 
                                                     </div>
                                                     <div className="col-md-5 m-1 text-center p-2 w-75 p-0 ">
-                                                    <input onChange={onchange} class="form-control p-0 -0" type="file" accept='image/*' name="image_url"/>
+                                                    <input onChange={onchange} className="form-control p-0 -0" type="file" accept='image/*' name="image_url"/>
                                                     </div>
                                                     <div className="col-md-5 m-1 text-center w-100 p-0">
                                                         <FormControl className={classes.formControl}>
@@ -253,9 +253,9 @@ export default function UpdateLed() {
                                                                     }
                                                                 </tbody>
                                                             </table>
-                                                            <div class="form-group mb-4 mt-4">
-                                                                <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white ${disable}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{wait}</button>
+                                                            <div className="form-group mb-4 mt-4">
+                                                                <div className="col-sm-12 text-center">
+                                                                    <button className={`btn text-white ${disable}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{wait}</button>
                                                                 </div>
                                                             </div>
                                                         </div>

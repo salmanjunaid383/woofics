@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from 'react-router-dom'
-import loginside from '../Images/service.png'
-import axios from 'axios';
-import jwt_decode from 'jwt-decode'
-import { Alert, Button } from 'react-bootstrap'
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import './DiscussionForum.css'
-import side_image from './LandingPage/images/side_image.png';
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
 import Navbar from './Navbar' 
 import Footer from './LandingPage/components/Footer'
 
@@ -119,11 +110,11 @@ export default function Aboutus() {
         <>
             <Navbar />
 
-            <div class="container mt-100">
+            <div className="container mt-100">
 
-                <div class="row">
-                    <div class="col-md-12">
-                        {questions == "" ? <div class="alert alert-success w-100 text-center m-5 col-md-12" role="alert">
+                <div className="row">
+                    <div className="col-md-12">
+                        {questions == "" ? <div className="alert alert-success w-100 text-center m-5 col-md-12" role="alert">
                         No hay discusiones! </div>
                                         : 
                             questions.map((val, id) => {
@@ -131,20 +122,20 @@ export default function Aboutus() {
                                     <>
 
                                         <Link to={`/másdetallesforumdiscussion/${val.id}`}>
-                                            <div class="card mb-4">
-                                                <div class="card-header">
-                                                    <div class="media flex-wrap w-100 align-items-center"> 
-                                                        <div class="media-body ml-3"> <a href="javascript:void(0)" data-abc="true">{val.asked_by}</a>
-                                                            <div class="text-muted small">{(val.created_at).slice(0, 10)}</div>
+                                            <div className="card mb-4">
+                                                <div className="card-header">
+                                                    <div className="media flex-wrap w-100 align-items-center"> 
+                                                        <div className="media-body ml-3"> <a href="javascript:void(0)" data-abc="true">{val.asked_by}</a>
+                                                            <div className="text-muted small">{(val.created_at).slice(0, 10)}</div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card-body">
+                                                <div className="card-body">
                                                     <p> {val.question}</p>
                                                 </div>
-                                                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                                                <div class="px-4 pt-3"></div>
-                                                    <div class="px-4 pt-3"> <button type="button" class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Ver Todas las Respuestas</button> </div>
+                                                <div className="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                                <div className="px-4 pt-3"></div>
+                                                    <div className="px-4 pt-3"> <button type="button" className="btn btn-primary"><i className="ion ion-md-create"></i>&nbsp; Ver Todas las Respuestas</button> </div>
                                                 </div>
                                             </div>
                                         </Link>

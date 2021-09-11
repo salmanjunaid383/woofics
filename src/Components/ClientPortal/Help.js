@@ -11,7 +11,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CustomClientAuth from "../CustomClientAuth";
 
@@ -92,20 +92,20 @@ export default function Help() {
                     
 
                    <div className="page-wrapper bg-light">
-                        <div class="container p-4">
-                            <div class="row">
-                                <div class="col-md-8 mx-auto">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <div class="col-md-12 row" style={{ padding: '0px', marginBottom: '10px' }}>
+                        <div className="container p-4">
+                            <div className="row">
+                                <div className="col-md-8 mx-auto">
+                                    <div className="panel panel-default">
+                                        <div className="panel-body">
+                                            <div className="col-md-12 row" style={{ padding: '0px', marginBottom: '10px' }}>
 
-                                                <div class="col-md-2">
+                                                <div className="col-md-2">
                                                     <img src="http://dinus.org/img/fakultas/FIK/cs/cs.svg" />
                                                     <div style={{ marginLeft: '30px' }}>
-                                                        <img src="http://dinus.org/img/fakultas/FIK/cs/cs.png" width="70px" height="70px" class="img-circle" style={{ border: '3px solid #052C52' }} />
+                                                        <img src="http://dinus.org/img/fakultas/FIK/cs/cs.png" width="70px" height="70px" className="img-circle" style={{ border: '3px solid #052C52' }} />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-10">
+                                                <div className="col-md-10">
                                                     <hr />
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Administradora</strong></p>
                                                     <Link to="/Responses" className="pt-3  responseLinkStaz"  >
@@ -118,20 +118,20 @@ export default function Help() {
                                             </div>
 
                                             <form>
-                                                <table  id="for-table-setting" class="table">
+                                                <table  id="for-table-setting" className="table">
                                                     <tr>
                                                         <td>
-                                                            <input class="form-control" type="text" placeholder="query" value={query} onChange={(e) => setQuestion(e.target.value)} />
+                                                            <input className="form-control" type="text" placeholder="query" value={query} onChange={(e) => setQuestion(e.target.value)} />
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <textarea class="form-control" rows="4" value={answer} placeholder="Description text . . ." onChange={(e) => setAnswer(e.target.value)}></textarea>
+                                                            <textarea className="form-control" rows="4" value={answer} placeholder="Description text . . ." onChange={(e) => setAnswer(e.target.value)}></textarea>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <button class={`btn btn-sm ${query == '' || answer == '' ? disable : ''}`}  onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i class="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
+                                                            <button className={`btn btn-sm ${query == '' || answer == '' ? disable : ''}`}  onClick={Feedback} style={{ width: '100%', backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }}><i className="fa fa-envelope-o" style={{ paddingRight: '5px' }}></i> Enviar</button>
                                                         </td>
                                                     </tr>
                                                 </table>

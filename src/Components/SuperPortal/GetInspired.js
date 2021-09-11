@@ -84,11 +84,11 @@ export default function GetInspired() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
-                                <div class="col-md-12 ">
+                                <div className="col-md-12 ">
                                     <div className="mr-auto">
-                                        <a class="btn pull-right mb-3 greenbtn text-white "  onClick={() => history.push('/createimg')}>Crear</a>
+                                        <a className="btn pull-right mb-3 greenbtn text-white "  onClick={() => history.push('/createimg')}>Crear</a>
                                     </div>
                                 </div>
                                 <div className="col-md-12 col-lg-12 col-sm-12">
@@ -108,7 +108,7 @@ export default function GetInspired() {
                                                     </tr>
                                                 </thead>
                                                 <tbody id="data-row">
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colSpan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -117,7 +117,7 @@ export default function GetInspired() {
                                                                         <td className="txt-oflo">{val.name}</td>
                                                                         <td className="txt-oflo">{(val.url).slice(0, 20)}</td>
                                                                         <td className="txt-oflo">{val.category}</td>
-                                                                        <td className="text-danger"><button class="btn text-white greenbtn text-white "><a href={val.url} className="text-white" target="_blank">Ver imagen</a></button><button class="btn text-white btn-danger mx-2" onClick={() => DeleteImg(val.id)}>Borrar</button></td>
+                                                                        <td className="text-danger"><button className="btn text-white greenbtn text-white "><a href={val.url} className="text-white" target="_blank" rel="noreferrer">Ver imagen</a></button><button className="btn text-white btn-danger mx-2" onClick={() => DeleteImg(val.id)}>Borrar</button></td>
                                                                     </tr>
                                                                 </>
                                                             )

@@ -8,12 +8,9 @@ import logo from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at
 //Sidebar
 
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -27,16 +24,12 @@ import Popover from '@material-ui/core/Popover';
 import message from './—Pngtree—chat icon_4756851.png'
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import Dashboard from './Dashboard';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import AssistantIcon from '@material-ui/icons/Assistant';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import LoyaltyIcon from '@material-ui/icons/Loyalty';
-import SwapVertIcon from '@material-ui/icons/SwapVert';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -133,7 +126,7 @@ export default function Sidebar() {
         
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
-          });;
+          });
         const channel = pusher.subscribe(""+decoded.sub+"");   
         
         channel.bind("my-event",function(returnData){

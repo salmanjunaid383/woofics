@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useHistory } from 'react-router-dom'
-import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import './Nav.css'
 import message from './—Pngtree—chat icon_4756851.png'
-import CustomProviderAuth from "../CustomProviderAuth";
 
 const useStyles = makeStyles((theme) => ({
     typography: {

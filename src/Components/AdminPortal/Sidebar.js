@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import '../SuperPortal/SupCoupons.css'
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -23,7 +19,6 @@ import Popover from '@material-ui/core/Popover';
 import message from './—Pngtree—chat icon_4756851.png'
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
-import AdminDashboard from './AdminDashboard';
 import ListIcon from '@material-ui/icons/List';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 // import PaymentIcon from '@material-ui/icons/PaymentIcon';
@@ -33,7 +28,6 @@ import jwt_decode from 'jwt-decode'
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';  
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import CallEndIcon from '@material-ui/icons/CallEnd';
-import CustomProviderAuth from "../CustomProviderAuth";
 import Pusher from 'pusher-js';
 import logo from '../LandingPage/images/woofics-new/WhatsApp-Image-2021-08-25-at-2.43-Copy.png'
 const drawerWidth = 240;
@@ -116,7 +110,7 @@ export default function ServiceSidebar(props) {
         setPathName(location.pathname)
         const pusher = new Pusher('e22c56269c9258608b2c', {
             cluster: 'ap1'
-          });;
+          });
         const channel = pusher.subscribe(""+decoded.sub+"");   
         
         channel.bind("my-event",function(returnData){

@@ -1,7 +1,6 @@
 import React, { useState ,useEffect} from "react";
-import { Link, useHistory ,useParams} from 'react-router-dom'
+import { useHistory ,useParams} from 'react-router-dom'
 import axios from 'axios';
-import jwt_decode from 'jwt-decode'
 import './DiscussionForum.css'
 import Navbar from './Navbar' 
 
@@ -94,32 +93,32 @@ export default function Moredetailsdiscussionforum() {
             </div> */}
             <Navbar />
 
-            <div class="container mt-100">
+            <div className="container mt-100">
 
-                <div class="row">
-                    <div class="col-md-12">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <div class="media flex-wrap w-100 align-items-center">
-                                        <div class="media-body ml-3"> <a href="javascript:void(0)" data-abc="true">{question.asked_by}</a>
-                                            <div class="text-muted small">{question ? (question.created_at).slice(0, 10) : ''}</div>
+                <div className="row">
+                    <div className="col-md-12">
+                            <div className="card mb-4">
+                                <div className="card-header">
+                                    <div className="media flex-wrap w-100 align-items-center">
+                                        <div className="media-body ml-3"> <a href="javascript:void(0)" data-abc="true">{question.asked_by}</a>
+                                            <div className="text-muted small">{question ? (question.created_at).slice(0, 10) : ''}</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body">
+                                <div className="card-body">
                                     <p> {question.question}
                      </p>
                                 </div>
-                                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                <div className="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                                    {
                                    allreplies.map((val,id)=>{
                                        return(
                                            <>
 
                                    <div className="container w-75 my-2">
-                                        <div class="media flex-wrap w-100 align-items-center">
-                                            <div class="media-body ml-3 w-100"> <a href="javascript:void(0)" data-abc="true">{val.replied_by}</a>
-                                                <div class="text-muted small">{(val.created_at).slice(0, 10)}</div>
+                                        <div className="media flex-wrap w-100 align-items-center">
+                                            <div className="media-body ml-3 w-100"> <a href="javascript:void(0)" data-abc="true">{val.replied_by}</a>
+                                                <div className="text-muted small">{(val.created_at).slice(0, 10)}</div>
                                             </div>
                                             <div className="mt-2 border-top w-100">
                                             <p> {val.answer}</p> 

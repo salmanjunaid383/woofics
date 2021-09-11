@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom';
 function VisualScheme() {
     return (
         <>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="woofic_visiual_content">
-                            <div class="woofic_visiual_representation">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12 col-sm-12">
+                        <div className="woofic_visiual_content">
+                            <div className="woofic_visiual_representation">
                                 cómo funciona la plataforma
                     </div>
                         </div>
@@ -21,28 +21,28 @@ function VisualScheme() {
                 </div>
             </div>
             
-            <div class="main-parent">
+            <div className="main-parent">
 
-            <div class="container">
+            <div className="container">
                 {/* <div class="woofic_visiual_top"> */}
-                <div class="row">
+                <div className="row">
                     <div className="col-md-8 col-sm-12">
-                        <div class="woofic_visiual_left">
-                            <div class="woofic_visiual_heading ">
+                        <div className="woofic_visiual_left">
+                            <div className="woofic_visiual_heading ">
                                 Responda Nuestro Cuestionario
                                 {/* <div class="woofic_visiual_sub-heading">
                                 </div> */}
                             </div>
-                            <div class="woofic_visiual_hline">
+                            <div className="woofic_visiual_hline">
 
                             </div>
-                            <div class="woofic_visiual_para">
+                            <div className="woofic_visiual_para">
                                 En menos de 2 minutos puede completar nuestro formulario, que proporcionará suficiente información para que los proveedores le hagan una oferta formal.
                         </div>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-12">
-                        <div class="woofic_visiual_right">
+                        <div className="woofic_visiual_right">
                             <img className="img-fluid" src={pnglogo} />
                         </div>
                     </div>
@@ -54,25 +54,25 @@ function VisualScheme() {
             <br />
             <br />
             <br />
-            <div class="container">
+            <div className="container">
                 {/* <div class="woofic_visiual_top woofic_visual_middle"> */}
-                <div class="row second-section">
+                <div className="row second-section">
                     <div className="col-md-4 col-sm-12">
-                        <div class="woofic_visiual_right">
+                        <div className="woofic_visiual_right">
                             <img className="img-fluid" src={v3} />
                         </div>
                     </div>
                     <div className="col-md-8 col-sm-12">
-                        <div class="woofic_visiual_left">
-                            <div class="woofic_visiual_heading">
+                        <div className="woofic_visiual_left">
+                            <div className="woofic_visiual_heading">
                                 Reciba y compare ofertas
                                 {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                 </div> */}
                             </div>
-                            <div class="woofic_visiual_hline">
+                            <div className="woofic_visiual_hline">
                             </div>
-                            <div class="woofic_visiual_para">
+                            <div className="woofic_visiual_para">
                                 Los proveedores tienen 48 horas para resolver dudas y enviarle una propuesta formal. Una vez recibidas las propuestas, compáralas y negocia con los proveedores.                            </div>
                         </div>
                     </div>
@@ -85,30 +85,30 @@ function VisualScheme() {
             <br />
             <br />
             {/* THIRD SECTIONS */}
-            <div class="container">
+            <div className="container">
                 {/* <div class="woofic_visiual_top"> */}
 
-                <div class="row">
+                <div className="row">
                     <div className="col-md-8 col-sm-12">
 
-                        <div class="woofic_visiual_left">
-                            <div class="woofic_visiual_heading ">
+                        <div className="woofic_visiual_left">
+                            <div className="woofic_visiual_heading ">
                             Contratar a una proveedora
                                     {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                     </div> */}
                             </div>
-                            <div class="woofic_visiual_hline">
+                            <div className="woofic_visiual_hline">
 
                             </div>
-                            <div class="woofic_visiual_para">
+                            <div className="woofic_visiual_para">
                             Con Woofic puedes ahorrar hasta un 30%, en lugar de contactar con los proveedores
 De forma individual, realiza los trámites online de forma segura.
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-12">
-                        <div class="woofic_visiual_right">
+                        <div className="woofic_visiual_right">
                             <img className="img-fluid" src={pnglogo2} />
                         </div>
                     </div>
@@ -119,25 +119,25 @@ De forma individual, realiza los trámites online de forma segura.
             <br />
             <br />
             <br />
-            <div class="container">
+            <div className="container">
                 {/* <div class="woofic_visiual_top woofic_visual_middle"> */}
-                <div class="row second-section">
+                <div className="row second-section">
                     <div className="col-md-4 col-sm-12">
-                        <div class="woofic_visiual_right">
+                        <div className="woofic_visiual_right">
                             <img className="img-fluid" src={v4} />
                         </div>
                     </div>
                     <div className="col-md-8 col-sm-12">
-                        <div class="woofic_visiual_left">
-                            <div class="woofic_visiual_heading">
+                        <div className="woofic_visiual_left">
+                            <div className="woofic_visiual_heading">
                                 Califica al proveedor
                                 {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                 </div> */}
                             </div>
-                            <div class="woofic_visiual_hline">
+                            <div className="woofic_visiual_hline">
                             </div>
-                            <div class="woofic_visiual_para">
+                            <div className="woofic_visiual_para">
                             Una vez cerrado el proyecto con un proveedor, evalúe según su
 experiencia, para que el resto del usuario pueda tomar mejores decisiones.
                            </div>
@@ -153,7 +153,7 @@ experiencia, para que el resto del usuario pueda tomar mejores decisiones.
 
             {/* <br />
                 <br /> */}
-            <div class="receive_offer text-center">
+            <div className="receive_offer text-center">
                 <Link to="/cita_principal">recibir oferta</Link>
             </div>
         </>

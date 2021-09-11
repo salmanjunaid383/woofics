@@ -66,14 +66,14 @@ export default function ViewServiceMore() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="d-md-flex mb-3">
                                         <h3 className=" mb-0 h1 mx-auto text-center">Detalles Del Servicio</h3>
                                     </div>
 
-                                    <table  id="for-table-setting" class="table table-hover">
+                                    <table  id="for-table-setting" className="table table-hover">
                                         <tbody id="data-row">
                                             {/* {servicet ? <>
                                                 <tr>

@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
-import LandingPage from './LandingPage/components/LandingPage';
 import "../Components/prize.css"
 import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import TextField from '@material-ui/core/TextField';
-import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
@@ -475,21 +468,21 @@ export default function PriceCalculator() {
                         <div className="main-parent" style={{display:"flex",justifyContent:"space-between", flexWrap:"wrap",alignItems:"center"}}>
                             <div className="col-xl-6 col-6" >
                                 <h1 className="result-heading">Resolución</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                     {area ? area.led_option.resolution : '00'}
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -497,21 +490,21 @@ export default function PriceCalculator() {
 
                             <div className="col-xl-6 col-6" style={{}}>
                             <h1 className="result-heading">Superficie</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                     {area ? area.led_option.surface : '00'}
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -519,21 +512,21 @@ export default function PriceCalculator() {
 
                             <div className="col-xl-6 col-6" >
                             <h1 className="result-heading">Máximo poder</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                     {area ? area.led_option.max_power_consumption : '00'}
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -541,21 +534,21 @@ export default function PriceCalculator() {
 
                             <div className="col-xl-6 col-6" style={{}}>
                             <h1 className="result-heading">Tipo de Potencia</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                     {area ? area.led_option.type_power_consumption : '00'}
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -563,21 +556,21 @@ export default function PriceCalculator() {
 
                             <div className="col-xl-6 col-6" >
                             <h1 className="result-heading">Larga</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                     {area ? area.led_option.length : '00'}
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -585,21 +578,21 @@ export default function PriceCalculator() {
 
                             <div className="col-xl-6 col-6" style={{}}>
                             <h1 className="result-heading">Peso</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                     {area ? area.led_option.weight : '00'}
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>

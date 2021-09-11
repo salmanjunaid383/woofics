@@ -97,7 +97,7 @@ export default function ViewServices() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
@@ -121,7 +121,7 @@ export default function ViewServices() {
                                                 </thead>
                                                 <tbody id="data-row" className="data-row">
 
-                                                    {blog == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
+                                                    {blog == '' ? <tr scope="row"><td colSpan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                                                         : blog.map((val, id) => {
                                                             return (
                                                                 <>
@@ -134,7 +134,7 @@ export default function ViewServices() {
                                                                         
                                                                         <td className="txt-oflo">{val.delivery_time}</td>
                                                                         <td className="txt-oflo">{val.email}</td>
-                                                                        <td className="text-danger"><button class="btn text-white greenbtn" onClick={() => history.push(`/ver_servicio_más/${val.id}`)}>Ver más</button></td>
+                                                                        <td className="text-danger"><button className="btn text-white greenbtn" onClick={() => history.push(`/ver_servicio_más/${val.id}`)}>Ver más</button></td>
                                                                     </tr>
                                                                 </>
                                                             )
@@ -145,10 +145,10 @@ export default function ViewServices() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
+                            <div className="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
                             {
                                 prevPage !== null   ? <>
-                                <div class="col-md-6" >
+                                <div className="col-md-6" >
                             
                                      <button className="s-button"  onClick={e => {goNext(prevPage)}}>Previous</button>
                         
@@ -156,7 +156,7 @@ export default function ViewServices() {
                             }
                             {
                                 nextPage !== null  ? <>
-                                <div class="col-md-6">
+                                <div className="col-md-6">
                             
                                 <button className="s-button"  onClick={e => {goNext(nextPage)}}>Next</button>
                         

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import axios from 'axios';
 import Sidebar from './Sidebar'
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import jwt_decode from 'jwt-decode'
 
@@ -80,7 +80,7 @@ useEffect(()=>{
                     
 
                    <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
@@ -95,7 +95,7 @@ useEffect(()=>{
                                                             <>
                                                                 <tr>
                                                                     <td className="txt-oflo">{val.notification}</td>
-                                                                    <td className="text-danger"><button class='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Eliminar</button></td>
+                                                                    <td className="text-danger"><button className='btn text-white btn-danger' value={val.id} onClick={(e) => notificationDelete(val.id)}>Eliminar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

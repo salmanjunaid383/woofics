@@ -11,7 +11,7 @@ function PrivacyPolicy()
         <>
         <Navbar></Navbar>
         <div className="page-wrapper mt-5 bg-light">
-                <div class="container-fluid no-gutters ">
+                <div className="container-fluid no-gutters ">
 
                 <div>
                 <h1 style={{textAlign:"center",padding:"20px",fontSize:"35px",fontWeight:"700 ",color:"#F62B84",lineHeight: '1.2'}}>POLÍTICA DE PRIVACIDAD - WOOFIC LLC.</h1>
@@ -68,13 +68,13 @@ datos de Hotjar sobre su uso de nuestro sitio y el uso de cookies de seguimiento
 de Hotjar en otros sitios web siguiendo este enlace de exclusión voluntaria.
 https://www.hotjar.com/legal/compliance/opt-out</p>
 
-                <h3 class="subHeading">¿Cómo usamos la información que recopilamos?</h3>
+                <h3 className="subHeading">¿Cómo usamos la información que recopilamos?</h3>
 
                 <p>Información personal: utilizaremos la información personal que se nos envíe para brindarle
 los servicios que nos solicite. Woofics puede enviarle materiales de marketing por correo
 electrónico y actualizaciones de productos y otras actualizaciones.</p>
                 
-                <h3 class="subHeading">Datos agregados:</h3>
+                <h3 className="subHeading">Datos agregados:</h3>
 
                 <p>Woofics usa la Información agregada solo en forma agregada que no identifica al usuario
                 individual, y solo para que nosotros comprendamos el desempeño del Sitio. Por ejemplo,
@@ -113,7 +113,7 @@ electrónico y actualizaciones de productos y otras actualizaciones.</p>
                 Conservación: Una vez resuelta su solicitud por medio de nuestro formulario o contestada
                 por correo electrónico, si no ha generado un nuevo tratamiento, y en caso de haber
                 aceptado recibir envíos comerciales, hasta que solicite la baja de los mismos.</p>
-                <h3 class="subHeading">
+                <h3 className="subHeading">
                 Excepción legal:
                 </h3>
                 <p>Sin perjuicio de lo anterior, Woofics puede usar la Información personal y otra información
@@ -121,9 +121,9 @@ electrónico y actualizaciones de productos y otras actualizaciones.</p>
                 pública o si, a la discreción razonable de Woofics, el uso es necesario para proteger los
                 derechos legales de Woofics o para proteger a terceros.</p>
 
-                <h3 class="subHeading">¿Qué información divulgamos a terceros?</h3>
+                <h3 className="subHeading">¿Qué información divulgamos a terceros?</h3>
 
-                <h3 class="subHeading">Información personal:</h3>
+                <h3 className="subHeading">Información personal:</h3>
 
                 <p>Woofics no vende ni alquila su lista de correo, y no divulgará su información personal a
                 terceros, excepto cuando sea necesario para enviar sus materiales de servicio. Sin
@@ -132,7 +132,7 @@ electrónico y actualizaciones de productos y otras actualizaciones.</p>
                 negocio de Woofics como resultado de cualquier fusión, adquisición o transacción similar; y
                 (b) a cualquier autoridad reguladora o de aplicación de la ley</p>
 
-                <h3 class="subHeading">Contacto:</h3>
+                <h3 className="subHeading">Contacto:</h3>
                 <p>Si tiene cualquier duda o preocupación acerca de la forma en que tratamos y usamos sus
                 datos personales o desea ejercer cualquiera de los derechos anteriormente descritos,
                 póngase en contacto con hola@woofics.com.</p>

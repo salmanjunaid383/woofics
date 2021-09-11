@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios';
 import './BLog.css';
 import Navbar from './Navbar'
@@ -58,31 +58,31 @@ export default function Blog() {
 
 
         <div className="page-wrapper">
-                <div class="container">
-                    <div id="blog" class="row">
+                <div className="container">
+                    <div id="blog" className="row">
 
-                        <div class="col-md-10 mx-auto text-center m-2">
+                        <div className="col-md-10 mx-auto text-center m-2">
                             <h1 className="text-primary">BLOGS</h1>
                         </div>
                         {/* <div className="col-md-10 text-center mx-auto"> */}
 
-                        <div class="container-fluid">
-                            <div class="row ">
-                                <div class="card-deck ">
-                                    {blog == "" ? <div class="alert alert-success w-100 text-center m-5 col-md-12" role="alert">
+                        <div className="container-fluid">
+                            <div className="row ">
+                                <div className="card-deck ">
+                                    {blog == "" ? <div className="alert alert-success w-100 text-center m-5 col-md-12" role="alert">
                                     Sin Blog! </div>
                                         : blog.map((val, id) => {
                                             return (
                                                 <>
-                                                    <div class="col-md-3 mx-auto m-2" onClick={() => history.push(`/blogdetalle/${val.id}`)}>
-                                                        <div class="card" style={{ height: "25rem", cursor: 'pointer' }} >
+                                                    <div className="col-md-3 mx-auto m-2" onClick={() => history.push(`/blogdetalle/${val.id}`)}>
+                                                        <div className="card" style={{ height: "25rem", cursor: 'pointer' }} >
                                                             <img src={val.image} alt="..." className="img-fluid" style={{ height: "12rem" }} />
-                                                            <div class="card-body">
-                                                                <h3 class="card-title">{val.author}</h3>
-                                                                <p class="card-text">{(val.article).slice(0, 80) + '...'}</p>
+                                                            <div className="card-body">
+                                                                <h3 className="card-title">{val.author}</h3>
+                                                                <p className="card-text">{(val.article).slice(0, 80) + '...'}</p>
                                                             </div>
-                                                            <div class="card-footer">
-                                                                <h5 class="card-text">Fecha: {(val.created_at).slice(0, 10)}</h5>
+                                                            <div className="card-footer">
+                                                                <h5 className="card-text">Fecha: {(val.created_at).slice(0, 10)}</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,7 +94,7 @@ export default function Blog() {
                         </div>
 
                         {/* </div> */}
-                        <div class="col-md-12 gap10"></div>
+                        <div className="col-md-12 gap10"></div>
                     </div>
                 </div>
             </div>

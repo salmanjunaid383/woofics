@@ -124,15 +124,15 @@ export default function SupCoupons() {
                     
 
                    <div className="page-wrapper bg-light">
-                        <div class="container-fluid">
-                            <div class="row">
+                        <div className="container-fluid">
+                            <div className="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
                                     <i className="fas fa-chevron-left fa-2x" onClick={() => history.goBack()} style={{ cursor: 'pointer' }}></i>
                                 </div>
-                                <div class="col-lg-8 col-xlg-9 col-md-12 mx-auto">
-                                    <div class="">
-                                        <div class="">
-                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto">
+                                    <div className="">
+                                        <div className="">
+                                            <form className="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-5">
                                                     <div className="col-md-6  px-2 w-100 p-0 ">
                                                         <FormControl component="fieldset">
@@ -186,15 +186,15 @@ export default function SupCoupons() {
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-md-12">
-                                                        <label class="col-md-12 p-0">Descripción Del Descuento</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
+                                                        <label className="col-md-12 p-0">Descripción Del Descuento</label>
+                                                        <div className="col-md-12 border-bottom p-0">
+                                                            <textarea rows="4" className="form-control p-0 border-0" placeholder="Add Description" onChange={(e) => setDescription(e.target.value)}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-4 mt-4">
-                                                    <div class="col-sm-12 text-center">
-                                                        <button class={`btn text-white ${description == '' || date == '' || phase == '' || coupontype == '' || rate == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{wait}</button>
+                                                <div className="form-group mb-4 mt-4">
+                                                    <div className="col-sm-12 text-center">
+                                                        <button className={`btn text-white ${description == '' || date == '' || phase == '' || coupontype == '' || rate == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{wait}</button>
                                                     </div>
                                                 </div>
                                             </form>

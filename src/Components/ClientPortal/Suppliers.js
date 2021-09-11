@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import "../ClientPortal/Suppliers.css"
 import axios from 'axios';
 import StazBar from './Sidebar'
-import Nav from './Nav'
 import StarRatings from 'react-star-ratings';
 import './BLog.css';
 import jwt_decode from 'jwt-decode'
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import CustomClientAuth from "../CustomClientAuth";
 const useStyles = makeStyles((theme) => ({
 
@@ -102,18 +101,18 @@ export default function Supppliers() {
 
 
                    <div className="page-wrapper bg-light">
-                        <div class="container">
+                        <div className="container">
                             <div className="row ipad-change" id="blog " >
                                 {suppliers.map((val, id) => {
                                     return (
                                         <>
-                                            <div class="col-md-4 col-lg-6 justify-content-space-around">
-                                                <div class="card mx-auto mt-4" style={{ width: '18rem' }}>
+                                            <div className="col-md-4 col-lg-6 justify-content-space-around">
+                                                <div className="card mx-auto mt-4" style={{ width: '18rem' }}>
                                                     {/* <img class="card-img-top img-fluid mx-auto" src={val.bg_image} alt="Backgound image" /> */}
-                                                    <div class="card-body">
+                                                    <div className="card-body">
                                                        
                                                         <h4 className="mt-0">{val.first_name + " " + val.last_name}
-                                                            <img class="card-img-top img-fluid w-25 mx-auto float-left p-2 ipad-res" src={val.profile_image}  style={{borderRadius:"50px"}}/>
+                                                            <img className="card-img-top img-fluid w-25 mx-auto float-left p-2 ipad-res" src={val.profile_image}  style={{borderRadius:"50px"}}/>
                                                             <StarRatings
                                                                 starRatedColor='rgb(230, 67, 47)'
                                                                 rating={3}
@@ -126,8 +125,8 @@ export default function Supppliers() {
                                                         <i className="fa fa-map-marker px-2 text-muted"> {val.location}</i><br />
                                                         <hr />
                                                         <div className="d-flex">
-                                                        <button class="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => history.push(`/detalles_del_proveedor/${val.id}`)} >Más Detalles</button>
-                                                        <button class="btn pull-right marginBottom10  mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => SendData(val.id, val.first_name + " " + val.last_name, val.profile_image )} >Chat</button>
+                                                        <button className="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => history.push(`/detalles_del_proveedor/${val.id}`)} >Más Detalles</button>
+                                                        <button className="btn pull-right marginBottom10  mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => SendData(val.id, val.first_name + " " + val.last_name, val.profile_image )} >Chat</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,7 +135,7 @@ export default function Supppliers() {
                                     )
                                 })}
 
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
                     </div>

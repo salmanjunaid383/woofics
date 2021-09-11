@@ -121,15 +121,15 @@ export default function Led() {
 
                     <div className="page-wrapper bg-light">
 
-                        <div class="container-fluid">
-                            <div class="row">
+                        <div className="container-fluid">
+                            <div className="row">
                                 <div className="text-left col-lg-12 col-xlg-12 col-md-12 mx-auto d-md-block d-none">
                                     <i className="fas fa-chevron-left fa-2x" onClick={() => history.goBack()} style={{ cursor: 'pointer' }}></i>
                                 </div>
-                                <div class="col-lg-12 col-xlg-12 col-md-12 mx-auto">
-                                    <div class="">
-                                        <div class="">
-                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                <div className="col-lg-12 col-xlg-12 col-md-12 mx-auto">
+                                    <div className="">
+                                        <div className="">
+                                            <form className="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-5">
                                                     <div className="col-md-3 text-center p-2 w-100 p-0">
                                                         <TextField
@@ -145,7 +145,7 @@ export default function Led() {
                                                         />
                                                     </div>
                                                     <div className="col-md-3 text-center p-2 w-100 p-0 border">
-                                                        {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '90px' }} /> : <input onChange={onchange} class="form-control p-0 border-0" type="file" accept='image/*' name="image_url" />}
+                                                        {imageUrl ? <img className="text-center mx-auto" src={imageUrl} style={{ height: '90px' }} /> : <input onChange={onchange} className="form-control p-0 border-0" type="file" accept='image/*' name="image_url" />}
                                                     </div>
                                                     <div className="col-md-3 text-center w-100 p-2">
                                                         <FormControl className="w-100">
@@ -217,9 +217,9 @@ export default function Led() {
                                                                     }
                                                                 </tbody>
                                                             </table>
-                                                            <div class="form-group mb-4 mt-4">
-                                                                <div class="col-sm-12 text-center">
-                                                                    <button class={`btn text-white ${location == '' || name == '' || application == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{Progress}</button>
+                                                            <div className="form-group mb-4 mt-4">
+                                                                <div className="col-sm-12 text-center">
+                                                                    <button className={`btn text-white ${location == '' || name == '' || application == '' ? disable : ''}`} style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={sendQuote}>{Progress}</button>
                                                                 </div>
                                                             </div>
                                                         </div>

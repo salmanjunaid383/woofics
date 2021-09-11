@@ -79,7 +79,7 @@ export default function ViewContact() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5">
                                 <div className="col-md-12 col-lg-12 col-sm-12">
                                     <div className="white-box">
@@ -104,7 +104,7 @@ export default function ViewContact() {
                                                                     <td className="txt-oflo text-center">{val.name}</td>
                                                                     <td className="txt-oflo text-center">{val.email}<a href={"mailto:" /+ val.email} className="float-right pr-lg-4"><i className="fa fa-envelope ml-3 text-primary"></i></a></td>
                                                                     <td className="txt-oflo text-center"><p className="text-justify">{val.message}</p></td>
-                                                                    <td className="text-danger text-center"><button class="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Borrar</button></td>
+                                                                    <td className="text-danger text-center"><button className="btn text-white btn-danger" value={val.id} onClick={(e) => deleteAdv(e.target.value)}>Borrar</button></td>
                                                                 </tr>
                                                             </>
                                                         )

@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useHistory,useLocation } from "react-router-dom";
-import signupside from "../Images/star.png";
 import axios from "axios";
-import TextField from "@material-ui/core/TextField";
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { green } from "@material-ui/core/colors";
 
 
 export default function Client() {

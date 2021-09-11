@@ -11,7 +11,6 @@ import six from '../images/six.png';
 import seven from '../images/seven.jpg';
 import eight from '../images/eight.png';
 import { useHistory } from 'react-router-dom';
-import {Animated} from "react-animated-css";
 
 function Banner(){
     let history = useHistory();
@@ -72,113 +71,113 @@ function Banner(){
 
 
 
-           <div class="woofic_banner text-center ">
+           <div className="woofic_banner text-center ">
           
-                <div class="woofic_banner_heading">
+                <div className="woofic_banner_heading">
                    <span style={{color:"#333333"}}> Servicios </span><span style={{color:"#F62B84"}}>/</span> <span style={{color:"#F62B84"}}>profesional</span>
                 </div>
-                <div class="woofic_banner_sub-heading mb-5   ">
+                <div className="woofic_banner_sub-heading mb-5   ">
                 Encuentre soluciones personalizadas y a medida para sus proyectos
                 </div>
-                <div class="woofic_first_row">
-                    <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/REPAIRS')}>
-                        <div class="woofic_element_image">
+                <div className="woofic_first_row">
+                    <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/REPAIRS')}>
+                        <div className="woofic_element_image">
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={one}/>
                         </div>
-                        <div class="woofic_element_heading">
+                        <div className="woofic_element_heading">
                         refacción
                         </div>
-                        <div class="woofic_element_paragraph">
+                        <div className="woofic_element_paragraph">
                         Reparación y configuración de componentes para pantallas de leds (leds, módulos, chips, tarjetas ...).
 
                                 
                         </div>
 
                     </div>
-                    <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ELECTRICIAN')}>
-                        <div class="woofic_element_image">
+                    <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ELECTRICIAN')}>
+                        <div className="woofic_element_image">
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}}  src={two}/>
                         </div>
-                        <div class="woofic_element_heading">
+                        <div className="woofic_element_heading">
                         electricista
                         </div>
-                        <div class="woofic_element_paragraph">                               
+                        <div className="woofic_element_paragraph">                               
                         Realización de instalaciones y cuadros eléctricos para su proyecto.                               
                         </div>
                     </div>
 
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ARCHITECTS')}>
-                                <div class="woofic_element_image" style={{overflow:"hidden"}}>
+                        <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ARCHITECTS')}>
+                                <div className="woofic_element_image" style={{overflow:"hidden"}}>
                                 <img style={{borderRadius:"50%",width:'70px',height:'70px',marginTop:"-8px", marginLeft:"-5px"}}  src={three}/>
                                 </div>
-                            <div class="woofic_element_heading">
+                            <div className="woofic_element_heading">
                             arquitectos / ingenieras
                                 </div>
-                                <div class="woofic_element_paragraph">
+                                <div className="woofic_element_paragraph">
                                 Proyectos aprobados y cumpliendo con la normativa de cada municipio.
                             </div>
 
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/GRAPHIC')}>
-                            <div class="woofic_element_image">
+                        <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/GRAPHIC')}>
+                            <div className="woofic_element_image">
                                 <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={four}/>
                             </div>
-                            <div class="woofic_element_heading">
+                            <div className="woofic_element_heading">
                             diseñador grafico
                             </div>
-                            <div class="woofic_element_paragraph">
+                            <div className="woofic_element_paragraph">
                             Creación de contenido específico (Imagen, video ...) para tu pantalla led.
                             </div>
                         </div>
                     </div>
 {/* SECOND ROW */}
 
-                        <div class="woofic_first_row woofic_row_changes">
-                        <div class="woofic_first_element p-4  woofic_repair_box" onClick={()=>history.push('/servicio_de_vista/SCREEN')}>
-                            <div class="woofic_element_image">
+                        <div className="woofic_first_row woofic_row_changes">
+                        <div className="woofic_first_element p-4  woofic_repair_box" onClick={()=>history.push('/servicio_de_vista/SCREEN')}>
+                            <div className="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={five}/>
                             </div>
-                            <div class="woofic_element_heading">
+                            <div className="woofic_element_heading">
                             gestión de pantallas
                             </div>
-                            <div class="woofic_element_paragraph">  
+                            <div className="woofic_element_paragraph">  
                             Gestión de contenido profesional e inteligente para pantalla LED (software y hardware).
                             </div>
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/STRUCTURES')}>
-                            <div class="woofic_element_image">
+                        <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/STRUCTURES')}>
+                            <div className="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="img-fluid" src={six}/>
                             </div>
-                            <div class="woofic_element_heading">
+                            <div className="woofic_element_heading">
                             estructuras
                             </div>
-                            <div class="woofic_element_paragraph">
+                            <div className="woofic_element_paragraph">
                             Fabricación de estructuras metálicas a medida (monoposte, fachada, escaparate ...).
                                 
                             </div>
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ADVERTISE')}>
-                            <div class="woofic_element_image">
+                        <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ADVERTISE')}>
+                            <div className="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={seven}/>
                             </div>
-                            <div class="woofic_element_heading">
+                            <div className="woofic_element_heading">
                             publicidad en pantallas
                             </div>
-                            <div class="woofic_element_paragraph">
+                            <div className="woofic_element_paragraph">
                                 
                             Publicita en pantallas Led en toda España o en tu ciudad.
                                 
                             </div>
                         </div>
 
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/INSTALLER')}>
-                            <div class="woofic_element_image">
+                        <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/INSTALLER')}>
+                            <div className="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={eight}/>
                             </div>
-                            <div class="woofic_element_heading">
+                            <div className="woofic_element_heading">
                             instaladora
                             </div>
-                            <div class="woofic_element_paragraph">
+                            <div className="woofic_element_paragraph">
                             Instalaciones y puesta en marcha de soluciones led.
                                 
                             </div>

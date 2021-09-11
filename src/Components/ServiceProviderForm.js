@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import signupside from "../Images/star.png";
 import axios from "axios";
-import TextField from "@material-ui/core/TextField";
-import Radio, { RadioProps } from '@material-ui/core/Radio';
+import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Snackbar from '@material-ui/core/Snackbar';

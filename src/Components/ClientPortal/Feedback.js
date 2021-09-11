@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from 'react-router-dom'
-import loginside from '../../Images/loginside.jpg'
 import axios from 'axios';
-import Sidebar from './Sidebar'
-import Nav from './Nav'
 import StarRatings from 'react-star-ratings';
 import jwt_decode from 'jwt-decode';
-import Pusher from 'pusher-js';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 
 //Sidebar
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 // import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -34,17 +26,12 @@ import Popover from '@material-ui/core/Popover';
 import message from './—Pngtree—chat icon_4756851.png'
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import Dashboard from './Dashboard';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import AssistantIcon from '@material-ui/icons/Assistant';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import LoyaltyIcon from '@material-ui/icons/Loyalty';
-import SwapVertIcon from '@material-ui/icons/SwapVert';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import CallEndIcon from '@material-ui/icons/CallEnd';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
@@ -474,14 +461,14 @@ export default function Feedback() {
 
                    <div className="page-wrapper bg-light">
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-8 col-xlg-9 col-md-12 mx-auto">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <form class="form-horizontal form-material" style={{ textAlign: 'left' }}>
-                                                <label class="col-md-12 p-0 h5">Reseñas</label>
-                                                <div class="col-md-12 border-bottom p-0">
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-lg-8 col-xlg-9 col-md-12 mx-auto">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <form className="form-horizontal form-material" style={{ textAlign: 'left' }}>
+                                                <label className="col-md-12 p-0 h5">Reseñas</label>
+                                                <div className="col-md-12 border-bottom p-0">
                                                     <p>1. Con una calificación de 5, ¿cómo fue el proyecto en general?</p>
                                                     <p> <StarRatings
                                                         starRatedColor='rgb(230, 67, 47)'
@@ -523,13 +510,13 @@ export default function Feedback() {
                                                         changeRating={changeRating5}
                                                     /></p>
                                                 </div>
-                                                <label class="col-md-12 p-0">Comentarios</label>
-                                                <div class="col-md-12 border-bottom p-0">
-                                                    <textarea rows="4" class="form-control p-0 border-0" placeholder="Add Comments for Feedback" onChange={(e) => setComments(e.target.value)}></textarea>
+                                                <label className="col-md-12 p-0">Comentarios</label>
+                                                <div className="col-md-12 border-bottom p-0">
+                                                    <textarea rows="4" className="form-control p-0 border-0" placeholder="Add Comments for Feedback" onChange={(e) => setComments(e.target.value)}></textarea>
                                                 </div>
-                                                <div class="form-group mb-4">
-                                                    <div class="col-sm-12 mt-3">
-                                                        <button class="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>Realimentación</button>
+                                                <div className="form-group mb-4">
+                                                    <div className="col-sm-12 mt-3">
+                                                        <button className="btn text-white" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)' }} onClick={Feedback}>Realimentación</button>
                                                     </div>
                                                 </div>
                                             </form>

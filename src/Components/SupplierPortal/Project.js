@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../../../src/text-change.css"
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import SideBar from './Sidebar';
 import axios from 'axios';
 
 import jwt_decode from 'jwt-decode';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CustomSupplierAuth from "../CustomSupplierAuth";
 
@@ -77,9 +77,9 @@ export default function Project() {
 
 
                    <div className="page-wrapper bg-light">
-                        <div class="container">
-                            <div id="blog" class="row ">
-                                <div class="container-fluid pb-lg-4">
+                        <div className="container">
+                            <div id="blog" className="row ">
+                                <div className="container-fluid pb-lg-4">
                                     <div className="row m-lg-5">
                                         <div className="col-md-12 col-lg-12 col-sm-12 border bg-light">
                                             <div className="d-md-flex mb-3">
@@ -99,7 +99,7 @@ export default function Project() {
                                                         </tr>
                                                     </thead>
                                                     <tbody id="data-row" >
-                                                        {form == '' ? <tr scope="row"><td colspan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
+                                                        {form == '' ? <tr scope="row"><td colSpan="4"><h3 className="my-lg-3 mx-auto ">Nada Que Mostrar!</h3></td> </tr> :
                                                             form.map((val, id) => {
                                                                 return (
                                                                     <>
@@ -110,7 +110,7 @@ export default function Project() {
                                                                             <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                             {/* <td className="txt-oflo text-center bold">{val.phase}</td> */}
                                                                             <td className="txt-oflo text-center bold">
-                                                                                <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/proyectos_de_proveedores/${val.client_id}/${val.id}`)} >Más Detalles</button>
+                                                                                <button className="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/proyectos_de_proveedores/${val.client_id}/${val.id}`)} >Más Detalles</button>
                                                                             </td>
                                                                         </tr>
                                                                     </>
@@ -124,7 +124,7 @@ export default function Project() {
                                 </div>
 
 
-                                <div class="col-md-12 gap10"></div>
+                                <div className="col-md-12 gap10"></div>
                             </div>
                         </div>
                     </div>

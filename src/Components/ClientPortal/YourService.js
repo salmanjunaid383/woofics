@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import StazBar from './Sidebar'
 import axios from "axios";
 
 import jwt_decode from "jwt-decode";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 
 import CustomClientAuth from "../CustomClientAuth";
@@ -94,9 +94,9 @@ export default function YourService() {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           <div className="page-wrapper bg-light">
-            <div class="container">
-              <div id="blog" class="row">
-                <div class="container-fluid pb-lg-4">
+            <div className="container">
+              <div id="blog" className="row">
+                <div className="container-fluid pb-lg-4">
                   <div className="row m-lg-5">
                     <div className="col-md-12 col-lg-12 col-sm-12">
                       <div className="d-md-flex mb-3">
@@ -120,7 +120,7 @@ export default function YourService() {
                           </thead>
                           <tbody id="data-row">
 
-                            {form == '' ? <tr scope="row"><td colspan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
+                            {form == '' ? <tr scope="row"><td colSpan="5"><h3 className="my-lg-3 mx-auto ">¡Nada que mostrar! Empiece a crear proyectos...</h3></td> </tr>
                               : form.map((val, id) => {
                                 return (
                                   <>
@@ -133,7 +133,7 @@ export default function YourService() {
                                       <td className="txt-oflo">{val.delivery_time}</td>
                                       <td className="txt-oflo">{val.email}</td>
                                       <td className="text-danger">   <button
-                                        class="btn marginBottom10 greenbtn text-white" 
+                                        className="btn marginBottom10 greenbtn text-white" 
                                         value={val.id}
                                         onClick={() =>
                                           history.push(
@@ -144,7 +144,7 @@ export default function YourService() {
                                         Consultar Cotización
                                       </button>
                                         <button
-                                          class="btn btn-danger ml-md-2 marginBottom10"
+                                          className="btn btn-danger ml-md-2 marginBottom10"
                                           value={val.id}
                                           onClick={() => DeleteService(val.id)}
                                         >
@@ -160,7 +160,7 @@ export default function YourService() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12 gap10"></div>
+                <div className="col-md-12 gap10"></div>
               </div>
             </div>
           </div>

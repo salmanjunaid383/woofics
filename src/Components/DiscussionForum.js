@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from 'react-router-dom'
-import loginside from '../Images/service.png'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios';
-import jwt_decode from 'jwt-decode'
-import { Alert, Button } from 'react-bootstrap'
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import './DiscussionForum.css'
-import side_image from './LandingPage/images/side_image.png';
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
 import ScrollToTop from "./ScrollToTop";
@@ -177,18 +169,18 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
             <div className="container text-center mx-auto mt-lg-5">
                 <div className="row mx-auto">
                     <div className="col-sm-12 col-md-12">
-                        <div class="woofic_lastnews_header">
-                            <div class="woofic_lastnews_heading">PREGUNTAS FRECUENTES</div>
-                            <div class="woofic_lastnews_hline"></div>
+                        <div className="woofic_lastnews_header">
+                            <div className="woofic_lastnews_heading">PREGUNTAS FRECUENTES</div>
+                            <div className="woofic_lastnews_hline"></div>
                         </div>
                     </div>
                     <div className="col-md-10 mx-auto">
-                        <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
+                        <div className="accordion" id="accordionExample">
+                            <div className="card">
+                                <div className="card-header" id="headingOne">
+                                    <h2 className="mb-0">
                                         <button
-                                            class="btn btn-link btn-block text-left collapsed"
+                                            className="btn btn-link btn-block text-left collapsed"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapseOne"
@@ -202,11 +194,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
 
                                 <div
                                     id="collapseOne"
-                                    class="collapse"
+                                    className="collapse"
                                     aria-labelledby="headingOne"
                                     data-parent="#accordionExample"
                                 >
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         Woofic envía a sus colaboradores (proveedores) el cuestionario
                                         cumplimentado por el cliente, en un plazo máximo de 48
                                         horas que los proveedores tienen para responder preguntas y presentar un
@@ -214,11 +206,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
+                            <div className="card">
+                                <div className="card-header" id="headingTwo">
+                                    <h2 className="mb-0">
                                         <button
-                                            class="btn btn-link btn-block text-left collapsed"
+                                            className="btn btn-link btn-block text-left collapsed"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapseTwo"
@@ -231,11 +223,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                 </div>
                                 <div
                                     id="collapseTwo"
-                                    class="collapse"
+                                    className="collapse"
                                     aria-labelledby="headingTwo"
                                     data-parent="#accordionExample"
                                 >
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         Woofic es una plataforma integral, en la que recibirás y gestionarás ofertas, realizarás
                                         calificaciones de proveedores y muchas más ventajas, por eso es necesario registrarse, ser
                                         poder acceder a su panel de administración personal.
@@ -275,11 +267,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                   </div>
                 </div>
               </div> */}
-                            <div class="card">
-                                <div class="card-header" id="headingFour">
-                                    <h2 class="mb-0">
+                            <div className="card">
+                                <div className="card-header" id="headingFour">
+                                    <h2 className="mb-0">
                                         <button
-                                            class="btn btn-link btn-block text-left collapsed"
+                                            className="btn btn-link btn-block text-left collapsed"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapseFour"
@@ -292,11 +284,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                 </div>
                                 <div
                                     id="collapseFour"
-                                    class="collapse"
+                                    className="collapse"
                                     aria-labelledby="headingFour"
                                     data-parent="#accordionExample"
                                 >
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         No. Woofic.com es un portal totalmente independiente, solo ponemos
                                         clientes en contacto con proveedores y cada proveedor hace
                                         su oferta personalizada directamente al cliente final, el
@@ -306,11 +298,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingFive">
-                                    <h2 class="mb-0">
+                            <div className="card">
+                                <div className="card-header" id="headingFive">
+                                    <h2 className="mb-0">
                                         <button
-                                            class="btn btn-link btn-block text-left collapsed"
+                                            className="btn btn-link btn-block text-left collapsed"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapseFive"
@@ -323,11 +315,11 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                 </div>
                                 <div
                                     id="collapseFive"
-                                    class="collapse"
+                                    className="collapse"
                                     aria-labelledby="headingFive"
                                     data-parent="#accordionExample"
                                 >
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         Nuestro servicio es completamente gratuito. Las ofertas que harás
                                         encontrar de los diferentes proveedores en Woofic son los mismos
                                         que encontrarás en cada empresa. No existen

@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import VolumeDown from '@material-ui/icons/VolumeDown';
-import VolumeUp from '@material-ui/icons/VolumeUp';
 
 const useStyles = makeStyles({
     root: {
@@ -131,21 +129,21 @@ export default function StazCal() {
                         <div className="main-parent" style={{display:"flex",justifyContent:"space-between", flexWrap:"wrap",alignItems:"center"}}>
                             <div className="col-xl-6 col-6" >
                                 <h1 className="result-heading">Resolución</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                         0%
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -153,21 +151,21 @@ export default function StazCal() {
 
                             <div className="col-xl-6 col-6" style={{}}>
                             <h1 className="result-heading">Superficie</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                         0%
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -175,21 +173,21 @@ export default function StazCal() {
 
                             <div className="col-xl-6 col-6" >
                             <h1 className="result-heading">Máximo poder</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                         0%
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -197,21 +195,21 @@ export default function StazCal() {
 
                             <div className="col-xl-6 col-6" style={{}}>
                             <h1 className="result-heading">Tipo de potencia</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                         0%
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -219,21 +217,21 @@ export default function StazCal() {
 
                             <div className="col-xl-6 col-6" >
                             <h1 className="result-heading">Larga</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                         0%
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -241,21 +239,21 @@ export default function StazCal() {
 
                             <div className="col-xl-6 col-6" style={{}}>
                             <h1 className="result-heading">Peso</h1>
-                                <div class="circular" style={{margin:"auto"}}>
-                                    <div class="inner"></div>
-                                    <div class="outer"></div>
-                                    <div class="numb">
+                                <div className="circular" style={{margin:"auto"}}>
+                                    <div className="inner"></div>
+                                    <div className="outer"></div>
+                                    <div className="numb">
                                         0%
                                 </div>
-                                    <div class="circle">
-                                        <div class="dot">
+                                    <div className="circle">
+                                        <div className="dot">
                                             <span></span>
                                         </div>
-                                        <div class="bar left">
-                                            <div class="progress"></div>
+                                        <div className="bar left">
+                                            <div className="progress"></div>
                                         </div>
-                                        <div class="bar right">
-                                            <div class="progress"></div>
+                                        <div className="bar right">
+                                            <div className="progress"></div>
                                         </div>
                                     </div>
                                 </div>

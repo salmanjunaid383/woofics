@@ -32,7 +32,7 @@ export default function Ledger() {
                     
 
                     <div className="page-wrapper bg-light">
-                        <div class="container pb-lg-4">
+                        <div className="container pb-lg-4">
                             <div className="row m-lg-5 text-center mx-auto my-auto">
                                 <div className="col-md-4 m-3 p-5 mx-auto text-center shadow border rounded" style={{ cursor: 'pointer' }} onClick={() => history.push('/lista_de_contabilidad/supplier')}>
                                     <i className="fa fa-5x py-3 fa-user " style={{ color: "#f25c8a" }}></i>
