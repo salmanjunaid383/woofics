@@ -747,7 +747,7 @@ export default function QuoteMain() {
                   </a>
                 </div>
               </div>
-              <div className="row">
+              <div className="row" style={{display:"flex",justifyContent:"center" }}>
                 <div id="screens" style={{ display: screenDisplay }}>
                   {data1.map((val, id) => {
                     return (
