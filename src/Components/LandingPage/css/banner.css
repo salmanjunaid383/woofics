@@ -186,4 +186,14 @@
 }
 .woofic_element_button{
 margin-top: 50px;
-}}
+}
+}
+@media(max-width:600px){
+    .pic_sec{
+        flex-direction: column;
+    }
+    .pic1 img{
+        width:100%;
+        margin-bottom: 20px;
+    }
+}
