@@ -176,6 +176,7 @@ function LastNews() {
               <div className="woofic_lastnews_hline"></div>
             </div>
           </div>
+          
           <div className="col-md-10 mx-auto">
             <div className="accordion" id="accordionExample">
               <div className="card">
@@ -189,8 +190,11 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseOne"
                     >
-                      Cómo actúa Woofic?
+                      Cómo actúa Woofic
+
+
                     </button>
+ 
                   </h2>
                 </div>
 
@@ -219,7 +223,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseTwo"
                     >
-                      ¿Por qué tengo que registrarme?
+                      ¿Por qué tengo que registrarme
                     </button>
                   </h2>
                 </div>
@@ -281,7 +285,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseFour"
                     >
-                      ¿Woofic favorece a alguna empresa?
+                      ¿Woofic favorece a alguna empresa
                     </button>
                   </h2>
                 </div>
@@ -312,7 +316,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseFive"
                     >
-                      ¿Cómo gana dinero Woofic.com?
+                      ¿Cómo gana dinero Woofic.com
                     </button>
                   </h2>
                 </div>

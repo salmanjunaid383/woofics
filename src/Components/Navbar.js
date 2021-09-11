@@ -449,7 +449,7 @@ function Navbar() {
                         </Link>
                        
                         {/* <Link to="/foro_de_discusion" className="pt-3 ">Forum</Link> */}
-                        <Link to="/cita_principal"  className="pt-3 taglink hover-effect for-res" id="">
+                        <Link to="/cita_principal" style className="pt-3 taglink hover-effect for-res" id="">
                         Recibir Ofertas
                         </Link>
                         {/* <Link to="/anunciar" className="pt-3 ">Tools</Link> */}

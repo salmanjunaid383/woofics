@@ -747,7 +747,7 @@ export default function QuoteMain() {
                   </a>
                 </div>
               </div>
-              <div className="row">
+              <div className="row" style={{display:"flex",justifyContent:"center" }}>
                 <div id="screens" style={{ display: screenDisplay }}>
                   {data1.map((val, id) => {
                     return (
@@ -1031,8 +1031,8 @@ export default function QuoteMain() {
               Instalación fija o instalación para evento
             </h4>
             <div className="w-100  my-lg-2">
-            <FormControl component="fieldset">
-                <RadioGroup
+            <FormControl component="fieldset" >
+                <RadioGroup className="feild-res"
                   row
                   aria-label="position"
                   constolsys="posiconstolsys"
@@ -1310,7 +1310,7 @@ export default function QuoteMain() {
                 Sistema de control
               </h4>
               <FormControl component="fieldset">
-                <RadioGroup
+                <RadioGroup className="Sistema-res"
                   style={{ justifyContent: "center" }}
                   row
                   aria-label="position"
@@ -1328,7 +1328,7 @@ export default function QuoteMain() {
                     control={<Radio color="primary" />}
                     label="Asincrónico (de memoria)"
                   />
-                  <FormControlLabel
+                  <FormControlLabel className="Procesador-res"
                     value="Procesador de video (gestiona diferentes señales)"
                     control={<Radio color="primary" />}
                     label="Procesador de video (gestiona diferentes señales)"
@@ -1652,7 +1652,7 @@ export default function QuoteMain() {
                 El tiempo de entrega
               </h4>
               <FormControl component="fieldset">
-                <RadioGroup
+                <RadioGroup className="Sistema-res"
                   style={{ justifyContent: "center" }}
                   row
                   aria-label="position"
@@ -1946,7 +1946,7 @@ export default function QuoteMain() {
                 style={{ display: "flex", justifyContent: "center" }}
               >
                   {/* frank changes */}
-                <TextField
+                <TextField className="feild-changes"
                   onChange={(e) => setname(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
@@ -1957,7 +1957,7 @@ export default function QuoteMain() {
                 
                 {/* frank change  */}
                 <TextField
-                  
+                  className="feild-changes"
                   onChange={(e) => setCity(e.target.value)}
                   className="mx-1"
                   id="outlined-basic"
