@@ -77,7 +77,7 @@ export default function ContactUs() {
                             </div>
                             <div className="col-12 col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5 for-margin">
                                 <h4>Escríbanos a:</h4>
-                                <h5 className="text-primary"><a>hola@woofics.com</a></h5>
+                                <h5 className="text-primary" style={{textTransform:'lowercase'}}><a>hola@woofics.com</a></h5>
                                 <br />
                                 <h4>Telephone:</h4>
                                 <h5 className="text-primary"><a>+34 648 411 313</a></h5>

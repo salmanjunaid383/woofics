@@ -237,7 +237,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseOne"
                           >
-                            <h4>¿Cómo actúa Woofic?</h4>
+                            <h4>¿Cómo actúa Woofics?</h4>
                           </button>
                         </h2>
                       </div>
@@ -249,10 +249,9 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div className="card-body">
-                          Woofic envía a sus colaboradores (proveedores) el
-                          cuestionario cumplimentado por el cliente, dentro de un
-                          plazo máximo de 48 horas que tienen los proveedores para
-                          responder preguntas y presentar una oferta vinculante.
+                        Woofics notifica a los proveedores que hay un cliente que necesita una oferta, los
+proveedores tienen un plazo máximo de 48 horas para aclarar dudas sobre el proyecto y
+presentar una oferta vinculante.
                         </div>
                       </div>
                     </div>
@@ -278,11 +277,9 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div className="card-body">
-                          Woofic es una plataforma integral, en la que podrás
-                          recibir y gestionar ofertas, realizar valoraciones de proveedores
-                          y muchas más ventajas, por eso es necesario
-                          para registrarse, para poder acceder a su personal
-                          panel de administración.
+                        Woofics es una plataforma integral, en la que recibirás y gestionarás ofertas, realizarás
+calificaciones de proveedores y muchas más ventajas, por eso es necesario registrarse,para
+poder acceder a su panel de administración personal.
                         </div>
                       </div>
                     </div>
@@ -297,7 +294,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseFour"
                           >
-                            <h4>¿Woofic favorece a alguna empresa?</h4>
+                            <h4>¿Woofics favorece alguna empresa ?</h4>
                           </button>
                         </h2>
                       </div>
@@ -308,12 +305,10 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div className="card-body">
-                          No. Woofic.com es un portal totalmente independiente, nosotros
-                          solo poner a los clientes en contacto con los proveedores y cada
-                          proveedor hace su oferta personalizada directamente al
-                          cliente final, el orden en el que se obtienen los resultados
-                          que se muestra por defecto es por orden de llegada, la primera
-                          la cotización se muestra en la posición 1 y así sucesivamente.
+                        No, woofics.com es un portal independiente, ponemos en contacto clientes con proveedores
+y cada proveedor hace su oferta personalizada directamente al cliente final, el el orden en el
+que se muestran los resultados por defecto, es por orden de llegada, el primer proveedor
+en enviar oferta aparece en la primera posición, así sucesivamente.
                         </div>
                       </div>
                     </div>
@@ -328,7 +323,7 @@ export default function Contact() {
                             aria-expanded="false"
                             aria-controls="collapseFive"
                           >
-                            <h4>¿Cómo gana dinero Woofic.com?</h4>
+                            <h4>¿Cómo gana dinero Woofics?</h4>
                           </button>
                         </h2>
                       </div>
@@ -339,12 +334,9 @@ export default function Contact() {
                         data-parent="#accordionExample"
                       >
                         <div className="card-body">
-                          Nuestro servicio es completamente gratuito. Las ofertas que tu
-                          encontrará de los diferentes proveedores en Woofic son
-                          las mismas que encontrarás en cada empresa. Existen
-                          sin comisiones, sin incrementos de precio. Cada vez que un
-                          se contrate proyecto, producto o servicio, cobramos un
-                          comisión al proveedor, nunca al usuario.
+                        Nuestro servicio es completamente gratuito para los usuarios, las ofertas son las mismas
+que encontrarás contactando con el proveedor de forma individual, no existen comisiones,
+ni incrementos de precio. Cobramos un precio fijo por lead/proveedor.
                         </div>
                       </div>
                     </div>
@@ -364,7 +356,7 @@ export default function Contact() {
                           <TextField
                             className="w-75 my-1"
                             id="standard-basic"
-                            label="Nombre *"
+                            label="Nombre"
                             onChange={(e)=>setname(e.target.value)}
                             />
                           <br />
@@ -392,7 +384,7 @@ export default function Contact() {
                         <div className="col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5">
                           <h4 style={{marginTop:"20px"}}>Escríbanos a:</h4>
                           <h5 className="h5" className="text-primary">
-                            <a>hola@woofics.com</a>
+                            <p ><span style={{textTransform:'lowercase'}}> hola@woofics.com</span></p>
                           </h5>
                           <br />
                           <h4 style={{marginTop:"20px"}}>Telephone:</h4>

@@ -190,7 +190,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseOne"
                     >
-                      Cómo actúa Woofic
+                      ¿Cómo actúa Woofics?
 
 
                     </button>
@@ -205,10 +205,9 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div className="card-body">
-                    Woofic envía a sus colaboradores (proveedores) el
-                    cuestionario cumplimentado por el cliente, en un plazo
-                    máximo de 48 horas que los proveedores tienen para responder
-                    preguntas y presentar un oferta vinculante.
+                  Woofics notifica a los proveedores que hay un cliente que necesita una oferta, los
+proveedores tienen un plazo máximo de 48 horas para aclarar dudas sobre el proyecto y
+presentar una oferta vinculante.
                   </div>
                 </div>
               </div>
@@ -223,7 +222,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseTwo"
                     >
-                      ¿Por qué tengo que registrarme
+                      ¿Por qué tengo que registrarme?
                     </button>
                   </h2>
                 </div>
@@ -234,46 +233,13 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div className="card-body">
-                    Woofic es una plataforma integral, en la que recibirás y
-                    gestionarás ofertas, realizarás calificaciones de
-                    proveedores y muchas más ventajas, por eso es necesario
-                    registrarse, ser poder acceder a su panel de administración
-                    personal.
+                  Woofics es una plataforma integral, en la que recibirás y gestionarás ofertas, realizarás
+calificaciones de proveedores y muchas más ventajas, por eso es necesario registrarse,para
+poder acceder a su panel de administración personal.
                   </div>
                 </div>
               </div>
-              {/* <div class="card">
-                <div class="card-header" id="headingThree">
-                  <h2 class="mb-0">
-                    <button
-                      class="btn btn-link btn-block text-left collapsed"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Why use Woofic instead of contracting directly with the
-                      provider?
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseThree"
-                  class="collapse"
-                  aria-labelledby="headingThree"
-                  data-parent="#accordionExample"
-                >
-                  <div class="card-body">
-                    Make secure payments through the platform. The conditions
-                    are set by you, penalties for delays, blocking the last
-                    payment until it has been installed or delivered. Woofic has
-                    insurance in case the supplier does not deliver the screen
-                    or the delivery is not in optimal condition. Many more
-                    advantages HERE.
-                  </div>
-                </div>
-              </div> */}
+
               <div className="card">
                 <div className="card-header" id="headingFour">
                   <h2 className="mb-0">
@@ -285,7 +251,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseFour"
                     >
-                      ¿Woofic favorece a alguna empresa
+                      ¿Woofics favorece alguna empresa ?
                     </button>
                   </h2>
                 </div>
@@ -296,12 +262,10 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div className="card-body">
-                    No. Woofic.com es un portal totalmente independiente, solo
-                    ponemos clientes en contacto con proveedores y cada
-                    proveedor hace su oferta personalizada directamente al
-                    cliente final, el El orden en el que se muestran los
-                    resultados por defecto es por orden. de llegada, la primera
-                    cita se muestra en la posición 1, por lo que en.
+                  No, woofics.com es un portal independiente, ponemos en contacto clientes con proveedores
+y cada proveedor hace su oferta personalizada directamente al cliente final, el el orden en el
+que se muestran los resultados por defecto, es por orden de llegada, el primer proveedor
+en enviar oferta aparece en la primera posición, así sucesivamente.
                   </div>
                 </div>
               </div>
@@ -316,7 +280,7 @@ function LastNews() {
                       aria-expanded="false"
                       aria-controls="collapseFive"
                     >
-                      ¿Cómo gana dinero Woofic.com
+                      ¿Cómo gana dinero Woofics?
                     </button>
                   </h2>
                 </div>
@@ -327,12 +291,9 @@ function LastNews() {
                   data-parent="#accordionExample"
                 >
                   <div className="card-body">
-                    Nuestro servicio es completamente gratuito. Las ofertas que
-                    harás encontrar de los diferentes proveedores en Woofic son
-                    los mismos que encontrarás en cada empresa. No existen
-                    comisiones, sin incrementos de precio. Cada vez que un
-                    proyecto, se contrate producto o servicio, cobramos una
-                    comisión a al proveedor, nunca al usuario.
+                  Nuestro servicio es completamente gratuito para los usuarios, las ofertas son las mismas
+que encontrarás contactando con el proveedor de forma individual, no existen comisiones,
+ni incrementos de precio. Cobramos un precio fijo por lead/proveedor.
                   </div>
                 </div>
               </div>

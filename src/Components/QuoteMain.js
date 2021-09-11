@@ -228,10 +228,10 @@ export default function QuoteMain() {
       Swal.fire({
         title: "Woofics.com",
         html:
-          "<p style='font-size:14px'>Woofic es una plataforma integral que le permite obtener cotizaciones personalizadas de " +
-          "diferentes proveedores, negocia con ellos y haz el pedido. Todo con la máxima transparencia" +
-          "y seguridad, por eso es necesario registrarse, para poder acceder a su gestión" +
-          "panel.</p>",
+          "<p style='font-size:14px; text-transform:'capitalize'>EL TEMA DEL CUESTIONARIO REVISAR TODO EL CUESTIONARIO, HAY PALABRAS"+
+          "EN INGLÉS, HAY PALABRAS MAL TRADUCIDAS, HAY PALABRAS QUE TIENEN QUE"+
+          "TENER LA PRIMERA LETRA EN MAYÚSCULA Y HAY SIGNOS DE ? DONDE NO TIENE"+
+          "QUE HABER.</p>",
       });
     }
     setModelState(true);

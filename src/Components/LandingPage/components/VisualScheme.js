@@ -102,8 +102,8 @@ function VisualScheme() {
 
                             </div>
                             <div className="woofic_visiual_para">
-                            Con Woofic puedes ahorrar hasta un 30%, en lugar de contactar con los proveedores
-De forma individual, realiza los trámites online de forma segura.
+                            Con Woofics puedes ahorrar hasta un 30%, en lugar de contactar a los proveedores de
+forma individual.
                             </div>
                         </div>
                     </div>

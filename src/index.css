@@ -19,10 +19,15 @@ body {
 div::first-letter,th::first-letter,a::first-letter,p::first-letter,h1::first-letter,h2::first-letter,h4::first-letter,h5::first-letter,h6::first-letter,span::first-letter,td::first-letter{
   text-transform:uppercase 
 }
-/* div,a,p,h1,h2,h4,h5,h6,span{
+a{
   text-transform:capitalize 
-} */
-
+}
+label::first-letter{
+  text-transform:uppercase
+}
+label{
+  text-transform: lowercase;
+}
 
 .for-table-setting{
   width:100%;

@@ -49,7 +49,7 @@ export default function GetInspire() {
             <div onClick={() => viewMore('Hotel')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
               <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Hotel.jpeg" />
               <div className="mid">
-                <div className="tex">Hotels</div>
+                <div className="tex">Hoteles</div>
               </div>
             </div>
             <div onClick={() => viewMore('Restaurante')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
@@ -123,21 +123,21 @@ export default function GetInspire() {
             <div onClick={() => viewMore('Sector')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
               <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Sector_Publico.jpeg" />
               <div className="mid">
-                <div className="tex">Sector Publico</div>
+                <div className="tex">Sector Público</div>
               </div>
 
             </div>
             <div onClick={() => viewMore('Informacion')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
               <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Informacion.png" />
               <div className="mid">
-                <div className="tex">Informacion</div>
+                <div className="tex">Información</div>
               </div>
 
             </div>
             <div onClick={() => viewMore('Automocion')} className="cont col-md-3" style={{ height: "300px", cursor: 'pointer' }}>
               <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Automocion.jpeg" />
               <div className="mid">
-                <div className="tex">Automocion</div>
+                <div className="tex">Automoción</div>
               </div>
 
             </div>
@@ -147,7 +147,7 @@ export default function GetInspire() {
             <div onClick={() => viewMore('Conciertos')} className="cont col-md-6" style={{ height: "300px", cursor: 'pointer' }}>
               <img className="img-fluid ima hvr-grow" style={{ height: "100%", width: "100%" }} src="../../assets/plugins/inspired_images/Conciertos_Exterior.jpeg" />
               <div className="mid">
-                <div className="tex">Conciertos Exterior</div>
+                <div className="tex">Concierto</div>
               </div>
 
             </div>
