@@ -442,15 +442,15 @@ function Navbar() {
                             
                         </Link>
                         <Link className="pt-3 taglink hover-effect for-res" to="/" id="" >
-                            Casa
+                        Inicio
                         </Link>
                         <Link to="/foro_de_discusión_del_cliente" className="pt-3 taglink for-res" id="" >
                             Foro
                         </Link>
                        
                         {/* <Link to="/foro_de_discusion" className="pt-3 ">Forum</Link> */}
-                        <Link to="/cita_principal" className="pt-3 taglink hover-effect for-res" id="">
-                            Oferta
+                        <Link to="/cita_principal"  className="pt-3 taglink hover-effect for-res" id="">
+                        Recibir Ofertas
                         </Link>
                         {/* <Link to="/anunciar" className="pt-3 ">Tools</Link> */}
 
@@ -466,10 +466,10 @@ function Navbar() {
                             {/* Advertise */}
                             
                             <div className="dropdown hover-effect">
-                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
+                                <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Herramientas</button>
                                 <div className="dropdown-content">
                                 <Link to="/calculadora_de_precios" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
-                                    <span style={{textAlign:"left"}}>Calculadora de precios</span>
+                                    <span style={{textAlign:"left"}}>Calculadora</span>
                                 </Link>
 
                                 <Link to="/inspirada" className="pt-3 " id="taglink5" style={{color:"#000"}}>
@@ -477,7 +477,7 @@ function Navbar() {
                                 </Link>
 
                                 <Link to="/anunciar"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
-                                    Anunciar
+                                Anunciate
                                 </Link>
                                 </div>
                                 </div>
