@@ -1031,8 +1031,8 @@ export default function QuoteMain() {
               Instalación fija o instalación para evento
             </h4>
             <div className="w-100  my-lg-2">
-            <FormControl component="fieldset">
-                <RadioGroup
+            <FormControl component="fieldset" >
+                <RadioGroup className="feild-res"
                   row
                   aria-label="position"
                   constolsys="posiconstolsys"
@@ -1328,7 +1328,7 @@ export default function QuoteMain() {
                     control={<Radio color="primary" />}
                     label="Asincrónico (de memoria)"
                   />
-                  <FormControlLabel
+                  <FormControlLabel className="Procesador-res"
                     value="Procesador de video (gestiona diferentes señales)"
                     control={<Radio color="primary" />}
                     label="Procesador de video (gestiona diferentes señales)"
