@@ -4,6 +4,242 @@
 .heading-margin{
     margin-bottom: 35px !important;
 }
+.back-image{   
+    background-image:url("../Components/background.jpg");
+    height:100vh;
+    width:100%;
+    background-size: cover;
+    background-position: 60%; 
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}.result-back-image{   
+    background-image:url("../Components/result-back.jpg");
+    height:100vh;
+    width:100%;
+    background-size: cover;
+    background-position: 60%; 
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.main-row{
+    height:95%;
+    width:45%;
+    background-color: rgba(255,255,255,.2);
+    backdrop-filter: blur(8px);
+    box-shadow:0px 5px 15px rgba(0,0,0,.5);
+    border-radius: 30px;
+}
+.heading h4{
+    margin: 0px;
+    margin-top:30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-left: 20px;
+
+}
+.heading h1{
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 30px;
+
+}
+.for-vid{
+    height: 30%;
+    width: 95%;
+    margin:auto;
+    background-color: rgb(147, 76, 255);
+}
+.price-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-heading{
+    font-size: 18px;
+    color:#fff;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+.calculate-button button{
+  outline: none;
+  border:none;
+  padding:10px;
+  padding-left:15px;
+  padding-right:15px;
+  margin-top: 10px;
+  border-radius:50px;
+  font-size:16px;
+  color:rgb(147, 76, 255);
+  font-weight: bold;
+  
+}
+.calculate-button button:hover{
+  cursor:pointer;
+  background-color: rgb(147, 76, 255);
+  color:#fff
+}
+.final-price{
+  color: #fff;
+  font-weight: bolder;
+  text-align: right;
+  margin-top: 10px;
+
+}
+
+
+
+
+
+/* for circle progress result */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* html,body{
+  display: grid;
+  height: 100%;
+  text-align: center;
+  place-items: center;
+  background: #dde6f0;
+} */
+.circular{
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+.circular .inner, .circular .outer, .circular .circle{
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.2);
+}
+.circular .inner{
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background-color: #dde6f0;
+  border-radius: 100%;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+.circular .circle{
+  z-index: 1;
+  box-shadow: none;
+}
+.circular .numb{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(147, 76, 255);
+}
+.circular .bar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.circle .bar .progress{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+.circle .bar .progress, .dot span{
+  background: rgb(147, 76, 255);
+}
+.circle .left .progress{
+  z-index: 1;
+  animation: left 4s linear both;
+}
+@keyframes left {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .right{
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.circle .right .progress{
+  animation: right 4s linear both;
+  animation-delay: 4s;
+}
+@keyframes right {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .dot{
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 10px;
+  margin-top: -5px;
+  animation: dot 8s linear both;
+  transform-origin: 0% 50%;
+}
+.circle .dot span {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+@keyframes dot{
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+    z-index: 4;
+  }
+  100% {
+    transform: rotate(270deg);
+    z-index: 4;
+  }
+}
+
+@media(max-width:600px){
+  .main-cal-parent{
+    flex-direction: column;
+  }
+  .main-row{
+    width: 95%;
+  }
+}
+@media(min-width:768px) and (max-width:1300px){
+  .main-row{
+    width:95%;
+    height:72%;
+  }
+  .result-heading{
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+  .calculate-button{
+    margin-top: 20px;
+  }
+ 
+}
 @media(max-width:600px){
     .mobile{
     padding: 0 !important;
