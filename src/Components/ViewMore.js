@@ -13,11 +13,16 @@ export default function ViewMore() {
     const { category } = useParams()
     const location = useLocation();
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/get_inspired`,{
-            headers:window.header
+        console.log("category is" +category)
+        const { data: response } = axios.post(`https://api.woofics.com/api/search_inspired`,{
+            category:category
+        },{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
+                    console.log("response is"+response)
+                    
                     setBlog(response.data)
                 }
             }, (Error) => {
@@ -42,7 +47,7 @@ export default function ViewMore() {
                             : blog.map((val, id) => {
                                 return (
                                     <>
-                                        {val.category === category ? 
+                                        { 
                                             val.content === "image" ? <div className="col-md-4 no-gutters">
                                             <ModalImage className="img-fluid ima hvr-grow"
                                                 small={val.url}
@@ -50,7 +55,7 @@ export default function ViewMore() {
                                                 alt={val.name}
                                             />
                                         </div> :<div className="col-md-4 no-gutters"> <video width="100%" height="350" controls > <source src={val.url}></source></video></div>
-                                         : null}
+                                         }
                                     </>
                                 )
                             })}

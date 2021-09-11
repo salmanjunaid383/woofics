@@ -94,13 +94,13 @@ function LandingPage() {
                     if (response) {
                         const role = jwt_decode(localStorage.getItem('user_token'))
                         if (role.role === 'Client') {
-                            history.push('/dashboard');
+                            history.push("/tablero");
                         } else if (role.role === 'ServiceProvider')
-                            history.push('/admindashboard');
+                            history.push("/tablerodeadministración");
                         else if (role.role === 'Supplier') {
-                            history.push('/supplierdashboard');
+                            history.push("/tablero_de_proveedores");
                         } else {
-                            history.push('/superdashboard');
+                            history.push("/tablerodemandos");
                         }
                     }
                     // 
@@ -158,13 +158,13 @@ function LandingPage() {
                 if (response) {
                     const role = jwt_decode(localStorage.getItem('user_token'))
                     if (role.role === 'Client') {
-                        history.push('/dashboard');
+                        history.push("/tablero");
                     } else if (role.role === 'ServiceProvider')
-                        history.push('/admindashboard');
+                        history.push("/tablerodeadministración");
                     else if (role.role === 'Supplier') {
-                        history.push('/supplierdashboard');
+                        history.push("/tablero_de_proveedores");
                     } else {
-                        history.push('/superdashboard');
+                        history.push("/tablerodemandos");
                     }
                 }
                 // 
@@ -192,8 +192,8 @@ function LandingPage() {
                         <Link className="mt-3 mt-md-0" to="/">Home</Link>
                         <Link to="/allblog">Blog</Link>
                         <Link to='/contactus'>About Us</Link>
-                        <Link to='/pricecalculator'>Price Calculator</Link>
-                        <Link to="/discussionforum">Forum</Link>
+                        <Link to='/calculadora_de_precios'>Price Calculator</Link>
+                        <Link to="/foro_de_discusion">Forum</Link>
                         <Link className="float-right mr-lg-4">
                             <button type="submit" class="f-button btn btn-white text-white " onClick={handleOpenpop}>Login/Register</button>
                         </Link>
@@ -218,8 +218,8 @@ function LandingPage() {
                                     <li  className=""><Link className="text-dark" to="/">Home</Link></li>
                                     <li className=""><Link to="/allblog">Blog</Link></li>
                                     <li className=""><Link to='/contactus'>About Us</Link></li>
-                                    <li className="" ><Link to='/pricecalculator'>Price Calculator</Link></li>
-                                    <li className=""><Link to="/discussionforum">Forum</Link></li>
+                                    <li className="" ><Link to='/calculadora_de_precios'>Price Calculator</Link></li>
+                                    <li className=""><Link to="/foro_de_discusion">Forum</Link></li>
                                 </ol>
                                 <div class="woofic_button">
                                     <Link to="/login"> <button type="submit" class="f-button btn btn-white text-white">Login/Register</button></Link>
@@ -247,7 +247,7 @@ function LandingPage() {
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div class="woofic_receive_button text-left mt-lg-4" style={{marginBottom:"20px"}}>
-                                                    <Link to="/quotemain">Recibir ofertas</Link>
+                                                    <Link to="/cita_principal">Recibir ofertas</Link>
                                                 </div>
                                             </div>
                                         </div>

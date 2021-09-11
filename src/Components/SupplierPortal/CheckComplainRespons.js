@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupCheckComplainResponse() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const { resid } = useParams()
@@ -37,7 +37,7 @@ export default function SupCheckComplainResponse() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${resid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -51,7 +51,7 @@ export default function SupCheckComplainResponse() {
 
     function getRes() {
         const response = axios.get(`https://api.woofics.com/api/help_response/${resid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setreponses(response.data)
@@ -80,7 +80,7 @@ export default function SupCheckComplainResponse() {
             title: blog.description,
             user_id: decoded.sub
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 // setOpen3(true);
@@ -103,7 +103,7 @@ export default function SupCheckComplainResponse() {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data)

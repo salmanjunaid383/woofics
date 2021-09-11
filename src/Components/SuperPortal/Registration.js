@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Registration() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     const [blog, setBlog] = useState([]);
 
     function getReg() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/getsupplier`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setBlog(response.data)
@@ -44,7 +44,7 @@ export default function Registration() {
     const [res, setRes] = useState('');
     function approveReg(e) {
         const { data: response } = axios.put(`https://api.woofics.com/api/approved/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -60,7 +60,7 @@ export default function Registration() {
     const [block, setblock] = useState('');
     function blockReg(e) {
         const { data: response } = axios.put(`https://api.woofics.com/api/blocked/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -98,12 +98,12 @@ export default function Registration() {
                                         <div className="table-responsive salman-table-change">
                                             <table  id="for-table-setting" className="table no-wrap for-table-setting" >
                                                     <tr className="heading-row" >
-                                                        <th className="">NAME</th>
+                                                        <th className="">NOMBRE</th>
                                                         <th className="">EMAIL</th>
-                                                        <th className="">contact number</th>
-                                                        <th className="">Role</th>
-                                                        <th className="">DATE</th>
-                                                        <th className="">ACTIONS</th>
+                                                        <th className="">Número de teléfono</th>
+                                                        <th className="">Papel</th>
+                                                        <th className="">FECHA</th>
+                                                        <th className="">COMPORTAMIENTO</th>
                                                     </tr>
                                                 <tbody id="data-row">
                                                     {blog.map((val, key) => {

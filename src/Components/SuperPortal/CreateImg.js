@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateImg() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const [category, setcategory] = useState("");
@@ -50,7 +50,7 @@ export default function CreateImg() {
             url: imageUrl,
             content : content
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 if (res) {

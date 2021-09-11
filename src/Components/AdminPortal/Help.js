@@ -51,7 +51,7 @@ export default function ProviderHelp() {
             user_id: decoded.sub,
             description: answer,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -61,7 +61,7 @@ export default function ProviderHelp() {
                 }
             }, (Error) => {
                 
-                history.push('/help');
+                history.push("/ayuda");
                  
             });
     }
@@ -129,7 +129,7 @@ export default function ProviderHelp() {
                                                 <div class="col-md-10">
                                                     <hr />
                                                     <p style={{ paddingLeft: '55px', fontSize: '1.3em' }}><strong>Zaskia Amanda</strong></p>
-                                                    <Link to="/providerresponses" className="pt-3 responseLinkStaz text-black "  >
+                                                    <Link to="/respuestas_del_proveedor" className="pt-3 responseLinkStaz text-black "  >
                                                     
                                                     Respuestas
                                                         

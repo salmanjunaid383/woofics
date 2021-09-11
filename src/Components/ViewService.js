@@ -12,8 +12,8 @@ export default function ViewService() {
     const { servicei } = useParams()
 
     function GetLed() {
-        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`,{
-            headers:window.header
+        const { data: response } = axios.get(`https://api.woofics.com/api/service/`+servicei,{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -41,7 +41,7 @@ export default function ViewService() {
                                 return (
                                     <>
                                         {
-                                            val.service=== servicei ? <div class="col-md-4 col-lg-6 justify-content-space-around">
+                                            <div class="col-md-4 col-lg-6 justify-content-space-around">
                                             <div class="card mx-auto mt-4" style={{ width: '18rem' }}>
                                                 {/* <img class="card-img-top img-fluid mx-auto" src={val.bg_image} alt="Backgound image" /> */}
                                                 <div class="card-body">
@@ -64,7 +64,7 @@ export default function ViewService() {
                                                     
                                                 </div>
                                             </div>
-                                        </div>: null
+                                        </div>
                                         }
                                         
                                     </>

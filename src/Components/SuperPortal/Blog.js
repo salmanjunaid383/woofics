@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Blog() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const [blog, setBlog] = useState([]);
@@ -33,7 +33,7 @@ export default function Blog() {
 
     function createBlog() {
         const { data: response } = axios.get(`https://api.woofics.com/api/blog`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -50,7 +50,7 @@ export default function Blog() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/blog/${id}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     createBlog()

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function LedgerView() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     let { cheid } = useParams();
     let { cheche } = useParams();
@@ -33,7 +33,7 @@ export default function LedgerView() {
     function getSupledger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_ledger_balance/${cheid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setArticle(response.data[0])
@@ -47,7 +47,7 @@ export default function LedgerView() {
     function getSerledger() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_balance/${cheid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setArticle(response.data[0])

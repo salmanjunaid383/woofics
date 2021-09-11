@@ -14,7 +14,7 @@ export default function Blog() {
     const [blog, setBlog] = useState([]);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/blog`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -45,8 +45,8 @@ export default function Blog() {
                 <Link className="sm-mt-3" to="/">Home</Link>
                 <Link to="/allblog">Blog</Link>
                 <Link to='/contactus'>About Us</Link>
-                <Link to='/pricecalculator'>Price Calculator</Link>
-                <Link to="/discussionforum">Forum</Link>
+                <Link to='/calculadora_de_precios'>Price Calculator</Link>
+                <Link to="/foro_de_discusion">Forum</Link>
                 <Link to="/login" className="float-right mr-lg-4"> <button type="submit" class="f-button btn btn-white text-white ">Login/Register</button></Link>
                 <a href="javascript:void(0);" class="icon" onClick={myFunction}>
                     <i class="fa fa-bars"></i>
@@ -74,7 +74,7 @@ export default function Blog() {
                                         : blog.map((val, id) => {
                                             return (
                                                 <>
-                                                    <div class="col-md-3 mx-auto m-2" onClick={() => history.push(`./blogdetail/${val.id}`)}>
+                                                    <div class="col-md-3 mx-auto m-2" onClick={() => history.push(`/blogdetalle/${val.id}`)}>
                                                         <div class="card" style={{ height: "25rem", cursor: 'pointer' }} >
                                                             <img src={val.image} alt="..." className="img-fluid" style={{ height: "12rem" }} />
                                                             <div class="card-body">

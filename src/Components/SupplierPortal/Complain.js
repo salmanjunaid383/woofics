@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupComplain() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const token = localStorage.getItem('user_token');
@@ -57,7 +57,7 @@ export default function SupComplain() {
             status: 'pending',
             title: title,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -79,13 +79,13 @@ export default function SupComplain() {
     function getComplain() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/complain/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setComplain(response.data)
             }, (error) => {
                 
-                history.push('/supcomplain');
+                history.push('/suplicar');
             });
     }
     useEffect(() => {

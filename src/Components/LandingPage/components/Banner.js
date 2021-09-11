@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import "../css/banner.css"
-import banner from '../images/speaker.png'
+import axios from "axios";
+import ModalImage from "react-modal-image";
 import one from '../images/one.jpg';
 import two from '../images/two.jpg';
 import three from '../images/three.jpg';
@@ -11,26 +12,60 @@ import seven from '../images/seven.jpg';
 import eight from '../images/eight.png';
 import { useHistory } from 'react-router-dom';
 import {Animated} from "react-animated-css";
-import pic1 from "../components/space.jpg"
 
 function Banner(){
     let history = useHistory();
+    const [inspired,setResponseData]=useState([])
+    useEffect(() => {
+        const { data: response } = 
+        axios.get(`https://api.woofics.com/api/latest_inspired`,{
+                    headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
+                  })
+                    .then((response) => {
+                        setResponseData(response.data)
+                    }, (error) => {
+                        console.log(error)
+                    });
+    },[])
 
     return(
             <>
-                  <div className="offer_sec" style={{textAlign:"center"}}>
-                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>OFFERS</h3>
+            <div className="offer_sec"  style={inspired.length  === 0 ? {display:'none'}: {textAlign:"center"}}>
+                      <h3 style={{padding:"20px", fontWeight:"bold", color:"#F62B84", fontSize:"30px"}}>Inspírate</h3>
                  
               <div className="pic_sec" style={{padding:"20px"}}>
-                  <div className="pic1">
-                      <img src={pic1}/>
+                {
+                    inspired.map((val,id) => {
+                        return (
+                            <>
+                            <div className="col-md-4" >
+                            <ModalImage small={val.url}
+                                large={val.url}
+                                
+                                alt={val.name}
+                                className="img-fluid ima hvr-grow pic1">
+                                
+                                                </ModalImage>
+                            </div>
+                            </>
+                        )
+                    })
+                }
+              
+                  {/* <div className="pic1">
+                      <ModalImage small={pic1}
+                         large={pic1}
+                        alt={pic1}>
+
+                                                </ModalImage>
+                      
                   </div>
                   <div className="pic1">
                   <img src={pic1}/>
                   </div>
                   <div className="pic1">
                   <img src={pic1}/>
-                  </div>
+                  </div> */}
 
               </div>
               </div>
@@ -46,7 +81,7 @@ function Banner(){
                 Encuentre soluciones personalizadas y a medida para sus proyectos
                 </div>
                 <div class="woofic_first_row">
-                    <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/REPAIRS')}>
+                    <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/REPAIRS')}>
                         <div class="woofic_element_image">
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={one}/>
                         </div>
@@ -60,7 +95,7 @@ function Banner(){
                         </div>
 
                     </div>
-                    <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ELECTRICIAN')}>
+                    <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ELECTRICIAN')}>
                         <div class="woofic_element_image">
                             <img style={{borderRadius:"50%",width:'60px',height:'60px'}}  src={two}/>
                         </div>
@@ -72,7 +107,7 @@ function Banner(){
                         </div>
                     </div>
 
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ARCHITECTS')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ARCHITECTS')}>
                                 <div class="woofic_element_image" style={{overflow:"hidden"}}>
                                 <img style={{borderRadius:"50%",width:'70px',height:'70px',marginTop:"-8px", marginLeft:"-5px"}}  src={three}/>
                                 </div>
@@ -84,7 +119,7 @@ function Banner(){
                             </div>
 
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/GRAPHIC')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/GRAPHIC')}>
                             <div class="woofic_element_image">
                                 <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={four}/>
                             </div>
@@ -99,7 +134,7 @@ function Banner(){
 {/* SECOND ROW */}
 
                         <div class="woofic_first_row woofic_row_changes">
-                        <div class="woofic_first_element p-4  woofic_repair_box" onClick={()=>history.push('/viewservice/SCREEN')}>
+                        <div class="woofic_first_element p-4  woofic_repair_box" onClick={()=>history.push('/servicio_de_vista/SCREEN')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={five}/>
                             </div>
@@ -110,7 +145,7 @@ function Banner(){
                             Gestión de contenido profesional e inteligente para pantalla LED (software y hardware).
                             </div>
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/STRUCTURES')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/STRUCTURES')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="img-fluid" src={six}/>
                             </div>
@@ -122,7 +157,7 @@ function Banner(){
                                 
                             </div>
                         </div>
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/ADVERTISE')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/ADVERTISE')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={seven}/>
                             </div>
@@ -136,7 +171,7 @@ function Banner(){
                             </div>
                         </div>
 
-                        <div class="woofic_first_element p-4" onClick={()=>history.push('/viewservice/INSTALLER')}>
+                        <div class="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/INSTALLER')}>
                             <div class="woofic_element_image">
                              <img style={{borderRadius:"50%",width:'60px',height:'60px'}} className="" src={eight}/>
                             </div>

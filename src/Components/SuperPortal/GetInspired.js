@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function GetInspired() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     const [blog, setBlog] = useState([]);
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/get_inspired`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -56,7 +56,7 @@ export default function GetInspired() {
         if (result) {
 
             const { data: response } = axios.delete(`https://api.woofics.com/api/get_inspired/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     GetLed()

@@ -38,7 +38,7 @@ export default function Dashboard() {
             task: todo,
             deadline: deadline,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -57,7 +57,7 @@ export default function Dashboard() {
     function getTodo() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/client_todo/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -78,7 +78,7 @@ export default function Dashboard() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/client_todo/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     getTodo();
@@ -90,7 +90,7 @@ export default function Dashboard() {
     }
     function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
             }, (Error) => {
@@ -113,7 +113,7 @@ export default function Dashboard() {
 
     function ClientOngoinProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_client_project/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -128,7 +128,7 @@ export default function Dashboard() {
 
     function ClientCompletedProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/completed_client_project/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -143,7 +143,7 @@ export default function Dashboard() {
 
     function ClientService() {
         const { data: response } = axios.get(`https://api.woofics.com/api/client_service/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -156,7 +156,7 @@ export default function Dashboard() {
 
     function CountExpense() {
         const { data: response } = axios.get(`https://api.woofics.com/api/client_expense/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -191,7 +191,7 @@ export default function Dashboard() {
 
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/client_supplier_project/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {
@@ -421,7 +421,7 @@ export default function Dashboard() {
                                                                                 <td className="txt-oflo text-center bold">$ {val.price}</td>
                                                                                 <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                                 <td className="txt-oflo text-center bold">
-                                                                                    <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/customerprojects/${val.supplier_id}/${val.id}`)} >Más Detalles</button>
+                                                                                    <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/proyectos_de_clientes/${val.supplier_id}/${val.id}`)} >Más Detalles</button>
                                                                                 </td>
                                                                             </tr>
                                                                         </>

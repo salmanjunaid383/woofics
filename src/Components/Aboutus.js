@@ -74,16 +74,16 @@ export default function Aboutus() {
 
     function getQuestion() {
 
-        const { data: response } = 
-axios.get(`https://api.woofics.com/api/forum_question`,{
-            headers:window.header
-          })
-            .then((response) => {
-                setQuestions(response.data);
+//         const { data: response } = 
+// axios.get(`https://api.woofics.com/api/forum_question`,{
+//             headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
+//           })
+//             .then((response) => {
+//                 setQuestions(response.data);
 
-            }, (error) => {
+//             }, (error) => {
                 
-            });
+//             });
     }
 
     useEffect(() => {
@@ -130,7 +130,7 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                 return (
                                     <>
 
-                                        <Link to={`/moredetailsdiscussionforum/${val.id}`}>
+                                        <Link to={`/másdetallesforumdiscussion/${val.id}`}>
                                             <div class="card mb-4">
                                                 <div class="card-header">
                                                     <div class="media flex-wrap w-100 align-items-center"> 

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ComplainResponse() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const { ucid } = useParams()
@@ -35,7 +35,7 @@ export default function ComplainResponse() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${ucid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -49,7 +49,7 @@ export default function ComplainResponse() {
 
     function getRes() {
         const response = axios.get(`https://api.woofics.com/api/complain_response/${ucid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setreponses(response.data)
@@ -77,7 +77,7 @@ export default function ComplainResponse() {
             user_id: 1,
             title: blog.description,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setdisable('')

@@ -57,7 +57,7 @@ export default function Complain() {
             status: 'pending',
             title: title,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -79,13 +79,13 @@ export default function Complain() {
     function getComplain() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/complain/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setComplain(response.data)
             }, (error) => {
                 
-                history.push('/complain');
+                history.push("/quejar");
             });
     }
     useEffect(() => {
@@ -132,7 +132,7 @@ export default function Complain() {
                                                     complain.map((val, id) => {
                                                         return (
                                                             <>
-                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/complainresponse/${val.id}`}> Q.{val.description} </Link></div>
+                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/quejarse_respuesta/${val.id}`}> Q.{val.description} </Link></div>
                                                             </>
                                                         )
                                                     }).reverse()}

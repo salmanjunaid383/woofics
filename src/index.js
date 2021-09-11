@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect,useState,useRef } from "react";
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
@@ -6,17 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-try{
 
-  var token = localStorage.getItem('user_token')
-  if(token){
-    window.header = { Authorization: `Bearer ${token}` };
-  }
-  
-}
-catch{
-  
-}
 
 
 
@@ -27,6 +17,7 @@ catch{
 
 
 ReactDOM.render(
+  
   <BrowserRouter>
   
     <App></App>

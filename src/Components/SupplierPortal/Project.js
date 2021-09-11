@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Project() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
 
@@ -44,7 +44,7 @@ export default function Project() {
 
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/supplier_projects/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {
@@ -110,7 +110,7 @@ export default function Project() {
                                                                             <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                             {/* <td className="txt-oflo text-center bold">{val.phase}</td> */}
                                                                             <td className="txt-oflo text-center bold">
-                                                                                <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/supplierprojects/${val.client_id}/${val.id}`)} >Más Detalles</button>
+                                                                                <button class="btn marginBottom10" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => history.push(`/proyectos_de_proveedores/${val.client_id}/${val.id}`)} >Más Detalles</button>
                                                                             </td>
                                                                         </tr>
                                                                     </>

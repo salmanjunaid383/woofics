@@ -62,7 +62,7 @@ export default function ProviderComplain() {
             status: 'pending',
             title: title,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -84,7 +84,7 @@ export default function ProviderComplain() {
     function getComplain() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/complain/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setComplain(response.data)
@@ -139,7 +139,7 @@ export default function ProviderComplain() {
                                                     complain.map((val, id) => {
                                                         return (
                                                             <>
-                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/admincomplainresponse/${val.id}`}> Q.{val.description} </Link></div>
+                                                                <div class="col-md-11 py-4  border-bottom mx-auto"><Link to={`/admin_quejarse_respuesta/${val.id}`}> Q.{val.description} </Link></div>
                                                             </>
                                                         )
                                                     })}

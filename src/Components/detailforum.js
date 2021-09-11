@@ -49,7 +49,7 @@ export default function Moredetailsdiscussionforum() {
     function getQuestion() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/forum_question/${quid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -64,7 +64,7 @@ export default function Moredetailsdiscussionforum() {
     function getReply() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/forum_answer/${quid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setAllreplies(response.data);
@@ -84,7 +84,7 @@ export default function Moredetailsdiscussionforum() {
             forum_question_id: quid,
             replied_by: user.first_name + " " + user.last_name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getQuestion();
@@ -142,9 +142,8 @@ export default function Moredetailsdiscussionforum() {
     return (
         <>
 
-<section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px"}} >
             <Navbar />
-            </section>
+            
             <div className="d-sm-flex">
            
 

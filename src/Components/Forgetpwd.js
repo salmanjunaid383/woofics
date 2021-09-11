@@ -81,7 +81,7 @@ export default function Forgetpwd() {
                                 </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
                                     <h6 className="mb-0 text-sm">Dirección de correo electrónico</h6>
-                                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="text" name="email" placeholder="Enter a valid email address" /> </div>
+                                </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="text" name="email" placeholder="Introduzca una dirección de correo electrónico válida" /> </div>
                                 <div className="mb-4 mx-auto d-flex justify-content-center w-100">
                                     <button type="submit" className="btn btn-blue mx-auto" style={{ backgroundColor: 'rgb(118, 50, 63)' }} onClick={LoginBtn}>Continuar</button>
                                 </div>

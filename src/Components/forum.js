@@ -12,6 +12,7 @@ import Modal from '@material-ui/core/Modal';
 import Navbar from './Navbar'
 import Footer from './LandingPage/components/Footer'
 import { useTheme } from '@material-ui/core/styles';
+import ScrollToTop from "./ScrollToTop";
 // import CustomAuth from "../CustomAuth";
 
 
@@ -111,7 +112,9 @@ export default function DiscussionForum() {
     const [user, setUser] = useState("");
     const [question, setQuestion] = useState("");
     const [questions, setQuestions] = useState([]);
-
+    const [nextPage,setNextPage]=useState();
+    const [prevPage,setPrevPage]=useState();
+    
 
     var token = localStorage.getItem("user_token");
 
@@ -164,12 +167,15 @@ export default function DiscussionForum() {
     function getQuestion() {
 
         const { data: response } = 
-axios.get(`https://api.woofics.com/api/forum_question`,{
-            headers:window.header
+axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
-                setQuestions(response.data);
-
+                setQuestions(response.data.data);
+                console.log(response.data)
+                
+                setNextPage(response.data.next_page_url)
+                setPrevPage(response.data.prev_page_url)
             }, (error) => {
                 
             });
@@ -179,6 +185,21 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
         getQuestion();
         getUserData()
     }, [])
+
+    function goNext(route){
+        console.log(route)
+        const {data: response}= axios.get(route,{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
+        }).then((response) => {
+            console.log(response.data)
+            setQuestions(response.data.data)
+            setNextPage(response.data.next_page_url)
+            setPrevPage(null)
+        }, error => {
+            console.log(error)
+        });
+        
+    }
 
 
     // Modal
@@ -230,9 +251,9 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
 
     return (
         <>
-            <section className="nav-section" style={{backgroundImage:"linear-gradient(to right, #934CFF 10%, #F62B84)",height:"60px", }} >
+            
             <Navbar />
-            </section>
+           
             <div className="d-sm-flex">
                 {/* {
                     adminSideBar ? (
@@ -271,12 +292,12 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                             <div class="row">
                                 <div class="col-md-10 mx-auto">
                                     {
-                                        questions == '' ? <h3 className="text-center my-auto">¡Nada que mostrar! Iniciar una nueva discusión...</h3> :
+                                        questions === '' ? <h3 className="text-center my-auto">¡Nada que mostrar! Iniciar una nueva discusión...</h3> :
                                             questions.map((val, id) => {
                                                 return (
                                                     <>
 
-                                                        <Link to={`/detailforum/${val.id}`}>
+                                                        <Link to={`/forodedetalles/${val.id}`}>
                                                             <div class="card mb-4 mx-auto">
                                                                 <div class="card-header ">
                                                                     <div class="media flex-wrap w-100 align-items-center">
@@ -297,10 +318,34 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                                         </Link>
                                                     </>
                                                 )
-                                            }).reverse()
+                                            })
                                     }
                                 </div>
+                                
                             </div>
+                            
+                <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center' }}>
+                            {
+                                prevPage !== null? <>
+                                <div class="col-md-6" >
+                            
+                                     <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>
+                        
+                                </div> </> : null
+                            }
+                            {
+                                nextPage !== null? <>
+                                <div class="col-md-6">
+                            
+                                <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Next</button>
+                        
+                                </div>
+                                
+                                </> : null
+                            }
+                
+              </div>
+                            
                         </div>
 
 

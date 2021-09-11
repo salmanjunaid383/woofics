@@ -23,14 +23,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SentQuotation() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
     const [blog, setBlog] = useState([]);
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_quotation/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -86,12 +86,12 @@ export default function SentQuotation() {
                                                                 <>
                                                                     <tr style={{ height: '5rem' }} className="border-bottom">
                                                                         <td className="txt-oflo text-center bold">{val.created_at.slice(0, 10)}</td>
-                                                                        <td className="text-oflo text-center bold">{val.description}...</td>
+                                                                        <td className="text-oflo text-center bold" title={val.description}>{(val.description).slice(0,40)}</td>
                                                                         <td className="txt-oflo text-center bold">{val.extra_comments}</td>
                                                                         <td className="txt-oflo text-center bold">{val.delivery_days} Dias</td>
                                                                         <td className="txt-oflo text-center bold">{val.price}</td>
                                                                         <td className="txt-oflo text-center bold">
-                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editquote/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
+                                                                            <button  className="btn greenbtn text-white" value={val.id} onClick={() => { history.push(`/editar_cita/`+val.form_id); localStorage.setItem('qid', val.id) }} class={val.locked == 0 ? 'btn greenbtn text-white' : 'btn greenbtn text-white disabled'}>Editar</button>                                                                    </td>
                                                                     </tr>
                                                                 </>
                                                             )

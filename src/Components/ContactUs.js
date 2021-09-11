@@ -57,7 +57,7 @@ export default function ContactUs() {
                     <div class="container ">
                         <div class="row mx-auto mobile-res">
                             <div className="col-12  col-md-6 border-right mt-md-5 pt-md-5 w-75">
-                                <h3>Nosotras queremos saber tu opinión</h3>
+                                <h3>Queremos saber tu opinión</h3>
                                 <TextField className="w-75 my-1" id="standard-basic" label="Name *"
                                     onChange={(e) => setname(e.target.value)}
                                 />
@@ -129,7 +129,7 @@ export default function ContactUs() {
                                 color: "white",
                               }}
                             >
-                              <a target="_blank" href="https://www.instagram.com/woofic_com/">
+                              <a target="_blank" href="https://www.instagram.com/woofics_com/">
                                 <i className="px-1 fa fa-instagram"></i>
                               </a>
                             </span>

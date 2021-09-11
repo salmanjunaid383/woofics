@@ -30,10 +30,10 @@ export default function Advertise() {
     })
       .then((response) => {
         
-        alert("Message Sent!")
+        alert("Mensaje enviado!")
       }, (Error) => {
         
-        alert(Error)
+        alert("Disculpe, algo salió mal, por favor pruebe de nuevo más tarde")
         
       });
   }
@@ -71,18 +71,18 @@ export default function Advertise() {
                 <div className="col-md-12  mt-md-5 pt-md-5 w-75">
                   <h3>Por favor llene este formulario a continuación:</h3>
                   <span>
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Name *" onChange={(e) => setname(e.target.value)} />
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Email *" onChange={(e) => setemail(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Nombre" onChange={(e) => setname(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Correo electrónico" onChange={(e) => setemail(e.target.value)} />
                   </span>
                   <span>
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" type="number" label="Contact Number *" onChange={(e) => setnumber(e.target.value)} />
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Campaign Location *" onChange={(e) => setcampaignlocation(e.target.value)} />
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" type="number" label="Campaign Duration *" onChange={(e) => setcampaignduration(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" type="number" label="Número de teléfono" onChange={(e) => setnumber(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Ubicación de la campaña" onChange={(e) => setcampaignlocation(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" type="number" label="Duración de la campaña" onChange={(e) => setcampaignduration(e.target.value)} />
                   </span>
                   <span>
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" type="number" label="Video Duration *" onChange={(e) => setvideoduration(e.target.value)} />
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Screen Type *" onChange={(e) => setscreentype(e.target.value)} />
-                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Content Type *" onChange={(e) => setcontenttype(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" type="number" label="Duración del video" onChange={(e) => setvideoduration(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Tipo de pantalla" onChange={(e) => setscreentype(e.target.value)} />
+                    <TextField className="w-md-25 mx-3 my-1" id="standard-basic" label="Tipo de contenido" onChange={(e) => setcontenttype(e.target.value)} />
                   </span>
                   <br />
                   <br />

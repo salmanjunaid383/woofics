@@ -52,18 +52,18 @@ export default function Help() {
             user_id: decoded.sub,
             description: answer,
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
                     setOpenn(true);
                     setQuestion('');
                     setAnswer('')
-                history.push('/responses');
+                history.push("/respuestas");
                 }
             }, (Error) => {
                 
-                history.push('/help');
+                history.push("/ayuda");
             });
     }
 

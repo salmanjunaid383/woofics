@@ -111,13 +111,14 @@ export default function DiscussionForum() {
     const [user, setUser] = useState("");
     const [question, setQuestion] = useState("");
     const [questions, setQuestions] = useState([]);
-
+    const [nextPage,setNextPage]=useState();
+    const [prevPage,setPrevPage]=useState();
 
     var token = localStorage.getItem("user_token");
 
     function tokenRedirect(){
         if(token===null){
-            history.push("/forum");
+            history.push("/foro");
         }
     }
     useEffect(() => {
@@ -133,7 +134,7 @@ export default function DiscussionForum() {
         if(token !== null)
         {
             const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
             .then((response) => {
                 setUser(response.data);
@@ -155,7 +156,7 @@ export default function DiscussionForum() {
             asked_by: user.first_name + " " + user.last_name,
             user_id: user.id
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 handleClosee()
@@ -168,13 +169,17 @@ export default function DiscussionForum() {
     function getQuestion() {
 
         const { data: response } = 
-axios.get(`https://api.woofics.com/api/forum_question`,{
-            headers:window.header
+axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
-                setQuestions(response.data);
+                setQuestions(response.data.data);
+                console.log(response.data)
+                
+                setNextPage(response.data.next_page_url)
+                setPrevPage(null)
 
             }, (error) => {
                 
@@ -230,6 +235,20 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                             adminSideBar=true;
                         }
     }
+    function goNext(route){
+        console.log(route)
+        const {data: response}= axios.get(route,{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
+        }).then((response) => {
+            console.log(response.data)
+            setQuestions(response.data.data)
+            setNextPage(response.data.next_page_url)
+            setPrevPage(response.data.prev_page_url)
+        }, error => {
+            console.log(error)
+        });
+        
+    }
     
     
 
@@ -280,7 +299,7 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                                 return (
                                                     <>
 
-                                                        <Link to={`/clientmoredetailsdiscussionforum/${val.id}`}>
+                                                        <Link to={`/clientemásdetallesforumdiscussion/${val.id}`}>
                                                             <div class="card mb-4 mx-auto">
                                                                 <div class="card-header ">
                                                                     <div class="media flex-wrap w-100 align-items-center">
@@ -301,10 +320,37 @@ axios.get(`https://api.woofics.com/api/forum_question`,{
                                                         </Link>
                                                     </>
                                                 )
-                                            }).reverse()
+                                            })
                                     }
                                 </div>
+
+              
                             </div>
+
+                            <div class="row" style={{ paddingBottom: "5px",justifyContent:"center",textAlign:'center',display:'flex' }}>
+                            {
+                                prevPage !== null? <>
+                                <div class="col-md-6" >
+                            
+                                     <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>
+                        
+                                </div> </> : null
+                            }
+                            {
+                                nextPage !== null? <>
+                                <div class="col-md-6">
+                            
+                                <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Next</button>
+                        
+                                </div>
+                                
+                                </> : null
+                            }
+                
+              </div>
+
+
+
                         </div>
 
 

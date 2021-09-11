@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function StazBar() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     var token = localStorage.getItem("user_token");
     var decoded = jwt_decode(token)
@@ -139,10 +139,10 @@ export default function StazBar() {
       useEffect(() => {
         var test = location.pathname;
         test=test.split("/")[1]    
-        if(test==="viewservicemore")
+        if(test==="ver_servicio_más")
         {
             console.log(true)
-            setPathName("/viewservices")
+            setPathName("/ver_servicios")
         }
         else if(location.pathname==="/led")
         {
@@ -152,17 +152,17 @@ export default function StazBar() {
         {
             setPathName("/getinspired")
         }
-        else if(location.pathname.split('/')[1]==="ledgerlist")
+        else if(location.pathname.split('/')[1]==="lista_de_contabilidad")
         {
-            setPathName("/ledger")
+            setPathName("/libro_mayor")
         }
-        else if(location.pathname.split('/')[1]==="clientmoredetailsdiscussionforum")
+        else if(location.pathname.split('/')[1]==="clientemásdetallesforumdiscussion")
         {
-            setPathName("/clientdiscussionforum")
+            setPathName("/foro_de_discusión_del_cliente")
         }
         else if(location.pathname.split('/')[1]==="createforms")
         {
-            setPathName("/charges")
+            setPathName("/cargos")
         }
         else if(location.pathname.split('/')[1]==="createblog")
         {
@@ -248,7 +248,7 @@ export default function StazBar() {
         {
             name: 'Panel de administración',
             icon: <DashboardIcon    />,
-            to: '/superdashboard'
+            to: "/tablerodemandos"
         },
         {
             name: 'Inscripciones',
@@ -258,7 +258,7 @@ export default function StazBar() {
         {
             name: 'Servicios',
             icon: <FindInPageIcon  />,
-            to: '/viewservices'
+            to: '/ver_servicios'
         },
         {
             name: 'Ofertas',
@@ -283,12 +283,12 @@ export default function StazBar() {
         {
             name: 'Anunciar',
             icon: <PhotoAlbumIcon  />,
-            to: '/advertised'
+            to: '/anunciada'
         },
         {
             name: 'Libro mayor',
             icon: <HourglassEmptyIcon  />,
-            to: '/ledger'
+            to: "/libro_mayor"
         },
         {
             name:"Invoices",
@@ -303,12 +303,12 @@ export default function StazBar() {
         {
             name: 'Cargos',
             icon: <EqualizerIcon  />,
-            to: '/charges'
+            to: '/cargos'
         },
         {
             name: 'Ver contactos',
             icon: <ContactMailIcon  />,
-            to: '/viewcontact'
+            to: '/ver_contacto'
         },
         {
             name: "Logo",
@@ -318,22 +318,22 @@ export default function StazBar() {
         {
             name: "Descripción",
             icon: <DescriptionIcon />,
-            to: "/description"
+            to: "/descripción"
         },
         {
             name: 'Foro de discusion',
             icon: <AssignmentIcon />,
-            to :'/clientdiscussionforum'
+            to :'/foro_de_discusión_del_cliente'
         },
         {
             name: 'Lista de ayuda',
             icon: <HelpIcon  />,
-            to: '/helplist'
+            to: '/lista_de_ayuda'
         },
         {
             name: 'Quejarse',
             icon: <AssistantIcon  />,
-            to: '/admincomplain'
+            to: '/admin_quejarse'
         },
         {
             name: 'Blog',
@@ -357,7 +357,7 @@ export default function StazBar() {
 
     const drawer = (
         <div>
-            <Link className="navbar-brand " to="/superdashboard">
+            <Link className="navbar-brand " to="/tablerodemandos">
                 <span className="logo-text text-dark p-0 m-0 text-center">
                 {/* assets/plugins/images/Woofic-2.png */}
                    <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
@@ -396,7 +396,7 @@ export default function StazBar() {
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setnewnoti(response.data)
@@ -410,7 +410,7 @@ export default function StazBar() {
     const [unseen, setunseen] = useState([]);
     function seen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setunseen(response.data)
@@ -529,7 +529,7 @@ export default function StazBar() {
                     }).reverse()
 
                 }
-                <Link to='/adminallnotification'>
+                <Link to='/notificación_de_administrador'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
                             <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>

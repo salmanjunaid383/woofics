@@ -38,8 +38,8 @@ export default function Supppliers() {
 
 
     useEffect(() => {
-        const { data: response } = axios.get(`https://api.woofics.com/api/getprovider`,{
-            headers:window.header
+        const { data: response } = axios.get(`https://api.woofics.com/api/get_provider`,{
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setSuppliers(response.data)
@@ -55,7 +55,7 @@ export default function Supppliers() {
 
     useEffect(() => {
         const { data: response } = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setName(response.data.first_name + " " + response.data.last_name)
@@ -76,12 +76,12 @@ export default function Supppliers() {
             associate_name: uname,
             main_name: name
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                     history.push('/chat')
             }, (Error) => {
-                 
+                 console.log(Error);
                 
             });
     }
@@ -121,12 +121,12 @@ export default function Supppliers() {
                                                                 starSpacing="3px"
                                                             />
                                                         </h4>
-                                                      
+                                                        <i className="fa fa-concierge-bell px-2 text-muted"> {val.service}</i><br />
                                                         <br />
                                                         <i className="fa fa-map-marker px-2 text-muted"> {val.location}</i><br />
                                                         <hr />
                                                         <div className="d-flex">
-                                                        <button class="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => history.push(`/providerdetails/${val.id}`)} >Más Detalles</button>
+                                                        <button class="btn pull-right marginBottom10 " style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} onClick={() => history.push(`/detalles_del_proveedor/${val.id}`)} >Más Detalles</button>
                                                         <button class="btn pull-right marginBottom10  mx-3" style={{ backgroundColor: 'rgba(7, 72, 138, 0.71)', color: 'white' }} value={val.id} onClick={() => SendData(val.id, val.first_name + " " + val.last_name, val.profile_image )} >Chat</button>
                                                         </div>
                                                     </div>

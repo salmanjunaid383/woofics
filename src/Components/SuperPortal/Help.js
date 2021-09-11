@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Help() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     const [blog, setBlog] = useState([]);
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/help`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -46,7 +46,7 @@ export default function Help() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/help/${id}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     
@@ -106,7 +106,7 @@ export default function Help() {
                                                                         <td className="txt-oflo">{(val.description).slice(0, 20) + "..."}</td>
                                                                         <td className="txt-oflo">{(val.created_at).slice(0, 10)}</td>
                                                                         <td className="text-danger">
-                                                                            <button class="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/helpresponse/${val.id}`)}>Respuesta</button>
+                                                                            <button class="btn text-white greenbtn text-white  mx-2" onClick={() => history.push(`/respuesta_de_ayuda/${val.id}`)}>Respuesta</button>
                                                                             <button class="btn text-white btn-danger mx-2" onClick={() => DeleteLed(val.id)}>Delete</button>
                                                                         </td>
                                                                     </tr>
@@ -155,7 +155,7 @@ export default function Help() {
 //     {
 //         name: 'Sent Quotation',
 //         icon: <AssistantIcon  style={{ color: "#cdcdcd" }}/>,
-//         to: 'sentquotation'
+//         to: 'cotización_enviada'
 //     },
 //     {
 //         name: 'Ledger',
@@ -165,11 +165,11 @@ export default function Help() {
 //     {
 //         name: 'Help',
 //         icon: <LiveHelpIcon  style={{ color: "#cdcdcd" }}/>,
-//         to: 'suphelp'
+//         to: 'ayudar'
 //     },
 //     {
 //         name: 'Complain',
 //         icon: <CallEndIcon  style={{ color: "#cdcdcd" }}/>,
-//         to: 'supcomplain'
+//         to: 'suplicar'
 //     },
 // ]

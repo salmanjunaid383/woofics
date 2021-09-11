@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupplierSidebar() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     const history = useHistory();
     const location = useLocation();
     const[pathName,setPathName]=useState();
@@ -162,7 +162,7 @@ export default function SupplierSidebar() {
         {
             name: 'Panel de proveedores',
             icon: <DashboardIcon />,
-            to: '/supplierdashboard'
+            to: "/tablero_de_proveedores"
         },
         {
             name: 'Proyectos',
@@ -177,17 +177,17 @@ export default function SupplierSidebar() {
         {
             name: 'Leads',
             icon: <PlaylistAddCheckIcon  />,
-            to: '/quotation'
+            to: "/cotización"
         },
         {
             name: 'Cotización enviada',
             icon: <AssistantIcon  />,
-            to: '/sentquotation'
+            to: '/cotización_enviada'
         },
         {
             name: 'Gastos',
             icon: <BorderColorIcon  />,
-            to: '/supplierledger'
+            to: '/supplier_libro_mayor/'
         },
         {
             name: 'Factura',
@@ -197,23 +197,23 @@ export default function SupplierSidebar() {
         {
             name: 'Foro de discusion',
             icon: <AssignmentIcon />,
-            to :'/clientdiscussionforum'
+            to :'/foro_de_discusión_del_cliente'
         },
         {
             name: 'Ayuda',
             icon: <LiveHelpIcon  />,
-            to: '/suphelp'
+            to: '/ayudar'
         },
         {
             name: 'Quejarse',
             icon: <CallEndIcon  />,
-            to: '/supcomplain'
+            to: '/suplicar'
         },
     ]
 
     const drawer = (
         <div>
-            <Link className="navbar-brand " to="/supplierdashboard">
+            <Link className="navbar-brand " to="/tablero_de_proveedores">
                 <span className="logo-text text-dark p-0 m-0 text-center">
                    <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                 </span>
@@ -253,7 +253,7 @@ export default function SupplierSidebar() {
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setnewnoti(response.data)
@@ -264,7 +264,7 @@ export default function SupplierSidebar() {
     }
    function notificationDelete(e) {
         const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
                 .then((response) => {notification()
                 }, (Error) => {
@@ -275,7 +275,7 @@ export default function SupplierSidebar() {
     const [unseen, setunseen] = useState([]);
     function seen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setunseen(response.data)
@@ -291,7 +291,7 @@ export default function SupplierSidebar() {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data)
@@ -304,7 +304,7 @@ export default function SupplierSidebar() {
         const [UnseenMxg, setUnseenMxg] = useState([]);
         function chatnotification() {
             const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     setUnseenMxg(response.data)
@@ -314,7 +314,7 @@ export default function SupplierSidebar() {
                 });
         }
     useEffect(() => {
-        if(location.pathname.split("/")[1]==="supplierprojects")
+        if(location.pathname.split("/")[1]==="proyectos_de_proveedores")
         {
             setPathName("/supproject")
         }
@@ -473,7 +473,7 @@ export default function SupplierSidebar() {
                 }}
             >
                 <Typography className={classes.typography}>
-                    <Link className="profile-pic" to="/supplierupdateprofile" style={{ textDecoration: 'none' }}>
+                    <Link className="profile-pic" to="/proveedorupdateprofile" style={{ textDecoration: 'none' }}>
                         <i className="fa fa-user mx-3"></i>
                         <span className="text-black font-medium mr-3">Perfil</span>
                     </Link>

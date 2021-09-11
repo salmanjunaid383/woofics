@@ -48,7 +48,7 @@ export default function OfferList() {
 
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/show_offer_provider/`+decoded.sub,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {

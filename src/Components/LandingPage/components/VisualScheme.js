@@ -154,7 +154,7 @@ experiencia, para que el resto del usuario pueda tomar mejores decisiones.
             {/* <br />
                 <br /> */}
             <div class="receive_offer text-center">
-                <Link to="/quotemain">recibir oferta</Link>
+                <Link to="/cita_principal">recibir oferta</Link>
             </div>
         </>
     );

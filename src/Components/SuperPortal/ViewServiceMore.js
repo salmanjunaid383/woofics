@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ViewServiceMore() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
 
     let { serid } = useParams();
 
@@ -28,7 +28,7 @@ export default function ViewServiceMore() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/form_details/${serid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -108,7 +108,20 @@ export default function ViewServiceMore() {
                                                                 <td>Imagen del producto</td>
                                                                 <td><a style={{color:'grey'}} href={blog.product_image}>Imagen</a></td>
                                                             </tr>
+                                                            <tr>
+                                                                <td>Maximum Distance</td>
+                                                                <td>{blog.maximum_distance}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Minimum Distance</td>
+                                                                <td>{blog.minimum_distance}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Question</td>
+                                                                <td>{blog.any_question}</td>
+                                                            </tr>
                                             <tr>
+                                                
                                                 <td>Material De La Carcasa</td>
                                                 <td>{blog.carcass_material}</td>
                                             </tr>

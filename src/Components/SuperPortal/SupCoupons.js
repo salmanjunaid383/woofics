@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SupCoupons() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     const history = useHistory()
     const classes = useStyles();
 
@@ -66,7 +66,7 @@ export default function SupCoupons() {
                 coupon_type: coupontype,
                 expiry_date: date
             },{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     setwait('Add Coupon')

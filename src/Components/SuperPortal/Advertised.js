@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function GetInspired() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const [blog, setBlog] = useState([]);
@@ -27,7 +27,7 @@ export default function GetInspired() {
     function getReg() {
 
         const { data: response } = axios.get(`https://api.woofics.com/api/questionnaire`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setBlog(response.data)
@@ -47,7 +47,7 @@ export default function GetInspired() {
         var result = window.confirm("Want to delete?");
         if (result) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/questionnaire/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                     if (response) {

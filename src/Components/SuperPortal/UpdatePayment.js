@@ -161,7 +161,7 @@
 
 
 // export default function UpdatePayment() {
-//     // CustomAdminAuth();
+//     CustomAdminAuth();
 //     const { uplid } = useParams()
 //     const history = useHistory()
 //     const classes = useStyles();
@@ -305,7 +305,7 @@
 //         {
 //             name: 'Admin Dashboard',
 //             icon: <DashboardIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/superdashboard'
+//             to: "/tablerodemandos"
 //         },
 //         {
 //             name: 'Registrations',
@@ -315,7 +315,7 @@
 //         {
 //             name: 'Services',
 //             icon: <FindInPageIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/viewservices'
+//             to: '/ver_servicios'
 //         },
 //         {
 //             name: 'Offers',
@@ -345,12 +345,13 @@
 //         {
 //             name: 'Advertise',
 //             icon: <PhotoAlbumIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/advertised'
+//             to: '/
+anunciada'
 //         },
 //         {
 //             name: 'Ledger',
 //             icon: <HourglassEmptyIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/ledger'
+//             to: "/libro_mayor"
 //         },
 //          {
 //             name: 'Data of Interest',
@@ -360,12 +361,12 @@
 //         {
 //             name: 'Charges',
 //             icon: <EqualizerIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/charges'
+//             to: '/cargos'
 //         },
 //         {
 //             name: 'View Contacts',
 //             icon: <ContactMailIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/viewcontact'
+//             to: '/ver_contacto'
 //         },
         
 //         {
@@ -376,12 +377,12 @@
 //         {
 //             name: 'Help List',
 //             icon: <HelpIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/helplist'
+//             to: '/lista_de_ayuda'
 //         },
 //         {
 //             name: 'Complain',
 //             icon: <AssistantIcon style={{ color: "#cdcdcd" }} />,
-//             to: '/admincomplain'
+//             to: '/admin_quejarse'
 //         },
 //         {
 //             name: 'Blog',
@@ -392,7 +393,7 @@
 
 //     const drawer = (
 //         <div>
-//             <Link className="navbar-brand " to="/superdashboard">
+//             <Link className="navbar-brand " to="/tablerodemandos">
 //                 <span className="logo-text text-dark p-0 m-0 text-center">
 //                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
 //                 </span>
@@ -625,7 +626,7 @@
 //                                         }).reverse()
 
 //                                         }
-//                                         <Link to='/adminallnotification'>
+//                                         <Link to='/notificación_de_administrador'>
 //                                         <Typography className={`${classes.typography} bg-dark text-light`} >
 //                                         <a className="profile-pic" >
 //                                                 <span className="text-black font-medium ml-1">See all Notification <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>

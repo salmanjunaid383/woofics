@@ -36,7 +36,7 @@ export default function ProviderCheckComplainResponse() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_help/${rresid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -50,7 +50,7 @@ export default function ProviderCheckComplainResponse() {
 
     function getRes() {
         const response = axios.get(`https://api.woofics.com/api/help_response/${rresid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setreponses(response.data)
@@ -77,7 +77,7 @@ export default function ProviderCheckComplainResponse() {
             title: blog.description,
             user_id: decoded.sub
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 // setOpen3(true);

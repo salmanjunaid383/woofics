@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SuperDashboard() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
     //....................DAshbaord API
 
@@ -54,7 +54,7 @@ export default function SuperDashboard() {
 
     function getRegister(){
         const {data: response}=axios.get(`https://api.woofics.com/api/latest_user`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 getData(response.data)
@@ -66,7 +66,7 @@ export default function SuperDashboard() {
 
     function TotalClient() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_client`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -82,7 +82,7 @@ export default function SuperDashboard() {
 
     function TotalSupplier() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_supplier`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -97,7 +97,7 @@ export default function SuperDashboard() {
 
     function TotalProvider() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_provider`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -112,7 +112,7 @@ export default function SuperDashboard() {
     //....Completed Projectt
     function CompletedPro() {
         const { data: response } = axios.get(`https://api.woofics.com/api/completed_projects`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -125,7 +125,7 @@ export default function SuperDashboard() {
     //...ongoing pro
     function OngoingPro() {
         const { data: response } = axios.get(`https://api.woofics.com/api/ongoing_projects`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -138,7 +138,7 @@ export default function SuperDashboard() {
     //....TOtal 
     function TotalSer() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -153,7 +153,7 @@ export default function SuperDashboard() {
 
     function CountBlogs() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_blog`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -168,7 +168,7 @@ export default function SuperDashboard() {
 
     function PendingRegistration() {
         const { data: response } = axios.get(`https://api.woofics.com/api/pending_registration`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -183,7 +183,7 @@ export default function SuperDashboard() {
 
     function CountComplain() {
         const { data: response } = axios.get(`https://api.woofics.com/api/count_complains`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -200,7 +200,7 @@ export default function SuperDashboard() {
 
     function TotoalUsers() {
         const { data: response } = axios.get(`https://api.woofics.com/api/total_users`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -216,7 +216,7 @@ export default function SuperDashboard() {
 
     function TotoalProject() {
         const { data: response } = axios.get(`https://api.woofics.com/api/per_month_project`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -239,7 +239,7 @@ export default function SuperDashboard() {
     const [user, setuser] = useState([])
     function TotoalUser() {
         const { data: response } = axios.get(`https://api.woofics.com/api/per_month_user`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 
@@ -347,7 +347,7 @@ export default function SuperDashboard() {
                          </div>
                         <div className="row">
                             <div className="col-md-12">
-                                <h1 style={{ fontSize: "27px", marginBottom: "20px", color: "#9b88f6", fontWeight: "bold" }}>Admin Dashboard</h1>
+                                <h1 style={{ fontSize: "27px", marginBottom: "20px", color: "#9b88f6", fontWeight: "bold" }}>Panel de administración</h1>
                             </div>
                         </div>
                         <div className="row">
@@ -374,7 +374,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalClient}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Total Clients</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Clientes totales</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -392,7 +392,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalSupplier}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Total Suppliers</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Proveedores totales</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -410,7 +410,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalProvider}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Total Provider</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Proveedor total</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -427,7 +427,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalBlogs}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }} >Total Blogs</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }} >Total de blogs</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -444,7 +444,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{CompletedProject}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Completed Projects</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Proyectos completados</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -461,7 +461,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{OnGoingProject}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Ongoing Projects</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Proyectos en marcha</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -478,7 +478,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{PendingReg}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Pending Registration</div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>Pendiente de registro</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -495,7 +495,7 @@ export default function SuperDashboard() {
                                                                     <h1 className="bold">{totalServ}</h1>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>   Total Services </div>
+                                                            <div style={{ textAlign: "center", marginTop: "10px", fontSize: "15px" }}>   Servicios totales </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -507,9 +507,9 @@ export default function SuperDashboard() {
                                     <table  id="for-table-setting" className="for-table-setting table no-wrap for-table-setting">
                                         <tr className="heading-row">
                                             <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Date</th>
+                                            <th>Nombre</th>
+                                            <th>Correo electrónico</th>
+                                            <th>Fecha</th>
                                         </tr>
 
                                         {
@@ -570,8 +570,8 @@ export default function SuperDashboard() {
                                             <div class="media d-flex " >
 
                                                 <div class="media-body text-center">
-                                                    <span>Service Provider SignUp Link:</span><br />
-                                                    <small className="bold text-danger" ><a href="https://www.woofics.com/serviceprovider"> https://www.woofics.com/serviceprovider </a></small>
+                                                    <span>Enlace de registro del proveedor de servicios:</span><br />
+                                                    <small className="bold text-danger" ><a href="https://www.woofics.com/proveedordeservicio"> https://www.woofics.com/proveedordeservicio </a></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -585,8 +585,8 @@ export default function SuperDashboard() {
                                             <div class="media d-flex " >
 
                                                 <div class="media-body text-center">
-                                                    <span>Suppliers SignUp Link:</span><br />
-                                                    <small className="bold text-danger"><a href="https://www.woofics.com/serviceprovider">https://www.woofics.com/serviceprovider</a></small>
+                                                    <span>Enlace de registro de proveedores:</span><br />
+                                                    <small className="bold text-danger"><a href="https://www.woofics.com/proveedordeservicio">https://www.woofics.com/proveedordeservicio</a></small>
                                                 </div>
                                             </div>
                                         </div>

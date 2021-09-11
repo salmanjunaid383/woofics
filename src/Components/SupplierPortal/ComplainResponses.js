@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SupplierComplainResponses() {
-    // CustomSupplierAuth();
+    CustomSupplierAuth();
     let history = useHistory();
 
     const { commid } = useParams()
@@ -38,7 +38,7 @@ export default function SupplierComplainResponses() {
 
     function GetLed() {
         const { data: response } = axios.get(`https://api.woofics.com/api/show_complain/${commid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if (response) {
@@ -52,7 +52,7 @@ export default function SupplierComplainResponses() {
 
     function getRes() {
         const response = axios.get(`https://api.woofics.com/api/complain_response/${commid}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setreponses(response.data)
@@ -79,7 +79,7 @@ export default function SupplierComplainResponses() {
             // title: blog.description,
             user_id: decoded.sub
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 // setOpen3(true);

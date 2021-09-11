@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Nav() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -43,7 +43,7 @@ export default function Nav() {
                 <header className="topbar" data-navbarbg="skin5">
                     <nav className="navbar top-navbar navbar-expand-md navbar-dark">
                         <div className="navbar-header" data-logobg="skin6">
-                            <Link className="navbar-brand " to="/admindashboard">
+                            <Link className="navbar-brand " to="/tablerodeadministración">
                                 <span className="logo-text text-dark p-0 m-0 text-center">
                                    <img src="assets/plugins/images/Woofic-2.png" className="img-fluid p-0 ml-3 " style={{ width: '150px', marginTop:"20px", marginBottom:"10px"}} />
                                 </span>

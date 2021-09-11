@@ -45,7 +45,7 @@ export default function Project() {
 
         function Feedback() {
             const res = axios.get(`https://api.woofics.com/api/client_supplier_project/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((res) => {
                     if (res) {
@@ -109,7 +109,7 @@ export default function Project() {
                                                                         <td className="txt-oflo text-center bold">$ {val.price}</td>
                                                                         <td className="txt-oflo text-center bold">{val.delivery_days} Days</td>
                                                                         <td className="txt-oflo text-center bold">
-                                                                            <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => history.push(`/customerprojects/${val.supplier_id}/${val.id}`)} >Más detalles</button>
+                                                                            <button class="btn marginBottom10 greenbtn text-white" value={val.id} onClick={() => history.push(`/proyectos_de_clientes/${val.supplier_id}/${val.id}`)} >Más detalles</button>
                                                                         </td>
                                                                     </tr>
                                                                 </>

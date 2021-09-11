@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function CreateBlog() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const [author, setAuthor] = useState("");
@@ -55,7 +55,7 @@ export default function CreateBlog() {
             status: 'pending',
             image: imageUrl
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             
             .then((res) => {

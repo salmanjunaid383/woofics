@@ -23,14 +23,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateForms() {
-    // CustomAdminAuth();
+    CustomAdminAuth();
     let history = useHistory();
 
     const { ford } = useParams()
+    console.log(ford)
 
-    const [chargeOne, setchargeOne] = useState()
-    const [chargeTwo, setchargeTwo] = useState()
-    const [chargeThree, setchargeThree] = useState()
+    const [chargeOne, setchargeOne] = useState("")
+    const [chargeTwo, setchargeTwo] = useState("")
+    const [chargeThree, setchargeThree] = useState("")
     const [Name, setName] = useState("")
     const [chargefour, setchargefour] = useState("")
     const [start, setstart] = useState("")
@@ -46,7 +47,7 @@ export default function CreateForms() {
 
     function valueCharges() {
         const { data: response } = axios.get(`https://api.woofics.com/api/value_charges`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0]==null)
@@ -67,7 +68,7 @@ export default function CreateForms() {
 
     function paymentPackage() {
         const { data: response } = axios.get(`https://api.woofics.com/api/payment_package`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setpaymentPackag(response.data)
@@ -80,7 +81,7 @@ export default function CreateForms() {
 
     function supplierRen() {
         const { data: response } = axios.get(`https://api.woofics.com/api/supplier_rental`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0] == null)
@@ -100,7 +101,7 @@ export default function CreateForms() {
 
     function serviceCharg() {
         const { data: response } = axios.get(`https://api.woofics.com/api/service_provider_charge`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 if(response.data[0]==null)
@@ -137,7 +138,7 @@ export default function CreateForms() {
         const { data: response } = axios.put(`https://api.woofics.com/api/value_charges/${valueCharge.id}`, {
             charge: chargeOne
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 valueCharges()
@@ -157,7 +158,7 @@ export default function CreateForms() {
             start: start,
             end: end
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 paymentPackage()
@@ -175,7 +176,7 @@ export default function CreateForms() {
         // e.preventDefault();
 
         const { data: response } = axios.delete(`https://api.woofics.com/api/payment_package/${id}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 paymentPackage()
@@ -191,7 +192,7 @@ export default function CreateForms() {
         const { data: response } = axios.put(`https://api.woofics.com/api/supplier_rental/${supplierRenta.id}`, {
             charge: chargeTwo
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 supplierRen()
@@ -208,7 +209,7 @@ export default function CreateForms() {
         const { data: response } = axios.put(`https://api.woofics.com/api/service_provider_charge/${serviceCharge.id}`, {
             charge: chargeThree
         },{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 serviceCharg()
@@ -338,19 +339,21 @@ export default function CreateForms() {
                                             </div> : ford === "value" ? <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                 <div className="row mt-4 text-center">
                                                     <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check === 'true' ? 'block' : 'none' }}>
-                                                        <TextField
+                                                        <input
+                                                            type="number"
+                                                            onChange={(e) => setchargeOne(e.target.value)}
                                                             id="standard-textarea"
                                                             label="Charges"
+                                                            inputProps={{ type: 'number'}}
                                                             
                                                             
-                                                            onChange={(e) => setchargeOne(e.target.value)}
                                                             placeholder="Add Charges, only accept numeric values"
                                                             multiline
                                                             fullWidth
                                                             InputLabelProps={{
                                                                 shrink: true,
                                                             }} />
-                                                        <div class="col-sm-12 text-center">
+                                                        <div class="col-sm-12 text-center" style={{paddingBottom:'5px'}}>
                                                             <button class={`btn text-white mt-2 greenbtn text-white `}  onClick={() => valCharge()}>Agregar</button>
                                                         </div>
                                                     </div>
@@ -380,8 +383,10 @@ export default function CreateForms() {
                                                     <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
                                                             <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check2 === 'true' ? 'block' : 'none' }}>
-                                                                <TextField
+                                                                <input
+                                                                    type="number"
                                                                     id="standard-textarea"
+                                                                    
                                                                     onChange={(e) => setchargeTwo(e.target.value)}
                                                                     label="Charges"
                                                                     placeholder="Add Charges, only accept numeric values"
@@ -422,8 +427,10 @@ export default function CreateForms() {
                                                     <div class="form-horizontal form-material" style={{ textAlign: 'left' }}>
                                                         <div className="row mt-4 mx-auto">
                                                             <div className="col-md-6 text-center mx-auto px-2 w-100 p-0" style={{ display: check3 === 'true' ? 'block' : 'none' }}>
-                                                                <TextField
+                                                                    <input
+                                                                    type="number"
                                                                     id="standard-textarea"
+                                                                    
                                                                     label="Charges"
                                                                     onChange={(e) => setchargeThree(e.target.value)}
                                                                     placeholder="Add Charges, only accept numeric values"

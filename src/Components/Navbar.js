@@ -187,21 +187,21 @@ function Navbar() {
                         setWait('Log In')
                         console.log("pathname is"+location.pathname)
                         const role = jwt_decode(localStorage.getItem('user_token'))
-                        if(location.pathname!=="/quotemain")
+                        if(location.pathname!=="/cita_principal")
                         {
                             if (role.role === 'Client') {
-                                localStorage.setItem('url', '/dashboard')
-                                history.push('/dashboard');
+                                localStorage.setItem('url', "/tablero")
+                                history.push("/tablero");
                             } else if (role.role === 'ServiceProvider') {
-                                localStorage.setItem('url', '/admindashboard')
-                                history.push('/admindashboard');
+                                localStorage.setItem('url', "/tablerodeadministración")
+                                history.push("/tablerodeadministración");
                             }
                             else if (role.role === 'Supplier') {
-                                localStorage.setItem('url', '/supplierdashboard')
-                                history.push('/supplierdashboard');
+                                localStorage.setItem('url', "/tablero_de_proveedores")
+                                history.push("/tablero_de_proveedores");
                             } else {
-                                localStorage.setItem('url', '/superdashboard')
-                                history.push('/superdashboard');
+                                localStorage.setItem('url', "/tablerodemandos")
+                                history.push("/tablerodemandos");
                             }
                         }
                         
@@ -211,7 +211,7 @@ function Navbar() {
                 }, (error) => {
                     setWait('Log In')
                     setOpen3(true)
-                    if(location.pathname!=="/quotemain")
+                    if(location.pathname!=="/cita_principal")
                     {
                         history.push('/');
                     }
@@ -268,18 +268,18 @@ function Navbar() {
                 if (response) {
                     const role = jwt_decode(localStorage.getItem('user_token'))
                     if (role.role === 'Client') {
-                        localStorage.setItem('url', '/dashboard')
-                        history.push('/dashboard');
+                        localStorage.setItem('url', "/tablero")
+                        history.push("/tablero");
                     } else if (role.role === 'ServiceProvider') {
-                        localStorage.setItem('url', '/admindashboard')
-                        history.push('/admindashboard');
+                        localStorage.setItem('url', "/tablerodeadministración")
+                        history.push("/tablerodeadministración");
                     }
                     else if (role.role === 'Supplier') {
-                        localStorage.setItem('url', '/supplierdashboard')
-                        history.push('/supplierdashboard');
+                        localStorage.setItem('url', "/tablero_de_proveedores")
+                        history.push("/tablero_de_proveedores");
                     } else {
-                        localStorage.setItem('url', '/superdashboard')
-                        history.push('/superdashboard');
+                        localStorage.setItem('url', "/tablerodemandos")
+                        history.push("/tablerodemandos");
                     }
                 }
                 
@@ -327,14 +327,14 @@ function Navbar() {
     try{
         const role = jwt_decode(localStorage.getItem('user_token'))
         if (role.role === 'Client') {
-            profileLink="/dashboard"
+            profileLink="/tablero"
         } else if (role.role === 'ServiceProvider') {
-            profileLink="/admindashboard"
+            profileLink="/tablerodeadministración"
         }
         else if (role.role === 'Supplier') {
-            profileLink="/supplierdashboard"
+            profileLink="/tablero_de_proveedores"
         } else {
-            profileLink="/superdashboard"
+            profileLink="/tablerodemandos"
         }
     }
     catch{
@@ -347,11 +347,7 @@ function Navbar() {
     // const [ser, setser] = useState('')
 
     const responseFacebook = (response) => {
-        console.log(response)
-        console.log(response.userID)
-        console.log(response.name)
-        console.log(response.email)
-        console.log(response.picture.data)
+        
         
         const res = axios.post(`https://api.woofics.com/api/facebook`, {
             userId: response.userID,
@@ -365,18 +361,18 @@ function Navbar() {
                 if (response) {
                     const role = jwt_decode(localStorage.getItem('user_token'))
                     if (role.role === 'Client') {
-                        localStorage.setItem('url', '/dashboard')
-                        history.push('/dashboard');
+                        localStorage.setItem('url', "/tablero")
+                        history.push("/tablero");
                     } else if (role.role === 'ServiceProvider') {
-                        localStorage.setItem('url', '/admindashboard')
-                        history.push('/admindashboard');
+                        localStorage.setItem('url', "/tablerodeadministración")
+                        history.push("/tablerodeadministración");
                     }
                     else if (role.role === 'Supplier') {
-                        localStorage.setItem('url', '/supplierdashboard')
-                        history.push('/supplierdashboard');
+                        localStorage.setItem('url', "/tablero_de_proveedores")
+                        history.push("/tablero_de_proveedores");
                     } else {
-                        localStorage.setItem('url', '/superdashboard')
-                        history.push('/superdashboard');
+                        localStorage.setItem('url', "/tablerodemandos")
+                        history.push("/tablerodemandos");
                     }
                 }
                 
@@ -445,49 +441,49 @@ function Navbar() {
                             
                             
                         </Link>
-                        <Link className="pt-3 taglink hover-effect" to="/" id="" >
+                        <Link className="pt-3 taglink hover-effect for-res" to="/" id="" >
                             Casa
                         </Link>
-                        <Link to="/clientdiscussionforum" className="pt-3 taglink" id="" >
+                        <Link to="/foro_de_discusión_del_cliente" className="pt-3 taglink for-res" id="" >
                             Foro
                         </Link>
                        
-                        {/* <Link to="/discussionforum" className="pt-3 ">Forum</Link> */}
-                        <Link to="/quotemain" className="pt-3 taglink hover-effect" id="">
+                        {/* <Link to="/foro_de_discusion" className="pt-3 ">Forum</Link> */}
+                        <Link to="/cita_principal" className="pt-3 taglink hover-effect for-res" id="">
                             Oferta
                         </Link>
-                        {/* <Link to="/advertise" className="pt-3 ">Tools</Link> */}
+                        {/* <Link to="/anunciar" className="pt-3 ">Tools</Link> */}
 
-                        {/* <Link to="/pricecalculator" className="pt-3 " id="">
+                        {/* <Link to="/calculadora_de_precios" className="pt-3 " id="">
                             Price Calculator
                         </Link> */}
 
-                        {/* <Link to="/getinspire" className="pt-3 " id="">
+                        {/* <Link to="/inspirada" className="pt-3 " id="">
                             Get Inspire
                         </Link> */}
 
-                        <Link id="scroll-effect"  style={{marginLeft:"-12px",marginTop:"1px"}} >
+                        <Link id="scroll-effect" className="for-res"  style={{marginLeft:"-12px",marginTop:"1px"}} >
                             {/* Advertise */}
                             
                             <div class="dropdown hover-effect">
                                 <button className={navState ? "dropbtn dropbtnresponse" :"dropbtn" } id="dropDownLink">Instrumentos</button>
                                 <div class="dropdown-content">
-                                <Link to="/pricecalculator" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
+                                <Link to="/calculadora_de_precios" className="pt-3 "  id="taglink4" style={{color:"#000", textAlign:"left"}}>
                                     <span style={{textAlign:"left"}}>Calculadora de precios</span>
                                 </Link>
 
-                                <Link to="/getinspire" className="pt-3 " id="taglink5" style={{color:"#000"}}>
+                                <Link to="/inspirada" className="pt-3 " id="taglink5" style={{color:"#000"}}>
                                     Inspírate
                                 </Link>
 
-                                <Link to="/advertise"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
+                                <Link to="/anunciar"  className="pt-3 " id="taglink6" style={{color:"#000"}}>
                                     Anunciar
                                 </Link>
                                 </div>
                                 </div>
                         </Link>
 
-                        <Link id="scroll-effect" className="salman"  style={{marginLeft:"-12px",marginTop:"1px"}} >
+                        <Link id="scroll-effect " className="salman for-res"  style={{marginLeft:"-12px",marginTop:"1px"}} >
                             {/* Advertise */}
                             
                             <div class="dropdown hover-effect">
@@ -527,7 +523,7 @@ function Navbar() {
                                         class="f-button btn btn-white text-white p-2 mr-5 mt-2 ml-2 nav-button-join"
                                         onClick={handleOpenpop2}
                                     >
-                                        <b>ÚNETE AHORA</b>{" "}
+                                        <b>Únete Ahora</b>{" "}
                                     </button>
                                 </Link>
                                 <Link className="float-right p-0 m-0">
@@ -536,7 +532,7 @@ function Navbar() {
                                         class="f-button btn btn-white text-white p-2 ml-5 mt-2 nav-button-sign"
                                         onClick={handleOpenpop}
                                     >
-                                        <i className="fa fa-sign-out"> </i> <b>REGISTRARSE</b>
+                                        <i className="fa fa-sign-out"> </i> <b>Area Cliente</b>
                                     </button>
                                 </Link>
                             </>
@@ -624,7 +620,7 @@ function Navbar() {
                                                     type="email"
                                                     required
                                                     name="email"
-                                                    placeholder="Enter a valid email address"
+                                                    placeholder="Introduzca una dirección de correo electrónico válida"
                                                 />{" "}
                                             </div>
                                             <div className="row w-100 mx-auto">
@@ -641,7 +637,7 @@ function Navbar() {
                                                     type="password"
                                                     onChange={(e) => setPassword(e.target.value)}
                                                     name="password"
-                                                    placeholder="Enter password"
+                                                    placeholder="Introducir la contraseña"
                                                 />{" "}
                                             </div>
                                             <div className="row mb-4 w-100 ">
@@ -782,24 +778,24 @@ function Navbar() {
                                             className=" py-3
                                          h3 bolder"
                                         >
-                                            <b>Consiga nuevos clientes</b>
+                                            <b>Accede a la mayor comunidad de soluciones LED de Europa
+                                            </b>
                                         </h3>
                                         <h5 className=" py-3 h5 text-muted">
-                                            Llega al siguiente nivel, llega a donde nunca has estado
-                                            antes y descubre nuevas oportunidades!
+                                        ¡Pasa Al Siguiente Nivel,Obten las mejores ofertas de provedores certificados y todo desde un mismo lugar!
                                         </h5>
-                                        <b>Te asesoramos sin compromiso </b>
+                                        <b>Si tienes alguna duda te asesoramos sin compromiso </b>
                                         <h5 className=" py-34 h5">
                                             <i className="fa fa-phone"> </i>{" "}
                                             <u>
-                                                <a href="callto:680494729" className="text-dark">
+                                                <a href="callto:34648411313" className="text-dark">
                                                     {" "}
-                                                    680 49 47 29
+                                                    +34 648 411 313
                                                 </a>
                                             </u>{" "}
                                             or{" "}
                                             <u>
-                                                <a href="/contact" className="text-dark">
+                                                <a href="/contacto" className="text-dark">
                                                     {" "}
                                                     te llamaremos gratis
                                                 </a>
@@ -863,9 +859,10 @@ function Navbar() {
                 className="text-center"
             >
                 <CookieBanner
-                    message="This website uses cookies in order to offer you the most relevant information. Please accept cookies for optimal performance."
+                    message="Este sitio web utiliza cookies para ofrecerle la información más relevante. Acepte las cookies para un rendimiento óptimo."
                     onAccept={() => { }}
                     cookie="user-has-accepted-cookies"
+                    buttonMessage="Aceptar"
                 />
             </div>
 

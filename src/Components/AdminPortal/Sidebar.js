@@ -172,7 +172,7 @@ export default function ServiceSidebar(props) {
           {
             name: 'Panel',
             icon: <DashboardIcon  />,
-            to: '/admindashboard'
+            to: "/tablerodeadministración"
         },
         {
             name: 'Todo',
@@ -182,12 +182,12 @@ export default function ServiceSidebar(props) {
         {
             name: 'Lista de ofertas',
             icon: <ListIcon />,
-            to: '/offerlist'
+            to: '/lista_de_ofertas'
         },
         {
             name: 'Gastos',
             icon: <BorderColorIcon />,
-            to: '/providerledger'
+            to: '/provider_libro_mayor/'
         },
         // {
         //     name: 'Invoice',
@@ -197,17 +197,17 @@ export default function ServiceSidebar(props) {
         {
             name: 'Foro de discusion',
             icon: <ContactMailIcon  />,
-            to: 'clientdiscussionforum'
+            to: 'foro_de_discusión_del_cliente'
         },
         {
             name: 'Ayuda',
             icon: <LiveHelpIcon />,
-            to: '/providerhelp'
+            to: '/proveedor_de_ayuda'
         },
         {
             name: 'Quejarse',
             icon: <CallEndIcon />,
-            to: '/providercomplain'
+            to: '/proveedor_quejarse'
         },
 
     ]
@@ -215,7 +215,7 @@ export default function ServiceSidebar(props) {
     const drawer = (
         <div>
             <div className="navbar-header" data-logobg="skin6">
-                <Link className="navbar-brand " to="/admindashboard">
+                <Link className="navbar-brand " to="/tablerodeadministración">
                     <span className="logo-text text-dark p-0 m-0 text-center">
                        <img src={logo} alt="Logo" className="img-fluid p-0 ml-3 " style={{ width: '150px',marginTop:"20px",marginBottom:"10px" }} />
                     </span>
@@ -258,7 +258,7 @@ export default function ServiceSidebar(props) {
 
     function notification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/notification/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
         .then((response) => {
             setName(response.data)
@@ -271,7 +271,7 @@ export default function ServiceSidebar(props) {
         const [unseen, setunseen] = useState([]);
         function seen() {
             const { data: response } = axios.get(`https://api.woofics.com/api/unseen/${decoded.sub}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
             .then((response) => {
                 setunseen(response.data)
@@ -281,7 +281,7 @@ export default function ServiceSidebar(props) {
         }
         function notificationDelete(e) {
             const { data: response } = axios.delete(`https://api.woofics.com/api/notification/${e}`,{
-                headers:window.header
+                headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
               })
                 .then((response) => {
                 }, (Error) => {
@@ -294,7 +294,7 @@ export default function ServiceSidebar(props) {
         const [UnseenMxg, setUnseenMxg] = useState([]);
     function chatnotification() {
         const { data: response } = axios.get(`https://api.woofics.com/api/chat_unseen/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((response) => {
                 setUnseenMxg(response.data)
@@ -307,7 +307,7 @@ export default function ServiceSidebar(props) {
 
     function getData() {
         const res = axios.get(`https://api.woofics.com/api/users/${decoded.sub}`,{
-            headers:window.header
+            headers:{ Authorization: `Bearer ${localStorage.getItem("user_token")}` }
           })
             .then((res) => {
                 setImageData(res.data.profile_image)
@@ -439,7 +439,7 @@ export default function ServiceSidebar(props) {
                     }).reverse()
 
                 }
-                <Link to='/providerallnotification'>
+                <Link to='/notificación_al_proveedor'>
                     <Typography className={`${classes.typography} bg-dark text-light`} >
                         <a className="profile-pic" >
                             <span className="text-black font-medium ml-1">Ver Todas Las Notificaciones <span className="float-right text-light pl-md-2"><i className="fa fa-arrow-right"></i></span></span>
@@ -473,7 +473,7 @@ export default function ServiceSidebar(props) {
                     </Link>
                 </Typography>
                 <Typography className={classes.typography}>
-                    <a className="profile-pic" onClick={() => history.push('/providerresponses') }>
+                    <a className="profile-pic" onClick={() => history.push('/respuestas_del_proveedor') }>
                         <i className="fa fa-support mx-3"></i>
                         <span className="text-black font-medium mr-3">Servicio De Asistencia</span>
                     </a>
