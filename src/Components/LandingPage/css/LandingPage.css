@@ -571,7 +571,7 @@ body{
       transform: translateY(-2000px);
     }
   }
-  @media(max-width:600px){
+  @media(max-width:1080px){
     .for-res{
       background-color: #fff;
       margin-top: -2px !important;
