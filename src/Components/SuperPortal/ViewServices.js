@@ -150,7 +150,7 @@ export default function ViewServices() {
                                 prevPage !== null   ? <>
                                 <div className="col-md-6" >
                             
-                                     <button className="s-button"  onClick={e => {goNext(prevPage)}}>Previous</button>
+                                     <button className="s-button"  onClick={e => {goNext(prevPage)}}>Previo</button>
                         
                                 </div> </> : null
                             }
@@ -158,7 +158,7 @@ export default function ViewServices() {
                                 nextPage !== null  ? <>
                                 <div className="col-md-6">
                             
-                                <button className="s-button"  onClick={e => {goNext(nextPage)}}>Next</button>
+                                <button className="s-button"  onClick={e => {goNext(nextPage)}}>Siguiente</button>
                         
                                 </div>
                                 

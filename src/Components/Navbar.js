@@ -156,7 +156,7 @@ function Navbar() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [captcha, setcaptcha] = useState(false);
-    const [wait, setWait] = useState('Log In')
+    const [wait, setWait] = useState('Iniciar Sesión')
 
 
 
@@ -184,7 +184,7 @@ function Navbar() {
                 .then((response) => {
                     localStorage.setItem('user_token', response.data);
                     if (response) {
-                        setWait('Log In')
+                        setWait('Iniciar Sesión')
                         console.log("pathname is"+location.pathname)
                         const role = jwt_decode(localStorage.getItem('user_token'))
                         if(location.pathname!=="/cita_principal")
@@ -209,7 +209,7 @@ function Navbar() {
                     }
                     // 
                 }, (error) => {
-                    setWait('Log In')
+                    setWait('Iniciar Sesión')
                     setOpen3(true)
                     if(location.pathname!=="/cita_principal")
                     {
@@ -492,13 +492,13 @@ function Navbar() {
                                 <Typography className={classes.typography}>
                         <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
                             <i className="fa fa-user mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Perfil</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz" style={{textTransform:'capitalize'}}>Perfil</span>
                         </Link>
                     </Typography>
                     <Typography className={classes.typography}>
-                        <a className="profile-pic" style={{display:"flex",justifyContent:"center",alignItems:"center"}} onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
+                        <a className="profile-pic"  style={{display:"flex",justifyContent:"center",alignItems:"center"}} onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
                             <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Cerrar sesión</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz login-option-class" style={{textTransform:'capitalize'}}>Cerrar sesión</span>
                         </a>
                     </Typography>
                                 </div>
@@ -589,16 +589,17 @@ function Navbar() {
                                         >
                                             <i className="fa fa-times fa-2x pt-2"></i>
                                         </span>
-                                        <h5 className="h5 pt-3">Log In</h5>
+                                        
                                         <img
                                             src={logo1}
+                                            alt="Woofics"
                                             className=" mx-auto text-center my-2"
-                                            style={{ width: "200px" }}
+                                            style={{ width: "200px",marginRight:'5px' }}
                                         />
                                         <p
                                             className="p"
                                             onClick={handleOpenpop2}
-                                            style={{ cursor: "pointer", backgroundColor:"blue", borderRadius:"5px", width:"175px", padding:"5px", margin:"auto",marginBottom:"10px", color:"#fff", fontWeight:"900" }}
+                                            style={{ cursor: "pointer", backgroundColor:"rgb(249, 92, 135)", borderRadius:"5px", width:"175px", padding:"5px", margin:"auto",marginBottom:"10px", color:"#fff", fontWeight:"900" }}
                                         >
                                             ¿Crea una cuenta?
                                         </p>
@@ -630,7 +631,7 @@ function Navbar() {
                                                         className="mb-0 text-sm"
                                                         style={{ fontWeight: "bolder" }}
                                                     >
-                                                        Clave
+                                                        Contraseña
                                                     </h6>
                                                 </label>{" "}
                                                 <input
@@ -681,7 +682,7 @@ function Navbar() {
                                     <div className="col-md-5 col-lg-5 col-sm-12 p-0 m-0 d-none d-lg-block">
                                         <div className="row pr-4 pt-4">
                                             <div className="text-center my-auto mx-auto text-center">
-                                                <div className="col-md-12 mt-5 mx-auto ">
+                                                <div className="col-md-12 mt-3 text-center">
                                                     <FacebookLogin
                                                         appId="546365809890817"
                                                         // autoLoad={true}
@@ -778,13 +779,13 @@ function Navbar() {
                                             className=" py-3
                                          h3 bolder"
                                         >
-                                            <b>Accede a la mayor comunidad de soluciones LED de Europa
+                                            <b><span style={{textTransform:'capitalize'}}>Accede</span> a la mayor comunidad de proveedores <span style={{textTransform:'uppercase'}}>Led</span> y <span style={{textTransform:'uppercase'}}>LCD</span> de <span style={{textTransform:'capitalize'}}>Europa</span>
                                             </b>
                                         </h3>
-                                        <h5 className=" py-3 h5 text-muted">
+                                        {/* <h5 className=" py-3 h5 text-muted">
                                         ¡Pasa Al Siguiente Nivel,Obten las mejores ofertas de provedores certificados y todo desde un mismo lugar!
-                                        </h5>
-                                        <b>Si tienes alguna duda te asesoramos sin compromiso </b>
+                                        </h5> */}
+                                        <b><span style={{textTransform:'capitalize'}}>Si</span>tienes alguna duda te asesoramos sin compromiso </b>
                                         <h5 className=" py-34 h5">
                                             <i className="fa fa-phone"> </i>{" "}
                                             <u>
@@ -885,16 +886,16 @@ function Navbar() {
                     horizontal: 'center',
                 }}
             >
-                <Typography className={classes.typography}>
-                        <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}   id="text-blackStaz">
+                <Typography className={classes.typography} style={{textTransform:'capitalize'}} >
+                        <Link className="profile-pic pt-3 text-blackStaz" to={profileLink}  style={{textTransform:'capitalize'}}  id="text-blackStaz">
                             <i className="fa fa-user mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Perfil</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz" style={{textTransform:'capitalize'}}> Perfil</span>
                         </Link>
                     </Typography>
-                    <Typography className={classes.typography}>
-                        <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
+                    <Typography className={classes.typography} style={{textTransform:'capitalize'}}>
+                        <a className="profile-pic" style={{textTransform:'capitalize'}} onClick={() => { localStorage.removeItem('user_token');localStorage.removeItem('url'); history.push('/') ; handleCloseStaz()}}>
                             <i className="fa fa-sign-out mx-3 text-blackStaz"></i>
-                            <span className="text-black font-medium mr-3 text-blackStaz">Cerrar Sesión</span>
+                            <span className="text-black font-medium mr-3 text-blackStaz login-option-class" style={{textTransform:'none'}} >Cerrar Sesión</span>
                         </a>
                     </Typography>
             </Popover>

@@ -17,7 +17,7 @@ export default function Client() {
   const [contact_number, setContact] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
-  const [wait, setWait] = useState('Register')
+  const [wait, setWait] = useState('Registrar')
   const [disable, setDisable] = useState('disabled')
   const pathLocation = useLocation();
 
@@ -53,7 +53,7 @@ export default function Client() {
           password: password,
           profile_image: 'https://image.flaticon.com/icons/png/512/147/147144.png'
         }).then((response) => {
-          setWait('Register')
+          setWait('Registrar')
           setOpen4(true)
           if(pathLocation.pathname!=="/cita_principal")
           {
@@ -64,7 +64,7 @@ export default function Client() {
           
         }).catch((error) => {
           if (error.response) {
-            setWait('Register')
+            setWait('Registrar')
             alert(error.response.data.message);
           }
         });
@@ -121,13 +121,13 @@ export default function Client() {
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Primer Nombre</h6> 
-                </label> <input className="mb-4" onChange={(e) => setFirstname(e.target.value)} type="email" required name="email" placeholder="Primer nombre" />
+                </label> <input className="mb-4" onChange={(e) => setFirstname(e.target.value)}  required name="email" placeholder="Primer nombre" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Apellido</h6>
-                </label> <input className="mb-4" onChange={(e) => setLastname(e.target.value)} type="email" required name="email" placeholder="Apellido" />
+                </label> <input className="mb-4" onChange={(e) => setLastname(e.target.value)}  required name="email" placeholder="Apellido" />
               </div>
 
 
@@ -141,20 +141,20 @@ export default function Client() {
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Sector</h6>
-                </label> <input className="mb-4" onChange={(e) => setSector(e.target.value)} type="email" required name="email" placeholder="Sector" />
+                </label> <input className="mb-4" onChange={(e) => setSector(e.target.value)}  required name="email" placeholder="Sector" />
               </div>
 
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Localización</h6>
-                </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)} type="email" required name="email" placeholder="Localización" />
+                </label> <input className="mb-4" onChange={(e) => setLocation(e.target.value)}  required name="email" placeholder="Localización" />
               </div>
 
               <div className="row w-100 mx-auto">
                 <label className="mb-1">
                   <h6 className="mb-0 text-sm " style={{ fontWeight: 'bolder' }}>Número de teléfono</h6>
-                </label> <input className="mb-4" onChange={(e) => setContact(e.target.value)} type="email" required name="email" placeholder="Número de teléfono" />
+                </label> <input className="mb-4" onChange={(e) => setContact(e.target.value)} type="number" required name="email" placeholder="Número de teléfono" />
               </div>
 
               <div className="row w-100 mx-auto">

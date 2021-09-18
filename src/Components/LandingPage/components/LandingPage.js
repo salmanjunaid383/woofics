@@ -228,7 +228,7 @@ function LandingPage() {
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div className="woofic_slogan text-left mt-lg-5 pt-lg-5 pt-sm-2" >
-                                                Encuentra y compara los mejores proveedores de Pantallas Led, LCD y DOOH para tu
+                                                Encuentra y compara los mejores proveedores de Pantallas <span className="woofic_slogan text-left mt-lg-5 pt-lg-5 pt-sm-2" style={{textTransform:"uppercase"}}>Led</span>, <span style={{textTransform:"uppercase"}}>lcd</span> y <span style={{textTransform:"uppercase"}}>Dooh</span> para tu
 proyecto
                                                 </div>
                                             </div>

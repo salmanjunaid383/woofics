@@ -74,10 +74,10 @@ function Banner(){
            <div className="woofic_banner text-center ">
           
                 <div className="woofic_banner_heading">
-                   <span style={{color:"#333333"}}> Servicios </span><span style={{color:"#F62B84"}}>/</span> <span style={{color:"#F62B84",textTransform:'capitalize'}}>Profesional</span>
+                   <span style={{color:"#333333"}}> Servicios </span><span style={{color:"#F62B84"}}>/</span> <span style={{color:"#F62B84",textTransform:'capitalize'}}>Profesionales</span>
                 </div>
                 <div className="woofic_banner_sub-heading mb-5   ">
-                Encuentre soluciones personalizadas y a medida para sus proyectos
+                Encuentra profesionales y soluciones a medida para sus proyectos
                 </div>
                 <div className="woofic_first_row">
                     <div className="woofic_first_element p-4" onClick={()=>history.push('/servicio_de_vista/REPAIRS')}>
