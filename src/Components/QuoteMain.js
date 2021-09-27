@@ -217,7 +217,7 @@ export default function QuoteMain() {
   const [anyQuestion,setAnyQuestion]=useState("");
   const [city,setCity]=useState("");
   const [telephone,setTelephone]=useState("");
-  const [progress, setprogress] = useState("Publica tu servicio?");
+  const [progress, setprogress] = useState("Publica?");
 
   const [price, setPrice] = useState("");
   const [malik, setmalik] = useState("disabled");
@@ -695,18 +695,44 @@ export default function QuoteMain() {
       setScreenDisplay("block");
       setLcdDisplay("none");
       setVariousDisplay("none");
+      setforbutton1(true);
+      setforbutton2(false);
+      setforbutton3(false)
     }
     if (i === 2) {
       setScreenDisplay("none");
       setLcdDisplay("block");
       setVariousDisplay("none");
+      setforbutton2(true);
+      setforbutton1(false);
+      setforbutton3(false)
     }
     if (i === 3) {
       setScreenDisplay("none");
       setLcdDisplay("none");
       setVariousDisplay("block");
+      setforbutton3(true)
+      setforbutton1(false)
+      setforbutton2(false)
     }
   }
+
+  const [forbutton1, setforbutton1]=useState(false)
+  const [forbutton2, setforbutton2]=useState(false)
+  const [forbutton3, setforbutton3]=useState(false)
+  function forbuttonchange(i){
+    if(i===1){
+      setforbutton1(true)
+    }
+    else if(i===2){
+      setforbutton2(true)
+    }
+    else if(i===3){
+      setforbutton3(true)
+    }
+  }
+
+
   const [buycolor, setbuycolor] = useState("");
   const [indoorcolor, setindoorcolor] = useState("");
   const [screenaccesscolor, setscreenaccesscolor] = useState("");
@@ -727,7 +753,7 @@ export default function QuoteMain() {
                     className="text-center w-100 text-dark frank-color-blue"
                     onClick={() => showLedType(1)}
                   >
-                    <button className="s-button">Pantallas Led</button>
+                    <button  className="s-button" style={{}}>Pantallas Led</button>
                   </a>
                 </div>
                 <div className="col-md-4">
@@ -2384,7 +2410,7 @@ export default function QuoteMain() {
                       className="text-center w-100 text-dark frank-color-blue"
                       onClick={() => showLedType(3)}
                     >
-                      <button className="s-button">Various</button>
+                      <button className="s-button" style={{textTransform:"none"}}>Otros Productos</button>
                     </a>
                   </div>
                 </div>
@@ -2580,7 +2606,7 @@ export default function QuoteMain() {
               <br />
 
               <label className="for-question-mobile frank-color-pink">
-                ¡Háganos saber lo que quiere! Mencione todo a continuación:
+              explícanos tu proyecto:
               </label>
               <textarea
                 onChange={(e) => setdescription(e.target.value)}
@@ -2655,21 +2681,21 @@ export default function QuoteMain() {
                 <p className="d-inline w-100 ">
                   <h4
                     className="text-center w-100 text-dark frank-color-blue"
-                    style={{ marginTop: "50px", marginBottom: "20px" }}
+                    style={{ marginTop: "50px", marginBottom: "20px",textTransform:"none" }}
                   >
-                    Intermediaria / cliente final
+                    Intermediario o Cliente final
                   </h4>
-                  <div className="w-50 text-center float-left end-customer-right ">
-                    <input
+                  <div className="w-50 text-center float-left end-customer-right "style={{textTransform:"none"}}>
+                    <input 
                       type="radio"
                       name="q3"
                       className="w-25 text-right"
                       onChange={(e) => setcustomertype(e.target.value)}
                       value="Intermediary"
                     />
-                    Intermediaria
+                    Intermediario
                   </div>
-                  <div className="w-50 text-center float-left ">
+                  <div className="w-50 text-center float-left "style={{textTransform:"none"}}>
                     <input
                       type="radio"
                       name="q3"
@@ -2684,12 +2710,12 @@ export default function QuoteMain() {
 
               <h4
                 className="text-center w-100 text-dark sector frank-color-blue"
-                style={{ marginTop: "50px", marginBottom: "20px" }}
+                style={{ marginTop: "50px", marginBottom: "20px",textTransform:"none"}}
               >
-                Sector
+                Cual es tu sector profesional?
               </h4>
-              <div className="for-question-res" style={{ display: "flex" }}>
-                <div className="w-100">
+              <div className="for-question-res" style={{ display: "flex", textTransform:"none"}}>
+                <div className="w-100"  style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="q1"
@@ -2700,7 +2726,7 @@ export default function QuoteMain() {
                   Deporte
                 </div>
 
-                <div className="w-100 ">
+                <div className="w-100 "  style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="q1"
@@ -2711,17 +2737,19 @@ export default function QuoteMain() {
                   Al por menor
                 </div>
 
-                <div className="w-100">
+                <div className="w-100"  style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="q1"
                     className="w-25 text-center"
+                   
                     onChange={(e) => setsector(e.target.value)}
                     value="PUBLIC"
                   />
                   Pública
                 </div>
-                <div className="w-100 ">
+                    
+                <div className="w-100 " style={{textTransform:"none"}} >
                   <input
                     type="radio"
                     name="q1"
@@ -2731,27 +2759,29 @@ export default function QuoteMain() {
                   />
                   Salud
                 </div>
-                <div className="w-100">
+                <div className="w-100" style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="q1"
                     className="w-25 text-center"
+                    style={{textTransform:"none"}}
                     onChange={(e) => setsector(e.target.value)}
                     value="MOTOR"
                   />
                   Motora
                 </div>
-                <div className="w-100 for-ques-mob">
+                <div className="w-100 for-ques-mob" style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="q1"
                     className="w-25 text-center"
+                  
                     onChange={(e) => setsector(e.target.value)}
                     value="OCIO"
                   />
                   Ocio
                 </div>
-                <div className="w-100 for-ques-mob ">
+                <div className="w-100 for-ques-mob"style={{textTransform:"capatilized"}}>
                   <input
                     type="radio"
                     name="q1"
@@ -2761,21 +2791,23 @@ export default function QuoteMain() {
                   />
                   Hotel
                 </div>
-                <div className="w-100">
+                <div className="w-100" style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="q1"
                     className="w-25 text-center"
+                    
                     onChange={(e) => setsector(e.target.value)}
                     value="CONGRESSES"
                   />
                   Congreso
                 </div>
-                <div className="w-100">
+                <div className="w-100" style={{textTransform:"none"}}>
                   <input
                     type="radio"
                     name="OTHERS"
                     className="w-25 text-center"
+                   
                     onChange={(e) => setsector(e.target.value)}
                     value="OTHERS"
                   />
@@ -2839,7 +2871,7 @@ export default function QuoteMain() {
             </div>
             <div className="w-100 text-center mx-auto my-3 ">
               <button
-                className="btn btn-primary"
+                className="btn" style={{backgroundColor:"#F62B84", color:"#fff"}}
                 onClick={() =>
                   description === "" ||
                   name === "" ||
@@ -2863,8 +2895,8 @@ export default function QuoteMain() {
 
       <div className="page-wrapper bg-light" style={{ display: display3 }}>
         <div className="container-fluid">
-          <div className="row">
-            <h3 className="text-dark w-100 pl-lg-5">Sabes lo que buscas </h3>
+          <div className="row text-center">
+            <h3 className="text-dark w-100 pl-lg-5" style={{textTransform:"none"}}>Sabes lo que buscas  </h3>
             <div className="w-100 pl-lg-5">
               <FormControl component="fieldset">
                 <RadioGroup
@@ -2876,7 +2908,7 @@ export default function QuoteMain() {
                   <FormControlLabel
                     value="yes"
                     control={<Radio color="primary" />}
-                    label="Yes"
+                    label="Sí"
                     onClick={() => Displayone()}
                   />
                   <FormControlLabel
