@@ -163,13 +163,13 @@ export default function Nav() {
                         horizontal: 'center',
                     }}
                 >
-                    <Typography className={classes.typography}>
+                    <Typography className={classes.typography} style={{textTransform:'capitalize'}}>
                         <Link className="profile-pic" to="/adminupdateprofile" style={{ textDecoration: 'none' }}>
                             <i className="fa fa-user mx-3"></i>
-                            <span className="text-black font-medium mr-3">Perfil</span>
+                            <span className="text-black font-medium mr-3" style={{textTransform:'capitalize'}}>Perfil</span>
                         </Link>
                     </Typography>
-                    <Typography className={classes.typography}>
+                    <Typography className={classes.typography} style={{textTransform:'capitalize'}}>
                         <a className="profile-pic" onClick={() => { localStorage.removeItem('user_token'); history.push('/login') }}>
                             <i className="fa fa-sign-out mx-3"></i>
                             <span className="text-black font-medium mr-3">Cerrar Sesión</span>

@@ -484,7 +484,7 @@ body{
 
   html {
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
 
   }
   
@@ -557,7 +557,7 @@ body{
   #title span {
     background: -webkit-linear-gradient(white, #38495a);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    
   }
   .header.active{
     background-color: white;

@@ -14,7 +14,7 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const[wait,setWait] = useState('Log In')
+    const[wait,setWait] = useState('Iniciar Sesión')
 
 
     var token = localStorage.getItem("user_token");
@@ -41,7 +41,7 @@ export default function Login() {
                 .then((response) => {
                     localStorage.setItem('user_token', response.data);
                     if (response) {
-                        setWait('Log In')
+                        setWait('Iniciar Sesión')
                         const role = jwt_decode(localStorage.getItem('user_token'))
                         if (role.role === 'Client') {
                             history.push("/tablero");
@@ -55,7 +55,7 @@ export default function Login() {
                     }
                     // 
                 }, (error) => {
-                    setWait('Log In')
+                    setWait('Iniciar Sesión')
                     setOpen3(true)
                     
                     history.push('/');

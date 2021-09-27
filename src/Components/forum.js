@@ -328,7 +328,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                                 prevPage !== null? <>
                                 <div className="col-md-6" >
                             
-                                     <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previous</button>
+                                     <button className="s-button" disabled={prevPage===null || prevPage === '' ? true : false} onClick={e => {goNext(prevPage)}}>Previo</button>
                         
                                 </div> </> : null
                             }
@@ -336,7 +336,7 @@ axios.get(`https://api.woofics.com/api/forum_question?page=1`,{
                                 nextPage !== null? <>
                                 <div className="col-md-6">
                             
-                                <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Next</button>
+                                <button className="s-button" disabled={nextPage===null || nextPage=== '' ? true : false} onClick={e => {goNext(nextPage)}}>Siguiente</button>
                         
                                 </div>
                                 

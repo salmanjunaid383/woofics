@@ -176,23 +176,13 @@ body {
     border-radius: 40px !important;
     width: 280px;
     font-family: sans-serif;
+    border:0px;
     height: 50px;
     cursor: pointer; 
     box-shadow:8px 3px 20px rgb(87, 87, 87) ;
     /* margin: 0px 10px; */
 }
-.btnGoogle { 
-  background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    /* padding-top: 10px; */
-    border-radius: 40px !important;
-    width: 280px;
-    height: 50px;
-    cursor: pointer; 
-    box-shadow:8px 3px 20px rgb(87, 87, 87) ;
-    /* margin: 0px 10px; */
-}
+
 
 
 .hvr-grow {

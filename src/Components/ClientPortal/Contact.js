@@ -128,14 +128,14 @@ export default function Contact() {
                   style={button1}
                   onClick={() => setbtnstyle1()}
                 >
-                  Sobre nosotras
+                  Sobre Nosotras
                 </button>
                 <button
                   className="btn mx-2 px-3 py-2 "
                   style={button2}
                   onClick={() => setbtnstyle12()}
                 >
-                  Preguntas frecuentes
+                  Preguntas Frecuentes
                 </button>
                 <button
                   className="btn mx-2 px-3 py-2 "
@@ -304,9 +304,9 @@ poder acceder a su panel de administración personal.
                         aria-labelledby="headingFour"
                         data-parent="#accordionExample"
                       >
-                        <div className="card-body">
+                        <div className="card-body" >
                         No, woofics.com es un portal independiente, ponemos en contacto clientes con proveedores
-y cada proveedor hace su oferta personalizada directamente al cliente final, el el orden en el
+y cada proveedor hace su oferta personalizada directamente al cliente final, el orden en el
 que se muestran los resultados por defecto, es por orden de llegada, el primer proveedor
 en enviar oferta aparece en la primera posición, así sucesivamente.
                         </div>
@@ -377,17 +377,17 @@ ni incrementos de precio. Cobramos un precio fijo por lead/proveedor.
                           <br />
                           <br />
 
-                          <button className="btn btn-primary" onClick={()=>Message()}>
+                          <button className="btn" style={{backgroundColor:"rgb(249, 92, 135)"}} onClick={()=>Message()}>
                           Enviar Mensaje
                           </button>
                         </div>
                         <div className="col-md-6 my-auto pt-md-5 mt-md-5 pl-md-5">
                           <h4 style={{marginTop:"20px"}}>Escríbanos a:</h4>
-                          <h5 className="h5" className="text-primary">
-                            <p ><span style={{textTransform:'lowercase'}}> hola@woofics.com</span></p>
+                          <h5  className="text-primary">
+                            <p className="emailText">hola@woofics.com</p>
                           </h5>
                           <br />
-                          <h4 style={{marginTop:"20px"}}>Telephone:</h4>
+                          <h4 style={{marginTop:"20px"}}>Teléfono:</h4>
                           <h5 className="h5" className="text-primary">
                             <a>+34 648 411 313</a>
                           </h5>

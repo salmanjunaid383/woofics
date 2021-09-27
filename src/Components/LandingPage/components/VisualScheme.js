@@ -93,7 +93,7 @@ function VisualScheme() {
 
                         <div className="woofic_visiual_left">
                             <div className="woofic_visiual_heading ">
-                            Contratar a una proveedora
+                            Contrata a un proveedor
                                     {/* <div class="woofic_visiual_sub-heading">
                                     Start today for great future
                                     </div> */}

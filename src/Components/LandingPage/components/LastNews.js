@@ -263,7 +263,7 @@ poder acceder a su panel de administración personal.
                 >
                   <div className="card-body">
                   No, woofics.com es un portal independiente, ponemos en contacto clientes con proveedores
-y cada proveedor hace su oferta personalizada directamente al cliente final, el el orden en el
+y cada proveedor hace su oferta personalizada directamente al cliente final, el orden en el
 que se muestran los resultados por defecto, es por orden de llegada, el primer proveedor
 en enviar oferta aparece en la primera posición, así sucesivamente.
                   </div>

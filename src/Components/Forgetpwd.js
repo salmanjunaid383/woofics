@@ -4,7 +4,7 @@ import axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-
+import logo2 from './LandingPage/images/woofics-new/WooficsLogo.png';
 
 export default function Forgetpwd() {
     let history = useHistory();
@@ -72,13 +72,13 @@ export default function Forgetpwd() {
                         <div className="col-lg-6 mx-auto border px-3">
                             <div className=" py-3 px-4">
                                 <div className="row">
-                                    <img src="assets/plugins/images/woofic.jpeg " className="img-fluid w-50 mx-auto text-center mb-3" />
+                                    <img src={logo2} alt="Woofics " className="img-fluid w-50 mx-auto text-center mb-3" />
                                 </div>
                                 <div className="row w-75 mx-auto"> <label className="mb-1">
                                     <h6 className="mb-0 text-sm">Dirección de correo electrónico</h6>
                                 </label> <input className="mb-4" onChange={(e) => setEmail(e.target.value)} type="text" name="email" placeholder="Introduzca una dirección de correo electrónico válida" /> </div>
                                 <div className="mb-4 mx-auto d-flex justify-content-center w-100">
-                                    <button type="submit" className="btn btn-blue mx-auto" style={{ backgroundColor: 'rgb(118, 50, 63)' }} onClick={LoginBtn}>Continuar</button>
+                                    <button type="submit" className="btn btn-blue mx-auto" style={{ backgroundColor: 'rgb(249, 92, 135)' }} onClick={LoginBtn}>Continuar</button>
                                 </div>
                             </div>
                         </div>
